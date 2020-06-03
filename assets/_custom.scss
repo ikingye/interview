@@ -1,0 +1,10 @@
+@import "plugins/_numbered.scss";
+@import "plugins/_scrollbars.scss";
+
+.book-menu>nav>ul>li>a {
+    font-weight: 900;
+}
+
+.book-menu>nav>ul>li>ul>li>a {
+    font-weight: 600;
+}
