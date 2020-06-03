@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>首页 on 面试自查清单</title>
+    <title>首页 on 程序员面试自查清单</title>
     <link>https://ikingye.github.io/Programmer-Interview-Checklist/</link>
-    <description>Recent content in 首页 on 面试自查清单</description>
+    <description>Recent content in 首页 on 程序员面试自查清单</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	<atom:link href="https://ikingye.github.io/Programmer-Interview-Checklist/index.xml" rel="self" type="application/rss+xml" />
