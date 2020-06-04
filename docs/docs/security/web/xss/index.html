@@ -14,7 +14,7 @@ XSS 发生的原因 没有将用户输入的文本进行合适的过滤，就贸
  来自用户的 UGC 信息 来自第三方的链接 URL 参数 POST 参数 Referer （可能来自不可信的来源） Cookie （可能来自其他子域注入）  XSS 有哪些注入的方法  在 HTML 中内嵌的文本中，恶意内容以 script 标签形成注入。 在内联的 JavaScript 中，拼接的数据突破了原本的限制（字符串，变量，方法名等）。 在标签属性中，恶意内容包含引号，从而突破属性值的限制，注入其他属性或者标签。 在标签的 href、src 等属性中，包含 javascript: 等可执行代码。 在 onload、onerror、onclick 等事件中，注入不受控制代码。 在 style 属性和标签中，包含类似 background-image:url(&quot;javascript:...&quot;); 的代码（新版本浏览器已经可以防范）。 在 style 属性和标签中，包含类似 expression(...) 的 CSS 表达式代码（新版本浏览器已经可以防范）。   XSS 分类 存储型 存储型 XSS 的攻击步骤：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/Programmer-Interview-Checklist/docs/security/web/xss/" />
-
+<meta property="article:modified_time" content="2020-06-05T01:17:23+08:00" />
 <title>XSS | 程序员面试自查清单</title>
 <link rel="icon" href="/Programmer-Interview-Checklist/favicon.png" type="image/x-icon">
 
@@ -787,6 +787,14 @@ JavaScript 的 <code>eval()</code>、<code>setTimeout()</code>、<code>setInterv
   <div class="flex justify-between">
 
 
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/ikingye/Programmer-Interview-Checklist/commit/4a34bc61fb87a6419db65063af86b3ea218479cc" title='Last modified by yewang | 2020-06-05' target="_blank" rel="noopener">
+      <img src="/Programmer-Interview-Checklist/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-06-05</span>
+    </a>
+  </div>
 
 
 
