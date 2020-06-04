@@ -4,12 +4,13 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=""><meta property="og:title" content="Docs" />
+<meta name="description" content="Web 安全  一切的安全问题都体现在 “输入输出” 上，一切的安全问题都存在于 “数据流” 的整个过程中。
+ 1. 如果在操作系统层上没处理好，比如 Linux 的 Bash 环境把 “特殊数据” 当做指令执行时，就产生了 OS 命令执行的安全问题，这段 “特殊数据” 可能长得如下这般： ; rm -rf /; 2. 如果在存储层的数据库中没处理好，数据库的 SQL 解析引擎把这个 “特殊数据” 当做指令执行时，就产生 SQL 注入这样的安全问题，这段 “特殊数据” 可能长得如下这般： &#39; union select user, pwd, 1, 2, 3, 4 from users-- 3. 如果在 Web 容器层如 nginx 中没处理好，nginx 把 “特殊数据” 当做指令执行时，可能会产生远程溢出、DoS 等各种安全问题，这段 “特殊数据” 可能长得如下这般： %c0.%c0./%c0.%c0./%c0.%c0./%c0.%c0./%20 4. 如果在 Web 开发框架或 Web 应用层中没处理好，把 “特殊数据” 当做指令执行时，可能会产生远程命令执行的安全问题，这段 “特殊数据” 可能长得如下这般： eval($_REQUEST[&#39;x&#39;]); 5."><meta property="og:title" content="Web 安全" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://ikingye.github.io/Programmer-Interview-Checklist/docs/" />
+<meta property="og:url" content="https://ikingye.github.io/Programmer-Interview-Checklist/docs/security/web/" />
 
-<title>Docs | 程序员面试自查清单</title>
+<title>Web 安全 | 程序员面试自查清单</title>
 <link rel="icon" href="/Programmer-Interview-Checklist/favicon.png" type="image/x-icon">
 
 
@@ -18,7 +19,7 @@
 
 <script defer src="/Programmer-Interview-Checklist/en.search.min.1ca289051507e74c06a0483bc8ca7c210f5b52f902353e9af577efd54d2d3535.js" integrity="sha256-HKKJBRUH50wGoEg7yMp8IQ9bUvkCNT6a9Xfv1U0tNTU="></script>
 
-<link rel="alternate" type="application/rss+xml" href="https://ikingye.github.io/Programmer-Interview-Checklist/docs/index.xml" title="程序员面试自查清单" />
+<link rel="alternate" type="application/rss+xml" href="https://ikingye.github.io/Programmer-Interview-Checklist/docs/security/web/index.xml" title="程序员面试自查清单" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -413,7 +414,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/Programmer-Interview-Checklist/docs/security/web/" class="">Web 安全</a>
+  <a href="/Programmer-Interview-Checklist/docs/security/web/" class="active">Web 安全</a>
   
 
 
@@ -512,7 +513,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/Programmer-Interview-Checklist/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Docs</strong>
+  <strong>Web 安全</strong>
 
   <label for="toc-control">
     <img src="/Programmer-Interview-Checklist/svg/toc.svg" class="book-icon" alt="Table of Contents" />
@@ -524,7 +525,11 @@ https://github.com/alex-shpak/hugo-book
     <input type="checkbox" class="hidden" id="toc-control" />
     <aside class="hidden clearfix">
       
-  
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#web-安全">Web 安全</a></li>
+  </ul>
+</nav>
 
 
     </aside>
@@ -534,7 +539,33 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"></article>
+  <article class="markdown"><h1 id="web-安全">Web 安全</h1>
+<blockquote>
+<p>一切的安全问题都体现在 “输入输出” 上，一切的安全问题都存在于 “数据流” 的整个过程中。</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200605000529.png" alt="" /></p>
+<pre><code>1. 如果在操作系统层上没处理好，比如 Linux 的 Bash 环境把 “特殊数据” 当做指令执行时，就产生了 OS 命令执行的安全问题，这段 “特殊数据” 可能长得如下这般：
+; rm -rf /;
+
+2. 如果在存储层的数据库中没处理好，数据库的 SQL 解析引擎把这个 “特殊数据” 当做指令执行时，就产生 SQL 注入这样的安全问题，这段 “特殊数据” 可能长得如下这般：
+' union select user, pwd, 1, 2, 3, 4 from users--
+
+3. 如果在 Web 容器层如 nginx 中没处理好，nginx 把 “特殊数据” 当做指令执行时，可能会产生远程溢出、DoS 等各种安全问题，这段 “特殊数据” 可能长得如下这般：
+%c0.%c0./%c0.%c0./%c0.%c0./%c0.%c0./%20
+
+4. 如果在 Web 开发框架或 Web 应用层中没处理好，把 “特殊数据” 当做指令执行时，可能会产生远程命令执行的安全问题，这段 “特殊数据” 可能长得如下这般：
+eval($_REQUEST['x']);
+
+5. 如果在 Web 前端层中没处理好，浏览器的 JS 引擎把 “特殊数据” 当做指令执行时，可能会产生 XSS 跨站脚本的安全问题，这段 “特殊数据” 可能长得如下这般：
+'&quot;&gt;&lt;script&gt;alert(/cos is my hero./)&lt;/script&gt;
+
+...
+</code></pre>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.zhihu.com/question/21606800">零基础如何学习 Web 安全？</a></li>
+</ul>
+</article>
  
       
 
@@ -554,6 +585,17 @@ https://github.com/alex-shpak/hugo-book
 
       
   
+  <div class="book-comments">
+<script src="https://utteranc.es/client.js"
+  repo="ikingye/note-cs"
+  issue-term="pathname"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script>
+
+</div>
+  
  
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
@@ -562,7 +604,11 @@ https://github.com/alex-shpak/hugo-book
     
     <aside class="book-toc">
       
-  
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#web-安全">Web 安全</a></li>
+  </ul>
+</nav>
 
  
     </aside>

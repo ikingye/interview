@@ -1,9 +1,6 @@
 # 程序员面试自查清单
 
-## TOC
-
 - [程序员面试自查清单](#程序员面试自查清单)
-  - [TOC](#toc)
   - [基础](#基础)
     - [操作系统](#操作系统)
       - [Linux](#linux)
@@ -26,13 +23,23 @@
   - [软件工程](#软件工程)
     - [设计模式](#设计模式)
     - [架构设计](#架构设计)
+      - [分布式系统](#分布式系统)
+      - [高性能](#高性能)
+      - [高可用](#高可用)
+      - [高并发](#高并发)
+      - [高扩展性](#高扩展性)
     - [项目管理](#项目管理)
   - [后端](#后端)
-    - [云原生](#云原生)
     - [Web 后端](#web-后端)
       - [PHP Web 后端](#php-web-后端)
       - [Python Web 后端](#python-web-后端)
       - [Go Web 后端](#go-web-后端)
+    - [微服务](#微服务)
+    - [云原生](#云原生)
+    - [数据库](#数据库)
+    - [消息队列](#消息队列)
+    - [搜索引擎](#搜索引擎)
+    - [缓存](#缓存)
   - [前端](#前端)
     - [Web 前端](#web-前端)
     - [Android](#android)
@@ -41,8 +48,8 @@
     - [CI/CD](#cicd)
     - [DevOps](#devops)
   - [测试](#测试)
-
-TOC Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
+  - [安全](#安全)
+    - [Web 安全](#web-安全)
 
 ---
 
@@ -206,10 +213,24 @@ TOC Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 ### 架构设计
 
-- [ ] 分布式系统
-  - [ ] ACID (`Atomicity`, `Consistency`, `Isolation`, `Durability`)
-  - [ ] CAP (`Consistency`, `Availability`, `Partition tolerance`)
-  - [ ] BASE (`Basically Available`, `Soft state`, `Eventual consistency`)
+#### 分布式系统
+
+- [ ] ACID (`Atomicity`, `Consistency`, `Isolation`, `Durability`)
+- [ ] CAP (`Consistency`, `Availability`, `Partition tolerance`)
+- [ ] BASE (`Basically Available`, `Soft state`, `Eventual consistency`)
+
+#### 高性能
+
+#### 高可用
+
+#### 高并发
+
+#### 高扩展性
+
+- [ ] 如何提高可扩展性
+- [ ] [如何构建高扩展性网站](content/docs/software-engineering/architecture/high-scalability/_index.md)
+
+---
 
 ### 项目管理
 
@@ -220,10 +241,25 @@ TOC Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 ## 后端
 
+### Web 后端
+
+#### PHP Web 后端
+
+- [ ] fastcgi
+
+#### Python Web 后端
+
+#### Go Web 后端
+
+---
+
+### 微服务
+
 ### 云原生
 
 - [ ] 云原生
   - [ ] 什么是云原生
+  - [ ] 云原生解决了哪些痛点
   - [ ] 什么是声明式 API
   - [ ] 什么是不可变基础设施
 - [ ] Kubernetes
@@ -258,15 +294,13 @@ TOC Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 
 ---
 
-### Web 后端
+### 数据库
 
-#### PHP Web 后端
+### 消息队列
 
-- [ ] fastcgi
+### 搜索引擎
 
-#### Python Web 后端
-
-#### Go Web 后端
+### 缓存
 
 ---
 
@@ -296,3 +330,17 @@ TOC Created by [gh-md-toc](https://github.com/ekalinin/github-markdown-toc)
 ---
 
 ## 测试
+
+---
+
+## 安全
+
+### Web 安全
+
+- [ ] [Web 安全包括哪些内容](content/docs/security/web/_index.md)
+- [ ] [XSS](content/docs/security/web/xss.md)
+  - [ ] [什么是 XSS，为什么会发生 XSS](content/docs/security/web/xss.md)
+  - [ ] [如何防止 XSS 攻击](content/docs/security/web/xss.md)
+- [ ] [CSRF](content/docs/security/web/csrf.md)
+  - [ ] [什么是 CSRF，为什么会发生 CSRF](content/docs/security/web/csrf.md)
+  - [ ] [如何防止 CSRF 攻击](content/docs/security/web/csrf.md)

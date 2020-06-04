@@ -8,6 +8,14 @@
   </url>
   
   <url>
+    <loc>https://ikingye.github.io/Programmer-Interview-Checklist/docs/security/web/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/Programmer-Interview-Checklist/docs/security/web/xss/</loc>
+  </url>
+  
+  <url>
     <loc>https://ikingye.github.io/Programmer-Interview-Checklist/docs/basic/</loc>
     <lastmod>2020-06-04T01:51:49+08:00</lastmod>
   </url>
@@ -15,6 +23,46 @@
   <url>
     <loc>https://ikingye.github.io/Programmer-Interview-Checklist/docs/basic/encode/</loc>
     <lastmod>2020-06-04T01:51:49+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/Programmer-Interview-Checklist/docs/software-engineering/design-pattern/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/Programmer-Interview-Checklist/docs/security/web/csrf/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/Programmer-Interview-Checklist/docs/software-engineering/architecture/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/Programmer-Interview-Checklist/docs/software-engineering/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/Programmer-Interview-Checklist/docs/software-engineering/architecture/high-scalability/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/Programmer-Interview-Checklist/docs/backend/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/Programmer-Interview-Checklist/docs/frontend/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/Programmer-Interview-Checklist/docs/devops/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/Programmer-Interview-Checklist/docs/test/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/Programmer-Interview-Checklist/docs/security/</loc>
   </url>
   
   <url>
