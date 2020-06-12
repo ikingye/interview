@@ -57,7 +57,7 @@
 ## 基础
 
 - [ ] 编译
-- [ ] [编码](content/docs/basic/encode/_index.md)
+- [ ] [字符编码](content/docs/basic/encode/_index.md)
   - [ ] Unicode
     - [ ] UTF-8
   - [ ] base64
