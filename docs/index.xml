@@ -33,6 +33,33 @@ seaswalker/JDK JDK 源码阅读笔记
     </item>
     
     <item>
+      <title>Linux 系统信息</title>
+      <link>https://ikingye.github.io/interview-me/docs/basic/os/linux/info/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/basic/os/linux/info/</guid>
+      <description>Linux 系统信息 硬件信息 如何查看内存？ 如何查看 CPU？  运行信息 如何查看占用内存最多的进程？ 如何查看占用 CPU 最多的进程？ 如何查看占用某个端口的进程？ </description>
+    </item>
+    
+    <item>
+      <title>Shell</title>
+      <link>https://ikingye.github.io/interview-me/docs/basic/os/linux/shell/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/basic/os/linux/shell/</guid>
+      <description>Shell ps ps aux 与 ps -ef 有什么区别？  lsof awk sed </description>
+    </item>
+    
+    <item>
+      <title>TCP/UDP/IP</title>
+      <link>https://ikingye.github.io/interview-me/docs/basic/network/tcp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/basic/network/tcp/</guid>
+      <description>TCP/UDP/IP TCP </description>
+    </item>
+    
+    <item>
       <title>XSS</title>
       <link>https://ikingye.github.io/interview-me/docs/security/web/xss/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -45,11 +72,56 @@ XSS 发生的原因 没有将用户输入的文本进行合适的过滤，就贸
     </item>
     
     <item>
-      <title>字符编码</title>
-      <link>https://ikingye.github.io/interview-me/docs/basic/encode/</link>
+      <title>二叉树</title>
+      <link>https://ikingye.github.io/interview-me/docs/basic/algs/tree/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/basic/encode/</guid>
+      <guid>https://ikingye.github.io/interview-me/docs/basic/algs/tree/</guid>
+      <description>二叉树 </description>
+    </item>
+    
+    <item>
+      <title>内存</title>
+      <link>https://ikingye.github.io/interview-me/docs/basic/os/memory/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/basic/os/memory/</guid>
+      <description>内存 综合 程序加载的时候，是怎么分布的，哪些在堆里，哪些在栈里？  堆  栈 </description>
+    </item>
+    
+    <item>
+      <title>加密</title>
+      <link>https://ikingye.github.io/interview-me/docs/basic/other/encryption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/basic/other/encryption/</guid>
+      <description>加密 </description>
+    </item>
+    
+    <item>
+      <title>动态规划</title>
+      <link>https://ikingye.github.io/interview-me/docs/basic/algs/dp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/basic/algs/dp/</guid>
+      <description>动态规划 </description>
+    </item>
+    
+    <item>
+      <title>发包工具</title>
+      <link>https://ikingye.github.io/interview-me/docs/basic/network/send/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/basic/network/send/</guid>
+      <description>发包工具 综合 常用发包工具有哪些？分别有什么特点，适用于什么场景？  PacketSender </description>
+    </item>
+    
+    <item>
+      <title>字符编码</title>
+      <link>https://ikingye.github.io/interview-me/docs/basic/other/encode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/basic/other/encode/</guid>
       <description>字符编码 Base 系列 参考：rfc4648
 有的字符在一些环境中是不能显示或使用的， 比如 &amp;amp;, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
 Base 系列的就是用来将字节编码为 ASCII 中的可见字符的。
@@ -60,12 +132,66 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
     </item>
     
     <item>
+      <title>抓包</title>
+      <link>https://ikingye.github.io/interview-me/docs/basic/network/capture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/basic/network/capture/</guid>
+      <description>抓包 综合 常用抓包工具有哪些？分别有什么特点，适用于什么场景？  tcpdump wireshark </description>
+    </item>
+    
+    <item>
+      <title>排序算法</title>
+      <link>https://ikingye.github.io/interview-me/docs/basic/algs/sort/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/basic/algs/sort/</guid>
+      <description>排序算法 </description>
+    </item>
+    
+    <item>
+      <title>查询算法</title>
+      <link>https://ikingye.github.io/interview-me/docs/basic/algs/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/basic/algs/search/</guid>
+      <description>查询算法 </description>
+    </item>
+    
+    <item>
+      <title>编译</title>
+      <link>https://ikingye.github.io/interview-me/docs/basic/other/compile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/basic/other/compile/</guid>
+      <description>编译 </description>
+    </item>
+    
+    <item>
+      <title>设计原则</title>
+      <link>https://ikingye.github.io/interview-me/docs/se/design-pattern/principle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/se/design-pattern/principle/</guid>
+      <description>设计原则 </description>
+    </item>
+    
+    <item>
       <title>进程/线程/携程</title>
       <link>https://ikingye.github.io/interview-me/docs/basic/os/process/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview-me/docs/basic/os/process/</guid>
-      <description>进程/线程/携程 进程 </description>
+      <description>进程/线程/携程 进程 一个进程包含哪些信息？  进程切换时，操作系统做了哪些事情？  进程切换时，需要保存哪些信息，保存在哪里？  线程 线程比进程轻量，体现在哪里？  什么时候使用线程，什么时候使用进程？  携程 协程是什么，怎么实现的？  既然协程那么好，那什么时候用进程和线程？ </description>
+    </item>
+    
+    <item>
+      <title>链表</title>
+      <link>https://ikingye.github.io/interview-me/docs/basic/algs/link/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/basic/algs/link/</guid>
+      <description>链表 </description>
     </item>
     
     <item>
@@ -75,6 +201,52 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       
       <guid>https://ikingye.github.io/interview-me/docs/security/web/csrf/</guid>
       <description>CSRF  参考  前端安全系列（二）：如何防止 CSRF 攻击？  </description>
+    </item>
+    
+    <item>
+      <title>架构设计原则</title>
+      <link>https://ikingye.github.io/interview-me/docs/se/architecture/principle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/se/architecture/principle/</guid>
+      <description>架构设计原则 CAP (Consistency, Availability, Partition tolerance) 如何理解 CAP，你在做系统设计时是如何取舍的？  ACID (Atomicity, Consistency, Isolation, Durability)  BASE (Basically Available, Soft state, Eventual consistency) </description>
+    </item>
+    
+    <item>
+      <title>高可用</title>
+      <link>https://ikingye.github.io/interview-me/docs/se/architecture/high-availability/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/se/architecture/high-availability/</guid>
+      <description>高可用 </description>
+    </item>
+    
+    <item>
+      <title>高并发</title>
+      <link>https://ikingye.github.io/interview-me/docs/se/architecture/high-concurrency/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/se/architecture/high-concurrency/</guid>
+      <description>高并发 </description>
+    </item>
+    
+    <item>
+      <title>高性能</title>
+      <link>https://ikingye.github.io/interview-me/docs/se/architecture/high-performance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/se/architecture/high-performance/</guid>
+      <description>高性能 </description>
+    </item>
+    
+    <item>
+      <title>高扩展性</title>
+      <link>https://ikingye.github.io/interview-me/docs/se/architecture/high-scalability/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/se/architecture/high-scalability/</guid>
+      <description>高扩展性 如何构建高扩展性网站 参考：
+ 如何构建高扩展性网站？   A Word on Scalability  </description>
     </item>
     
   </channel>

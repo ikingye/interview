@@ -20,14 +20,10 @@
       - [Rust](#rust)
       - [Scala](#scala)
       - [Swift](#swift)
+    - [其他](#其他)
   - [软件工程](#软件工程)
     - [设计模式](#设计模式)
     - [架构设计](#架构设计)
-      - [分布式系统](#分布式系统)
-      - [高性能](#高性能)
-      - [高可用](#高可用)
-      - [高并发](#高并发)
-      - [高扩展性](#高扩展性)
     - [项目管理](#项目管理)
   - [后端](#后端)
     - [Web 后端](#web-后端)
@@ -57,22 +53,13 @@
 
 ## 基础
 
-- [ ] 编译
-- [ ] [字符编码](content/docs/basic/encode/_index.md)
-  - [ ] Unicode
-    - [ ] UTF-8
-  - [ ] base64
-  - [ ] url 编程
-- [ ] 加密
-  - [ ] SSL/TLS
-
 ### 操作系统
 
 - [ ] 进程/线程/协程
   - [ ] 进程
     - [ ] 一个进程包含哪些信息？
     - [ ] 进程切换时，操作系统做了哪些事情？
-    - [ ] 进程切换时，需要保存哪些信息，保存在哪里？
+      - [ ] 进程切换时，需要保存哪些信息，保存在哪里？
   - [ ] 线程
     - [ ] 线程比进程轻量，体现在哪里？
     - [ ] 什么时候使用线程，什么时候使用进程？
@@ -80,6 +67,8 @@
     - [ ] 协程是什么，怎么实现的？
     - [ ] 既然协程那么好，那什么时候用进程和线程？
 - [ ] 内存
+  - [ ] 综合
+    - [ ] 程序加载的时候，是怎么分布的，哪些在堆里，哪些在栈里？
   - [ ] 堆
   - [ ] 栈
 
@@ -87,15 +76,15 @@
 
 - [ ] 系统信息
   - [ ] 硬件信息
-    - [ ] 内存
-    - [ ] CPU
+    - [ ] 如何查看内存？
+    - [ ] 如何查看 CPU？
   - [ ] 运行信息
-    - [ ] 内存
-    - [ ] CPU
-    - [ ] 进程
-    - [ ] 端口
+    - [ ] 如何查看占用内存最多的进程？
+    - [ ] 如何查看占用 CPU 最多的进程？
+    - [ ] 如何查看占用某个端口的进程？
 - [ ] shell
   - [ ] ps
+    - [ ] ps aux 与 ps -ef 有什么区别？
   - [ ] lsof
   - [ ] awk
   - [ ] sed
@@ -104,10 +93,10 @@
 
 ### 网络
 
-- [ ] IP
-- [ ] TCP
+- [ ] TCP/UDP/IP
   - [ ] TCP
   - [ ] UDP
+  - [ ] IP
 - [ ] HTTP
   - [ ] HTTP 基础
     - [ ] HTTP 状态码有哪些，101， 304， 307 是什么？
@@ -117,16 +106,21 @@
     - [ ] HTTP2 多路复用是如何实现的？
   - [ ] HTTPS
 - [ ] 抓包
+  - [ ] 综合
+    - [ ] 常用抓包工具有哪些？分别有什么特点，适用于什么场景？
   - [ ] tcpdump
   - [ ] wireshark
 - [ ] 发包
+  - [ ] 综合
+    - [ ] 常用发包工具有哪些？分别有什么特点，适用于什么场景？
   - [ ] PacketSender
 
 ---
 
 ### 算法
 
-- [ ] 二分查找
+- [ ] 查找
+  - [ ] 二分查找
 - [ ] 排序
   - [ ] 快速排序
   - [ ] 堆排序
@@ -200,14 +194,25 @@
 
 ---
 
-## 软件工程
+### 其他
 
-- [ ] 什么是敏捷开发
+- [ ] 编译
+- [ ] [字符编码](content/docs/basic/encode/_index.md)
+  - [ ] Unicode
+    - [ ] UTF-8
+  - [ ] base64
+  - [ ] url 编程
+- [ ] 加密
+  - [ ] SSL/TLS
+
+---
+
+## 软件工程
 
 ### 设计模式
 
-- [ ] 6 大原则
-  - [ ] 单一职责原则 (SRP)
+- [ ] 设计原则
+  - [ ] 单一职责原则 (`SRP`)
   - [ ] 开闭原则 (`Open Closed Principle`)
   - [ ] 里氏替换原则 (`Liskov Substitution Principle`)
   - [ ] 依赖倒置原则 (`Dependence Inversion Principle`)
@@ -245,24 +250,21 @@
   - [ ] 线程池模式
 - [ ] 适配器模式、装饰模式、代理模式有哪些异同？
 
-### 架构设计
+---
 
-#### 分布式系统
+### [架构设计](content/docs/se/architecture/_index.md)
 
-- [ ] ACID (`Atomicity`, `Consistency`, `Isolation`, `Durability`)
-- [ ] CAP (`Consistency`, `Availability`, `Partition tolerance`)
-- [ ] BASE (`Basically Available`, `Soft state`, `Eventual consistency`)
-
-#### 高性能
-
-#### 高可用
-
-#### 高并发
-
-#### 高扩展性
-
-- [ ] 如何提高可扩展性
-- [ ] [如何构建高扩展性网站](content/docs/software-engineering/architecture/high-scalability/_index.md)
+- [ ] [架构设计原则](content/docs/se/architecture/principle.md)
+  - [ ] CAP (`Consistency`, `Availability`, `Partition tolerance`)
+    - [ ] 如何理解 CAP，你在做系统设计时是如何取舍的？
+  - [ ] ACID (`Atomicity`, `Consistency`, `Isolation`, `Durability`)
+  - [ ] BASE (`Basically Available`, `Soft state`, `Eventual consistency`)
+- [ ] [高性能](content/docs/se/architecture/high-performance.md)
+- [ ] [高可用](content/docs/se/architecture/high-availability.md)
+- [ ] [高并发](content/docs/se/architecture/high-concurrency.md)
+- [ ] [高扩展性](content/docs/se/architecture/high-scalability.md)
+  - [ ] 如何提高可扩展性？
+  - [ ] 如何构建高扩展性网站？
 
 ---
 
@@ -270,6 +272,7 @@
 
 - [ ] 什么是 OKR，比 KPI 好在哪里
 - [ ] 如何做好 OKR 制定
+- [ ] 什么是敏捷开发
 
 ---
 
