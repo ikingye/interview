@@ -1,5 +1,5 @@
-baseURL = 'https://ikingye.github.io/Programmer-Interview-Checklist'
-title = '程序员面试自查清单'
+baseURL = 'https://ikingye.github.io/interview-me'
+title = '自我面试'
 theme = 'hugo-book'
 
 # Book configuration
@@ -58,7 +58,7 @@ defaultContentLanguage = 'cn'
 
   # Set source repository location.
   # Used for 'Last Modified' and 'Edit this page' links.
-  BookRepo = 'https://github.com/ikingye/Programmer-Interview-Checklist'
+  BookRepo = 'https://github.com/ikingye/interview-me'
 
   # Enable "Edit this page" links for 'doc' page type.
   # Disabled by default. Uncomment to enable. Requires 'BookRepo' param.

@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>基础 on 程序员面试自查清单</title>
-    <link>https://ikingye.github.io/Programmer-Interview-Checklist/docs/basic/</link>
-    <description>Recent content in 基础 on 程序员面试自查清单</description>
+    <title>基础 on 自我面试</title>
+    <link>https://ikingye.github.io/interview-me/docs/basic/</link>
+    <description>Recent content in 基础 on 自我面试</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	<atom:link href="https://ikingye.github.io/Programmer-Interview-Checklist/docs/basic/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ikingye.github.io/interview-me/docs/basic/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>教程</title>
-      <link>https://ikingye.github.io/Programmer-Interview-Checklist/docs/basic/tutorial/</link>
+      <link>https://ikingye.github.io/interview-me/docs/basic/tutorial/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/Programmer-Interview-Checklist/docs/basic/tutorial/</guid>
+      <guid>https://ikingye.github.io/interview-me/docs/basic/tutorial/</guid>
       <description>Java 教程 基础 进阶 doocs/advanced-java 互联网 Java 工程师进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务、海量数据处理等领域知识，后端同学必看，前端同学也可学习 https://doocs.github.io/advanced-java
 Snailclimb/JavaGuide 【Java 学习 + 面试指南】 一份涵盖大部分 Java 程序员所需要掌握的核心知识。
 Effective Java  第 3 版中文版：sjsdfg.github.io/effective-java-3rd-chinese   Java 编程思想  第 5 版中文版：lingcoder.github.io/OnJava8   redspider1/concurrent Java 多线程系列文章 在线阅读
@@ -25,10 +25,10 @@ seaswalker/JDK JDK 源码阅读笔记
     
     <item>
       <title>字符编码</title>
-      <link>https://ikingye.github.io/Programmer-Interview-Checklist/docs/basic/encode/</link>
+      <link>https://ikingye.github.io/interview-me/docs/basic/encode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/Programmer-Interview-Checklist/docs/basic/encode/</guid>
+      <guid>https://ikingye.github.io/interview-me/docs/basic/encode/</guid>
       <description>字符编码 Base 系列 参考：rfc4648
 有的字符在一些环境中是不能显示或使用的， 比如 &amp;amp;, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
 Base 系列的就是用来将字节编码为 ASCII 中的可见字符的。

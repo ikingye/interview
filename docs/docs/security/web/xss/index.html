@@ -13,16 +13,16 @@ XSS 发生的原因 没有将用户输入的文本进行合适的过滤，就贸
 不仅仅是业务上的 “用户的 UGC 内容” 可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：
  来自用户的 UGC 信息 来自第三方的链接 URL 参数 POST 参数 Referer （可能来自不可信的来源） Cookie （可能来自其他子域注入）  XSS 有哪些注入的方法  在 HTML 中内嵌的文本中，恶意内容以 script 标签形成注入。 在内联的 JavaScript 中，拼接的数据突破了原本的限制（字符串，变量，方法名等）。 在标签属性中，恶意内容包含引号，从而突破属性值的限制，注入其他属性或者标签。 在标签的 href、src 等属性中，包含 javascript: 等可执行代码。 在 onload、onerror、onclick 等事件中，注入不受控制代码。 在 style 属性和标签中，包含类似 background-image:url(&quot;javascript:...&quot;); 的代码（新版本浏览器已经可以防范）。 在 style 属性和标签中，包含类似 expression(...) 的 CSS 表达式代码（新版本浏览器已经可以防范）。   XSS 分类 存储型 存储型 XSS 的攻击步骤：" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ikingye.github.io/Programmer-Interview-Checklist/docs/security/web/xss/" />
+<meta property="og:url" content="https://ikingye.github.io/interview-me/docs/security/web/xss/" />
 <meta property="article:modified_time" content="2020-06-05T01:17:23+08:00" />
-<title>XSS | 程序员面试自查清单</title>
-<link rel="icon" href="/Programmer-Interview-Checklist/favicon.png" type="image/x-icon">
+<title>XSS | 自我面试</title>
+<link rel="icon" href="/interview-me/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/Programmer-Interview-Checklist/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
+<link rel="stylesheet" href="/interview-me/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/Programmer-Interview-Checklist/en.search.min.a5863f40d3925b955d60c3c0ffb94e96eafc8bd5f3c2c834067fa40761b00037.js" integrity="sha256-pYY/QNOSW5VdYMPA/7lOlur8i9Xzwsg0Bn&#43;kB2GwADc="></script>
+<script defer src="/interview-me/en.search.min.260dd59b213e9950a1916f9069a7c8699121da675a76a10c40590202efacaac4.js" integrity="sha256-Jg3VmyE&#43;mVChkW&#43;QaafIaZEh2mdadqEMQFkCAu&#43;sqsQ="></script>
 
 <!--
 Made with Book Theme
@@ -39,7 +39,7 @@ https://github.com/alex-shpak/hugo-book
       
   <nav>
 <h2 class="book-brand">
-  <a href="/Programmer-Interview-Checklist"><span>程序员面试自查清单</span>
+  <a href="/interview-me"><span>自我面试</span>
   </a>
 </h2>
 
@@ -113,7 +113,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/Programmer-Interview-Checklist/docs/basic/tutorial/" class="">教程</a>
+  <a href="/interview-me/docs/basic/tutorial/" class="">教程</a>
   
 
 </li>
@@ -123,7 +123,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/Programmer-Interview-Checklist/docs/basic/encode/" class="">字符编码</a>
+  <a href="/interview-me/docs/basic/encode/" class="">字符编码</a>
   
 
 </li>
@@ -136,7 +136,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/Programmer-Interview-Checklist/docs/basic/os/" class="">操作系统</a>
+  <a href="/interview-me/docs/basic/os/" class="">操作系统</a>
   
 
 
@@ -152,7 +152,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/Programmer-Interview-Checklist/docs/basic/os/process/" class="">进程/线程/携程</a>
+  <a href="/interview-me/docs/basic/os/process/" class="">进程/线程/携程</a>
   
 
 </li>
@@ -175,7 +175,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/Programmer-Interview-Checklist/docs/basic/network/" class="">网络</a>
+  <a href="/interview-me/docs/basic/network/" class="">网络</a>
   
 
 
@@ -191,7 +191,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/Programmer-Interview-Checklist/docs/basic/network/http/" class="">HTTP</a>
+  <a href="/interview-me/docs/basic/network/http/" class="">HTTP</a>
   
 
 </li>
@@ -243,7 +243,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/Programmer-Interview-Checklist/docs/software-engineering/design-pattern/" class="">设计模式</a>
+  <a href="/interview-me/docs/software-engineering/design-pattern/" class="">设计模式</a>
   
 
 
@@ -272,7 +272,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/Programmer-Interview-Checklist/docs/software-engineering/architecture/" class="">架构设计</a>
+  <a href="/interview-me/docs/software-engineering/architecture/" class="">架构设计</a>
   
 
 
@@ -291,7 +291,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/Programmer-Interview-Checklist/docs/software-engineering/architecture/high-scalability/" class="">高扩展性</a>
+  <a href="/interview-me/docs/software-engineering/architecture/high-scalability/" class="">高扩展性</a>
   
 
 
@@ -475,7 +475,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/Programmer-Interview-Checklist/docs/security/web/" class="">Web 安全</a>
+  <a href="/interview-me/docs/security/web/" class="">Web 安全</a>
   
 
 
@@ -491,7 +491,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/Programmer-Interview-Checklist/docs/security/web/xss/" class="active">XSS</a>
+  <a href="/interview-me/docs/security/web/xss/" class="active">XSS</a>
   
 
 </li>
@@ -501,7 +501,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/Programmer-Interview-Checklist/docs/security/web/csrf/" class="">CSRF</a>
+  <a href="/interview-me/docs/security/web/csrf/" class="">CSRF</a>
   
 
 </li>
@@ -571,13 +571,13 @@ https://github.com/alex-shpak/hugo-book
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/Programmer-Interview-Checklist/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/interview-me/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
   <strong>XSS</strong>
 
   <label for="toc-control">
-    <img src="/Programmer-Interview-Checklist/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/interview-me/svg/toc.svg" class="book-icon" alt="Table of Contents" />
   </label>
 </div>
 
@@ -847,8 +847,8 @@ JavaScript 的 <code>eval()</code>、<code>setTimeout()</code>、<code>setInterv
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/ikingye/Programmer-Interview-Checklist/commit/4a34bc61fb87a6419db65063af86b3ea218479cc" title='Last modified by yewang | 2020-06-05' target="_blank" rel="noopener">
-      <img src="/Programmer-Interview-Checklist/svg/calendar.svg" class="book-icon" alt="Calendar" />
+    <a class="flex align-center" href="https://github.com/ikingye/interview-me/commit/4a34bc61fb87a6419db65063af86b3ea218479cc" title='Last modified by yewang | 2020-06-05' target="_blank" rel="noopener">
+      <img src="/interview-me/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-06-05</span>
     </a>
   </div>
