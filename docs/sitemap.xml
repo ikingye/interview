@@ -3,53 +3,39 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/tutorial/</loc>
-    <lastmod>2020-06-04T01:51:49+08:00</lastmod>
+    <loc>https://ikingye.github.io/interview-me/docs/os/</loc>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/os/linux/</loc>
+    <loc>https://ikingye.github.io/interview-me/docs/network/</loc>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/pl/cpp/</loc>
+    <loc>https://ikingye.github.io/interview-me/docs/algs/</loc>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/pl/go/</loc>
+    <loc>https://ikingye.github.io/interview-me/docs/pl/</loc>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/network/http/</loc>
-    <lastmod>2020-06-16T21:57:31+08:00</lastmod>
+    <loc>https://ikingye.github.io/interview-me/docs/os/linux/</loc>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/pl/java/</loc>
+    <loc>https://ikingye.github.io/interview-me/docs/network/http/</loc>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/os/linux/info/</loc>
+    <loc>https://ikingye.github.io/interview-me/docs/os/linux/info/</loc>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/pl/php/</loc>
+    <loc>https://ikingye.github.io/interview-me/docs/os/linux/shell/</loc>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/pl/python/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/pl/rust/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/os/linux/shell/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/network/tcp/</loc>
+    <loc>https://ikingye.github.io/interview-me/docs/network/tcp/</loc>
   </url>
   
   <url>
@@ -63,87 +49,65 @@
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/algs/tree/</loc>
+    <loc>https://ikingye.github.io/interview-me/docs/algs/tree/</loc>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/other/</loc>
+    <loc>https://ikingye.github.io/interview-me/docs/os/memory/</loc>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/os/memory/</loc>
+    <loc>https://ikingye.github.io/interview-me/docs/other/encryption/</loc>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/other/encryption/</loc>
+    <loc>https://ikingye.github.io/interview-me/docs/algs/dp/</loc>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/algs/dp/</loc>
+    <loc>https://ikingye.github.io/interview-me/docs/network/send/</loc>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/network/send/</loc>
+    <loc>https://ikingye.github.io/interview-me/docs/other/encode/</loc>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/</loc>
-    <lastmod>2020-06-04T01:51:49+08:00</lastmod>
+    <loc>https://ikingye.github.io/interview-me/docs/network/capture/</loc>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/other/encode/</loc>
+    <loc>https://ikingye.github.io/interview-me/docs/algs/sort/</loc>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/network/capture/</loc>
+    <loc>https://ikingye.github.io/interview-me/docs/algs/search/</loc>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/algs/sort/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/os/</loc>
-    <lastmod>2020-06-16T21:57:31+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/algs/search/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/algs/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/pl/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/other/compile/</loc>
-  </url>
-  
-  <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/network/</loc>
-    <lastmod>2020-06-16T21:57:31+08:00</lastmod>
+    <loc>https://ikingye.github.io/interview-me/docs/other/compile/</loc>
   </url>
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/se/design-pattern/principle/</loc>
+    <lastmod>2020-06-16T22:48:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/se/design-pattern/</loc>
+    <lastmod>2020-06-16T22:48:48+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/os/process/</loc>
-    <lastmod>2020-06-16T21:57:31+08:00</lastmod>
+    <loc>https://ikingye.github.io/interview-me/docs/os/process/</loc>
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/basic/algs/link/</loc>
+    <loc>https://ikingye.github.io/interview-me/docs/algs/link/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/pl/cpp/</loc>
   </url>
   
   <url>
@@ -153,30 +117,37 @@
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/se/architecture/</loc>
+    <lastmod>2020-06-16T22:48:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/se/architecture/principle/</loc>
+    <lastmod>2020-06-16T22:48:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/se/</loc>
+    <lastmod>2020-06-16T22:48:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/se/architecture/high-availability/</loc>
+    <lastmod>2020-06-16T22:48:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/se/architecture/high-concurrency/</loc>
+    <lastmod>2020-06-16T22:48:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/se/architecture/high-performance/</loc>
+    <lastmod>2020-06-16T22:48:48+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/se/architecture/high-scalability/</loc>
+    <lastmod>2020-06-16T22:48:48+08:00</lastmod>
   </url>
   
   <url>
@@ -185,8 +156,20 @@
   </url>
   
   <url>
+    <loc>https://ikingye.github.io/interview-me/docs/se/pm/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/pl/go/</loc>
+  </url>
+  
+  <url>
     <loc>https://ikingye.github.io/interview-me/docs/frontend/</loc>
     <lastmod>2020-06-05T01:17:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/pl/java/</loc>
   </url>
   
   <url>
@@ -205,12 +188,28 @@
   </url>
   
   <url>
+    <loc>https://ikingye.github.io/interview-me/docs/pl/php/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/pl/python/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/other/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/pl/rust/</loc>
+  </url>
+  
+  <url>
     <loc>https://ikingye.github.io/interview-me/categories/</loc>
   </url>
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/</loc>
-    <lastmod>2020-06-16T21:57:31+08:00</lastmod>
+    <lastmod>2020-06-16T22:48:48+08:00</lastmod>
   </url>
   
   <url>

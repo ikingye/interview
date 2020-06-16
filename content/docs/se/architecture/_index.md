@@ -1,6 +1,7 @@
 ---
 weight: 20
 title: "架构设计"
+bookCollapseSection: true
 ---
 
 # 架构设计
