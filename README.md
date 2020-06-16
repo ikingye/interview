@@ -1,26 +1,24 @@
 # 自我面试
 
 - [自我面试](#自我面试)
-  - [基础](#基础)
-    - [操作系统](#操作系统)
-      - [Linux](#linux)
-    - [网络](#网络)
-    - [算法](#算法)
-    - [编程语言](#编程语言)
-      - [C](#c)
-      - [C++](#c-1)
-      - [`C#`](#c-2)
-      - [Go](#go)
-      - [Java](#java)
-      - [JavaScript](#javascript)
-      - [Kotlin](#kotlin)
-      - [PHP](#php)
-      - [Python](#python)
-      - [Ruby](#ruby)
-      - [Rust](#rust)
-      - [Scala](#scala)
-      - [Swift](#swift)
-    - [其他](#其他)
+  - [操作系统](#操作系统)
+    - [Linux](#linux)
+  - [网络](#网络)
+  - [算法](#算法)
+  - [编程语言](#编程语言)
+    - [C](#c)
+    - [C++](#c-1)
+    - [`C#`](#c-2)
+    - [Go](#go)
+    - [Java](#java)
+    - [JavaScript](#javascript)
+    - [Kotlin](#kotlin)
+    - [PHP](#php)
+    - [Python](#python)
+    - [Ruby](#ruby)
+    - [Rust](#rust)
+    - [Scala](#scala)
+    - [Swift](#swift)
   - [软件工程](#软件工程)
     - [设计模式](#设计模式)
     - [架构设计](#架构设计)
@@ -48,12 +46,11 @@
   - [测试](#测试)
   - [安全](#安全)
     - [Web 安全](#web-安全)
+    - [其他](#其他)
 
 ---
 
-## 基础
-
-### 操作系统
+## 操作系统
 
 - [ ] 进程/线程/协程
   - [ ] 进程
@@ -72,7 +69,7 @@
   - [ ] 堆
   - [ ] 栈
 
-#### Linux
+### Linux
 
 - [ ] 系统信息
   - [ ] 硬件信息
@@ -91,7 +88,7 @@
 
 ---
 
-### 网络
+## 网络
 
 - [ ] TCP/UDP/IP
   - [ ] TCP
@@ -117,7 +114,7 @@
 
 ---
 
-### 算法
+## 算法
 
 - [ ] 查找
   - [ ] 二分查找
@@ -132,15 +129,15 @@
 
 ---
 
-### 编程语言
+## 编程语言
 
-#### C
+### C
 
-#### C++
+### C++
 
-#### `C#`
+### `C#`
 
-#### Go
+### Go
 
 - [ ] Go 数据类型
   - [ ] 什么时候使用数组？
@@ -163,19 +160,19 @@
 - [ ] 性能
   - [ ] pprof
 
-#### Java
+### Java
 
 - [ ] 异常处理
 - [ ] 垃圾回收
 - [ ] JVM
 
-#### JavaScript
+### JavaScript
 
-#### Kotlin
+### Kotlin
 
-#### PHP
+### PHP
 
-#### Python
+### Python
 
 - [ ] 可迭代的，迭代器，生成器
 - [ ] yield
@@ -184,26 +181,13 @@
 - [ ] 猴子补丁
 - [ ] 标准库
 
-#### Ruby
+### Ruby
 
-#### Rust
+### Rust
 
-#### Scala
+### Scala
 
-#### Swift
-
----
-
-### 其他
-
-- [ ] 编译
-- [ ] [字符编码](content/docs/basic/encode/_index.md)
-  - [ ] Unicode
-    - [ ] UTF-8
-  - [ ] base64
-  - [ ] url 编程
-- [ ] 加密
-  - [ ] SSL/TLS
+### Swift
 
 ---
 
@@ -409,3 +393,16 @@
 - [ ] [CSRF](content/docs/security/web/csrf.md)
   - [ ] [什么是 CSRF，为什么会发生 CSRF](content/docs/security/web/csrf.md)
   - [ ] [如何防止 CSRF 攻击](content/docs/security/web/csrf.md)
+
+---
+
+### 其他
+
+- [ ] 编译
+- [ ] [字符编码](content/docs/other/encode.md)
+  - [ ] Unicode
+    - [ ] UTF-8
+  - [ ] base64
+  - [ ] url 编程
+- [ ] 加密
+  - [ ] SSL/TLS
