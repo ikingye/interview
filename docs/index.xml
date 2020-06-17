@@ -236,5 +236,24 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
  如何构建高扩展性网站？   A Word on Scalability  </description>
     </item>
     
+    <item>
+      <title>程序热重启</title>
+      <link>https://ikingye.github.io/interview-me/docs/backend/general/hot-restart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/backend/general/hot-restart/</guid>
+      <description>程序热重启 你使用的编程语言，是如何实现热重启的？  服务端启动时多开启一个协程用来监听关闭信号 当协程接收到关闭信号时，将拒绝接收新的连接，并处理好当前所有连接后断开 启动一个新的服务端进程来接管新的连接 关闭当前进程  Go Go 程序优雅关闭与重启 参考：
+ gracehttp: 优雅重启 Go 程序（热启动 - Zero Downtime）  Java Python  </description>
+    </item>
+    
+    <item>
+      <title>配置热加载</title>
+      <link>https://ikingye.github.io/interview-me/docs/backend/general/hot-load/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/backend/general/hot-load/</guid>
+      <description>配置热加载 </description>
+    </item>
+    
   </channel>
 </rss>

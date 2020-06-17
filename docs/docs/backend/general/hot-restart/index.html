@@ -4,12 +4,14 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="CSRF  参考  前端安全系列（二）：如何防止 CSRF 攻击？  "><meta property="og:title" content="CSRF" />
-<meta property="og:description" content="CSRF  参考  前端安全系列（二）：如何防止 CSRF 攻击？  " />
+<meta name="description" content="程序热重启 你使用的编程语言，是如何实现热重启的？  服务端启动时多开启一个协程用来监听关闭信号 当协程接收到关闭信号时，将拒绝接收新的连接，并处理好当前所有连接后断开 启动一个新的服务端进程来接管新的连接 关闭当前进程  Go Go 程序优雅关闭与重启 参考：
+ gracehttp: 优雅重启 Go 程序（热启动 - Zero Downtime）  Java Python  "><meta property="og:title" content="程序热重启" />
+<meta property="og:description" content="程序热重启 你使用的编程语言，是如何实现热重启的？  服务端启动时多开启一个协程用来监听关闭信号 当协程接收到关闭信号时，将拒绝接收新的连接，并处理好当前所有连接后断开 启动一个新的服务端进程来接管新的连接 关闭当前进程  Go Go 程序优雅关闭与重启 参考：
+ gracehttp: 优雅重启 Go 程序（热启动 - Zero Downtime）  Java Python  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ikingye.github.io/interview-me/docs/security/web/csrf/" />
-<meta property="article:modified_time" content="2020-06-05T01:17:23+08:00" />
-<title>CSRF | 自我面试</title>
+<meta property="og:url" content="https://ikingye.github.io/interview-me/docs/backend/general/hot-restart/" />
+
+<title>程序热重启 | 自我面试</title>
 <link rel="icon" href="/interview-me/favicon.png" type="image/x-icon">
 
 
@@ -460,7 +462,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/backend/general/hot-restart/" class="">程序热重启</a>
+  <a href="/interview-me/docs/backend/general/hot-restart/" class="active">程序热重启</a>
   
 
 </li>
@@ -618,32 +620,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  
-  <ul>
-    
-      
-        <li>
-
-  
-  <a href="/interview-me/docs/security/web/xss/" class="">XSS</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/interview-me/docs/security/web/csrf/" class="active">CSRF</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
-
 
 
   </li>
@@ -731,7 +707,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/interview-me/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>CSRF</strong>
+  <strong>程序热重启</strong>
 
   <label for="toc-control">
     <img src="/interview-me/svg/toc.svg" class="book-icon" alt="Table of Contents" />
@@ -745,9 +721,9 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#csrf">CSRF</a>
+    <li><a href="#程序热重启">程序热重启</a>
       <ul>
-        <li><a href="#参考">参考</a></li>
+        <li><a href="#你使用的编程语言是如何实现热重启的">你使用的编程语言，是如何实现热重启的？</a></li>
       </ul>
     </li>
   </ul>
@@ -761,12 +737,31 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="csrf">CSRF</h1>
-<hr>
-<h2 id="参考">参考</h2>
+  <article class="markdown"><h1 id="程序热重启">程序热重启</h1>
+<h2 id="你使用的编程语言是如何实现热重启的">你使用的编程语言，是如何实现热重启的？</h2>
+<ol>
+<li>服务端启动时多开启一个协程用来监听关闭信号</li>
+<li>当协程接收到关闭信号时，将拒绝接收新的连接，并处理好当前所有连接后断开</li>
+<li>启动一个新的服务端进程来接管新的连接</li>
+<li>关闭当前进程</li>
+</ol>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="hidden" name="tabs-uniqueid" id="tabs-uniqueid-0" checked="checked" />
+  <label for="tabs-uniqueid-0">Go</label>
+  <div class="book-tabs-content markdown-inner"><h3 id="go-程序优雅关闭与重启">Go 程序优雅关闭与重启</h3>
+<p>参考：</p>
 <ul>
-<li><a href="https://tech.meituan.com/2018/10/11/fe-security-csrf.html">前端安全系列（二）：如何防止 CSRF 攻击？</a></li>
+<li><a href="https://segmentfault.com/a/1190000015232528">gracehttp: 优雅重启 Go 程序（热启动 - Zero Downtime）</a></li>
 </ul>
+</div><input type="radio" class="hidden" name="tabs-uniqueid" id="tabs-uniqueid-1"  />
+  <label for="tabs-uniqueid-1">Java</label>
+  <div class="book-tabs-content markdown-inner"></div><input type="radio" class="hidden" name="tabs-uniqueid" id="tabs-uniqueid-2"  />
+  <label for="tabs-uniqueid-2">Python</label>
+  <div class="book-tabs-content markdown-inner"></div></div>
+
 </article>
  
       
@@ -776,14 +771,6 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex justify-between">
 
 
-
-  <div>
-    
-    <a class="flex align-center" href="https://github.com/ikingye/interview-me/commit/4a34bc61fb87a6419db65063af86b3ea218479cc" title='Last modified by yewang | 2020-06-05' target="_blank" rel="noopener">
-      <img src="/interview-me/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-06-05</span>
-    </a>
-  </div>
 
 
 
@@ -816,9 +803,9 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#csrf">CSRF</a>
+    <li><a href="#程序热重启">程序热重启</a>
       <ul>
-        <li><a href="#参考">参考</a></li>
+        <li><a href="#你使用的编程语言是如何实现热重启的">你使用的编程语言，是如何实现热重启的？</a></li>
       </ul>
     </li>
   </ul>
