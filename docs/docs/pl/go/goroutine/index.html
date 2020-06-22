@@ -4,13 +4,17 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Goroutine Goroutine 为什么高效？  Goroutine 如何调度？ 参考：
- Go 语言调度器与 Goroutine 实现原理 [译] Go 调度器: M, P 和 G  "><meta property="og:title" content="Goroutine" />
-<meta property="og:description" content="Goroutine Goroutine 为什么高效？  Goroutine 如何调度？ 参考：
- Go 语言调度器与 Goroutine 实现原理 [译] Go 调度器: M, P 和 G  " />
+<meta name="description" content="Goroutine Goroutine 为什么高效？  Goroutine 如何调度？ 每个线程会都占用 1MB 以上的内存空间，在对线程进行切换时不止会消耗较多的内存，恢复寄存器中的内容还需要向操作系统申请或者销毁对应的资源， 每一次线程上下文的切换都需要消耗约为 1us， 但是 Go 调度器对 Goroutine 的上下文切换约为 0.2us，减少了 80% 的额外开销。
+Go 语言的调度器通过使用与 CPU 数量相等的线程减少线程频繁切换的内存开销， 同时在每一个线程上执行额外开销更低的 Goroutine 来降低操作系统和硬件的负载。
+参考：
+ Go 语言调度器与 Goroutine 实现原理 [译] Go 调度器: M, P 和 G 也谈 goroutine 调度器  "><meta property="og:title" content="Goroutine" />
+<meta property="og:description" content="Goroutine Goroutine 为什么高效？  Goroutine 如何调度？ 每个线程会都占用 1MB 以上的内存空间，在对线程进行切换时不止会消耗较多的内存，恢复寄存器中的内容还需要向操作系统申请或者销毁对应的资源， 每一次线程上下文的切换都需要消耗约为 1us， 但是 Go 调度器对 Goroutine 的上下文切换约为 0.2us，减少了 80% 的额外开销。
+Go 语言的调度器通过使用与 CPU 数量相等的线程减少线程频繁切换的内存开销， 同时在每一个线程上执行额外开销更低的 Goroutine 来降低操作系统和硬件的负载。
+参考：
+ Go 语言调度器与 Goroutine 实现原理 [译] Go 调度器: M, P 和 G 也谈 goroutine 调度器  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/interview-me/docs/pl/go/goroutine/" />
-
+<meta property="article:modified_time" content="2020-06-22T16:04:07+08:00" />
 <title>Goroutine | 自我面试</title>
 <link rel="icon" href="/interview-me/favicon.png" type="image/x-icon">
 
@@ -18,7 +22,7 @@
 <link rel="stylesheet" href="/interview-me/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/interview-me/en.search.min.394520cb25c49a747e51c43f8520d654613ecc55fb34f0009b342f904fab2544.js" integrity="sha256-OUUgyyXEmnR&#43;UcQ/hSDWVGE&#43;zFX7NPAAmzQvkE&#43;rJUQ="></script>
+<script defer src="/interview-me/en.search.min.af05a89ae3e8120e9e38bc7bf70291da638ab6cbdabb9ff70ef3eef7e3eea69b.js" integrity="sha256-rwWomuPoEg6eOLx79wKR2mOKtsvau5/3DvPu9&#43;Pupps="></script>
 
 <!--
 Made with Book Theme
@@ -838,10 +842,16 @@ https://github.com/alex-shpak/hugo-book
 <h2 id="goroutine-为什么高效">Goroutine 为什么高效？</h2>
 <hr>
 <h2 id="goroutine-如何调度">Goroutine 如何调度？</h2>
+<p>每个线程会都占用 <code>1MB</code> 以上的内存空间，在对线程进行切换时不止会消耗较多的内存，恢复寄存器中的内容还需要向操作系统申请或者销毁对应的资源，
+每一次线程上下文的切换都需要消耗约为 <code>1us</code>，
+但是 Go 调度器对 Goroutine 的上下文切换约为 <code>0.2us</code>，减少了 80% 的额外开销。</p>
+<p>Go 语言的调度器通过<strong>使用与 CPU 数量相等的线程</strong>减少线程频繁切换的内存开销，
+同时在每一个线程上执行额外开销更低的 Goroutine 来降低操作系统和硬件的负载。</p>
 <p>参考：</p>
 <ul>
 <li><a href="https://draveness.me/golang/docs/part3-runtime/ch06-concurrency/golang-goroutine/">Go 语言调度器与 Goroutine 实现原理</a></li>
 <li><a href="https://colobu.com/2017/05/04/go-scheduler/">[译] Go 调度器: M, P 和 G</a></li>
+<li><a href="https://tonybai.com/2017/06/23/an-intro-about-goroutine-scheduler/">也谈 goroutine 调度器</a></li>
 </ul>
 </article>
  
@@ -852,6 +862,14 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex justify-between">
 
 
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/ikingye/interview-me/commit/c7546008442e581cf64f3cc11414bc8e4cf69a61" title='Last modified by yewang | 2020-06-22' target="_blank" rel="noopener">
+      <img src="/interview-me/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-06-22</span>
+    </a>
+  </div>
 
 
 

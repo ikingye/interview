@@ -24,7 +24,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview-me/docs/os/linux/info/</guid>
-      <description>Linux 系统信息 硬件信息 如何查看内存？ 如何查看 CPU？  运行信息 如何查看占用内存最多的进程？ 如何查看占用 CPU 最多的进程？ 如何查看占用某个端口的进程？ </description>
+      <description>Linux 系统信息 硬件信息 如何查看内存大小？ free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ # 物理 cpu 个数 cat /proc/cpuinfo| grep &amp;#39;physical id&amp;#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &amp;#39;core id&amp;#39; | sort | uniq | wc -l # 逻辑 cpu 个数（线程数） cat /proc/cpuinfo| grep &amp;#39;processor&amp;#39; | sort | uniq | wc -l 例子：
+ 2 个 cpu 每个 cpu 有 8 个核心（一共 16 个核心） 一共有 32 个逻辑 cpu / 线程（每个核心有 2 个逻辑 cpu / 线程）   如何查看系统内核？ uname -a cat /proc/version 如何查看操作系统版本？ cat /etc/issue cat /etc/*release  运行信息 如何查看占用内存最多的进程？ 如何查看占用 CPU 最多的进程？ 如何查看占用某个端口的进程？ </description>
     </item>
     
     <item>
@@ -288,8 +289,10 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview-me/docs/pl/go/goroutine/</guid>
-      <description>Goroutine Goroutine 为什么高效？  Goroutine 如何调度？ 参考：
- Go 语言调度器与 Goroutine 实现原理 [译] Go 调度器: M, P 和 G  </description>
+      <description>Goroutine Goroutine 为什么高效？  Goroutine 如何调度？ 每个线程会都占用 1MB 以上的内存空间，在对线程进行切换时不止会消耗较多的内存，恢复寄存器中的内容还需要向操作系统申请或者销毁对应的资源， 每一次线程上下文的切换都需要消耗约为 1us， 但是 Go 调度器对 Goroutine 的上下文切换约为 0.2us，减少了 80% 的额外开销。
+Go 语言的调度器通过使用与 CPU 数量相等的线程减少线程频繁切换的内存开销， 同时在每一个线程上执行额外开销更低的 Goroutine 来降低操作系统和硬件的负载。
+参考：
+ Go 语言调度器与 Goroutine 实现原理 [译] Go 调度器: M, P 和 G 也谈 goroutine 调度器  </description>
     </item>
     
     <item>
@@ -298,7 +301,7 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview-me/docs/pl/go/pm/</guid>
-      <description>Go 包管理 参考  Go 包管理  </description>
+      <description>Go 包管理 Go 包管理的进化过程是什么样的？  Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules     你用过哪些 Go 包管理工具，说说它们的优缺点？   golang/dep   Masterminds/glide   kardianos/govendor    Go Mod 相对之前的版本管理有哪些优点？  Go Mod 如何找到引用的包？ 一般情况：</description>
     </item>
     
     <item>
