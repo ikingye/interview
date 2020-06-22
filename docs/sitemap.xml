@@ -98,6 +98,10 @@
   </url>
   
   <url>
+    <loc>https://ikingye.github.io/interview-me/docs/pl/go/type/</loc>
+  </url>
+  
+  <url>
     <loc>https://ikingye.github.io/interview-me/docs/algs/search/</loc>
     <lastmod>2020-06-16T23:03:12+08:00</lastmod>
   </url>
@@ -138,6 +142,10 @@
   </url>
   
   <url>
+    <loc>https://ikingye.github.io/interview-me/docs/pl/go/keyword/</loc>
+  </url>
+  
+  <url>
     <loc>https://ikingye.github.io/interview-me/docs/se/architecture/</loc>
     <lastmod>2020-06-16T23:03:12+08:00</lastmod>
   </url>
@@ -173,6 +181,10 @@
   </url>
   
   <url>
+    <loc>https://ikingye.github.io/interview-me/docs/pl/go/channel/</loc>
+  </url>
+  
+  <url>
     <loc>https://ikingye.github.io/interview-me/docs/backend/</loc>
     <lastmod>2020-06-16T23:03:12+08:00</lastmod>
   </url>
@@ -203,8 +215,16 @@
   </url>
   
   <url>
+    <loc>https://ikingye.github.io/interview-me/docs/pl/go/goroutine/</loc>
+  </url>
+  
+  <url>
     <loc>https://ikingye.github.io/interview-me/docs/frontend/</loc>
     <lastmod>2020-06-16T23:03:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/pl/go/pm/</loc>
   </url>
   
   <url>
@@ -218,8 +238,16 @@
   </url>
   
   <url>
+    <loc>https://ikingye.github.io/interview-me/docs/pl/go/version/</loc>
+  </url>
+  
+  <url>
     <loc>https://ikingye.github.io/interview-me/docs/test/</loc>
     <lastmod>2020-06-16T23:03:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/pl/go/std/</loc>
   </url>
   
   <url>
@@ -233,6 +261,10 @@
   </url>
   
   <url>
+    <loc>https://ikingye.github.io/interview-me/docs/pl/go/test/</loc>
+  </url>
+  
+  <url>
     <loc>https://ikingye.github.io/interview-me/docs/pl/python/</loc>
     <lastmod>2020-06-16T23:03:12+08:00</lastmod>
   </url>
@@ -240,6 +272,10 @@
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/other/</loc>
     <lastmod>2020-06-16T23:03:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/pl/go/performance/</loc>
   </url>
   
   <url>

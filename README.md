@@ -155,27 +155,29 @@
 
 ### Go
 
-- [ ] Go 数据类型
+- [ ] [Go 数据类型](content/docs/pl/go/type.md)
   - [ ] 什么时候使用数组？
   - [ ] slice 底层结构是什么？
-- [ ] Go 关键字
+- [ ] [Go 关键字](content/docs/pl/go/keyword.md)
   - [ ] make, new 有什么区别？
   - [ ] panic, recover 是怎么实现的？
-- [ ] Go Channel
+- [ ] [Go Channel](content/docs/pl/go/channel.md)
   - [ ] 通道如何优雅关闭？
-- [ ] Goroutine
+- [ ] [Goroutine](content/docs/pl/go/goroutine.md)
   - [ ] Goroutine 为什么高效？
   - [ ] Goroutine 如何调度？
-- [ ] Go 包管理
+- [ ] [Go 包管理](content/docs/pl/go/pm.md)
   - [ ] Go 包管理的进化过程是什么样的？
   - [ ] Go Mod 相对之前的版本管理有哪些优点？
-  - [ ] Go Mod 是怎么实现的，程序如何一步步找到引用的包？
-- [ ] Go 版本
+  - [ ] Go Mod 如何找到引用的包？
+- [ ] [Go 版本](content/docs/pl/go/version.md)
   - [ ] 你现在使用的是什么版本？最新版本是什么，相对有哪些变化？
-- [ ] 标准库
+- [ ] [标准库](content/docs/pl/go/std.md)
   - [ ] time
     - [ ] 格式化
-- [ ] 性能
+- [ ] [测试](content/docs/pl/go/test.md)
+  - [ ] 单元测试
+- [ ] [性能](content/docs/pl/go/performance.md)
   - [ ] pprof
 
 ---

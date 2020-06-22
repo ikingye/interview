@@ -9,5 +9,87 @@
 	<atom:link href="https://ikingye.github.io/interview-me/docs/pl/go/index.xml" rel="self" type="application/rss+xml" />
     
     
+    <item>
+      <title>数据类型</title>
+      <link>https://ikingye.github.io/interview-me/docs/pl/go/type/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/pl/go/type/</guid>
+      <description>数据类型 </description>
+    </item>
+    
+    <item>
+      <title>关键字</title>
+      <link>https://ikingye.github.io/interview-me/docs/pl/go/keyword/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/pl/go/keyword/</guid>
+      <description>关键字 </description>
+    </item>
+    
+    <item>
+      <title>Go Channel</title>
+      <link>https://ikingye.github.io/interview-me/docs/pl/go/channel/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/pl/go/channel/</guid>
+      <description>Go Channel </description>
+    </item>
+    
+    <item>
+      <title>Goroutine</title>
+      <link>https://ikingye.github.io/interview-me/docs/pl/go/goroutine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/pl/go/goroutine/</guid>
+      <description>Goroutine Goroutine 为什么高效？  Goroutine 如何调度？ 参考：
+ Go 语言调度器与 Goroutine 实现原理 [译] Go 调度器: M, P 和 G  </description>
+    </item>
+    
+    <item>
+      <title>Go 包管理</title>
+      <link>https://ikingye.github.io/interview-me/docs/pl/go/pm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/pl/go/pm/</guid>
+      <description>Go 包管理 参考  Go 包管理  </description>
+    </item>
+    
+    <item>
+      <title>Go 版本</title>
+      <link>https://ikingye.github.io/interview-me/docs/pl/go/version/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/pl/go/version/</guid>
+      <description>Go 版本 </description>
+    </item>
+    
+    <item>
+      <title>Go 标准库</title>
+      <link>https://ikingye.github.io/interview-me/docs/pl/go/std/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/pl/go/std/</guid>
+      <description>Go 标准库 </description>
+    </item>
+    
+    <item>
+      <title>测试</title>
+      <link>https://ikingye.github.io/interview-me/docs/pl/go/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/pl/go/test/</guid>
+      <description>测试 </description>
+    </item>
+    
+    <item>
+      <title>性能</title>
+      <link>https://ikingye.github.io/interview-me/docs/pl/go/performance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/pl/go/performance/</guid>
+      <description>性能 </description>
+    </item>
+    
   </channel>
 </rss>
