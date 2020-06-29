@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Go 包管理 Go 包管理的进化过程是什么样的？  Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules     你用过哪些 Go 包管理工具，说说它们的优缺点？   golang/dep   Masterminds/glide   kardianos/govendor    Go Mod 相对之前的版本管理有哪些优点？  Go Mod 如何找到引用的包？ 一般情况："><meta property="og:title" content="Go 包管理" />
-<meta property="og:description" content="Go 包管理 Go 包管理的进化过程是什么样的？  Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules     你用过哪些 Go 包管理工具，说说它们的优缺点？   golang/dep   Masterminds/glide   kardianos/govendor    Go Mod 相对之前的版本管理有哪些优点？  Go Mod 如何找到引用的包？ 一般情况：" />
+<meta name="description" content="Go 包管理 Go 包管理的进化过程是什么样的？  Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules     你用过哪些 Go 包管理工具，说说它们的优缺点？   golang/dep   Masterminds/glide   kardianos/govendor    Go Mod 相对之前的版本管理有哪些优点？  可以指定版本   Go Mod 如何找到引用的包？ 一般情况："><meta property="og:title" content="Go 包管理" />
+<meta property="og:description" content="Go 包管理 Go 包管理的进化过程是什么样的？  Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules     你用过哪些 Go 包管理工具，说说它们的优缺点？   golang/dep   Masterminds/glide   kardianos/govendor    Go Mod 相对之前的版本管理有哪些优点？  可以指定版本   Go Mod 如何找到引用的包？ 一般情况：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/interview-me/docs/pl/go/pm/" />
 <meta property="article:modified_time" content="2020-06-22T20:32:57+08:00" />
@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="/interview-me/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/interview-me/en.search.min.af05a89ae3e8120e9e38bc7bf70291da638ab6cbdabb9ff70ef3eef7e3eea69b.js" integrity="sha256-rwWomuPoEg6eOLx79wKR2mOKtsvau5/3DvPu9&#43;Pupps="></script>
+<script defer src="/interview-me/en.search.min.8e361d1b941d73fe0443d57f280309682512559b42dc4d11d802b8af27521f60.js" integrity="sha256-jjYdG5Qdc/4EQ9V/KAMJaCUSVZtC3E0R2AK4rydSH2A="></script>
 
 <!--
 Made with Book Theme
@@ -875,6 +875,9 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 <hr>
 <h2 id="go-mod-相对之前的版本管理有哪些优点">Go Mod 相对之前的版本管理有哪些优点？</h2>
+<ul>
+<li>可以指定版本</li>
+</ul>
 <hr>
 <h2 id="go-mod-如何找到引用的包">Go Mod 如何找到引用的包？</h2>
 <p>一般情况：</p>

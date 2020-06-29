@@ -32,6 +32,8 @@ bookCollapseSection: true
 
 ## Go Mod 相对之前的版本管理有哪些优点？
 
+- 可以指定版本
+
 ---
 
 ## Go Mod 如何找到引用的包？
