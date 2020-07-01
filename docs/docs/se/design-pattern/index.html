@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="设计模式 适配器模式、装饰模式、代理模式有哪些异同？  "><meta property="og:title" content="设计模式" />
+<meta name="description" content="设计模式 适配器模式、装饰模式、代理模式有哪些异同？  适配器模式  允许因为接口不兼容而不能在一起工作的类工作在一起，做法是将类自己的接口包裹在一个已存在的类中。 适配器模式是将一个类 (a) 通过某种方式转换成另一个类 (b)。 适配器的特点在于兼容，从代码上的特点来说，适配类与原有的类具有相同的接口，并且持有新的目标对象。就如同一个三孔转 2 孔的适配器一样，他有三孔的插头，可以插到三孔插座里，又有两孔的插座可以被 2 孔插头插入。适配器模式是在于对原有 3 孔的改造。在使用适配器模式的时候，我们必须同时持有原对象，适配对象，目标对象   装饰器模式  原有的不能满足现有的需求，对原有的进行增强。 装饰模式是在一个原有类 (a) 的基础之上增加了某些新的功能变成另一个类 (b)。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。   代理模式  同一个类而去调用另一个类的方法，不对这个方法进行直接操作。 代理模式是将一个类 (a) 转换成具体的操作类 (b)。 代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。     "><meta property="og:title" content="设计模式" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://ikingye.github.io/interview-me/docs/se/design-pattern/" />
@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="/interview-me/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/interview-me/en.search.min.1ec23afa6d28e3b71933812fca1faadeb61af98e92415371bc7e951be1edd4c2.js" integrity="sha256-HsI6&#43;m0o47cZM4Evyh&#43;q3rYa&#43;Y6SQVNxvH6VG&#43;Ht1MI="></script>
+<script defer src="/interview-me/en.search.min.fee68e671321e9f8a7d079f88769355372f1113853f32c54c8f0aa960169a2cd.js" integrity="sha256-/uaOZxMh6fin0Hn4h2k1U3LxEThT8yxUyPCqlgFpos0="></script>
 
 <link rel="alternate" type="application/rss+xml" href="https://ikingye.github.io/interview-me/docs/se/design-pattern/index.xml" title="自我面试" />
 <!--
@@ -837,6 +837,29 @@ https://github.com/alex-shpak/hugo-book
       
   <article class="markdown"><h1 id="设计模式">设计模式</h1>
 <h2 id="适配器模式装饰模式代理模式有哪些异同">适配器模式、装饰模式、代理模式有哪些异同？</h2>
+<ul>
+<li>适配器模式
+<ul>
+<li>允许因为接口不兼容而不能在一起工作的类工作在一起，做法是将类自己的接口包裹在一个已存在的类中。</li>
+<li>适配器模式是将一个类 (a) 通过某种方式转换成另一个类 (b)。</li>
+<li>适配器的特点在于<strong>兼容</strong>，从代码上的特点来说，适配类与原有的类具有相同的接口，并且持有新的目标对象。就如同一个三孔转 2 孔的适配器一样，他有三孔的插头，可以插到三孔插座里，又有两孔的插座可以被 2 孔插头插入。适配器模式是在于对原有 3 孔的改造。在使用适配器模式的时候，我们必须同时持有原对象，适配对象，目标对象</li>
+</ul>
+</li>
+<li>装饰器模式
+<ul>
+<li>原有的不能满足现有的需求，对原有的进行增强。</li>
+<li>装饰模式是在一个原有类 (a) 的基础之上增加了某些新的功能变成另一个类 (b)。</li>
+<li>装饰器模式特点在于<strong>增强</strong>，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。</li>
+</ul>
+</li>
+<li>代理模式
+<ul>
+<li>同一个类而去调用另一个类的方法，不对这个方法进行直接操作。</li>
+<li>代理模式是将一个类 (a) 转换成具体的操作类 (b)。</li>
+<li>代理模式的特点在于<strong>隔离</strong>，隔离调用类和被调用类的关系，通过一个代理类去调用。</li>
+</ul>
+</li>
+</ul>
 <hr>
 </article>
  
