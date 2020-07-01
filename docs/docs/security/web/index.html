@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Web 安全  一切的安全问题都体现在 “输入输出” 上，一切的安全问题都存在于 “数据流” 的整个过程中。
- 1. 如果在操作系统层上没处理好，比如 Linux 的 Bash 环境把 “特殊数据” 当做指令执行时，就产生了 OS 命令执行的安全问题，这段 “特殊数据” 可能长得如下这般： ; rm -rf /; 2. 如果在存储层的数据库中没处理好，数据库的 SQL 解析引擎把这个 “特殊数据” 当做指令执行时，就产生 SQL 注入这样的安全问题，这段 “特殊数据” 可能长得如下这般： &#39; union select user, pwd, 1, 2, 3, 4 from users-- 3. 如果在 Web 容器层如 nginx 中没处理好，nginx 把 “特殊数据” 当做指令执行时，可能会产生远程溢出、DoS 等各种安全问题，这段 “特殊数据” 可能长得如下这般： %c0.%c0./%c0.%c0./%c0.%c0./%c0.%c0./%20 4. 如果在 Web 开发框架或 Web 应用层中没处理好，把 “特殊数据” 当做指令执行时，可能会产生远程命令执行的安全问题，这段 “特殊数据” 可能长得如下这般： eval($_REQUEST[&#39;x&#39;]); 5."><meta property="og:title" content="Web 安全" />
+<meta name="description" content="Web 安全 Web 安全包括哪些内容？ "><meta property="og:title" content="Web 安全" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://ikingye.github.io/interview-me/docs/security/web/" />
@@ -17,7 +16,7 @@
 <link rel="stylesheet" href="/interview-me/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/interview-me/en.search.min.e767e8f1818cb3de9de2e2d199662b270d0e5e8707a8f9282bcb066e95239347.js" integrity="sha256-52fo8YGMs96d4uLRmWYrJw0OXocHqPkoK8sGbpUjk0c="></script>
+<script defer src="/interview-me/en.search.min.2d50ea74679623bcba875c38c81e1101c7b2df0172ad3bff76a72d3623b0568a.js" integrity="sha256-LVDqdGeWI7y6h1w4yB4RAcey3wFyrTv/dqctNiOwVoo="></script>
 
 <link rel="alternate" type="application/rss+xml" href="https://ikingye.github.io/interview-me/docs/security/web/index.xml" title="自我面试" />
 <!--
@@ -446,7 +445,53 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <span>其他</span>
+  <a href="/interview-me/docs/backend/web/" class="collapsed ">Web 后端</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview-me/docs/backend/mq/" class="collapsed ">消息队列</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview-me/docs/backend/others/" class="collapsed ">其他</a>
   
 
 
@@ -721,7 +766,11 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#web-安全">Web 安全</a></li>
+    <li><a href="#web-安全">Web 安全</a>
+      <ul>
+        <li><a href="#web-安全包括哪些内容">Web 安全包括哪些内容？</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -734,31 +783,7 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown"><h1 id="web-安全">Web 安全</h1>
-<blockquote>
-<p>一切的安全问题都体现在 “输入输出” 上，一切的安全问题都存在于 “数据流” 的整个过程中。</p>
-</blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200605000529.png" alt="" /></p>
-<pre><code>1. 如果在操作系统层上没处理好，比如 Linux 的 Bash 环境把 “特殊数据” 当做指令执行时，就产生了 OS 命令执行的安全问题，这段 “特殊数据” 可能长得如下这般：
-; rm -rf /;
-
-2. 如果在存储层的数据库中没处理好，数据库的 SQL 解析引擎把这个 “特殊数据” 当做指令执行时，就产生 SQL 注入这样的安全问题，这段 “特殊数据” 可能长得如下这般：
-' union select user, pwd, 1, 2, 3, 4 from users--
-
-3. 如果在 Web 容器层如 nginx 中没处理好，nginx 把 “特殊数据” 当做指令执行时，可能会产生远程溢出、DoS 等各种安全问题，这段 “特殊数据” 可能长得如下这般：
-%c0.%c0./%c0.%c0./%c0.%c0./%c0.%c0./%20
-
-4. 如果在 Web 开发框架或 Web 应用层中没处理好，把 “特殊数据” 当做指令执行时，可能会产生远程命令执行的安全问题，这段 “特殊数据” 可能长得如下这般：
-eval($_REQUEST['x']);
-
-5. 如果在 Web 前端层中没处理好，浏览器的 JS 引擎把 “特殊数据” 当做指令执行时，可能会产生 XSS 跨站脚本的安全问题，这段 “特殊数据” 可能长得如下这般：
-'&quot;&gt;&lt;script&gt;alert(/cos is my hero./)&lt;/script&gt;
-
-...
-</code></pre>
-<p>参考：</p>
-<ul>
-<li><a href="https://www.zhihu.com/question/21606800">零基础如何学习 Web 安全？</a></li>
-</ul>
+<h2 id="web-安全包括哪些内容">Web 安全包括哪些内容？</h2>
 </article>
  
       
@@ -808,7 +833,11 @@ eval($_REQUEST['x']);
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#web-安全">Web 安全</a></li>
+    <li><a href="#web-安全">Web 安全</a>
+      <ul>
+        <li><a href="#web-安全包括哪些内容">Web 安全包括哪些内容？</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

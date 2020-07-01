@@ -25,8 +25,8 @@
     - [项目管理](#项目管理)
   - [后端](#后端)
     - [Web 后端](#web-后端)
-      - [Java Web 后端](#java-web-后端)
       - [Go Web 后端](#go-web-后端)
+      - [Java Web 后端](#java-web-后端)
       - [PHP Web 后端](#php-web-后端)
       - [Python Web 后端](#python-web-后端)
     - [数据库](#数据库)
@@ -315,14 +315,14 @@
 
 ### Web 后端
 
-#### Java Web 后端
-
-- [ ] Spring
-
 #### Go Web 后端
 
-- [ ] Beego
-- [ ] Gin
+- [ ] [Beego](content/docs/backend/web/go/beego.md)
+- [ ] [Gin](content/docs/backend/web/go/gin.md)
+
+#### Java Web 后端
+
+- [ ] [Spring](content/docs/backend/web/java/spring.md)
 
 #### PHP Web 后端
 
@@ -473,13 +473,16 @@
 
 ### Web 安全
 
-- [ ] [Web 安全包括哪些内容](content/docs/security/web/_index.md)
+- [ ] [综合](content/docs/security/web/_index.md)
+  - [ ] Web 安全包括哪些内容？
 - [ ] [XSS](content/docs/security/web/xss.md)
-  - [ ] [什么是 XSS，为什么会发生 XSS](content/docs/security/web/xss.md)
-  - [ ] [如何防止 XSS 攻击](content/docs/security/web/xss.md)
+  - [ ] 什么是 XSS，为什么会发生 XSS？
+  - [ ] 有哪些 XSS 攻击方法？
+  - [ ] 如何防止 XSS 攻击？
 - [ ] [CSRF](content/docs/security/web/csrf.md)
-  - [ ] [什么是 CSRF，为什么会发生 CSRF](content/docs/security/web/csrf.md)
-  - [ ] [如何防止 CSRF 攻击](content/docs/security/web/csrf.md)
+  - [ ] 什么是 CSRF，为什么会发生 CSRF？
+  - [ ] 有哪些 CSRF 攻击方法？
+  - [ ] 如何防止 CSRF 攻击？
 
 ---
 
