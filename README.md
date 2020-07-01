@@ -243,7 +243,7 @@
 ### 设计模式
 
 - [ ] [综合](content/docs/se/design%20pattern/_index.md)
-  - [ ] 适配器模式、装饰模式、代理模式有哪些异同？
+  - [x] 适配器模式、装饰模式、代理模式有哪些异同？
 - [ ] [设计原则](content/docs/se/design%20pattern/principle.md)
   - [ ] 单一职责原则 (`SRP`)
   - [ ] 开闭原则 (`Open Closed Principle`)
