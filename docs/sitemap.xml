@@ -68,8 +68,7 @@
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/other/encryption/</loc>
-    <lastmod>2020-06-16T23:36:16+08:00</lastmod>
+    <loc>https://ikingye.github.io/interview-me/docs/others/encryption/</loc>
   </url>
   
   <url>
@@ -83,8 +82,7 @@
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/other/encode/</loc>
-    <lastmod>2020-06-16T23:03:12+08:00</lastmod>
+    <loc>https://ikingye.github.io/interview-me/docs/others/encode/</loc>
   </url>
   
   <url>
@@ -108,8 +106,7 @@
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/other/compile/</loc>
-    <lastmod>2020-06-16T23:03:12+08:00</lastmod>
+    <loc>https://ikingye.github.io/interview-me/docs/others/compile/</loc>
   </url>
   
   <url>
@@ -125,6 +122,10 @@
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/os/process/</loc>
     <lastmod>2020-06-16T23:03:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/backend/others/hot-load/</loc>
   </url>
   
   <url>
@@ -148,6 +149,10 @@
   </url>
   
   <url>
+    <loc>https://ikingye.github.io/interview-me/docs/se/design-pattern/creational/</loc>
+  </url>
+  
+  <url>
     <loc>https://ikingye.github.io/interview-me/docs/se/architecture/</loc>
     <lastmod>2020-06-16T23:03:12+08:00</lastmod>
   </url>
@@ -155,6 +160,10 @@
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/se/architecture/principle/</loc>
     <lastmod>2020-06-16T22:48:48+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/backend/others/hot-restart/</loc>
   </url>
   
   <url>
@@ -193,18 +202,7 @@
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/backend/general/hot-restart/</loc>
-    <lastmod>2020-06-17T17:59:19+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ikingye.github.io/interview-me/docs/backend/general/</loc>
-    <lastmod>2020-06-17T17:59:19+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ikingye.github.io/interview-me/docs/backend/general/hot-load/</loc>
-    <lastmod>2020-06-17T17:59:19+08:00</lastmod>
+    <loc>https://ikingye.github.io/interview-me/docs/se/design-pattern/structural/</loc>
   </url>
   
   <url>
@@ -228,6 +226,10 @@
   </url>
   
   <url>
+    <loc>https://ikingye.github.io/interview-me/docs/se/design-pattern/behavioral/</loc>
+  </url>
+  
+  <url>
     <loc>https://ikingye.github.io/interview-me/docs/pl/go/pm/</loc>
     <lastmod>2020-06-29T15:53:15+08:00</lastmod>
   </url>
@@ -235,6 +237,10 @@
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/pl/java/</loc>
     <lastmod>2020-06-16T23:03:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/se/design-pattern/others/</loc>
   </url>
   
   <url>
@@ -278,13 +284,16 @@
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/other/</loc>
-    <lastmod>2020-06-16T23:03:12+08:00</lastmod>
+    <loc>https://ikingye.github.io/interview-me/docs/others/</loc>
   </url>
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/pl/go/performance/</loc>
     <lastmod>2020-06-22T16:04:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/backend/others/</loc>
   </url>
   
   <url>

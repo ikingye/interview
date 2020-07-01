@@ -1,7 +1,7 @@
 ---
-weight: 30
+weight: 10
 title: "配置热加载"
-bookCollapseSection: false
+bookCollapseSection: true
 ---
 
 # 配置热加载

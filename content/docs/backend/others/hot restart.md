@@ -1,7 +1,7 @@
 ---
-weight: 30
+weight: 20
 title: "程序热重启"
-bookCollapseSection: false
+bookCollapseSection: true
 ---
 
 # 程序热重启
@@ -16,7 +16,7 @@ bookCollapseSection: false
 {{< tabs "uniqueid" >}}
 {{< tab "Go" >}}
 
-### Go 程序优雅关闭与重启
+## Go 程序优雅关闭与重启
 
 参考：
 

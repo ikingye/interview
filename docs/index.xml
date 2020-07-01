@@ -78,10 +78,10 @@ XSS 发生的原因 没有将用户输入的文本进行合适的过滤，就贸
     
     <item>
       <title>加密</title>
-      <link>https://ikingye.github.io/interview-me/docs/other/encryption/</link>
+      <link>https://ikingye.github.io/interview-me/docs/others/encryption/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/other/encryption/</guid>
+      <guid>https://ikingye.github.io/interview-me/docs/others/encryption/</guid>
       <description>加密 SSL/TLS TLS 握手流程是什么样的？ 参考：
  SSL/TLS 详解  </description>
     </item>
@@ -106,10 +106,10 @@ XSS 发生的原因 没有将用户输入的文本进行合适的过滤，就贸
     
     <item>
       <title>字符编码</title>
-      <link>https://ikingye.github.io/interview-me/docs/other/encode/</link>
+      <link>https://ikingye.github.io/interview-me/docs/others/encode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/other/encode/</guid>
+      <guid>https://ikingye.github.io/interview-me/docs/others/encode/</guid>
       <description>字符编码 Base 系列 参考：rfc4648
 有的字符在一些环境中是不能显示或使用的， 比如 &amp;amp;, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
 Base 系列的就是用来将字节编码为 ASCII 中的可见字符的。
@@ -157,10 +157,10 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
     
     <item>
       <title>编译</title>
-      <link>https://ikingye.github.io/interview-me/docs/other/compile/</link>
+      <link>https://ikingye.github.io/interview-me/docs/others/compile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/other/compile/</guid>
+      <guid>https://ikingye.github.io/interview-me/docs/others/compile/</guid>
       <description>编译 </description>
     </item>
     
@@ -170,7 +170,7 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview-me/docs/se/design-pattern/principle/</guid>
-      <description>设计原则 </description>
+      <description>设计原则 单一职责原则 (SRP)   开闭原则 (Open Closed Principle)   里氏替换原则 (Liskov Substitution Principle)   依赖倒置原则 (Dependence Inversion Principle)   接口隔离原则 (Interface Segregation Principle)   迪米特原则 (Demeter Principle) </description>
     </item>
     
     <item>
@@ -180,6 +180,15 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       
       <guid>https://ikingye.github.io/interview-me/docs/os/process/</guid>
       <description>进程/线程/携程 进程 一个进程包含哪些信息？  进程切换时，操作系统做了哪些事情？  进程切换时，需要保存哪些信息，保存在哪里？  线程 线程比进程轻量，体现在哪里？  什么时候使用线程，什么时候使用进程？  携程 协程是什么，怎么实现的？  既然协程那么好，那什么时候用进程和线程？ </description>
+    </item>
+    
+    <item>
+      <title>配置热加载</title>
+      <link>https://ikingye.github.io/interview-me/docs/backend/others/hot-load/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/backend/others/hot-load/</guid>
+      <description>配置热加载 </description>
     </item>
     
     <item>
@@ -210,12 +219,31 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
     </item>
     
     <item>
+      <title>创建型模式</title>
+      <link>https://ikingye.github.io/interview-me/docs/se/design-pattern/creational/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/se/design-pattern/creational/</guid>
+      <description>创建型模式 简单工厂模式   工厂方法模式   抽象工厂模式   建造者模式   单例模式 </description>
+    </item>
+    
+    <item>
       <title>架构设计原则</title>
       <link>https://ikingye.github.io/interview-me/docs/se/architecture/principle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview-me/docs/se/architecture/principle/</guid>
       <description>架构设计原则 CAP (Consistency, Availability, Partition tolerance) 如何理解 CAP，你在做系统设计时是如何取舍的？  ACID (Atomicity, Consistency, Isolation, Durability)  BASE (Basically Available, Soft state, Eventual consistency) </description>
+    </item>
+    
+    <item>
+      <title>程序热重启</title>
+      <link>https://ikingye.github.io/interview-me/docs/backend/others/hot-restart/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/backend/others/hot-restart/</guid>
+      <description>程序热重启 你使用的编程语言，是如何实现热重启的？  服务端启动时多开启一个协程用来监听关闭信号 当协程接收到关闭信号时，将拒绝接收新的连接，并处理好当前所有连接后断开 启动一个新的服务端进程来接管新的连接 关闭当前进程  Go Go 程序优雅关闭与重启 参考：
+ gracehttp: 优雅重启 Go 程序（热启动 - Zero Downtime）  Java Python  </description>
     </item>
     
     <item>
@@ -265,22 +293,12 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
     </item>
     
     <item>
-      <title>程序热重启</title>
-      <link>https://ikingye.github.io/interview-me/docs/backend/general/hot-restart/</link>
+      <title>结构型模式</title>
+      <link>https://ikingye.github.io/interview-me/docs/se/design-pattern/structural/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/backend/general/hot-restart/</guid>
-      <description>程序热重启 你使用的编程语言，是如何实现热重启的？  服务端启动时多开启一个协程用来监听关闭信号 当协程接收到关闭信号时，将拒绝接收新的连接，并处理好当前所有连接后断开 启动一个新的服务端进程来接管新的连接 关闭当前进程  Go Go 程序优雅关闭与重启 参考：
- gracehttp: 优雅重启 Go 程序（热启动 - Zero Downtime）  Java Python  </description>
-    </item>
-    
-    <item>
-      <title>配置热加载</title>
-      <link>https://ikingye.github.io/interview-me/docs/backend/general/hot-load/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview-me/docs/backend/general/hot-load/</guid>
-      <description>配置热加载 </description>
+      <guid>https://ikingye.github.io/interview-me/docs/se/design-pattern/structural/</guid>
+      <description>结构型模式 适配器模式   桥接模式   装饰模式   外观模式   享元模式   代理模式   组合模式 </description>
     </item>
     
     <item>
@@ -296,12 +314,30 @@ Go 语言的调度器通过使用与 CPU 数量相等的线程减少线程频繁
     </item>
     
     <item>
+      <title>行为型模式</title>
+      <link>https://ikingye.github.io/interview-me/docs/se/design-pattern/behavioral/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/se/design-pattern/behavioral/</guid>
+      <description>行为型模式 命令模式   中介者模式   观察者模式   状态模式   策略模式   模板方法模式   迭代子模式   责任链模式   备忘录模式   访问者模式   解释器模式 </description>
+    </item>
+    
+    <item>
       <title>Go 包管理</title>
       <link>https://ikingye.github.io/interview-me/docs/pl/go/pm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview-me/docs/pl/go/pm/</guid>
       <description>Go 包管理 Go 包管理的进化过程是什么样的？  Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules     你用过哪些 Go 包管理工具，说说它们的优缺点？   golang/dep   Masterminds/glide   kardianos/govendor    Go Mod 相对之前的版本管理有哪些优点？  可以指定版本   Go Mod 如何找到引用的包？ 一般情况：</description>
+    </item>
+    
+    <item>
+      <title>其他模式</title>
+      <link>https://ikingye.github.io/interview-me/docs/se/design-pattern/others/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/se/design-pattern/others/</guid>
+      <description>其他模式 并发型模式   线程池模式 </description>
     </item>
     
     <item>

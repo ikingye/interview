@@ -30,11 +30,10 @@
       - [PHP Web 后端](#php-web-后端)
       - [Python Web 后端](#python-web-后端)
     - [数据库](#数据库)
-    - [NOSQL](#nosql)
     - [消息队列](#消息队列)
-    - [搜索引擎](#搜索引擎)
     - [缓存](#缓存)
     - [性能](#性能)
+    - [搜索引擎](#搜索引擎)
     - [微服务](#微服务)
     - [云原生](#云原生)
     - [其他](#其他)
@@ -240,7 +239,9 @@
 
 ### 设计模式
 
-- [ ] 设计原则
+- [ ] [综合](content/docs/se/_index.md)
+  - [ ] 适配器模式、装饰模式、代理模式有哪些异同？
+- [ ] [设计原则](content/docs/se/principle.md)
   - [ ] 单一职责原则 (`SRP`)
   - [ ] 开闭原则 (`Open Closed Principle`)
   - [ ] 里氏替换原则 (`Liskov Substitution Principle`)
@@ -248,13 +249,13 @@
   - [ ] 接口隔离原则 (`Interface Segregation Principle`)
   - [ ] 迪米特原则 (`Demeter Principle`)
 - [ ] 23 种设计模式
-  - [ ] 创建型 (5 种)
+  - [ ] [创建型 (5 种)](content/docs/se/design%20pattern/creational.md)
     - [ ] 简单工厂模式
     - [ ] 工厂方法模式
     - [ ] 抽象工厂模式
     - [ ] 建造者模式
     - [ ] 单例模式
-  - [ ] 结构型 (7 种)
+  - [ ] [结构型 (7 种)](content/docs/se/design%20pattern/structural.md)
     - [ ] 适配器模式
     - [ ] 桥接模式
     - [ ] 装饰模式
@@ -262,7 +263,7 @@
     - [ ] 享元模式
     - [ ] 代理模式
     - [ ] 组合模式
-  - [ ] 行为型 (11 种)
+  - [ ] [行为型 (11 种)](content/docs/se/design%20pattern/behavioral.md)
     - [ ] 命令模式
     - [ ] 中介者模式
     - [ ] 观察者模式
@@ -274,10 +275,9 @@
     - [ ] 备忘录模式
     - [ ] 访问者模式
     - [ ] 解释器模式
-- [ ] 其他设计模式
+- [ ] [其他设计模式](content/docs/se/design%20pattern/others.md)
   - [ ] 并发型模式
   - [ ] 线程池模式
-- [ ] 适配器模式、装饰模式、代理模式有哪些异同？
 
 ---
 
@@ -299,17 +299,19 @@
 
 ### 项目管理
 
-- [ ] 什么是 OKR，比 KPI 好在哪里
-- [ ] 如何做好 OKR 制定
-- [ ] 什么是敏捷开发
+- [ ] 敏捷开发
+  - [ ] 什么是敏捷开发？
+- 绩效管理
+  - [ ] KPI
+  - [ ] OKR
+    - [ ] 什么是 OKR，比 KPI 好在哪里？
+    - [ ] 如何做好 OKR 制定？
 
 ---
 
 ---
 
 ## 后端
-
----
 
 ### Web 后端
 
@@ -340,17 +342,16 @@
   - [ ] Mysql 如何保证数据一致性？
   - [ ] Mysql 主从如何同步？
 - [ ] PostgreSQL
-
-### NOSQL
-
 - [ ] Redis
   - [ ] Redis 有哪些数据结构，分别适用什么场景？
   - [ ] Redis 如何做持久化？
   - [ ] Redis 是单进程单线程，这么设计有什么优点？
 
+---
+
 ### 消息队列
 
-- [ ] 综合
+- [ ] 消息队列
   - [ ] 有哪些消息队列，分别适用什么场景？
 - [ ] Kafka
   - [ ] Kafka 如何实现一致性？
@@ -359,9 +360,11 @@
 - [ ] ActiveMQ
 - [ ] ZeroMQ
 
-### 搜索引擎
+---
 
 ### 缓存
+
+---
 
 ### 性能
 
@@ -370,7 +373,13 @@
 
 ---
 
+### 搜索引擎
+
+---
+
 ### 微服务
+
+---
 
 ### 云原生
 
@@ -413,8 +422,8 @@
 
 ### 其他
 
-- [ ] 配置热加载
-- [ ] 程序热重启
+- [ ] [配置热加载](content/docs/backend/others/hot%20load.md)
+- [ ] [程序热重启](content/docs/backend/others/hot%20restart.md)
   - [ ] 你使用的编程语言，是如何实现热重启的？
 
 ---
@@ -424,6 +433,10 @@
 ## 前端
 
 ### Web 前端
+
+- [ ] Vue
+- [ ] React
+- [ ] Angular
 
 ---
 
@@ -474,12 +487,12 @@
 
 ## 其他
 
-- [ ] [编译](content/docs/other/compile.md)
-- [ ] [字符编码](content/docs/other/encode.md)
+- [ ] [编译](content/docs/others/compile.md)
+- [ ] [字符编码](content/docs/others/encode.md)
   - [ ] Unicode
     - [ ] UTF-8
   - [ ] base64
   - [ ] url 编程
-- [ ] [加密](content/docs/other/encryption.md)
+- [ ] [加密](content/docs/others/encryption.md)
   - [ ] SSL/TLS
     - [ ] TLS 握手流程是什么样的？

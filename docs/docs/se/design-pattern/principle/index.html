@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="设计原则 "><meta property="og:title" content="设计原则" />
-<meta property="og:description" content="设计原则 " />
+<meta name="description" content="设计原则 单一职责原则 (SRP)   开闭原则 (Open Closed Principle)   里氏替换原则 (Liskov Substitution Principle)   依赖倒置原则 (Dependence Inversion Principle)   接口隔离原则 (Interface Segregation Principle)   迪米特原则 (Demeter Principle) "><meta property="og:title" content="设计原则" />
+<meta property="og:description" content="设计原则 单一职责原则 (SRP)   开闭原则 (Open Closed Principle)   里氏替换原则 (Liskov Substitution Principle)   依赖倒置原则 (Dependence Inversion Principle)   接口隔离原则 (Interface Segregation Principle)   迪米特原则 (Demeter Principle) " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/interview-me/docs/se/design-pattern/principle/" />
 <meta property="article:modified_time" content="2020-06-16T22:48:48+08:00" />
@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="/interview-me/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/interview-me/en.search.min.8e361d1b941d73fe0443d57f280309682512559b42dc4d11d802b8af27521f60.js" integrity="sha256-jjYdG5Qdc/4EQ9V/KAMJaCUSVZtC3E0R2AK4rydSH2A="></script>
+<script defer src="/interview-me/en.search.min.e767e8f1818cb3de9de2e2d199662b270d0e5e8707a8f9282bcb066e95239347.js" integrity="sha256-52fo8YGMs96d4uLRmWYrJw0OXocHqPkoK8sGbpUjk0c="></script>
 
 <!--
 Made with Book Theme
@@ -327,7 +327,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <span>软件工程</span>
+  <a href="/interview-me/docs/se/" class="">软件工程</a>
   
 
 
@@ -363,6 +363,46 @@ https://github.com/alex-shpak/hugo-book
 
   
   <a href="/interview-me/docs/se/design-pattern/principle/" class="active">设计原则</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview-me/docs/se/design-pattern/creational/" class="">创建型模式</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview-me/docs/se/design-pattern/structural/" class="">结构型模式</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview-me/docs/se/design-pattern/behavioral/" class="">行为型模式</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview-me/docs/se/design-pattern/others/" class="">其他模式</a>
   
 
 </li>
@@ -460,7 +500,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/backend/general/" class="">综合</a>
+  <span>其他</span>
   
 
 
@@ -468,32 +508,6 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-
-  
-  <ul>
-    
-      
-        <li>
-
-  
-  <a href="/interview-me/docs/backend/general/hot-restart/" class="">程序热重启</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/interview-me/docs/backend/general/hot-load/" class="">配置热加载</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
 
 
 
@@ -658,7 +672,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/other/" class="collapsed ">其他</a>
+  <a href="/interview-me/docs/others/" class="collapsed ">其他</a>
   
 
 
@@ -735,7 +749,16 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#设计原则">设计原则</a></li>
+    <li><a href="#设计原则">设计原则</a>
+      <ul>
+        <li><a href="#单一职责原则-srp">单一职责原则 (<code>SRP</code>)</a></li>
+        <li><a href="#开闭原则-open-closed-principle">开闭原则 (<code>Open Closed Principle</code>)</a></li>
+        <li><a href="#里氏替换原则-liskov-substitution-principle">里氏替换原则 (<code>Liskov Substitution Principle</code>)</a></li>
+        <li><a href="#依赖倒置原则-dependence-inversion-principle">依赖倒置原则 (<code>Dependence Inversion Principle</code>)</a></li>
+        <li><a href="#接口隔离原则-interface-segregation-principle">接口隔离原则 (<code>Interface Segregation Principle</code>)</a></li>
+        <li><a href="#迪米特原则-demeter-principle">迪米特原则 (<code>Demeter Principle</code>)</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -748,6 +771,22 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown"><h1 id="设计原则">设计原则</h1>
+<h2 id="单一职责原则-srp">单一职责原则 (<code>SRP</code>)</h2>
+<hr>
+<hr>
+<h2 id="开闭原则-open-closed-principle">开闭原则 (<code>Open Closed Principle</code>)</h2>
+<hr>
+<hr>
+<h2 id="里氏替换原则-liskov-substitution-principle">里氏替换原则 (<code>Liskov Substitution Principle</code>)</h2>
+<hr>
+<hr>
+<h2 id="依赖倒置原则-dependence-inversion-principle">依赖倒置原则 (<code>Dependence Inversion Principle</code>)</h2>
+<hr>
+<hr>
+<h2 id="接口隔离原则-interface-segregation-principle">接口隔离原则 (<code>Interface Segregation Principle</code>)</h2>
+<hr>
+<hr>
+<h2 id="迪米特原则-demeter-principle">迪米特原则 (<code>Demeter Principle</code>)</h2>
 </article>
  
       
@@ -797,7 +836,16 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#设计原则">设计原则</a></li>
+    <li><a href="#设计原则">设计原则</a>
+      <ul>
+        <li><a href="#单一职责原则-srp">单一职责原则 (<code>SRP</code>)</a></li>
+        <li><a href="#开闭原则-open-closed-principle">开闭原则 (<code>Open Closed Principle</code>)</a></li>
+        <li><a href="#里氏替换原则-liskov-substitution-principle">里氏替换原则 (<code>Liskov Substitution Principle</code>)</a></li>
+        <li><a href="#依赖倒置原则-dependence-inversion-principle">依赖倒置原则 (<code>Dependence Inversion Principle</code>)</a></li>
+        <li><a href="#接口隔离原则-interface-segregation-principle">接口隔离原则 (<code>Interface Segregation Principle</code>)</a></li>
+        <li><a href="#迪米特原则-demeter-principle">迪米特原则 (<code>Demeter Principle</code>)</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
