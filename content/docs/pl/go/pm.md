@@ -6,7 +6,7 @@ bookCollapseSection: true
 
 # Go 包管理
 
-## Go 包管理的进化过程是什么样的？
+## Go 包管理的发展历史？
 
 - `Go 1.4` 及之前
   - 所有的依赖包都是存放在 `GOPATH` 下，没有版本控制
