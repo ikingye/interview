@@ -23,6 +23,9 @@
     - [设计模式](#设计模式)
     - [架构设计](#架构设计)
     - [项目管理](#项目管理)
+  - [云计算](#云计算)
+  - [大数据](#大数据)
+  - [人工智能](#人工智能)
   - [后端](#后端)
     - [Web 后端](#web-后端)
       - [Go Web 后端](#go-web-后端)
@@ -161,7 +164,7 @@
   - [ ] 什么时候使用数组？
   - [ ] slice 底层结构是什么？
 - [ ] [Go 关键字](content/docs/pl/go/keyword.md)
-  - [ ] make, new 有什么区别？
+  - [x] make, new 有什么区别？
   - [ ] panic, recover 是怎么实现的？
 - [ ] [Go Channel](content/docs/pl/go/channel.md)
   - [ ] 通道如何优雅关闭？
@@ -311,6 +314,24 @@
 
 ---
 
+## 云计算
+
+---
+
+---
+
+## 大数据
+
+---
+
+---
+
+## 人工智能
+
+---
+
+---
+
 ## 后端
 
 ### Web 后端
@@ -337,7 +358,8 @@
 
 - [ ] [综合](content/docs/backend/db/_index.md)
   - [ ] Mysql 与 PostgreSQL 各有什么优势？
-  - [ ] NoSQL 有哪些，各自适用什么场景？
+  - [ ] NoSQL 与传统数据库主要区别是什么？
+  - [ ] 常见的 NoSQL 有哪些，各自适用什么场景？
 - [ ] [Mysql](content/docs/backend/db/mysql.md)
   - [ ] Mysql 有哪些引擎，分别有什么特点？
   - [ ] Mysql 索引是怎么实现的？
@@ -355,7 +377,7 @@
 ### 消息队列
 
 - [ ] [综合](content/docs/backend/mq/_index.md)
-  - [ ] 有哪些消息队列，分别适用什么场景？
+  - [ ] 常见的消息队列有哪些，分别适用什么场景？
 - [ ] [Kafka](content/docs/backend/mq/kafka.md)
   - [ ] Kafka 如何实现一致性？
 - [ ] [RocketMQ](content/docs/backend/mq/rocketmq.md)

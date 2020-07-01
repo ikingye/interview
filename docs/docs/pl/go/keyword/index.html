@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="关键字 "><meta property="og:title" content="关键字" />
-<meta property="og:description" content="关键字 " />
+<meta name="description" content="关键字 make, new 有什么区别？  make 返回变量本身 new 返回变量的指针  // The make built-in function allocates and initializes an object of type // slice, map, or chan (only). Like new, the first argument is a type, not a // value. Unlike new, make&#39;s return type is the same as the type of its // argument, not a pointer to it. The specification of the result depends on // the type: //	Slice: The size specifies the length."><meta property="og:title" content="关键字" />
+<meta property="og:description" content="关键字 make, new 有什么区别？  make 返回变量本身 new 返回变量的指针  // The make built-in function allocates and initializes an object of type // slice, map, or chan (only). Like new, the first argument is a type, not a // value. Unlike new, make&#39;s return type is the same as the type of its // argument, not a pointer to it. The specification of the result depends on // the type: //	Slice: The size specifies the length." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/interview-me/docs/pl/go/keyword/" />
 <meta property="article:modified_time" content="2020-06-22T16:04:07+08:00" />
@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="/interview-me/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/interview-me/en.search.min.79e9d7811387c025c4f0729164bb3f4c34b33ae43a43f1bedaf01697b2a823ec.js" integrity="sha256-eenXgROHwCXE8HKRZLs/TDSzOuQ6Q/G&#43;2vAWl7KoI&#43;w="></script>
+<script defer src="/interview-me/en.search.min.1ec23afa6d28e3b71933812fca1faadeb61af98e92415371bc7e951be1edd4c2.js" integrity="sha256-HsI6&#43;m0o47cZM4Evyh&#43;q3rYa&#43;Y6SQVNxvH6VG&#43;Ht1MI="></script>
 
 <!--
 Made with Book Theme
@@ -858,7 +858,12 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#关键字">关键字</a></li>
+    <li><a href="#关键字">关键字</a>
+      <ul>
+        <li><a href="#make-new-有什么区别">make, new 有什么区别？</a></li>
+        <li><a href="#panic-recover-是怎么实现的">panic, recover 是怎么实现的？</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -871,6 +876,36 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown"><h1 id="关键字">关键字</h1>
+<h2 id="make-new-有什么区别">make, new 有什么区别？</h2>
+<ul>
+<li>make 返回变量本身</li>
+<li>new 返回变量的指针</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// The make built-in function allocates and initializes an object of type
+</span><span style="color:#75715e">// slice, map, or chan (only). Like new, the first argument is a type, not a
+</span><span style="color:#75715e">// value. Unlike new, make&#39;s return type is the same as the type of its
+</span><span style="color:#75715e">// argument, not a pointer to it. The specification of the result depends on
+</span><span style="color:#75715e">// the type:
+</span><span style="color:#75715e">//	Slice: The size specifies the length. The capacity of the slice is
+</span><span style="color:#75715e">//	equal to its length. A second integer argument may be provided to
+</span><span style="color:#75715e">//	specify a different capacity; it must be no smaller than the
+</span><span style="color:#75715e">//	length. For example, make([]int, 0, 10) allocates an underlying array
+</span><span style="color:#75715e">//	of size 10 and returns a slice of length 0 and capacity 10 that is
+</span><span style="color:#75715e">//	backed by this underlying array.
+</span><span style="color:#75715e">//	Map: An empty map is allocated with enough space to hold the
+</span><span style="color:#75715e">//	specified number of elements. The size may be omitted, in which case
+</span><span style="color:#75715e">//	a small starting size is allocated.
+</span><span style="color:#75715e">//	Channel: The channel&#39;s buffer is initialized with the specified
+</span><span style="color:#75715e">//	buffer capacity. If zero, or the size is omitted, the channel is
+</span><span style="color:#75715e">//	unbuffered.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> make(<span style="color:#a6e22e">t</span> <span style="color:#a6e22e">Type</span>, <span style="color:#a6e22e">size</span> <span style="color:#f92672">...</span><span style="color:#a6e22e">IntegerType</span>) <span style="color:#a6e22e">Type</span>
+
+<span style="color:#75715e">// The new built-in function allocates memory. The first argument is a type,
+</span><span style="color:#75715e">// not a value, and the value returned is a pointer to a newly
+</span><span style="color:#75715e">// allocated zero value of that type.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> new(<span style="color:#a6e22e">Type</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">Type</span>
+</code></pre></div><hr>
+<h2 id="panic-recover-是怎么实现的">panic, recover 是怎么实现的？</h2>
 </article>
  
       
@@ -920,7 +955,12 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#关键字">关键字</a></li>
+    <li><a href="#关键字">关键字</a>
+      <ul>
+        <li><a href="#make-new-有什么区别">make, new 有什么区别？</a></li>
+        <li><a href="#panic-recover-是怎么实现的">panic, recover 是怎么实现的？</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

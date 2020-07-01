@@ -278,7 +278,7 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview-me/docs/pl/go/keyword/</guid>
-      <description>关键字 </description>
+      <description>关键字 make, new 有什么区别？  make 返回变量本身 new 返回变量的指针  // The make built-in function allocates and initializes an object of type // slice, map, or chan (only). Like new, the first argument is a type, not a // value. Unlike new, make&amp;#39;s return type is the same as the type of its // argument, not a pointer to it. The specification of the result depends on // the type: //	Slice: The size specifies the length.</description>
     </item>
     
     <item>
