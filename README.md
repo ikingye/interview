@@ -24,6 +24,7 @@
     - [架构设计](#架构设计)
     - [项目管理](#项目管理)
   - [云计算](#云计算)
+    - [云原生](#云原生)
   - [大数据](#大数据)
   - [人工智能](#人工智能)
   - [后端](#后端)
@@ -38,7 +39,6 @@
     - [性能](#性能)
     - [搜索引擎](#搜索引擎)
     - [微服务](#微服务)
-    - [云原生](#云原生)
     - [其他](#其他)
   - [前端](#前端)
     - [Web 前端](#web-前端)
@@ -316,6 +316,43 @@
 
 ## 云计算
 
+### 云原生
+
+- [ ] 云原生
+  - [ ] 什么是云原生
+  - [ ] 云原生解决了哪些痛点
+  - [ ] 什么是声明式 API
+  - [ ] 什么是不可变基础设施
+- [ ] Kubernetes
+  - [ ] 架构，各组件作用
+  - [ ] 任务调度
+  - [ ] 资源
+    - [ ] Pod
+      - [ ] 为什么要有 Pod
+    - [ ] Deployment
+      - [ ] 为什么要有 Deployment
+  - [ ] Operator
+  - [ ] CRD
+  - [ ] 网络
+    - [ ] CNI
+      - [ ] Flannel
+      - [ ] Calico
+    - [ ] DNS
+      - [ ] CoreDNS
+    - [ ] 端口
+      - [ ] containerPort
+      - [ ] targetPort (pod)
+      - [ ] port (service)
+      - [ ] nodePort (service)
+      - [ ] hostPort
+- [ ] Service Mesh
+  - [ ] 什么是 Service Mesh
+  - [ ] 如何实现 sidecar 注入
+  - [ ] 如何实现流量劫持
+- [ ] Envoy
+- [ ] Istio
+  - [ ] 可观察指什么，如何实现
+
 ---
 
 ---
@@ -378,6 +415,7 @@
 
 - [ ] [综合](content/docs/backend/mq/_index.md)
   - [ ] 常见的消息队列有哪些，分别适用什么场景？
+  - [ ] RocketMQ 相比于 Kafka 有哪些改进？
 - [ ] [Kafka](content/docs/backend/mq/kafka.md)
   - [ ] Kafka 如何实现一致性？
 - [ ] [RocketMQ](content/docs/backend/mq/rocketmq.md)
@@ -403,45 +441,6 @@
 ---
 
 ### 微服务
-
----
-
-### 云原生
-
-- [ ] 云原生
-  - [ ] 什么是云原生
-  - [ ] 云原生解决了哪些痛点
-  - [ ] 什么是声明式 API
-  - [ ] 什么是不可变基础设施
-- [ ] Kubernetes
-  - [ ] 架构，各组件作用
-  - [ ] 任务调度
-  - [ ] 资源
-    - [ ] Pod
-      - [ ] 为什么要有 Pod
-    - [ ] Deployment
-      - [ ] 为什么要有 Deployment
-  - [ ] Operator
-  - [ ] CRD
-  - [ ] 网络
-    - [ ] CNI
-      - [ ] Flannel
-      - [ ] Calico
-    - [ ] DNS
-      - [ ] CoreDNS
-    - [ ] 端口
-      - [ ] containerPort
-      - [ ] targetPort (pod)
-      - [ ] port (service)
-      - [ ] nodePort (service)
-      - [ ] hostPort
-- [ ] Service Mesh
-  - [ ] 什么是 Service Mesh
-  - [ ] 如何实现 sidecar 注入
-  - [ ] 如何实现流量劫持
-- [ ] Envoy
-- [ ] Istio
-  - [ ] 可观察指什么，如何实现
 
 ---
 
