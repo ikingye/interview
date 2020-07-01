@@ -29,10 +29,12 @@
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/backend/web/go/beego/</loc>
+    <lastmod>2020-07-02T01:34:34+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/backend/web/go/</loc>
+    <lastmod>2020-07-02T01:34:34+08:00</lastmod>
   </url>
   
   <url>
@@ -41,8 +43,16 @@
   </url>
   
   <url>
+    <loc>https://ikingye.github.io/interview-me/docs/backend/mq/kafka/</loc>
+  </url>
+  
+  <url>
     <loc>https://ikingye.github.io/interview-me/docs/os/linux/info/</loc>
     <lastmod>2020-06-22T20:32:57+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/backend/db/mysql/</loc>
   </url>
   
   <url>
@@ -52,6 +62,7 @@
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/backend/web/java/spring/</loc>
+    <lastmod>2020-07-02T01:34:34+08:00</lastmod>
   </url>
   
   <url>
@@ -61,16 +72,17 @@
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/backend/web/</loc>
+    <lastmod>2020-07-02T01:34:34+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/security/web/</loc>
-    <lastmod>2020-06-16T23:03:12+08:00</lastmod>
+    <lastmod>2020-07-02T01:34:34+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/security/web/xss/</loc>
-    <lastmod>2020-06-05T01:17:23+08:00</lastmod>
+    <lastmod>2020-07-02T01:34:34+08:00</lastmod>
   </url>
   
   <url>
@@ -111,6 +123,10 @@
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/algs/sort/</loc>
     <lastmod>2020-06-16T23:03:12+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/backend/db/</loc>
   </url>
   
   <url>
@@ -160,15 +176,25 @@
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/security/web/csrf/</loc>
-    <lastmod>2020-06-05T01:17:23+08:00</lastmod>
+    <lastmod>2020-07-02T01:34:34+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/backend/web/go/gin/</loc>
+    <lastmod>2020-07-02T01:34:34+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/backend/web/java/</loc>
+    <lastmod>2020-07-02T01:34:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/backend/db/redis/</loc>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/backend/mq/rocketmq/</loc>
   </url>
   
   <url>
@@ -193,6 +219,7 @@
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/backend/mq/</loc>
+    <lastmod>2020-07-02T01:34:34+08:00</lastmod>
   </url>
   
   <url>
@@ -232,6 +259,11 @@
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/backend/web/php/</loc>
+    <lastmod>2020-07-02T01:34:34+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/backend/mq/rabbitmq/</loc>
   </url>
   
   <url>
@@ -261,6 +293,7 @@
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/backend/web/python/</loc>
+    <lastmod>2020-07-02T01:34:34+08:00</lastmod>
   </url>
   
   <url>
@@ -340,7 +373,7 @@
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/backend/others/</loc>
-    <lastmod>2020-07-02T01:08:07+08:00</lastmod>
+    <lastmod>2020-07-02T01:34:34+08:00</lastmod>
   </url>
   
   <url>
@@ -354,7 +387,7 @@
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/</loc>
-    <lastmod>2020-07-02T01:08:07+08:00</lastmod>
+    <lastmod>2020-07-02T01:34:34+08:00</lastmod>
   </url>
   
   <url>

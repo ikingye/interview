@@ -335,28 +335,31 @@
 
 ### 数据库
 
-- [ ] Mysql
+- [ ] [综合](content/docs/backend/db/_index.md)
+  - [ ] Mysql 与 PostgreSQL 各有什么优势？
+  - [ ] NoSQL 有哪些，各自适用什么场景？
+- [ ] [Mysql](content/docs/backend/db/mysql.md)
   - [ ] Mysql 有哪些引擎，分别有什么特点？
   - [ ] Mysql 索引是怎么实现的？
   - [ ] Mysql 事务是怎么实现的？
   - [ ] Mysql 如何保证数据一致性？
   - [ ] Mysql 主从如何同步？
-- [ ] PostgreSQL
-- [ ] Redis
+- [ ] [Redis](content/docs/backend/db/redis.md)
   - [ ] Redis 有哪些数据结构，分别适用什么场景？
   - [ ] Redis 如何做持久化？
   - [ ] Redis 是单进程单线程，这么设计有什么优点？
+- [ ] PostgreSQL
 
 ---
 
 ### 消息队列
 
-- [ ] 消息队列
+- [ ] [综合](content/docs/backend/mq/_index.md)
   - [ ] 有哪些消息队列，分别适用什么场景？
-- [ ] Kafka
+- [ ] [Kafka](content/docs/backend/mq/kafka.md)
   - [ ] Kafka 如何实现一致性？
-- [ ] RocketMQ
-- [ ] RabbitMQ
+- [ ] [RocketMQ](content/docs/backend/mq/rocketmq.md)
+- [ ] [RabbitMQ](content/docs/backend/mq/rabbitmq.md)
 - [ ] ActiveMQ
 - [ ] ZeroMQ
 

@@ -28,6 +28,15 @@
     </item>
     
     <item>
+      <title>Kafka</title>
+      <link>https://ikingye.github.io/interview-me/docs/backend/mq/kafka/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/backend/mq/kafka/</guid>
+      <description>Kafka Kafka 如何实现一致性？ </description>
+    </item>
+    
+    <item>
       <title>Linux 系统信息</title>
       <link>https://ikingye.github.io/interview-me/docs/os/linux/info/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -35,6 +44,15 @@
       <guid>https://ikingye.github.io/interview-me/docs/os/linux/info/</guid>
       <description>Linux 系统信息 硬件信息 如何查看内存大小？ free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ # 物理 cpu 个数 cat /proc/cpuinfo| grep &amp;#39;physical id&amp;#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &amp;#39;core id&amp;#39; | sort | uniq | wc -l # 逻辑 cpu 个数（线程数） cat /proc/cpuinfo| grep &amp;#39;processor&amp;#39; | sort | uniq | wc -l 例子：
  2 个 cpu 每个 cpu 有 8 个核心（一共 16 个核心） 一共有 32 个逻辑 cpu / 线程（每个核心有 2 个逻辑 cpu / 线程）   如何查看系统内核？ uname -a cat /proc/version 如何查看操作系统版本？ cat /etc/issue cat /etc/*release  运行信息 如何查看占用内存最多的进程？ 如何查看占用 CPU 最多的进程？ 如何查看占用某个端口的进程？ </description>
+    </item>
+    
+    <item>
+      <title>Mysql</title>
+      <link>https://ikingye.github.io/interview-me/docs/backend/db/mysql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/backend/db/mysql/</guid>
+      <description>Mysql Mysql 有哪些引擎，分别有什么特点？  Mysql 索引是怎么实现的？  Mysql 事务是怎么实现的？  Mysql 如何保证数据一致性？  Mysql 主从如何同步？ </description>
     </item>
     
     <item>
@@ -237,6 +255,24 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
     </item>
     
     <item>
+      <title>Redis</title>
+      <link>https://ikingye.github.io/interview-me/docs/backend/db/redis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/backend/db/redis/</guid>
+      <description>Redis Redis 有哪些数据结构，分别适用什么场景？  Redis 如何做持久化？  Redis 是单进程单线程，这么设计有什么优点？ </description>
+    </item>
+    
+    <item>
+      <title>RocketMQ</title>
+      <link>https://ikingye.github.io/interview-me/docs/backend/mq/rocketmq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/backend/mq/rocketmq/</guid>
+      <description>RocketMQ </description>
+    </item>
+    
+    <item>
       <title>关键字</title>
       <link>https://ikingye.github.io/interview-me/docs/pl/go/keyword/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -317,6 +353,15 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       
       <guid>https://ikingye.github.io/interview-me/docs/pl/go/channel/</guid>
       <description>Go Channel </description>
+    </item>
+    
+    <item>
+      <title>RabbitMQ</title>
+      <link>https://ikingye.github.io/interview-me/docs/backend/mq/rabbitmq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview-me/docs/backend/mq/rabbitmq/</guid>
+      <description>RabbitMQ </description>
     </item>
     
     <item>

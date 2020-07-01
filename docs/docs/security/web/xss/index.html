@@ -14,7 +14,7 @@ XSS 发生的原因 没有将用户输入的文本进行合适的过滤，就贸
  来自用户的 UGC 信息 来自第三方的链接 URL 参数 POST 参数 Referer （可能来自不可信的来源） Cookie （可能来自其他子域注入）  有哪些 XSS 攻击方法？  在 HTML 中内嵌的文本中，恶意内容以 script 标签形成注入。 在内联的 JavaScript 中，拼接的数据突破了原本的限制（字符串，变量，方法名等）。 在标签属性中，恶意内容包含引号，从而突破属性值的限制，注入其他属性或者标签。 在标签的 href、src 等属性中，包含 javascript: 等可执行代码。 在 onload、onerror、onclick 等事件中，注入不受控制代码。 在 style 属性和标签中，包含类似 background-image:url(&quot;javascript:...&quot;); 的代码（新版本浏览器已经可以防范）。 在 style 属性和标签中，包含类似 expression(...) 的 CSS 表达式代码（新版本浏览器已经可以防范）。   如何防止 XSS 攻击？ 输入过滤 输入侧过滤能够在某些情况下解决特定的 XSS 问题，但会引入很大的不确定性和乱码问题。 在防范 XSS 攻击时应避免此类方法。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/interview-me/docs/security/web/xss/" />
-<meta property="article:modified_time" content="2020-06-05T01:17:23+08:00" />
+<meta property="article:modified_time" content="2020-07-02T01:34:34+08:00" />
 <title>XSS | 自我面试</title>
 <link rel="icon" href="/interview-me/favicon.png" type="image/x-icon">
 
@@ -22,7 +22,7 @@ XSS 发生的原因 没有将用户输入的文本进行合适的过滤，就贸
 <link rel="stylesheet" href="/interview-me/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/interview-me/en.search.min.2d50ea74679623bcba875c38c81e1101c7b2df0172ad3bff76a72d3623b0568a.js" integrity="sha256-LVDqdGeWI7y6h1w4yB4RAcey3wFyrTv/dqctNiOwVoo="></script>
+<script defer src="/interview-me/en.search.min.79e9d7811387c025c4f0729164bb3f4c34b33ae43a43f1bedaf01697b2a823ec.js" integrity="sha256-eenXgROHwCXE8HKRZLs/TDSzOuQ6Q/G&#43;2vAWl7KoI&#43;w="></script>
 
 <!--
 Made with Book Theme
@@ -451,6 +451,29 @@ https://github.com/alex-shpak/hugo-book
 
   
   <a href="/interview-me/docs/backend/web/" class="collapsed ">Web 后端</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview-me/docs/backend/db/" class="collapsed ">数据库</a>
   
 
 
@@ -985,9 +1008,9 @@ JavaScript 的 <code>eval()</code>、<code>setTimeout()</code>、<code>setInterv
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/ikingye/interview-me/commit/4a34bc61fb87a6419db65063af86b3ea218479cc" title='Last modified by yewang | 2020-06-05' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/ikingye/interview-me/commit/ffe9bd481170cb6603be80aa67e28acf8cc16cc8" title='Last modified by yewang | 2020-07-02' target="_blank" rel="noopener">
       <img src="/interview-me/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-06-05</span>
+      <span>2020-07-02</span>
     </a>
   </div>
 
