@@ -4,12 +4,18 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Go Channel "><meta property="og:title" content="Go Channel" />
-<meta property="og:description" content="Go Channel " />
+<meta name="description" content="Go 编译 Makefile   Go 插件系统 Go 1.8 版本开始提供了一个创建共享库的新工具，称为 Plugins.
+go build -buildmode=plugin
+Go 插件系统的应用场景？  通过 plugin 我们可以很方便的对于不同功能加载相应的模块； 针对不同语言 (英文、汉语、德语……) 加载不同的语言 so 文件，进行不同的输出； 编译出的文件给不同的编程语言用 (如：c/java/python/lua 等). 需要加密的核心算法，核心业务逻辑可以可以编译成 plugin 插件 黑客预留的后门 backdoor 可以使用 plugin 函数集动态加载   Go 插件系统是如何实现的？ 参考：
+ Go 插件系统  "><meta property="og:title" content="Go 编译" />
+<meta property="og:description" content="Go 编译 Makefile   Go 插件系统 Go 1.8 版本开始提供了一个创建共享库的新工具，称为 Plugins.
+go build -buildmode=plugin
+Go 插件系统的应用场景？  通过 plugin 我们可以很方便的对于不同功能加载相应的模块； 针对不同语言 (英文、汉语、德语……) 加载不同的语言 so 文件，进行不同的输出； 编译出的文件给不同的编程语言用 (如：c/java/python/lua 等). 需要加密的核心算法，核心业务逻辑可以可以编译成 plugin 插件 黑客预留的后门 backdoor 可以使用 plugin 函数集动态加载   Go 插件系统是如何实现的？ 参考：
+ Go 插件系统  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ikingye.github.io/interview-me/docs/pl/go/channel/" />
-<meta property="article:modified_time" content="2020-06-22T16:04:07+08:00" />
-<title>Go Channel | 自我面试</title>
+<meta property="og:url" content="https://ikingye.github.io/interview-me/docs/pl/go/compile/" />
+
+<title>Go 编译 | 自我面试</title>
 <link rel="icon" href="/interview-me/favicon.png" type="image/x-icon">
 
 
@@ -287,7 +293,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/pl/go/channel/" class="active">Go Channel</a>
+  <a href="/interview-me/docs/pl/go/channel/" class="">Go Channel</a>
   
 
 </li>
@@ -317,7 +323,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/pl/go/compile/" class="">Go 编译</a>
+  <a href="/interview-me/docs/pl/go/compile/" class="active">Go 编译</a>
   
 
 </li>
@@ -903,7 +909,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/interview-me/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Go Channel</strong>
+  <strong>Go 编译</strong>
 
   <label for="toc-control">
     <img src="/interview-me/svg/toc.svg" class="book-icon" alt="Table of Contents" />
@@ -917,7 +923,17 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#go-channel">Go Channel</a></li>
+    <li><a href="#go-编译">Go 编译</a>
+      <ul>
+        <li><a href="#makefile">Makefile</a></li>
+        <li><a href="#go-插件系统">Go 插件系统</a>
+          <ul>
+            <li><a href="#go-插件系统的应用场景">Go 插件系统的应用场景？</a></li>
+            <li><a href="#go-插件系统是如何实现的">Go 插件系统是如何实现的？</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -929,7 +945,28 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"><h1 id="go-channel">Go Channel</h1>
+  <article class="markdown"><h1 id="go-编译">Go 编译</h1>
+<h2 id="makefile">Makefile</h2>
+<hr>
+<hr>
+<h2 id="go-插件系统">Go 插件系统</h2>
+<p>Go 1.8 版本开始提供了一个创建共享库的新工具，称为 <code>Plugins</code>.</p>
+<p><code>go build -buildmode=plugin</code></p>
+<h3 id="go-插件系统的应用场景">Go 插件系统的应用场景？</h3>
+<ul>
+<li>通过 plugin 我们可以很方便的对于不同功能加载相应的模块；</li>
+<li>针对不同语言 (英文、汉语、德语……) 加载不同的语言 so 文件，进行不同的输出；</li>
+<li>编译出的文件给不同的编程语言用 (如：c/java/python/lua 等).</li>
+<li>需要加密的核心算法，核心业务逻辑可以可以编译成 plugin 插件</li>
+<li>黑客预留的后门 backdoor 可以使用 plugin</li>
+<li>函数集动态加载</li>
+</ul>
+<hr>
+<h3 id="go-插件系统是如何实现的">Go 插件系统是如何实现的？</h3>
+<p>参考：</p>
+<ul>
+<li><a href="https://draveness.me/golang/docs/part4-advanced/ch08-metaprogramming/golang-plugin/">Go 插件系统</a></li>
+</ul>
 </article>
  
       
@@ -939,14 +976,6 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex justify-between">
 
 
-
-  <div>
-    
-    <a class="flex align-center" href="https://github.com/ikingye/interview-me/commit/c7546008442e581cf64f3cc11414bc8e4cf69a61" title='Last modified by yewang | 2020-06-22' target="_blank" rel="noopener">
-      <img src="/interview-me/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-06-22</span>
-    </a>
-  </div>
 
 
 
@@ -979,7 +1008,17 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#go-channel">Go Channel</a></li>
+    <li><a href="#go-编译">Go 编译</a>
+      <ul>
+        <li><a href="#makefile">Makefile</a></li>
+        <li><a href="#go-插件系统">Go 插件系统</a>
+          <ul>
+            <li><a href="#go-插件系统的应用场景">Go 插件系统的应用场景？</a></li>
+            <li><a href="#go-插件系统是如何实现的">Go 插件系统是如何实现的？</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
 

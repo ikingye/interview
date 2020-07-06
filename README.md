@@ -170,21 +170,29 @@
   - [ ] 通道如何优雅关闭？
 - [ ] [Goroutine](content/docs/pl/go/goroutine.md)
   - [ ] Goroutine 为什么高效？
+  - [ ] 为什么 Go 需要自己实现调度器？
   - [ ] Goroutine 如何调度？
+- [ ] [Go 标准库](content/docs/pl/go/std.md)
+  - [ ] time
+    - [ ] 格式化
 - [ ] [Go 包管理](content/docs/pl/go/pm.md)
   - [x] 简单说说 Go 包管理工具的发展历史？
   - [ ] 你用过哪些 Go 包管理工具，说说它们的优缺点？
   - [ ] Go Mod 相对之前的版本管理有哪些优点？
   - [ ] Go Mod 如何找到引用的包？
-- [ ] [Go 版本](content/docs/pl/go/version.md)
-  - [ ] 你现在使用的是什么版本？最新版本是什么，相对有哪些变化？
-- [ ] [Go 标准库](content/docs/pl/go/std.md)
-  - [ ] time
-    - [ ] 格式化
+  - [ ] `replace` 语法有什么作用？
+  - [ ] `go.sum` 文件有什么用？是否应该加入版本管理？是如何生成的？
+- [ ] [Go 编译](content/docs/pl/go/compile.md)
+  - [ ] Makefile
+  - [ ] Go 插件系统
+    - [ ] Go 插件系统的应用场景？
+    - [ ] Go 插件系统是如何实现的？
 - [ ] [Go 测试](content/docs/pl/go/test.md)
   - [ ] 单元测试
 - [ ] [Go 性能](content/docs/pl/go/performance.md)
   - [ ] pprof
+- [ ] [Go 版本](content/docs/pl/go/version.md)
+  - [ ] 你现在使用的是什么版本？最新版本是什么，相对有哪些变化？
 
 ---
 
