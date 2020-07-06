@@ -178,12 +178,12 @@
   - [ ] Go Mod 如何找到引用的包？
 - [ ] [Go 版本](content/docs/pl/go/version.md)
   - [ ] 你现在使用的是什么版本？最新版本是什么，相对有哪些变化？
-- [ ] [标准库](content/docs/pl/go/std.md)
+- [ ] [Go 标准库](content/docs/pl/go/std.md)
   - [ ] time
     - [ ] 格式化
-- [ ] [测试](content/docs/pl/go/test.md)
+- [ ] [Go 测试](content/docs/pl/go/test.md)
   - [ ] 单元测试
-- [ ] [性能](content/docs/pl/go/performance.md)
+- [ ] [Go 性能](content/docs/pl/go/performance.md)
   - [ ] pprof
 
 ---
