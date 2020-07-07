@@ -100,7 +100,7 @@ if (valid) {
 
 ##### 不区分大小写，可以带空格
 
-- JavaScript 不区分大小写： `jAvascRipt:alert('XSS')`
+- JavaScript 这个关键字**不区分**大小写： `jAvascRipt:alert('XSS')`
 - 可以带空格 `%20`： `%20javascript:alert('XSS')`
 
 ---
