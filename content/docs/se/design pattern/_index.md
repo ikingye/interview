@@ -33,10 +33,10 @@ bookCollapseSection: true
 
 ```java
 /**
- * 原接口，需要传入orderId，时间
+ * 原接口，需要传入 orderId，时间
  */
 public interface SourceOrderApi {
-    public void updateDate(String orderId,String date,String client);
+    public void updateDate(String orderId, String date, String client);
 }
 
 public class SourceOrderApiImpl implements SourceOrderApi{
@@ -59,7 +59,7 @@ public class Test {
  */
 public interface AppOrderApi {
     //只需要传入订单Id即可
-    public void updateDate(String orderId,String client);
+    public void updateDate(String orderId, String client);
 }
 
 public class AppOrderApiImpl implements AppOrderApi{
@@ -71,7 +71,7 @@ public class AppOrderApiImpl implements AppOrderApi{
     @Override
     public void updateDate(String orderId,String client) {
         //这里适配的方式随意，但是保证是要完全兼容原有的，就是保证调用原有的接口
-        sourceOrderApi.updateDate(orderId, "9999-12-31",client);
+        sourceOrderApi.updateDate(orderId, "9999-12-31", client);
     }
 }
 
