@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="设计模式 适配器模式、装饰模式、代理模式有哪些异同？  适配器模式  允许因为接口不兼容而不能在一起工作的类工作在一起，做法是将类自己的接口包裹在一个已存在的类中。 适配器模式是将一个类 (a) 通过某种方式转换成另一个类 (b)。 适配器的特点在于兼容，从代码上的特点来说，适配类与原有的类具有相同的接口，并且持有新的目标对象。就如同一个三孔转 2 孔的适配器一样，他有三孔的插头，可以插到三孔插座里，又有两孔的插座可以被 2 孔插头插入。适配器模式是在于对原有 3 孔的改造。在使用适配器模式的时候，我们必须同时持有原对象，适配对象，目标对象。   装饰器模式  原有的不能满足现有的需求，对原有的进行增强。 装饰模式是在一个原有类 (a) 的基础之上增加了某些新的功能变成另一个类 (b)。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。   代理模式  同一个类而去调用另一个类的方法，不对这个方法进行直接操作。 代理模式是将一个类 (a) 转换成具体的操作类 (b)。 代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口，而适配器是实现一个新的接口。 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。      适配器模式实现新接口  装饰器模式与代理模式实现原接口   都持有原对象  装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象    /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi { public void updateDate(String orderId, String date, String client); } public class SourceOrderApiImpl implements SourceOrderApi{ @Override public void updateDate(String orderId, String date, String client) { System."><meta property="og:title" content="设计模式" />
+<meta name="description" content="设计模式 适配器模式、装饰模式、代理模式有哪些异同？  适配器模式  允许因为接口不兼容而不能在一起工作的类工作在一起，做法是将类自己的接口包裹在一个已存在的类中。 适配器模式是将一个类 (a) 通过某种方式转换成另一个类 (b)。 适配器的特点在于兼容，从代码上的特点来说，适配类与原有的类具有相同的接口，并且持有新的目标对象。就如同一个三孔转 2 孔的适配器一样，他有三孔的插头，可以插到三孔插座里，又有两孔的插座可以被 2 孔插头插入。适配器模式是在于对原有 3 孔的改造。在使用适配器模式的时候，我们必须同时持有原对象，适配对象，目标对象。   代理模式  同一个类而去调用另一个类的方法，不对这个方法进行直接操作。 代理模式是将一个类 (a) 转换成具体的操作类 (b)。 代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口，而适配器是实现一个新的接口。 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。   装饰器模式  原有的不能满足现有的需求，对原有的进行增强。 装饰模式是在一个原有类 (a) 的基础之上增加了某些新的功能变成另一个类 (b)。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。      适配器模式实现新接口  装饰器模式与代理模式实现原接口   都持有原对象  装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象    /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi { public void updateDate(String orderId, String date, String client); } public class SourceOrderApiImpl implements SourceOrderApi{ @Override public void updateDate(String orderId, String date, String client) { System."><meta property="og:title" content="设计模式" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://ikingye.github.io/interview-me/docs/se/design-pattern/" />
@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="/interview-me/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/interview-me/en.search.min.0fd93ef3948f7716223466fe133e02e2ebaa937249e93093feed6efc199b32ef.js" integrity="sha256-D9k&#43;85SPdxYiNGb&#43;Ez4C4uuqk3JJ6TCT/u1u/BmbMu8="></script>
+<script defer src="/interview-me/en.search.min.63eb6558b1f8500a05ecaf13aa62c78f6cd6ae5f965e5d574772c6f90f7a9af5.js" integrity="sha256-Y&#43;tlWLH4UAoF7K8TqmLHj2zWrl&#43;WXl1XR3LG&#43;Q96mvU="></script>
 
 <link rel="alternate" type="application/rss+xml" href="https://ikingye.github.io/interview-me/docs/se/design-pattern/index.xml" title="自我面试" />
 <!--
@@ -894,13 +894,6 @@ https://github.com/alex-shpak/hugo-book
 <li>适配器的特点在于<strong>兼容</strong>，从代码上的特点来说，适配类与原有的类具有相同的接口，并且持有新的目标对象。就如同一个三孔转 2 孔的适配器一样，他有三孔的插头，可以插到三孔插座里，又有两孔的插座可以被 2 孔插头插入。适配器模式是在于对原有 3 孔的改造。在使用适配器模式的时候，我们必须<strong>同时持有原对象，适配对象，目标对象</strong>。</li>
 </ul>
 </li>
-<li>装饰器模式
-<ul>
-<li>原有的不能满足现有的需求，对原有的进行增强。</li>
-<li>装饰模式是在一个原有类 (a) 的基础之上增加了某些新的功能变成另一个类 (b)。</li>
-<li>装饰器模式特点在于<strong>增强</strong>，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。</li>
-</ul>
-</li>
 <li>代理模式
 <ul>
 <li>同一个类而去调用另一个类的方法，不对这个方法进行直接操作。</li>
@@ -908,6 +901,13 @@ https://github.com/alex-shpak/hugo-book
 <li>代理模式的特点在于<strong>隔离</strong>，隔离调用类和被调用类的关系，通过一个代理类去调用。</li>
 <li>代理模式是与原对象<strong>实现同一个接口</strong>，而适配器是实现一个新的接口。</li>
 <li>代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。</li>
+</ul>
+</li>
+<li>装饰器模式
+<ul>
+<li>原有的不能满足现有的需求，对原有的进行增强。</li>
+<li>装饰模式是在一个原有类 (a) 的基础之上增加了某些新的功能变成另一个类 (b)。</li>
+<li>装饰器模式特点在于<strong>增强</strong>，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。</li>
 </ul>
 </li>
 </ul>
@@ -920,7 +920,7 @@ https://github.com/alex-shpak/hugo-book
 </li>
 <li>都持有原对象
 <ul>
-<li>装饰器模式构造函数接收老对象</li>
+<li>装饰器模式构造函数<strong>接收老对象</strong></li>
 <li>适配器模式与代理模式自己 new 老对象</li>
 </ul>
 </li>
@@ -980,16 +980,16 @@ https://github.com/alex-shpak/hugo-book
 </span><span style="color:#75715e"> * 代理模式
 </span><span style="color:#75715e"> */</span>
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProxySourceOrderApiImpl</span> <span style="color:#66d9ef">implements</span> SourceOrderApi <span style="color:#f92672">{</span>
-    SourceOrderApi sourceOrderApiImpl<span style="color:#f92672">;</span>
+    SourceOrderApi sourceOrderApi<span style="color:#f92672">;</span>
     <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ProxySourceOrderApiImpl</span><span style="color:#f92672">(){</span>
-        sourceOrderApiImpl <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SourceOrderApiImpl<span style="color:#f92672">();</span>
+        sourceOrderApi <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SourceOrderApiImpl<span style="color:#f92672">();</span>
     <span style="color:#f92672">}</span>
 
     <span style="color:#a6e22e">@Override</span>
     <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>String orderId<span style="color:#f92672">,</span> String date<span style="color:#f92672">,</span> String client<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
         <span style="color:#75715e">//进行判断，如果是admin则更新否则让其输入账号密码
 </span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;admin&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>client<span style="color:#f92672">)){</span>
-            sourceOrderApiImpl<span style="color:#f92672">.</span><span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>orderId<span style="color:#f92672">,</span> date<span style="color:#f92672">,</span> client<span style="color:#f92672">);</span>
+            sourceOrderApi<span style="color:#f92672">.</span><span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>orderId<span style="color:#f92672">,</span> date<span style="color:#f92672">,</span> client<span style="color:#f92672">);</span>
         <span style="color:#f92672">}</span><span style="color:#66d9ef">else</span><span style="color:#f92672">{</span>
             System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;账号不是admin，没有查询权限，请输入以admin操作&#34;</span><span style="color:#f92672">);</span>
         <span style="color:#f92672">}</span>
@@ -1025,9 +1025,9 @@ https://github.com/alex-shpak/hugo-book
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/ikingye/interview-me/commit/4745477e671e2a9069a1fe877833f5d1675b1c04" title='Last modified by yewang | 2020-07-02' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/ikingye/interview-me/commit/a028b627d30f0c13c90f3648dc245d8edb4ac436" title='Last modified by yewang | 2020-07-08' target="_blank" rel="noopener">
       <img src="/interview-me/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-07-02</span>
+      <span>2020-07-08</span>
     </a>
   </div>
 
