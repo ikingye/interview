@@ -14,7 +14,7 @@ publishDir = "docs"
   unsafe = true
 
 [markup.tableOfContents]
-  startLevel = 1
+  startLevel = 2
   endLevel = 6
 
 # Multi-lingual mode config

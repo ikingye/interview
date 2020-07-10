@@ -1,4 +1,4 @@
 [submodule "themes/hugo-book"]
 	path = themes/hugo-book
 	url = https://github.com/ikingye/hugo-book
-	branch = v7
+	branch = v8

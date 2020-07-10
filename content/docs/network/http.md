@@ -112,3 +112,11 @@ hsts 全称 HTTP 严格传输安全（HTTP Strict Transport Security，縮寫：
 ---
 
 ## HTTPS
+
+### HTTPS 握手过程
+
+- TCP 握手 + SSL 握手
+
+参考：
+
+- [SSL 延迟有多大？](http://www.ruanyifeng.com/blog/2014/09/ssl-latency.html)
