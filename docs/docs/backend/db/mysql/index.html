@@ -4,8 +4,10 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Mysql Mysql 有哪些引擎，分别有什么特点？  Mysql 索引是怎么实现的？  Mysql 事务是怎么实现的？  Mysql 如何保证数据一致性？  Mysql 主从如何同步？ "><meta property="og:title" content="Mysql" />
-<meta property="og:description" content="Mysql Mysql 有哪些引擎，分别有什么特点？  Mysql 索引是怎么实现的？  Mysql 事务是怎么实现的？  Mysql 如何保证数据一致性？  Mysql 主从如何同步？ " />
+<meta name="description" content="Mysql Mysql 有哪些引擎，分别有什么特点？  Mysql 索引是怎么实现的？  Mysql 事务隔离级别有哪些？    隔离级别 脏读 不可重复读 幻读 锁 备注     读未提交（READ UNCOMMITTED） √ √ √ 不加锁    读提交 （READ COMMITTED） × √ √     可重复读 （REPEATABLE READ） × × √  Mysql 默认   串行化 （SERIALIZABLE） × × ×       begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。
+begin; select * from xxx; commit; -- 或者 rollback; 设置隔离级别"><meta property="og:title" content="Mysql" />
+<meta property="og:description" content="Mysql Mysql 有哪些引擎，分别有什么特点？  Mysql 索引是怎么实现的？  Mysql 事务隔离级别有哪些？    隔离级别 脏读 不可重复读 幻读 锁 备注     读未提交（READ UNCOMMITTED） √ √ √ 不加锁    读提交 （READ COMMITTED） × √ √     可重复读 （REPEATABLE READ） × × √  Mysql 默认   串行化 （SERIALIZABLE） × × ×       begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。
+begin; select * from xxx; commit; -- 或者 rollback; 设置隔离级别" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/interview-me/docs/backend/db/mysql/" />
 <meta property="article:modified_time" content="2020-07-02T01:40:52+08:00" />
@@ -16,7 +18,7 @@
 <link rel="stylesheet" href="/interview-me/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/interview-me/en.search.min.e2b958904bd42d82e0a216b4c3fd420e526c6756813cff84cb6af510c9910e54.js" integrity="sha256-4rlYkEvULYLgoha0w/1CDlJsZ1aBPP&#43;Ey2r1EMmRDlQ="></script>
+<script defer src="/interview-me/en.search.min.8428e6e388e45f1558c36147fff858c6d1b849f3ddac60538cd0f168d2846bf2.js" integrity="sha256-hCjm44jkXxVYw2FH//hYxtG4SfPdrGBTjNDxaNKEa/I="></script>
 
 <!--
 Made with Book Theme
@@ -516,7 +518,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/backend/db/" class="collapsed ">数据库</a>
+  <a href="/interview-me/docs/backend/db/" class="">数据库</a>
   
 
 
@@ -565,7 +567,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/backend/mq/" class="collapsed ">消息队列</a>
+  <a href="/interview-me/docs/backend/mq/" class="">消息队列</a>
   
 
 
@@ -573,6 +575,42 @@ https://github.com/alex-shpak/hugo-book
 
 
 
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/interview-me/docs/backend/mq/kafka/" class="">Kafka</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview-me/docs/backend/mq/rocketmq/" class="">RocketMQ</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview-me/docs/backend/mq/rabbitmq/" class="">RabbitMQ</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
 
 
 
@@ -841,6 +879,7 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#mysql-有哪些引擎分别有什么特点">Mysql 有哪些引擎，分别有什么特点？</a></li>
         <li><a href="#mysql-索引是怎么实现的">Mysql 索引是怎么实现的？</a></li>
+        <li><a href="#mysql-事务隔离级别有哪些">Mysql 事务隔离级别有哪些？</a></li>
         <li><a href="#mysql-事务是怎么实现的">Mysql 事务是怎么实现的？</a></li>
         <li><a href="#mysql-如何保证数据一致性">Mysql 如何保证数据一致性？</a></li>
         <li><a href="#mysql-主从如何同步">Mysql 主从如何同步？</a></li>
@@ -861,6 +900,69 @@ https://github.com/alex-shpak/hugo-book
 <h2 id="mysql-有哪些引擎分别有什么特点">Mysql 有哪些引擎，分别有什么特点？</h2>
 <hr>
 <h2 id="mysql-索引是怎么实现的">Mysql 索引是怎么实现的？</h2>
+<hr>
+<h2 id="mysql-事务隔离级别有哪些">Mysql 事务隔离级别有哪些？</h2>
+<table>
+<thead>
+<tr>
+<th>隔离级别</th>
+<th>脏读</th>
+<th>不可重复读</th>
+<th>幻读</th>
+<th>锁</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>读未提交（<code>READ UNCOMMITTED</code>）</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>不加锁</td>
+<td></td>
+</tr>
+<tr>
+<td>读提交 （<code>READ COMMITTED</code>）</td>
+<td>×</td>
+<td>√</td>
+<td>√</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>可重复读 （<code>REPEATABLE READ</code>）</td>
+<td>×</td>
+<td>×</td>
+<td>√</td>
+<td></td>
+<td>Mysql 默认</td>
+</tr>
+<tr>
+<td>串行化 （<code>SERIALIZABLE</code>）</td>
+<td>×</td>
+<td>×</td>
+<td>×</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200710114214.png" alt="" /></p>
+<p>begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">begin</span>;
+<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> xxx;
+<span style="color:#66d9ef">commit</span>; <span style="color:#75715e">-- 或者 rollback;
+</span></code></pre></div><p>设置隔离级别</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- SET [SESSION | GLOBAL] TRANSACTION ISOLATION LEVEL {READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE}
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">set</span> <span style="color:#66d9ef">global</span> <span style="color:#66d9ef">transaction</span> <span style="color:#66d9ef">isolation</span> <span style="color:#66d9ef">level</span> <span style="color:#66d9ef">read</span> <span style="color:#66d9ef">committed</span>;
+</code></pre></div><p>查询当前有多少事务正在运行</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> information_schema.innodb_trx;
+</code></pre></div><p>参考：</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/117476959">MySQL 事务隔离级别和实现原理</a></li>
+</ul>
 <hr>
 <h2 id="mysql-事务是怎么实现的">Mysql 事务是怎么实现的？</h2>
 <hr>
@@ -920,6 +1022,7 @@ https://github.com/alex-shpak/hugo-book
       <ul>
         <li><a href="#mysql-有哪些引擎分别有什么特点">Mysql 有哪些引擎，分别有什么特点？</a></li>
         <li><a href="#mysql-索引是怎么实现的">Mysql 索引是怎么实现的？</a></li>
+        <li><a href="#mysql-事务隔离级别有哪些">Mysql 事务隔离级别有哪些？</a></li>
         <li><a href="#mysql-事务是怎么实现的">Mysql 事务是怎么实现的？</a></li>
         <li><a href="#mysql-如何保证数据一致性">Mysql 如何保证数据一致性？</a></li>
         <li><a href="#mysql-主从如何同步">Mysql 主从如何同步？</a></li>

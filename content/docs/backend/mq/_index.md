@@ -1,7 +1,7 @@
 ---
 weight: 20
 title: "消息队列"
-bookCollapseSection: true
+bookCollapseSection: false
 ---
 
 # 消息队列

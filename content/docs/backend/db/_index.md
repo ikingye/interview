@@ -1,7 +1,7 @@
 ---
 weight: 10
 title: "数据库"
-bookCollapseSection: true
+bookCollapseSection: false
 ---
 
 # 数据库
