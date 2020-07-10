@@ -408,10 +408,9 @@
 - [ ] [Mysql](content/docs/backend/db/mysql.md)
   - [ ] Mysql 有哪些引擎，分别有什么特点？
   - [ ] Mysql 索引是怎么实现的？
-  - [ ] Mysql 事务隔离级别有哪些？
-    - [ ] Mysql 事务隔离级别有哪些？
-    - [ ] 为什么 Oracle 等默认使用 `READ COMMITTED` 隔离级别，而 Mysql 默认要使用 `REPEATABLE READ` 隔离级别
   - [ ] Mysql 事务是怎么实现的？
+  - [x] Mysql 事务隔离级别有哪些？
+  - [ ] 为什么 Oracle 等默认隔离级别是 `READ COMMITTED` ，而 Mysql 默认隔离级别是 `REPEATABLE READ`？
   - [ ] Mysql 如何保证数据一致性？
   - [ ] Mysql 主从如何同步？
 - [ ] [Redis](content/docs/backend/db/redis.md)
