@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Mysql Mysql 有哪些引擎，分别有什么特点？  Mysql 索引是怎么实现的？  Mysql 事务隔离级别有哪些？    隔离级别 脏读 不可重复读 幻读 锁 备注     读未提交（READ UNCOMMITTED） √ √ √ 不加锁    读提交 （READ COMMITTED） × √ √     可重复读 （REPEATABLE READ） × × √  Mysql 默认   串行化 （SERIALIZABLE） × × ×       begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。
+<meta name="description" content="Mysql Mysql 有哪些引擎，分别有什么特点？  Mysql 索引是怎么实现的？  Mysql 事务隔离级别有哪些？    隔离级别 脏读 不可重复读 幻读 锁 备注     读未提交（READ UNCOMMITTED） √ √ √ 不加锁    读提交 （READ COMMITTED） × √ √  Oracle 默认   可重复读 （REPEATABLE READ） × × √  Mysql 默认   串行化 （SERIALIZABLE） × × ×       begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。
 begin; select * from xxx; commit; -- 或者 rollback; 设置隔离级别"><meta property="og:title" content="Mysql" />
-<meta property="og:description" content="Mysql Mysql 有哪些引擎，分别有什么特点？  Mysql 索引是怎么实现的？  Mysql 事务隔离级别有哪些？    隔离级别 脏读 不可重复读 幻读 锁 备注     读未提交（READ UNCOMMITTED） √ √ √ 不加锁    读提交 （READ COMMITTED） × √ √     可重复读 （REPEATABLE READ） × × √  Mysql 默认   串行化 （SERIALIZABLE） × × ×       begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。
+<meta property="og:description" content="Mysql Mysql 有哪些引擎，分别有什么特点？  Mysql 索引是怎么实现的？  Mysql 事务隔离级别有哪些？    隔离级别 脏读 不可重复读 幻读 锁 备注     读未提交（READ UNCOMMITTED） √ √ √ 不加锁    读提交 （READ COMMITTED） × √ √  Oracle 默认   可重复读 （REPEATABLE READ） × × √  Mysql 默认   串行化 （SERIALIZABLE） × × ×       begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。
 begin; select * from xxx; commit; -- 或者 rollback; 设置隔离级别" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/interview-me/docs/backend/db/mysql/" />
-<meta property="article:modified_time" content="2020-07-02T01:40:52+08:00" />
+<meta property="article:modified_time" content="2020-07-10T14:09:17+08:00" />
 <title>Mysql | 自我面试</title>
 <link rel="icon" href="/interview-me/favicon.png" type="image/x-icon">
 
@@ -18,7 +18,7 @@ begin; select * from xxx; commit; -- 或者 rollback; 设置隔离级别" />
 <link rel="stylesheet" href="/interview-me/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/interview-me/en.search.min.8428e6e388e45f1558c36147fff858c6d1b849f3ddac60538cd0f168d2846bf2.js" integrity="sha256-hCjm44jkXxVYw2FH//hYxtG4SfPdrGBTjNDxaNKEa/I="></script>
+<script defer src="/interview-me/en.search.min.3fd4465f8e7a43a761e87867bd3f6d2811446748834a4a042e94673544134cae.js" integrity="sha256-P9RGX456Q6dh6HhnvT9tKBFEZ0iDSkoELpRnNUQTTK4="></script>
 
 <!--
 Made with Book Theme
@@ -928,7 +928,7 @@ https://github.com/alex-shpak/hugo-book
 <td>√</td>
 <td>√</td>
 <td></td>
-<td></td>
+<td>Oracle 默认</td>
 </tr>
 <tr>
 <td>可重复读 （<code>REPEATABLE READ</code>）</td>
@@ -949,7 +949,6 @@ https://github.com/alex-shpak/hugo-book
 </tbody>
 </table>
 <hr>
-<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200710114214.png" alt="" /></p>
 <p>begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">begin</span>;
 <span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> xxx;
@@ -981,9 +980,9 @@ https://github.com/alex-shpak/hugo-book
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/ikingye/interview-me/commit/825b593e1b704ca8095a62da30fdfb9c25c57a66" title='Last modified by yewang | 2020-07-02' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/ikingye/interview-me/commit/30b2c27400df76f159f983d5ee7ab502036d7812" title='Last modified by yewang | 2020-07-10' target="_blank" rel="noopener">
       <img src="/interview-me/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-07-02</span>
+      <span>2020-07-10</span>
     </a>
   </div>
 

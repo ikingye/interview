@@ -16,16 +16,14 @@ bookCollapseSection: true
 
 ## Mysql 事务隔离级别有哪些？
 
-| 隔离级别                       | 脏读 | 不可重复读 | 幻读 | 锁     | 备注       |
-| ------------------------------ | ---- | ---------- | ---- | ------ | ---------- |
-| 读未提交（`READ UNCOMMITTED`） | √    | √          | √    | 不加锁 |            |
-| 读提交 （`READ COMMITTED`）    | ×    | √          | √    |        |            |
-| 可重复读 （`REPEATABLE READ`） | ×    | ×          | √    |        | Mysql 默认 |
-| 串行化 （`SERIALIZABLE`）      | ×    | ×          | ×    |        |            |
+| 隔离级别                       | 脏读 | 不可重复读 | 幻读 | 锁     | 备注        |
+| ------------------------------ | ---- | ---------- | ---- | ------ | ----------- |
+| 读未提交（`READ UNCOMMITTED`） | √    | √          | √    | 不加锁 |             |
+| 读提交 （`READ COMMITTED`）    | ×    | √          | √    |        | Oracle 默认 |
+| 可重复读 （`REPEATABLE READ`） | ×    | ×          | √    |        | Mysql 默认  |
+| 串行化 （`SERIALIZABLE`）      | ×    | ×          | ×    |        |             |
 
 ---
-
-![](https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200710114214.png)
 
 begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。
 
