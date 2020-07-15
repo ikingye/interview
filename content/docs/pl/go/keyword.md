@@ -40,3 +40,7 @@ func new(Type) *Type
 ---
 
 ## panic, recover 是怎么实现的？
+
+参考：
+
+- [Go 语言 panic 和 recover 的原理](https://draveness.me/golang/docs/part2-foundation/ch05-keyword/golang-panic-recover/)

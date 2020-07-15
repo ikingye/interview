@@ -39,7 +39,7 @@ bookCollapseSection: true
 Golang 调度器引入了三个结构来对调度的过程建模：
 
 - G 代表一个 Goroutine；
-- M 代表一个操作系统的线程；
+- M 代表一个操作系统的**线程**； `Machine`
 - P 代表一个 CPU 处理器，通常 P 的数量等于 CPU 核数（`GOMAXPROCS`）。
 
 三者都在 runtime2.go 中定义，他们之间的关系如下：
@@ -57,3 +57,12 @@ Golang 调度器引入了三个结构来对调度的过程建模：
 - 当一个 G 执行结束时，P 会从队列中把该 G 取出；如果此时 P 的队列为空，即没有其他 G 可以执行， 就随机选择另外一个 P，从其可执行的 G 队列中偷取一半。
 
 该算法避免了在 Goroutine 调度时使用全局锁。
+
+### 抢占
+
+- 在 Go 中，一个 `goroutine` 最多占用 CPU 10ms，防止其他 goroutine 被饿死
+- 在 coroutine 中要等待一个协程主动让出 CPU 才执行下一个协程
+
+### 全局 G 队列
+
+在新的调度器中依然有全局 G 队列，但功能已经被弱化了，当 M 执行 work stealing 从其他 P 偷不到 G 时，它可以从全局 G 队列获取 G。
