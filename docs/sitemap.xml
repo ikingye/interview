@@ -98,11 +98,6 @@
   </url>
   
   <url>
-    <loc>https://ikingye.github.io/interview-me/docs/others/encryption/</loc>
-    <lastmod>2020-07-02T01:08:07+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://ikingye.github.io/interview-me/docs/algs/dp/</loc>
     <lastmod>2020-06-16T23:03:12+08:00</lastmod>
   </url>
@@ -140,11 +135,6 @@
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/algs/search/</loc>
     <lastmod>2020-06-16T23:03:12+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ikingye.github.io/interview-me/docs/others/compile/</loc>
-    <lastmod>2020-07-02T01:08:07+08:00</lastmod>
   </url>
   
   <url>
@@ -209,6 +199,11 @@
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/se/design-pattern/creational/</loc>
+    <lastmod>2020-07-02T01:08:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/others/encryption/</loc>
     <lastmod>2020-07-02T01:08:07+08:00</lastmod>
   </url>
   
@@ -279,6 +274,11 @@
   
   <url>
     <loc>https://ikingye.github.io/interview-me/docs/se/design-pattern/structural/</loc>
+    <lastmod>2020-07-02T01:08:07+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ikingye.github.io/interview-me/docs/others/compile/</loc>
     <lastmod>2020-07-02T01:08:07+08:00</lastmod>
   </url>
   
