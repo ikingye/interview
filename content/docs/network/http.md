@@ -58,6 +58,34 @@ hsts 全称 HTTP 严格传输安全（HTTP Strict Transport Security，縮寫：
 
 ### HTTP chunk 是什么？解决了什么问题？
 
+允许 HTTP 由应用服务器发送给客户端应用的数据可以分成多个部分
+
+`Transfer-Encoding: chunked`
+
+历史上 Transfer-Encoding 支持 多种编码，但是目前最新的规范里，只支持 chunked 编码，即分块编码一种。
+
+分块传输编码只在 HTTP/1.1 中提供
+
+chunked 还是给浏览器传输了**长度**，但是偷偷藏在了报文当中，所以并没有显式地像 content-length 在头部声明
+
+由一个标明长度为 0 的 chunk 结束
+
+```python
+# body 非空，而且没有 Content-Length
+chunked = not (request.body is None or 'Content-Length' in request.headers)
+```
+
+Facebook 为了减少页面的响应时间，发明了一种他们称之为 “BigPipe” 的技术，这个技术的核心原理就是 Http 的 Chunk 编码。
+据 Facebook 的测试表明 “BigPipe” 技术使其页面响应时间减少了约 50% （FireFox3.6 除外，用 FireFox3.6 的响应时间减少约 22%）
+
+![](https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200720191554.png)
+
+参考：
+
+- [为什么在 HTTP 的 chunked 模式下不需要设置长度](https://zhuanlan.zhihu.com/p/65816404)
+- [HTTP 协议中 chunk 的应用场景？](https://www.zhihu.com/question/26495136)
+- [kubernetes 用 chunked 来实现 watch 机制，实现发布订阅消息的效果](https://kubernetes.io/docs/reference/using-api/api-concepts/#efficient-detection-of-changes)
+
 ---
 
 ### HTTP/1.1 有哪些问题？
