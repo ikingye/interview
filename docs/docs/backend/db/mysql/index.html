@@ -18,7 +18,7 @@ begin; select * from xxx; commit; -- 或者 rollback;  Mysql 事务隔离级别�
 <link rel="stylesheet" href="/interview-me/book.min.fdfc554c603ded12f3eed031329bc54fba81945ce272e5de4a34659187fc8c78.css" integrity="sha256-/fxVTGA97RLz7tAxMpvFT7qBlFzicuXeSjRlkYf8jHg=">
 
 
-<script defer src="/interview-me/en.search.min.7dc4dbc0ef5963fad3feb174f9f3d7dd42f919d5c12486db2032ddaccaa16039.js" integrity="sha256-fcTbwO9ZY/rT/rF0&#43;fPX3UL5GdXBJIbbIDLdrMqhYDk="></script>
+<script defer src="/interview-me/en.search.min.87941e04f6b3b253e01fdcda695250004f1b7dfb78157f912633a4a4a71f7334.js" integrity="sha256-h5QeBPazslPgH9zaaVJQAE8bfft4FX&#43;RJjOkpKcfczQ="></script>
 
 <!--
 Made with Book Theme
@@ -884,6 +884,9 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#可重复读">可重复读</a></li>
       </ul>
     </li>
+    <li><a href="#为什么-oracle-等默认隔离级别是-read-committed-而-mysql-默认隔离级别是-repeatable-read">为什么 Oracle 等默认隔离级别是 <code>READ COMMITTED</code> ，而 Mysql 默认隔离级别是 <code>REPEATABLE READ</code>？</a></li>
+    <li><a href="#mysql-有哪些锁各自的使用场景是什么">Mysql 有哪些锁，各自的使用场景是什么？</a></li>
+    <li><a href="#mysql-什么情况下会出现死锁">Mysql 什么情况下会出现死锁？</a></li>
     <li><a href="#mysql-如何保证数据一致性">Mysql 如何保证数据一致性？</a></li>
     <li><a href="#mysql-主从如何同步">Mysql 主从如何同步？</a></li>
   </ul>
@@ -986,6 +989,128 @@ MySQL 把行锁和间隙锁合并在一起，解决了并发写和幻读的问�
 <ul>
 <li><a href="https://zhuanlan.zhihu.com/p/117476959">MySQL 事务隔离级别和实现原理</a></li>
 </ul>
+<p>&ndash;</p>
+<h2 id="为什么-oracle-等默认隔离级别是-read-committed-而-mysql-默认隔离级别是-repeatable-read">为什么 Oracle 等默认隔离级别是 <code>READ COMMITTED</code> ，而 Mysql 默认隔离级别是 <code>REPEATABLE READ</code>？</h2>
+<hr>
+<h2 id="mysql-有哪些锁各自的使用场景是什么">Mysql 有哪些锁，各自的使用场景是什么？</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>行锁</th>
+<th>表锁</th>
+<th>页锁</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MyISAM</td>
+<td></td>
+<td>√</td>
+<td></td>
+</tr>
+<tr>
+<td>BDB</td>
+<td></td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>InnoDB</td>
+<td>√</td>
+<td>√</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>BDB 已经被 InnoDB 所取代</p>
+<hr>
+<ul>
+<li>表锁
+<ul>
+<li>开销小，加锁快；不会出现死锁；锁定力度大，发生锁冲突概率高，并发度最低</li>
+</ul>
+</li>
+<li>行锁
+<ul>
+<li>开销大，加锁慢；会出现死锁；锁定粒度小，发生锁冲突的概率低，并发度高</li>
+</ul>
+</li>
+<li>页锁
+<ul>
+<li>开销和加锁速度介于表锁和行锁之间；会出现死锁；锁定粒度介于表锁和行锁之间，并发度一般</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>共享锁（S）</li>
+<li>排他锁（X)</li>
+<li>意向共享锁（IS）</li>
+<li>意向排他锁（IX）</li>
+</ul>
+<hr>
+<ul>
+<li>行锁（<code>Record Locks</code>）
+<ul>
+<li>行锁一定是作用在<strong>索引</strong>上的</li>
+</ul>
+</li>
+<li>间隙锁（<code>Gap Locks</code>）
+<ul>
+<li>间隙锁一定是<strong>开区间</strong></li>
+<li>间隙锁的应用场景包括并发读取、并发更新、并发删除和并发插入</li>
+<li><code>可重复读</code>与<code>串行化</code>才有<code>间隙锁</code>，<code>读未提交</code>与<code>读提交</code>没有<code>间隙锁</code></li>
+</ul>
+</li>
+<li>临键锁（<code>Next-key Locks</code>）
+<ul>
+<li>临键锁是行锁 + 间隙锁，即临键锁是是一个<strong>左开右闭</strong>的区间</li>
+<li>RR 级别下使用 <code>select ... in share mode</code> 或者 <code>select ... for update 语句</code>，那么 InnoDB 会使用<strong>临键锁</strong>，因而可以防止<strong>幻读</strong>（<code>读后写</code>的场景）
+<ul>
+<li>RR 级别下使用普通的 select 语句，InnoDB 将是<strong>快照读</strong>，不会使用任何锁，因而还是无法防止幻读。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>共享锁 / 排他锁（<code>Shared and Exclusive Locks</code>）
+<ul>
+<li>共享锁 / 排他锁都只是行锁，与间隙锁无关</li>
+<li>共享锁：<code>select ... in share mode</code></li>
+<li>排他锁：<code>select ... for update</code></li>
+<li>尽管共享锁 / 排他锁是行锁，与间隙锁无关，但一个事务在请求共享锁 / 排他锁时，获取到的结果却可能是行锁，也可能是间隙锁，也可能是临键锁，这取决于数据库的<strong>隔离级别</strong>以及<strong>查询的数据是否存在</strong>。</li>
+</ul>
+</li>
+<li>意向共享锁 / 意向排他锁（<code>Intention Shared and Exclusive Locks</code>）
+<ul>
+<li>意向共享锁 / 意向排他锁属于<strong>表锁</strong></li>
+<li>取得意向共享锁 / 意向排他锁是取得共享锁 / 排他锁的<strong>前置条件</strong></li>
+</ul>
+</li>
+<li>插入意向锁（<code>Insert Intention Locks</code>）
+<ul>
+<li>插入意向锁是一种特殊的<strong>间隙锁</strong>，该锁只用于<strong>并发插入</strong>操作</li>
+<li>如果说间隙锁锁住的是一个区间，那么插入意向锁锁住的就是一个点</li>
+</ul>
+</li>
+<li>自增锁（<code>Auto-inc Locks</code>）</li>
+</ul>
+<hr>
+<ul>
+<li>增：插入意向锁</li>
+<li>删改：排他锁</li>
+<li>查：共享锁</li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a href="https://blog.csdn.net/Saintyyu/article/details/91269087">MySQL 常见的七种锁详细介绍</a></li>
+</ul>
+<hr>
+<h2 id="mysql-什么情况下会出现死锁">Mysql 什么情况下会出现死锁？</h2>
+<ul>
+<li>在 InnoDB 引擎下，RR (<code>REPEATABLE-READ</code>) 级别，如果多个事务争抢同一个资源，会发生死锁。</li>
+</ul>
+<p><code>next-key lock</code></p>
 <hr>
 <h2 id="mysql-如何保证数据一致性">Mysql 如何保证数据一致性？</h2>
 <hr>
@@ -1047,6 +1172,9 @@ MySQL 把行锁和间隙锁合并在一起，解决了并发写和幻读的问�
         <li><a href="#可重复读">可重复读</a></li>
       </ul>
     </li>
+    <li><a href="#为什么-oracle-等默认隔离级别是-read-committed-而-mysql-默认隔离级别是-repeatable-read">为什么 Oracle 等默认隔离级别是 <code>READ COMMITTED</code> ，而 Mysql 默认隔离级别是 <code>REPEATABLE READ</code>？</a></li>
+    <li><a href="#mysql-有哪些锁各自的使用场景是什么">Mysql 有哪些锁，各自的使用场景是什么？</a></li>
+    <li><a href="#mysql-什么情况下会出现死锁">Mysql 什么情况下会出现死锁？</a></li>
     <li><a href="#mysql-如何保证数据一致性">Mysql 如何保证数据一致性？</a></li>
     <li><a href="#mysql-主从如何同步">Mysql 主从如何同步？</a></li>
   </ul>

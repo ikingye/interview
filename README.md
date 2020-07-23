@@ -411,10 +411,13 @@
   - [ ] Mysql 事务是怎么实现的？
   - [x] Mysql 事务隔离级别有哪些？
   - [ ] 为什么 Oracle 等默认隔离级别是 `READ COMMITTED` ，而 Mysql 默认隔离级别是 `REPEATABLE READ`？
+  - [ ] Mysql 有哪些锁，各自的使用场景是什么？
+  - [ ] Mysql 什么情况下会出现死锁？
   - [ ] Mysql 如何保证数据一致性？
   - [ ] Mysql 主从如何同步？
 - [ ] [Redis](content/docs/backend/db/redis.md)
   - [ ] Redis 有哪些数据结构，分别适用什么场景？
+  - [ ] Redis 数据结构是如何实现的？
   - [ ] Redis 如何做持久化？
   - [ ] Redis 是单进程单线程，这么设计有什么优点？
 - [ ] PostgreSQL
@@ -458,7 +461,8 @@
 
 - [ ] [配置热加载](content/docs/backend/others/hot%20load.md)
 - [ ] [程序热重启](content/docs/backend/others/hot%20restart.md)
-  - [ ] 你使用的编程语言，是如何实现热重启的？
+  - [ ] 程序如何优雅退出？
+  - [ ] 是如何实现热重启的？
 
 ---
 
