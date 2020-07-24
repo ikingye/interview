@@ -10,7 +10,7 @@ begin; select * from xxx; commit; -- 或者 rollback;  Mysql 事务隔离级别�
 begin; select * from xxx; commit; -- 或者 rollback;  Mysql 事务隔离级别有哪些？    隔离级别 脏读 不可重复读 幻读 锁 备注     读未提交（READ UNCOMMITTED） √ √ √ 不加锁    读提交 （READ COMMITTED） × √ √  Oracle 默认   可重复读 （REPEATABLE READ） × × √  Mysql 默认   串行化 （SERIALIZABLE） × × × 共享锁 相当于单线程     可重复读  事务开始时读到的已有数据是什么，在事务提交前的任意时刻，这些数据的值都是一样的。    设置隔离级别" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/interview-me/docs/backend/db/mysql/" />
-<meta property="article:modified_time" content="2020-07-10T15:45:05+08:00" />
+<meta property="article:modified_time" content="2020-07-23T19:38:46+08:00" />
 <title>Mysql | 自我面试</title>
 <link rel="icon" href="/interview-me/favicon.png" type="image/x-icon">
 
@@ -1127,9 +1127,9 @@ MySQL 把行锁和间隙锁合并在一起，解决了并发写和幻读的问�
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/ikingye/interview-me/commit/c1ffd32ad80673d35dbf094a19442f8e65240f2b" title='Last modified by yewang | 2020-07-10' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/ikingye/interview-me/commit/56a6937aa089f56d0cb81182468237c4e8407f8a" title='Last modified by yewang | 2020-07-23' target="_blank" rel="noopener">
       <img src="/interview-me/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-07-10</span>
+      <span>2020-07-23</span>
     </a>
   </div>
 
