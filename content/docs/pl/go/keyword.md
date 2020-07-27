@@ -8,8 +8,28 @@ bookCollapseSection: true
 
 ## make, new 有什么区别？
 
-- make 返回变量本身
-- new 返回变量的指针
+- make
+  - 初始化
+  - 设置数组的长度、容量等
+  - 返回变量本身
+- new
+  - 只初始化
+  - 返回变量的指针
+
+```go
+list := new([]int)
+// 不能对未设置长度的指针执行 append 操作
+list = append(list, 1)
+
+s1 := []int{1, 2, 3}
+s2 := []int{4, 5}
+// 编译错误，s2需要展开
+// s1 = append(s1, s2)
+s1 = append(s1, s2...)
+fmt.Println(s1)
+```
+
+---
 
 ```go
 // The make built-in function allocates and initializes an object of type

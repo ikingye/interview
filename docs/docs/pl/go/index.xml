@@ -24,7 +24,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview-me/docs/pl/go/keyword/</guid>
-      <description>关键字 make, new 有什么区别？  make 返回变量本身 new 返回变量的指针  // The make built-in function allocates and initializes an object of type // slice, map, or chan (only). Like new, the first argument is a type, not a // value. Unlike new, make&amp;#39;s return type is the same as the type of its // argument, not a pointer to it. The specification of the result depends on // the type: //	Slice: The size specifies the length.</description>
+      <description>关键字 make, new 有什么区别？  make  初始化 设置数组的长度、容量等 返回变量本身   new  只初始化 返回变量的指针    list := new([]int) // 不能对未设置长度的指针执行 append 操作 list = append(list, 1) s1 := []int{1, 2, 3} s2 := []int{4, 5} // 编译错误，s2需要展开 // s1 = append(s1, s2) s1 = append(s1, s2...) fmt.Println(s1)  // The make built-in function allocates and initializes an object of type // slice, map, or chan (only). Like new, the first argument is a type, not a // value.</description>
     </item>
     
     <item>
