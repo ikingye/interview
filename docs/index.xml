@@ -151,7 +151,7 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview-me/docs/network/capture/</guid>
-      <description>抓包 综合 常用抓包工具有哪些？分别有什么特点，适用于什么场景？  tcpdump wireshark </description>
+      <description>抓包 综合 常用抓包工具有哪些？分别有什么特点，适用于什么场景？  tcpdump  tcpdump -D: 列出所有可监听设备 tcpdump -i: 指定网络接口（网卡）  tcpdump -i any: 不确定走哪个网卡   tcpdump host: 指定主机  tcpdump src host: 指定主机发送出去的包 tcpdump dst host: 发送到指定主机的包   tcpdump tcp: 指定协议 tcpdump port: 指定端口 tcpdump -n: 直接显示 IP，而不把 IP 解析为主机名 tcpdump -nn: 直接显示 IP 与端口，而不解析为主机名与服务 tcpdump -N: 不打印 host 的域名部分，比如打印 nic 而不是 nic.ddn.mil tcpdump -w: 输出到文件 tcpdump -tttt: 更具有可读性的时间格式 tcpdump -c: 抓 n 个包，然后退出  # 监视第一个网络接口上所有流过的数据包 tcpdump # 监视指定网络接口的数据包 tcpdump -i eth1 # 截获主机 210.</description>
     </item>
     
     <item>
