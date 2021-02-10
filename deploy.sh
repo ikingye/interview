@@ -1,7 +1,7 @@
 #!/bin/sh
 
 set -x
-printf "\033[0;32m interview-me Deploying updates to GitHub...\033[0m\n"
+printf "\033[0;32m interview Deploying updates to GitHub...\033[0m\n"
 cd $(dirname "$0")
 
 # Commit changes.

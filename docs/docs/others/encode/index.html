@@ -17,16 +17,16 @@ Base 系列的就是用来将字节编码为 ASCII 中的可见字符的。
 Base64 Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9、&#43;、/）将任意字节序列数据编码成 ASCII 字符串，另有 “=” 符号用作后缀用途。
 Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0）， 然后将这些二进制数值串联起来，再按照 6 比特一组进行切分（因为 2^6=64），最后一组若不足 6 比特则末尾补 0。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ikingye.github.io/interview-me/docs/others/encode/" />
+<meta property="og:url" content="https://ikingye.github.io/interview/docs/others/encode/" />
 <meta property="article:modified_time" content="2020-07-15T15:38:39+08:00" />
-<title>字符编码 | 自我面试</title>
-<link rel="icon" href="/interview-me/favicon.png" type="image/x-icon">
+<title>字符编码 | 面试</title>
+<link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/interview-me/book.min.9eb34a541dae64ef88ebcc3da0ae41207b6e9fd026eb7c3da82300b0c455ed4c.css" integrity="sha256-nrNKVB2uZO&#43;I68w9oK5BIHtun9Am63w9qCMAsMRV7Uw=">
+<link rel="stylesheet" href="/interview/book.min.9eb34a541dae64ef88ebcc3da0ae41207b6e9fd026eb7c3da82300b0c455ed4c.css" integrity="sha256-nrNKVB2uZO&#43;I68w9oK5BIHtun9Am63w9qCMAsMRV7Uw=">
 
 
-<script defer src="/interview-me/en.search.min.93dee6833f46f02044de53ac0e8eb39e5c7c0e9b1ec71e0a25c24803906e03f3.js" integrity="sha256-k97mgz9G8CBE3lOsDo6znlx8Dpsexx4KJcJIA5BuA/M="></script>
+<script defer src="/interview/en.search.min.90e6dcc567ea992678d50abf5c27ce636afa9d598fd08e26ff095f94a537c66b.js" integrity="sha256-kObcxWfqmSZ41Qq/XCfOY2r6nVmP0I4m/wlflKU3xms="></script>
 
 <!--
 Made with Book Theme
@@ -43,7 +43,7 @@ https://github.com/alex-shpak/hugo-book
       
   <nav>
 <h2 class="book-brand">
-  <a href="/interview-me"><span>自我面试</span>
+  <a href="/interview"><span>面试</span>
   </a>
 </h2>
 
@@ -98,7 +98,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/os/" class="">操作系统</a>
+  <a href="/interview/docs/os/" class="">操作系统</a>
   
 
 
@@ -117,7 +117,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/os/linux/" class="collapsed ">Linux</a>
+  <a href="/interview/docs/os/linux/" class="collapsed ">Linux</a>
   
 
 
@@ -137,7 +137,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/os/memory/" class="">内存</a>
+  <a href="/interview/docs/os/memory/" class="">内存</a>
   
 
 </li>
@@ -147,7 +147,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/os/process/" class="">进程/线程/携程</a>
+  <a href="/interview/docs/os/process/" class="">进程/线程/携程</a>
   
 
 </li>
@@ -170,7 +170,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/network/" class="collapsed ">网络</a>
+  <a href="/interview/docs/network/" class="collapsed ">网络</a>
   
 
 
@@ -193,7 +193,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/algs/" class="collapsed ">算法</a>
+  <a href="/interview/docs/algs/" class="collapsed ">算法</a>
   
 
 
@@ -216,7 +216,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/pl/" class="">编程语言</a>
+  <a href="/interview/docs/pl/" class="">编程语言</a>
   
 
 
@@ -235,7 +235,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/pl/cpp/" class="collapsed ">C&#43;&#43;</a>
+  <a href="/interview/docs/pl/cpp/" class="collapsed ">C&#43;&#43;</a>
   
 
 
@@ -258,7 +258,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/pl/go/" class="collapsed ">Go</a>
+  <a href="/interview/docs/pl/go/" class="collapsed ">Go</a>
   
 
 
@@ -281,7 +281,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/pl/java/" class="collapsed ">Java</a>
+  <a href="/interview/docs/pl/java/" class="collapsed ">Java</a>
   
 
 
@@ -304,7 +304,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/pl/php/" class="collapsed ">PHP</a>
+  <a href="/interview/docs/pl/php/" class="collapsed ">PHP</a>
   
 
 
@@ -327,7 +327,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/pl/python/" class="collapsed ">Python</a>
+  <a href="/interview/docs/pl/python/" class="collapsed ">Python</a>
   
 
 
@@ -350,7 +350,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/pl/rust/" class="collapsed ">Rust</a>
+  <a href="/interview/docs/pl/rust/" class="collapsed ">Rust</a>
   
 
 
@@ -383,7 +383,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/se/" class="">软件工程</a>
+  <a href="/interview/docs/se/" class="">软件工程</a>
   
 
 
@@ -402,7 +402,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/se/design-pattern/" class="collapsed ">设计模式</a>
+  <a href="/interview/docs/se/design-pattern/" class="collapsed ">设计模式</a>
   
 
 
@@ -425,7 +425,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/se/architecture/" class="collapsed ">架构设计</a>
+  <a href="/interview/docs/se/architecture/" class="collapsed ">架构设计</a>
   
 
 
@@ -448,7 +448,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/se/pm/" class="collapsed ">项目管理</a>
+  <a href="/interview/docs/se/pm/" class="collapsed ">项目管理</a>
   
 
 
@@ -500,7 +500,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/backend/web/" class="collapsed ">Web 后端</a>
+  <a href="/interview/docs/backend/web/" class="collapsed ">Web 后端</a>
   
 
 
@@ -523,7 +523,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/backend/db/" class="">数据库</a>
+  <a href="/interview/docs/backend/db/" class="">数据库</a>
   
 
 
@@ -539,7 +539,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/backend/db/mysql/" class="">Mysql</a>
+  <a href="/interview/docs/backend/db/mysql/" class="">Mysql</a>
   
 
 </li>
@@ -549,7 +549,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/backend/db/redis/" class="">Redis</a>
+  <a href="/interview/docs/backend/db/redis/" class="">Redis</a>
   
 
 </li>
@@ -572,7 +572,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/backend/mq/" class="">消息队列</a>
+  <a href="/interview/docs/backend/mq/" class="">消息队列</a>
   
 
 
@@ -588,7 +588,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/backend/mq/kafka/" class="">Kafka</a>
+  <a href="/interview/docs/backend/mq/kafka/" class="">Kafka</a>
   
 
 </li>
@@ -598,7 +598,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/backend/mq/rocketmq/" class="">RocketMQ</a>
+  <a href="/interview/docs/backend/mq/rocketmq/" class="">RocketMQ</a>
   
 
 </li>
@@ -608,7 +608,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/backend/mq/rabbitmq/" class="">RabbitMQ</a>
+  <a href="/interview/docs/backend/mq/rabbitmq/" class="">RabbitMQ</a>
   
 
 </li>
@@ -631,7 +631,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/backend/others/" class="collapsed ">其他</a>
+  <a href="/interview/docs/backend/others/" class="collapsed ">其他</a>
   
 
 
@@ -770,7 +770,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/security/web/" class="collapsed ">Web 安全</a>
+  <a href="/interview/docs/security/web/" class="collapsed ">Web 安全</a>
   
 
 
@@ -803,7 +803,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/others/" class="collapsed ">其他</a>
+  <a href="/interview/docs/others/" class="collapsed ">其他</a>
   
 
 
@@ -819,7 +819,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/others/encode/" class="active">字符编码</a>
+  <a href="/interview/docs/others/encode/" class="active">字符编码</a>
   
 
 </li>
@@ -829,7 +829,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/others/encryption/" class="">加密</a>
+  <a href="/interview/docs/others/encryption/" class="">加密</a>
   
 
 </li>
@@ -839,7 +839,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/others/compile/" class="">编译</a>
+  <a href="/interview/docs/others/compile/" class="">编译</a>
   
 
 </li>
@@ -901,13 +901,13 @@ https://github.com/alex-shpak/hugo-book
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/interview-me/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/interview/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
   <strong>字符编码</strong>
 
   <label for="toc-control">
-    <img src="/interview-me/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/interview/svg/toc.svg" class="book-icon" alt="Table of Contents" />
   </label>
 </div>
 
@@ -1056,8 +1056,8 @@ https://github.com/alex-shpak/hugo-book
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/ikingye/interview-me/commit/f949abcd9d6e96783c5c5a592d8fa9682aaf2d3a" title='Last modified by yewang | 2020-07-15' target="_blank" rel="noopener">
-      <img src="/interview-me/svg/calendar.svg" class="book-icon" alt="Calendar" />
+    <a class="flex align-center" href="https://github.com/ikingye/interview/commit/f949abcd9d6e96783c5c5a592d8fa9682aaf2d3a" title='Last modified by yewang | 2020-07-15' target="_blank" rel="noopener">
+      <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-07-15</span>
     </a>
   </div>
@@ -1138,7 +1138,7 @@ https://github.com/alex-shpak/hugo-book
   </main>
 
   
-<a href="https://github.com/ikingye/interview-me"
+<a href="https://github.com/ikingye/interview"
 class="github-corner" aria-label="View source on GitHub">
 <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
   <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>

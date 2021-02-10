@@ -7,16 +7,16 @@
 <meta name="description" content="Go 包管理 简单说说 Go 包管理工具的发展历史？  Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules     你用过哪些 Go 包管理工具，说说它们的优缺点？   golang/dep   Masterminds/glide   kardianos/govendor    Go Mod 相对之前的版本管理有哪些优点？  可以指定版本   Go Mod 如何找到引用的包？ 一般情况："><meta property="og:title" content="Go 包管理" />
 <meta property="og:description" content="Go 包管理 简单说说 Go 包管理工具的发展历史？  Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules     你用过哪些 Go 包管理工具，说说它们的优缺点？   golang/dep   Masterminds/glide   kardianos/govendor    Go Mod 相对之前的版本管理有哪些优点？  可以指定版本   Go Mod 如何找到引用的包？ 一般情况：" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ikingye.github.io/interview-me/docs/pl/go/pm/" />
+<meta property="og:url" content="https://ikingye.github.io/interview/docs/pl/go/pm/" />
 <meta property="article:modified_time" content="2020-07-02T02:26:05+08:00" />
-<title>Go 包管理 | 自我面试</title>
-<link rel="icon" href="/interview-me/favicon.png" type="image/x-icon">
+<title>Go 包管理 | 面试</title>
+<link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/interview-me/book.min.9eb34a541dae64ef88ebcc3da0ae41207b6e9fd026eb7c3da82300b0c455ed4c.css" integrity="sha256-nrNKVB2uZO&#43;I68w9oK5BIHtun9Am63w9qCMAsMRV7Uw=">
+<link rel="stylesheet" href="/interview/book.min.9eb34a541dae64ef88ebcc3da0ae41207b6e9fd026eb7c3da82300b0c455ed4c.css" integrity="sha256-nrNKVB2uZO&#43;I68w9oK5BIHtun9Am63w9qCMAsMRV7Uw=">
 
 
-<script defer src="/interview-me/en.search.min.93dee6833f46f02044de53ac0e8eb39e5c7c0e9b1ec71e0a25c24803906e03f3.js" integrity="sha256-k97mgz9G8CBE3lOsDo6znlx8Dpsexx4KJcJIA5BuA/M="></script>
+<script defer src="/interview/en.search.min.90e6dcc567ea992678d50abf5c27ce636afa9d598fd08e26ff095f94a537c66b.js" integrity="sha256-kObcxWfqmSZ41Qq/XCfOY2r6nVmP0I4m/wlflKU3xms="></script>
 
 <!--
 Made with Book Theme
@@ -33,7 +33,7 @@ https://github.com/alex-shpak/hugo-book
       
   <nav>
 <h2 class="book-brand">
-  <a href="/interview-me"><span>自我面试</span>
+  <a href="/interview"><span>面试</span>
   </a>
 </h2>
 
@@ -88,7 +88,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/os/" class="">操作系统</a>
+  <a href="/interview/docs/os/" class="">操作系统</a>
   
 
 
@@ -107,7 +107,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/os/linux/" class="collapsed ">Linux</a>
+  <a href="/interview/docs/os/linux/" class="collapsed ">Linux</a>
   
 
 
@@ -127,7 +127,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/os/memory/" class="">内存</a>
+  <a href="/interview/docs/os/memory/" class="">内存</a>
   
 
 </li>
@@ -137,7 +137,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/os/process/" class="">进程/线程/携程</a>
+  <a href="/interview/docs/os/process/" class="">进程/线程/携程</a>
   
 
 </li>
@@ -160,7 +160,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/network/" class="collapsed ">网络</a>
+  <a href="/interview/docs/network/" class="collapsed ">网络</a>
   
 
 
@@ -183,7 +183,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/algs/" class="collapsed ">算法</a>
+  <a href="/interview/docs/algs/" class="collapsed ">算法</a>
   
 
 
@@ -206,7 +206,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/pl/" class="">编程语言</a>
+  <a href="/interview/docs/pl/" class="">编程语言</a>
   
 
 
@@ -225,7 +225,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/pl/cpp/" class="collapsed ">C&#43;&#43;</a>
+  <a href="/interview/docs/pl/cpp/" class="collapsed ">C&#43;&#43;</a>
   
 
 
@@ -248,7 +248,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/pl/go/" class="collapsed ">Go</a>
+  <a href="/interview/docs/pl/go/" class="collapsed ">Go</a>
   
 
 
@@ -264,7 +264,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/pl/go/type/" class="">数据类型</a>
+  <a href="/interview/docs/pl/go/type/" class="">数据类型</a>
   
 
 </li>
@@ -274,7 +274,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/pl/go/keyword/" class="">关键字</a>
+  <a href="/interview/docs/pl/go/keyword/" class="">关键字</a>
   
 
 </li>
@@ -284,7 +284,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/pl/go/channel/" class="">Go Channel</a>
+  <a href="/interview/docs/pl/go/channel/" class="">Go Channel</a>
   
 
 </li>
@@ -294,7 +294,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/pl/go/goroutine/" class="">Goroutine</a>
+  <a href="/interview/docs/pl/go/goroutine/" class="">Goroutine</a>
   
 
 </li>
@@ -304,7 +304,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/pl/go/pm/" class="active">Go 包管理</a>
+  <a href="/interview/docs/pl/go/pm/" class="active">Go 包管理</a>
   
 
 </li>
@@ -314,7 +314,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/pl/go/compile/" class="">Go 编译</a>
+  <a href="/interview/docs/pl/go/compile/" class="">Go 编译</a>
   
 
 </li>
@@ -324,7 +324,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/pl/go/version/" class="">Go 版本</a>
+  <a href="/interview/docs/pl/go/version/" class="">Go 版本</a>
   
 
 </li>
@@ -334,7 +334,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/pl/go/std/" class="">Go 标准库</a>
+  <a href="/interview/docs/pl/go/std/" class="">Go 标准库</a>
   
 
 </li>
@@ -344,7 +344,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/pl/go/test/" class="">测试</a>
+  <a href="/interview/docs/pl/go/test/" class="">测试</a>
   
 
 </li>
@@ -354,7 +354,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/pl/go/performance/" class="">性能</a>
+  <a href="/interview/docs/pl/go/performance/" class="">性能</a>
   
 
 </li>
@@ -377,7 +377,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/pl/java/" class="collapsed ">Java</a>
+  <a href="/interview/docs/pl/java/" class="collapsed ">Java</a>
   
 
 
@@ -400,7 +400,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/pl/php/" class="collapsed ">PHP</a>
+  <a href="/interview/docs/pl/php/" class="collapsed ">PHP</a>
   
 
 
@@ -423,7 +423,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/pl/python/" class="collapsed ">Python</a>
+  <a href="/interview/docs/pl/python/" class="collapsed ">Python</a>
   
 
 
@@ -446,7 +446,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/pl/rust/" class="collapsed ">Rust</a>
+  <a href="/interview/docs/pl/rust/" class="collapsed ">Rust</a>
   
 
 
@@ -479,7 +479,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/se/" class="">软件工程</a>
+  <a href="/interview/docs/se/" class="">软件工程</a>
   
 
 
@@ -498,7 +498,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/se/design-pattern/" class="collapsed ">设计模式</a>
+  <a href="/interview/docs/se/design-pattern/" class="collapsed ">设计模式</a>
   
 
 
@@ -521,7 +521,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/se/architecture/" class="collapsed ">架构设计</a>
+  <a href="/interview/docs/se/architecture/" class="collapsed ">架构设计</a>
   
 
 
@@ -544,7 +544,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/se/pm/" class="collapsed ">项目管理</a>
+  <a href="/interview/docs/se/pm/" class="collapsed ">项目管理</a>
   
 
 
@@ -596,7 +596,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/backend/web/" class="collapsed ">Web 后端</a>
+  <a href="/interview/docs/backend/web/" class="collapsed ">Web 后端</a>
   
 
 
@@ -619,7 +619,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/backend/db/" class="">数据库</a>
+  <a href="/interview/docs/backend/db/" class="">数据库</a>
   
 
 
@@ -635,7 +635,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/backend/db/mysql/" class="">Mysql</a>
+  <a href="/interview/docs/backend/db/mysql/" class="">Mysql</a>
   
 
 </li>
@@ -645,7 +645,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/backend/db/redis/" class="">Redis</a>
+  <a href="/interview/docs/backend/db/redis/" class="">Redis</a>
   
 
 </li>
@@ -668,7 +668,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/backend/mq/" class="">消息队列</a>
+  <a href="/interview/docs/backend/mq/" class="">消息队列</a>
   
 
 
@@ -684,7 +684,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/backend/mq/kafka/" class="">Kafka</a>
+  <a href="/interview/docs/backend/mq/kafka/" class="">Kafka</a>
   
 
 </li>
@@ -694,7 +694,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/backend/mq/rocketmq/" class="">RocketMQ</a>
+  <a href="/interview/docs/backend/mq/rocketmq/" class="">RocketMQ</a>
   
 
 </li>
@@ -704,7 +704,7 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview-me/docs/backend/mq/rabbitmq/" class="">RabbitMQ</a>
+  <a href="/interview/docs/backend/mq/rabbitmq/" class="">RabbitMQ</a>
   
 
 </li>
@@ -727,7 +727,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/backend/others/" class="collapsed ">其他</a>
+  <a href="/interview/docs/backend/others/" class="collapsed ">其他</a>
   
 
 
@@ -866,7 +866,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/security/web/" class="collapsed ">Web 安全</a>
+  <a href="/interview/docs/security/web/" class="collapsed ">Web 安全</a>
   
 
 
@@ -899,7 +899,7 @@ https://github.com/alex-shpak/hugo-book
     
 
   
-  <a href="/interview-me/docs/others/" class="collapsed ">其他</a>
+  <a href="/interview/docs/others/" class="collapsed ">其他</a>
   
 
 
@@ -961,13 +961,13 @@ https://github.com/alex-shpak/hugo-book
         
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/interview-me/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/interview/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
   <strong>Go 包管理</strong>
 
   <label for="toc-control">
-    <img src="/interview-me/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/interview/svg/toc.svg" class="book-icon" alt="Table of Contents" />
   </label>
 </div>
 
@@ -1059,8 +1059,8 @@ https://github.com/alex-shpak/hugo-book
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/ikingye/interview-me/commit/2a6c6d7930d19a08d88a551e2bc451e98c189d19" title='Last modified by yewang | 2020-07-02' target="_blank" rel="noopener">
-      <img src="/interview-me/svg/calendar.svg" class="book-icon" alt="Calendar" />
+    <a class="flex align-center" href="https://github.com/ikingye/interview/commit/2a6c6d7930d19a08d88a551e2bc451e98c189d19" title='Last modified by yewang | 2020-07-02' target="_blank" rel="noopener">
+      <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-07-02</span>
     </a>
   </div>
@@ -1131,7 +1131,7 @@ https://github.com/alex-shpak/hugo-book
   </main>
 
   
-<a href="https://github.com/ikingye/interview-me"
+<a href="https://github.com/ikingye/interview"
 class="github-corner" aria-label="View source on GitHub">
 <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
   <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>

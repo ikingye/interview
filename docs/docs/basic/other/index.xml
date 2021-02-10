@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>其他 on 自我面试</title>
-    <link>https://ikingye.github.io/interview-me/docs/basic/other/</link>
-    <description>Recent content in 其他 on 自我面试</description>
+    <title>其他 on 面试</title>
+    <link>https://ikingye.github.io/interview/docs/basic/other/</link>
+    <description>Recent content in 其他 on 面试</description>
     <generator>Hugo -- gohugo.io</generator>
-    
-	<atom:link href="https://ikingye.github.io/interview-me/docs/basic/other/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+
+	<atom:link href="https://ikingye.github.io/interview/docs/basic/other/index.xml" rel="self" type="application/rss+xml" />
+
+
     <item>
       <title>加密</title>
-      <link>https://ikingye.github.io/interview-me/docs/basic/other/encryption/</link>
+      <link>https://ikingye.github.io/interview/docs/basic/other/encryption/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview-me/docs/basic/other/encryption/</guid>
+
+      <guid>https://ikingye.github.io/interview/docs/basic/other/encryption/</guid>
       <description>加密 </description>
     </item>
-    
+
     <item>
       <title>字符编码</title>
-      <link>https://ikingye.github.io/interview-me/docs/basic/other/encode/</link>
+      <link>https://ikingye.github.io/interview/docs/basic/other/encode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview-me/docs/basic/other/encode/</guid>
+
+      <guid>https://ikingye.github.io/interview/docs/basic/other/encode/</guid>
       <description>字符编码 Base 系列 参考：rfc4648
 有的字符在一些环境中是不能显示或使用的， 比如 &amp;amp;, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
 Base 系列的就是用来将字节编码为 ASCII 中的可见字符的。
@@ -32,15 +32,15 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
 由于二进制数据是按照 8 比特一组进行传输，因此 Base64 按照 6 比特一组切分的二进制数据必须是 24 比特的倍数（6 和 8 的最小公倍数）， 就是 3 个字节。 若原字节序列数据长度不是 3 的倍数时且剩下 1 个输入数据，则在编码结果后加 2 个 =；若剩下 2 个输入数据，则在编码结果后加 1 个 =。
 数据量扩大了 1/3。</description>
     </item>
-    
+
     <item>
       <title>编译</title>
-      <link>https://ikingye.github.io/interview-me/docs/basic/other/compile/</link>
+      <link>https://ikingye.github.io/interview/docs/basic/other/compile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview-me/docs/basic/other/compile/</guid>
+
+      <guid>https://ikingye.github.io/interview/docs/basic/other/compile/</guid>
       <description>编译 </description>
     </item>
-    
+
   </channel>
 </rss>

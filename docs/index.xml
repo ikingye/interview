@@ -1,94 +1,94 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>首页 on 自我面试</title>
-    <link>https://ikingye.github.io/interview-me/</link>
-    <description>Recent content in 首页 on 自我面试</description>
+    <title>首页 on 面试</title>
+    <link>https://ikingye.github.io/interview/</link>
+    <description>Recent content in 首页 on 面试</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	<atom:link href="https://ikingye.github.io/interview-me/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ikingye.github.io/interview/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Beego</title>
-      <link>https://ikingye.github.io/interview-me/docs/backend/web/go/beego/</link>
+      <link>https://ikingye.github.io/interview/docs/backend/web/go/beego/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/backend/web/go/beego/</guid>
+      <guid>https://ikingye.github.io/interview/docs/backend/web/go/beego/</guid>
       <description>Beego </description>
     </item>
     
     <item>
       <title>HTTP</title>
-      <link>https://ikingye.github.io/interview-me/docs/network/http/</link>
+      <link>https://ikingye.github.io/interview/docs/network/http/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/network/http/</guid>
+      <guid>https://ikingye.github.io/interview/docs/network/http/</guid>
       <description>HTTP HTTP 基础 HTTP 状态码有哪些？  2XX 成功  200 ok（请求成功） 204 no content （请求成功，但是没有结果返回） 206 partial content （客户端请求一部分资源，服务端成功响应，返回一范围资源）   3XX 重定向  301 move permanently （永久性重定向） 302 found （临时性重定向） 303 see other （示由于请求对应的资源存在着另一个 URI，应使用 GET 方法定向获取请求的资源） 304 not modified （表示在客户端采用带条件的访问某资源时，服务端找到了资源，但是这个请求的条件不符合。跟重定向无关） 307 temporary redirect （跟 302 一个意思）   4XX 客户端错误  400 bad request （请求报文存在语法错误） 401 unauthorized （需要认证（第一次返回）或者认证失败（第二次返回）） 403 forbidden （请求被服务器拒绝了） 404 not found （服务器上无法找到请求的资源）   5XX 服务器错误  500 internal server error （服务端执行请求时发生了错误） 503 service unavailable （服务器正在超负载或者停机维护，无法处理请求）    301 和 302 有什么区别？分别适用于什么场景？ 101， 304， 307 分别是什么？ 101 协议升级</description>
     </item>
     
     <item>
       <title>Kafka</title>
-      <link>https://ikingye.github.io/interview-me/docs/backend/mq/kafka/</link>
+      <link>https://ikingye.github.io/interview/docs/backend/mq/kafka/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/backend/mq/kafka/</guid>
+      <guid>https://ikingye.github.io/interview/docs/backend/mq/kafka/</guid>
       <description>Kafka Kafka 如何实现一致性？ </description>
     </item>
     
     <item>
       <title>Linux 系统信息</title>
-      <link>https://ikingye.github.io/interview-me/docs/os/linux/info/</link>
+      <link>https://ikingye.github.io/interview/docs/os/linux/info/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/os/linux/info/</guid>
+      <guid>https://ikingye.github.io/interview/docs/os/linux/info/</guid>
       <description>Linux 系统信息 硬件信息 如何查看内存大小？ free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ # 物理 cpu 个数 cat /proc/cpuinfo| grep &amp;#39;physical id&amp;#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &amp;#39;core id&amp;#39; | sort | uniq | wc -l # 逻辑 cpu 个数（线程数） cat /proc/cpuinfo| grep &amp;#39;processor&amp;#39; | sort | uniq | wc -l 例子：
  2 个 cpu 每个 cpu 有 8 个核心（一共 16 个核心） 一共有 32 个逻辑 cpu / 线程（每个核心有 2 个逻辑 cpu / 线程）   如何查看系统内核？ uname -a cat /proc/version 如何查看操作系统版本？ cat /etc/issue cat /etc/*release  运行信息 如何查看占用内存最多的进程？ 如何查看占用 CPU 最多的进程？ 如何查看占用某个端口的进程？ </description>
     </item>
     
     <item>
       <title>Mysql</title>
-      <link>https://ikingye.github.io/interview-me/docs/backend/db/mysql/</link>
+      <link>https://ikingye.github.io/interview/docs/backend/db/mysql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/backend/db/mysql/</guid>
+      <guid>https://ikingye.github.io/interview/docs/backend/db/mysql/</guid>
       <description>Mysql Mysql 有哪些引擎，分别有什么特点？  Mysql 索引是怎么实现的？  Mysql 事务是怎么实现的？ begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。
 begin; select * from xxx; commit; -- 或者 rollback;  Mysql 事务隔离级别有哪些？    隔离级别 脏读 不可重复读 幻读 锁 备注     读未提交（READ UNCOMMITTED） √ √ √ 不加锁    读提交 （READ COMMITTED） × √ √  Oracle 默认   可重复读 （REPEATABLE READ） × × √  Mysql 默认   串行化 （SERIALIZABLE） × × × 共享锁 相当于单线程     可重复读  事务开始时读到的已有数据是什么，在事务提交前的任意时刻，这些数据的值都是一样的。    设置隔离级别</description>
     </item>
     
     <item>
       <title>Shell</title>
-      <link>https://ikingye.github.io/interview-me/docs/os/linux/shell/</link>
+      <link>https://ikingye.github.io/interview/docs/os/linux/shell/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/os/linux/shell/</guid>
+      <guid>https://ikingye.github.io/interview/docs/os/linux/shell/</guid>
       <description>Shell ps ps aux 与 ps -ef 有什么区别？  lsof awk sed </description>
     </item>
     
     <item>
       <title>Spring</title>
-      <link>https://ikingye.github.io/interview-me/docs/backend/web/java/spring/</link>
+      <link>https://ikingye.github.io/interview/docs/backend/web/java/spring/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/backend/web/java/spring/</guid>
+      <guid>https://ikingye.github.io/interview/docs/backend/web/java/spring/</guid>
       <description>Spring </description>
     </item>
     
     <item>
       <title>TCP/UDP/IP</title>
-      <link>https://ikingye.github.io/interview-me/docs/network/tcp/</link>
+      <link>https://ikingye.github.io/interview/docs/network/tcp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/network/tcp/</guid>
+      <guid>https://ikingye.github.io/interview/docs/network/tcp/</guid>
       <description>TCP/UDP/IP TCP </description>
     </item>
     
     <item>
       <title>XSS</title>
-      <link>https://ikingye.github.io/interview-me/docs/security/web/xss/</link>
+      <link>https://ikingye.github.io/interview/docs/security/web/xss/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/security/web/xss/</guid>
+      <guid>https://ikingye.github.io/interview/docs/security/web/xss/</guid>
       <description>XSS 什么是 XSS，为什么会发生 XSS？ Cross-site scripting 跨站脚本 (wiki)
 XSS 发生的原因 没有将用户输入的文本进行合适的过滤，就贸然插入到 HTML 中，这很容易造成注入漏洞。 攻击者可以利用漏洞，构造出恶意的代码指令，进而利用恶意代码危害数据安全。
 不仅仅是业务上的 “用户的 UGC 内容” 可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：
@@ -97,46 +97,46 @@ XSS 发生的原因 没有将用户输入的文本进行合适的过滤，就贸
     
     <item>
       <title>二叉树</title>
-      <link>https://ikingye.github.io/interview-me/docs/algs/tree/</link>
+      <link>https://ikingye.github.io/interview/docs/algs/tree/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/algs/tree/</guid>
+      <guid>https://ikingye.github.io/interview/docs/algs/tree/</guid>
       <description>二叉树 </description>
     </item>
     
     <item>
       <title>内存</title>
-      <link>https://ikingye.github.io/interview-me/docs/os/memory/</link>
+      <link>https://ikingye.github.io/interview/docs/os/memory/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/os/memory/</guid>
+      <guid>https://ikingye.github.io/interview/docs/os/memory/</guid>
       <description>内存 综合 程序加载的时候，是怎么分布的，哪些在堆里，哪些在栈里？  堆  栈 </description>
     </item>
     
     <item>
       <title>动态规划</title>
-      <link>https://ikingye.github.io/interview-me/docs/algs/dp/</link>
+      <link>https://ikingye.github.io/interview/docs/algs/dp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/algs/dp/</guid>
+      <guid>https://ikingye.github.io/interview/docs/algs/dp/</guid>
       <description>动态规划 </description>
     </item>
     
     <item>
       <title>发包工具</title>
-      <link>https://ikingye.github.io/interview-me/docs/network/send/</link>
+      <link>https://ikingye.github.io/interview/docs/network/send/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/network/send/</guid>
+      <guid>https://ikingye.github.io/interview/docs/network/send/</guid>
       <description>发包工具 综合 常用发包工具有哪些？分别有什么特点，适用于什么场景？  PacketSender </description>
     </item>
     
     <item>
       <title>字符编码</title>
-      <link>https://ikingye.github.io/interview-me/docs/others/encode/</link>
+      <link>https://ikingye.github.io/interview/docs/others/encode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/others/encode/</guid>
+      <guid>https://ikingye.github.io/interview/docs/others/encode/</guid>
       <description>字符编码 有的字符在一些环境中是不能显示或使用的， 比如 &amp;amp;, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
 各种编码的特征  Base 编码  Base64  组成字符：A-Z、a-z、0-9、+、/ 末尾一般补 0-2 个 =（可以不补 =）   Base32  组成字符：A-Z、2-7 末尾一般补 0-6 个 =（可以不补 =）   Base16  组成字符：0-9、A-F 末尾没有 =       Base 编码 参考：rfc4648
 Base 系列的就是用来将字节编码为 ASCII 中的可见字符的。
@@ -147,156 +147,156 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
     
     <item>
       <title>抓包</title>
-      <link>https://ikingye.github.io/interview-me/docs/network/capture/</link>
+      <link>https://ikingye.github.io/interview/docs/network/capture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/network/capture/</guid>
+      <guid>https://ikingye.github.io/interview/docs/network/capture/</guid>
       <description>抓包 综合 常用抓包工具有哪些？分别有什么特点，适用于什么场景？  tcpdump  tcpdump -D: 列出所有可监听设备 tcpdump -i: 指定网络接口（网卡）  tcpdump -i any: 不确定走哪个网卡   tcpdump host: 指定主机  tcpdump src host: 指定主机发送出去的包 tcpdump dst host: 发送到指定主机的包   tcpdump tcp: 指定协议 tcpdump port: 指定端口 tcpdump -n: 直接显示 IP，而不把 IP 解析为主机名 tcpdump -nn: 直接显示 IP 与端口，而不解析为主机名与服务 tcpdump -N: 不打印 host 的域名部分，比如打印 nic 而不是 nic.ddn.mil tcpdump -w: 输出到文件 tcpdump -tttt: 更具有可读性的时间格式 tcpdump -c: 抓 n 个包，然后退出  # 监视第一个网络接口上所有流过的数据包 tcpdump # 监视指定网络接口的数据包 tcpdump -i eth1 # 截获主机 210.</description>
     </item>
     
     <item>
       <title>排序算法</title>
-      <link>https://ikingye.github.io/interview-me/docs/algs/sort/</link>
+      <link>https://ikingye.github.io/interview/docs/algs/sort/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/algs/sort/</guid>
+      <guid>https://ikingye.github.io/interview/docs/algs/sort/</guid>
       <description>排序算法 </description>
     </item>
     
     <item>
       <title>数据类型</title>
-      <link>https://ikingye.github.io/interview-me/docs/pl/go/type/</link>
+      <link>https://ikingye.github.io/interview/docs/pl/go/type/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/pl/go/type/</guid>
+      <guid>https://ikingye.github.io/interview/docs/pl/go/type/</guid>
       <description>数据类型 </description>
     </item>
     
     <item>
       <title>查询算法</title>
-      <link>https://ikingye.github.io/interview-me/docs/algs/search/</link>
+      <link>https://ikingye.github.io/interview/docs/algs/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/algs/search/</guid>
+      <guid>https://ikingye.github.io/interview/docs/algs/search/</guid>
       <description>查询算法 </description>
     </item>
     
     <item>
       <title>设计原则</title>
-      <link>https://ikingye.github.io/interview-me/docs/se/design-pattern/principle/</link>
+      <link>https://ikingye.github.io/interview/docs/se/design-pattern/principle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/se/design-pattern/principle/</guid>
+      <guid>https://ikingye.github.io/interview/docs/se/design-pattern/principle/</guid>
       <description>设计原则 单一职责原则 (SRP)   开闭原则 (Open Closed Principle)   里氏替换原则 (Liskov Substitution Principle)   依赖倒置原则 (Dependence Inversion Principle)   接口隔离原则 (Interface Segregation Principle)   迪米特原则 (Demeter Principle) </description>
     </item>
     
     <item>
       <title>进程/线程/携程</title>
-      <link>https://ikingye.github.io/interview-me/docs/os/process/</link>
+      <link>https://ikingye.github.io/interview/docs/os/process/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/os/process/</guid>
+      <guid>https://ikingye.github.io/interview/docs/os/process/</guid>
       <description>进程/线程/携程 进程 一个进程包含哪些信息？  进程切换时，操作系统做了哪些事情？  进程切换时，需要保存哪些信息，保存在哪里？  线程 线程比进程轻量，体现在哪里？  什么时候使用线程，什么时候使用进程？  携程 协程是什么，怎么实现的？  既然协程那么好，那什么时候用进程和线程？ </description>
     </item>
     
     <item>
       <title>配置热加载</title>
-      <link>https://ikingye.github.io/interview-me/docs/backend/others/hot-load/</link>
+      <link>https://ikingye.github.io/interview/docs/backend/others/hot-load/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/backend/others/hot-load/</guid>
+      <guid>https://ikingye.github.io/interview/docs/backend/others/hot-load/</guid>
       <description>配置热加载 </description>
     </item>
     
     <item>
       <title>链表</title>
-      <link>https://ikingye.github.io/interview-me/docs/algs/link/</link>
+      <link>https://ikingye.github.io/interview/docs/algs/link/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/algs/link/</guid>
+      <guid>https://ikingye.github.io/interview/docs/algs/link/</guid>
       <description>链表 </description>
     </item>
     
     <item>
       <title>CSRF</title>
-      <link>https://ikingye.github.io/interview-me/docs/security/web/csrf/</link>
+      <link>https://ikingye.github.io/interview/docs/security/web/csrf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/security/web/csrf/</guid>
+      <guid>https://ikingye.github.io/interview/docs/security/web/csrf/</guid>
       <description>CSRF 什么是 CSRF，为什么会发生 CSRF？  有哪些 CSRF 攻击方法？  如何防止 CSRF 攻击？ </description>
     </item>
     
     <item>
       <title>Gin</title>
-      <link>https://ikingye.github.io/interview-me/docs/backend/web/go/gin/</link>
+      <link>https://ikingye.github.io/interview/docs/backend/web/go/gin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/backend/web/go/gin/</guid>
+      <guid>https://ikingye.github.io/interview/docs/backend/web/go/gin/</guid>
       <description>Gin </description>
     </item>
     
     <item>
       <title>Redis</title>
-      <link>https://ikingye.github.io/interview-me/docs/backend/db/redis/</link>
+      <link>https://ikingye.github.io/interview/docs/backend/db/redis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/backend/db/redis/</guid>
+      <guid>https://ikingye.github.io/interview/docs/backend/db/redis/</guid>
       <description>Redis Redis 有哪些数据结构，分别适用什么场景？  Redis 数据结构是如何实现的？  Redis 如何做持久化？ RDB 在指定的时间间隔能对你的数据进行快照存储
 # 时间策略 save 900 1 save 300 10 save 60 10000 # 文件名称 dbfilename dump.rdb # 文件保存路径 dir /home/work/app/redis/data/ # 如果持久化出错，主进程是否停止写入 stop-writes-on-bgsave-error yes # 是否压缩 rdbcompression yes # 导入时是否检查 rdbchecksum yes AOF # 是否开启aof appendonly yes # 文件名称 appendfilename &amp;#34;appendonly.aof&amp;#34; # 同步方式 appendfsync everysec # aof重写期间是否同步 no-appendfsync-on-rewrite no # 重写触发配置 auto-aof-rewrite-percentage 100 auto-aof-rewrite-min-size 64mb # 加载aof时如果有错如何处理 aof-load-truncated yes # 文件重写策略 aof-rewrite-incremental-fsync yes  Redis 是单进程单线程，这么设计有什么优点？ </description>
     </item>
     
     <item>
       <title>RocketMQ</title>
-      <link>https://ikingye.github.io/interview-me/docs/backend/mq/rocketmq/</link>
+      <link>https://ikingye.github.io/interview/docs/backend/mq/rocketmq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/backend/mq/rocketmq/</guid>
+      <guid>https://ikingye.github.io/interview/docs/backend/mq/rocketmq/</guid>
       <description>RocketMQ </description>
     </item>
     
     <item>
       <title>关键字</title>
-      <link>https://ikingye.github.io/interview-me/docs/pl/go/keyword/</link>
+      <link>https://ikingye.github.io/interview/docs/pl/go/keyword/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/pl/go/keyword/</guid>
+      <guid>https://ikingye.github.io/interview/docs/pl/go/keyword/</guid>
       <description>关键字 make, new 有什么区别？  make  初始化 设置数组的长度、容量等 返回变量本身   new  只初始化 返回变量的指针    list := new([]int) // 不能对未设置长度的指针执行 append 操作 list = append(list, 1) s1 := []int{1, 2, 3} s2 := []int{4, 5} // 编译错误，s2需要展开 // s1 = append(s1, s2) s1 = append(s1, s2...) fmt.Println(s1)  // The make built-in function allocates and initializes an object of type // slice, map, or chan (only). Like new, the first argument is a type, not a // value.</description>
     </item>
     
     <item>
       <title>创建型模式</title>
-      <link>https://ikingye.github.io/interview-me/docs/se/design-pattern/creational/</link>
+      <link>https://ikingye.github.io/interview/docs/se/design-pattern/creational/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/se/design-pattern/creational/</guid>
+      <guid>https://ikingye.github.io/interview/docs/se/design-pattern/creational/</guid>
       <description>创建型模式 简单工厂模式   工厂方法模式   抽象工厂模式   建造者模式   单例模式 </description>
     </item>
     
     <item>
       <title>加密</title>
-      <link>https://ikingye.github.io/interview-me/docs/others/encryption/</link>
+      <link>https://ikingye.github.io/interview/docs/others/encryption/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/others/encryption/</guid>
+      <guid>https://ikingye.github.io/interview/docs/others/encryption/</guid>
       <description>加密 SSL/TLS TLS 握手流程是什么样的？ 参考：
  SSL/TLS 详解  </description>
     </item>
     
     <item>
       <title>架构设计原则</title>
-      <link>https://ikingye.github.io/interview-me/docs/se/architecture/principle/</link>
+      <link>https://ikingye.github.io/interview/docs/se/architecture/principle/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/se/architecture/principle/</guid>
+      <guid>https://ikingye.github.io/interview/docs/se/architecture/principle/</guid>
       <description>架构设计原则 CAP (Consistency, Availability, Partition tolerance) 如何理解 CAP，你在做系统设计时是如何取舍的？  ACID (Atomicity, Consistency, Isolation, Durability)  BASE (Basically Available, Soft state, Eventual consistency) </description>
     </item>
     
     <item>
       <title>程序热重启</title>
-      <link>https://ikingye.github.io/interview-me/docs/backend/others/hot-restart/</link>
+      <link>https://ikingye.github.io/interview/docs/backend/others/hot-restart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/backend/others/hot-restart/</guid>
+      <guid>https://ikingye.github.io/interview/docs/backend/others/hot-restart/</guid>
       <description>程序热重启 程序如何优雅退出？ Linux 信号 信号是进程间通信的底层形式。
 Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
 发送信号的原因：
@@ -312,83 +312,83 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
     
     <item>
       <title>高可用</title>
-      <link>https://ikingye.github.io/interview-me/docs/se/architecture/high-availability/</link>
+      <link>https://ikingye.github.io/interview/docs/se/architecture/high-availability/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/se/architecture/high-availability/</guid>
+      <guid>https://ikingye.github.io/interview/docs/se/architecture/high-availability/</guid>
       <description>高可用 </description>
     </item>
     
     <item>
       <title>高并发</title>
-      <link>https://ikingye.github.io/interview-me/docs/se/architecture/high-concurrency/</link>
+      <link>https://ikingye.github.io/interview/docs/se/architecture/high-concurrency/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/se/architecture/high-concurrency/</guid>
+      <guid>https://ikingye.github.io/interview/docs/se/architecture/high-concurrency/</guid>
       <description>高并发 </description>
     </item>
     
     <item>
       <title>高性能</title>
-      <link>https://ikingye.github.io/interview-me/docs/se/architecture/high-performance/</link>
+      <link>https://ikingye.github.io/interview/docs/se/architecture/high-performance/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/se/architecture/high-performance/</guid>
+      <guid>https://ikingye.github.io/interview/docs/se/architecture/high-performance/</guid>
       <description>高性能 </description>
     </item>
     
     <item>
       <title>高扩展性</title>
-      <link>https://ikingye.github.io/interview-me/docs/se/architecture/high-scalability/</link>
+      <link>https://ikingye.github.io/interview/docs/se/architecture/high-scalability/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/se/architecture/high-scalability/</guid>
+      <guid>https://ikingye.github.io/interview/docs/se/architecture/high-scalability/</guid>
       <description>高扩展性 如何构建高扩展性网站 参考：
  如何构建高扩展性网站？   A Word on Scalability  </description>
     </item>
     
     <item>
       <title>Go Channel</title>
-      <link>https://ikingye.github.io/interview-me/docs/pl/go/channel/</link>
+      <link>https://ikingye.github.io/interview/docs/pl/go/channel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/pl/go/channel/</guid>
+      <guid>https://ikingye.github.io/interview/docs/pl/go/channel/</guid>
       <description>Go Channel </description>
     </item>
     
     <item>
       <title>RabbitMQ</title>
-      <link>https://ikingye.github.io/interview-me/docs/backend/mq/rabbitmq/</link>
+      <link>https://ikingye.github.io/interview/docs/backend/mq/rabbitmq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/backend/mq/rabbitmq/</guid>
+      <guid>https://ikingye.github.io/interview/docs/backend/mq/rabbitmq/</guid>
       <description>RabbitMQ </description>
     </item>
     
     <item>
       <title>结构型模式</title>
-      <link>https://ikingye.github.io/interview-me/docs/se/design-pattern/structural/</link>
+      <link>https://ikingye.github.io/interview/docs/se/design-pattern/structural/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/se/design-pattern/structural/</guid>
+      <guid>https://ikingye.github.io/interview/docs/se/design-pattern/structural/</guid>
       <description>结构型模式 适配器模式   桥接模式   装饰模式   外观模式   享元模式   代理模式   组合模式 </description>
     </item>
     
     <item>
       <title>编译</title>
-      <link>https://ikingye.github.io/interview-me/docs/others/compile/</link>
+      <link>https://ikingye.github.io/interview/docs/others/compile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/others/compile/</guid>
+      <guid>https://ikingye.github.io/interview/docs/others/compile/</guid>
       <description>编译 </description>
     </item>
     
     <item>
       <title>Goroutine</title>
-      <link>https://ikingye.github.io/interview-me/docs/pl/go/goroutine/</link>
+      <link>https://ikingye.github.io/interview/docs/pl/go/goroutine/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/pl/go/goroutine/</guid>
+      <guid>https://ikingye.github.io/interview/docs/pl/go/goroutine/</guid>
       <description>Goroutine Goroutine 为什么高效？  为什么 Go 需要自己实现调度器？  Goroutine 的引入是为了方便高并发程序的编写。 一个 Goroutine 在进行阻塞操作（比如系统调用）时，会把当前线程中的其他 Goroutine 移交到其他线程中继续执行， 从而避免了整个程序的阻塞。 由于 Golang 引入了垃圾回收（gc），在执行 gc 时就要求 Goroutine 是停止的。通过自己实现调度器，就可以方便的实现该功能。 通过多个 Goroutine 来实现并发程序，既有异步 IO 的优势，又具有多线程、多进程编写程序的便利性。 引入 Goroutine，也意味着引入了极大的复杂性。一个 Goroutine 既要包含要执行的代码， 又要包含用于执行该代码的栈和 PC、SP 指针。   调度器解决了什么问题？   栈管理
 既然每个 Goroutine 都有自己的栈，那么在创建 Goroutine 时，就要同时创建对应的栈。 Goroutine 在执行时，栈空间会不停增长。 栈通常是连续增长的，由于每个进程中的各个线程共享虚拟内存空间，当有多个线程时，就需要为每个线程分配不同起始地址的栈。 这就需要在分配栈之前先预估每个线程栈的大小。如果线程数量非常多，就很容易栈溢出。
 为了解决这个问题，就有了 Split Stacks 技术： 创建栈时，只分配一块比较小的内存，如果进行某次函数调用导致栈空间不足时，就会在其他地方分配一块新的栈空间。 新的空间不需要和老的栈空间连续。函数调用的参数会拷贝到新的栈空间中，接下来的函数执行都在新栈空间中进行。
@@ -399,28 +399,28 @@ Goroutine 的执行是可以被抢占的。如果一个 Goroutine 一直占用 C
     
     <item>
       <title>行为型模式</title>
-      <link>https://ikingye.github.io/interview-me/docs/se/design-pattern/behavioral/</link>
+      <link>https://ikingye.github.io/interview/docs/se/design-pattern/behavioral/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/se/design-pattern/behavioral/</guid>
+      <guid>https://ikingye.github.io/interview/docs/se/design-pattern/behavioral/</guid>
       <description>行为型模式 命令模式   中介者模式   观察者模式   状态模式   策略模式   模板方法模式   迭代子模式   责任链模式   备忘录模式   访问者模式   解释器模式 </description>
     </item>
     
     <item>
       <title>Go 包管理</title>
-      <link>https://ikingye.github.io/interview-me/docs/pl/go/pm/</link>
+      <link>https://ikingye.github.io/interview/docs/pl/go/pm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/pl/go/pm/</guid>
+      <guid>https://ikingye.github.io/interview/docs/pl/go/pm/</guid>
       <description>Go 包管理 简单说说 Go 包管理工具的发展历史？  Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules     你用过哪些 Go 包管理工具，说说它们的优缺点？   golang/dep   Masterminds/glide   kardianos/govendor    Go Mod 相对之前的版本管理有哪些优点？  可以指定版本   Go Mod 如何找到引用的包？ 一般情况：</description>
     </item>
     
     <item>
       <title>Go 编译</title>
-      <link>https://ikingye.github.io/interview-me/docs/pl/go/compile/</link>
+      <link>https://ikingye.github.io/interview/docs/pl/go/compile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/pl/go/compile/</guid>
+      <guid>https://ikingye.github.io/interview/docs/pl/go/compile/</guid>
       <description>Go 编译 Makefile   Go 插件系统 Go 1.8 版本开始提供了一个创建共享库的新工具，称为 Plugins.
 go build -buildmode=plugin
 Go 插件系统的应用场景？  通过 plugin 我们可以很方便的对于不同功能加载相应的模块； 针对不同语言 (英文、汉语、德语……) 加载不同的语言 so 文件，进行不同的输出； 编译出的文件给不同的编程语言用 (如：c/java/python/lua 等). 需要加密的核心算法，核心业务逻辑可以可以编译成 plugin 插件 黑客预留的后门 backdoor 可以使用 plugin 函数集动态加载   Go 插件系统是如何实现的？ 参考：
@@ -429,46 +429,46 @@ Go 插件系统的应用场景？  通过 plugin 我们可以很方便的对于�
     
     <item>
       <title>其他模式</title>
-      <link>https://ikingye.github.io/interview-me/docs/se/design-pattern/others/</link>
+      <link>https://ikingye.github.io/interview/docs/se/design-pattern/others/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/se/design-pattern/others/</guid>
+      <guid>https://ikingye.github.io/interview/docs/se/design-pattern/others/</guid>
       <description>其他模式 并发型模式   线程池模式 </description>
     </item>
     
     <item>
       <title>Go 版本</title>
-      <link>https://ikingye.github.io/interview-me/docs/pl/go/version/</link>
+      <link>https://ikingye.github.io/interview/docs/pl/go/version/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/pl/go/version/</guid>
+      <guid>https://ikingye.github.io/interview/docs/pl/go/version/</guid>
       <description>Go 版本 你现在使用的是什么版本？最新版本是什么，相对有哪些变化？ </description>
     </item>
     
     <item>
       <title>Go 标准库</title>
-      <link>https://ikingye.github.io/interview-me/docs/pl/go/std/</link>
+      <link>https://ikingye.github.io/interview/docs/pl/go/std/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/pl/go/std/</guid>
+      <guid>https://ikingye.github.io/interview/docs/pl/go/std/</guid>
       <description>Go 标准库 </description>
     </item>
     
     <item>
       <title>测试</title>
-      <link>https://ikingye.github.io/interview-me/docs/pl/go/test/</link>
+      <link>https://ikingye.github.io/interview/docs/pl/go/test/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/pl/go/test/</guid>
+      <guid>https://ikingye.github.io/interview/docs/pl/go/test/</guid>
       <description>测试 </description>
     </item>
     
     <item>
       <title>性能</title>
-      <link>https://ikingye.github.io/interview-me/docs/pl/go/performance/</link>
+      <link>https://ikingye.github.io/interview/docs/pl/go/performance/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/pl/go/performance/</guid>
+      <guid>https://ikingye.github.io/interview/docs/pl/go/performance/</guid>
       <description>性能 </description>
     </item>
     

@@ -9,33 +9,33 @@
 <meta property="og:description" content="程序热重启 你使用的编程语言，是如何实现热重启的？  服务端启动时多开启一个协程用来监听关闭信号 当协程接收到关闭信号时，将拒绝接收新的连接，并处理好当前所有连接后断开 启动一个新的服务端进程来接管新的连接 关闭当前进程  Go Go 程序优雅关闭与重启 参考：
  gracehttp: 优雅重启 Go 程序（热启动 - Zero Downtime）  Java Python  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ikingye.github.io/interview-me/docs/backend/general/hot-restart/" />
+<meta property="og:url" content="https://ikingye.github.io/interview/docs/backend/general/hot-restart/" />
 <meta property="article:modified_time" content="2020-06-17T17:59:19+08:00" />
-<title>程序热重启 | 自我面试</title>
-<link rel="icon" href="/interview-me/favicon.png" type="image/x-icon">
+<title>程序热重启 | 面试</title>
+<link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/interview-me/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
+<link rel="stylesheet" href="/interview/book.min.f4b9d5273a44ceb8244e6fb74f9c854fbeac86646cbd4889c01eb78337b6042f.css" integrity="sha256-9LnVJzpEzrgkTm&#43;3T5yFT76shmRsvUiJwB63gze2BC8=">
 
 
-<script defer src="/interview-me/en.search.min.8e361d1b941d73fe0443d57f280309682512559b42dc4d11d802b8af27521f60.js" integrity="sha256-jjYdG5Qdc/4EQ9V/KAMJaCUSVZtC3E0R2AK4rydSH2A="></script>
+<script defer src="/interview/en.search.min.8e361d1b941d73fe0443d57f280309682512559b42dc4d11d802b8af27521f60.js" integrity="sha256-jjYdG5Qdc/4EQ9V/KAMJaCUSVZtC3E0R2AK4rydSH2A="></script>
 
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
 -->
 
-  
+
 </head>
 
 <body>
   <input type="checkbox" class="hidden" id="menu-control" />
   <main class="container flex">
     <aside class="book-menu">
-      
+
   <nav>
 <h2 class="book-brand">
-  <a href="/interview-me"><span>自我面试</span>
+  <a href="/interview"><span>面试</span>
   </a>
 </h2>
 
@@ -67,37 +67,37 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  
-
-  
-  
 
 
 
 
 
- 
-  
-    
 
 
 
 
-  
+
+
+
+
+
+
+
+
   <ul>
-    
-      
-        
+
+
+
 
   <li>
-    
-
-  
-  <a href="/interview-me/docs/os/" class="collapsed ">操作系统</a>
-  
 
 
-    
+
+  <a href="/interview/docs/os/" class="collapsed ">操作系统</a>
+
+
+
+
 
 
 
@@ -107,20 +107,20 @@ https://github.com/alex-shpak/hugo-book
   </li>
 
 
-      
-    
-      
-        
+
+
+
+
 
   <li>
-    
-
-  
-  <a href="/interview-me/docs/network/" class="collapsed ">网络</a>
-  
 
 
-    
+
+  <a href="/interview/docs/network/" class="collapsed ">网络</a>
+
+
+
+
 
 
 
@@ -130,20 +130,20 @@ https://github.com/alex-shpak/hugo-book
   </li>
 
 
-      
-    
-      
-        
+
+
+
+
 
   <li>
-    
-
-  
-  <a href="/interview-me/docs/algs/" class="collapsed ">算法</a>
-  
 
 
-    
+
+  <a href="/interview/docs/algs/" class="collapsed ">算法</a>
+
+
+
+
 
 
 
@@ -153,39 +153,39 @@ https://github.com/alex-shpak/hugo-book
   </li>
 
 
-      
-    
-      
-        
 
-  <li>
-    
-
-  
-  <a href="/interview-me/docs/pl/" class="">编程语言</a>
-  
-
-
-    
 
 
 
 
-  
+  <li>
+
+
+
+  <a href="/interview/docs/pl/" class="">编程语言</a>
+
+
+
+
+
+
+
+
+
   <ul>
-    
-      
-        
+
+
+
 
   <li>
-    
-
-  
-  <a href="/interview-me/docs/pl/cpp/" class="collapsed ">C&#43;&#43;</a>
-  
 
 
-    
+
+  <a href="/interview/docs/pl/cpp/" class="collapsed ">C&#43;&#43;</a>
+
+
+
+
 
 
 
@@ -195,20 +195,20 @@ https://github.com/alex-shpak/hugo-book
   </li>
 
 
-      
-    
-      
-        
+
+
+
+
 
   <li>
-    
-
-  
-  <a href="/interview-me/docs/pl/go/" class="collapsed ">Go</a>
-  
 
 
-    
+
+  <a href="/interview/docs/pl/go/" class="collapsed ">Go</a>
+
+
+
+
 
 
 
@@ -218,20 +218,20 @@ https://github.com/alex-shpak/hugo-book
   </li>
 
 
-      
-    
-      
-        
+
+
+
+
 
   <li>
-    
-
-  
-  <a href="/interview-me/docs/pl/java/" class="collapsed ">Java</a>
-  
 
 
-    
+
+  <a href="/interview/docs/pl/java/" class="collapsed ">Java</a>
+
+
+
+
 
 
 
@@ -241,20 +241,20 @@ https://github.com/alex-shpak/hugo-book
   </li>
 
 
-      
-    
-      
-        
+
+
+
+
 
   <li>
-    
-
-  
-  <a href="/interview-me/docs/pl/php/" class="collapsed ">PHP</a>
-  
 
 
-    
+
+  <a href="/interview/docs/pl/php/" class="collapsed ">PHP</a>
+
+
+
+
 
 
 
@@ -264,20 +264,20 @@ https://github.com/alex-shpak/hugo-book
   </li>
 
 
-      
-    
-      
-        
+
+
+
+
 
   <li>
-    
-
-  
-  <a href="/interview-me/docs/pl/python/" class="collapsed ">Python</a>
-  
 
 
-    
+
+  <a href="/interview/docs/pl/python/" class="collapsed ">Python</a>
+
+
+
+
 
 
 
@@ -287,20 +287,20 @@ https://github.com/alex-shpak/hugo-book
   </li>
 
 
-      
-    
-      
-        
+
+
+
+
 
   <li>
-    
-
-  
-  <a href="/interview-me/docs/pl/rust/" class="collapsed ">Rust</a>
-  
 
 
-    
+
+  <a href="/interview/docs/pl/rust/" class="collapsed ">Rust</a>
+
+
+
+
 
 
 
@@ -310,49 +310,49 @@ https://github.com/alex-shpak/hugo-book
   </li>
 
 
-      
-    
+
+
   </ul>
-  
+
 
 
 
   </li>
 
 
-      
-    
-      
-        
+
+
+
+
 
   <li>
-    
 
-  
+
+
   <span>软件工程</span>
-  
-
-
-    
 
 
 
 
-  
+
+
+
+
+
   <ul>
-    
-      
-        
+
+
+
 
   <li>
-    
-
-  
-  <a href="/interview-me/docs/se/design-pattern/" class="collapsed ">设计模式</a>
-  
 
 
-    
+
+  <a href="/interview/docs/se/design-pattern/" class="collapsed ">设计模式</a>
+
+
+
+
 
 
 
@@ -362,20 +362,20 @@ https://github.com/alex-shpak/hugo-book
   </li>
 
 
-      
-    
-      
-        
+
+
+
+
 
   <li>
-    
-
-  
-  <a href="/interview-me/docs/se/architecture/" class="collapsed ">架构设计</a>
-  
 
 
-    
+
+  <a href="/interview/docs/se/architecture/" class="collapsed ">架构设计</a>
+
+
+
+
 
 
 
@@ -385,20 +385,20 @@ https://github.com/alex-shpak/hugo-book
   </li>
 
 
-      
-    
-      
-        
+
+
+
+
 
   <li>
-    
-
-  
-  <a href="/interview-me/docs/se/pm/" class="collapsed ">项目管理</a>
-  
 
 
-    
+
+  <a href="/interview/docs/se/pm/" class="collapsed ">项目管理</a>
+
+
+
+
 
 
 
@@ -408,214 +408,214 @@ https://github.com/alex-shpak/hugo-book
   </li>
 
 
-      
-    
+
+
   </ul>
-  
+
 
 
 
   </li>
 
 
-      
-    
-      
-        
+
+
+
+
 
   <li>
-    
 
-  
+
+
   <span>后台</span>
-  
-
-
-    
 
 
 
 
-  
+
+
+
+
+
   <ul>
-    
-      
-        
+
+
+
 
   <li>
-    
-
-  
-  <a href="/interview-me/docs/backend/general/" class="">综合</a>
-  
 
 
-    
+
+  <a href="/interview/docs/backend/general/" class="">综合</a>
 
 
 
 
-  
+
+
+
+
+
   <ul>
-    
-      
+
+
         <li>
 
-  
-  <a href="/interview-me/docs/backend/general/hot-restart/" class="active">程序热重启</a>
-  
+
+  <a href="/interview/docs/backend/general/hot-restart/" class="active">程序热重启</a>
+
 
 </li>
-      
-    
-      
+
+
+
         <li>
 
-  
-  <a href="/interview-me/docs/backend/general/hot-load/" class="">配置热加载</a>
-  
+
+  <a href="/interview/docs/backend/general/hot-load/" class="">配置热加载</a>
+
 
 </li>
-      
-    
+
+
   </ul>
-  
+
 
 
 
   </li>
 
 
-      
-    
+
+
   </ul>
-  
+
 
 
 
   </li>
 
 
-      
-    
-      
-        
+
+
+
+
 
   <li>
-    
 
-  
+
+
   <span>前端</span>
-  
-
-
-    
 
 
 
 
-  
+
+
+
+
+
   <ul>
-    
+
   </ul>
-  
+
 
 
 
   </li>
 
 
-      
-    
-      
-        
+
+
+
+
 
   <li>
-    
 
-  
+
+
   <span>运维</span>
-  
-
-
-    
 
 
 
 
-  
+
+
+
+
+
   <ul>
-    
+
   </ul>
-  
+
 
 
 
   </li>
 
 
-      
-    
-      
-        
+
+
+
+
 
   <li>
-    
 
-  
+
+
   <span>测试</span>
-  
-
-
-    
 
 
 
 
-  
+
+
+
+
+
   <ul>
-    
+
   </ul>
-  
+
 
 
 
   </li>
 
 
-      
-    
-      
-        
+
+
+
+
 
   <li>
-    
 
-  
+
+
   <span>安全</span>
-  
-
-
-    
 
 
 
 
-  
+
+
+
+
+
   <ul>
-    
-      
-        
+
+
+
 
   <li>
-    
-
-  
-  <a href="/interview-me/docs/security/web/" class="collapsed ">Web 安全</a>
-  
 
 
-    
+
+  <a href="/interview/docs/security/web/" class="collapsed ">Web 安全</a>
+
+
+
+
 
 
 
@@ -625,30 +625,30 @@ https://github.com/alex-shpak/hugo-book
   </li>
 
 
-      
-    
+
+
   </ul>
-  
+
 
 
 
   </li>
 
 
-      
-    
-      
-        
+
+
+
+
 
   <li>
-    
-
-  
-  <a href="/interview-me/docs/other/" class="collapsed ">其他</a>
-  
 
 
-    
+
+  <a href="/interview/docs/other/" class="collapsed ">其他</a>
+
+
+
+
 
 
 
@@ -658,14 +658,14 @@ https://github.com/alex-shpak/hugo-book
   </li>
 
 
-      
-    
+
+
   </ul>
-  
 
 
 
-  
+
+
 
 
 
@@ -696,29 +696,29 @@ https://github.com/alex-shpak/hugo-book
   <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
 
 
- 
+
     </aside>
 
     <div class="book-page">
       <header class="book-header">
-        
+
   <div class="flex align-center justify-between">
   <label for="menu-control">
-    <img src="/interview-me/svg/menu.svg" class="book-icon" alt="Menu" />
+    <img src="/interview/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
   <strong>程序热重启</strong>
 
   <label for="toc-control">
-    <img src="/interview-me/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    <img src="/interview/svg/toc.svg" class="book-icon" alt="Table of Contents" />
   </label>
 </div>
 
 
-  
+
     <input type="checkbox" class="hidden" id="toc-control" />
     <aside class="hidden clearfix">
-      
+
   <nav id="TableOfContents">
   <ul>
     <li><a href="#程序热重启">程序热重启</a>
@@ -731,12 +731,12 @@ https://github.com/alex-shpak/hugo-book
 
 
     </aside>
-  
- 
+
+
       </header>
 
-      
-      
+
+
   <article class="markdown"><h1 id="程序热重启">程序热重启</h1>
 <h2 id="你使用的编程语言是如何实现热重启的">你使用的编程语言，是如何实现热重启的？</h2>
 <ol>
@@ -763,19 +763,19 @@ https://github.com/alex-shpak/hugo-book
   <div class="book-tabs-content markdown-inner"></div></div>
 
 </article>
- 
-      
+
+
 
       <footer class="book-footer">
-        
+
   <div class="flex justify-between">
 
 
 
   <div>
-    
-    <a class="flex align-center" href="https://github.com/ikingye/interview-me/commit/b4bc20d23399e15242a7a0490cdd656c74304eb9" title='Last modified by yewang | 2020-06-17' target="_blank" rel="noopener">
-      <img src="/interview-me/svg/calendar.svg" class="book-icon" alt="Calendar" />
+
+    <a class="flex align-center" href="https://github.com/ikingye/interview/commit/b4bc20d23399e15242a7a0490cdd656c74304eb9" title='Last modified by yewang | 2020-06-17' target="_blank" rel="noopener">
+      <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2020-06-17</span>
     </a>
   </div>
@@ -784,12 +784,12 @@ https://github.com/alex-shpak/hugo-book
 
 </div>
 
- 
-        
+
+
       </footer>
 
-      
-  
+
+
   <div class="book-comments">
 <script src="https://utteranc.es/client.js"
   repo="ikingye/note-cs"
@@ -800,15 +800,15 @@ https://github.com/alex-shpak/hugo-book
 </script>
 
 </div>
-  
- 
+
+
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
-    
+
     <aside class="book-toc">
-      
+
   <nav id="TableOfContents">
   <ul>
     <li><a href="#程序热重启">程序热重启</a>
@@ -819,12 +819,12 @@ https://github.com/alex-shpak/hugo-book
   </ul>
 </nav>
 
- 
+
     </aside>
-    
+
   </main>
 
-  
+
 <a href="https://github.com/ikingye/note-cs"
 class="github-corner" aria-label="View source on GitHub">
 <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#fff; color:#151513; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">

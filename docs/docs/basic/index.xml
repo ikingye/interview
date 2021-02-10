@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>基础 on 自我面试</title>
-    <link>https://ikingye.github.io/interview-me/docs/basic/</link>
-    <description>Recent content in 基础 on 自我面试</description>
+    <title>基础 on 面试</title>
+    <link>https://ikingye.github.io/interview/docs/basic/</link>
+    <description>Recent content in 基础 on 面试</description>
     <generator>Hugo -- gohugo.io</generator>
-    
-	<atom:link href="https://ikingye.github.io/interview-me/docs/basic/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+
+	<atom:link href="https://ikingye.github.io/interview/docs/basic/index.xml" rel="self" type="application/rss+xml" />
+
+
     <item>
       <title>教程</title>
-      <link>https://ikingye.github.io/interview-me/docs/basic/tutorial/</link>
+      <link>https://ikingye.github.io/interview/docs/basic/tutorial/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview-me/docs/basic/tutorial/</guid>
+
+      <guid>https://ikingye.github.io/interview/docs/basic/tutorial/</guid>
       <description>Java 教程 基础 进阶 doocs/advanced-java 互联网 Java 工程师进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务、海量数据处理等领域知识，后端同学必看，前端同学也可学习 https://doocs.github.io/advanced-java
 Snailclimb/JavaGuide 【Java 学习 + 面试指南】 一份涵盖大部分 Java 程序员所需要掌握的核心知识。
 Effective Java  第 3 版中文版：sjsdfg.github.io/effective-java-3rd-chinese   Java 编程思想  第 5 版中文版：lingcoder.github.io/OnJava8   redspider1/concurrent Java 多线程系列文章 在线阅读
@@ -22,6 +22,6 @@ Effective Java  第 3 版中文版：sjsdfg.github.io/effective-java-3rd-chinese
 seaswalker/JDK JDK 源码阅读笔记
  参考 badges/shields  显示图片标签</description>
     </item>
-    
+
   </channel>
 </rss>

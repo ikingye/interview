@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>其他 on 自我面试</title>
-    <link>https://ikingye.github.io/interview-me/docs/others/</link>
-    <description>Recent content in 其他 on 自我面试</description>
+    <title>其他 on 面试</title>
+    <link>https://ikingye.github.io/interview/docs/others/</link>
+    <description>Recent content in 其他 on 面试</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	<atom:link href="https://ikingye.github.io/interview-me/docs/others/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ikingye.github.io/interview/docs/others/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>字符编码</title>
-      <link>https://ikingye.github.io/interview-me/docs/others/encode/</link>
+      <link>https://ikingye.github.io/interview/docs/others/encode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/others/encode/</guid>
+      <guid>https://ikingye.github.io/interview/docs/others/encode/</guid>
       <description>字符编码 有的字符在一些环境中是不能显示或使用的， 比如 &amp;amp;, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
 各种编码的特征  Base 编码  Base64  组成字符：A-Z、a-z、0-9、+、/ 末尾一般补 0-2 个 =（可以不补 =）   Base32  组成字符：A-Z、2-7 末尾一般补 0-6 个 =（可以不补 =）   Base16  组成字符：0-9、A-F 末尾没有 =       Base 编码 参考：rfc4648
 Base 系列的就是用来将字节编码为 ASCII 中的可见字符的。
@@ -25,20 +25,20 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
     
     <item>
       <title>加密</title>
-      <link>https://ikingye.github.io/interview-me/docs/others/encryption/</link>
+      <link>https://ikingye.github.io/interview/docs/others/encryption/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/others/encryption/</guid>
+      <guid>https://ikingye.github.io/interview/docs/others/encryption/</guid>
       <description>加密 SSL/TLS TLS 握手流程是什么样的？ 参考：
  SSL/TLS 详解  </description>
     </item>
     
     <item>
       <title>编译</title>
-      <link>https://ikingye.github.io/interview-me/docs/others/compile/</link>
+      <link>https://ikingye.github.io/interview/docs/others/compile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview-me/docs/others/compile/</guid>
+      <guid>https://ikingye.github.io/interview/docs/others/compile/</guid>
       <description>编译 </description>
     </item>
     
