@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="设计模式 适配器模式、装饰模式、代理模式有哪些异同？  适配器模式  适配器模式实现新接口   代理模式  代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。   装饰器模式  原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。      装饰器模式与代理模式实现原接口 都持有原对象  装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象    /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi { public void updateDate(String orderId, String date, String client); } public class SourceOrderApiImpl implements SourceOrderApi{ @Override public void updateDate(String orderId, String date, String client) { System.out.println(client&#43;&#34;已将订单&#34;&#43;orderId&#43;&#34;的有效期延长至&#34;&#43;date); } } public class Test { public static void main(String[] args) { SourceOrderApi sourceOrderApi = new SourceOrderApiImpl(); sourceOrderApi."><meta property="og:title" content="设计模式" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ikingye.github.io/interview/docs/se/design-pattern/" />
+
+<title>设计模式 | 面试</title>
+<link rel="icon" href="/interview/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/interview/book.min.9eb34a541dae64ef88ebcc3da0ae41207b6e9fd026eb7c3da82300b0c455ed4c.css" integrity="sha256-nrNKVB2uZO&#43;I68w9oK5BIHtun9Am63w9qCMAsMRV7Uw=">
+
+
+<script defer src="/interview/en.search.min.90e6dcc567ea992678d50abf5c27ce636afa9d598fd08e26ff095f94a537c66b.js" integrity="sha256-kObcxWfqmSZ41Qq/XCfOY2r6nVmP0I4m/wlflKU3xms="></script>
+
+<link rel="alternate" type="application/rss+xml" href="https://ikingye.github.io/interview/docs/se/design-pattern/index.xml" title="面试" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/interview"><span>面试</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+<ul>
+  <li><a href="https://kingye.me" target="_blank" rel="noopener noreferrer">博客</a></li>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417021727.png" target="_blank" rel="noopener noreferrer">公众号</a></li>
+  <li><a href="https://github.com/ikingye" target="_blank" rel="noopener noreferrer">Github</a></li>
+  <li><a href="https://weibo.com/kingyip15215" target="_blank" rel="noopener noreferrer">微博</a></li>
+  <li><a href="https://www.zhihu.com/people/wutongyip" target="_blank" rel="noopener noreferrer">知乎</a></li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/os/" class="">操作系统</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/os/linux/" class="collapsed ">Linux</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/os/memory/" class="">内存</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/os/process/" class="">进程/线程/携程</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/network/" class="collapsed ">网络</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/algs/" class="collapsed ">算法</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/pl/" class="">编程语言</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/pl/cpp/" class="collapsed ">C&#43;&#43;</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/pl/go/" class="collapsed ">Go</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/pl/java/" class="collapsed ">Java</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/pl/php/" class="collapsed ">PHP</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/pl/python/" class="collapsed ">Python</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/pl/rust/" class="collapsed ">Rust</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/se/" class="">软件工程</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/se/design-pattern/" class="collapsed active">设计模式</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/se/design-pattern/principle/" class="">设计原则</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/se/design-pattern/creational/" class="">创建型模式</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/se/design-pattern/structural/" class="">结构型模式</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/se/design-pattern/behavioral/" class="">行为型模式</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/se/design-pattern/others/" class="">其他模式</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/se/architecture/" class="collapsed ">架构设计</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/se/pm/" class="collapsed ">项目管理</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>后台</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/backend/web/" class="collapsed ">Web 后端</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/backend/db/" class="">数据库</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/backend/db/mysql/" class="">Mysql</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/backend/db/redis/" class="">Redis</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/backend/mq/" class="">消息队列</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/backend/mq/kafka/" class="">Kafka</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/backend/mq/rocketmq/" class="">RocketMQ</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/backend/mq/rabbitmq/" class="">RabbitMQ</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/backend/others/" class="collapsed ">其他</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>前端</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>运维</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>测试</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>安全</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/security/web/" class="collapsed ">Web 安全</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/others/" class="collapsed ">其他</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
+  <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="//pub.idqqimg.com/wpa/images/group.png"></a></li>
+</ul>
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/interview/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>设计模式</strong>
+
+  <label for="toc-control">
+    <img src="/interview/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#适配器模式装饰模式代理模式有哪些异同">适配器模式、装饰模式、代理模式有哪些异同？</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="设计模式">设计模式</h1>
+<h2 id="适配器模式装饰模式代理模式有哪些异同">适配器模式、装饰模式、代理模式有哪些异同？</h2>
+<ul>
+<li>适配器模式
+<ul>
+<li>适配器模式<strong>实现新接口</strong></li>
+</ul>
+</li>
+<li>代理模式
+<ul>
+<li>代理模式的特点在于<strong>隔离</strong>，隔离调用类和被调用类的关系，通过一个代理类去调用。</li>
+<li>代理模式是与原对象<strong>实现同一个接口</strong></li>
+<li>代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。</li>
+</ul>
+</li>
+<li>装饰器模式
+<ul>
+<li>原有的不能满足现有的需求，对原有的进行增强。</li>
+<li>装饰器模式特点在于<strong>增强</strong>，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li>装饰器模式与代理模式实现原接口</li>
+<li>都持有原对象
+<ul>
+<li>装饰器模式构造函数<strong>接收老对象</strong></li>
+<li>适配器模式与代理模式自己 new 老对象</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">/**
+</span><span style="color:#75715e"> * 原接口，需要传入 orderId，时间
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">SourceOrderApi</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>String orderId<span style="color:#f92672">,</span> String date<span style="color:#f92672">,</span> String client<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SourceOrderApiImpl</span> <span style="color:#66d9ef">implements</span> SourceOrderApi<span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>String orderId<span style="color:#f92672">,</span> String date<span style="color:#f92672">,</span> String client<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>client<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;已将订单&#34;</span><span style="color:#f92672">+</span>orderId<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;的有效期延长至&#34;</span><span style="color:#f92672">+</span>date<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        SourceOrderApi sourceOrderApi <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SourceOrderApiImpl<span style="color:#f92672">();</span>
+        sourceOrderApi<span style="color:#f92672">.</span><span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;123456&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;2014-10-15&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;user&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * 适配器模式
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">AppOrderApi</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">//只需要传入订单Id即可
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>String orderId<span style="color:#f92672">,</span> String client<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppOrderApiImpl</span> <span style="color:#66d9ef">implements</span> AppOrderApi<span style="color:#f92672">{</span>
+    SourceOrderApi sourceOrderApi<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">AppOrderApiImpl</span><span style="color:#f92672">(){</span>
+        sourceOrderApi <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SourceOrderApiImpl<span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>String orderId<span style="color:#f92672">,</span>String client<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">//这里适配的方式随意，但是保证是要完全兼容原有的，就是保证调用原有的接口
+</span><span style="color:#75715e"></span>        sourceOrderApi<span style="color:#f92672">.</span><span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>orderId<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;9999-12-31&#34;</span><span style="color:#f92672">,</span> client<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        AppOrderApi appOrderApi <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AppOrderApiImpl<span style="color:#f92672">();</span>
+        appOrderApi<span style="color:#f92672">.</span><span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;123456&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;user&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * 代理模式
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProxySourceOrderApiImpl</span> <span style="color:#66d9ef">implements</span> SourceOrderApi <span style="color:#f92672">{</span>
+    SourceOrderApi sourceOrderApi<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ProxySourceOrderApiImpl</span><span style="color:#f92672">(){</span>
+        sourceOrderApi <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SourceOrderApiImpl<span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>String orderId<span style="color:#f92672">,</span> String date<span style="color:#f92672">,</span> String client<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">//进行判断，如果是admin则更新否则让其输入账号密码
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;admin&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>client<span style="color:#f92672">)){</span>
+            sourceOrderApi<span style="color:#f92672">.</span><span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>orderId<span style="color:#f92672">,</span> date<span style="color:#f92672">,</span> client<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span><span style="color:#66d9ef">else</span><span style="color:#f92672">{</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;账号不是admin，没有查询权限，请输入以admin操作&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e"> * 装饰器模式
+</span><span style="color:#75715e"> */</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NewSourceOrderApiImpl</span> <span style="color:#66d9ef">implements</span> SourceOrderApi <span style="color:#f92672">{</span>
+    SourceOrderApi sourceOrderApi<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">NewSourceOrderApiImpl</span><span style="color:#f92672">(</span>SourceOrderApi sourceOrderApi<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">sourceOrderApi</span> <span style="color:#f92672">=</span> sourceOrderApi<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>String orderId<span style="color:#f92672">,</span> String date<span style="color:#f92672">,</span> String client<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        sourceOrderApi<span style="color:#f92672">.</span><span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>orderId<span style="color:#f92672">,</span> date<span style="color:#f92672">,</span> client<span style="color:#f92672">);</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>client<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;已将订单&#34;</span><span style="color:#f92672">+</span>orderId<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;的退款期延长至&#34;</span><span style="color:#f92672">+</span>date<span style="color:#f92672">);</span>
+
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><hr>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/ikingye/interview/commit/3c25254e0271bf895fc1c0012cd01d1e7ccb0c9e" title='Last modified by yewang | 2020-07-09' target="_blank" rel="noopener">
+      <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-07-09</span>
+    </a>
+  </div>
+
+
+
+</div>
+
+ 
+        <div>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <p><span id="busuanzi_container_page_pv">本文访问量 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次</span></p>
+    <p><span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span> 次</span></p>
+    <p><span id="busuanzi_container_site_uv">本站总访客数 <span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span> 人次</span></p>
+</div>
+
+
+      </footer>
+
+      
+  
+  <div class="book-comments">
+<script src="https://utteranc.es/client.js"
+  repo="ikingye/note-cs"
+  issue-term="pathname"
+  theme="github-light"
+  crossorigin="anonymous"
+  async
+></script>
+
+<div id="footer">
+  <p>
+    <a href="https://kingye.me">叶王</a> &copy; 2013-2020
+    版权所有。如果本文档对你有所帮助，可以<a
+      href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200428110046.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      >请作者喝饮料</a
+    >。
+  </p>
+</div>
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#适配器模式装饰模式代理模式有哪些异同">适配器模式、装饰模式、代理模式有哪些异同？</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

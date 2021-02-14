@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="字符编码 有的字符在一些环境中是不能显示或使用的， 比如 &amp;, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
+各种编码的特征  Base 编码  Base64  组成字符：A-Z、a-z、0-9、&#43;、/ 末尾一般补 0-2 个 =（可以不补 =）   Base32  组成字符：A-Z、2-7 末尾一般补 0-6 个 =（可以不补 =）   Base16  组成字符：0-9、A-F 末尾没有 =       Base 编码 参考：rfc4648
+Base 系列的就是用来将字节编码为 ASCII 中的可见字符的。
+在 URL 中使用时必须去掉 “=” 符号
+Base64 Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9、&#43;、/）将任意字节序列数据编码成 ASCII 字符串，另有 “=” 符号用作后缀用途。
+Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0）， 然后将这些二进制数值串联起来，再按照 6 比特一组进行切分（因为 2^6=64），最后一组若不足 6 比特则末尾补 0。"><meta property="og:title" content="字符编码" />
+<meta property="og:description" content="字符编码 有的字符在一些环境中是不能显示或使用的， 比如 &amp;, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
+各种编码的特征  Base 编码  Base64  组成字符：A-Z、a-z、0-9、&#43;、/ 末尾一般补 0-2 个 =（可以不补 =）   Base32  组成字符：A-Z、2-7 末尾一般补 0-6 个 =（可以不补 =）   Base16  组成字符：0-9、A-F 末尾没有 =       Base 编码 参考：rfc4648
+Base 系列的就是用来将字节编码为 ASCII 中的可见字符的。
+在 URL 中使用时必须去掉 “=” 符号
+Base64 Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9、&#43;、/）将任意字节序列数据编码成 ASCII 字符串，另有 “=” 符号用作后缀用途。
+Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0）， 然后将这些二进制数值串联起来，再按照 6 比特一组进行切分（因为 2^6=64），最后一组若不足 6 比特则末尾补 0。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ikingye.github.io/interview/docs/others/encode/" />
+<meta property="article:modified_time" content="2020-07-15T15:38:39+08:00" />
+<title>字符编码 | 面试</title>
+<link rel="icon" href="/interview/favicon.png" type="image/x-icon">
+
+
+<link rel="stylesheet" href="/interview/book.min.9eb34a541dae64ef88ebcc3da0ae41207b6e9fd026eb7c3da82300b0c455ed4c.css" integrity="sha256-nrNKVB2uZO&#43;I68w9oK5BIHtun9Am63w9qCMAsMRV7Uw=">
+
+
+<script defer src="/interview/en.search.min.90e6dcc567ea992678d50abf5c27ce636afa9d598fd08e26ff095f94a537c66b.js" integrity="sha256-kObcxWfqmSZ41Qq/XCfOY2r6nVmP0I4m/wlflKU3xms="></script>
+
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body>
+  <input type="checkbox" class="hidden" id="menu-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/interview"><span>面试</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+<ul>
+  <li><a href="https://kingye.me" target="_blank" rel="noopener noreferrer">博客</a></li>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417021727.png" target="_blank" rel="noopener noreferrer">公众号</a></li>
+  <li><a href="https://github.com/ikingye" target="_blank" rel="noopener noreferrer">Github</a></li>
+  <li><a href="https://weibo.com/kingyip15215" target="_blank" rel="noopener noreferrer">微博</a></li>
+  <li><a href="https://www.zhihu.com/people/wutongyip" target="_blank" rel="noopener noreferrer">知乎</a></li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+  
+
+  
+  
+
+
+
+
+
+ 
+  
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/os/" class="">操作系统</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/os/linux/" class="collapsed ">Linux</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/os/memory/" class="">内存</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/os/process/" class="">进程/线程/携程</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/network/" class="collapsed ">网络</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/algs/" class="collapsed ">算法</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/pl/" class="">编程语言</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/pl/cpp/" class="collapsed ">C&#43;&#43;</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/pl/go/" class="collapsed ">Go</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/pl/java/" class="collapsed ">Java</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/pl/php/" class="collapsed ">PHP</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/pl/python/" class="collapsed ">Python</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/pl/rust/" class="collapsed ">Rust</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/se/" class="">软件工程</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/se/design-pattern/" class="collapsed ">设计模式</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/se/architecture/" class="collapsed ">架构设计</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/se/pm/" class="collapsed ">项目管理</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>后台</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/backend/web/" class="collapsed ">Web 后端</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/backend/db/" class="">数据库</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/backend/db/mysql/" class="">Mysql</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/backend/db/redis/" class="">Redis</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/backend/mq/" class="">消息队列</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/backend/mq/kafka/" class="">Kafka</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/backend/mq/rocketmq/" class="">RocketMQ</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/backend/mq/rabbitmq/" class="">RabbitMQ</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/backend/others/" class="collapsed ">其他</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>前端</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>运维</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>测试</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <span>安全</span>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/security/web/" class="collapsed ">Web 安全</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/others/" class="collapsed ">其他</a>
+  
+
+
+    
+
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/others/encode/" class="active">字符编码</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/others/encryption/" class="">加密</a>
+  
+
+</li>
+      
+    
+      
+        <li>
+
+  
+  <a href="/interview/docs/others/compile/" class="">编译</a>
+  
+
+</li>
+      
+    
+  </ul>
+  
+
+
+
+  </li>
+
+
+      
+    
+  </ul>
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
+  <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="//pub.idqqimg.com/wpa/images/group.png"></a></li>
+</ul>
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/interview/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>字符编码</strong>
+
+  <label for="toc-control">
+    <img src="/interview/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+  </label>
+</div>
+
+
+  
+    <input type="checkbox" class="hidden" id="toc-control" />
+    <aside class="hidden clearfix">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#各种编码的特征">各种编码的特征</a></li>
+    <li><a href="#base-编码">Base 编码</a>
+      <ul>
+        <li><a href="#base64">Base64</a></li>
+        <li><a href="#base32">Base32</a>
+          <ul>
+            <li><a href="#为什么后面要补-">为什么后面要补 <code>=</code></a></li>
+            <li><a href="#优点">优点</a></li>
+            <li><a href="#缺点">缺点</a></li>
+          </ul>
+        </li>
+        <li><a href="#base16">Base16</a></li>
+      </ul>
+    </li>
+    <li><a href="#url-编码百分号编码">URL 编码（百分号编码）</a></li>
+  </ul>
+</nav>
+
+
+    </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="字符编码">字符编码</h1>
+<p>有的字符在一些环境中是不能显示或使用的，
+比如 <code>&amp;</code>, <code>=</code> 等字符在 URL 被保留为特殊作用的字符；
+比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类），
+这时就需要对进行编码。</p>
+<h2 id="各种编码的特征">各种编码的特征</h2>
+<ul>
+<li>Base 编码
+<ul>
+<li>Base64
+<ul>
+<li>组成字符：<code>A-Z、a-z、0-9、+、/</code></li>
+<li>末尾一般补 0-2 个 <code>=</code>（可以不补 <code>=</code>）</li>
+</ul>
+</li>
+<li>Base32
+<ul>
+<li>组成字符：<code>A-Z、2-7</code></li>
+<li>末尾一般补 0-6 个 <code>=</code>（可以不补 <code>=</code>）</li>
+</ul>
+</li>
+<li>Base16
+<ul>
+<li>组成字符：<code>0-9、A-F</code></li>
+<li>末尾没有 <code>=</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="base-编码">Base 编码</h2>
+<p>参考：<a href="https://www.rfc-editor.org/info/rfc4648">rfc4648</a></p>
+<p>Base 系列的就是用来将<strong>字节</strong>编码为 ASCII 中的<strong>可见字符</strong>的。</p>
+<p>在 URL 中使用时必须去掉 “<code>=</code>” 符号</p>
+<h3 id="base64">Base64</h3>
+<p>Base64 编码是使用 64 个可打印 ASCII 字符（<code>A-Z、a-z、0-9、+、/</code>）将任意字节序列数据编码成 ASCII 字符串，另有 “<code>=</code>” 符号用作后缀用途。</p>
+<p>Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0），
+然后将这些二进制数值串联起来，再按照 6 比特一组进行切分（因为 <code>2^6=64</code>），<strong>最后一组若不足 6 比特则末尾补 0</strong>。</p>
+<p>由于二进制数据是按照 8 比特一组进行传输，因此 Base64 按照 6 比特一组切分的二进制数据必须是 24 比特的倍数（6 和 8 的最小公倍数），
+就是 <strong>3 个字节</strong>。
+若原字节序列数据长度不是 3 的倍数时且剩下 1 个输入数据，则在编码结果后加 2 个 <code>=</code>；若剩下 2 个输入数据，则在编码结果后加 1 个 =。</p>
+<p><strong>数据量扩大了 <code>1/3</code>。</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200612113327.png" alt="" /></p>
+<h3 id="base32">Base32</h3>
+<p>Base16 编码会将<strong>字节</strong>切为 5 个一组，所以此编码后会用到 32 个字符（<code>A-Z、2-7</code>），
+数据量扩大了 <code>3/5</code>（文本一长，最后填充的 0 和 = 的数据量差不多就可忽略不计了）。</p>
+<p>需要凑够 8 个字符</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#ae81ff">00000001</span> <span style="color:#ae81ff">00000011</span> <span style="color:#ae81ff">00000111</span> <span style="color:#ae81ff">00001111</span> 00011111
+<span style="color:#f92672">=</span>&gt;
+<span style="color:#ae81ff">00000</span> <span style="color:#ae81ff">00100</span> <span style="color:#ae81ff">00001</span> <span style="color:#ae81ff">10000</span> <span style="color:#ae81ff">01110</span> <span style="color:#ae81ff">00011</span> <span style="color:#ae81ff">11000</span> <span style="color:#ae81ff">11111</span>
+
+
+<span style="color:#ae81ff">00000001</span> <span style="color:#ae81ff">00000011</span> <span style="color:#ae81ff">00000111</span> <span style="color:#ae81ff">00001111</span> <span style="color:#ae81ff">00011111</span> 11111111
+<span style="color:#f92672">=</span>&gt;
+<span style="color:#ae81ff">00000</span> <span style="color:#ae81ff">00100</span> <span style="color:#ae81ff">00001</span> <span style="color:#ae81ff">10000</span> <span style="color:#ae81ff">01110</span> <span style="color:#ae81ff">00011</span> <span style="color:#ae81ff">11000</span> <span style="color:#ae81ff">11111</span>
+<span style="color:#ae81ff">11111</span> 11100 <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>
+// 最后不足 <span style="color:#ae81ff">5</span> 字节的重组后先在右边充 0，编码完成后再右边充 <span style="color:#f92672">=</span>
+</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200612113053.png" alt="" /></p>
+<h4 id="为什么后面要补-">为什么后面要补 <code>=</code></h4>
+<p>由于数据的二进制传输是按照 8 比特一组进行（即一个字节），
+因此 Base32 按 5 比特切分的二进制数据必须是 40 比特的倍数（5 和 8 的最小公倍数），就是 <strong>5 字节</strong>。</p>
+<p>填充 “<code>=</code>” 符号的作用是方便一些程序的标准化运行，大多数情况下不添加也无关紧要，
+而且，<strong>在 URL 中使用时必须去掉 “<code>=</code>” 符号</strong>。</p>
+<h4 id="优点">优点</h4>
+<p>与 Base64 相比，Base32 具有许多优点：</p>
+<ul>
+<li>适合不区分大小写的文件系统，更利于人类口语交流或记忆。</li>
+<li>结果可以用作文件名，因为它不包含路径分隔符 “<code>/</code>” 等符号。</li>
+<li>排除了视觉上容易混淆的字符，因此可以准确的人工录入。
+（例如，RFC4648 符号集忽略了数字 “<code>1</code>”、“<code>8</code>” 和 “<code>0</code>”，因为它们可能与字母 “<code>I</code>”，“<code>B</code>” 和 “<code>O</code>” 混淆）。</li>
+<li>排除填充符号 “<code>=</code>” 的结果可以包含在 URL 中，而不编码任何字符。</li>
+</ul>
+<p>Base32 也比 Base16 有优势：</p>
+<ul>
+<li>Base32 比 Base16 占用的空间更小。（1000 比特数据 Base32 需要 200 个字符，而 Base16 则为 250 个字符）</li>
+</ul>
+<h4 id="缺点">缺点</h4>
+<p>Base32 比 Base64 多占用大约 <code>20％</code> 的空间 —— <code>(8/5 - (8/6)) / (8/6)</code>。</p>
+<p>因为 Base32 使用 8 个 ASCII 字符去编码原数据中的 5 个字节数据，
+而 Base64 是使用 4 个 ASCII 字符去编码原数据中的 3 个字节数据。</p>
+<hr>
+<h3 id="base16">Base16</h3>
+<p>Base16 编码是一个标准的十六进制<strong>字符串</strong>（注意是字符串而不是数值），更易被人类和计算机使用，
+因为它并不包含任何<strong>控制字符</strong>，以及 Base64 和 Base32 中的 <code>=</code> 符号。</p>
+<p>Base16 编码会将<strong>字节</strong>切为 4 个一组，所以此编码后会用到 16 个字符（<code>0-9、A-F</code>），数据会扩大 <strong>2 倍</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200612112644.png" alt="" /></p>
+<hr>
+<h2 id="url-编码百分号编码">URL 编码（百分号编码）</h2>
+<ul>
+<li>网址路径的编码，用的是 <code>utf-8 编码</code></li>
+<li>查询字符串的编码，用的是操作系统的默认编码</li>
+<li>GET 和 POST 方法的编码，用的是网页的编码</li>
+<li>Ajax 调用中，IE 总是采用 GB2312 编码（操作系统的默认编码），而 Firefox 总是采用 utf-8 编码</li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.ruanyifeng.com/blog/2010/02/url_encoding.html">关于 URL 编码</a></li>
+</ul>
+<hr>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex justify-between">
+
+
+
+  <div>
+    
+    <a class="flex align-center" href="https://github.com/ikingye/interview/commit/f949abcd9d6e96783c5c5a592d8fa9682aaf2d3a" title='Last modified by yewang | 2020-07-15' target="_blank" rel="noopener">
+      <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2020-07-15</span>
+    </a>
+  </div>
+
+
+
+</div>
+
+ 
+        <div>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <p><span id="busuanzi_container_page_pv">本文访问量 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次</span></p>
+    <p><span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span> 次</span></p>
+    <p><span id="busuanzi_container_site_uv">本站总访客数 <span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span> 人次</span></p>
+</div>
+
+
+      </footer>
+
+      
+  
+  <div class="book-comments">
+<script src="https://utteranc.es/client.js"
+  repo="ikingye/note-cs"
+  issue-term="pathname"
+  theme="github-light"
+  crossorigin="anonymous"
+  async
+></script>
+
+<div id="footer">
+  <p>
+    <a href="https://kingye.me">叶王</a> &copy; 2013-2020
+    版权所有。如果本文档对你有所帮助，可以<a
+      href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200428110046.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      >请作者喝饮料</a
+    >。
+  </p>
+</div>
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#各种编码的特征">各种编码的特征</a></li>
+    <li><a href="#base-编码">Base 编码</a>
+      <ul>
+        <li><a href="#base64">Base64</a></li>
+        <li><a href="#base32">Base32</a>
+          <ul>
+            <li><a href="#为什么后面要补-">为什么后面要补 <code>=</code></a></li>
+            <li><a href="#优点">优点</a></li>
+            <li><a href="#缺点">缺点</a></li>
+          </ul>
+        </li>
+        <li><a href="#base16">Base16</a></li>
+      </ul>
+    </li>
+    <li><a href="#url-编码百分号编码">URL 编码（百分号编码）</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
