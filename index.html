@@ -5,12 +5,12 @@
 	<meta name="generator" content="Hugo 0.71.0" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content=""><meta property="og:title" content="首页" />
+<meta name="description" content="操作系统  进程/线程/协程  进程  一个进程包含哪些信息？ 进程切换时，操作系统做了哪些事情？  进程切换时，需要保存哪些信息，保存在哪里？     线程  线程比进程轻量，体现在哪里？ 什么时候使用线程，什么时候使用进程？   协程  协程是什么，怎么实现的？ 既然协程那么好，那什么时候用进程和线程？     内存  综合  程序加载的时候，是怎么分布的，哪些在堆里，哪些在栈里？   堆 栈    Linux  系统信息  硬件信息  如何查看内存大小？ 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ 如何查看系统内核？ 如何查看操作系统版本？   运行信息  如何查看占用内存最多的进程？ 如何查看占用 CPU 最多的进程？ 如何查看占用某个端口的进程？     shell  ps  ps aux 与 ps -ef 有什么区别？   lsof awk sed      网络  TCP/UDP/IP  TCP UDP IP   HTTP  HTTP 基础  HTTP 状态码有哪些？ 301 和 302 有什么区别，分别适用于什么场景？ 101， 304， 307 分别是什么？ HTTP chunk 是什么？解决了什么问题？ HTTP/1."><meta property="og:title" content="首页" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://ikingye.github.io/interview/" />
 
-<title>首页 | 面试</title>
+<title>首页 | 面试笔记</title>
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 
 
@@ -19,7 +19,7 @@
 
 <script defer src="/interview/en.search.min.90e6dcc567ea992678d50abf5c27ce636afa9d598fd08e26ff095f94a537c66b.js" integrity="sha256-kObcxWfqmSZ41Qq/XCfOY2r6nVmP0I4m/wlflKU3xms="></script>
 
-<link rel="alternate" type="application/rss+xml" href="https://ikingye.github.io/interview/index.xml" title="面试" />
+<link rel="alternate" type="application/rss+xml" href="https://ikingye.github.io/interview/index.xml" title="面试笔记" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -35,7 +35,7 @@ https://github.com/alex-shpak/hugo-book
       
   <nav>
 <h2 class="book-brand">
-  <a href="/interview"><span>面试</span>
+  <a href="/interview"><span>面试笔记</span>
   </a>
 </h2>
 
@@ -872,7 +872,100 @@ https://github.com/alex-shpak/hugo-book
     <input type="checkbox" class="hidden" id="toc-control" />
     <aside class="hidden clearfix">
       
-  <nav id="TableOfContents"></nav>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#操作系统">操作系统</a>
+      <ul>
+        <li><a href="#linux">Linux</a></li>
+      </ul>
+    </li>
+    <li><a href="#网络">网络</a></li>
+    <li><a href="#数据结构与算法">数据结构与算法</a>
+      <ul>
+        <li><a href="#数据结构">数据结构</a></li>
+        <li><a href="#算法">算法</a></li>
+      </ul>
+    </li>
+    <li><a href="#计算机组成原理">计算机组成原理</a></li>
+    <li><a href="#编程语言">编程语言</a>
+      <ul>
+        <li><a href="#c">C</a></li>
+        <li><a href="#c-1">C++</a></li>
+        <li><a href="#go">Go</a></li>
+        <li><a href="#java">Java</a></li>
+        <li><a href="#javascript">JavaScript</a></li>
+        <li><a href="#kotlin">Kotlin</a></li>
+        <li><a href="#php">PHP</a></li>
+        <li><a href="#python">Python</a></li>
+        <li><a href="#rust">Rust</a></li>
+      </ul>
+    </li>
+    <li><a href="#软件工程">软件工程</a>
+      <ul>
+        <li><a href="#设计模式">设计模式</a></li>
+        <li><a href="#架构设计docssearchitecture_index"><a href="docs/se/architecture/_index/">架构设计</a></a></li>
+        <li><a href="#项目管理">项目管理</a></li>
+      </ul>
+    </li>
+    <li><a href="#云计算">云计算</a>
+      <ul>
+        <li><a href="#云原生">云原生</a></li>
+      </ul>
+    </li>
+    <li><a href="#大数据">大数据</a></li>
+    <li><a href="#人工智能">人工智能</a>
+      <ul>
+        <li><a href="#机器学习">机器学习</a></li>
+        <li><a href="#深度学习">深度学习</a></li>
+      </ul>
+    </li>
+    <li><a href="#后端">后端</a>
+      <ul>
+        <li><a href="#web-后端">Web 后端</a>
+          <ul>
+            <li><a href="#go-web-后端">Go Web 后端</a></li>
+            <li><a href="#java-web-后端">Java Web 后端</a></li>
+            <li><a href="#php-web-后端">PHP Web 后端</a></li>
+            <li><a href="#python-web-后端">Python Web 后端</a></li>
+          </ul>
+        </li>
+        <li><a href="#数据库">数据库</a></li>
+        <li><a href="#消息队列">消息队列</a></li>
+        <li><a href="#缓存">缓存</a></li>
+        <li><a href="#性能">性能</a></li>
+        <li><a href="#搜索引擎">搜索引擎</a></li>
+        <li><a href="#微服务">微服务</a></li>
+        <li><a href="#其他">其他</a></li>
+      </ul>
+    </li>
+    <li><a href="#前端与客户端">前端与客户端</a>
+      <ul>
+        <li><a href="#web-前端">Web 前端</a></li>
+        <li><a href="#android">Android</a></li>
+        <li><a href="#ios">iOS</a></li>
+      </ul>
+    </li>
+    <li><a href="#运维">运维</a>
+      <ul>
+        <li><a href="#cicd">CI/CD</a></li>
+        <li><a href="#devops">DevOps</a></li>
+        <li><a href="#kubernetes">kubernetes</a></li>
+      </ul>
+    </li>
+    <li><a href="#安全">安全</a>
+      <ul>
+        <li><a href="#web-安全">Web 安全</a></li>
+      </ul>
+    </li>
+    <li><a href="#测试">测试</a></li>
+    <li><a href="#其他-1">其他</a>
+      <ul>
+        <li><a href="#字符编码">字符编码</a></li>
+        <li><a href="#加密与解密">加密与解密</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
     </aside>
@@ -882,7 +975,646 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article class="markdown"></article>
+  <article class="markdown"><h2 id="操作系统">操作系统</h2>
+<ul>
+<li><input disabled="" type="checkbox"> <a href="docs/os/process/">进程/线程/协程</a>
+<ul>
+<li><input disabled="" type="checkbox"> 进程
+<ul>
+<li><input disabled="" type="checkbox"> 一个进程包含哪些信息？</li>
+<li><input disabled="" type="checkbox"> 进程切换时，操作系统做了哪些事情？
+<ul>
+<li><input disabled="" type="checkbox"> 进程切换时，需要保存哪些信息，保存在哪里？</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> 线程
+<ul>
+<li><input disabled="" type="checkbox"> 线程比进程轻量，体现在哪里？</li>
+<li><input disabled="" type="checkbox"> 什么时候使用线程，什么时候使用进程？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> 协程
+<ul>
+<li><input disabled="" type="checkbox"> 协程是什么，怎么实现的？</li>
+<li><input disabled="" type="checkbox"> 既然协程那么好，那什么时候用进程和线程？</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/os/memory/">内存</a>
+<ul>
+<li><input disabled="" type="checkbox"> 综合
+<ul>
+<li><input disabled="" type="checkbox"> 程序加载的时候，是怎么分布的，哪些在堆里，哪些在栈里？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> 堆</li>
+<li><input disabled="" type="checkbox"> 栈</li>
+</ul>
+</li>
+</ul>
+<h3 id="linux">Linux</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <a href="docs/os/linux/info/">系统信息</a>
+<ul>
+<li><input disabled="" type="checkbox"> 硬件信息
+<ul>
+<li><input disabled="" type="checkbox"> 如何查看内存大小？</li>
+<li><input checked="" disabled="" type="checkbox"> 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？</li>
+<li><input checked="" disabled="" type="checkbox"> 如何查看系统内核？</li>
+<li><input checked="" disabled="" type="checkbox"> 如何查看操作系统版本？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> 运行信息
+<ul>
+<li><input disabled="" type="checkbox"> 如何查看占用内存最多的进程？</li>
+<li><input disabled="" type="checkbox"> 如何查看占用 CPU 最多的进程？</li>
+<li><input disabled="" type="checkbox"> 如何查看占用某个端口的进程？</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/os/linux/shell/">shell</a>
+<ul>
+<li><input disabled="" type="checkbox"> ps
+<ul>
+<li><input disabled="" type="checkbox"> ps aux 与 ps -ef 有什么区别？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> lsof</li>
+<li><input disabled="" type="checkbox"> awk</li>
+<li><input disabled="" type="checkbox"> sed</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<h2 id="网络">网络</h2>
+<ul>
+<li><input disabled="" type="checkbox"> <a href="docs/network/tcp/">TCP/UDP/IP</a>
+<ul>
+<li><input disabled="" type="checkbox"> TCP</li>
+<li><input disabled="" type="checkbox"> UDP</li>
+<li><input disabled="" type="checkbox"> IP</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/network/http/">HTTP</a>
+<ul>
+<li><input disabled="" type="checkbox"> HTTP 基础
+<ul>
+<li><input disabled="" type="checkbox"> HTTP 状态码有哪些？</li>
+<li><input disabled="" type="checkbox"> 301 和 302 有什么区别，分别适用于什么场景？</li>
+<li><input disabled="" type="checkbox"> 101， 304， 307 分别是什么？</li>
+<li><input disabled="" type="checkbox"> HTTP chunk 是什么？解决了什么问题？</li>
+<li><input checked="" disabled="" type="checkbox"> HTTP/1.1 有哪些问题？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> HTTP2
+<ul>
+<li><input checked="" disabled="" type="checkbox"> HTTP2 有哪些特点？</li>
+<li><input disabled="" type="checkbox"> HTTP2 多路复用是如何实现的？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> HTTPS</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/network/capture/">抓包</a>
+<ul>
+<li><input disabled="" type="checkbox"> 综合
+<ul>
+<li><input disabled="" type="checkbox"> 常用抓包工具有哪些？分别有什么特点，适用于什么场景？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> tcpdump</li>
+<li><input disabled="" type="checkbox"> wireshark</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/network/send/">发包</a>
+<ul>
+<li><input disabled="" type="checkbox"> 综合
+<ul>
+<li><input disabled="" type="checkbox"> 常用发包工具有哪些？分别有什么特点，适用于什么场景？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> PacketSender</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<h2 id="数据结构与算法">数据结构与算法</h2>
+<h3 id="数据结构">数据结构</h3>
+<h3 id="算法">算法</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 查找
+<ul>
+<li><input disabled="" type="checkbox"> 二分查找</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> 排序
+<ul>
+<li><input disabled="" type="checkbox"> 快速排序</li>
+<li><input disabled="" type="checkbox"> 堆排序</li>
+<li><input disabled="" type="checkbox"> 排序算法时间复杂度与空间复杂度</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> 链表
+<ul>
+<li><input disabled="" type="checkbox"> 链表逆序</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> 二叉树</li>
+<li><input disabled="" type="checkbox"> 动态规划</li>
+</ul>
+<hr>
+<hr>
+<h2 id="计算机组成原理">计算机组成原理</h2>
+<hr>
+<hr>
+<h2 id="编程语言">编程语言</h2>
+<h3 id="c">C</h3>
+<hr>
+<h3 id="c-1">C++</h3>
+<hr>
+<h3 id="go">Go</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <a href="docs/pl/go/type/">Go 数据类型</a>
+<ul>
+<li><input disabled="" type="checkbox"> 什么时候使用数组？</li>
+<li><input disabled="" type="checkbox"> slice 底层结构是什么？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/pl/go/keyword/">Go 关键字</a>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> make, new 有什么区别？</li>
+<li><input disabled="" type="checkbox"> panic, recover 是怎么实现的？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/pl/go/channel/">Go Channel</a>
+<ul>
+<li><input disabled="" type="checkbox"> 通道如何优雅关闭？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/pl/go/goroutine/">Goroutine</a>
+<ul>
+<li><input disabled="" type="checkbox"> Goroutine 为什么高效？</li>
+<li><input disabled="" type="checkbox"> 为什么 Go 需要自己实现调度器？</li>
+<li><input disabled="" type="checkbox"> Goroutine 如何调度？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/pl/go/std/">Go 标准库</a>
+<ul>
+<li><input disabled="" type="checkbox"> time
+<ul>
+<li><input disabled="" type="checkbox"> 格式化</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/pl/go/pm/">Go 包管理</a>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 简单说说 Go 包管理工具的发展历史？</li>
+<li><input disabled="" type="checkbox"> 你用过哪些 Go 包管理工具，说说它们的优缺点？</li>
+<li><input disabled="" type="checkbox"> Go Mod 相对之前的版本管理有哪些优点？</li>
+<li><input disabled="" type="checkbox"> Go Mod 如何找到引用的包？</li>
+<li><input disabled="" type="checkbox"> <code>replace</code> 语法有什么作用？</li>
+<li><input disabled="" type="checkbox"> <code>go.sum</code> 文件有什么用？是否应该加入版本管理？是如何生成的？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/pl/go/compile/">Go 编译</a>
+<ul>
+<li><input disabled="" type="checkbox"> Makefile</li>
+<li><input disabled="" type="checkbox"> Go 插件系统
+<ul>
+<li><input disabled="" type="checkbox"> Go 插件系统的应用场景？</li>
+<li><input disabled="" type="checkbox"> Go 插件系统是如何实现的？</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/pl/go/test/">Go 测试</a>
+<ul>
+<li><input disabled="" type="checkbox"> 单元测试</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/pl/go/performance/">Go 性能</a>
+<ul>
+<li><input disabled="" type="checkbox"> pprof</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/pl/go/version/">Go 版本</a>
+<ul>
+<li><input disabled="" type="checkbox"> 你现在使用的是什么版本？最新版本是什么，相对有哪些变化？</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="java">Java</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 异常处理</li>
+<li><input disabled="" type="checkbox"> 垃圾回收</li>
+<li><input disabled="" type="checkbox"> JVM</li>
+</ul>
+<hr>
+<h3 id="javascript">JavaScript</h3>
+<hr>
+<h3 id="kotlin">Kotlin</h3>
+<hr>
+<h3 id="php">PHP</h3>
+<hr>
+<h3 id="python">Python</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 可迭代的，迭代器，生成器</li>
+<li><input disabled="" type="checkbox"> yield
+<ul>
+<li><input disabled="" type="checkbox"> 协程</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> 装饰器</li>
+<li><input disabled="" type="checkbox"> 猴子补丁</li>
+<li><input disabled="" type="checkbox"> 标准库</li>
+<li><input disabled="" type="checkbox"> GIL</li>
+<li><input disabled="" type="checkbox"> ctypes</li>
+</ul>
+<hr>
+<h3 id="rust">Rust</h3>
+<hr>
+<hr>
+<h2 id="软件工程">软件工程</h2>
+<h3 id="设计模式">设计模式</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <a href="docs/se/design%20pattern/_index/">综合</a>
+<ul>
+<li><input checked="" disabled="" type="checkbox"> 适配器模式、装饰模式、代理模式有哪些异同？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/se/design%20pattern/principle/">设计原则</a>
+<ul>
+<li><input disabled="" type="checkbox"> 单一职责原则 (<code>SRP</code>)</li>
+<li><input disabled="" type="checkbox"> 开闭原则 (<code>Open Closed Principle</code>)</li>
+<li><input disabled="" type="checkbox"> 里氏替换原则 (<code>Liskov Substitution Principle</code>)</li>
+<li><input disabled="" type="checkbox"> 依赖倒置原则 (<code>Dependence Inversion Principle</code>)</li>
+<li><input disabled="" type="checkbox"> 接口隔离原则 (<code>Interface Segregation Principle</code>)</li>
+<li><input disabled="" type="checkbox"> 迪米特原则 (<code>Demeter Principle</code>)</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> 23 种设计模式
+<ul>
+<li><input disabled="" type="checkbox"> <a href="docs/se/design%20pattern/creational/">创建型 (5 种)</a>
+<ul>
+<li><input disabled="" type="checkbox"> 简单工厂模式</li>
+<li><input disabled="" type="checkbox"> 工厂方法模式</li>
+<li><input disabled="" type="checkbox"> 抽象工厂模式</li>
+<li><input disabled="" type="checkbox"> 建造者模式</li>
+<li><input disabled="" type="checkbox"> 单例模式</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/se/design%20pattern/structural/">结构型 (7 种)</a>
+<ul>
+<li><input disabled="" type="checkbox"> 适配器模式</li>
+<li><input disabled="" type="checkbox"> 桥接模式</li>
+<li><input disabled="" type="checkbox"> 装饰模式</li>
+<li><input disabled="" type="checkbox"> 外观模式</li>
+<li><input disabled="" type="checkbox"> 享元模式</li>
+<li><input disabled="" type="checkbox"> 代理模式</li>
+<li><input disabled="" type="checkbox"> 组合模式</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/se/design%20pattern/behavioral/">行为型 (11 种)</a>
+<ul>
+<li><input disabled="" type="checkbox"> 命令模式</li>
+<li><input disabled="" type="checkbox"> 中介者模式</li>
+<li><input disabled="" type="checkbox"> 观察者模式</li>
+<li><input disabled="" type="checkbox"> 状态模式</li>
+<li><input disabled="" type="checkbox"> 策略模式</li>
+<li><input disabled="" type="checkbox"> 模板方法模式</li>
+<li><input disabled="" type="checkbox"> 迭代子模式</li>
+<li><input disabled="" type="checkbox"> 责任链模式</li>
+<li><input disabled="" type="checkbox"> 备忘录模式</li>
+<li><input disabled="" type="checkbox"> 访问者模式</li>
+<li><input disabled="" type="checkbox"> 解释器模式</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/se/design%20pattern/others/">其他设计模式</a>
+<ul>
+<li><input disabled="" type="checkbox"> 并发型模式</li>
+<li><input disabled="" type="checkbox"> 线程池模式</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="架构设计docssearchitecture_index"><a href="docs/se/architecture/_index/">架构设计</a></h3>
+<ul>
+<li><input disabled="" type="checkbox"> <a href="docs/se/architecture/principle/">架构设计原则</a>
+<ul>
+<li><input disabled="" type="checkbox"> CAP (<code>Consistency</code>, <code>Availability</code>, <code>Partition tolerance</code>)
+<ul>
+<li><input disabled="" type="checkbox"> 如何理解 CAP，你在做系统设计时是如何取舍的？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> ACID (<code>Atomicity</code>, <code>Consistency</code>, <code>Isolation</code>, <code>Durability</code>)</li>
+<li><input disabled="" type="checkbox"> BASE (<code>Basically Available</code>, <code>Soft state</code>, <code>Eventual consistency</code>)</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/se/architecture/high-performance/">高性能</a></li>
+<li><input disabled="" type="checkbox"> <a href="docs/se/architecture/high-availability/">高可用</a></li>
+<li><input disabled="" type="checkbox"> <a href="docs/se/architecture/high-concurrency/">高并发</a></li>
+<li><input disabled="" type="checkbox"> <a href="docs/se/architecture/high-scalability/">高扩展性</a>
+<ul>
+<li><input disabled="" type="checkbox"> 如何提高可扩展性？</li>
+<li><input disabled="" type="checkbox"> 如何构建高扩展性网站？</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="项目管理">项目管理</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 敏捷开发
+<ul>
+<li><input disabled="" type="checkbox"> 什么是敏捷开发？</li>
+</ul>
+</li>
+<li>绩效管理
+<ul>
+<li><input disabled="" type="checkbox"> KPI</li>
+<li><input disabled="" type="checkbox"> OKR
+<ul>
+<li><input disabled="" type="checkbox"> 什么是 OKR，比 KPI 好在哪里？</li>
+<li><input disabled="" type="checkbox"> 如何做好 OKR 制定？</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<h2 id="云计算">云计算</h2>
+<h3 id="云原生">云原生</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 云原生
+<ul>
+<li><input disabled="" type="checkbox"> 什么是云原生</li>
+<li><input disabled="" type="checkbox"> 云原生解决了哪些痛点</li>
+<li><input disabled="" type="checkbox"> 什么是声明式 API</li>
+<li><input disabled="" type="checkbox"> 什么是不可变基础设施</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Kubernetes
+<ul>
+<li><input disabled="" type="checkbox"> 架构，各组件作用</li>
+<li><input disabled="" type="checkbox"> 任务调度</li>
+<li><input disabled="" type="checkbox"> 资源
+<ul>
+<li><input disabled="" type="checkbox"> Pod
+<ul>
+<li><input disabled="" type="checkbox"> 为什么要有 Pod</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Deployment
+<ul>
+<li><input disabled="" type="checkbox"> 为什么要有 Deployment</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Operator</li>
+<li><input disabled="" type="checkbox"> CRD</li>
+<li><input disabled="" type="checkbox"> 网络
+<ul>
+<li><input disabled="" type="checkbox"> CNI
+<ul>
+<li><input disabled="" type="checkbox"> Flannel</li>
+<li><input disabled="" type="checkbox"> Calico</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> DNS
+<ul>
+<li><input disabled="" type="checkbox"> CoreDNS</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> 端口
+<ul>
+<li><input disabled="" type="checkbox"> containerPort</li>
+<li><input disabled="" type="checkbox"> targetPort (pod)</li>
+<li><input disabled="" type="checkbox"> port (service)</li>
+<li><input disabled="" type="checkbox"> nodePort (service)</li>
+<li><input disabled="" type="checkbox"> hostPort</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Service Mesh
+<ul>
+<li><input disabled="" type="checkbox"> 什么是 Service Mesh</li>
+<li><input disabled="" type="checkbox"> 如何实现 sidecar 注入</li>
+<li><input disabled="" type="checkbox"> 如何实现流量劫持</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> Envoy</li>
+<li><input disabled="" type="checkbox"> Istio
+<ul>
+<li><input disabled="" type="checkbox"> 可观察指什么，如何实现</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<h2 id="大数据">大数据</h2>
+<hr>
+<hr>
+<h2 id="人工智能">人工智能</h2>
+<h3 id="机器学习">机器学习</h3>
+<h3 id="深度学习">深度学习</h3>
+<hr>
+<hr>
+<h2 id="后端">后端</h2>
+<h3 id="web-后端">Web 后端</h3>
+<h4 id="go-web-后端">Go Web 后端</h4>
+<ul>
+<li><input disabled="" type="checkbox"> <a href="docs/backend/web/go/beego/">Beego</a></li>
+<li><input disabled="" type="checkbox"> <a href="docs/backend/web/go/gin/">Gin</a></li>
+</ul>
+<h4 id="java-web-后端">Java Web 后端</h4>
+<ul>
+<li><input disabled="" type="checkbox"> <a href="docs/backend/web/java/spring/">Spring</a></li>
+</ul>
+<h4 id="php-web-后端">PHP Web 后端</h4>
+<ul>
+<li><input disabled="" type="checkbox"> fastcgi</li>
+<li><input disabled="" type="checkbox"> Laravel</li>
+</ul>
+<h4 id="python-web-后端">Python Web 后端</h4>
+<hr>
+<h3 id="数据库">数据库</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <a href="docs/backend/db/_index/">综合</a>
+<ul>
+<li><input disabled="" type="checkbox"> Mysql 与 PostgreSQL 各有什么优势？</li>
+<li><input disabled="" type="checkbox"> NoSQL 与传统数据库主要区别是什么？</li>
+<li><input disabled="" type="checkbox"> 常见的 NoSQL 有哪些，各自适用什么场景？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/backend/db/mysql/">Mysql</a>
+<ul>
+<li><input disabled="" type="checkbox"> Mysql 有哪些引擎，分别有什么特点？</li>
+<li><input disabled="" type="checkbox"> Mysql 索引是怎么实现的？</li>
+<li><input disabled="" type="checkbox"> Mysql 事务是怎么实现的？</li>
+<li><input checked="" disabled="" type="checkbox"> Mysql 事务隔离级别有哪些？</li>
+<li><input disabled="" type="checkbox"> 为什么 Oracle 等默认隔离级别是 <code>READ COMMITTED</code> ，而 Mysql 默认隔离级别是 <code>REPEATABLE READ</code>？</li>
+<li><input disabled="" type="checkbox"> Mysql 有哪些锁，各自的使用场景是什么？</li>
+<li><input disabled="" type="checkbox"> Mysql 什么情况下会出现死锁？</li>
+<li><input disabled="" type="checkbox"> Mysql 如何保证数据一致性？</li>
+<li><input disabled="" type="checkbox"> Mysql 主从如何同步？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/backend/db/redis/">Redis</a>
+<ul>
+<li><input disabled="" type="checkbox"> Redis 有哪些数据结构，分别适用什么场景？</li>
+<li><input disabled="" type="checkbox"> Redis 数据结构是如何实现的？</li>
+<li><input disabled="" type="checkbox"> Redis 如何做持久化？</li>
+<li><input disabled="" type="checkbox"> Redis 是单进程单线程，这么设计有什么优点？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> PostgreSQL</li>
+</ul>
+<hr>
+<h3 id="消息队列">消息队列</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <a href="docs/backend/mq/_index/">综合</a>
+<ul>
+<li><input disabled="" type="checkbox"> 常见的消息队列有哪些，分别适用什么场景？</li>
+<li><input disabled="" type="checkbox"> RocketMQ 相比于 Kafka 有哪些改进？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/backend/mq/kafka/">Kafka</a>
+<ul>
+<li><input disabled="" type="checkbox"> Kafka 如何实现一致性？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/backend/mq/rocketmq/">RocketMQ</a></li>
+<li><input disabled="" type="checkbox"> <a href="docs/backend/mq/rabbitmq/">RabbitMQ</a></li>
+<li><input disabled="" type="checkbox"> ActiveMQ</li>
+<li><input disabled="" type="checkbox"> ZeroMQ</li>
+</ul>
+<hr>
+<h3 id="缓存">缓存</h3>
+<hr>
+<h3 id="性能">性能</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 火焰图
+<ul>
+<li><input disabled="" type="checkbox"> perf</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="搜索引擎">搜索引擎</h3>
+<hr>
+<h3 id="微服务">微服务</h3>
+<hr>
+<h3 id="其他">其他</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <a href="docs/backend/others/hot%20load/">配置热加载</a></li>
+<li><input disabled="" type="checkbox"> <a href="docs/backend/others/hot%20restart/">程序热重启</a>
+<ul>
+<li><input disabled="" type="checkbox"> 程序如何优雅退出？</li>
+<li><input disabled="" type="checkbox"> 是如何实现热重启的？</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<h2 id="前端与客户端">前端与客户端</h2>
+<h3 id="web-前端">Web 前端</h3>
+<ul>
+<li><input disabled="" type="checkbox"> Vue</li>
+<li><input disabled="" type="checkbox"> React</li>
+<li><input disabled="" type="checkbox"> Angular</li>
+</ul>
+<hr>
+<h3 id="android">Android</h3>
+<hr>
+<h3 id="ios">iOS</h3>
+<hr>
+<hr>
+<h2 id="运维">运维</h2>
+<h3 id="cicd">CI/CD</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 什么是 CI/CD</li>
+<li><input disabled="" type="checkbox"> 你们公司如何实现 CI/CD</li>
+</ul>
+<h3 id="devops">DevOps</h3>
+<h3 id="kubernetes">kubernetes</h3>
+<ul>
+<li>kube-dns, coredns
+<ul>
+<li><code>curl a</code> 与 <code>curl a.default</code>，哪个效率更高的</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<h2 id="安全">安全</h2>
+<h3 id="web-安全">Web 安全</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <a href="docs/security/web/_index/">综合</a>
+<ul>
+<li><input disabled="" type="checkbox"> Web 安全包括哪些内容？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/security/web/xss/">XSS</a>
+<ul>
+<li><input disabled="" type="checkbox"> 什么是 XSS，为什么会发生 XSS？</li>
+<li><input disabled="" type="checkbox"> 有哪些 XSS 攻击方法？</li>
+<li><input disabled="" type="checkbox"> 如何防止 XSS 攻击？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/security/web/csrf/">CSRF</a>
+<ul>
+<li><input disabled="" type="checkbox"> 什么是 CSRF，为什么会发生 CSRF？</li>
+<li><input disabled="" type="checkbox"> 有哪些 CSRF 攻击方法？</li>
+<li><input disabled="" type="checkbox"> 如何防止 CSRF 攻击？</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
+<h2 id="测试">测试</h2>
+<hr>
+<hr>
+<h2 id="其他-1">其他</h2>
+<h3 id="字符编码">字符编码</h3>
+<h3 id="加密与解密">加密与解密</h3>
+<ul>
+<li><input disabled="" type="checkbox"> <a href="docs/others/compile/">编译</a></li>
+<li><input disabled="" type="checkbox"> <a href="docs/others/encode/">字符编码</a>
+<ul>
+<li><input disabled="" type="checkbox"> Unicode
+<ul>
+<li><input disabled="" type="checkbox"> UTF-8</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> base64</li>
+<li><input disabled="" type="checkbox"> url 编程</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> <a href="docs/others/encryption/">加密</a>
+<ul>
+<li><input disabled="" type="checkbox"> SSL/TLS
+<ul>
+<li><input disabled="" type="checkbox"> TLS 握手流程是什么样的？</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</article>
  
       
 
@@ -894,9 +1626,9 @@ https://github.com/alex-shpak/hugo-book
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/ikingye/interview/commit/d44178c9ed1e9913b10c340a9d34d697f6500c07" title='Last modified by yewang | 2020-06-04' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/ikingye/interview/commit/b3a4ccd2da91a89eb73ddbc72ec489a40c92013e" title='Last modified by yewang | 2021-05-05' target="_blank" rel="noopener">
       <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-06-04</span>
+      <span>2021-05-05</span>
     </a>
   </div>
 
@@ -919,6 +1651,29 @@ https://github.com/alex-shpak/hugo-book
 
       
   
+  <div class="book-comments">
+<script src="https://utteranc.es/client.js"
+  repo="ikingye/note-cs"
+  issue-term="pathname"
+  theme="github-light"
+  crossorigin="anonymous"
+  async
+></script>
+
+<div id="footer">
+  <p>
+    <a href="https://kingye.me">叶王</a> &copy; 2013-2020
+    版权所有。如果本文档对你有所帮助，可以<a
+      href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200428110046.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      >请作者喝饮料</a
+    >。
+  </p>
+</div>
+
+</div>
+  
  
 
       <label for="menu-control" class="hidden book-menu-overlay"></label>
@@ -927,7 +1682,100 @@ https://github.com/alex-shpak/hugo-book
     
     <aside class="book-toc">
       
-  <nav id="TableOfContents"></nav>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#操作系统">操作系统</a>
+      <ul>
+        <li><a href="#linux">Linux</a></li>
+      </ul>
+    </li>
+    <li><a href="#网络">网络</a></li>
+    <li><a href="#数据结构与算法">数据结构与算法</a>
+      <ul>
+        <li><a href="#数据结构">数据结构</a></li>
+        <li><a href="#算法">算法</a></li>
+      </ul>
+    </li>
+    <li><a href="#计算机组成原理">计算机组成原理</a></li>
+    <li><a href="#编程语言">编程语言</a>
+      <ul>
+        <li><a href="#c">C</a></li>
+        <li><a href="#c-1">C++</a></li>
+        <li><a href="#go">Go</a></li>
+        <li><a href="#java">Java</a></li>
+        <li><a href="#javascript">JavaScript</a></li>
+        <li><a href="#kotlin">Kotlin</a></li>
+        <li><a href="#php">PHP</a></li>
+        <li><a href="#python">Python</a></li>
+        <li><a href="#rust">Rust</a></li>
+      </ul>
+    </li>
+    <li><a href="#软件工程">软件工程</a>
+      <ul>
+        <li><a href="#设计模式">设计模式</a></li>
+        <li><a href="#架构设计docssearchitecture_index"><a href="docs/se/architecture/_index/">架构设计</a></a></li>
+        <li><a href="#项目管理">项目管理</a></li>
+      </ul>
+    </li>
+    <li><a href="#云计算">云计算</a>
+      <ul>
+        <li><a href="#云原生">云原生</a></li>
+      </ul>
+    </li>
+    <li><a href="#大数据">大数据</a></li>
+    <li><a href="#人工智能">人工智能</a>
+      <ul>
+        <li><a href="#机器学习">机器学习</a></li>
+        <li><a href="#深度学习">深度学习</a></li>
+      </ul>
+    </li>
+    <li><a href="#后端">后端</a>
+      <ul>
+        <li><a href="#web-后端">Web 后端</a>
+          <ul>
+            <li><a href="#go-web-后端">Go Web 后端</a></li>
+            <li><a href="#java-web-后端">Java Web 后端</a></li>
+            <li><a href="#php-web-后端">PHP Web 后端</a></li>
+            <li><a href="#python-web-后端">Python Web 后端</a></li>
+          </ul>
+        </li>
+        <li><a href="#数据库">数据库</a></li>
+        <li><a href="#消息队列">消息队列</a></li>
+        <li><a href="#缓存">缓存</a></li>
+        <li><a href="#性能">性能</a></li>
+        <li><a href="#搜索引擎">搜索引擎</a></li>
+        <li><a href="#微服务">微服务</a></li>
+        <li><a href="#其他">其他</a></li>
+      </ul>
+    </li>
+    <li><a href="#前端与客户端">前端与客户端</a>
+      <ul>
+        <li><a href="#web-前端">Web 前端</a></li>
+        <li><a href="#android">Android</a></li>
+        <li><a href="#ios">iOS</a></li>
+      </ul>
+    </li>
+    <li><a href="#运维">运维</a>
+      <ul>
+        <li><a href="#cicd">CI/CD</a></li>
+        <li><a href="#devops">DevOps</a></li>
+        <li><a href="#kubernetes">kubernetes</a></li>
+      </ul>
+    </li>
+    <li><a href="#安全">安全</a>
+      <ul>
+        <li><a href="#web-安全">Web 安全</a></li>
+      </ul>
+    </li>
+    <li><a href="#测试">测试</a></li>
+    <li><a href="#其他-1">其他</a>
+      <ul>
+        <li><a href="#字符编码">字符编码</a></li>
+        <li><a href="#加密与解密">加密与解密</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
  
     </aside>
