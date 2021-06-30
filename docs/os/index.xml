@@ -4,11 +4,7 @@
     <title>2. 操作系统 on 面试笔记</title>
     <link>https://ikingye.github.io/interview/docs/os/</link>
     <description>Recent content in 2. 操作系统 on 面试笔记</description>
-    <generator>Hugo -- gohugo.io</generator>
-    
-	<atom:link href="https://ikingye.github.io/interview/docs/os/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://ikingye.github.io/interview/docs/os/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>内存</title>
       <link>https://ikingye.github.io/interview/docs/os/memory/</link>

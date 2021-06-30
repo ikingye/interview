@@ -4,11 +4,7 @@
     <title>首页 on 面试笔记</title>
     <link>https://ikingye.github.io/interview/</link>
     <description>Recent content in 首页 on 面试笔记</description>
-    <generator>Hugo -- gohugo.io</generator>
-    
-	<atom:link href="https://ikingye.github.io/interview/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://ikingye.github.io/interview/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Beego</title>
       <link>https://ikingye.github.io/interview/docs/backend/web/go/beego/</link>
@@ -37,13 +33,25 @@
     </item>
     
     <item>
+      <title>Kubernetes</title>
+      <link>https://ikingye.github.io/interview/docs/cloud/kubernetes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/cloud/kubernetes/</guid>
+      <description>Kubernetes 更多内容见：Go 学习笔记
+参考：
+ Kubernetes API 资源使用 - 应该使用哪个 Group 和 Version?  Service Headless Service 就是没头的 Service。有什么使用场景呢？
+第一种：自主选择权，有时候 client 想自己来决定使用哪个 Real Server，可以通过查询 DNS 来获取 Real Server 的信息。 第二种：Headless Services 还有一个用处（PS：也就是我们需要的那个特性）。Headless Service 的对应的每一个 Endpoints，即每一个 Pod，都会有对应的 DNS 域名；这样 Pod 之间就可以互相访问。</description>
+    </item>
+    
+    <item>
       <title>Linux 系统信息</title>
       <link>https://ikingye.github.io/interview/docs/os/linux/info/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/os/linux/info/</guid>
       <description>Linux 系统信息 硬件信息 如何查看内存大小？ free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ # 物理 cpu 个数 cat /proc/cpuinfo| grep &amp;#39;physical id&amp;#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &amp;#39;core id&amp;#39; | sort | uniq | wc -l # 逻辑 cpu 个数（线程数） cat /proc/cpuinfo| grep &amp;#39;processor&amp;#39; | sort | uniq | wc -l 例子：
- 2 个 cpu 每个 cpu 有 8 个核心（一共 16 个核心） 一共有 32 个逻辑 cpu / 线程（每个核心有 2 个逻辑 cpu / 线程）   如何查看系统内核？ uname -a cat /proc/version 如何查看操作系统版本？ cat /etc/issue cat /etc/*release  运行信息 如何查看占用内存最多的进程？ 如何查看占用 CPU 最多的进程？ 如何查看占用某个端口的进程？ </description>
+ 2 个 cpu 每个 cpu 有 8 个核心（一共 16 个核心） 一共有 32 个逻辑 cpu / 线程（每个核心有 2 个逻辑 cpu / 线程）   如何查看系统内核？ uname -a cat /proc/version 如何查看操作系统版本？ cat /etc/issue cat /etc/*release  运行信息 如何查看占用内存最多的进程？ 如何查看占用 CPU 最多的进程？ 如何查看占用某个端口的进程？ 如何查看文件被占用没被彻底删除（看不到文件，但是磁盘没有释放）？ lsof |grep deleted</description>
     </item>
     
     <item>
@@ -52,7 +60,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/backend/db/mysql/</guid>
-      <description>Mysql Mysql 有哪些引擎，分别有什么特点？  Mysql 索引是怎么实现的？  Mysql 事务是怎么实现的？ begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。
+      <description>Mysql Mysql 有哪些引擎，分别有什么特点？  Mysql 配置文件在哪里？  Mysql 索引是怎么实现的？  Mysql 事务是怎么实现的？ begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。
 begin; select * from xxx; commit; -- 或者 rollback;  Mysql 事务隔离级别有哪些？    隔离级别 脏读 不可重复读 幻读 锁 备注     读未提交（READ UNCOMMITTED） √ √ √ 不加锁    读提交 （READ COMMITTED） × √ √  Oracle 默认   可重复读 （REPEATABLE READ） × × √  Mysql 默认   串行化 （SERIALIZABLE） × × × 共享锁 相当于单线程     可重复读  事务开始时读到的已有数据是什么，在事务提交前的任意时刻，这些数据的值都是一样的。    设置隔离级别</description>
     </item>
     

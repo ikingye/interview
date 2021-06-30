@@ -13,16 +13,18 @@ XSS 发生的原因 没有将用户输入的文本进行合适的过滤，就贸
 不仅仅是业务上的 “用户的 UGC 内容” 可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：
  来自用户的 UGC 信息 来自第三方的链接 URL 参数 POST 参数 Referer （可能来自不可信的来源） Cookie （可能来自其他子域注入）  有哪些 XSS 攻击方法？  在 HTML 中内嵌的文本中，恶意内容以 script 标签形成注入。 在内联的 JavaScript 中，拼接的数据突破了原本的限制（字符串，变量，方法名等）。 在标签属性中，恶意内容包含引号，从而突破属性值的限制，注入其他属性或者标签。 在标签的 href、src 等属性中，包含 javascript: 等可执行代码。 在 onload、onerror、onclick 等事件中，注入不受控制代码。 在 style 属性和标签中，包含类似 background-image:url(&quot;javascript:...&quot;); 的代码（新版本浏览器已经可以防范）。 在 style 属性和标签中，包含类似 expression(...) 的 CSS 表达式代码（新版本浏览器已经可以防范）。   如何防止 XSS 攻击？ 输入过滤 输入侧过滤能够在某些情况下解决特定的 XSS 问题，但会引入很大的不确定性和乱码问题。 在防范 XSS 攻击时应避免此类方法。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ikingye.github.io/interview/docs/security/web/xss/" />
-<meta property="article:modified_time" content="2020-07-08T00:46:37+08:00" />
+<meta property="og:url" content="https://ikingye.github.io/interview/docs/security/web/xss/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2020-07-08T00:46:37&#43;08:00" />
+
 <title>XSS | 面试笔记</title>
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 
 
-<link rel="stylesheet" href="/interview/book.min.9eb34a541dae64ef88ebcc3da0ae41207b6e9fd026eb7c3da82300b0c455ed4c.css" integrity="sha256-nrNKVB2uZO&#43;I68w9oK5BIHtun9Am63w9qCMAsMRV7Uw=">
+<link rel="stylesheet" href="/interview/book.min.c0eac73c59ba8c4c46d8242add7197a5e648531e07527f69b31760f60ad40b5d.css" integrity="sha256-wOrHPFm6jExG2CQq3XGXpeZIUx4HUn9psxdg9grUC10=">
 
 
-<script defer src="/interview/en.search.min.0aa5d4167f784aae06a8ebc903927333f18c2175996bbddb8edf40f7af27065b.js" integrity="sha256-CqXUFn94Sq4GqOvJA5JzM/GMIXWZa73bjt9A968nBls="></script>
+<script defer src="/interview/en.search.min.872af69c6395b694ad2befad7e378cf1cef4b780ff534aaef462b437c3db9ed5.js" integrity="sha256-hyr2nGOVtpStK&#43;&#43;tfjeM8c70t4D/U0qu9GK0N8PbntU="></script>
 
 <!--
 Made with Book Theme
@@ -187,6 +189,75 @@ https://github.com/alex-shpak/hugo-book
 
   
   <a href="/interview/docs/se/" class="collapsed ">6. 软件工程</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/cloud/" class="collapsed ">7. 云计算</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/bigdata/" class="collapsed ">8. 大数据</a>
+  
+
+
+    
+
+
+
+
+
+
+  </li>
+
+
+      
+    
+      
+        
+
+  <li>
+    
+
+  
+  <a href="/interview/docs/ai/" class="collapsed ">9. 人工智能</a>
   
 
 
@@ -430,7 +501,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -685,7 +756,7 @@ JavaScript 的 <code>eval()</code>、<code>setTimeout()</code>、<code>setInterv
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <p><span id="busuanzi_container_page_pv">本文访问量 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次</span></p>
     <p><span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span> 次</span></p>
-    <p><span id="busuanzi_container_site_uv">本站总访客数 <span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span> 人次</span></p>
+    <p><span id="busuanzi_container_site_uv">本站总访客数 <span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span> 人</span></p>
 </div>
 
 
