@@ -33,6 +33,15 @@
     </item>
     
     <item>
+      <title>Docker</title>
+      <link>https://ikingye.github.io/interview/docs/cloud/docker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/cloud/docker/</guid>
+      <description>Docker #  更多内容见：Go 学习笔记</description>
+    </item>
+    
+    <item>
       <title>HTTP</title>
       <link>https://ikingye.github.io/interview/docs/network/http/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -48,18 +57,6 @@
       
       <guid>https://ikingye.github.io/interview/docs/backend/mq/kafka/</guid>
       <description>Kafka #  Kafka 如何实现一致性？ #  </description>
-    </item>
-    
-    <item>
-      <title>Kubernetes</title>
-      <link>https://ikingye.github.io/interview/docs/cloud/kubernetes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview/docs/cloud/kubernetes/</guid>
-      <description>Kubernetes #  更多内容见：Go 学习笔记
-参考：
- Kubernetes API 资源使用 - 应该使用哪个 Group 和 Version?  Service #  Headless Service #  就是没头的 Service。有什么使用场景呢？
-第一种：自主选择权，有时候 client 想自己来决定使用哪个 Real Server，可以通过查询 DNS 来获取 Real Server 的信息。 第二种：Headless Services 还有一个用处（PS：也就是我们需要的那个特性）。Headless Service 的对应的每一个 Endpoints，即每一个 Pod，都会有对应的 DNS 域名；这样 Pod 之间就可以互相访问。</description>
     </item>
     
     <item>
@@ -224,6 +221,18 @@ Base64 #  Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9�
     </item>
     
     <item>
+      <title>Kubernetes</title>
+      <link>https://ikingye.github.io/interview/docs/cloud/kubernetes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/cloud/kubernetes/</guid>
+      <description>Kubernetes #  更多内容见：Go 学习笔记
+参考：
+ Kubernetes API 资源使用 - 应该使用哪个 Group 和 Version?  Service #  Headless Service #  就是没头的 Service。有什么使用场景呢？
+第一种：自主选择权，有时候 client 想自己来决定使用哪个 Real Server，可以通过查询 DNS 来获取 Real Server 的信息。 第二种：Headless Services 还有一个用处（PS：也就是我们需要的那个特性）。Headless Service 的对应的每一个 Endpoints，即每一个 Pod，都会有对应的 DNS 域名；这样 Pod 之间就可以互相访问。</description>
+    </item>
+    
+    <item>
       <title>Redis</title>
       <link>https://ikingye.github.io/interview/docs/backend/db/redis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -305,6 +314,15 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
       <guid>https://ikingye.github.io/interview/docs/pl/go/</guid>
       <description>Go #  更多教程详见：
  Go 高手进阶 Go 设计与实现 Go 学习笔记   基础 #  你现在使用的是什么版本？最新版本是什么，相对有哪些变化？ #  go 版本管理工具，gvm 如何使用？ #   简单说说 Go 包管理工具的发展历史？ #   Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules    你用过哪些 Go 包管理工具，说说它们的优缺点？ #    golang/dep   Masterminds/glide   kardianos/govendor   Go Mod 相对之前的版本管理有哪些优点？ #   可以指定版本   Go Mod 如何找到引用的包？ #  一般情况：</description>
+    </item>
+    
+    <item>
+      <title>Cloud Native</title>
+      <link>https://ikingye.github.io/interview/docs/cloud/native/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/cloud/native/</guid>
+      <description>Cloud Native #  </description>
     </item>
     
     <item>
