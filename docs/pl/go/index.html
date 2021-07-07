@@ -4,8 +4,10 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Go 更多教程详见：Go 学习笔记  基础 你现在使用的是什么版本？最新版本是什么，相对有哪些变化？ go 版本管理工具，gvm 如何使用？  简单说说 Go 包管理工具的发展历史？  Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules    你用过哪些 Go 包管理工具，说说它们的优缺点？   golang/dep   Masterminds/glide   kardianos/govendor   Go Mod 相对之前的版本管理有哪些优点？  可以指定版本   Go Mod 如何找到引用的包？ 一般情况："><meta property="og:title" content="Go" />
-<meta property="og:description" content="Go 更多教程详见：Go 学习笔记  基础 你现在使用的是什么版本？最新版本是什么，相对有哪些变化？ go 版本管理工具，gvm 如何使用？  简单说说 Go 包管理工具的发展历史？  Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules    你用过哪些 Go 包管理工具，说说它们的优缺点？   golang/dep   Masterminds/glide   kardianos/govendor   Go Mod 相对之前的版本管理有哪些优点？  可以指定版本   Go Mod 如何找到引用的包？ 一般情况：" />
+<meta name="description" content="Go 更多教程详见：
+ Go 高手进阶 Go 设计与实现 Go 学习笔记   基础 你现在使用的是什么版本？最新版本是什么，相对有哪些变化？ go 版本管理工具，gvm 如何使用？  简单说说 Go 包管理工具的发展历史？  Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules    你用过哪些 Go 包管理工具，说说它们的优缺点？   golang/dep   Masterminds/glide   kardianos/govendor   Go Mod 相对之前的版本管理有哪些优点？  可以指定版本   Go Mod 如何找到引用的包？ 一般情况："><meta property="og:title" content="Go" />
+<meta property="og:description" content="Go 更多教程详见：
+ Go 高手进阶 Go 设计与实现 Go 学习笔记   基础 你现在使用的是什么版本？最新版本是什么，相对有哪些变化？ go 版本管理工具，gvm 如何使用？  简单说说 Go 包管理工具的发展历史？  Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules    你用过哪些 Go 包管理工具，说说它们的优缺点？   golang/dep   Masterminds/glide   kardianos/govendor   Go Mod 相对之前的版本管理有哪些优点？  可以指定版本   Go Mod 如何找到引用的包？ 一般情况：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/interview/docs/pl/go/" /><meta property="article:section" content="docs" />
 
@@ -18,7 +20,7 @@
 <link rel="stylesheet" href="/interview/book.min.c0eac73c59ba8c4c46d8242add7197a5e648531e07527f69b31760f60ad40b5d.css" integrity="sha256-wOrHPFm6jExG2CQq3XGXpeZIUx4HUn9psxdg9grUC10=">
 
 
-<script defer src="/interview/en.search.min.acfd3d6cbc7b7e6efe12dd0e5f0a01554ff4e3c831a37163bad0a932f794e1bf.js" integrity="sha256-rP09bLx7fm7&#43;Et0OXwoBVU/048gxo3FjutCpMveU4b8="></script>
+<script defer src="/interview/en.search.min.cee6577b6f7e0cb158cc73b912be7375a4eefd40fdd151331e77c2ec44ebf984.js" integrity="sha256-zuZXe29&#43;DLFYzHO5Er5zdaTu/UD90VEzHnfC7ETr&#43;YQ="></script>
 
 <!--
 Made with Book Theme
@@ -614,7 +616,13 @@ https://github.com/alex-shpak/hugo-book
       
   <article class="markdown"><h1 id="go">Go</h1>
 <blockquote class="book-hint info">
-  更多教程详见：<a href="https://kingye.me/study-go/">Go 学习笔记</a>
+  <p>更多教程详见：</p>
+<ul>
+<li><a href="https://kingye.me/advanced-go/">Go 高手进阶</a></li>
+<li><a href="https://kingye.me/dai-go/">Go 设计与实现</a></li>
+<li><a href="https://kingye.me/study-go/">Go 学习笔记</a></li>
+</ul>
+
 </blockquote>
 
 <h2 id="基础">基础</h2>
