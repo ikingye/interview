@@ -11,9 +11,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/cloud/kubernetes/</guid>
-      <description>Kubernetes 更多内容见：Go 学习笔记
+      <description>Kubernetes #  更多内容见：Go 学习笔记
 参考：
- Kubernetes API 资源使用 - 应该使用哪个 Group 和 Version?  Service Headless Service 就是没头的 Service。有什么使用场景呢？
+ Kubernetes API 资源使用 - 应该使用哪个 Group 和 Version?  Service #  Headless Service #  就是没头的 Service。有什么使用场景呢？
 第一种：自主选择权，有时候 client 想自己来决定使用哪个 Real Server，可以通过查询 DNS 来获取 Real Server 的信息。 第二种：Headless Services 还有一个用处（PS：也就是我们需要的那个特性）。Headless Service 的对应的每一个 Endpoints，即每一个 Pod，都会有对应的 DNS 域名；这样 Pod 之间就可以互相访问。</description>
     </item>
     

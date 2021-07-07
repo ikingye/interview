@@ -11,8 +11,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/os/linux/</guid>
-      <description>Linux 更多教程详见：Linux 学习笔记  硬件信息 如何查看内存大小？ free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ # 物理 cpu 个数 cat /proc/cpuinfo| grep &amp;#39;physical id&amp;#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &amp;#39;core id&amp;#39; | sort | uniq | wc -l # 逻辑 cpu 个数（线程数） cat /proc/cpuinfo| grep &amp;#39;processor&amp;#39; | sort | uniq | wc -l 例子：
- 2 个 cpu 每个 cpu 有 8 个核心（一共 16 个核心） 一共有 32 个逻辑 cpu / 线程（每个核心有 2 个逻辑 cpu / 线程）   如何查看系统内核？ uname -a cat /proc/version 如何查看操作系统版本？ cat /etc/issue cat /etc/*release  运行信息 如何查看占用内存最多的进程？ 如何查看占用 CPU 最多的进程？ 如何查看占用某个端口的进程？ 如何查看文件被占用没被彻底删除（看不到文件，但是磁盘没有释放）？ lsof |grep deleted</description>
+      <description>Linux #  更多教程详见：Linux 学习笔记  硬件信息 #  如何查看内存大小？ #  free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ #  # 物理 cpu 个数 cat /proc/cpuinfo| grep &amp;#39;physical id&amp;#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &amp;#39;core id&amp;#39; | sort | uniq | wc -l # 逻辑 cpu 个数（线程数） cat /proc/cpuinfo| grep &amp;#39;processor&amp;#39; | sort | uniq | wc -l 例子：</description>
     </item>
     
     <item>
@@ -21,7 +20,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/backend/web/go/beego/</guid>
-      <description>Beego </description>
+      <description>Beego #  </description>
     </item>
     
     <item>
@@ -30,7 +29,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/c/</guid>
-      <description>C 更多教程详见：C 学习笔记  基础   进阶   设计与实现 </description>
+      <description>C #  更多教程详见：C 学习笔记  基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
@@ -39,7 +38,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/network/http/</guid>
-      <description>HTTP HTTP 基础 HTTP 状态码有哪些？  2XX 成功  200 ok（请求成功） 204 no content （请求成功，但是没有结果返回） 206 partial content （客户端请求一部分资源，服务端成功响应，返回一范围资源）   3XX 重定向  301 move permanently （永久性重定向） 302 found （临时性重定向） 303 see other （示由于请求对应的资源存在着另一个 URI，应使用 GET 方法定向获取请求的资源） 304 not modified （表示在客户端采用带条件的访问某资源时，服务端找到了资源，但是这个请求的条件不符合。跟重定向无关） 307 temporary redirect （跟 302 一个意思）   4XX 客户端错误  400 bad request （请求报文存在语法错误） 401 unauthorized （需要认证（第一次返回）或者认证失败（第二次返回）） 403 forbidden （请求被服务器拒绝了） 404 not found （服务器上无法找到请求的资源）   5XX 服务器错误  500 internal server error （服务端执行请求时发生了错误） 503 service unavailable （服务器正在超负载或者停机维护，无法处理请求）    301 和 302 有什么区别？分别适用于什么场景？ 101， 304， 307 分别是什么？ 101 协议升级</description>
+      <description>HTTP #  HTTP 基础 #  HTTP 状态码有哪些？ #   2XX 成功  200 ok（请求成功） 204 no content （请求成功，但是没有结果返回） 206 partial content （客户端请求一部分资源，服务端成功响应，返回一范围资源）   3XX 重定向  301 move permanently （永久性重定向） 302 found （临时性重定向） 303 see other （示由于请求对应的资源存在着另一个 URI，应使用 GET 方法定向获取请求的资源） 304 not modified （表示在客户端采用带条件的访问某资源时，服务端找到了资源，但是这个请求的条件不符合。跟重定向无关） 307 temporary redirect （跟 302 一个意思）   4XX 客户端错误  400 bad request （请求报文存在语法错误） 401 unauthorized （需要认证（第一次返回）或者认证失败（第二次返回）） 403 forbidden （请求被服务器拒绝了） 404 not found （服务器上无法找到请求的资源）   5XX 服务器错误  500 internal server error （服务端执行请求时发生了错误） 503 service unavailable （服务器正在超负载或者停机维护，无法处理请求）    301 和 302 有什么区别？分别适用于什么场景？ #  101， 304， 307 分别是什么？ #  101 协议升级</description>
     </item>
     
     <item>
@@ -48,7 +47,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/backend/mq/kafka/</guid>
-      <description>Kafka Kafka 如何实现一致性？ </description>
+      <description>Kafka #  Kafka 如何实现一致性？ #  </description>
     </item>
     
     <item>
@@ -57,9 +56,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/cloud/kubernetes/</guid>
-      <description>Kubernetes 更多内容见：Go 学习笔记
+      <description>Kubernetes #  更多内容见：Go 学习笔记
 参考：
- Kubernetes API 资源使用 - 应该使用哪个 Group 和 Version?  Service Headless Service 就是没头的 Service。有什么使用场景呢？
+ Kubernetes API 资源使用 - 应该使用哪个 Group 和 Version?  Service #  Headless Service #  就是没头的 Service。有什么使用场景呢？
 第一种：自主选择权，有时候 client 想自己来决定使用哪个 Real Server，可以通过查询 DNS 来获取 Real Server 的信息。 第二种：Headless Services 还有一个用处（PS：也就是我们需要的那个特性）。Headless Service 的对应的每一个 Endpoints，即每一个 Pod，都会有对应的 DNS 域名；这样 Pod 之间就可以互相访问。</description>
     </item>
     
@@ -69,8 +68,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/backend/db/mysql/</guid>
-      <description>Mysql Mysql 有哪些引擎，分别有什么特点？  Mysql 配置文件在哪里？  Mysql 索引是怎么实现的？  Mysql 事务是怎么实现的？ begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。
-begin; select * from xxx; commit; -- 或者 rollback;  Mysql 事务隔离级别有哪些？    隔离级别 脏读 不可重复读 幻读 锁 备注     读未提交（READ UNCOMMITTED） √ √ √ 不加锁    读提交 （READ COMMITTED） × √ √  Oracle 默认   可重复读 （REPEATABLE READ） × × √  Mysql 默认   串行化 （SERIALIZABLE） × × × 共享锁 相当于单线程     可重复读  事务开始时读到的已有数据是什么，在事务提交前的任意时刻，这些数据的值都是一样的。    设置隔离级别</description>
+      <description>Mysql #  Mysql 有哪些引擎，分别有什么特点？ #   Mysql 配置文件在哪里？ #   Mysql 索引是怎么实现的？ #   Mysql 事务是怎么实现的？ #  begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。
+begin; select * from xxx; commit; -- 或者 rollback;  Mysql 事务隔离级别有哪些？ #     隔离级别 脏读 不可重复读 幻读 锁 备注     读未提交（READ UNCOMMITTED） √ √ √ 不加锁    读提交 （READ COMMITTED） × √ √  Oracle 默认   可重复读 （REPEATABLE READ） × × √  Mysql 默认   串行化 （SERIALIZABLE） × × × 共享锁 相当于单线程     可重复读  事务开始时读到的已有数据是什么，在事务提交前的任意时刻，这些数据的值都是一样的。    设置隔离级别</description>
     </item>
     
     <item>
@@ -79,7 +78,7 @@ begin; select * from xxx; commit; -- 或者 rollback;  Mysql 事务隔离级别�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/backend/web/java/spring/</guid>
-      <description>Spring </description>
+      <description>Spring #  </description>
     </item>
     
     <item>
@@ -88,7 +87,7 @@ begin; select * from xxx; commit; -- 或者 rollback;  Mysql 事务隔离级别�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/network/tcp/</guid>
-      <description>TCP/UDP/IP TCP </description>
+      <description>TCP/UDP/IP #  TCP #  </description>
     </item>
     
     <item>
@@ -97,10 +96,10 @@ begin; select * from xxx; commit; -- 或者 rollback;  Mysql 事务隔离级别�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/security/web/xss/</guid>
-      <description>XSS 什么是 XSS，为什么会发生 XSS？ Cross-site scripting 跨站脚本 (wiki)
-XSS 发生的原因 没有将用户输入的文本进行合适的过滤，就贸然插入到 HTML 中，这很容易造成注入漏洞。 攻击者可以利用漏洞，构造出恶意的代码指令，进而利用恶意代码危害数据安全。
+      <description>XSS #  什么是 XSS，为什么会发生 XSS？ #  Cross-site scripting 跨站脚本 (wiki)
+XSS 发生的原因 #  没有将用户输入的文本进行合适的过滤，就贸然插入到 HTML 中，这很容易造成注入漏洞。 攻击者可以利用漏洞，构造出恶意的代码指令，进而利用恶意代码危害数据安全。
 不仅仅是业务上的 “用户的 UGC 内容” 可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：
- 来自用户的 UGC 信息 来自第三方的链接 URL 参数 POST 参数 Referer （可能来自不可信的来源） Cookie （可能来自其他子域注入）  有哪些 XSS 攻击方法？  在 HTML 中内嵌的文本中，恶意内容以 script 标签形成注入。 在内联的 JavaScript 中，拼接的数据突破了原本的限制（字符串，变量，方法名等）。 在标签属性中，恶意内容包含引号，从而突破属性值的限制，注入其他属性或者标签。 在标签的 href、src 等属性中，包含 javascript: 等可执行代码。 在 onload、onerror、onclick 等事件中，注入不受控制代码。 在 style 属性和标签中，包含类似 background-image:url(&amp;quot;javascript:...&amp;quot;); 的代码（新版本浏览器已经可以防范）。 在 style 属性和标签中，包含类似 expression(...) 的 CSS 表达式代码（新版本浏览器已经可以防范）。   如何防止 XSS 攻击？ 输入过滤 输入侧过滤能够在某些情况下解决特定的 XSS 问题，但会引入很大的不确定性和乱码问题。 在防范 XSS 攻击时应避免此类方法。</description>
+ 来自用户的 UGC 信息 来自第三方的链接 URL 参数 POST 参数 Referer （可能来自不可信的来源） Cookie （可能来自其他子域注入）  有哪些 XSS 攻击方法？ #   在 HTML 中内嵌的文本中，恶意内容以 script 标签形成注入。 在内联的 JavaScript 中，拼接的数据突破了原本的限制（字符串，变量，方法名等）。 在标签属性中，恶意内容包含引号，从而突破属性值的限制，注入其他属性或者标签。 在标签的 href、src 等属性中，包含 javascript: 等可执行代码。 在 onload、onerror、onclick 等事件中，注入不受控制代码。 在 style 属性和标签中，包含类似 background-image:url(&amp;quot;javascript:...&amp;quot;); 的代码（新版本浏览器已经可以防范）。 在 style 属性和标签中，包含类似 expression(.</description>
     </item>
     
     <item>
@@ -109,7 +108,7 @@ XSS 发生的原因 没有将用户输入的文本进行合适的过滤，就贸
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/algs/tree/</guid>
-      <description>二叉树 </description>
+      <description>二叉树 #  </description>
     </item>
     
     <item>
@@ -118,7 +117,7 @@ XSS 发生的原因 没有将用户输入的文本进行合适的过滤，就贸
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/algs/dp/</guid>
-      <description>动态规划 </description>
+      <description>动态规划 #  </description>
     </item>
     
     <item>
@@ -127,7 +126,7 @@ XSS 发生的原因 没有将用户输入的文本进行合适的过滤，就贸
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/network/send/</guid>
-      <description>发包工具 综合 常用发包工具有哪些？分别有什么特点，适用于什么场景？  PacketSender </description>
+      <description>发包工具 #  综合 #  常用发包工具有哪些？分别有什么特点，适用于什么场景？ #   PacketSender #  </description>
     </item>
     
     <item>
@@ -136,12 +135,11 @@ XSS 发生的原因 没有将用户输入的文本进行合适的过滤，就贸
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/others/encode/</guid>
-      <description>字符编码 有的字符在一些环境中是不能显示或使用的， 比如 &amp;amp;, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
-各种编码的特征  Base 编码  Base64  组成字符：A-Z、a-z、0-9、+、/ 末尾一般补 0-2 个 =（可以不补 =）   Base32  组成字符：A-Z、2-7 末尾一般补 0-6 个 =（可以不补 =）   Base16  组成字符：0-9、A-F 末尾没有 =       Base 编码 参考：rfc4648
+      <description>字符编码 #  有的字符在一些环境中是不能显示或使用的， 比如 &amp;amp;, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
+各种编码的特征 #   Base 编码  Base64  组成字符：A-Z、a-z、0-9、+、/ 末尾一般补 0-2 个 =（可以不补 =）   Base32  组成字符：A-Z、2-7 末尾一般补 0-6 个 =（可以不补 =）   Base16  组成字符：0-9、A-F 末尾没有 =       Base 编码 #  参考：rfc4648
 Base 系列的就是用来将字节编码为 ASCII 中的可见字符的。
 在 URL 中使用时必须去掉 “=” 符号
-Base64 Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9、+、/）将任意字节序列数据编码成 ASCII 字符串，另有 “=” 符号用作后缀用途。
-Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0）， 然后将这些二进制数值串联起来，再按照 6 比特一组进行切分（因为 2^6=64），最后一组若不足 6 比特则末尾补 0。</description>
+Base64 #  Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9、+、/）将任意字节序列数据编码成 ASCII 字符串，另有 “=” 符号用作后缀用途。</description>
     </item>
     
     <item>
@@ -150,7 +148,7 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/network/capture/</guid>
-      <description>抓包 综合 常用抓包工具有哪些？分别有什么特点，适用于什么场景？  tcpdump  tcpdump -D: 列出所有可监听设备 tcpdump -i: 指定网络接口（网卡）  tcpdump -i any: 不确定走哪个网卡   tcpdump host: 指定主机  tcpdump src host: 指定主机发送出去的包 tcpdump dst host: 发送到指定主机的包   tcpdump tcp: 指定协议 tcpdump port: 指定端口 tcpdump -n: 直接显示 IP，而不把 IP 解析为主机名 tcpdump -nn: 直接显示 IP 与端口，而不解析为主机名与服务 tcpdump -N: 不打印 host 的域名部分，比如打印 nic 而不是 nic.ddn.mil tcpdump -w: 输出到文件 tcpdump -tttt: 更具有可读性的时间格式 tcpdump -c: 抓 n 个包，然后退出  # 监视第一个网络接口上所有流过的数据包 tcpdump # 监视指定网络接口的数据包 tcpdump -i eth1 # 截获主机 210.</description>
+      <description>抓包 #  综合 #  常用抓包工具有哪些？分别有什么特点，适用于什么场景？ #   tcpdump #   tcpdump -D: 列出所有可监听设备 tcpdump -i: 指定网络接口（网卡）  tcpdump -i any: 不确定走哪个网卡   tcpdump host: 指定主机  tcpdump src host: 指定主机发送出去的包 tcpdump dst host: 发送到指定主机的包   tcpdump tcp: 指定协议 tcpdump port: 指定端口 tcpdump -n: 直接显示 IP，而不把 IP 解析为主机名 tcpdump -nn: 直接显示 IP 与端口，而不解析为主机名与服务 tcpdump -N: 不打印 host 的域名部分，比如打印 nic 而不是 nic.ddn.mil tcpdump -w: 输出到文件 tcpdump -tttt: 更具有可读性的时间格式 tcpdump -c: 抓 n 个包，然后退出  # 监视第一个网络接口上所有流过的数据包 tcpdump # 监视指定网络接口的数据包 tcpdump -i eth1 # 截获主机 210.</description>
     </item>
     
     <item>
@@ -159,7 +157,7 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/algs/sort/</guid>
-      <description>排序算法 </description>
+      <description>排序算法 #  </description>
     </item>
     
     <item>
@@ -168,7 +166,7 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/algs/search/</guid>
-      <description>查询算法 </description>
+      <description>查询算法 #  </description>
     </item>
     
     <item>
@@ -177,7 +175,7 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/se/dp/</guid>
-      <description>设计模式 设计原则 单一职责原则 (SRP)  开闭原则 (Open Closed Principle)  里氏替换原则 (Liskov Substitution Principle)  依赖倒置原则 (Dependence Inversion Principle)  接口隔离原则 (Interface Segregation Principle)  迪米特原则 (Demeter Principle)   创建型模式 简单工厂模式  工厂方法模式  抽象工厂模式  建造者模式  单例模式   结构型模式 适配器模式  桥接模式  装饰模式  外观模式  享元模式  代理模式  组合模式 适配器模式、装饰模式、代理模式有哪些异同？  适配器模式  适配器模式实现新接口   代理模式  代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。   装饰器模式  原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。      装饰器模式与代理模式实现原接口 都持有原对象  装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象    /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi { public void updateDate(String orderId, String date, String client); } public class SourceOrderApiImpl implements SourceOrderApi{ @Override public void updateDate(String orderId, String date, String client) { System.</description>
+      <description>设计模式 #  设计原则 #  单一职责原则 (SRP) #   开闭原则 (Open Closed Principle) #   里氏替换原则 (Liskov Substitution Principle) #   依赖倒置原则 (Dependence Inversion Principle) #   接口隔离原则 (Interface Segregation Principle) #   迪米特原则 (Demeter Principle) #    创建型模式 #  简单工厂模式 #   工厂方法模式 #   抽象工厂模式 #   建造者模式 #   单例模式 #    结构型模式 #  适配器模式 #   桥接模式 #   装饰模式 #   外观模式 #   享元模式 #   代理模式 #   组合模式 #  适配器模式、装饰模式、代理模式有哪些异同？ #   适配器模式  适配器模式实现新接口   代理模式  代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。   装饰器模式  原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。      装饰器模式与代理模式实现原接口 都持有原对象  装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象    /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi { public void updateDate(String orderId, String date, String client); } public class SourceOrderApiImpl implements SourceOrderApi{ @Override public void updateDate(String orderId, String date, String client) { System.</description>
     </item>
     
     <item>
@@ -186,7 +184,7 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/backend/others/hot-load/</guid>
-      <description>配置热加载 </description>
+      <description>配置热加载 #  </description>
     </item>
     
     <item>
@@ -195,7 +193,7 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/algs/link/</guid>
-      <description>链表 </description>
+      <description>链表 #  </description>
     </item>
     
     <item>
@@ -204,7 +202,7 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/cpp/</guid>
-      <description>C++ 更多教程详见：C++ 学习笔记  基础   进阶   设计与实现 </description>
+      <description>C++ #  更多教程详见：C++ 学习笔记  基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
@@ -213,7 +211,7 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/security/web/csrf/</guid>
-      <description>CSRF 什么是 CSRF，为什么会发生 CSRF？  有哪些 CSRF 攻击方法？  如何防止 CSRF 攻击？ </description>
+      <description>CSRF #  什么是 CSRF，为什么会发生 CSRF？ #   有哪些 CSRF 攻击方法？ #   如何防止 CSRF 攻击？ #  </description>
     </item>
     
     <item>
@@ -222,7 +220,7 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/backend/web/go/gin/</guid>
-      <description>Gin </description>
+      <description>Gin #  </description>
     </item>
     
     <item>
@@ -231,8 +229,8 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/backend/db/redis/</guid>
-      <description>Redis Redis 有哪些数据结构，分别适用什么场景？  Redis 数据结构是如何实现的？  Redis 如何做持久化？ RDB 在指定的时间间隔能对你的数据进行快照存储
-# 时间策略 save 900 1 save 300 10 save 60 10000 # 文件名称 dbfilename dump.rdb # 文件保存路径 dir /home/work/app/redis/data/ # 如果持久化出错，主进程是否停止写入 stop-writes-on-bgsave-error yes # 是否压缩 rdbcompression yes # 导入时是否检查 rdbchecksum yes AOF # 是否开启aof appendonly yes # 文件名称 appendfilename &amp;#34;appendonly.aof&amp;#34; # 同步方式 appendfsync everysec # aof重写期间是否同步 no-appendfsync-on-rewrite no # 重写触发配置 auto-aof-rewrite-percentage 100 auto-aof-rewrite-min-size 64mb # 加载aof时如果有错如何处理 aof-load-truncated yes # 文件重写策略 aof-rewrite-incremental-fsync yes  Redis 是单进程单线程，这么设计有什么优点？ </description>
+      <description>Redis #  Redis 有哪些数据结构，分别适用什么场景？ #   Redis 数据结构是如何实现的？ #   Redis 如何做持久化？ #  RDB #  在指定的时间间隔能对你的数据进行快照存储
+# 时间策略 save 900 1 save 300 10 save 60 10000 # 文件名称 dbfilename dump.rdb # 文件保存路径 dir /home/work/app/redis/data/ # 如果持久化出错，主进程是否停止写入 stop-writes-on-bgsave-error yes # 是否压缩 rdbcompression yes # 导入时是否检查 rdbchecksum yes AOF #  # 是否开启aof appendonly yes # 文件名称 appendfilename &amp;#34;appendonly.aof&amp;#34; # 同步方式 appendfsync everysec # aof重写期间是否同步 no-appendfsync-on-rewrite no # 重写触发配置 auto-aof-rewrite-percentage 100 auto-aof-rewrite-min-size 64mb # 加载aof时如果有错如何处理 aof-load-truncated yes # 文件重写策略 aof-rewrite-incremental-fsync yes  Redis 是单进程单线程，这么设计有什么优点？ #  </description>
     </item>
     
     <item>
@@ -241,7 +239,7 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/backend/mq/rocketmq/</guid>
-      <description>RocketMQ </description>
+      <description>RocketMQ #  </description>
     </item>
     
     <item>
@@ -250,7 +248,7 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/others/encryption/</guid>
-      <description>加密 SSL/TLS TLS 握手流程是什么样的？ 参考：
+      <description>加密 #  SSL/TLS #  TLS 握手流程是什么样的？ #  参考：
  SSL/TLS 详解  </description>
     </item>
     
@@ -260,7 +258,7 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/se/architecture/</guid>
-      <description>架构设计 架构设计原则 CAP (Consistency, Availability, Partition tolerance) 如何理解 CAP，你在做系统设计时是如何取舍的？  ACID (Atomicity, Consistency, Isolation, Durability)  BASE (Basically Available, Soft state, Eventual consistency)   高性能   高可用   高并发   高扩展性 </description>
+      <description>架构设计 #  架构设计原则 #  CAP (Consistency, Availability, Partition tolerance) #  如何理解 CAP，你在做系统设计时是如何取舍的？ #   ACID (Atomicity, Consistency, Isolation, Durability) #   BASE (Basically Available, Soft state, Eventual consistency) #    高性能 #    高可用 #    高并发 #    高扩展性 #  </description>
     </item>
     
     <item>
@@ -269,7 +267,7 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/backend/others/hot-restart/</guid>
-      <description>程序热重启 程序如何优雅退出？ Linux 信号 信号是进程间通信的底层形式。
+      <description>程序热重启 #  程序如何优雅退出？ #  Linux 信号 #  信号是进程间通信的底层形式。
 Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
 发送信号的原因：
   硬件异常：如 0 作为除数，内核会发送 SIGFPE（信号值 8）
@@ -278,8 +276,7 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
  ctrl + C    SIGQUIT 3
  ctrl + \    SIGKILL 9
  不可以被阻塞、处理和忽略    SIGTERM 15
- kill 默认不带参数，发送的信号就是 SIGTERM 可以被阻塞、处理和忽略    SIGTOP 20
- 停止（挂起）进程 ctrl + D    Go sigs := make(chan os.</description>
+ kill 默认不带参数，发送的信号就是 SIGTERM 可以被阻塞、处理和忽略    SIGTOP 20</description>
     </item>
     
     <item>
@@ -288,7 +285,7 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/backend/mq/rabbitmq/</guid>
-      <description>RabbitMQ </description>
+      <description>RabbitMQ #  </description>
     </item>
     
     <item>
@@ -297,7 +294,7 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/others/compile/</guid>
-      <description>编译 </description>
+      <description>编译 #  </description>
     </item>
     
     <item>
@@ -306,8 +303,8 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/go/</guid>
-      <description>Go 更多教程详见：
- Go 高手进阶 Go 设计与实现 Go 学习笔记   基础 你现在使用的是什么版本？最新版本是什么，相对有哪些变化？ go 版本管理工具，gvm 如何使用？  简单说说 Go 包管理工具的发展历史？  Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules    你用过哪些 Go 包管理工具，说说它们的优缺点？   golang/dep   Masterminds/glide   kardianos/govendor   Go Mod 相对之前的版本管理有哪些优点？  可以指定版本   Go Mod 如何找到引用的包？ 一般情况：</description>
+      <description>Go #  更多教程详见：
+ Go 高手进阶 Go 设计与实现 Go 学习笔记   基础 #  你现在使用的是什么版本？最新版本是什么，相对有哪些变化？ #  go 版本管理工具，gvm 如何使用？ #   简单说说 Go 包管理工具的发展历史？ #   Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules    你用过哪些 Go 包管理工具，说说它们的优缺点？ #    golang/dep   Masterminds/glide   kardianos/govendor   Go Mod 相对之前的版本管理有哪些优点？ #   可以指定版本   Go Mod 如何找到引用的包？ #  一般情况：</description>
     </item>
     
     <item>
@@ -316,7 +313,7 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/java/</guid>
-      <description>Java 更多教程详见：Java 学习笔记  基础   进阶   设计与实现 </description>
+      <description>Java #  更多教程详见：Java 学习笔记  基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
@@ -325,7 +322,7 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/javascript/</guid>
-      <description>JavaScript 更多教程详见：JavaScript 学习笔记  基础   进阶   设计与实现 </description>
+      <description>JavaScript #  更多教程详见：JavaScript 学习笔记  基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
@@ -334,7 +331,7 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/kotlin/</guid>
-      <description>Kotlin 更多教程详见：Kotlin 学习笔记  基础   进阶   设计与实现 </description>
+      <description>Kotlin #  更多教程详见：Kotlin 学习笔记  基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
@@ -343,8 +340,8 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/php/</guid>
-      <description>PHP 更多教程详见：
- PHP 高手进阶 PHP 学习笔记   基础   进阶   设计与实现 </description>
+      <description>PHP #  更多教程详见：
+ PHP 高手进阶 PHP 学习笔记   基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
@@ -353,7 +350,7 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/python/</guid>
-      <description>Python 更多教程详见：Python 学习笔记  基础   进阶   设计与实现 </description>
+      <description>Python #  更多教程详见：Python 学习笔记  基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
@@ -362,7 +359,7 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/rust/</guid>
-      <description>Rust 更多教程详见：Rust 学习笔记  基础   进阶   设计与实现 </description>
+      <description>Rust #  更多教程详见：Rust 学习笔记  基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
   </channel>

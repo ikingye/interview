@@ -11,8 +11,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/os/linux/</guid>
-      <description>Linux 更多教程详见：Linux 学习笔记  硬件信息 如何查看内存大小？ free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ # 物理 cpu 个数 cat /proc/cpuinfo| grep &amp;#39;physical id&amp;#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &amp;#39;core id&amp;#39; | sort | uniq | wc -l # 逻辑 cpu 个数（线程数） cat /proc/cpuinfo| grep &amp;#39;processor&amp;#39; | sort | uniq | wc -l 例子：
- 2 个 cpu 每个 cpu 有 8 个核心（一共 16 个核心） 一共有 32 个逻辑 cpu / 线程（每个核心有 2 个逻辑 cpu / 线程）   如何查看系统内核？ uname -a cat /proc/version 如何查看操作系统版本？ cat /etc/issue cat /etc/*release  运行信息 如何查看占用内存最多的进程？ 如何查看占用 CPU 最多的进程？ 如何查看占用某个端口的进程？ 如何查看文件被占用没被彻底删除（看不到文件，但是磁盘没有释放）？ lsof |grep deleted</description>
+      <description>Linux #  更多教程详见：Linux 学习笔记  硬件信息 #  如何查看内存大小？ #  free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ #  # 物理 cpu 个数 cat /proc/cpuinfo| grep &amp;#39;physical id&amp;#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &amp;#39;core id&amp;#39; | sort | uniq | wc -l # 逻辑 cpu 个数（线程数） cat /proc/cpuinfo| grep &amp;#39;processor&amp;#39; | sort | uniq | wc -l 例子：</description>
     </item>
     
   </channel>
