@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="/interview/book.min.c0eac73c59ba8c4c46d8242add7197a5e648531e07527f69b31760f60ad40b5d.css" integrity="sha256-wOrHPFm6jExG2CQq3XGXpeZIUx4HUn9psxdg9grUC10=">
 
 
-<script defer src="/interview/en.search.min.872af69c6395b694ad2befad7e378cf1cef4b780ff534aaef462b437c3db9ed5.js" integrity="sha256-hyr2nGOVtpStK&#43;&#43;tfjeM8c70t4D/U0qu9GK0N8PbntU="></script>
+<script defer src="/interview/en.search.min.1c0d8ec48616159cc1f4b8db3166a08daa8bd5cf471f9092ce142f61dff83f0d.js" integrity="sha256-HA2OxIYWFZzB9LjbMWagjaqL1c9HH5CSzhQvYd/4Pw0="></script>
 
 <link rel="alternate" type="application/rss+xml" href="https://ikingye.github.io/interview/index.xml" title="面试笔记" />
 <!--
@@ -481,11 +481,11 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#算法">算法</a></li>
       </ul>
     </li>
-    <li><a href="#编程语言">编程语言</a>
+    <li><a href="#编程语言docspl_indexmd"><a href="docs/pl/_index.md">编程语言</a></a>
       <ul>
-        <li><a href="#c">C</a></li>
-        <li><a href="#c-1">C++</a></li>
-        <li><a href="#go">Go</a></li>
+        <li><a href="#cdocsplcmd"><a href="docs/pl/c.md">C</a></a></li>
+        <li><a href="#cdocsplcppmd"><a href="docs/pl/cpp.md">C++</a></a></li>
+        <li><a href="#godocsplgomd"><a href="docs/pl/go.md">Go</a></a></li>
         <li><a href="#java">Java</a></li>
         <li><a href="#javascript">JavaScript</a></li>
         <li><a href="#kotlin">Kotlin</a></li>
@@ -728,38 +728,30 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 <hr>
 <hr>
-<h2 id="编程语言">编程语言</h2>
-<h3 id="c">C</h3>
-<hr>
-<h3 id="c-1">C++</h3>
-<hr>
-<h3 id="go">Go</h3>
+<h2 id="编程语言docspl_indexmd"><a href="docs/pl/_index.md">编程语言</a></h2>
+<h3 id="cdocsplcmd"><a href="docs/pl/c.md">C</a></h3>
 <ul>
-<li><input disabled="" type="checkbox"> <a href="docs/pl/go/type">Go 数据类型</a>
+<li>基础</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
+<hr>
+<h3 id="cdocsplcppmd"><a href="docs/pl/cpp.md">C++</a></h3>
+<ul>
+<li>基础</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
+<hr>
+<h3 id="godocsplgomd"><a href="docs/pl/go.md">Go</a></h3>
+<ul>
+<li>基础
 <ul>
 <li><input disabled="" type="checkbox"> 什么时候使用数组？</li>
-<li><input disabled="" type="checkbox"> slice 底层结构是什么？</li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> <a href="docs/pl/go/keyword">Go 关键字</a>
-<ul>
 <li><input checked="" disabled="" type="checkbox"> make, new 有什么区别？</li>
 <li><input disabled="" type="checkbox"> panic, recover 是怎么实现的？</li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> <a href="docs/pl/go/channel">Go Channel</a>
-<ul>
 <li><input disabled="" type="checkbox"> 通道如何优雅关闭？</li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> <a href="docs/pl/go/goroutine">Goroutine</a>
-<ul>
-<li><input disabled="" type="checkbox"> Goroutine 为什么高效？</li>
-<li><input disabled="" type="checkbox"> 为什么 Go 需要自己实现调度器？</li>
-<li><input disabled="" type="checkbox"> Goroutine 如何调度？</li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> <a href="docs/pl/go/std">Go 标准库</a>
+<li>标准库
 <ul>
 <li><input disabled="" type="checkbox"> time
 <ul>
@@ -768,18 +760,26 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 </li>
-<li><input disabled="" type="checkbox"> <a href="docs/pl/go/pm">Go 包管理</a>
-<ul>
 <li><input checked="" disabled="" type="checkbox"> 简单说说 Go 包管理工具的发展历史？</li>
 <li><input disabled="" type="checkbox"> 你用过哪些 Go 包管理工具，说说它们的优缺点？</li>
 <li><input disabled="" type="checkbox"> Go Mod 相对之前的版本管理有哪些优点？</li>
 <li><input disabled="" type="checkbox"> Go Mod 如何找到引用的包？</li>
 <li><input disabled="" type="checkbox"> <code>replace</code> 语法有什么作用？</li>
 <li><input disabled="" type="checkbox"> <code>go.sum</code> 文件有什么用？是否应该加入版本管理？是如何生成的？</li>
+<li><input disabled="" type="checkbox"> 单元测试</li>
+<li><input disabled="" type="checkbox"> 你现在使用的是什么版本？最新版本是什么，相对有哪些变化？</li>
 </ul>
 </li>
-<li><input disabled="" type="checkbox"> <a href="docs/pl/go/compile">Go 编译</a>
+<li>进阶
 <ul>
+<li>Goroutine
+<ul>
+<li><input disabled="" type="checkbox"> Goroutine 为什么高效？</li>
+<li><input disabled="" type="checkbox"> Goroutine 如何调度？</li>
+<li><input disabled="" type="checkbox"> 为什么 Go 需要自己实现调度器？</li>
+</ul>
+</li>
+<li><input disabled="" type="checkbox"> pprof</li>
 <li><input disabled="" type="checkbox"> Makefile</li>
 <li><input disabled="" type="checkbox"> Go 插件系统
 <ul>
@@ -789,37 +789,53 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 </li>
-<li><input disabled="" type="checkbox"> <a href="docs/pl/go/test">Go 测试</a>
+<li>设计与实现
 <ul>
-<li><input disabled="" type="checkbox"> 单元测试</li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> <a href="docs/pl/go/performance">Go 性能</a>
-<ul>
-<li><input disabled="" type="checkbox"> pprof</li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> <a href="docs/pl/go/version">Go 版本</a>
-<ul>
-<li><input disabled="" type="checkbox"> 你现在使用的是什么版本？最新版本是什么，相对有哪些变化？</li>
+<li><input disabled="" type="checkbox"> slice 底层结构是什么？</li>
 </ul>
 </li>
 </ul>
 <hr>
 <h3 id="java">Java</h3>
 <ul>
+<li>基础</li>
+<li>进阶
+<ul>
 <li><input disabled="" type="checkbox"> 异常处理</li>
+</ul>
+</li>
+<li>设计与实现
+<ul>
 <li><input disabled="" type="checkbox"> 垃圾回收</li>
 <li><input disabled="" type="checkbox"> JVM</li>
 </ul>
+</li>
+</ul>
 <hr>
 <h3 id="javascript">JavaScript</h3>
+<ul>
+<li>基础</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
 <hr>
 <h3 id="kotlin">Kotlin</h3>
+<ul>
+<li>基础</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
 <hr>
 <h3 id="php">PHP</h3>
+<ul>
+<li>基础</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
 <hr>
 <h3 id="python">Python</h3>
+<ul>
+<li>基础
 <ul>
 <li><input disabled="" type="checkbox"> 可迭代的，迭代器，生成器</li>
 <li><input disabled="" type="checkbox"> yield
@@ -830,11 +846,23 @@ https://github.com/alex-shpak/hugo-book
 <li><input disabled="" type="checkbox"> 装饰器</li>
 <li><input disabled="" type="checkbox"> 猴子补丁</li>
 <li><input disabled="" type="checkbox"> 标准库</li>
-<li><input disabled="" type="checkbox"> GIL</li>
+</ul>
+</li>
+<li>进阶
+<ul>
 <li><input disabled="" type="checkbox"> ctypes</li>
+<li><input disabled="" type="checkbox"> GIL</li>
+</ul>
+</li>
+<li>设计与实现</li>
 </ul>
 <hr>
 <h3 id="rust">Rust</h3>
+<ul>
+<li>基础</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
 <hr>
 <hr>
 <h2 id="软件工程">软件工程</h2>
@@ -1221,9 +1249,9 @@ https://github.com/alex-shpak/hugo-book
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/ikingye/interview/commit/25ea827cecba69b903869ef0eac457da0b1db49c" title='Last modified by yewang | 2021-06-30' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/ikingye/interview/commit/79fa5d9758cec990f5f5a1947ab162ea1cb465b8" title='Last modified by yewang | 2021-07-05' target="_blank" rel="noopener">
       <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2021-06-30</span>
+      <span>2021-07-05</span>
     </a>
   </div>
 
@@ -1292,11 +1320,11 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#算法">算法</a></li>
       </ul>
     </li>
-    <li><a href="#编程语言">编程语言</a>
+    <li><a href="#编程语言docspl_indexmd"><a href="docs/pl/_index.md">编程语言</a></a>
       <ul>
-        <li><a href="#c">C</a></li>
-        <li><a href="#c-1">C++</a></li>
-        <li><a href="#go">Go</a></li>
+        <li><a href="#cdocsplcmd"><a href="docs/pl/c.md">C</a></a></li>
+        <li><a href="#cdocsplcppmd"><a href="docs/pl/cpp.md">C++</a></a></li>
+        <li><a href="#godocsplgomd"><a href="docs/pl/go.md">Go</a></a></li>
         <li><a href="#java">Java</a></li>
         <li><a href="#javascript">JavaScript</a></li>
         <li><a href="#kotlin">Kotlin</a></li>

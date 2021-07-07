@@ -5,5 +5,68 @@
     <link>https://ikingye.github.io/interview/docs/pl/</link>
     <description>Recent content in 5. 编程语言 on 面试笔记</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://ikingye.github.io/interview/docs/pl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>C</title>
+      <link>https://ikingye.github.io/interview/docs/pl/c/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/pl/c/</guid>
+      <description>C </description>
+    </item>
+    
+    <item>
+      <title>C&#43;&#43;</title>
+      <link>https://ikingye.github.io/interview/docs/pl/cpp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/pl/cpp/</guid>
+      <description>C++ </description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>https://ikingye.github.io/interview/docs/pl/go/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/pl/go/</guid>
+      <description>Go 更多教程详见：Go 学习笔记  基础 你现在使用的是什么版本？最新版本是什么，相对有哪些变化？ go 版本管理工具，gvm 如何使用？  简单说说 Go 包管理工具的发展历史？  Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules    你用过哪些 Go 包管理工具，说说它们的优缺点？   golang/dep   Masterminds/glide   kardianos/govendor   Go Mod 相对之前的版本管理有哪些优点？  可以指定版本   Go Mod 如何找到引用的包？ 一般情况：</description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>https://ikingye.github.io/interview/docs/pl/java/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/pl/java/</guid>
+      <description>Java </description>
+    </item>
+    
+    <item>
+      <title>PHP</title>
+      <link>https://ikingye.github.io/interview/docs/pl/php/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/pl/php/</guid>
+      <description>PHP </description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>https://ikingye.github.io/interview/docs/pl/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/pl/python/</guid>
+      <description>Python </description>
+    </item>
+    
+    <item>
+      <title>Rust</title>
+      <link>https://ikingye.github.io/interview/docs/pl/rust/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/pl/rust/</guid>
+      <description>Rust </description>
+    </item>
+    
   </channel>
 </rss>

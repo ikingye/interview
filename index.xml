@@ -15,6 +15,15 @@
     </item>
     
     <item>
+      <title>C</title>
+      <link>https://ikingye.github.io/interview/docs/pl/c/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/pl/c/</guid>
+      <description>C </description>
+    </item>
+    
+    <item>
       <title>HTTP</title>
       <link>https://ikingye.github.io/interview/docs/network/http/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -172,15 +181,6 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
     </item>
     
     <item>
-      <title>数据类型</title>
-      <link>https://ikingye.github.io/interview/docs/pl/go/type/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview/docs/pl/go/type/</guid>
-      <description>数据类型 </description>
-    </item>
-    
-    <item>
       <title>查询算法</title>
       <link>https://ikingye.github.io/interview/docs/algs/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -226,6 +226,15 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
     </item>
     
     <item>
+      <title>C&#43;&#43;</title>
+      <link>https://ikingye.github.io/interview/docs/pl/cpp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/pl/cpp/</guid>
+      <description>C++ </description>
+    </item>
+    
+    <item>
       <title>CSRF</title>
       <link>https://ikingye.github.io/interview/docs/security/web/csrf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -260,15 +269,6 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       
       <guid>https://ikingye.github.io/interview/docs/backend/mq/rocketmq/</guid>
       <description>RocketMQ </description>
-    </item>
-    
-    <item>
-      <title>关键字</title>
-      <link>https://ikingye.github.io/interview/docs/pl/go/keyword/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview/docs/pl/go/keyword/</guid>
-      <description>关键字 make, new 有什么区别？  make  初始化 设置数组的长度、容量等 返回变量本身   new  只初始化 返回变量的指针    list := new([]int) // 不能对未设置长度的指针执行 append 操作 list = append(list, 1) s1 := []int{1, 2, 3} s2 := []int{4, 5} // 编译错误，s2需要展开 // s1 = append(s1, s2) s1 = append(s1, s2...) fmt.Println(s1)  // The make built-in function allocates and initializes an object of type // slice, map, or chan (only). Like new, the first argument is a type, not a // value.</description>
     </item>
     
     <item>
@@ -356,15 +356,6 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
     </item>
     
     <item>
-      <title>Go Channel</title>
-      <link>https://ikingye.github.io/interview/docs/pl/go/channel/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview/docs/pl/go/channel/</guid>
-      <description>Go Channel </description>
-    </item>
-    
-    <item>
       <title>RabbitMQ</title>
       <link>https://ikingye.github.io/interview/docs/backend/mq/rabbitmq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -392,17 +383,12 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
     </item>
     
     <item>
-      <title>Goroutine</title>
-      <link>https://ikingye.github.io/interview/docs/pl/go/goroutine/</link>
+      <title>Go</title>
+      <link>https://ikingye.github.io/interview/docs/pl/go/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/go/goroutine/</guid>
-      <description>Goroutine Goroutine 为什么高效？  为什么 Go 需要自己实现调度器？  Goroutine 的引入是为了方便高并发程序的编写。 一个 Goroutine 在进行阻塞操作（比如系统调用）时，会把当前线程中的其他 Goroutine 移交到其他线程中继续执行， 从而避免了整个程序的阻塞。 由于 Golang 引入了垃圾回收（gc），在执行 gc 时就要求 Goroutine 是停止的。通过自己实现调度器，就可以方便的实现该功能。 通过多个 Goroutine 来实现并发程序，既有异步 IO 的优势，又具有多线程、多进程编写程序的便利性。 引入 Goroutine，也意味着引入了极大的复杂性。一个 Goroutine 既要包含要执行的代码， 又要包含用于执行该代码的栈和 PC、SP 指针。   调度器解决了什么问题？   栈管理
-既然每个 Goroutine 都有自己的栈，那么在创建 Goroutine 时，就要同时创建对应的栈。 Goroutine 在执行时，栈空间会不停增长。 栈通常是连续增长的，由于每个进程中的各个线程共享虚拟内存空间，当有多个线程时，就需要为每个线程分配不同起始地址的栈。 这就需要在分配栈之前先预估每个线程栈的大小。如果线程数量非常多，就很容易栈溢出。
-为了解决这个问题，就有了 Split Stacks 技术： 创建栈时，只分配一块比较小的内存，如果进行某次函数调用导致栈空间不足时，就会在其他地方分配一块新的栈空间。 新的空间不需要和老的栈空间连续。函数调用的参数会拷贝到新的栈空间中，接下来的函数执行都在新栈空间中进行。
-Golang 的栈管理方式与此类似，但是为了更高的效率，使用了连续栈 （Golang 连续栈） 实现方式也是先分配一块固定大小的栈，在栈空间不足时，分配一块更大的栈，并把旧的栈全部拷贝到新栈中。 这样避免了 Split Stacks 方法可能导致的频繁内存分配和释放。
-  抢占式调度
-Goroutine 的执行是可以被抢占的。如果一个 Goroutine 一直占用 CPU，长时间没有被调度过， 就会被 runtime 抢占掉，把 CPU 时间交给其他 Goroutine。</description>
+      <guid>https://ikingye.github.io/interview/docs/pl/go/</guid>
+      <description>Go 更多教程详见：Go 学习笔记  基础 你现在使用的是什么版本？最新版本是什么，相对有哪些变化？ go 版本管理工具，gvm 如何使用？  简单说说 Go 包管理工具的发展历史？  Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules    你用过哪些 Go 包管理工具，说说它们的优缺点？   golang/dep   Masterminds/glide   kardianos/govendor   Go Mod 相对之前的版本管理有哪些优点？  可以指定版本   Go Mod 如何找到引用的包？ 一般情况：</description>
     </item>
     
     <item>
@@ -415,24 +401,12 @@ Goroutine 的执行是可以被抢占的。如果一个 Goroutine 一直占用 C
     </item>
     
     <item>
-      <title>Go 包管理</title>
-      <link>https://ikingye.github.io/interview/docs/pl/go/pm/</link>
+      <title>Java</title>
+      <link>https://ikingye.github.io/interview/docs/pl/java/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/go/pm/</guid>
-      <description>Go 包管理 简单说说 Go 包管理工具的发展历史？  Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules     你用过哪些 Go 包管理工具，说说它们的优缺点？   golang/dep   Masterminds/glide   kardianos/govendor    Go Mod 相对之前的版本管理有哪些优点？  可以指定版本   Go Mod 如何找到引用的包？ 一般情况：</description>
-    </item>
-    
-    <item>
-      <title>Go 编译</title>
-      <link>https://ikingye.github.io/interview/docs/pl/go/compile/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview/docs/pl/go/compile/</guid>
-      <description>Go 编译 Makefile   Go 插件系统 Go 1.8 版本开始提供了一个创建共享库的新工具，称为 Plugins.
-go build -buildmode=plugin
-Go 插件系统的应用场景？  通过 plugin 我们可以很方便的对于不同功能加载相应的模块； 针对不同语言 (英文、汉语、德语……) 加载不同的语言 so 文件，进行不同的输出； 编译出的文件给不同的编程语言用 (如：c/java/python/lua 等). 需要加密的核心算法，核心业务逻辑可以可以编译成 plugin 插件 黑客预留的后门 backdoor 可以使用 plugin 函数集动态加载   Go 插件系统是如何实现的？ 参考：
- Go 插件系统  </description>
+      <guid>https://ikingye.github.io/interview/docs/pl/java/</guid>
+      <description>Java </description>
     </item>
     
     <item>
@@ -445,39 +419,30 @@ Go 插件系统的应用场景？  通过 plugin 我们可以很方便的对于�
     </item>
     
     <item>
-      <title>Go 版本</title>
-      <link>https://ikingye.github.io/interview/docs/pl/go/version/</link>
+      <title>PHP</title>
+      <link>https://ikingye.github.io/interview/docs/pl/php/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/go/version/</guid>
-      <description>Go 版本 你现在使用的是什么版本？最新版本是什么，相对有哪些变化？ </description>
+      <guid>https://ikingye.github.io/interview/docs/pl/php/</guid>
+      <description>PHP </description>
     </item>
     
     <item>
-      <title>Go 标准库</title>
-      <link>https://ikingye.github.io/interview/docs/pl/go/std/</link>
+      <title>Python</title>
+      <link>https://ikingye.github.io/interview/docs/pl/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/go/std/</guid>
-      <description>Go 标准库 </description>
+      <guid>https://ikingye.github.io/interview/docs/pl/python/</guid>
+      <description>Python </description>
     </item>
     
     <item>
-      <title>测试</title>
-      <link>https://ikingye.github.io/interview/docs/pl/go/test/</link>
+      <title>Rust</title>
+      <link>https://ikingye.github.io/interview/docs/pl/rust/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/go/test/</guid>
-      <description>测试 </description>
-    </item>
-    
-    <item>
-      <title>性能</title>
-      <link>https://ikingye.github.io/interview/docs/pl/go/performance/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview/docs/pl/go/performance/</guid>
-      <description>性能 </description>
+      <guid>https://ikingye.github.io/interview/docs/pl/rust/</guid>
+      <description>Rust </description>
     </item>
     
   </channel>
