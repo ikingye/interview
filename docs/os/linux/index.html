@@ -4,10 +4,14 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Linux "><meta property="og:title" content="Linux" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://ikingye.github.io/interview/docs/os/linux/" />
+<meta name="description" content="Linux 硬件信息 如何查看内存大小？ free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ # 物理 cpu 个数 cat /proc/cpuinfo| grep &#39;physical id&#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &#39;core id&#39; | sort | uniq | wc -l # 逻辑 cpu 个数（线程数） cat /proc/cpuinfo| grep &#39;processor&#39; | sort | uniq | wc -l 例子：
+ 2 个 cpu 每个 cpu 有 8 个核心（一共 16 个核心） 一共有 32 个逻辑 cpu / 线程（每个核心有 2 个逻辑 cpu / 线程）   如何查看系统内核？ uname -a cat /proc/version 如何查看操作系统版本？ cat /etc/issue cat /etc/*release  运行信息 如何查看占用内存最多的进程？ 如何查看占用 CPU 最多的进程？ 如何查看占用某个端口的进程？ 如何查看文件被占用没被彻底删除（看不到文件，但是磁盘没有释放）？ lsof |grep deleted"><meta property="og:title" content="Linux" />
+<meta property="og:description" content="Linux 硬件信息 如何查看内存大小？ free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ # 物理 cpu 个数 cat /proc/cpuinfo| grep &#39;physical id&#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &#39;core id&#39; | sort | uniq | wc -l # 逻辑 cpu 个数（线程数） cat /proc/cpuinfo| grep &#39;processor&#39; | sort | uniq | wc -l 例子：
+ 2 个 cpu 每个 cpu 有 8 个核心（一共 16 个核心） 一共有 32 个逻辑 cpu / 线程（每个核心有 2 个逻辑 cpu / 线程）   如何查看系统内核？ uname -a cat /proc/version 如何查看操作系统版本？ cat /etc/issue cat /etc/*release  运行信息 如何查看占用内存最多的进程？ 如何查看占用 CPU 最多的进程？ 如何查看占用某个端口的进程？ 如何查看文件被占用没被彻底删除（看不到文件，但是磁盘没有释放）？ lsof |grep deleted" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ikingye.github.io/interview/docs/os/linux/" /><meta property="article:section" content="docs" />
+
+
 
 <title>Linux | 面试笔记</title>
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
@@ -16,9 +20,8 @@
 <link rel="stylesheet" href="/interview/book.min.c0eac73c59ba8c4c46d8242add7197a5e648531e07527f69b31760f60ad40b5d.css" integrity="sha256-wOrHPFm6jExG2CQq3XGXpeZIUx4HUn9psxdg9grUC10=">
 
 
-<script defer src="/interview/en.search.min.1c0d8ec48616159cc1f4b8db3166a08daa8bd5cf471f9092ce142f61dff83f0d.js" integrity="sha256-HA2OxIYWFZzB9LjbMWagjaqL1c9HH5CSzhQvYd/4Pw0="></script>
+<script defer src="/interview/en.search.min.8ca98327544c1f8e6cf0fae1420fcc8b85b87e93f596064dffac5f0d0c17ebeb.js" integrity="sha256-jKmDJ1RMH45s8PrhQg/Mi4W4fpP1lgZN/6xfDQwX6&#43;s="></script>
 
-<link rel="alternate" type="application/rss+xml" href="https://ikingye.github.io/interview/docs/os/linux/index.xml" title="面试笔记" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -102,52 +105,13 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     
       
-        
-
-  <li>
-    
-
-  
-  <a href="/interview/docs/os/linux/" class="collapsed active">Linux</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
         <li>
 
   
-  <a href="/interview/docs/os/linux/info/" class="">Linux 系统信息</a>
+  <a href="/interview/docs/os/linux/" class="active">Linux</a>
   
 
 </li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/interview/docs/os/linux/shell/" class="">Shell</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
       
     
       
@@ -540,7 +504,34 @@ https://github.com/alex-shpak/hugo-book
     <input type="checkbox" class="hidden" id="toc-control" />
     <aside class="hidden clearfix">
       
-  <nav id="TableOfContents"></nav>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#硬件信息">硬件信息</a>
+      <ul>
+        <li><a href="#如何查看内存大小">如何查看内存大小？</a></li>
+        <li><a href="#如何查看-cpu-个数cpu-核心数逻辑-cpu-个数">如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？</a></li>
+        <li><a href="#如何查看系统内核">如何查看系统内核？</a></li>
+        <li><a href="#如何查看操作系统版本">如何查看操作系统版本？</a></li>
+      </ul>
+    </li>
+    <li><a href="#运行信息">运行信息</a>
+      <ul>
+        <li><a href="#如何查看占用内存最多的进程">如何查看占用内存最多的进程？</a></li>
+        <li><a href="#如何查看占用-cpu-最多的进程">如何查看占用 CPU 最多的进程？</a></li>
+        <li><a href="#如何查看占用某个端口的进程">如何查看占用某个端口的进程？</a></li>
+        <li><a href="#如何查看文件被占用没被彻底删除看不到文件但是磁盘没有释放">如何查看文件被占用没被彻底删除（看不到文件，但是磁盘没有释放）？</a></li>
+      </ul>
+    </li>
+    <li><a href="#ps">ps</a>
+      <ul>
+        <li><a href="#ps-aux-与-ps--ef-有什么区别">ps aux 与 ps -ef 有什么区别？</a></li>
+      </ul>
+    </li>
+    <li><a href="#lsof">lsof</a></li>
+    <li><a href="#awk">awk</a></li>
+    <li><a href="#sed">sed</a></li>
+  </ul>
+</nav>
 
 
     </aside>
@@ -551,6 +542,45 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown"><h1 id="linux">Linux</h1>
+<h2 id="硬件信息">硬件信息</h2>
+<h3 id="如何查看内存大小">如何查看内存大小？</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">free -m
+</code></pre></div><h3 id="如何查看-cpu-个数cpu-核心数逻辑-cpu-个数">如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 物理 cpu 个数</span>
+cat /proc/cpuinfo| grep <span style="color:#e6db74">&#39;physical id&#39;</span> | sort | uniq | wc -l
+<span style="color:#75715e"># 每个物理 cpu 的核心数</span>
+cat /proc/cpuinfo| grep <span style="color:#e6db74">&#39;core id&#39;</span> | sort | uniq | wc -l
+<span style="color:#75715e"># 逻辑 cpu 个数（线程数）</span>
+cat /proc/cpuinfo| grep <span style="color:#e6db74">&#39;processor&#39;</span> | sort | uniq | wc -l
+</code></pre></div><p>例子：</p>
+<ul>
+<li>2 个 cpu</li>
+<li>每个 cpu 有 8 个核心（一共 16 个核心）</li>
+<li>一共有 32 个逻辑 cpu / 线程（每个核心有 2 个逻辑 cpu / 线程）</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200622170954.png" alt="" /></p>
+<hr>
+<h3 id="如何查看系统内核">如何查看系统内核？</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">uname -a
+
+cat /proc/version
+</code></pre></div><h3 id="如何查看操作系统版本">如何查看操作系统版本？</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cat /etc/issue
+
+cat /etc/*release
+</code></pre></div><hr>
+<h2 id="运行信息">运行信息</h2>
+<h3 id="如何查看占用内存最多的进程">如何查看占用内存最多的进程？</h3>
+<h3 id="如何查看占用-cpu-最多的进程">如何查看占用 CPU 最多的进程？</h3>
+<h3 id="如何查看占用某个端口的进程">如何查看占用某个端口的进程？</h3>
+<h3 id="如何查看文件被占用没被彻底删除看不到文件但是磁盘没有释放">如何查看文件被占用没被彻底删除（看不到文件，但是磁盘没有释放）？</h3>
+<p>lsof |grep deleted</p>
+<h2 id="ps">ps</h2>
+<h3 id="ps-aux-与-ps--ef-有什么区别">ps aux 与 ps -ef 有什么区别？</h3>
+<hr>
+<h2 id="lsof">lsof</h2>
+<h2 id="awk">awk</h2>
+<h2 id="sed">sed</h2>
 </article>
  
       
@@ -560,14 +590,6 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex justify-between">
 
 
-
-  <div>
-    
-    <a class="flex align-center" href="https://github.com/ikingye/interview/commit/a13f5d8a538a11acd9c75eecab71efb0e21ede6b" title='Last modified by yewang | 2020-06-16' target="_blank" rel="noopener">
-      <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-06-16</span>
-    </a>
-  </div>
 
 
 
@@ -619,7 +641,34 @@ https://github.com/alex-shpak/hugo-book
     
     <aside class="book-toc">
       
-  <nav id="TableOfContents"></nav>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#硬件信息">硬件信息</a>
+      <ul>
+        <li><a href="#如何查看内存大小">如何查看内存大小？</a></li>
+        <li><a href="#如何查看-cpu-个数cpu-核心数逻辑-cpu-个数">如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？</a></li>
+        <li><a href="#如何查看系统内核">如何查看系统内核？</a></li>
+        <li><a href="#如何查看操作系统版本">如何查看操作系统版本？</a></li>
+      </ul>
+    </li>
+    <li><a href="#运行信息">运行信息</a>
+      <ul>
+        <li><a href="#如何查看占用内存最多的进程">如何查看占用内存最多的进程？</a></li>
+        <li><a href="#如何查看占用-cpu-最多的进程">如何查看占用 CPU 最多的进程？</a></li>
+        <li><a href="#如何查看占用某个端口的进程">如何查看占用某个端口的进程？</a></li>
+        <li><a href="#如何查看文件被占用没被彻底删除看不到文件但是磁盘没有释放">如何查看文件被占用没被彻底删除（看不到文件，但是磁盘没有释放）？</a></li>
+      </ul>
+    </li>
+    <li><a href="#ps">ps</a>
+      <ul>
+        <li><a href="#ps-aux-与-ps--ef-有什么区别">ps aux 与 ps -ef 有什么区别？</a></li>
+      </ul>
+    </li>
+    <li><a href="#lsof">lsof</a></li>
+    <li><a href="#awk">awk</a></li>
+    <li><a href="#sed">sed</a></li>
+  </ul>
+</nav>
 
  
     </aside>

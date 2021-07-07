@@ -4,10 +4,12 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="架构设计 教程 系统设计入门  "><meta property="og:title" content="架构设计" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://ikingye.github.io/interview/docs/se/architecture/" />
+<meta name="description" content="架构设计 架构设计原则 CAP (Consistency, Availability, Partition tolerance) 如何理解 CAP，你在做系统设计时是如何取舍的？  ACID (Atomicity, Consistency, Isolation, Durability)  BASE (Basically Available, Soft state, Eventual consistency)   高性能   高可用   高并发   高扩展性 "><meta property="og:title" content="架构设计" />
+<meta property="og:description" content="架构设计 架构设计原则 CAP (Consistency, Availability, Partition tolerance) 如何理解 CAP，你在做系统设计时是如何取舍的？  ACID (Atomicity, Consistency, Isolation, Durability)  BASE (Basically Available, Soft state, Eventual consistency)   高性能   高可用   高并发   高扩展性 " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ikingye.github.io/interview/docs/se/architecture/" /><meta property="article:section" content="docs" />
+
+
 
 <title>架构设计 | 面试笔记</title>
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
@@ -16,9 +18,8 @@
 <link rel="stylesheet" href="/interview/book.min.c0eac73c59ba8c4c46d8242add7197a5e648531e07527f69b31760f60ad40b5d.css" integrity="sha256-wOrHPFm6jExG2CQq3XGXpeZIUx4HUn9psxdg9grUC10=">
 
 
-<script defer src="/interview/en.search.min.1c0d8ec48616159cc1f4b8db3166a08daa8bd5cf471f9092ce142f61dff83f0d.js" integrity="sha256-HA2OxIYWFZzB9LjbMWagjaqL1c9HH5CSzhQvYd/4Pw0="></script>
+<script defer src="/interview/en.search.min.8ca98327544c1f8e6cf0fae1420fcc8b85b87e93f596064dffac5f0d0c17ebeb.js" integrity="sha256-jKmDJ1RMH45s8PrhQg/Mi4W4fpP1lgZN/6xfDQwX6&#43;s="></script>
 
-<link rel="alternate" type="application/rss+xml" href="https://ikingye.github.io/interview/docs/se/architecture/index.xml" title="面试笔记" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -194,52 +195,10 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     
       
-        
-
-  <li>
-    
-
-  
-  <a href="/interview/docs/se/design-pattern/" class="collapsed ">设计模式</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/interview/docs/se/architecture/" class="collapsed active">架构设计</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
         <li>
 
   
-  <a href="/interview/docs/se/architecture/principle/" class="">架构设计原则</a>
+  <a href="/interview/docs/se/dp/" class="">设计模式</a>
   
 
 </li>
@@ -249,50 +208,10 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview/docs/se/architecture/high-availability/" class="">高可用</a>
+  <a href="/interview/docs/se/architecture/" class="active">架构设计</a>
   
 
 </li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/interview/docs/se/architecture/high-concurrency/" class="">高并发</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/interview/docs/se/architecture/high-performance/" class="">高性能</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/interview/docs/se/architecture/high-scalability/" class="">高扩展性</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
       
     
       
@@ -598,11 +517,21 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#教程">教程</a>
+    <li><a href="#架构设计原则">架构设计原则</a>
       <ul>
-        <li><a href="#系统设计入门httpsgithubcomdonnemartinsystem-design-primerblobmasterreadme-zh-hansmd-github-starshttpsimgshieldsiogithubstarsdonnemartinsystem-design-primersvg"><a href="https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md">系统设计入门</a> <img src="https://img.shields.io/github/stars/donnemartin/system-design-primer.svg" alt="Github stars"></a></li>
+        <li><a href="#cap-consistency-availability-partition-tolerance">CAP (<code>Consistency</code>, <code>Availability</code>, <code>Partition tolerance</code>)</a>
+          <ul>
+            <li><a href="#如何理解-cap你在做系统设计时是如何取舍的">如何理解 CAP，你在做系统设计时是如何取舍的？</a></li>
+          </ul>
+        </li>
+        <li><a href="#acid-atomicity-consistency-isolation-durability">ACID (<code>Atomicity</code>, <code>Consistency</code>, <code>Isolation</code>, <code>Durability</code>)</a></li>
+        <li><a href="#base-basically-available-soft-state-eventual-consistency">BASE (<code>Basically Available</code>, <code>Soft state</code>, <code>Eventual consistency</code>)</a></li>
       </ul>
     </li>
+    <li><a href="#高性能">高性能</a></li>
+    <li><a href="#高可用">高可用</a></li>
+    <li><a href="#高并发">高并发</a></li>
+    <li><a href="#高扩展性">高扩展性</a></li>
   </ul>
 </nav>
 
@@ -615,8 +544,25 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown"><h1 id="架构设计">架构设计</h1>
-<h2 id="教程">教程</h2>
-<h3 id="系统设计入门httpsgithubcomdonnemartinsystem-design-primerblobmasterreadme-zh-hansmd-github-starshttpsimgshieldsiogithubstarsdonnemartinsystem-design-primersvg"><a href="https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md">系统设计入门</a> <img src="https://img.shields.io/github/stars/donnemartin/system-design-primer.svg" alt="Github stars" /></h3>
+<h2 id="架构设计原则">架构设计原则</h2>
+<h3 id="cap-consistency-availability-partition-tolerance">CAP (<code>Consistency</code>, <code>Availability</code>, <code>Partition tolerance</code>)</h3>
+<h4 id="如何理解-cap你在做系统设计时是如何取舍的">如何理解 CAP，你在做系统设计时是如何取舍的？</h4>
+<hr>
+<h3 id="acid-atomicity-consistency-isolation-durability">ACID (<code>Atomicity</code>, <code>Consistency</code>, <code>Isolation</code>, <code>Durability</code>)</h3>
+<hr>
+<h3 id="base-basically-available-soft-state-eventual-consistency">BASE (<code>Basically Available</code>, <code>Soft state</code>, <code>Eventual consistency</code>)</h3>
+<hr>
+<hr>
+<h2 id="高性能">高性能</h2>
+<hr>
+<hr>
+<h2 id="高可用">高可用</h2>
+<hr>
+<hr>
+<h2 id="高并发">高并发</h2>
+<hr>
+<hr>
+<h2 id="高扩展性">高扩展性</h2>
 </article>
  
       
@@ -626,14 +572,6 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex justify-between">
 
 
-
-  <div>
-    
-    <a class="flex align-center" href="https://github.com/ikingye/interview/commit/a13f5d8a538a11acd9c75eecab71efb0e21ede6b" title='Last modified by yewang | 2020-06-16' target="_blank" rel="noopener">
-      <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-06-16</span>
-    </a>
-  </div>
 
 
 
@@ -687,11 +625,21 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#教程">教程</a>
+    <li><a href="#架构设计原则">架构设计原则</a>
       <ul>
-        <li><a href="#系统设计入门httpsgithubcomdonnemartinsystem-design-primerblobmasterreadme-zh-hansmd-github-starshttpsimgshieldsiogithubstarsdonnemartinsystem-design-primersvg"><a href="https://github.com/donnemartin/system-design-primer/blob/master/README-zh-Hans.md">系统设计入门</a> <img src="https://img.shields.io/github/stars/donnemartin/system-design-primer.svg" alt="Github stars"></a></li>
+        <li><a href="#cap-consistency-availability-partition-tolerance">CAP (<code>Consistency</code>, <code>Availability</code>, <code>Partition tolerance</code>)</a>
+          <ul>
+            <li><a href="#如何理解-cap你在做系统设计时是如何取舍的">如何理解 CAP，你在做系统设计时是如何取舍的？</a></li>
+          </ul>
+        </li>
+        <li><a href="#acid-atomicity-consistency-isolation-durability">ACID (<code>Atomicity</code>, <code>Consistency</code>, <code>Isolation</code>, <code>Durability</code>)</a></li>
+        <li><a href="#base-basically-available-soft-state-eventual-consistency">BASE (<code>Basically Available</code>, <code>Soft state</code>, <code>Eventual consistency</code>)</a></li>
       </ul>
     </li>
+    <li><a href="#高性能">高性能</a></li>
+    <li><a href="#高可用">高可用</a></li>
+    <li><a href="#高并发">高并发</a></li>
+    <li><a href="#高扩展性">高扩展性</a></li>
   </ul>
 </nav>
 

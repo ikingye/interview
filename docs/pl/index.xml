@@ -11,7 +11,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/c/</guid>
-      <description>C </description>
+      <description>C 更多教程详见：C 学习笔记  基础   进阶   设计与实现 </description>
     </item>
     
     <item>
@@ -20,7 +20,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/cpp/</guid>
-      <description>C++ </description>
+      <description>C++ 更多教程详见：C++ 学习笔记  基础   进阶   设计与实现 </description>
     </item>
     
     <item>
@@ -38,7 +38,25 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/java/</guid>
-      <description>Java </description>
+      <description>Java 更多教程详见：Java 学习笔记  基础   进阶   设计与实现 </description>
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>https://ikingye.github.io/interview/docs/pl/javascript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/pl/javascript/</guid>
+      <description>JavaScript 更多教程详见：JavaScript 学习笔记  基础   进阶   设计与实现 </description>
+    </item>
+    
+    <item>
+      <title>Kotlin</title>
+      <link>https://ikingye.github.io/interview/docs/pl/kotlin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/pl/kotlin/</guid>
+      <description>Kotlin 更多教程详见：Kotlin 学习笔记  基础   进阶   设计与实现 </description>
     </item>
     
     <item>
@@ -47,7 +65,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/php/</guid>
-      <description>PHP </description>
+      <description>PHP 更多教程详见：PHP 学习笔记  基础   进阶   设计与实现 </description>
     </item>
     
     <item>
@@ -56,7 +74,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/python/</guid>
-      <description>Python </description>
+      <description>Python 更多教程详见：Python 学习笔记  基础   进阶   设计与实现 </description>
     </item>
     
     <item>
@@ -65,7 +83,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/rust/</guid>
-      <description>Rust </description>
+      <description>Rust 更多教程详见：Rust 学习笔记  基础   进阶   设计与实现 </description>
     </item>
     
   </channel>

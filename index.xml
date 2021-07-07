@@ -6,6 +6,16 @@
     <description>Recent content in 首页 on 面试笔记</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://ikingye.github.io/interview/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Linux</title>
+      <link>https://ikingye.github.io/interview/docs/os/linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/os/linux/</guid>
+      <description>Linux 硬件信息 如何查看内存大小？ free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ # 物理 cpu 个数 cat /proc/cpuinfo| grep &amp;#39;physical id&amp;#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &amp;#39;core id&amp;#39; | sort | uniq | wc -l # 逻辑 cpu 个数（线程数） cat /proc/cpuinfo| grep &amp;#39;processor&amp;#39; | sort | uniq | wc -l 例子：
+ 2 个 cpu 每个 cpu 有 8 个核心（一共 16 个核心） 一共有 32 个逻辑 cpu / 线程（每个核心有 2 个逻辑 cpu / 线程）   如何查看系统内核？ uname -a cat /proc/version 如何查看操作系统版本？ cat /etc/issue cat /etc/*release  运行信息 如何查看占用内存最多的进程？ 如何查看占用 CPU 最多的进程？ 如何查看占用某个端口的进程？ 如何查看文件被占用没被彻底删除（看不到文件，但是磁盘没有释放）？ lsof |grep deleted</description>
+    </item>
+    
+    <item>
       <title>Beego</title>
       <link>https://ikingye.github.io/interview/docs/backend/web/go/beego/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -20,7 +30,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/c/</guid>
-      <description>C </description>
+      <description>C 更多教程详见：C 学习笔记  基础   进阶   设计与实现 </description>
     </item>
     
     <item>
@@ -54,16 +64,6 @@
     </item>
     
     <item>
-      <title>Linux 系统信息</title>
-      <link>https://ikingye.github.io/interview/docs/os/linux/info/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview/docs/os/linux/info/</guid>
-      <description>Linux 系统信息 硬件信息 如何查看内存大小？ free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ # 物理 cpu 个数 cat /proc/cpuinfo| grep &amp;#39;physical id&amp;#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &amp;#39;core id&amp;#39; | sort | uniq | wc -l # 逻辑 cpu 个数（线程数） cat /proc/cpuinfo| grep &amp;#39;processor&amp;#39; | sort | uniq | wc -l 例子：
- 2 个 cpu 每个 cpu 有 8 个核心（一共 16 个核心） 一共有 32 个逻辑 cpu / 线程（每个核心有 2 个逻辑 cpu / 线程）   如何查看系统内核？ uname -a cat /proc/version 如何查看操作系统版本？ cat /etc/issue cat /etc/*release  运行信息 如何查看占用内存最多的进程？ 如何查看占用 CPU 最多的进程？ 如何查看占用某个端口的进程？ 如何查看文件被占用没被彻底删除（看不到文件，但是磁盘没有释放）？ lsof |grep deleted</description>
-    </item>
-    
-    <item>
       <title>Mysql</title>
       <link>https://ikingye.github.io/interview/docs/backend/db/mysql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -71,15 +71,6 @@
       <guid>https://ikingye.github.io/interview/docs/backend/db/mysql/</guid>
       <description>Mysql Mysql 有哪些引擎，分别有什么特点？  Mysql 配置文件在哪里？  Mysql 索引是怎么实现的？  Mysql 事务是怎么实现的？ begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。
 begin; select * from xxx; commit; -- 或者 rollback;  Mysql 事务隔离级别有哪些？    隔离级别 脏读 不可重复读 幻读 锁 备注     读未提交（READ UNCOMMITTED） √ √ √ 不加锁    读提交 （READ COMMITTED） × √ √  Oracle 默认   可重复读 （REPEATABLE READ） × × √  Mysql 默认   串行化 （SERIALIZABLE） × × × 共享锁 相当于单线程     可重复读  事务开始时读到的已有数据是什么，在事务提交前的任意时刻，这些数据的值都是一样的。    设置隔离级别</description>
-    </item>
-    
-    <item>
-      <title>Shell</title>
-      <link>https://ikingye.github.io/interview/docs/os/linux/shell/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview/docs/os/linux/shell/</guid>
-      <description>Shell ps ps aux 与 ps -ef 有什么区别？  lsof awk sed </description>
     </item>
     
     <item>
@@ -190,12 +181,12 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
     </item>
     
     <item>
-      <title>设计原则</title>
-      <link>https://ikingye.github.io/interview/docs/se/design-pattern/principle/</link>
+      <title>设计模式</title>
+      <link>https://ikingye.github.io/interview/docs/se/dp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/se/design-pattern/principle/</guid>
-      <description>设计原则 单一职责原则 (SRP)   开闭原则 (Open Closed Principle)   里氏替换原则 (Liskov Substitution Principle)   依赖倒置原则 (Dependence Inversion Principle)   接口隔离原则 (Interface Segregation Principle)   迪米特原则 (Demeter Principle) </description>
+      <guid>https://ikingye.github.io/interview/docs/se/dp/</guid>
+      <description>设计模式 设计原则 单一职责原则 (SRP)  开闭原则 (Open Closed Principle)  里氏替换原则 (Liskov Substitution Principle)  依赖倒置原则 (Dependence Inversion Principle)  接口隔离原则 (Interface Segregation Principle)  迪米特原则 (Demeter Principle)   创建型模式 简单工厂模式  工厂方法模式  抽象工厂模式  建造者模式  单例模式   结构型模式 适配器模式  桥接模式  装饰模式  外观模式  享元模式  代理模式  组合模式 适配器模式、装饰模式、代理模式有哪些异同？  适配器模式  适配器模式实现新接口   代理模式  代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。   装饰器模式  原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。      装饰器模式与代理模式实现原接口 都持有原对象  装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象    /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi { public void updateDate(String orderId, String date, String client); } public class SourceOrderApiImpl implements SourceOrderApi{ @Override public void updateDate(String orderId, String date, String client) { System.</description>
     </item>
     
     <item>
@@ -231,7 +222,7 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/cpp/</guid>
-      <description>C++ </description>
+      <description>C++ 更多教程详见：C++ 学习笔记  基础   进阶   设计与实现 </description>
     </item>
     
     <item>
@@ -272,15 +263,6 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
     </item>
     
     <item>
-      <title>创建型模式</title>
-      <link>https://ikingye.github.io/interview/docs/se/design-pattern/creational/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview/docs/se/design-pattern/creational/</guid>
-      <description>创建型模式 简单工厂模式   工厂方法模式   抽象工厂模式   建造者模式   单例模式 </description>
-    </item>
-    
-    <item>
       <title>加密</title>
       <link>https://ikingye.github.io/interview/docs/others/encryption/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -291,12 +273,12 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
     </item>
     
     <item>
-      <title>架构设计原则</title>
-      <link>https://ikingye.github.io/interview/docs/se/architecture/principle/</link>
+      <title>架构设计</title>
+      <link>https://ikingye.github.io/interview/docs/se/architecture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/se/architecture/principle/</guid>
-      <description>架构设计原则 CAP (Consistency, Availability, Partition tolerance) 如何理解 CAP，你在做系统设计时是如何取舍的？  ACID (Atomicity, Consistency, Isolation, Durability)  BASE (Basically Available, Soft state, Eventual consistency) </description>
+      <guid>https://ikingye.github.io/interview/docs/se/architecture/</guid>
+      <description>架构设计 架构设计原则 CAP (Consistency, Availability, Partition tolerance) 如何理解 CAP，你在做系统设计时是如何取舍的？  ACID (Atomicity, Consistency, Isolation, Durability)  BASE (Basically Available, Soft state, Eventual consistency)   高性能   高可用   高并发   高扩展性 </description>
     </item>
     
     <item>
@@ -319,58 +301,12 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
     </item>
     
     <item>
-      <title>高可用</title>
-      <link>https://ikingye.github.io/interview/docs/se/architecture/high-availability/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview/docs/se/architecture/high-availability/</guid>
-      <description>高可用 </description>
-    </item>
-    
-    <item>
-      <title>高并发</title>
-      <link>https://ikingye.github.io/interview/docs/se/architecture/high-concurrency/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview/docs/se/architecture/high-concurrency/</guid>
-      <description>高并发 </description>
-    </item>
-    
-    <item>
-      <title>高性能</title>
-      <link>https://ikingye.github.io/interview/docs/se/architecture/high-performance/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview/docs/se/architecture/high-performance/</guid>
-      <description>高性能 </description>
-    </item>
-    
-    <item>
-      <title>高扩展性</title>
-      <link>https://ikingye.github.io/interview/docs/se/architecture/high-scalability/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview/docs/se/architecture/high-scalability/</guid>
-      <description>高扩展性 如何构建高扩展性网站 参考：
- 如何构建高扩展性网站？   A Word on Scalability  </description>
-    </item>
-    
-    <item>
       <title>RabbitMQ</title>
       <link>https://ikingye.github.io/interview/docs/backend/mq/rabbitmq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/backend/mq/rabbitmq/</guid>
       <description>RabbitMQ </description>
-    </item>
-    
-    <item>
-      <title>结构型模式</title>
-      <link>https://ikingye.github.io/interview/docs/se/design-pattern/structural/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview/docs/se/design-pattern/structural/</guid>
-      <description>结构型模式 适配器模式   桥接模式   装饰模式   外观模式   享元模式   代理模式   组合模式 </description>
     </item>
     
     <item>
@@ -392,30 +328,30 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
     </item>
     
     <item>
-      <title>行为型模式</title>
-      <link>https://ikingye.github.io/interview/docs/se/design-pattern/behavioral/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview/docs/se/design-pattern/behavioral/</guid>
-      <description>行为型模式 命令模式   中介者模式   观察者模式   状态模式   策略模式   模板方法模式   迭代子模式   责任链模式   备忘录模式   访问者模式   解释器模式 </description>
-    </item>
-    
-    <item>
       <title>Java</title>
       <link>https://ikingye.github.io/interview/docs/pl/java/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/java/</guid>
-      <description>Java </description>
+      <description>Java 更多教程详见：Java 学习笔记  基础   进阶   设计与实现 </description>
     </item>
     
     <item>
-      <title>其他模式</title>
-      <link>https://ikingye.github.io/interview/docs/se/design-pattern/others/</link>
+      <title>JavaScript</title>
+      <link>https://ikingye.github.io/interview/docs/pl/javascript/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/se/design-pattern/others/</guid>
-      <description>其他模式 并发型模式   线程池模式 </description>
+      <guid>https://ikingye.github.io/interview/docs/pl/javascript/</guid>
+      <description>JavaScript 更多教程详见：JavaScript 学习笔记  基础   进阶   设计与实现 </description>
+    </item>
+    
+    <item>
+      <title>Kotlin</title>
+      <link>https://ikingye.github.io/interview/docs/pl/kotlin/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/pl/kotlin/</guid>
+      <description>Kotlin 更多教程详见：Kotlin 学习笔记  基础   进阶   设计与实现 </description>
     </item>
     
     <item>
@@ -424,7 +360,7 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/php/</guid>
-      <description>PHP </description>
+      <description>PHP 更多教程详见：PHP 学习笔记  基础   进阶   设计与实现 </description>
     </item>
     
     <item>
@@ -433,7 +369,7 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/python/</guid>
-      <description>Python </description>
+      <description>Python 更多教程详见：Python 学习笔记  基础   进阶   设计与实现 </description>
     </item>
     
     <item>
@@ -442,7 +378,7 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/rust/</guid>
-      <description>Rust </description>
+      <description>Rust 更多教程详见：Rust 学习笔记  基础   进阶   设计与实现 </description>
     </item>
     
   </channel>

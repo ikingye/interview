@@ -5,7 +5,7 @@
 	<meta name="generator" content="Hugo 0.83.1" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="计算机组成原理   操作系统  进程/线程/协程  进程  一个进程包含哪些信息？ 进程切换时，操作系统做了哪些事情？  进程切换时，需要保存哪些信息，保存在哪里？     线程  线程比进程轻量，体现在哪里？ 什么时候使用线程，什么时候使用进程？   协程  协程是什么，怎么实现的？ 既然协程那么好，那什么时候用进程和线程？     内存  综合  程序加载的时候，是怎么分布的，哪些在堆里，哪些在栈里？   堆 栈    Linux  系统信息  硬件信息  如何查看内存大小？ 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ 如何查看系统内核？ 如何查看操作系统版本？   运行信息  如何查看占用内存最多的进程？ 如何查看占用 CPU 最多的进程？ 如何查看占用某个端口的进程？ 如何查看文件被占用没被彻底删除（看不到文件，但是磁盘没有释放）？     shell  ps  ps aux 与 ps -ef 有什么区别？   lsof awk sed      网络  TCP/UDP/IP  TCP UDP IP   HTTP  基础  HTTP 状态码有哪些？ 301 和 302 有什么区别，分别适用于什么场景？ 101， 304， 307 分别是什么？ HTTP chunk 是什么？解决了什么问题？ HTTP/1."><meta property="og:title" content="首页" />
+<meta name="description" content="计算机组成原理  基础  硬件  CPU 内存 磁盘     进阶 设计与实现    操作系统  基础  进程  一个进程包含哪些信息？ 进程切换时，操作系统做了哪些事情？  进程切换时，需要保存哪些信息，保存在哪里？     线程  线程比进程轻量，体现在哪里？ 什么时候使用线程，什么时候使用进程？   协程  协程是什么，怎么实现的？ 既然协程那么好，那什么时候用进程和线程？   堆栈  程序加载的时候，是怎么分布的，哪些在堆里，哪些在栈里？     进阶 设计与实现  Linux  基础  硬件信息  如何查看内存大小？ 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ 如何查看系统内核？ 如何查看操作系统版本？   运行信息  如何查看占用内存最多的进程？ 如何查看占用 CPU 最多的进程？ 如何查看占用某个端口的进程？ 如何查看文件被占用没被彻底删除（看不到文件，但是磁盘没有释放）？   shell  ps  ps aux 与 ps -ef 有什么区别？   lsof awk sed     进阶 设计与实现    网络  TCP/UDP/IP  TCP UDP IP   HTTP  基础  HTTP 状态码有哪些？ 301 和 302 有什么区别，分别适用于什么场景？ 101， 304， 307 分别是什么？ HTTP chunk 是什么？解决了什么问题？ HTTP/1."><meta property="og:title" content="首页" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://ikingye.github.io/interview/" />
@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="/interview/book.min.c0eac73c59ba8c4c46d8242add7197a5e648531e07527f69b31760f60ad40b5d.css" integrity="sha256-wOrHPFm6jExG2CQq3XGXpeZIUx4HUn9psxdg9grUC10=">
 
 
-<script defer src="/interview/en.search.min.1c0d8ec48616159cc1f4b8db3166a08daa8bd5cf471f9092ce142f61dff83f0d.js" integrity="sha256-HA2OxIYWFZzB9LjbMWagjaqL1c9HH5CSzhQvYd/4Pw0="></script>
+<script defer src="/interview/en.search.min.8ca98327544c1f8e6cf0fae1420fcc8b85b87e93f596064dffac5f0d0c17ebeb.js" integrity="sha256-jKmDJ1RMH45s8PrhQg/Mi4W4fpP1lgZN/6xfDQwX6&#43;s="></script>
 
 <link rel="alternate" type="application/rss+xml" href="https://ikingye.github.io/interview/index.xml" title="面试笔记" />
 <!--
@@ -469,9 +469,9 @@ https://github.com/alex-shpak/hugo-book
   <nav id="TableOfContents">
   <ul>
     <li><a href="#计算机组成原理">计算机组成原理</a></li>
-    <li><a href="#操作系统">操作系统</a>
+    <li><a href="#操作系统docsos"><a href="docs/os/">操作系统</a></a>
       <ul>
-        <li><a href="#linux">Linux</a></li>
+        <li><a href="#linuxdocsoslinux"><a href="docs/os/linux/">Linux</a></a></li>
       </ul>
     </li>
     <li><a href="#网络">网络</a></li>
@@ -481,36 +481,36 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#算法">算法</a></li>
       </ul>
     </li>
-    <li><a href="#编程语言docspl_indexmd"><a href="docs/pl/_index.md">编程语言</a></a>
+    <li><a href="#编程语言docspl"><a href="docs/pl/">编程语言</a></a>
       <ul>
-        <li><a href="#cdocsplcmd"><a href="docs/pl/c.md">C</a></a></li>
-        <li><a href="#cdocsplcppmd"><a href="docs/pl/cpp.md">C++</a></a></li>
-        <li><a href="#godocsplgomd"><a href="docs/pl/go.md">Go</a></a></li>
-        <li><a href="#java">Java</a></li>
-        <li><a href="#javascript">JavaScript</a></li>
-        <li><a href="#kotlin">Kotlin</a></li>
-        <li><a href="#php">PHP</a></li>
-        <li><a href="#python">Python</a></li>
-        <li><a href="#rust">Rust</a></li>
+        <li><a href="#cdocsplc"><a href="docs/pl/c">C</a></a></li>
+        <li><a href="#cdocsplcpp"><a href="docs/pl/cpp">C++</a></a></li>
+        <li><a href="#godocsplgo"><a href="docs/pl/go">Go</a></a></li>
+        <li><a href="#javadocspljava"><a href="docs/pl/java">Java</a></a></li>
+        <li><a href="#javascriptdocspljavascript"><a href="docs/pl/javaScript">JavaScript</a></a></li>
+        <li><a href="#kotlindocsplkotlin"><a href="docs/pl/kotlin">Kotlin</a></a></li>
+        <li><a href="#phpdocsplphp"><a href="docs/pl/php">PHP</a></a></li>
+        <li><a href="#pythondocsplpython"><a href="docs/pl/python">Python</a></a></li>
+        <li><a href="#rustdocsplrust"><a href="docs/pl/rust">Rust</a></a></li>
       </ul>
     </li>
     <li><a href="#软件工程">软件工程</a>
       <ul>
-        <li><a href="#设计模式">设计模式</a></li>
-        <li><a href="#架构设计docssearchitecture_index"><a href="docs/se/architecture/_index">架构设计</a></a></li>
+        <li><a href="#设计模式docssedp"><a href="docs/se/dp">设计模式</a></a></li>
+        <li><a href="#架构设计docssearchitecture"><a href="docs/se/architecture">架构设计</a></a></li>
         <li><a href="#项目管理">项目管理</a></li>
       </ul>
     </li>
     <li><a href="#云计算">云计算</a>
       <ul>
-        <li><a href="#云原生docscloudnative_indexmd"><a href="docs/cloud/native/_index.md">云原生</a></a></li>
-        <li><a href="#kubernetesdocscloudkubernetes_indexmd"><a href="docs/cloud/kubernetes/_index.md">Kubernetes</a></a></li>
+        <li><a href="#云原生docscloudnative"><a href="docs/cloud/native/">云原生</a></a></li>
+        <li><a href="#kubernetesdocscloudkubernetes"><a href="docs/cloud/kubernetes/">Kubernetes</a></a></li>
       </ul>
     </li>
     <li><a href="#大数据">大数据</a></li>
-    <li><a href="#人工智能docsai_indexmd"><a href="docs/ai/_index.md">人工智能</a></a>
+    <li><a href="#人工智能docsai"><a href="docs/ai/">人工智能</a></a>
       <ul>
-        <li><a href="#机器学习docsaiml_indexmd"><a href="docs/ai/ml/_index.md">机器学习</a></a></li>
+        <li><a href="#机器学习docsaiml"><a href="docs/ai/ml/">机器学习</a></a></li>
         <li><a href="#深度学习">深度学习</a></li>
       </ul>
     </li>
@@ -529,7 +529,6 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#缓存">缓存</a></li>
         <li><a href="#性能">性能</a></li>
         <li><a href="#搜索引擎">搜索引擎</a></li>
-        <li><a href="#微服务">微服务</a></li>
         <li><a href="#其他">其他</a></li>
       </ul>
     </li>
@@ -540,24 +539,10 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#ios">iOS</a></li>
       </ul>
     </li>
-    <li><a href="#运维">运维</a>
-      <ul>
-        <li><a href="#cicd">CI/CD</a></li>
-        <li><a href="#devops">DevOps</a></li>
-      </ul>
-    </li>
-    <li><a href="#安全">安全</a>
-      <ul>
-        <li><a href="#web-安全">Web 安全</a></li>
-      </ul>
-    </li>
+    <li><a href="#运维">运维</a></li>
+    <li><a href="#安全">安全</a></li>
     <li><a href="#测试">测试</a></li>
-    <li><a href="#其他-1">其他</a>
-      <ul>
-        <li><a href="#字符编码">字符编码</a></li>
-        <li><a href="#加密与解密">加密与解密</a></li>
-      </ul>
-    </li>
+    <li><a href="#其他-1">其他</a></li>
   </ul>
 </nav>
 
@@ -570,13 +555,28 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown"><h2 id="计算机组成原理">计算机组成原理</h2>
+<ul>
+<li>基础
+<ul>
+<li>硬件
+<ul>
+<li>CPU</li>
+<li>内存</li>
+<li>磁盘</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
 <hr>
 <hr>
-<h2 id="操作系统">操作系统</h2>
+<h2 id="操作系统docsos"><a href="docs/os/">操作系统</a></h2>
 <ul>
-<li><input disabled="" type="checkbox"> <a href="docs/os/process">进程/线程/协程</a>
+<li>基础
 <ul>
-<li><input disabled="" type="checkbox"> 进程
+<li>进程
 <ul>
 <li><input disabled="" type="checkbox"> 一个进程包含哪些信息？</li>
 <li><input disabled="" type="checkbox"> 进程切换时，操作系统做了哪些事情？
@@ -586,37 +586,33 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 </li>
-<li><input disabled="" type="checkbox"> 线程
+<li>线程
 <ul>
 <li><input disabled="" type="checkbox"> 线程比进程轻量，体现在哪里？</li>
 <li><input disabled="" type="checkbox"> 什么时候使用线程，什么时候使用进程？</li>
 </ul>
 </li>
-<li><input disabled="" type="checkbox"> 协程
+<li>协程
 <ul>
 <li><input disabled="" type="checkbox"> 协程是什么，怎么实现的？</li>
 <li><input disabled="" type="checkbox"> 既然协程那么好，那什么时候用进程和线程？</li>
 </ul>
 </li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> <a href="docs/os/memory">内存</a>
-<ul>
-<li><input disabled="" type="checkbox"> 综合
+<li>堆栈
 <ul>
 <li><input disabled="" type="checkbox"> 程序加载的时候，是怎么分布的，哪些在堆里，哪些在栈里？</li>
 </ul>
 </li>
-<li><input disabled="" type="checkbox"> 堆</li>
-<li><input disabled="" type="checkbox"> 栈</li>
 </ul>
 </li>
+<li>进阶</li>
+<li>设计与实现</li>
 </ul>
-<h3 id="linux">Linux</h3>
+<h3 id="linuxdocsoslinux"><a href="docs/os/linux/">Linux</a></h3>
 <ul>
-<li><input disabled="" type="checkbox"> <a href="docs/os/linux/info">系统信息</a>
+<li>基础
 <ul>
-<li><input disabled="" type="checkbox"> 硬件信息
+<li>硬件信息
 <ul>
 <li><input disabled="" type="checkbox"> 如何查看内存大小？</li>
 <li><input checked="" disabled="" type="checkbox"> 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？</li>
@@ -624,7 +620,7 @@ https://github.com/alex-shpak/hugo-book
 <li><input checked="" disabled="" type="checkbox"> 如何查看操作系统版本？</li>
 </ul>
 </li>
-<li><input disabled="" type="checkbox"> 运行信息
+<li>运行信息
 <ul>
 <li><input disabled="" type="checkbox"> 如何查看占用<strong>内存</strong>最多的进程？</li>
 <li><input disabled="" type="checkbox"> 如何查看占用 <strong>CPU</strong> 最多的进程？</li>
@@ -632,9 +628,7 @@ https://github.com/alex-shpak/hugo-book
 <li><input checked="" disabled="" type="checkbox"> 如何查看文件被占用没被彻底删除（看不到文件，但是磁盘没有释放）？</li>
 </ul>
 </li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> <a href="docs/os/linux/shell">shell</a>
+<li>shell
 <ul>
 <li><input disabled="" type="checkbox"> ps
 <ul>
@@ -646,6 +640,10 @@ https://github.com/alex-shpak/hugo-book
 <li><input disabled="" type="checkbox"> sed</li>
 </ul>
 </li>
+</ul>
+</li>
+<li>进阶</li>
+<li>设计与实现</li>
 </ul>
 <hr>
 <hr>
@@ -704,53 +702,76 @@ https://github.com/alex-shpak/hugo-book
 <hr>
 <h2 id="数据结构与算法">数据结构与算法</h2>
 <h3 id="数据结构">数据结构</h3>
+<ul>
+<li>基础</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
 <h3 id="算法">算法</h3>
 <ul>
-<li><input disabled="" type="checkbox"> 查找
+<li>基础
+<ul>
+<li>查找
 <ul>
 <li><input disabled="" type="checkbox"> 二分查找</li>
 </ul>
 </li>
-<li><input disabled="" type="checkbox"> 排序
+<li>排序
 <ul>
 <li><input disabled="" type="checkbox"> 快速排序</li>
 <li><input disabled="" type="checkbox"> 堆排序</li>
 <li><input disabled="" type="checkbox"> 排序算法时间复杂度与空间复杂度</li>
 </ul>
 </li>
-<li><input disabled="" type="checkbox"> 链表
+<li>链表
 <ul>
 <li><input disabled="" type="checkbox"> 链表逆序</li>
 </ul>
 </li>
-<li><input disabled="" type="checkbox"> 二叉树</li>
-<li><input disabled="" type="checkbox"> 动态规划</li>
+<li>二叉树</li>
+</ul>
+</li>
+<li>进阶
+<ul>
+<li>图</li>
+<li>动态规划</li>
+</ul>
+</li>
+<li>设计与实现</li>
 </ul>
 <hr>
 <hr>
-<h2 id="编程语言docspl_indexmd"><a href="docs/pl/_index.md">编程语言</a></h2>
-<h3 id="cdocsplcmd"><a href="docs/pl/c.md">C</a></h3>
+<h2 id="编程语言docspl"><a href="docs/pl/">编程语言</a></h2>
+<h3 id="cdocsplc"><a href="docs/pl/c">C</a></h3>
 <ul>
 <li>基础</li>
 <li>进阶</li>
 <li>设计与实现</li>
 </ul>
 <hr>
-<h3 id="cdocsplcppmd"><a href="docs/pl/cpp.md">C++</a></h3>
+<h3 id="cdocsplcpp"><a href="docs/pl/cpp">C++</a></h3>
 <ul>
 <li>基础</li>
 <li>进阶</li>
 <li>设计与实现</li>
 </ul>
 <hr>
-<h3 id="godocsplgomd"><a href="docs/pl/go.md">Go</a></h3>
+<h3 id="godocsplgo"><a href="docs/pl/go">Go</a></h3>
 <ul>
 <li>基础
 <ul>
+<li>数据结构
+<ul>
 <li><input disabled="" type="checkbox"> 什么时候使用数组？</li>
+<li><input disabled="" type="checkbox"> 通道如何优雅关闭？</li>
+</ul>
+</li>
+<li>关键字
+<ul>
 <li><input checked="" disabled="" type="checkbox"> make, new 有什么区别？</li>
 <li><input disabled="" type="checkbox"> panic, recover 是怎么实现的？</li>
-<li><input disabled="" type="checkbox"> 通道如何优雅关闭？</li>
+</ul>
+</li>
 <li>标准库
 <ul>
 <li><input disabled="" type="checkbox"> time
@@ -760,18 +781,32 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 </li>
+<li>包管理
+<ul>
 <li><input checked="" disabled="" type="checkbox"> 简单说说 Go 包管理工具的发展历史？</li>
 <li><input disabled="" type="checkbox"> 你用过哪些 Go 包管理工具，说说它们的优缺点？</li>
 <li><input disabled="" type="checkbox"> Go Mod 相对之前的版本管理有哪些优点？</li>
 <li><input disabled="" type="checkbox"> Go Mod 如何找到引用的包？</li>
 <li><input disabled="" type="checkbox"> <code>replace</code> 语法有什么作用？</li>
 <li><input disabled="" type="checkbox"> <code>go.sum</code> 文件有什么用？是否应该加入版本管理？是如何生成的？</li>
-<li><input disabled="" type="checkbox"> 单元测试</li>
+</ul>
+</li>
+<li>go 版本
+<ul>
 <li><input disabled="" type="checkbox"> 你现在使用的是什么版本？最新版本是什么，相对有哪些变化？</li>
+<li><input disabled="" type="checkbox"> gvm</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>进阶
 <ul>
+<li>工程化
+<ul>
+<li><input disabled="" type="checkbox"> 单元测试</li>
+<li><input disabled="" type="checkbox"> Makefile</li>
+</ul>
+</li>
 <li>Goroutine
 <ul>
 <li><input disabled="" type="checkbox"> Goroutine 为什么高效？</li>
@@ -779,9 +814,12 @@ https://github.com/alex-shpak/hugo-book
 <li><input disabled="" type="checkbox"> 为什么 Go 需要自己实现调度器？</li>
 </ul>
 </li>
+<li>性能
+<ul>
 <li><input disabled="" type="checkbox"> pprof</li>
-<li><input disabled="" type="checkbox"> Makefile</li>
-<li><input disabled="" type="checkbox"> Go 插件系统
+</ul>
+</li>
+<li>Go 插件系统
 <ul>
 <li><input disabled="" type="checkbox"> Go 插件系统的应用场景？</li>
 <li><input disabled="" type="checkbox"> Go 插件系统是如何实现的？</li>
@@ -796,7 +834,7 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 <hr>
-<h3 id="java">Java</h3>
+<h3 id="javadocspljava"><a href="docs/pl/java">Java</a></h3>
 <ul>
 <li>基础</li>
 <li>进阶
@@ -812,28 +850,28 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 <hr>
-<h3 id="javascript">JavaScript</h3>
+<h3 id="javascriptdocspljavascript"><a href="docs/pl/javaScript">JavaScript</a></h3>
 <ul>
 <li>基础</li>
 <li>进阶</li>
 <li>设计与实现</li>
 </ul>
 <hr>
-<h3 id="kotlin">Kotlin</h3>
+<h3 id="kotlindocsplkotlin"><a href="docs/pl/kotlin">Kotlin</a></h3>
 <ul>
 <li>基础</li>
 <li>进阶</li>
 <li>设计与实现</li>
 </ul>
 <hr>
-<h3 id="php">PHP</h3>
+<h3 id="phpdocsplphp"><a href="docs/pl/php">PHP</a></h3>
 <ul>
 <li>基础</li>
 <li>进阶</li>
 <li>设计与实现</li>
 </ul>
 <hr>
-<h3 id="python">Python</h3>
+<h3 id="pythondocsplpython"><a href="docs/pl/python">Python</a></h3>
 <ul>
 <li>基础
 <ul>
@@ -857,7 +895,7 @@ https://github.com/alex-shpak/hugo-book
 <li>设计与实现</li>
 </ul>
 <hr>
-<h3 id="rust">Rust</h3>
+<h3 id="rustdocsplrust"><a href="docs/pl/rust">Rust</a></h3>
 <ul>
 <li>基础</li>
 <li>进阶</li>
@@ -866,16 +904,13 @@ https://github.com/alex-shpak/hugo-book
 <hr>
 <hr>
 <h2 id="软件工程">软件工程</h2>
-<h3 id="设计模式">设计模式</h3>
+<h3 id="设计模式docssedp"><a href="docs/se/dp">设计模式</a></h3>
 <ul>
-<li><input disabled="" type="checkbox"> <a href="docs/se/design%20pattern/_index">综合</a>
+<li>基础
 <ul>
-<li><input checked="" disabled="" type="checkbox"> 适配器模式、装饰模式、代理模式有哪些异同？</li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> <a href="docs/se/design%20pattern/principle">设计原则</a>
+<li>设计原则
 <ul>
-<li><input disabled="" type="checkbox"> 单一职责原则 (<code>SRP</code>)</li>
+<li><input disabled="" type="checkbox"> 单一职责原则 (<code>Single Responsibility Principle</code>)</li>
 <li><input disabled="" type="checkbox"> 开闭原则 (<code>Open Closed Principle</code>)</li>
 <li><input disabled="" type="checkbox"> 里氏替换原则 (<code>Liskov Substitution Principle</code>)</li>
 <li><input disabled="" type="checkbox"> 依赖倒置原则 (<code>Dependence Inversion Principle</code>)</li>
@@ -883,9 +918,7 @@ https://github.com/alex-shpak/hugo-book
 <li><input disabled="" type="checkbox"> 迪米特原则 (<code>Demeter Principle</code>)</li>
 </ul>
 </li>
-<li><input disabled="" type="checkbox"> 23 种设计模式
-<ul>
-<li><input disabled="" type="checkbox"> <a href="docs/se/design%20pattern/creational">创建型 (5 种)</a>
+<li>创建型 (5 种)
 <ul>
 <li><input disabled="" type="checkbox"> 简单工厂模式</li>
 <li><input disabled="" type="checkbox"> 工厂方法模式</li>
@@ -894,7 +927,7 @@ https://github.com/alex-shpak/hugo-book
 <li><input disabled="" type="checkbox"> 单例模式</li>
 </ul>
 </li>
-<li><input disabled="" type="checkbox"> <a href="docs/se/design%20pattern/structural">结构型 (7 种)</a>
+<li>结构型 (7 种)
 <ul>
 <li><input disabled="" type="checkbox"> 适配器模式</li>
 <li><input disabled="" type="checkbox"> 桥接模式</li>
@@ -903,9 +936,10 @@ https://github.com/alex-shpak/hugo-book
 <li><input disabled="" type="checkbox"> 享元模式</li>
 <li><input disabled="" type="checkbox"> 代理模式</li>
 <li><input disabled="" type="checkbox"> 组合模式</li>
+<li><input checked="" disabled="" type="checkbox"> 适配器模式、装饰模式、代理模式有哪些异同？</li>
 </ul>
 </li>
-<li><input disabled="" type="checkbox"> <a href="docs/se/design%20pattern/behavioral">行为型 (11 种)</a>
+<li>行为型 (11 种)
 <ul>
 <li><input disabled="" type="checkbox"> 命令模式</li>
 <li><input disabled="" type="checkbox"> 中介者模式</li>
@@ -920,19 +954,23 @@ https://github.com/alex-shpak/hugo-book
 <li><input disabled="" type="checkbox"> 解释器模式</li>
 </ul>
 </li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> <a href="docs/se/design%20pattern/others">其他设计模式</a>
+<li>其他设计模式
 <ul>
 <li><input disabled="" type="checkbox"> 并发型模式</li>
 <li><input disabled="" type="checkbox"> 线程池模式</li>
 </ul>
 </li>
 </ul>
+</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
 <hr>
-<h3 id="架构设计docssearchitecture_index"><a href="docs/se/architecture/_index">架构设计</a></h3>
+<h3 id="架构设计docssearchitecture"><a href="docs/se/architecture">架构设计</a></h3>
 <ul>
-<li><input disabled="" type="checkbox"> <a href="docs/se/architecture/principle">架构设计原则</a>
+<li>基础
+<ul>
+<li>架构设计原则
 <ul>
 <li><input disabled="" type="checkbox"> CAP (<code>Consistency</code>, <code>Availability</code>, <code>Partition tolerance</code>)
 <ul>
@@ -943,15 +981,19 @@ https://github.com/alex-shpak/hugo-book
 <li><input disabled="" type="checkbox"> BASE (<code>Basically Available</code>, <code>Soft state</code>, <code>Eventual consistency</code>)</li>
 </ul>
 </li>
-<li><input disabled="" type="checkbox"> <a href="docs/se/architecture/high-performance">高性能</a></li>
-<li><input disabled="" type="checkbox"> <a href="docs/se/architecture/high-availability">高可用</a></li>
-<li><input disabled="" type="checkbox"> <a href="docs/se/architecture/high-concurrency">高并发</a></li>
-<li><input disabled="" type="checkbox"> <a href="docs/se/architecture/high-scalability">高扩展性</a>
+<li>高性能</li>
+<li>高可用</li>
+<li>高并发</li>
+<li>高扩展性
 <ul>
 <li><input disabled="" type="checkbox"> 如何提高可扩展性？</li>
 <li><input disabled="" type="checkbox"> 如何构建高扩展性网站？</li>
 </ul>
 </li>
+</ul>
+</li>
+<li>进阶</li>
+<li>设计与实现</li>
 </ul>
 <hr>
 <h3 id="项目管理">项目管理</h3>
@@ -976,7 +1018,7 @@ https://github.com/alex-shpak/hugo-book
 <hr>
 <hr>
 <h2 id="云计算">云计算</h2>
-<h3 id="云原生docscloudnative_indexmd"><a href="docs/cloud/native/_index.md">云原生</a></h3>
+<h3 id="云原生docscloudnative"><a href="docs/cloud/native/">云原生</a></h3>
 <ul>
 <li>基础
 <ul>
@@ -999,7 +1041,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
-<h3 id="kubernetesdocscloudkubernetes_indexmd"><a href="docs/cloud/kubernetes/_index.md">Kubernetes</a></h3>
+<h3 id="kubernetesdocscloudkubernetes"><a href="docs/cloud/kubernetes/">Kubernetes</a></h3>
 <ul>
 <li>基础
 <ul>
@@ -1032,8 +1074,8 @@ https://github.com/alex-shpak/hugo-book
 <h2 id="大数据">大数据</h2>
 <hr>
 <hr>
-<h2 id="人工智能docsai_indexmd"><a href="docs/ai/_index.md">人工智能</a></h2>
-<h3 id="机器学习docsaiml_indexmd"><a href="docs/ai/ml/_index.md">机器学习</a></h3>
+<h2 id="人工智能docsai"><a href="docs/ai/">人工智能</a></h2>
+<h3 id="机器学习docsaiml"><a href="docs/ai/ml/">机器学习</a></h3>
 <h3 id="深度学习">深度学习</h3>
 <hr>
 <hr>
@@ -1057,14 +1099,25 @@ https://github.com/alex-shpak/hugo-book
 <hr>
 <h3 id="数据库">数据库</h3>
 <ul>
-<li><a href="docs/backend/db/_index">综合</a>
+<li>
+<p>基础</p>
+</li>
+<li>
+<p>进阶</p>
+</li>
+<li>
+<p>设计与实现</p>
+</li>
+<li>
+<p><a href="docs/backend/db/">综合</a></p>
 <ul>
 <li><input disabled="" type="checkbox"> Mysql 与 PostgreSQL 各有什么优势？</li>
 <li><input disabled="" type="checkbox"> NoSQL 与传统数据库主要区别是什么？</li>
 <li><input disabled="" type="checkbox"> 常见的 NoSQL 有哪些，各自适用什么场景？</li>
 </ul>
 </li>
-<li><a href="docs/backend/db/mysql">Mysql</a>
+<li>
+<p><a href="docs/backend/db/mysql">Mysql</a></p>
 <ul>
 <li>基础
 <ul>
@@ -1090,7 +1143,8 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 </li>
-<li><a href="docs/backend/db/redis">Redis</a>
+<li>
+<p><a href="docs/backend/db/redis">Redis</a></p>
 <ul>
 <li>基础
 <ul>
@@ -1110,29 +1164,55 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 </li>
-<li>PostgreSQL</li>
+<li>
+<p>PostgreSQL</p>
+</li>
 </ul>
 <hr>
 <h3 id="消息队列">消息队列</h3>
 <ul>
-<li><input disabled="" type="checkbox"> <a href="docs/backend/mq/_index">综合</a>
+<li>
+<p>基础</p>
+</li>
+<li>
+<p>进阶</p>
+</li>
+<li>
+<p>设计与实现</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <a href="docs/backend/mq/">综合</a></p>
 <ul>
 <li><input disabled="" type="checkbox"> 常见的消息队列有哪些，分别适用什么场景？</li>
 <li><input disabled="" type="checkbox"> RocketMQ 相比于 Kafka 有哪些改进？</li>
 </ul>
 </li>
-<li><input disabled="" type="checkbox"> <a href="docs/backend/mq/kafka">Kafka</a>
+<li>
+<p><input disabled="" type="checkbox"> <a href="docs/backend/mq/kafka">Kafka</a></p>
 <ul>
 <li><input disabled="" type="checkbox"> Kafka 如何实现一致性？</li>
 </ul>
 </li>
-<li><input disabled="" type="checkbox"> <a href="docs/backend/mq/rocketmq">RocketMQ</a></li>
-<li><input disabled="" type="checkbox"> <a href="docs/backend/mq/rabbitmq">RabbitMQ</a></li>
-<li><input disabled="" type="checkbox"> ActiveMQ</li>
-<li><input disabled="" type="checkbox"> ZeroMQ</li>
+<li>
+<p><input disabled="" type="checkbox"> <a href="docs/backend/mq/rocketmq">RocketMQ</a></p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> <a href="docs/backend/mq/rabbitmq">RabbitMQ</a></p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> ActiveMQ</p>
+</li>
+<li>
+<p><input disabled="" type="checkbox"> ZeroMQ</p>
+</li>
 </ul>
 <hr>
 <h3 id="缓存">缓存</h3>
+<ul>
+<li>基础</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
 <hr>
 <h3 id="性能">性能</h3>
 <ul>
@@ -1144,8 +1224,11 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 <hr>
 <h3 id="搜索引擎">搜索引擎</h3>
-<hr>
-<h3 id="微服务">微服务</h3>
+<ul>
+<li>基础</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
 <hr>
 <h3 id="其他">其他</h3>
 <ul>
@@ -1162,41 +1245,57 @@ https://github.com/alex-shpak/hugo-book
 <h2 id="前端与客户端">前端与客户端</h2>
 <h3 id="web-前端">Web 前端</h3>
 <ul>
-<li><input disabled="" type="checkbox"> Vue</li>
-<li><input disabled="" type="checkbox"> React</li>
-<li><input disabled="" type="checkbox"> Angular</li>
+<li>基础
+<ul>
+<li>Vue</li>
+<li>React</li>
+<li>Angular</li>
+</ul>
+</li>
+<li>进阶</li>
+<li>设计与实现</li>
 </ul>
 <hr>
 <h3 id="android">Android</h3>
+<ul>
+<li>基础</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
 <hr>
 <h3 id="ios">iOS</h3>
+<ul>
+<li>基础</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
 <hr>
 <hr>
 <h2 id="运维">运维</h2>
-<h3 id="cicd">CI/CD</h3>
+<ul>
+<li>基础
 <ul>
 <li><input disabled="" type="checkbox"> 什么是 CI/CD</li>
 <li><input disabled="" type="checkbox"> 你们公司如何实现 CI/CD</li>
 </ul>
-<h3 id="devops">DevOps</h3>
+</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
 <hr>
 <hr>
 <h2 id="安全">安全</h2>
-<h3 id="web-安全">Web 安全</h3>
 <ul>
-<li><input disabled="" type="checkbox"> <a href="docs/security/web/_index">综合</a>
+<li>基础
 <ul>
-<li><input disabled="" type="checkbox"> Web 安全包括哪些内容？</li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> <a href="docs/security/web/xss">XSS</a>
+<li>XSS
 <ul>
 <li><input disabled="" type="checkbox"> 什么是 XSS，为什么会发生 XSS？</li>
 <li><input disabled="" type="checkbox"> 有哪些 XSS 攻击方法？</li>
 <li><input disabled="" type="checkbox"> 如何防止 XSS 攻击？</li>
 </ul>
 </li>
-<li><input disabled="" type="checkbox"> <a href="docs/security/web/csrf">CSRF</a>
+<li>CSRF
 <ul>
 <li><input disabled="" type="checkbox"> 什么是 CSRF，为什么会发生 CSRF？</li>
 <li><input disabled="" type="checkbox"> 有哪些 CSRF 攻击方法？</li>
@@ -1204,14 +1303,21 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
+</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
 <hr>
 <hr>
 <h2 id="测试">测试</h2>
+<ul>
+<li>基础</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
 <hr>
 <hr>
 <h2 id="其他-1">其他</h2>
-<h3 id="字符编码">字符编码</h3>
-<h3 id="加密与解密">加密与解密</h3>
 <ul>
 <li><input disabled="" type="checkbox"> <a href="docs/others/compile">编译</a></li>
 <li><input disabled="" type="checkbox"> <a href="docs/others/encode">字符编码</a>
@@ -1249,9 +1355,9 @@ https://github.com/alex-shpak/hugo-book
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/ikingye/interview/commit/79fa5d9758cec990f5f5a1947ab162ea1cb465b8" title='Last modified by yewang | 2021-07-05' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/ikingye/interview/commit/22a51cc9c3faf861aae17fbfc4cbfdf4d4751f8d" title='Last modified by yewang | 2021-07-07' target="_blank" rel="noopener">
       <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2021-07-05</span>
+      <span>2021-07-07</span>
     </a>
   </div>
 
@@ -1308,9 +1414,9 @@ https://github.com/alex-shpak/hugo-book
   <nav id="TableOfContents">
   <ul>
     <li><a href="#计算机组成原理">计算机组成原理</a></li>
-    <li><a href="#操作系统">操作系统</a>
+    <li><a href="#操作系统docsos"><a href="docs/os/">操作系统</a></a>
       <ul>
-        <li><a href="#linux">Linux</a></li>
+        <li><a href="#linuxdocsoslinux"><a href="docs/os/linux/">Linux</a></a></li>
       </ul>
     </li>
     <li><a href="#网络">网络</a></li>
@@ -1320,36 +1426,36 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#算法">算法</a></li>
       </ul>
     </li>
-    <li><a href="#编程语言docspl_indexmd"><a href="docs/pl/_index.md">编程语言</a></a>
+    <li><a href="#编程语言docspl"><a href="docs/pl/">编程语言</a></a>
       <ul>
-        <li><a href="#cdocsplcmd"><a href="docs/pl/c.md">C</a></a></li>
-        <li><a href="#cdocsplcppmd"><a href="docs/pl/cpp.md">C++</a></a></li>
-        <li><a href="#godocsplgomd"><a href="docs/pl/go.md">Go</a></a></li>
-        <li><a href="#java">Java</a></li>
-        <li><a href="#javascript">JavaScript</a></li>
-        <li><a href="#kotlin">Kotlin</a></li>
-        <li><a href="#php">PHP</a></li>
-        <li><a href="#python">Python</a></li>
-        <li><a href="#rust">Rust</a></li>
+        <li><a href="#cdocsplc"><a href="docs/pl/c">C</a></a></li>
+        <li><a href="#cdocsplcpp"><a href="docs/pl/cpp">C++</a></a></li>
+        <li><a href="#godocsplgo"><a href="docs/pl/go">Go</a></a></li>
+        <li><a href="#javadocspljava"><a href="docs/pl/java">Java</a></a></li>
+        <li><a href="#javascriptdocspljavascript"><a href="docs/pl/javaScript">JavaScript</a></a></li>
+        <li><a href="#kotlindocsplkotlin"><a href="docs/pl/kotlin">Kotlin</a></a></li>
+        <li><a href="#phpdocsplphp"><a href="docs/pl/php">PHP</a></a></li>
+        <li><a href="#pythondocsplpython"><a href="docs/pl/python">Python</a></a></li>
+        <li><a href="#rustdocsplrust"><a href="docs/pl/rust">Rust</a></a></li>
       </ul>
     </li>
     <li><a href="#软件工程">软件工程</a>
       <ul>
-        <li><a href="#设计模式">设计模式</a></li>
-        <li><a href="#架构设计docssearchitecture_index"><a href="docs/se/architecture/_index">架构设计</a></a></li>
+        <li><a href="#设计模式docssedp"><a href="docs/se/dp">设计模式</a></a></li>
+        <li><a href="#架构设计docssearchitecture"><a href="docs/se/architecture">架构设计</a></a></li>
         <li><a href="#项目管理">项目管理</a></li>
       </ul>
     </li>
     <li><a href="#云计算">云计算</a>
       <ul>
-        <li><a href="#云原生docscloudnative_indexmd"><a href="docs/cloud/native/_index.md">云原生</a></a></li>
-        <li><a href="#kubernetesdocscloudkubernetes_indexmd"><a href="docs/cloud/kubernetes/_index.md">Kubernetes</a></a></li>
+        <li><a href="#云原生docscloudnative"><a href="docs/cloud/native/">云原生</a></a></li>
+        <li><a href="#kubernetesdocscloudkubernetes"><a href="docs/cloud/kubernetes/">Kubernetes</a></a></li>
       </ul>
     </li>
     <li><a href="#大数据">大数据</a></li>
-    <li><a href="#人工智能docsai_indexmd"><a href="docs/ai/_index.md">人工智能</a></a>
+    <li><a href="#人工智能docsai"><a href="docs/ai/">人工智能</a></a>
       <ul>
-        <li><a href="#机器学习docsaiml_indexmd"><a href="docs/ai/ml/_index.md">机器学习</a></a></li>
+        <li><a href="#机器学习docsaiml"><a href="docs/ai/ml/">机器学习</a></a></li>
         <li><a href="#深度学习">深度学习</a></li>
       </ul>
     </li>
@@ -1368,7 +1474,6 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#缓存">缓存</a></li>
         <li><a href="#性能">性能</a></li>
         <li><a href="#搜索引擎">搜索引擎</a></li>
-        <li><a href="#微服务">微服务</a></li>
         <li><a href="#其他">其他</a></li>
       </ul>
     </li>
@@ -1379,24 +1484,10 @@ https://github.com/alex-shpak/hugo-book
         <li><a href="#ios">iOS</a></li>
       </ul>
     </li>
-    <li><a href="#运维">运维</a>
-      <ul>
-        <li><a href="#cicd">CI/CD</a></li>
-        <li><a href="#devops">DevOps</a></li>
-      </ul>
-    </li>
-    <li><a href="#安全">安全</a>
-      <ul>
-        <li><a href="#web-安全">Web 安全</a></li>
-      </ul>
-    </li>
+    <li><a href="#运维">运维</a></li>
+    <li><a href="#安全">安全</a></li>
     <li><a href="#测试">测试</a></li>
-    <li><a href="#其他-1">其他</a>
-      <ul>
-        <li><a href="#字符编码">字符编码</a></li>
-        <li><a href="#加密与解密">加密与解密</a></li>
-      </ul>
-    </li>
+    <li><a href="#其他-1">其他</a></li>
   </ul>
 </nav>
 

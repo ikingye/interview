@@ -4,10 +4,12 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="设计模式 适配器模式、装饰模式、代理模式有哪些异同？  适配器模式  适配器模式实现新接口   代理模式  代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。   装饰器模式  原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。      装饰器模式与代理模式实现原接口 都持有原对象  装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象    /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi { public void updateDate(String orderId, String date, String client); } public class SourceOrderApiImpl implements SourceOrderApi{ @Override public void updateDate(String orderId, String date, String client) { System.out.println(client&#43;&#34;已将订单&#34;&#43;orderId&#43;&#34;的有效期延长至&#34;&#43;date); } } public class Test { public static void main(String[] args) { SourceOrderApi sourceOrderApi = new SourceOrderApiImpl(); sourceOrderApi."><meta property="og:title" content="设计模式" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://ikingye.github.io/interview/docs/se/design-pattern/" />
+<meta name="description" content="设计模式 设计原则 单一职责原则 (SRP)  开闭原则 (Open Closed Principle)  里氏替换原则 (Liskov Substitution Principle)  依赖倒置原则 (Dependence Inversion Principle)  接口隔离原则 (Interface Segregation Principle)  迪米特原则 (Demeter Principle)   创建型模式 简单工厂模式  工厂方法模式  抽象工厂模式  建造者模式  单例模式   结构型模式 适配器模式  桥接模式  装饰模式  外观模式  享元模式  代理模式  组合模式 适配器模式、装饰模式、代理模式有哪些异同？  适配器模式  适配器模式实现新接口   代理模式  代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。   装饰器模式  原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。      装饰器模式与代理模式实现原接口 都持有原对象  装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象    /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi { public void updateDate(String orderId, String date, String client); } public class SourceOrderApiImpl implements SourceOrderApi{ @Override public void updateDate(String orderId, String date, String client) { System."><meta property="og:title" content="设计模式" />
+<meta property="og:description" content="设计模式 设计原则 单一职责原则 (SRP)  开闭原则 (Open Closed Principle)  里氏替换原则 (Liskov Substitution Principle)  依赖倒置原则 (Dependence Inversion Principle)  接口隔离原则 (Interface Segregation Principle)  迪米特原则 (Demeter Principle)   创建型模式 简单工厂模式  工厂方法模式  抽象工厂模式  建造者模式  单例模式   结构型模式 适配器模式  桥接模式  装饰模式  外观模式  享元模式  代理模式  组合模式 适配器模式、装饰模式、代理模式有哪些异同？  适配器模式  适配器模式实现新接口   代理模式  代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。   装饰器模式  原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。      装饰器模式与代理模式实现原接口 都持有原对象  装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象    /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi { public void updateDate(String orderId, String date, String client); } public class SourceOrderApiImpl implements SourceOrderApi{ @Override public void updateDate(String orderId, String date, String client) { System." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ikingye.github.io/interview/docs/se/dp/" /><meta property="article:section" content="docs" />
+
+
 
 <title>设计模式 | 面试笔记</title>
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
@@ -16,9 +18,8 @@
 <link rel="stylesheet" href="/interview/book.min.c0eac73c59ba8c4c46d8242add7197a5e648531e07527f69b31760f60ad40b5d.css" integrity="sha256-wOrHPFm6jExG2CQq3XGXpeZIUx4HUn9psxdg9grUC10=">
 
 
-<script defer src="/interview/en.search.min.1c0d8ec48616159cc1f4b8db3166a08daa8bd5cf471f9092ce142f61dff83f0d.js" integrity="sha256-HA2OxIYWFZzB9LjbMWagjaqL1c9HH5CSzhQvYd/4Pw0="></script>
+<script defer src="/interview/en.search.min.8ca98327544c1f8e6cf0fae1420fcc8b85b87e93f596064dffac5f0d0c17ebeb.js" integrity="sha256-jKmDJ1RMH45s8PrhQg/Mi4W4fpP1lgZN/6xfDQwX6&#43;s="></script>
 
-<link rel="alternate" type="application/rss+xml" href="https://ikingye.github.io/interview/docs/se/design-pattern/index.xml" title="面试笔记" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -194,29 +195,10 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     
       
-        
-
-  <li>
-    
-
-  
-  <a href="/interview/docs/se/design-pattern/" class="collapsed active">设计模式</a>
-  
-
-
-    
-
-
-
-
-  
-  <ul>
-    
-      
         <li>
 
   
-  <a href="/interview/docs/se/design-pattern/principle/" class="">设计原则</a>
+  <a href="/interview/docs/se/dp/" class="active">设计模式</a>
   
 
 </li>
@@ -226,73 +208,10 @@ https://github.com/alex-shpak/hugo-book
         <li>
 
   
-  <a href="/interview/docs/se/design-pattern/creational/" class="">创建型模式</a>
+  <a href="/interview/docs/se/architecture/" class="">架构设计</a>
   
 
 </li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/interview/docs/se/design-pattern/structural/" class="">结构型模式</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/interview/docs/se/design-pattern/behavioral/" class="">行为型模式</a>
-  
-
-</li>
-      
-    
-      
-        <li>
-
-  
-  <a href="/interview/docs/se/design-pattern/others/" class="">其他模式</a>
-  
-
-</li>
-      
-    
-  </ul>
-  
-
-
-
-  </li>
-
-
-      
-    
-      
-        
-
-  <li>
-    
-
-  
-  <a href="/interview/docs/se/architecture/" class="collapsed ">架构设计</a>
-  
-
-
-    
-
-
-
-
-
-
-  </li>
-
-
       
     
       
@@ -598,7 +517,58 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#适配器模式装饰模式代理模式有哪些异同">适配器模式、装饰模式、代理模式有哪些异同？</a></li>
+    <li><a href="#设计原则">设计原则</a>
+      <ul>
+        <li><a href="#单一职责原则-srp">单一职责原则 (<code>SRP</code>)</a></li>
+        <li><a href="#开闭原则-open-closed-principle">开闭原则 (<code>Open Closed Principle</code>)</a></li>
+        <li><a href="#里氏替换原则-liskov-substitution-principle">里氏替换原则 (<code>Liskov Substitution Principle</code>)</a></li>
+        <li><a href="#依赖倒置原则-dependence-inversion-principle">依赖倒置原则 (<code>Dependence Inversion Principle</code>)</a></li>
+        <li><a href="#接口隔离原则-interface-segregation-principle">接口隔离原则 (<code>Interface Segregation Principle</code>)</a></li>
+        <li><a href="#迪米特原则-demeter-principle">迪米特原则 (<code>Demeter Principle</code>)</a></li>
+      </ul>
+    </li>
+    <li><a href="#创建型模式">创建型模式</a>
+      <ul>
+        <li><a href="#简单工厂模式">简单工厂模式</a></li>
+        <li><a href="#工厂方法模式">工厂方法模式</a></li>
+        <li><a href="#抽象工厂模式">抽象工厂模式</a></li>
+        <li><a href="#建造者模式">建造者模式</a></li>
+        <li><a href="#单例模式">单例模式</a></li>
+      </ul>
+    </li>
+    <li><a href="#结构型模式">结构型模式</a>
+      <ul>
+        <li><a href="#适配器模式">适配器模式</a></li>
+        <li><a href="#桥接模式">桥接模式</a></li>
+        <li><a href="#装饰模式">装饰模式</a></li>
+        <li><a href="#外观模式">外观模式</a></li>
+        <li><a href="#享元模式">享元模式</a></li>
+        <li><a href="#代理模式">代理模式</a></li>
+        <li><a href="#组合模式">组合模式</a></li>
+        <li><a href="#适配器模式装饰模式代理模式有哪些异同">适配器模式、装饰模式、代理模式有哪些异同？</a></li>
+      </ul>
+    </li>
+    <li><a href="#行为型模式">行为型模式</a>
+      <ul>
+        <li><a href="#命令模式">命令模式</a></li>
+        <li><a href="#中介者模式">中介者模式</a></li>
+        <li><a href="#观察者模式">观察者模式</a></li>
+        <li><a href="#状态模式">状态模式</a></li>
+        <li><a href="#策略模式">策略模式</a></li>
+        <li><a href="#模板方法模式">模板方法模式</a></li>
+        <li><a href="#迭代子模式">迭代子模式</a></li>
+        <li><a href="#责任链模式">责任链模式</a></li>
+        <li><a href="#备忘录模式">备忘录模式</a></li>
+        <li><a href="#访问者模式">访问者模式</a></li>
+        <li><a href="#解释器模式">解释器模式</a></li>
+      </ul>
+    </li>
+    <li><a href="#其他模式">其他模式</a>
+      <ul>
+        <li><a href="#并发型模式">并发型模式</a></li>
+        <li><a href="#线程池模式">线程池模式</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -611,7 +581,47 @@ https://github.com/alex-shpak/hugo-book
       
       
   <article class="markdown"><h1 id="设计模式">设计模式</h1>
-<h2 id="适配器模式装饰模式代理模式有哪些异同">适配器模式、装饰模式、代理模式有哪些异同？</h2>
+<h2 id="设计原则">设计原则</h2>
+<h3 id="单一职责原则-srp">单一职责原则 (<code>SRP</code>)</h3>
+<hr>
+<h3 id="开闭原则-open-closed-principle">开闭原则 (<code>Open Closed Principle</code>)</h3>
+<hr>
+<h3 id="里氏替换原则-liskov-substitution-principle">里氏替换原则 (<code>Liskov Substitution Principle</code>)</h3>
+<hr>
+<h3 id="依赖倒置原则-dependence-inversion-principle">依赖倒置原则 (<code>Dependence Inversion Principle</code>)</h3>
+<hr>
+<h3 id="接口隔离原则-interface-segregation-principle">接口隔离原则 (<code>Interface Segregation Principle</code>)</h3>
+<hr>
+<h3 id="迪米特原则-demeter-principle">迪米特原则 (<code>Demeter Principle</code>)</h3>
+<hr>
+<hr>
+<h2 id="创建型模式">创建型模式</h2>
+<h3 id="简单工厂模式">简单工厂模式</h3>
+<hr>
+<h3 id="工厂方法模式">工厂方法模式</h3>
+<hr>
+<h3 id="抽象工厂模式">抽象工厂模式</h3>
+<hr>
+<h3 id="建造者模式">建造者模式</h3>
+<hr>
+<h3 id="单例模式">单例模式</h3>
+<hr>
+<hr>
+<h2 id="结构型模式">结构型模式</h2>
+<h3 id="适配器模式">适配器模式</h3>
+<hr>
+<h3 id="桥接模式">桥接模式</h3>
+<hr>
+<h3 id="装饰模式">装饰模式</h3>
+<hr>
+<h3 id="外观模式">外观模式</h3>
+<hr>
+<h3 id="享元模式">享元模式</h3>
+<hr>
+<h3 id="代理模式">代理模式</h3>
+<hr>
+<h3 id="组合模式">组合模式</h3>
+<h3 id="适配器模式装饰模式代理模式有哪些异同">适配器模式、装饰模式、代理模式有哪些异同？</h3>
 <ul>
 <li>适配器模式
 <ul>
@@ -730,6 +740,35 @@ https://github.com/alex-shpak/hugo-book
     <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 </code></pre></div><hr>
+<hr>
+<h2 id="行为型模式">行为型模式</h2>
+<h3 id="命令模式">命令模式</h3>
+<hr>
+<h3 id="中介者模式">中介者模式</h3>
+<hr>
+<h3 id="观察者模式">观察者模式</h3>
+<hr>
+<h3 id="状态模式">状态模式</h3>
+<hr>
+<h3 id="策略模式">策略模式</h3>
+<hr>
+<h3 id="模板方法模式">模板方法模式</h3>
+<hr>
+<h3 id="迭代子模式">迭代子模式</h3>
+<hr>
+<h3 id="责任链模式">责任链模式</h3>
+<hr>
+<h3 id="备忘录模式">备忘录模式</h3>
+<hr>
+<h3 id="访问者模式">访问者模式</h3>
+<hr>
+<h3 id="解释器模式">解释器模式</h3>
+<hr>
+<hr>
+<h2 id="其他模式">其他模式</h2>
+<h3 id="并发型模式">并发型模式</h3>
+<hr>
+<h3 id="线程池模式">线程池模式</h3>
 </article>
  
       
@@ -739,14 +778,6 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex justify-between">
 
 
-
-  <div>
-    
-    <a class="flex align-center" href="https://github.com/ikingye/interview/commit/d8fcc56e007d0cf9126e6335c0ebe8bfe6e49817" title='Last modified by yewang | 2021-02-16' target="_blank" rel="noopener">
-      <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2021-02-16</span>
-    </a>
-  </div>
 
 
 
@@ -800,7 +831,58 @@ https://github.com/alex-shpak/hugo-book
       
   <nav id="TableOfContents">
   <ul>
-    <li><a href="#适配器模式装饰模式代理模式有哪些异同">适配器模式、装饰模式、代理模式有哪些异同？</a></li>
+    <li><a href="#设计原则">设计原则</a>
+      <ul>
+        <li><a href="#单一职责原则-srp">单一职责原则 (<code>SRP</code>)</a></li>
+        <li><a href="#开闭原则-open-closed-principle">开闭原则 (<code>Open Closed Principle</code>)</a></li>
+        <li><a href="#里氏替换原则-liskov-substitution-principle">里氏替换原则 (<code>Liskov Substitution Principle</code>)</a></li>
+        <li><a href="#依赖倒置原则-dependence-inversion-principle">依赖倒置原则 (<code>Dependence Inversion Principle</code>)</a></li>
+        <li><a href="#接口隔离原则-interface-segregation-principle">接口隔离原则 (<code>Interface Segregation Principle</code>)</a></li>
+        <li><a href="#迪米特原则-demeter-principle">迪米特原则 (<code>Demeter Principle</code>)</a></li>
+      </ul>
+    </li>
+    <li><a href="#创建型模式">创建型模式</a>
+      <ul>
+        <li><a href="#简单工厂模式">简单工厂模式</a></li>
+        <li><a href="#工厂方法模式">工厂方法模式</a></li>
+        <li><a href="#抽象工厂模式">抽象工厂模式</a></li>
+        <li><a href="#建造者模式">建造者模式</a></li>
+        <li><a href="#单例模式">单例模式</a></li>
+      </ul>
+    </li>
+    <li><a href="#结构型模式">结构型模式</a>
+      <ul>
+        <li><a href="#适配器模式">适配器模式</a></li>
+        <li><a href="#桥接模式">桥接模式</a></li>
+        <li><a href="#装饰模式">装饰模式</a></li>
+        <li><a href="#外观模式">外观模式</a></li>
+        <li><a href="#享元模式">享元模式</a></li>
+        <li><a href="#代理模式">代理模式</a></li>
+        <li><a href="#组合模式">组合模式</a></li>
+        <li><a href="#适配器模式装饰模式代理模式有哪些异同">适配器模式、装饰模式、代理模式有哪些异同？</a></li>
+      </ul>
+    </li>
+    <li><a href="#行为型模式">行为型模式</a>
+      <ul>
+        <li><a href="#命令模式">命令模式</a></li>
+        <li><a href="#中介者模式">中介者模式</a></li>
+        <li><a href="#观察者模式">观察者模式</a></li>
+        <li><a href="#状态模式">状态模式</a></li>
+        <li><a href="#策略模式">策略模式</a></li>
+        <li><a href="#模板方法模式">模板方法模式</a></li>
+        <li><a href="#迭代子模式">迭代子模式</a></li>
+        <li><a href="#责任链模式">责任链模式</a></li>
+        <li><a href="#备忘录模式">备忘录模式</a></li>
+        <li><a href="#访问者模式">访问者模式</a></li>
+        <li><a href="#解释器模式">解释器模式</a></li>
+      </ul>
+    </li>
+    <li><a href="#其他模式">其他模式</a>
+      <ul>
+        <li><a href="#并发型模式">并发型模式</a></li>
+        <li><a href="#线程池模式">线程池模式</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
