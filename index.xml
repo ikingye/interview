@@ -11,7 +11,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/os/linux/</guid>
-      <description>Linux 硬件信息 如何查看内存大小？ free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ # 物理 cpu 个数 cat /proc/cpuinfo| grep &amp;#39;physical id&amp;#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &amp;#39;core id&amp;#39; | sort | uniq | wc -l # 逻辑 cpu 个数（线程数） cat /proc/cpuinfo| grep &amp;#39;processor&amp;#39; | sort | uniq | wc -l 例子：
+      <description>Linux 更多教程详见：Linux 学习笔记  硬件信息 如何查看内存大小？ free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ # 物理 cpu 个数 cat /proc/cpuinfo| grep &amp;#39;physical id&amp;#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &amp;#39;core id&amp;#39; | sort | uniq | wc -l # 逻辑 cpu 个数（线程数） cat /proc/cpuinfo| grep &amp;#39;processor&amp;#39; | sort | uniq | wc -l 例子：
  2 个 cpu 每个 cpu 有 8 个核心（一共 16 个核心） 一共有 32 个逻辑 cpu / 线程（每个核心有 2 个逻辑 cpu / 线程）   如何查看系统内核？ uname -a cat /proc/version 如何查看操作系统版本？ cat /etc/issue cat /etc/*release  运行信息 如何查看占用内存最多的进程？ 如何查看占用 CPU 最多的进程？ 如何查看占用某个端口的进程？ 如何查看文件被占用没被彻底删除（看不到文件，但是磁盘没有释放）？ lsof |grep deleted</description>
     </item>
     
@@ -113,15 +113,6 @@ XSS 发生的原因 没有将用户输入的文本进行合适的过滤，就贸
     </item>
     
     <item>
-      <title>内存</title>
-      <link>https://ikingye.github.io/interview/docs/os/memory/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview/docs/os/memory/</guid>
-      <description>内存 综合 程序加载的时候，是怎么分布的，哪些在堆里，哪些在栈里？  堆  栈 </description>
-    </item>
-    
-    <item>
       <title>动态规划</title>
       <link>https://ikingye.github.io/interview/docs/algs/dp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -187,15 +178,6 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
       
       <guid>https://ikingye.github.io/interview/docs/se/dp/</guid>
       <description>设计模式 设计原则 单一职责原则 (SRP)  开闭原则 (Open Closed Principle)  里氏替换原则 (Liskov Substitution Principle)  依赖倒置原则 (Dependence Inversion Principle)  接口隔离原则 (Interface Segregation Principle)  迪米特原则 (Demeter Principle)   创建型模式 简单工厂模式  工厂方法模式  抽象工厂模式  建造者模式  单例模式   结构型模式 适配器模式  桥接模式  装饰模式  外观模式  享元模式  代理模式  组合模式 适配器模式、装饰模式、代理模式有哪些异同？  适配器模式  适配器模式实现新接口   代理模式  代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。   装饰器模式  原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。      装饰器模式与代理模式实现原接口 都持有原对象  装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象    /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi { public void updateDate(String orderId, String date, String client); } public class SourceOrderApiImpl implements SourceOrderApi{ @Override public void updateDate(String orderId, String date, String client) { System.</description>
-    </item>
-    
-    <item>
-      <title>进程/线程/携程</title>
-      <link>https://ikingye.github.io/interview/docs/os/process/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://ikingye.github.io/interview/docs/os/process/</guid>
-      <description>进程/线程/携程 进程 一个进程包含哪些信息？  进程切换时，操作系统做了哪些事情？  进程切换时，需要保存哪些信息，保存在哪里？  线程 线程比进程轻量，体现在哪里？  什么时候使用线程，什么时候使用进程？  携程 协程是什么，怎么实现的？  既然协程那么好，那什么时候用进程和线程？ </description>
     </item>
     
     <item>

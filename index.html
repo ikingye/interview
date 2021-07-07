@@ -5,7 +5,7 @@
 	<meta name="generator" content="Hugo 0.83.1" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="计算机组成原理  基础  硬件  CPU 内存 磁盘     进阶 设计与实现    操作系统  基础  进程  一个进程包含哪些信息？ 进程切换时，操作系统做了哪些事情？  进程切换时，需要保存哪些信息，保存在哪里？     线程  线程比进程轻量，体现在哪里？ 什么时候使用线程，什么时候使用进程？   协程  协程是什么，怎么实现的？ 既然协程那么好，那什么时候用进程和线程？   堆栈  程序加载的时候，是怎么分布的，哪些在堆里，哪些在栈里？     进阶 设计与实现  Linux  基础  硬件信息  如何查看内存大小？ 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ 如何查看系统内核？ 如何查看操作系统版本？   运行信息  如何查看占用内存最多的进程？ 如何查看占用 CPU 最多的进程？ 如何查看占用某个端口的进程？ 如何查看文件被占用没被彻底删除（看不到文件，但是磁盘没有释放）？   shell  ps  ps aux 与 ps -ef 有什么区别？   lsof awk sed     进阶 设计与实现    网络  TCP/UDP/IP  TCP UDP IP   HTTP  基础  HTTP 状态码有哪些？ 301 和 302 有什么区别，分别适用于什么场景？ 101， 304， 307 分别是什么？ HTTP chunk 是什么？解决了什么问题？ HTTP/1."><meta property="og:title" content="首页" />
+<meta name="description" content="计算机组成原理  基础  硬件  CPU 内存 磁盘     进阶 设计与实现    操作系统  基础  进程  一个进程包含哪些信息？ 进程切换时，操作系统做了哪些事情？ 进程切换时，需要保存哪些信息，保存在哪里？   线程  线程比进程轻量，体现在哪里？ 什么时候使用线程，什么时候使用进程？   协程  协程是什么，怎么实现的？ 既然协程那么好，那什么时候用进程和线程？   堆栈  程序加载的时候，是怎么分布的，哪些在堆里，哪些在栈里？     进阶 设计与实现  Linux  基础  硬件信息  如何查看内存大小？ 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ 如何查看系统内核？ 如何查看操作系统版本？   运行信息  如何查看占用内存最多的进程？ 如何查看占用 CPU 最多的进程？ 如何查看占用某个端口的进程？ 如何查看文件被占用没被彻底删除（看不到文件，但是磁盘没有释放）？   shell  ps aux 与 ps -ef 有什么区别？ lsof awk sed     进阶 设计与实现    网络  基础  TCP UDP IP HTTP  HTTP 状态码有哪些？ 301 和 302 有什么区别，分别适用于什么场景？ 101， 304， 307 分别是什么？ HTTP/1."><meta property="og:title" content="首页" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://ikingye.github.io/interview/" />
@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="/interview/book.min.c0eac73c59ba8c4c46d8242add7197a5e648531e07527f69b31760f60ad40b5d.css" integrity="sha256-wOrHPFm6jExG2CQq3XGXpeZIUx4HUn9psxdg9grUC10=">
 
 
-<script defer src="/interview/en.search.min.8ca98327544c1f8e6cf0fae1420fcc8b85b87e93f596064dffac5f0d0c17ebeb.js" integrity="sha256-jKmDJ1RMH45s8PrhQg/Mi4W4fpP1lgZN/6xfDQwX6&#43;s="></script>
+<script defer src="/interview/en.search.min.acfd3d6cbc7b7e6efe12dd0e5f0a01554ff4e3c831a37163bad0a932f794e1bf.js" integrity="sha256-rP09bLx7fm7&#43;Et0OXwoBVU/048gxo3FjutCpMveU4b8="></script>
 
 <link rel="alternate" type="application/rss+xml" href="https://ikingye.github.io/interview/index.xml" title="面试笔记" />
 <!--
@@ -471,7 +471,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#计算机组成原理">计算机组成原理</a></li>
     <li><a href="#操作系统docsos"><a href="docs/os/">操作系统</a></a>
       <ul>
-        <li><a href="#linuxdocsoslinux"><a href="docs/os/linux/">Linux</a></a></li>
+        <li><a href="#linuxdocsoslinux"><a href="docs/os/linux">Linux</a></a></li>
       </ul>
     </li>
     <li><a href="#网络">网络</a></li>
@@ -510,18 +510,21 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#大数据">大数据</a></li>
     <li><a href="#人工智能docsai"><a href="docs/ai/">人工智能</a></a>
       <ul>
-        <li><a href="#机器学习docsaiml"><a href="docs/ai/ml/">机器学习</a></a></li>
-        <li><a href="#深度学习">深度学习</a></li>
+        <li><a href="#机器学习docsaiml"><a href="docs/ai/ml/">机器学习</a></a>
+          <ul>
+            <li><a href="#深度学习">深度学习</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#后端">后端</a>
       <ul>
         <li><a href="#web-后端">Web 后端</a>
           <ul>
-            <li><a href="#go-web-后端">Go Web 后端</a></li>
-            <li><a href="#java-web-后端">Java Web 后端</a></li>
-            <li><a href="#php-web-后端">PHP Web 后端</a></li>
-            <li><a href="#python-web-后端">Python Web 后端</a></li>
+            <li><a href="#go-web">Go Web</a></li>
+            <li><a href="#java-web">Java Web</a></li>
+            <li><a href="#php-web">PHP Web</a></li>
+            <li><a href="#python-web">Python Web</a></li>
           </ul>
         </li>
         <li><a href="#数据库">数据库</a></li>
@@ -579,11 +582,8 @@ https://github.com/alex-shpak/hugo-book
 <li>进程
 <ul>
 <li><input disabled="" type="checkbox"> 一个进程包含哪些信息？</li>
-<li><input disabled="" type="checkbox"> 进程切换时，操作系统做了哪些事情？
-<ul>
+<li><input disabled="" type="checkbox"> 进程切换时，操作系统做了哪些事情？</li>
 <li><input disabled="" type="checkbox"> 进程切换时，需要保存哪些信息，保存在哪里？</li>
-</ul>
-</li>
 </ul>
 </li>
 <li>线程
@@ -608,7 +608,7 @@ https://github.com/alex-shpak/hugo-book
 <li>进阶</li>
 <li>设计与实现</li>
 </ul>
-<h3 id="linuxdocsoslinux"><a href="docs/os/linux/">Linux</a></h3>
+<h3 id="linuxdocsoslinux"><a href="docs/os/linux">Linux</a></h3>
 <ul>
 <li>基础
 <ul>
@@ -630,11 +630,7 @@ https://github.com/alex-shpak/hugo-book
 </li>
 <li>shell
 <ul>
-<li><input disabled="" type="checkbox"> ps
-<ul>
 <li><input disabled="" type="checkbox"> ps aux 与 ps -ef 有什么区别？</li>
-</ul>
-</li>
 <li><input disabled="" type="checkbox"> lsof</li>
 <li><input disabled="" type="checkbox"> awk</li>
 <li><input disabled="" type="checkbox"> sed</li>
@@ -649,54 +645,49 @@ https://github.com/alex-shpak/hugo-book
 <hr>
 <h2 id="网络">网络</h2>
 <ul>
-<li><a href="docs/network/tcp">TCP/UDP/IP</a>
+<li>基础
 <ul>
-<li><input disabled="" type="checkbox"> TCP</li>
-<li><input disabled="" type="checkbox"> UDP</li>
-<li><input disabled="" type="checkbox"> IP</li>
-</ul>
-</li>
+<li>TCP</li>
+<li>UDP</li>
+<li>IP</li>
 <li><a href="docs/network/http">HTTP</a>
-<ul>
-<li><input disabled="" type="checkbox"> 基础
 <ul>
 <li><input disabled="" type="checkbox"> HTTP 状态码有哪些？</li>
 <li><input disabled="" type="checkbox"> 301 和 302 有什么区别，分别适用于什么场景？</li>
 <li><input disabled="" type="checkbox"> 101， 304， 307 分别是什么？</li>
-<li><input disabled="" type="checkbox"> HTTP chunk 是什么？解决了什么问题？</li>
 <li><input checked="" disabled="" type="checkbox"> HTTP/1.1 有哪些问题？</li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> 进阶
-<ul>
 <li><input checked="" disabled="" type="checkbox"> HTTP2 有哪些特点？</li>
-<li><input disabled="" type="checkbox"> HTTP2 多路复用是如何实现的？</li>
-<li><input disabled="" type="checkbox"> HTTPS 握手过程？</li>
-</ul>
-</li>
 </ul>
 </li>
 <li><a href="docs/network/capture">抓包</a>
 <ul>
-<li><input disabled="" type="checkbox"> 综合
-<ul>
 <li><input disabled="" type="checkbox"> 常用抓包工具有哪些？分别有什么特点，适用于什么场景？</li>
-</ul>
-</li>
-<li><input disabled="" type="checkbox"> tcpdump</li>
-<li><input disabled="" type="checkbox"> wireshark</li>
+<li>tcpdump</li>
+<li>wireshark</li>
 </ul>
 </li>
 <li><a href="docs/network/send">发包</a>
 <ul>
-<li><input disabled="" type="checkbox"> 综合
+<li>常用发包工具有哪些？分别有什么特点，适用于什么场景？</li>
+<li>PacketSender</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>进阶
 <ul>
-<li><input disabled="" type="checkbox"> 常用发包工具有哪些？分别有什么特点，适用于什么场景？</li>
+<li><input disabled="" type="checkbox"> HTTP chunk 是什么？解决了什么问题？</li>
+<li><input disabled="" type="checkbox"> HTTP2 多路复用是如何实现的？</li>
+<li><input disabled="" type="checkbox"> HTTPS 握手过程？</li>
+<li>TCP
+<ul>
+<li><input disabled="" type="checkbox"> TCP 滑动窗口</li>
+<li><input disabled="" type="checkbox"> TCP 粘包</li>
 </ul>
 </li>
-<li><input disabled="" type="checkbox"> PacketSender</li>
 </ul>
 </li>
+<li>设计与实现</li>
 </ul>
 <hr>
 <hr>
@@ -998,15 +989,17 @@ https://github.com/alex-shpak/hugo-book
 <hr>
 <h3 id="项目管理">项目管理</h3>
 <ul>
-<li><input disabled="" type="checkbox"> 敏捷开发
+<li>基础
+<ul>
+<li>敏捷开发
 <ul>
 <li><input disabled="" type="checkbox"> 什么是敏捷开发？</li>
 </ul>
 </li>
 <li>绩效管理
 <ul>
-<li><input disabled="" type="checkbox"> KPI</li>
-<li><input disabled="" type="checkbox"> OKR
+<li>KPI</li>
+<li>OKR
 <ul>
 <li><input disabled="" type="checkbox"> 什么是 OKR，比 KPI 好在哪里？</li>
 <li><input disabled="" type="checkbox"> 如何做好 OKR 制定？</li>
@@ -1014,6 +1007,10 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 </li>
+</ul>
+</li>
+<li>进阶</li>
+<li>设计与实现</li>
 </ul>
 <hr>
 <hr>
@@ -1056,6 +1053,7 @@ https://github.com/alex-shpak/hugo-book
 <li><input disabled="" type="checkbox"> kubectl get pod 排序</li>
 <li><input disabled="" type="checkbox"> 日志存在哪里</li>
 <li><input disabled="" type="checkbox"> coredns: <code>curl a</code> 与 <code>curl a.default</code>，哪个效率更高的</li>
+<li><input disabled="" type="checkbox"> ReplicationController vs Replicaset vs Deployment</li>
 </ul>
 </li>
 <li>进阶
@@ -1072,30 +1070,55 @@ https://github.com/alex-shpak/hugo-book
 <hr>
 <hr>
 <h2 id="大数据">大数据</h2>
+<ul>
+<li>基础</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
 <hr>
 <hr>
 <h2 id="人工智能docsai"><a href="docs/ai/">人工智能</a></h2>
+<ul>
+<li>基础</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
 <h3 id="机器学习docsaiml"><a href="docs/ai/ml/">机器学习</a></h3>
-<h3 id="深度学习">深度学习</h3>
+<ul>
+<li>基础</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
+<h4 id="深度学习">深度学习</h4>
+<ul>
+<li>基础</li>
+<li>进阶</li>
+<li>设计与实现</li>
+</ul>
 <hr>
 <hr>
 <h2 id="后端">后端</h2>
 <h3 id="web-后端">Web 后端</h3>
-<h4 id="go-web-后端">Go Web 后端</h4>
 <ul>
-<li><input disabled="" type="checkbox"> <a href="docs/backend/web/go/beego">Beego</a></li>
-<li><input disabled="" type="checkbox"> <a href="docs/backend/web/go/gin">Gin</a></li>
+<li>基础</li>
+<li>进阶</li>
+<li>设计与实现</li>
 </ul>
-<h4 id="java-web-后端">Java Web 后端</h4>
+<h4 id="go-web">Go Web</h4>
 <ul>
-<li><input disabled="" type="checkbox"> <a href="docs/backend/web/java/spring">Spring</a></li>
+<li><a href="docs/backend/web/go/beego">Beego</a></li>
+<li><a href="docs/backend/web/go/gin">Gin</a></li>
 </ul>
-<h4 id="php-web-后端">PHP Web 后端</h4>
+<h4 id="java-web">Java Web</h4>
 <ul>
-<li><input disabled="" type="checkbox"> fastcgi</li>
-<li><input disabled="" type="checkbox"> Laravel</li>
+<li><a href="docs/backend/web/java/spring">Spring</a></li>
 </ul>
-<h4 id="python-web-后端">Python Web 后端</h4>
+<h4 id="php-web">PHP Web</h4>
+<ul>
+<li>fastcgi</li>
+<li>Laravel</li>
+</ul>
+<h4 id="python-web">Python Web</h4>
 <hr>
 <h3 id="数据库">数据库</h3>
 <ul>
@@ -1355,7 +1378,7 @@ https://github.com/alex-shpak/hugo-book
 
   <div>
     
-    <a class="flex align-center" href="https://github.com/ikingye/interview/commit/22a51cc9c3faf861aae17fbfc4cbfdf4d4751f8d" title='Last modified by yewang | 2021-07-07' target="_blank" rel="noopener">
+    <a class="flex align-center" href="https://github.com/ikingye/interview/commit/e6a4cce4d5ad5628ee846147b7fb694d01cca932" title='Last modified by yewang | 2021-07-07' target="_blank" rel="noopener">
       <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
       <span>2021-07-07</span>
     </a>
@@ -1416,7 +1439,7 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#计算机组成原理">计算机组成原理</a></li>
     <li><a href="#操作系统docsos"><a href="docs/os/">操作系统</a></a>
       <ul>
-        <li><a href="#linuxdocsoslinux"><a href="docs/os/linux/">Linux</a></a></li>
+        <li><a href="#linuxdocsoslinux"><a href="docs/os/linux">Linux</a></a></li>
       </ul>
     </li>
     <li><a href="#网络">网络</a></li>
@@ -1455,18 +1478,21 @@ https://github.com/alex-shpak/hugo-book
     <li><a href="#大数据">大数据</a></li>
     <li><a href="#人工智能docsai"><a href="docs/ai/">人工智能</a></a>
       <ul>
-        <li><a href="#机器学习docsaiml"><a href="docs/ai/ml/">机器学习</a></a></li>
-        <li><a href="#深度学习">深度学习</a></li>
+        <li><a href="#机器学习docsaiml"><a href="docs/ai/ml/">机器学习</a></a>
+          <ul>
+            <li><a href="#深度学习">深度学习</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#后端">后端</a>
       <ul>
         <li><a href="#web-后端">Web 后端</a>
           <ul>
-            <li><a href="#go-web-后端">Go Web 后端</a></li>
-            <li><a href="#java-web-后端">Java Web 后端</a></li>
-            <li><a href="#php-web-后端">PHP Web 后端</a></li>
-            <li><a href="#python-web-后端">Python Web 后端</a></li>
+            <li><a href="#go-web">Go Web</a></li>
+            <li><a href="#java-web">Java Web</a></li>
+            <li><a href="#php-web">PHP Web</a></li>
+            <li><a href="#python-web">Python Web</a></li>
           </ul>
         </li>
         <li><a href="#数据库">数据库</a></li>
