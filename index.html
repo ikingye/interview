@@ -15,7 +15,7 @@
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.4d0df96a78abf98c90270dc9fcffdce5a08561d3a569f8ea47ce9063434a3b8b.js" integrity="sha256-TQ35anir&#43;YyQJw3J/P/c5aCFYdOlafjqR86QY0NKO4s="></script>
+<script defer src="/interview/en.search.min.ad15095e3a1bea152a8dccbeb54f93267cb1955338d0ebdb5dbb27bcf3b38fcd.js" integrity="sha256-rRUJXjob6hUqjcy&#43;tU&#43;TJnyxlVM40OvbXbsnvPOzj80="></script>
 <link rel="alternate" type="application/rss+xml" href="https://ikingye.github.io/interview/index.xml" title="面试笔记" />
 <!--
 Made with Book Theme
@@ -1479,7 +1479,22 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#cdocsplcpp">#</a>
 </h3>
 <ul>
-<li>基础</li>
+<li>基础
+<ul>
+<li>C++ 虚函数
+<ul>
+<li>构造函数可以是虚函数吗</li>
+<li>是否可以把所有函数设为虚函数</li>
+</ul>
+</li>
+<li>重载和覆盖</li>
+<li>多态</li>
+<li>指针和引用的区别（引用定义时必须初始化）</li>
+<li>C++ 空类默认有哪些成员函数（默认构造函数、析构函数、复制构造函数、赋值函数）</li>
+<li>main 函数执行之前会执行什么（全局对象的构造函数会在 main 函数之前执行）</li>
+<li>如何避免“野指针”</li>
+</ul>
+</li>
 <li>进阶</li>
 <li>设计与实现</li>
 </ul>
@@ -1528,6 +1543,10 @@ https://github.com/alex-shpak/hugo-book
 <li><input disabled="" type="checkbox"> gvm</li>
 </ul>
 </li>
+<li>init() 函数是什么时候执行的</li>
+<li>2 个 interface 可以比较</li>
+<li>2 个 nil 可能不相等</li>
+<li>函数返回局部变量的指针是否安全</li>
 </ul>
 </li>
 <li>进阶
@@ -1545,6 +1564,7 @@ https://github.com/alex-shpak/hugo-book
 <li><input disabled="" type="checkbox"> 为什么 Go 需要自己实现调度器？</li>
 </ul>
 </li>
+<li>GC</li>
 <li>性能
 <ul>
 <li><input disabled="" type="checkbox"> pprof</li>
@@ -1556,6 +1576,7 @@ https://github.com/alex-shpak/hugo-book
 <li><input disabled="" type="checkbox"> Go 插件系统是如何实现的？</li>
 </ul>
 </li>
+<li>什么是协程泄露(Goroutine Leak)</li>
 </ul>
 </li>
 <li>设计与实现
@@ -1582,6 +1603,7 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li><input disabled="" type="checkbox"> 异常处理</li>
 <li><input disabled="" type="checkbox"> 类的加载机制</li>
+<li><input disabled="" type="checkbox"> 反射</li>
 </ul>
 </li>
 <li>设计与实现
@@ -2250,9 +2272,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/ikingye/interview/commit/f9ebed1c1c80458740ec0c8ba76a4b2ec81e82b0" title='Last modified by yewang | 2021-07-08' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/interview/commit/812ae4cac238203e3df4a9916a5bf9865c745cca" title='Last modified by yewang | 2021-07-13' target="_blank" rel="noopener">
       <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2021-07-08</span>
+      <span>2021-07-13</span>
     </a>
   </div>
 

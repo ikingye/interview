@@ -6,10 +6,10 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Go #  更多教程详见：
- Go 高手进阶 Go 设计与实现 Go 学习笔记   基础 #  你现在使用的是什么版本？最新版本是什么，相对有哪些变化？ #  go 版本管理工具，gvm 如何使用？ #   简单说说 Go 包管理工具的发展历史？ #   Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules    你用过哪些 Go 包管理工具，说说它们的优缺点？ #    golang/dep   Masterminds/glide   kardianos/govendor   Go Mod 相对之前的版本管理有哪些优点？ #   可以指定版本   Go Mod 如何找到引用的包？ #  一般情况：">
+ Go 高手进阶 Go 设计与实现 Go 学习笔记 shgopher/GOFamily  geektutu/interview-questions    基础 #  你现在使用的是什么版本？最新版本是什么，相对有哪些变化？ #  go 版本管理工具，gvm 如何使用？ #   简单说说 Go 包管理工具的发展历史？ #   Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Go" />
 <meta property="og:description" content="Go #  更多教程详见：
- Go 高手进阶 Go 设计与实现 Go 学习笔记   基础 #  你现在使用的是什么版本？最新版本是什么，相对有哪些变化？ #  go 版本管理工具，gvm 如何使用？ #   简单说说 Go 包管理工具的发展历史？ #   Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules    你用过哪些 Go 包管理工具，说说它们的优缺点？ #    golang/dep   Masterminds/glide   kardianos/govendor   Go Mod 相对之前的版本管理有哪些优点？ #   可以指定版本   Go Mod 如何找到引用的包？ #  一般情况：" />
+ Go 高手进阶 Go 设计与实现 Go 学习笔记 shgopher/GOFamily  geektutu/interview-questions    基础 #  你现在使用的是什么版本？最新版本是什么，相对有哪些变化？ #  go 版本管理工具，gvm 如何使用？ #   简单说说 Go 包管理工具的发展历史？ #   Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/interview/docs/pl/go/" /><meta property="article:section" content="docs" />
 
@@ -19,7 +19,7 @@
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.4d0df96a78abf98c90270dc9fcffdce5a08561d3a569f8ea47ce9063434a3b8b.js" integrity="sha256-TQ35anir&#43;YyQJw3J/P/c5aCFYdOlafjqR86QY0NKO4s="></script>
+<script defer src="/interview/en.search.min.ad15095e3a1bea152a8dccbeb54f93267cb1955338d0ebdb5dbb27bcf3b38fcd.js" integrity="sha256-rRUJXjob6hUqjcy&#43;tU&#43;TJnyxlVM40OvbXbsnvPOzj80="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1230,6 +1230,8 @@ https://github.com/alex-shpak/hugo-book
 <li><a href="https://kingye.me/advanced-go/">Go 高手进阶</a></li>
 <li><a href="https://kingye.me/dai-go/">Go 设计与实现</a></li>
 <li><a href="https://kingye.me/study-go/">Go 学习笔记</a></li>
+<li><a href="https://github.com/shgopher/GOFamily">shgopher/GOFamily</a> <img src="https://img.shields.io/github/stars/shgopher/GOFamily.svg" alt="Github stars"> <img src="https://img.shields.io/github/languages/top/shgopher/GOFamily.svg" alt="Language"> <img src="https://img.shields.io/github/v/tag/shgopher/GOFamily.svg?sort=semver" alt="Last Tag"> <img src="https://img.shields.io/github/last-commit/shgopher/GOFamily.svg" alt="Last commit"></li>
+<li><a href="https://github.com/geektutu/interview-questions">geektutu/interview-questions</a> <img src="https://img.shields.io/github/stars/geektutu/interview-questions.svg" alt="Github stars"> <img src="https://img.shields.io/github/languages/top/geektutu/interview-questions.svg" alt="Language"> <img src="https://img.shields.io/github/v/tag/geektutu/interview-questions.svg?sort=semver" alt="Last Tag"> <img src="https://img.shields.io/github/last-commit/geektutu/interview-questions.svg" alt="Last commit"></li>
 </ul>
 
 </blockquote>

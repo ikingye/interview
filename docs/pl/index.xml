@@ -20,7 +20,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/cpp/</guid>
-      <description>C++ #  更多教程详见：C++ 学习笔记  基础 #    进阶 #    设计与实现 #  </description>
+      <description>C++ #  更多教程详见：
+ C++ 学习笔记 huihut/interview    基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
@@ -30,7 +31,7 @@
       
       <guid>https://ikingye.github.io/interview/docs/pl/go/</guid>
       <description>Go #  更多教程详见：
- Go 高手进阶 Go 设计与实现 Go 学习笔记   基础 #  你现在使用的是什么版本？最新版本是什么，相对有哪些变化？ #  go 版本管理工具，gvm 如何使用？ #   简单说说 Go 包管理工具的发展历史？ #   Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.13 及之后  默认使用 Go Modules    你用过哪些 Go 包管理工具，说说它们的优缺点？ #    golang/dep   Masterminds/glide   kardianos/govendor   Go Mod 相对之前的版本管理有哪些优点？ #   可以指定版本   Go Mod 如何找到引用的包？ #  一般情况：</description>
+ Go 高手进阶 Go 设计与实现 Go 学习笔记 shgopher/GOFamily  geektutu/interview-questions    基础 #  你现在使用的是什么版本？最新版本是什么，相对有哪些变化？ #  go 版本管理工具，gvm 如何使用？ #   简单说说 Go 包管理工具的发展历史？ #   Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.</description>
     </item>
     
     <item>
@@ -39,7 +40,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/java/</guid>
-      <description>Java #  更多教程详见：Java 学习笔记  基础 #    进阶 #    设计与实现 #  </description>
+      <description>Java #  更多教程详见：
+ Java 学习笔记 Snailclimb/JavaGuide    基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
@@ -67,7 +69,7 @@
       
       <guid>https://ikingye.github.io/interview/docs/pl/php/</guid>
       <description>PHP #  更多教程详见：
- PHP 高手进阶 PHP 学习笔记   基础 #    进阶 #    设计与实现 #  </description>
+ PHP 高手进阶 PHP 学习笔记 colinlet/PHP-Interview-QA    基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
@@ -76,7 +78,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/pl/python/</guid>
-      <description>Python #  更多教程详见：Python 学习笔记  基础 #    进阶 #    设计与实现 #  </description>
+      <description>Python #  更多教程详见：
+ Python 学习笔记 taizilongxu/interview_python  kenwoodjw/python_interview_question    基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
