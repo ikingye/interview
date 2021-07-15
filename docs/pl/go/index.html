@@ -6,20 +6,24 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Go #  更多教程详见：
- Go 高手进阶 Go 设计与实现 Go 学习笔记 shgopher/GOFamily  geektutu/interview-questions    基础 #  你现在使用的是什么版本？最新版本是什么，相对有哪些变化？ #  go 版本管理工具，gvm 如何使用？ #   简单说说 Go 包管理工具的发展历史？ #   Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1.">
+ Go 高手进阶 Go 设计与实现 Go 学习笔记 shgopher/GOFamily  geektutu/interview-questions    基础 #  标准库 #  为什么需要 response.Body.Close()？ #  为了 TCP 连接复用
+// The default HTTP client&#39;s Transport does not // attempt to reuse HTTP/1.0 or HTTP/1.1 TCP connections // (keep-alive) unless the Body is read to completion and is // closed. 读取 body 并关闭，才会复用 TCP 连接
+for _, route := range routes { res, err := Request(route.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Go" />
 <meta property="og:description" content="Go #  更多教程详见：
- Go 高手进阶 Go 设计与实现 Go 学习笔记 shgopher/GOFamily  geektutu/interview-questions    基础 #  你现在使用的是什么版本？最新版本是什么，相对有哪些变化？ #  go 版本管理工具，gvm 如何使用？ #   简单说说 Go 包管理工具的发展历史？ #   Go 1.4 及之前  所有的依赖包都是存放在 GOPATH 下，没有版本控制   Go 1.5 至 Go 1.10  每个项目的根目录下可以有一个 vendor 目录，里面存放了该项目的依赖的包   Go 1.11 至 Go 1.12  默认使用的还是 GOPATH 的管理方式 运行 export GO111MODULE=on，使用 Go Modules   Go 1." />
+ Go 高手进阶 Go 设计与实现 Go 学习笔记 shgopher/GOFamily  geektutu/interview-questions    基础 #  标准库 #  为什么需要 response.Body.Close()？ #  为了 TCP 连接复用
+// The default HTTP client&#39;s Transport does not // attempt to reuse HTTP/1.0 or HTTP/1.1 TCP connections // (keep-alive) unless the Body is read to completion and is // closed. 读取 body 并关闭，才会复用 TCP 连接
+for _, route := range routes { res, err := Request(route." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/interview/docs/pl/go/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-07-07T20:50:02&#43;08:00" />
+<meta property="article:modified_time" content="2021-07-14T18:12:36&#43;08:00" />
 
 <title>Go | 面试笔记</title>
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.ad15095e3a1bea152a8dccbeb54f93267cb1955338d0ebdb5dbb27bcf3b38fcd.js" integrity="sha256-rRUJXjob6hUqjcy&#43;tU&#43;TJnyxlVM40OvbXbsnvPOzj80="></script>
+<script defer src="/interview/en.search.min.d8d680e38528e8458a360d6c6b0310cddacf0467a0dcb8d81ba15a7da0fdafbb.js" integrity="sha256-2NaA44Uo6EWKNg1sawMQzdrPBGeg3LjYG6FafaD9r7s="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1168,6 +1172,11 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#基础">基础</a>
       <ul>
+        <li><a href="#标准库">标准库</a>
+          <ul>
+            <li><a href="#为什么需要-responsebodyclose">为什么需要 <code>response.Body.Close()</code>？</a></li>
+          </ul>
+        </li>
         <li><a href="#你现在使用的是什么版本最新版本是什么相对有哪些变化">你现在使用的是什么版本？最新版本是什么，相对有哪些变化？</a>
           <ul>
             <li><a href="#go-版本管理工具gvm-如何使用">go 版本管理工具，gvm 如何使用？</a></li>
@@ -1240,6 +1249,35 @@ https://github.com/alex-shpak/hugo-book
   基础
   <a class="anchor" href="#%e5%9f%ba%e7%a1%80">#</a>
 </h2>
+<h3 id="标准库">
+  标准库
+  <a class="anchor" href="#%e6%a0%87%e5%87%86%e5%ba%93">#</a>
+</h3>
+<h4 id="为什么需要-responsebodyclose">
+  为什么需要 <code>response.Body.Close()</code>？
+  <a class="anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81-responsebodyclose">#</a>
+</h4>
+<p>为了 TCP 连接复用</p>
+<pre><code>// The default HTTP client's Transport does not
+// attempt to reuse HTTP/1.0 or HTTP/1.1 TCP connections
+// (keep-alive) unless the Body is read to completion and is
+// closed.
+</code></pre><p>读取 body 并关闭，才会复用 TCP 连接</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">route</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">routes</span> {
+    <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Request</span>(<span style="color:#a6e22e">route</span>.<span style="color:#a6e22e">method</span>, <span style="color:#a6e22e">ts</span>.<span style="color:#a6e22e">URL</span><span style="color:#f92672">+</span><span style="color:#a6e22e">route</span>.<span style="color:#a6e22e">path</span>)
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+        panic(<span style="color:#a6e22e">err</span>)
+    }
+    <span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">Copy</span>(<span style="color:#a6e22e">ioutil</span>.<span style="color:#a6e22e">Discard</span>, <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">Body</span>)
+    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">Body</span>.<span style="color:#a6e22e">Close</span>()
+}
+</code></pre></div><p>参考：</p>
+<ul>
+<li><a href="https://blog.csdn.net/bdss58/article/details/102225632">为什么必须手动关闭 resp.Body</a></li>
+<li><a href="https://gocn.vip/topics/8470">can&rsquo;t assign requested address 错误解决</a></li>
+<li><a href="https://segmentfault.com/a/1190000020086816">Go Http 包解析：为什么需要 response.Body.Close()</a></li>
+</ul>
+<hr>
 <h3 id="你现在使用的是什么版本最新版本是什么相对有哪些变化">
   你现在使用的是什么版本？最新版本是什么，相对有哪些变化？
   <a class="anchor" href="#%e4%bd%a0%e7%8e%b0%e5%9c%a8%e4%bd%bf%e7%94%a8%e7%9a%84%e6%98%af%e4%bb%80%e4%b9%88%e7%89%88%e6%9c%ac%e6%9c%80%e6%96%b0%e7%89%88%e6%9c%ac%e6%98%af%e4%bb%80%e4%b9%88%e7%9b%b8%e5%af%b9%e6%9c%89%e5%93%aa%e4%ba%9b%e5%8f%98%e5%8c%96">#</a>
@@ -1490,9 +1528,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/ikingye/interview/commit/986cbaf6866f611e79bd08c11a53f49cc2f1ab8a" title='Last modified by yewang | 2021-07-07' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/interview/commit/85ff1ed38ea8c35c976398820b1e7abee9ba6534" title='Last modified by yewang | 2021-07-14' target="_blank" rel="noopener">
       <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2021-07-07</span>
+      <span>2021-07-14</span>
     </a>
   </div>
 
@@ -1552,6 +1590,11 @@ https://github.com/alex-shpak/hugo-book
   <ul>
     <li><a href="#基础">基础</a>
       <ul>
+        <li><a href="#标准库">标准库</a>
+          <ul>
+            <li><a href="#为什么需要-responsebodyclose">为什么需要 <code>response.Body.Close()</code>？</a></li>
+          </ul>
+        </li>
         <li><a href="#你现在使用的是什么版本最新版本是什么相对有哪些变化">你现在使用的是什么版本？最新版本是什么，相对有哪些变化？</a>
           <ul>
             <li><a href="#go-版本管理工具gvm-如何使用">go 版本管理工具，gvm 如何使用？</a></li>
