@@ -1481,15 +1481,18 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>基础
 <ul>
+<li>多态
+<ul>
+<li>重载和覆盖</li>
+</ul>
+</li>
+<li>指针和引用的区别（引用定义时必须初始化）</li>
 <li>C++ 虚函数
 <ul>
 <li>构造函数可以是虚函数吗</li>
 <li>是否可以把所有函数设为虚函数</li>
 </ul>
 </li>
-<li>重载和覆盖</li>
-<li>多态</li>
-<li>指针和引用的区别（引用定义时必须初始化）</li>
 <li>C++ 空类默认有哪些成员函数（默认构造函数、析构函数、复制构造函数、赋值函数）</li>
 <li>main 函数执行之前会执行什么（全局对象的构造函数会在 main 函数之前执行）</li>
 <li>如何避免“野指针”</li>
@@ -1506,24 +1509,16 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>基础
 <ul>
-<li>数据结构
-<ul>
 <li><input disabled="" type="checkbox"> 什么时候使用数组？</li>
 <li><input disabled="" type="checkbox"> 只读/只写 channel
 <ul>
 <li>只读 <code>var chanName &lt;-chan chanType</code></li>
 <li>只写 <code>var chanName chan&lt;- chanType</code></li>
-</ul>
-</li>
 <li><input disabled="" type="checkbox"> 通道如何优雅关闭？</li>
 </ul>
 </li>
-<li>关键字
-<ul>
 <li><input checked="" disabled="" type="checkbox"> make, new 有什么区别？</li>
 <li><input disabled="" type="checkbox"> panic, recover 是怎么实现的？</li>
-</ul>
-</li>
 <li>标准库
 <ul>
 <li><input disabled="" type="checkbox"> time
@@ -1565,6 +1560,7 @@ https://github.com/alex-shpak/hugo-book
 <li>工程化
 <ul>
 <li><input disabled="" type="checkbox"> 单元测试</li>
+<li><input disabled="" type="checkbox"> 性能测试</li>
 <li><input disabled="" type="checkbox"> Makefile</li>
 </ul>
 </li>
@@ -1588,6 +1584,8 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li>什么是协程泄露(Goroutine Leak)</li>
+<li>如何理解<code>不要通过共享内存来通信，而应该通过通信来共享内存</code></li>
+<li>反射</li>
 </ul>
 </li>
 <li>设计与实现
