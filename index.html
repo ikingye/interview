@@ -1512,80 +1512,52 @@ https://github.com/alex-shpak/hugo-book
 <li><input disabled="" type="checkbox"> 什么时候使用数组？</li>
 <li><input disabled="" type="checkbox"> 只读/只写 channel
 <ul>
-<li>只读 <code>var chanName &lt;-chan chanType</code></li>
-<li>只写 <code>var chanName chan&lt;- chanType</code></li>
-<li><input disabled="" type="checkbox"> 通道如何优雅关闭？</li>
+<li>只读 <code>var chanName &lt;-chan chanType</code>，只写 <code>var chanName chan&lt;- chanType</code></li>
+<li>通道如何优雅关闭？</li>
+<li>无缓冲 chan 的发送和接收是否同步</li>
 </ul>
 </li>
 <li><input checked="" disabled="" type="checkbox"> make, new 有什么区别？</li>
 <li><input disabled="" type="checkbox"> panic, recover 是怎么实现的？</li>
 <li>标准库
 <ul>
-<li><input disabled="" type="checkbox"> time
+<li>time，格式化</li>
+<li>net，为什么需要 response.Body.Close()</li>
+<li>JSON 标准库对 nil slice 和 空 slice 的处理是一致的吗</li>
+<li>time.Now() 返回的是什么时间</li>
+</ul>
+</li>
+<li>包管理历史，go.sum，go mod，replace
 <ul>
-<li><input disabled="" type="checkbox"> 格式化</li>
+<li>在 Vendor 特性之前包管理工具是怎么实现的</li>
 </ul>
 </li>
-<li>net
-<ul>
-<li><input disabled="" type="checkbox"> 为什么需要 response.Body.Close()</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>包管理
-<ul>
-<li><input checked="" disabled="" type="checkbox"> 简单说说 Go 包管理工具的发展历史？</li>
-<li><input disabled="" type="checkbox"> 你用过哪些 Go 包管理工具，说说它们的优缺点？</li>
-<li><input disabled="" type="checkbox"> Go Mod 相对之前的版本管理有哪些优点？</li>
-<li><input disabled="" type="checkbox"> Go Mod 如何找到引用的包？</li>
-<li><input disabled="" type="checkbox"> <code>replace</code> 语法有什么作用？</li>
-<li><input disabled="" type="checkbox"> <code>go.sum</code> 文件有什么用？是否应该加入版本管理？是如何生成的？</li>
-</ul>
-</li>
-<li>go 版本
-<ul>
-<li><input disabled="" type="checkbox"> 你现在使用的是什么版本？最新版本是什么，相对有哪些变化？</li>
-<li><input disabled="" type="checkbox"> gvm</li>
-</ul>
-</li>
+<li>go 版本，gvm</li>
 <li>init() 函数是什么时候执行的</li>
 <li>2 个 interface 可以比较</li>
 <li>2 个 nil 可能不相等</li>
-<li>函数返回局部变量的指针是否安全</li>
+<li>函数返回<strong>局部变量的指针</strong>是否安全</li>
 </ul>
 </li>
 <li>进阶
 <ul>
-<li>工程化
-<ul>
-<li><input disabled="" type="checkbox"> 单元测试</li>
-<li><input disabled="" type="checkbox"> 性能测试</li>
+<li>单元测试，性能测试</li>
 <li><input disabled="" type="checkbox"> Makefile</li>
-</ul>
-</li>
 <li>Goroutine
 <ul>
-<li><input disabled="" type="checkbox"> Goroutine 为什么高效？</li>
-<li><input disabled="" type="checkbox"> Goroutine 如何调度？</li>
-<li><input disabled="" type="checkbox"> 为什么 Go 需要自己实现调度器？</li>
+<li>调度</li>
+<li>golang 采用什么并发模型</li>
+<li>除了 mutex 以外还有那些方式安全读写共享变量</li>
 </ul>
 </li>
+<li>golang 的 sync.atomic 和 C++11 的 atomic 的区别</li>
+<li>sync.RWMutex 最主要的性能问题最容易在什么常见场景下暴露。有哪些解决或者规避方法</li>
 <li>GC</li>
-<li>性能
-<ul>
-<li><input disabled="" type="checkbox"> pprof</li>
-</ul>
-</li>
-<li>Go 插件系统
-<ul>
-<li><input disabled="" type="checkbox"> Go 插件系统的应用场景？</li>
-<li><input disabled="" type="checkbox"> Go 插件系统是如何实现的？</li>
-</ul>
-</li>
+<li>pprof</li>
+<li>Go 插件系统</li>
+<li>反射</li>
 <li>什么是协程泄露(Goroutine Leak)</li>
 <li>如何理解<code>不要通过共享内存来通信，而应该通过通信来共享内存</code></li>
-<li>反射</li>
 </ul>
 </li>
 <li>设计与实现
@@ -2285,9 +2257,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/ikingye/interview/commit/fa568c2f0da3fc7840d8e11886c9d32e1f71300d" title='Last modified by yewang | 2021-07-16' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/interview/commit/f66e35e9e3e0b52762b6fc6add5c6e3c4b600481" title='Last modified by yewang | 2021-07-21' target="_blank" rel="noopener">
       <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2021-07-16</span>
+      <span>2021-07-21</span>
     </a>
   </div>
 
