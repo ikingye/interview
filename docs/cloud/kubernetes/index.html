@@ -5,15 +5,13 @@
   <meta name="generator" content="Hugo 0.83.1" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Kubernetes #  更多内容见：Go 学习笔记
+<meta name="description" content="Kubernetes #  更多内容见：Kubernetes 学习笔记
 参考：
- Kubernetes API 资源使用 - 应该使用哪个 Group 和 Version?  Service #  Headless Service #  就是没头的 Service。有什么使用场景呢？
-第一种：自主选择权，有时候 client 想自己来决定使用哪个 Real Server，可以通过查询 DNS 来获取 Real Server 的信息。 第二种：Headless Services 还有一个用处（PS：也就是我们需要的那个特性）。Headless Service 的对应的每一个 Endpoints，即每一个 Pod，都会有对应的 DNS 域名；这样 Pod 之间就可以互相访问。">
+ Kubernetes API 资源使用 - 应该使用哪个 Group 和 Version?  端口 #   containerPort：在容器上，用于被 pod 绑定，是可选的，仅仅是提示信息，容器中任何监听 0.0.0.0 的端口，都会暴露出来  是可选的，仅仅是提示信息 容器中任何监听 0.0.0.0 的端口，都会暴露出来 无法被更新    targetPort：在 pod 上，从 port 和 nodePort 上来的流量，经过 kube-proxy 流入到后端 pod 的 targetPort 上，最后进入容器  targetPort 和 containerPort 是一致的  targetPort and containerPort must be identical most of the time because whatever port is open for your application in a container that would be the same port you will wish to send traffic from service via targetPort.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Kubernetes" />
-<meta property="og:description" content="Kubernetes #  更多内容见：Go 学习笔记
+<meta property="og:description" content="Kubernetes #  更多内容见：Kubernetes 学习笔记
 参考：
- Kubernetes API 资源使用 - 应该使用哪个 Group 和 Version?  Service #  Headless Service #  就是没头的 Service。有什么使用场景呢？
-第一种：自主选择权，有时候 client 想自己来决定使用哪个 Real Server，可以通过查询 DNS 来获取 Real Server 的信息。 第二种：Headless Services 还有一个用处（PS：也就是我们需要的那个特性）。Headless Service 的对应的每一个 Endpoints，即每一个 Pod，都会有对应的 DNS 域名；这样 Pod 之间就可以互相访问。" />
+ Kubernetes API 资源使用 - 应该使用哪个 Group 和 Version?  端口 #   containerPort：在容器上，用于被 pod 绑定，是可选的，仅仅是提示信息，容器中任何监听 0.0.0.0 的端口，都会暴露出来  是可选的，仅仅是提示信息 容器中任何监听 0.0.0.0 的端口，都会暴露出来 无法被更新    targetPort：在 pod 上，从 port 和 nodePort 上来的流量，经过 kube-proxy 流入到后端 pod 的 targetPort 上，最后进入容器  targetPort 和 containerPort 是一致的  targetPort and containerPort must be identical most of the time because whatever port is open for your application in a container that would be the same port you will wish to send traffic from service via targetPort." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/interview/docs/cloud/kubernetes/" /><meta property="article:section" content="docs" />
 
@@ -23,7 +21,7 @@
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.dece2cff77b5a543771fa82b1352620c6d16c69b926d1e62ef7c33fffe87ec35.js" integrity="sha256-3s4s/3e1pUN3H6grE1JiDG0WxpuSbR5i73wz//6H7DU="></script>
+<script defer src="/interview/en.search.min.28334d748408668c488375e1d07398cfc7552a9ab6e5ae3ddac9efa95c75ac55.js" integrity="sha256-KDNNdIQIZoxIg3Xh0HOYz8dVKpq25a492snvqVx1rFU="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1170,6 +1168,7 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#端口">端口</a></li>
     <li><a href="#service">Service</a>
       <ul>
         <li><a href="#headless-service">Headless Service</a></li>
@@ -1196,10 +1195,40 @@ https://github.com/alex-shpak/hugo-book
   Kubernetes
   <a class="anchor" href="#kubernetes">#</a>
 </h1>
-<p>更多内容见：<a href="/study-kubernetes/" target="_blank">Go 学习笔记</a></p>
+<p>更多内容见：<a href="/study-kubernetes/" target="_blank">Kubernetes 学习笔记</a></p>
 <p>参考：</p>
 <ul>
 <li><a href="https://www.qikqiak.com/post/k8s-api-resources-group-and-version/">Kubernetes API 资源使用 - 应该使用哪个 Group 和 Version?</a></li>
+</ul>
+<h2 id="端口">
+  端口
+  <a class="anchor" href="#%e7%ab%af%e5%8f%a3">#</a>
+</h2>
+<ul>
+<li><code>containerPort</code>：在容器上，用于被 pod 绑定，是可选的，仅仅是提示信息，容器中任何监听 <code>0.0.0.0</code> 的端口，都会暴露出来
+<ul>
+<li>是可选的，仅仅是提示信息</li>
+<li>容器中任何监听 <code>0.0.0.0</code> 的端口，都会暴露出来</li>
+<li>无法被更新
+<img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200918141459.png" alt="" /></li>
+</ul>
+</li>
+<li><code>targetPort</code>：在 pod 上，从 port 和 nodePort 上来的流量，经过 kube-proxy 流入到后端 pod 的 targetPort 上，最后进入容器
+<ul>
+<li>targetPort 和 containerPort 是一致的
+<blockquote>
+<p>targetPort and containerPort must be identical most of the time because whatever port is open for your application in a container that would be the same port you will wish to send traffic from service via targetPort.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><code>port</code>: 负责处理<strong>对内</strong>的通信，访问方式：<code>clusterIP:port</code> 或者 <code>externalIP:port</code></li>
+<li><code>nodePort</code>:在 node 上，负责<strong>对外</strong>通信，访问方式：<code>NodeIP:NodePort</code></li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a href="https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/">kubernetes-api/v1.18/</a></li>
+<li><a href="https://medium.com/@deepeshtripathi/all-about-kubernetes-port-types-nodeport-targetport-port-containerport-e9f447330b19">All About Kubernetes Port Types: NodePort,TargetPort,Port,ContainerPort</a></li>
 </ul>
 <h2 id="service">
   Service
@@ -1209,9 +1238,11 @@ https://github.com/alex-shpak/hugo-book
   Headless Service
   <a class="anchor" href="#headless-service">#</a>
 </h3>
-<p>就是没头的 Service。有什么使用场景呢？</p>
-<p>第一种：自主选择权，有时候 client 想自己来决定使用哪个 Real Server，可以通过查询 DNS 来获取 Real Server 的信息。
-第二种：Headless Services 还有一个用处（PS：也就是我们需要的那个特性）。Headless Service 的对应的每一个 Endpoints，即每一个 Pod，都会有对应的 DNS 域名；这样 Pod 之间就可以互相访问。</p>
+<p>Headless Service 有什么使用场景？</p>
+<ul>
+<li>第一种：自主选择权，有时候 client 想自己来决定使用哪个 Real Server，可以通过查询 DNS 来获取 Real Server 的信息。</li>
+<li>第二种：Headless Services 还有一个用处（PS：也就是我们需要的那个特性）。Headless Service 的对应的每一个 Endpoints，即每一个 Pod，都会有对应的 DNS 域名；这样 Pod 之间就可以互相访问。</li>
+</ul>
 </article>
  
       
@@ -1282,6 +1313,7 @@ https://github.com/alex-shpak/hugo-book
   
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#端口">端口</a></li>
     <li><a href="#service">Service</a>
       <ul>
         <li><a href="#headless-service">Headless Service</a></li>

@@ -11,7 +11,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/cloud/docker/</guid>
-      <description>Docker #  更多内容见：Go 学习笔记</description>
+      <description>Docker #  更多内容见：Docker 学习笔记
+entrypoint vs cmd #   ENTRYPOINT 或者 CMD 命令会覆盖之前的 ENTRYPOINT 或者 CMD 命令 docker run 可以覆盖 ENTRYPOINT 或者 CMD  docker run demo cmd  CMD 更容易进行覆盖   docker run --entrypoint cmd demo   ENTRYPOINT 和 CMD 同时存在时，docker 把 CMD 的命令拼接到 ENTRYPOINT 命令之后，拼接后的命令才是最终执行的命令  Shell vs Exec #   Shell  CMD executable param1 param2 实际运行的是 /bin/sh -c 命令 有些镜像没有 shell 程序，无法使用这种方式 从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令   Exec  CMD [&amp;quot;executable&amp;quot;,&amp;quot;param1&amp;quot;,&amp;quot;param2&amp;quot;] 不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法    </description>
     </item>
     
     <item>
@@ -20,10 +21,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://ikingye.github.io/interview/docs/cloud/kubernetes/</guid>
-      <description>Kubernetes #  更多内容见：Go 学习笔记
+      <description>Kubernetes #  更多内容见：Kubernetes 学习笔记
 参考：
- Kubernetes API 资源使用 - 应该使用哪个 Group 和 Version?  Service #  Headless Service #  就是没头的 Service。有什么使用场景呢？
-第一种：自主选择权，有时候 client 想自己来决定使用哪个 Real Server，可以通过查询 DNS 来获取 Real Server 的信息。 第二种：Headless Services 还有一个用处（PS：也就是我们需要的那个特性）。Headless Service 的对应的每一个 Endpoints，即每一个 Pod，都会有对应的 DNS 域名；这样 Pod 之间就可以互相访问。</description>
+ Kubernetes API 资源使用 - 应该使用哪个 Group 和 Version?  端口 #   containerPort：在容器上，用于被 pod 绑定，是可选的，仅仅是提示信息，容器中任何监听 0.0.0.0 的端口，都会暴露出来  是可选的，仅仅是提示信息 容器中任何监听 0.0.0.0 的端口，都会暴露出来 无法被更新    targetPort：在 pod 上，从 port 和 nodePort 上来的流量，经过 kube-proxy 流入到后端 pod 的 targetPort 上，最后进入容器  targetPort 和 containerPort 是一致的  targetPort and containerPort must be identical most of the time because whatever port is open for your application in a container that would be the same port you will wish to send traffic from service via targetPort.</description>
     </item>
     
     <item>

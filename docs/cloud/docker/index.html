@@ -5,9 +5,11 @@
   <meta name="generator" content="Hugo 0.83.1" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Docker #  更多内容见：Go 学习笔记">
+<meta name="description" content="Docker #  更多内容见：Docker 学习笔记
+entrypoint vs cmd #   ENTRYPOINT 或者 CMD 命令会覆盖之前的 ENTRYPOINT 或者 CMD 命令 docker run 可以覆盖 ENTRYPOINT 或者 CMD  docker run demo cmd  CMD 更容易进行覆盖   docker run --entrypoint cmd demo   ENTRYPOINT 和 CMD 同时存在时，docker 把 CMD 的命令拼接到 ENTRYPOINT 命令之后，拼接后的命令才是最终执行的命令  Shell vs Exec #   Shell  CMD executable param1 param2 实际运行的是 /bin/sh -c 命令 有些镜像没有 shell 程序，无法使用这种方式 从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令   Exec  CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;] 不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法    ">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Docker" />
-<meta property="og:description" content="Docker #  更多内容见：Go 学习笔记" />
+<meta property="og:description" content="Docker #  更多内容见：Docker 学习笔记
+entrypoint vs cmd #   ENTRYPOINT 或者 CMD 命令会覆盖之前的 ENTRYPOINT 或者 CMD 命令 docker run 可以覆盖 ENTRYPOINT 或者 CMD  docker run demo cmd  CMD 更容易进行覆盖   docker run --entrypoint cmd demo   ENTRYPOINT 和 CMD 同时存在时，docker 把 CMD 的命令拼接到 ENTRYPOINT 命令之后，拼接后的命令才是最终执行的命令  Shell vs Exec #   Shell  CMD executable param1 param2 实际运行的是 /bin/sh -c 命令 有些镜像没有 shell 程序，无法使用这种方式 从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令   Exec  CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;] 不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法    " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/interview/docs/cloud/docker/" /><meta property="article:section" content="docs" />
 
@@ -17,7 +19,7 @@
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.dece2cff77b5a543771fa82b1352620c6d16c69b926d1e62ef7c33fffe87ec35.js" integrity="sha256-3s4s/3e1pUN3H6grE1JiDG0WxpuSbR5i73wz//6H7DU="></script>
+<script defer src="/interview/en.search.min.28334d748408668c488375e1d07398cfc7552a9ab6e5ae3ddac9efa95c75ac55.js" integrity="sha256-KDNNdIQIZoxIg3Xh0HOYz8dVKpq25a492snvqVx1rFU="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1162,7 +1164,15 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#entrypoint-vs-cmd"><code>entrypoint</code> vs <code>cmd</code></a>
+      <ul>
+        <li><a href="#shell-vs-exec">Shell vs Exec</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 <hr />
 <ul>
   <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
@@ -1182,7 +1192,45 @@ https://github.com/alex-shpak/hugo-book
   Docker
   <a class="anchor" href="#docker">#</a>
 </h1>
-<p>更多内容见：<a href="/study-kubernetes/docs/advanced/eco/docker/" target="_blank">Go 学习笔记</a></p>
+<p>更多内容见：<a href="/study-kubernetes/docs/advanced/eco/docker/" target="_blank">Docker 学习笔记</a></p>
+<h2 id="entrypoint-vs-cmd">
+  <code>entrypoint</code> vs <code>cmd</code>
+  <a class="anchor" href="#entrypoint-vs-cmd">#</a>
+</h2>
+<ul>
+<li>ENTRYPOINT 或者 CMD 命令会覆盖之前的 ENTRYPOINT 或者 CMD 命令</li>
+<li>docker run 可以<strong>覆盖</strong> ENTRYPOINT 或者 CMD
+<ul>
+<li><code>docker run demo cmd</code>
+<ul>
+<li>CMD 更容易进行覆盖</li>
+</ul>
+</li>
+<li><code>docker run --entrypoint cmd demo</code></li>
+</ul>
+</li>
+<li>ENTRYPOINT 和 CMD 同时存在时，docker 把 <strong>CMD 的命令拼接到 ENTRYPOINT 命令之后</strong>，拼接后的命令才是最终执行的命令</li>
+</ul>
+<h3 id="shell-vs-exec">
+  Shell vs Exec
+  <a class="anchor" href="#shell-vs-exec">#</a>
+</h3>
+<ul>
+<li>Shell
+<ul>
+<li><code>CMD executable param1 param2</code></li>
+<li>实际运行的是 <code>/bin/sh -c</code> 命令</li>
+<li>有些镜像没有 shell 程序，无法使用这种方式</li>
+<li>从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令</li>
+</ul>
+</li>
+<li>Exec
+<ul>
+<li><code>CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]</code></li>
+<li>不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法</li>
+</ul>
+</li>
+</ul>
 </article>
  
       
@@ -1251,7 +1299,15 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#entrypoint-vs-cmd"><code>entrypoint</code> vs <code>cmd</code></a>
+      <ul>
+        <li><a href="#shell-vs-exec">Shell vs Exec</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 <hr />
 <ul>
   <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
