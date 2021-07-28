@@ -30,7 +30,11 @@
       
       <guid>https://ikingye.github.io/interview/docs/cloud/docker/</guid>
       <description>Docker #  更多内容见：Docker 学习笔记
-entrypoint vs cmd #   ENTRYPOINT 或者 CMD 命令会覆盖之前的 ENTRYPOINT 或者 CMD 命令 docker run 可以覆盖 ENTRYPOINT 或者 CMD  docker run demo cmd  CMD 更容易进行覆盖   docker run --entrypoint cmd demo   ENTRYPOINT 和 CMD 同时存在时，docker 把 CMD 的命令拼接到 ENTRYPOINT 命令之后，拼接后的命令才是最终执行的命令  Shell vs Exec #   Shell  CMD executable param1 param2 实际运行的是 /bin/sh -c 命令 有些镜像没有 shell 程序，无法使用这种方式 从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令   Exec  CMD [&amp;quot;executable&amp;quot;,&amp;quot;param1&amp;quot;,&amp;quot;param2&amp;quot;] 不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法    </description>
+entrypoint vs cmd #    ENTRYPOINT 或者 CMD 命令会覆盖之前的 ENTRYPOINT 或者 CMD 命令
+  docker run 可以覆盖 ENTRYPOINT 或者 CMD
+ docker run demo cmd  CMD 更容易进行覆盖   docker run --entrypoint cmd demo    ENTRYPOINT 和 CMD 同时存在时，docker 把 CMD 的命令拼接到 ENTRYPOINT 命令之后，拼接后的命令才是最终执行的命令
+  Kubernetes
+ 如果容器没有设置 command 和 args，则使用 docker 镜像自带的命令和参数 如果容器设置了 command（不管有没有设置 args），则 docker 镜像自带命令和参数被忽略 如果容器设置了 args，没有设置 command，则 docker 镜像自带的命令会使用该新参数 Docker 与 Kubernetes 中对应的字段名称。    描述 Docker 字段名称 Kubernetes 字段名称     容器执行的命令 Entrypoint command   传给命令的参数 Cmd args      参考：为容器设置启动时要执行的命令和参数</description>
     </item>
     
     <item>

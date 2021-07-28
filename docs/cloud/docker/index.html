@@ -6,20 +6,28 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Docker #  更多内容见：Docker 学习笔记
-entrypoint vs cmd #   ENTRYPOINT 或者 CMD 命令会覆盖之前的 ENTRYPOINT 或者 CMD 命令 docker run 可以覆盖 ENTRYPOINT 或者 CMD  docker run demo cmd  CMD 更容易进行覆盖   docker run --entrypoint cmd demo   ENTRYPOINT 和 CMD 同时存在时，docker 把 CMD 的命令拼接到 ENTRYPOINT 命令之后，拼接后的命令才是最终执行的命令  Shell vs Exec #   Shell  CMD executable param1 param2 实际运行的是 /bin/sh -c 命令 有些镜像没有 shell 程序，无法使用这种方式 从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令   Exec  CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;] 不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法    ">
+entrypoint vs cmd #    ENTRYPOINT 或者 CMD 命令会覆盖之前的 ENTRYPOINT 或者 CMD 命令
+  docker run 可以覆盖 ENTRYPOINT 或者 CMD
+ docker run demo cmd  CMD 更容易进行覆盖   docker run --entrypoint cmd demo    ENTRYPOINT 和 CMD 同时存在时，docker 把 CMD 的命令拼接到 ENTRYPOINT 命令之后，拼接后的命令才是最终执行的命令
+  Kubernetes
+ 如果容器没有设置 command 和 args，则使用 docker 镜像自带的命令和参数 如果容器设置了 command（不管有没有设置 args），则 docker 镜像自带命令和参数被忽略 如果容器设置了 args，没有设置 command，则 docker 镜像自带的命令会使用该新参数 Docker 与 Kubernetes 中对应的字段名称。    描述 Docker 字段名称 Kubernetes 字段名称     容器执行的命令 Entrypoint command   传给命令的参数 Cmd args      参考：为容器设置启动时要执行的命令和参数">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Docker" />
 <meta property="og:description" content="Docker #  更多内容见：Docker 学习笔记
-entrypoint vs cmd #   ENTRYPOINT 或者 CMD 命令会覆盖之前的 ENTRYPOINT 或者 CMD 命令 docker run 可以覆盖 ENTRYPOINT 或者 CMD  docker run demo cmd  CMD 更容易进行覆盖   docker run --entrypoint cmd demo   ENTRYPOINT 和 CMD 同时存在时，docker 把 CMD 的命令拼接到 ENTRYPOINT 命令之后，拼接后的命令才是最终执行的命令  Shell vs Exec #   Shell  CMD executable param1 param2 实际运行的是 /bin/sh -c 命令 有些镜像没有 shell 程序，无法使用这种方式 从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令   Exec  CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;] 不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法    " />
+entrypoint vs cmd #    ENTRYPOINT 或者 CMD 命令会覆盖之前的 ENTRYPOINT 或者 CMD 命令
+  docker run 可以覆盖 ENTRYPOINT 或者 CMD
+ docker run demo cmd  CMD 更容易进行覆盖   docker run --entrypoint cmd demo    ENTRYPOINT 和 CMD 同时存在时，docker 把 CMD 的命令拼接到 ENTRYPOINT 命令之后，拼接后的命令才是最终执行的命令
+  Kubernetes
+ 如果容器没有设置 command 和 args，则使用 docker 镜像自带的命令和参数 如果容器设置了 command（不管有没有设置 args），则 docker 镜像自带命令和参数被忽略 如果容器设置了 args，没有设置 command，则 docker 镜像自带的命令会使用该新参数 Docker 与 Kubernetes 中对应的字段名称。    描述 Docker 字段名称 Kubernetes 字段名称     容器执行的命令 Entrypoint command   传给命令的参数 Cmd args      参考：为容器设置启动时要执行的命令和参数" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/interview/docs/cloud/docker/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-07-26T17:16:46&#43;08:00" />
+<meta property="article:modified_time" content="2021-07-27T17:46:11&#43;08:00" />
 
 <title>Docker | 面试笔记</title>
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.28334d748408668c488375e1d07398cfc7552a9ab6e5ae3ddac9efa95c75ac55.js" integrity="sha256-KDNNdIQIZoxIg3Xh0HOYz8dVKpq25a492snvqVx1rFU="></script>
+<script defer src="/interview/en.search.min.fa08b3e252776a00794b8a280ea6afd2149b8e2eddeecbffe652ae29e8ce6030.js" integrity="sha256-&#43;giz4lJ3agB5S4ooDqav0hSbji7d7sv/5lKuKejOYDA="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1198,8 +1206,11 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#entrypoint-vs-cmd">#</a>
 </h2>
 <ul>
-<li>ENTRYPOINT 或者 CMD 命令会覆盖之前的 ENTRYPOINT 或者 CMD 命令</li>
-<li>docker run 可以<strong>覆盖</strong> ENTRYPOINT 或者 CMD
+<li>
+<p>ENTRYPOINT 或者 CMD 命令会覆盖之前的 ENTRYPOINT 或者 CMD 命令</p>
+</li>
+<li>
+<p>docker run 可以<strong>覆盖</strong> ENTRYPOINT 或者 CMD</p>
 <ul>
 <li><code>docker run demo cmd</code>
 <ul>
@@ -1209,7 +1220,41 @@ https://github.com/alex-shpak/hugo-book
 <li><code>docker run --entrypoint cmd demo</code></li>
 </ul>
 </li>
-<li>ENTRYPOINT 和 CMD 同时存在时，docker 把 <strong>CMD 的命令拼接到 ENTRYPOINT 命令之后</strong>，拼接后的命令才是最终执行的命令</li>
+<li>
+<p>ENTRYPOINT 和 CMD 同时存在时，docker 把 <strong>CMD 的命令拼接到 ENTRYPOINT 命令之后</strong>，拼接后的命令才是最终执行的命令</p>
+</li>
+<li>
+<p>Kubernetes</p>
+<ul>
+<li>如果容器没有设置 command 和 args，则使用 docker 镜像自带的命令和参数</li>
+<li>如果容器设置了 command（不管有没有设置 args），则 docker 镜像自带命令和参数被忽略</li>
+<li>如果容器设置了 args，没有设置 command，则 docker 镜像自带的命令会使用该新参数</li>
+<li>Docker 与 Kubernetes 中对应的字段名称。
+<table>
+<thead>
+<tr>
+<th>描述</th>
+<th>Docker 字段名称</th>
+<th>Kubernetes 字段名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>容器执行的命令</td>
+<td>Entrypoint</td>
+<td>command</td>
+</tr>
+<tr>
+<td>传给命令的参数</td>
+<td>Cmd</td>
+<td>args</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p>参考：<a href="https://kubernetes.io/zh/docs/tasks/inject-data-application/define-command-argument-container/#notes">为容器设置启动时要执行的命令和参数</a></p>
+</li>
 </ul>
 <h3 id="shell-vs-exec">
   Shell vs Exec
@@ -1241,9 +1286,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/ikingye/interview/commit/eb6959e838ba23cbf9d8a8c61c0974a924e84017" title='Last modified by yewang | 2021-07-26' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/interview/commit/3d05264a7e8edf9208b34d049af4383dea905d35" title='Last modified by yewang | 2021-07-27' target="_blank" rel="noopener">
       <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2021-07-26</span>
+      <span>2021-07-27</span>
     </a>
   </div>
 
