@@ -30,10 +30,8 @@
       
       <guid>https://ikingye.github.io/interview/docs/cloud/docker/</guid>
       <description>Docker #  更多内容见：Docker 学习笔记
-entrypoint vs cmd #    ENTRYPOINT 或者 CMD 命令会覆盖 base 镜像的 ENTRYPOINT 或者 CMD 命令
- If CMD is defined from the base image, setting ENTRYPOINT will reset CMD to an empty value.    docker run 覆盖
- CMD 比较容易覆盖：docker run demo cmd ENTRYPOINT 只有 Exec form 可以覆盖：docker run --entrypoint cmd demo    Shell form
- 实际运行的是 /bin/sh -c 命令  有些镜像没有 shell 程序，无法使用这种方式 从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令   CMD executable param1 param2 ENTRYPOINT exec_entry p1_entry  会忽略 CMD 或者 docker run 参数      Exec form</description>
+entrypoint vs cmd #    格式
+ Shell form  实际运行的是 /bin/sh -c 命令  有些镜像没有 shell 程序，无法使用这种方式 从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令   CMD executable param1 param2 ENTRYPOINT exec_entry p1_entry  会忽略 CMD 或者 docker run 参数     Exec form  the JSON array format 如果要使用 Shell 环境变量，必须显示使用 sh，如 CMD [ &amp;quot;sh&amp;quot;, &amp;quot;-c&amp;quot;, &amp;quot;echo $HOME&amp;quot; ] CMD [&amp;quot;executable&amp;quot;,&amp;quot;param1&amp;quot;,&amp;quot;param2&amp;quot;] ENTRYPOINT [&amp;quot;exec_entry&amp;quot;, &amp;quot;p1_entry&amp;quot;]  docker run 可以覆盖：docker run --entrypoint cmd demo 会把 CMD 接到后面作为参数   不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法      覆盖</description>
     </item>
     
     <item>
