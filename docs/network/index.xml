@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>3. 网络 on 面试笔记</title>
+    <link>https://ikingye.github.io/interview/docs/network/</link>
+    <description>Recent content in 3. 网络 on 面试笔记</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://ikingye.github.io/interview/docs/network/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTTP</title>
+      <link>https://ikingye.github.io/interview/docs/network/http/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/network/http/</guid>
+      <description>HTTP #  HTTP 基础 #  HTTP 状态码有哪些？ #   2XX 成功  200 ok（请求成功） 204 no content （请求成功，但是没有结果返回） 206 partial content （客户端请求一部分资源，服务端成功响应，返回一范围资源）   3XX 重定向  301 move permanently （永久性重定向） 302 found （临时性重定向） 303 see other （示由于请求对应的资源存在着另一个 URI，应使用 GET 方法定向获取请求的资源） 304 not modified （表示在客户端采用带条件的访问某资源时，服务端找到了资源，但是这个请求的条件不符合。跟重定向无关） 307 temporary redirect （跟 302 一个意思）   4XX 客户端错误  400 bad request （请求报文存在语法错误） 401 unauthorized （需要认证（第一次返回）或者认证失败（第二次返回）） 403 forbidden （请求被服务器拒绝了） 404 not found （服务器上无法找到请求的资源）   5XX 服务器错误  500 internal server error （服务端执行请求时发生了错误） 503 service unavailable （服务器正在超负载或者停机维护，无法处理请求）    301 和 302 有什么区别？分别适用于什么场景？ #  101， 304， 307 分别是什么？ #  101 协议升级</description>
+    </item>
+    
+    <item>
+      <title>TCP/UDP/IP</title>
+      <link>https://ikingye.github.io/interview/docs/network/tcp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/network/tcp/</guid>
+      <description>TCP/UDP/IP #  TCP #  </description>
+    </item>
+    
+    <item>
+      <title>发包工具</title>
+      <link>https://ikingye.github.io/interview/docs/network/send/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/network/send/</guid>
+      <description>发包工具 #  综合 #  常用发包工具有哪些？分别有什么特点，适用于什么场景？ #   PacketSender #  </description>
+    </item>
+    
+    <item>
+      <title>抓包</title>
+      <link>https://ikingye.github.io/interview/docs/network/capture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/network/capture/</guid>
+      <description>抓包 #  综合 #  常用抓包工具有哪些？分别有什么特点，适用于什么场景？ #   tcpdump #   tcpdump -D: 列出所有可监听设备 tcpdump -i: 指定网络接口（网卡）  tcpdump -i any: 不确定走哪个网卡   tcpdump host: 指定主机  tcpdump src host: 指定主机发送出去的包 tcpdump dst host: 发送到指定主机的包   tcpdump tcp: 指定协议 tcpdump port: 指定端口 tcpdump -n: 直接显示 IP，而不把 IP 解析为主机名 tcpdump -nn: 直接显示 IP 与端口，而不解析为主机名与服务 tcpdump -N: 不打印 host 的域名部分，比如打印 nic 而不是 nic.ddn.mil tcpdump -w: 输出到文件 tcpdump -tttt: 更具有可读性的时间格式 tcpdump -c: 抓 n 个包，然后退出  # 监视第一个网络接口上所有流过的数据包 tcpdump # 监视指定网络接口的数据包 tcpdump -i eth1 # 截获主机 210.</description>
+    </item>
+    
+  </channel>
+</rss>

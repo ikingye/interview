@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>6. 软件工程 on 面试笔记</title>
+    <link>https://ikingye.github.io/interview/docs/se/</link>
+    <description>Recent content in 6. 软件工程 on 面试笔记</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://ikingye.github.io/interview/docs/se/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>设计模式</title>
+      <link>https://ikingye.github.io/interview/docs/se/dp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/se/dp/</guid>
+      <description>设计模式 #  设计原则 #  单一职责原则 (SRP) #   开闭原则 (Open Closed Principle) #   里氏替换原则 (Liskov Substitution Principle) #   依赖倒置原则 (Dependence Inversion Principle) #   接口隔离原则 (Interface Segregation Principle) #   迪米特原则 (Demeter Principle) #    创建型模式 #  简单工厂模式 #   工厂方法模式 #   抽象工厂模式 #   建造者模式 #   单例模式 #    结构型模式 #  适配器模式 #   桥接模式 #   装饰模式 #   外观模式 #   享元模式 #   代理模式 #   组合模式 #  适配器模式、装饰模式、代理模式有哪些异同？ #   适配器模式  适配器模式实现新接口   代理模式  代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。   装饰器模式  原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。      装饰器模式与代理模式实现原接口 都持有原对象  装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象    /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi { public void updateDate(String orderId, String date, String client); } public class SourceOrderApiImpl implements SourceOrderApi{ @Override public void updateDate(String orderId, String date, String client) { System.</description>
+    </item>
+    
+    <item>
+      <title>架构设计</title>
+      <link>https://ikingye.github.io/interview/docs/se/architecture/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ikingye.github.io/interview/docs/se/architecture/</guid>
+      <description>架构设计 #  架构设计原则 #  CAP (Consistency, Availability, Partition tolerance) #  如何理解 CAP，你在做系统设计时是如何取舍的？ #   ACID (Atomicity, Consistency, Isolation, Durability) #   BASE (Basically Available, Soft state, Eventual consistency) #    高性能 #    高可用 #    高并发 #    高扩展性 #  </description>
+    </item>
+    
+  </channel>
+</rss>
