@@ -7,11 +7,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Docker #  更多内容见：Docker 学习笔记
 entrypoint vs cmd #    格式
- Shell form  实际运行的是 /bin/sh -c 命令  有些镜像没有 shell 程序，无法使用这种方式 从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令   CMD executable param1 param2 ENTRYPOINT exec_entry p1_entry  会忽略 CMD 或者 docker run 参数     Exec form  the JSON array format 如果要使用 Shell 环境变量，必须显示使用 sh，如 CMD [ &quot;sh&quot;, &quot;-c&quot;, &quot;echo $HOME&quot; ] CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;] ENTRYPOINT [&quot;exec_entry&quot;, &quot;p1_entry&quot;]  docker run 可以覆盖：docker run --entrypoint cmd demo 会把 CMD 接到后面作为参数   不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法      覆盖">
+ Shell form  实际运行的是 /bin/sh -c 命令  有些镜像没有 shell 程序，无法使用这种方式 从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令   CMD executable param1 param2 ENTRYPOINT executable param1 param2  会忽略 CMD 或者 docker run 参数     Exec form  the JSON array format CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]  如果要使用 Shell 环境变量，必须显示使用 sh 如 CMD [ &quot;sh&quot;, &quot;-c&quot;, &quot;echo $HOME&quot; ]   ENTRYPOINT [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]  会把 CMD 接到后面作为参数 docker run 可以覆盖：docker run demo --entrypoint cmd   不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法      覆盖">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Docker" />
 <meta property="og:description" content="Docker #  更多内容见：Docker 学习笔记
 entrypoint vs cmd #    格式
- Shell form  实际运行的是 /bin/sh -c 命令  有些镜像没有 shell 程序，无法使用这种方式 从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令   CMD executable param1 param2 ENTRYPOINT exec_entry p1_entry  会忽略 CMD 或者 docker run 参数     Exec form  the JSON array format 如果要使用 Shell 环境变量，必须显示使用 sh，如 CMD [ &quot;sh&quot;, &quot;-c&quot;, &quot;echo $HOME&quot; ] CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;] ENTRYPOINT [&quot;exec_entry&quot;, &quot;p1_entry&quot;]  docker run 可以覆盖：docker run --entrypoint cmd demo 会把 CMD 接到后面作为参数   不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法      覆盖" />
+ Shell form  实际运行的是 /bin/sh -c 命令  有些镜像没有 shell 程序，无法使用这种方式 从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令   CMD executable param1 param2 ENTRYPOINT executable param1 param2  会忽略 CMD 或者 docker run 参数     Exec form  the JSON array format CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]  如果要使用 Shell 环境变量，必须显示使用 sh 如 CMD [ &quot;sh&quot;, &quot;-c&quot;, &quot;echo $HOME&quot; ]   ENTRYPOINT [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]  会把 CMD 接到后面作为参数 docker run 可以覆盖：docker run demo --entrypoint cmd   不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法      覆盖" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/interview/docs/cloud/docker/" /><meta property="article:section" content="docs" />
 
@@ -21,7 +21,7 @@ entrypoint vs cmd #    格式
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.bfdc24f128f40c0b7dd46f2d6c79fd2d5ad4fe7ad4ef1922fc5ddc1d05efcc24.js" integrity="sha256-v9wk8Sj0DAt91G8tbHn9LVrU/nrU7xki/F3cHQXvzCQ="></script>
+<script defer src="/interview/en.search.min.f5d3120acdd5120a034e3d50e3355709856daebd2a3898404dd6846d5b1fd87f.js" integrity="sha256-9dMSCs3VEgoDTj1Q4zVXCYVtrr0qOJhATdaEbVsf2H8="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1208,7 +1208,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li><code>CMD executable param1 param2</code></li>
-<li><code>ENTRYPOINT exec_entry p1_entry</code>
+<li><code>ENTRYPOINT executable param1 param2</code>
 <ul>
 <li>会忽略 CMD 或者 docker run 参数</li>
 </ul>
@@ -1218,12 +1218,16 @@ https://github.com/alex-shpak/hugo-book
 <li>Exec form
 <ul>
 <li>the JSON array format</li>
-<li>如果要使用 Shell 环境变量，必须显示使用 <code>sh</code>，如 <code>CMD [ &quot;sh&quot;, &quot;-c&quot;, &quot;echo $HOME&quot; ]</code></li>
-<li><code>CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]</code></li>
-<li><code>ENTRYPOINT [&quot;exec_entry&quot;, &quot;p1_entry&quot;]</code>
+<li><code>CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]</code>
 <ul>
-<li>docker run 可以覆盖：<code>docker run --entrypoint cmd demo</code></li>
+<li>如果要使用 Shell 环境变量，必须显示使用 <code>sh</code></li>
+<li>如 <code>CMD [ &quot;sh&quot;, &quot;-c&quot;, &quot;echo $HOME&quot; ]</code></li>
+</ul>
+</li>
+<li><code>ENTRYPOINT [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]</code>
+<ul>
 <li>会把 CMD 接到后面作为参数</li>
+<li>docker run 可以覆盖：<code>docker run demo --entrypoint cmd</code></li>
 </ul>
 </li>
 <li>不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法</li>
@@ -1236,13 +1240,13 @@ https://github.com/alex-shpak/hugo-book
 <ul>
 <li>ENTRYPOINT 或者 CMD 命令会覆盖 base 镜像的 ENTRYPOINT 或者 CMD 命令
 <ul>
-<li>If CMD is defined from the base image, setting <code>ENTRYPOINT</code> will <strong>reset CMD to an empty value</strong>.</li>
+<li>如果设置了 <code>ENTRYPOINT</code> 而没有设置 <code>CMD</code>，则 base 镜像的 <code>CMD</code> 也会被<strong>置为空</strong></li>
 </ul>
 </li>
 <li>docker run 覆盖
 <ul>
-<li>CMD 比较容易覆盖：<code>docker run demo cmd</code></li>
-<li>ENTRYPOINT 只有 Exec form 可以覆盖：<code>docker run --entrypoint cmd demo</code></li>
+<li>CMD: 比较容易覆盖：<code>docker run demo cmd</code></li>
+<li>ENTRYPOINT: <strong>只有 Exec form</strong> 可以覆盖：<code>docker run demo --entrypoint cmd</code></li>
 </ul>
 </li>
 </ul>
@@ -1254,14 +1258,14 @@ https://github.com/alex-shpak/hugo-book
 <tr>
 <th> </th>
 <th>No ENTRYPOINT</th>
-<th>ENTRYPOINT exec*entry p1_entry</th>
+<th>ENTRYPOINT exec_entry p1_entry</th>
 <th>ENTRYPOINT [&ldquo;exec_entry&rdquo;, &ldquo;p1_entry&rdquo;]</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>No CMD</td>
-<td>_error, not allowed*</td>
+<td><strong>error, not allowed</strong></td>
 <td>/bin/sh -c exec_entry p1_entry</td>
 <td>exec_entry p1_entry</td>
 </tr>
@@ -1289,43 +1293,20 @@ https://github.com/alex-shpak/hugo-book
 <li>
 <p>Kubernetes</p>
 <ul>
-<li>
-<p>如果容器没有设置 command 和 args，则使用 docker 镜像自带的命令和参数</p>
+<li>如果容器没有设置 command 和 args，则使用 docker 镜像自带的命令和参数</li>
+<li>如果容器设置了 command（不管有没有设置 args），则 docker 镜像自带命令和参数被忽略</li>
+<li>如果容器设置了 args，没有设置 command，则 docker 镜像自带的命令会使用该新参数</li>
+</ul>
 </li>
-<li>
-<p>如果容器设置了 command（不管有没有设置 args），则 docker 镜像自带命令和参数被忽略</p>
-</li>
-<li>
-<p>如果容器设置了 args，没有设置 command，则 docker 镜像自带的命令会使用该新参数</p>
-</li>
-<li>
+</ul>
 <p>Docker 与 Kubernetes 中对应的字段名称。</p>
-<table>
-<thead>
-<tr>
-<th>描述</th>
-<th>Docker 字段名称</th>
-<th>Kubernetes 字段名称</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>容器执行的命令</td>
-<td>Entrypoint</td>
-<td>command</td>
-</tr>
-<tr>
-<td>传给命令的参数</td>
-<td>Cmd</td>
-<td>args</td>
-</tr>
-</tbody>
-</table>
-<p>参考：<a href="https://kubernetes.io/zh/docs/tasks/inject-data-application/define-command-argument-container/#notes">为容器设置启动时要执行的命令和参数</a></p>
-</li>
-</ul>
-</li>
-</ul>
+<pre><code>| 描述           | Docker 字段名称 | Kubernetes 字段名称 |
+| -------------- | --------------- | ------------------- |
+| 容器执行的命令 | Entrypoint      | command             |
+| 传给命令的参数 | Cmd             | args                |
+
+参考：[为容器设置启动时要执行的命令和参数](https://kubernetes.io/zh/docs/tasks/inject-data-application/define-command-argument-container/#notes)
+</code></pre>
 </article>
  
       
