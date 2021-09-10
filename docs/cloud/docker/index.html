@@ -7,21 +7,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Docker #  更多内容见：Docker 学习笔记
 entrypoint vs cmd #    格式
- Shell form  实际运行的是 /bin/sh -c 命令  有些镜像没有 shell 程序，无法使用这种方式 从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令   CMD executable param1 param2 ENTRYPOINT executable param1 param2  会忽略 CMD 或者 docker run 参数     Exec form  the JSON array format CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]  如果要使用 Shell 环境变量，必须显示使用 sh 如 CMD [ &quot;sh&quot;, &quot;-c&quot;, &quot;echo $HOME&quot; ]   ENTRYPOINT [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]  会把 CMD 接到后面作为参数 docker run 可以覆盖：docker run demo --entrypoint cmd   不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法      覆盖">
+ Shell form  实际运行的是 /bin/sh -c 命令  有些镜像没有 shell 程序，无法使用这种方式 从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令   CMD executable param1 param2 ENTRYPOINT executable param1 param2  会忽略 CMD 或者 docker run 参数 无法覆盖     Exec form  the JSON array format CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]  如果要使用 Shell 环境变量，必须显示使用 sh 如 CMD [ &quot;sh&quot;, &quot;-c&quot;, &quot;echo $HOME&quot; ]   ENTRYPOINT [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]  会把 CMD 接到后面作为参数 docker run 可以覆盖：docker run demo --entrypoint cmd   不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法      覆盖">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Docker" />
 <meta property="og:description" content="Docker #  更多内容见：Docker 学习笔记
 entrypoint vs cmd #    格式
- Shell form  实际运行的是 /bin/sh -c 命令  有些镜像没有 shell 程序，无法使用这种方式 从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令   CMD executable param1 param2 ENTRYPOINT executable param1 param2  会忽略 CMD 或者 docker run 参数     Exec form  the JSON array format CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]  如果要使用 Shell 环境变量，必须显示使用 sh 如 CMD [ &quot;sh&quot;, &quot;-c&quot;, &quot;echo $HOME&quot; ]   ENTRYPOINT [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]  会把 CMD 接到后面作为参数 docker run 可以覆盖：docker run demo --entrypoint cmd   不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法      覆盖" />
+ Shell form  实际运行的是 /bin/sh -c 命令  有些镜像没有 shell 程序，无法使用这种方式 从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令   CMD executable param1 param2 ENTRYPOINT executable param1 param2  会忽略 CMD 或者 docker run 参数 无法覆盖     Exec form  the JSON array format CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]  如果要使用 Shell 环境变量，必须显示使用 sh 如 CMD [ &quot;sh&quot;, &quot;-c&quot;, &quot;echo $HOME&quot; ]   ENTRYPOINT [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]  会把 CMD 接到后面作为参数 docker run 可以覆盖：docker run demo --entrypoint cmd   不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法      覆盖" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ikingye.github.io/interview/docs/cloud/docker/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-07-29T17:40:59+08:00" />
+<meta property="article:modified_time" content="2021-09-10T14:15:25+08:00" />
 
 <title>Docker | 面试笔记</title>
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.f5d3120acdd5120a034e3d50e3355709856daebd2a3898404dd6846d5b1fd87f.js" integrity="sha256-9dMSCs3VEgoDTj1Q4zVXCYVtrr0qOJhATdaEbVsf2H8="></script>
+<script defer src="/interview/en.search.min.c2359c237054bcd660360baf85961e631c9f859e75da8be21db8fde0002c1e91.js" integrity="sha256-wjWcI3BUvNZgNguvhZYeYxyfhZ512oviHbj94AAsHpE="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1156,30 +1156,10 @@ https://github.com/alex-shpak/hugo-book
 
   <label for="toc-control">
     
-    <img src="/interview/svg/toc.svg" class="book-icon" alt="Table of Contents" />
-    
   </label>
 </div>
 
 
-  
-  <aside class="hidden clearfix">
-    
-  
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#entrypoint-vs-cmd"><code>entrypoint</code> vs <code>cmd</code></a></li>
-  </ul>
-</nav>
-<hr />
-<ul>
-  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
-  <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="//pub.idqqimg.com/wpa/images/group.png"></a></li>
-</ul>
-
-
-
-  </aside>
   
  
       </header>
@@ -1211,6 +1191,7 @@ https://github.com/alex-shpak/hugo-book
 <li><code>ENTRYPOINT executable param1 param2</code>
 <ul>
 <li>会忽略 CMD 或者 docker run 参数</li>
+<li>无法覆盖</li>
 </ul>
 </li>
 </ul>
@@ -1252,7 +1233,7 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 <li>
-<p>示例：what command is executed for different <code>ENTRYPOINT</code> / <code>CMD</code> combinations:</p>
+<p><code>ENTRYPOINT</code>  与  <code>CMD</code> 的最终结果:</p>
 <table>
 <thead>
 <tr>
@@ -1299,14 +1280,30 @@ https://github.com/alex-shpak/hugo-book
 </ul>
 </li>
 </ul>
+<hr>
 <p>Docker 与 Kubernetes 中对应的字段名称。</p>
-<pre><code>| 描述           | Docker 字段名称 | Kubernetes 字段名称 |
-| -------------- | --------------- | ------------------- |
-| 容器执行的命令 | Entrypoint      | command             |
-| 传给命令的参数 | Cmd             | args                |
-
-参考：[为容器设置启动时要执行的命令和参数](https://kubernetes.io/zh/docs/tasks/inject-data-application/define-command-argument-container/#notes)
-</code></pre>
+<table>
+<thead>
+<tr>
+<th>描述</th>
+<th>Docker 字段名称</th>
+<th>Kubernetes 字段名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>容器执行的命令</td>
+<td>Entrypoint</td>
+<td>command</td>
+</tr>
+<tr>
+<td>传给命令的参数</td>
+<td>Cmd</td>
+<td>args</td>
+</tr>
+</tbody>
+</table>
+<p>参考：<a href="https://kubernetes.io/zh/docs/tasks/inject-data-application/define-command-argument-container/#notes">为容器设置启动时要执行的命令和参数</a></p>
 </article>
  
       
@@ -1317,9 +1314,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/ikingye/interview/commit/465cffe3360f57df449c5edd776c89966e169057" title='Last modified by yewang | 2021-07-29' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/interview/commit/b16b49aefcca077eb837afbfc26b0f704255ed3e" title='Last modified by yewang | 2021-09-10' target="_blank" rel="noopener">
       <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2021-07-29</span>
+      <span>2021-09-10</span>
     </a>
   </div>
 
@@ -1370,26 +1367,6 @@ https://github.com/alex-shpak/hugo-book
       <label for="menu-control" class="hidden book-menu-overlay"></label>
     </div>
 
-    
-    <aside class="book-toc">
-      <div class="book-toc-content">
-        
-  
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#entrypoint-vs-cmd"><code>entrypoint</code> vs <code>cmd</code></a></li>
-  </ul>
-</nav>
-<hr />
-<ul>
-  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
-  <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="//pub.idqqimg.com/wpa/images/group.png"></a></li>
-</ul>
-
-
- 
-      </div>
-    </aside>
     
   </main>
 

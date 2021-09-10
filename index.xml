@@ -31,7 +31,7 @@
       <guid>https://ikingye.github.io/interview/docs/cloud/docker/</guid>
       <description>Docker #  更多内容见：Docker 学习笔记
 entrypoint vs cmd #    格式
- Shell form  实际运行的是 /bin/sh -c 命令  有些镜像没有 shell 程序，无法使用这种方式 从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令   CMD executable param1 param2 ENTRYPOINT executable param1 param2  会忽略 CMD 或者 docker run 参数     Exec form  the JSON array format CMD [&amp;quot;executable&amp;quot;,&amp;quot;param1&amp;quot;,&amp;quot;param2&amp;quot;]  如果要使用 Shell 环境变量，必须显示使用 sh 如 CMD [ &amp;quot;sh&amp;quot;, &amp;quot;-c&amp;quot;, &amp;quot;echo $HOME&amp;quot; ]   ENTRYPOINT [&amp;quot;executable&amp;quot;,&amp;quot;param1&amp;quot;,&amp;quot;param2&amp;quot;]  会把 CMD 接到后面作为参数 docker run 可以覆盖：docker run demo --entrypoint cmd   不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法      覆盖</description>
+ Shell form  实际运行的是 /bin/sh -c 命令  有些镜像没有 shell 程序，无法使用这种方式 从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令   CMD executable param1 param2 ENTRYPOINT executable param1 param2  会忽略 CMD 或者 docker run 参数 无法覆盖     Exec form  the JSON array format CMD [&amp;quot;executable&amp;quot;,&amp;quot;param1&amp;quot;,&amp;quot;param2&amp;quot;]  如果要使用 Shell 环境变量，必须显示使用 sh 如 CMD [ &amp;quot;sh&amp;quot;, &amp;quot;-c&amp;quot;, &amp;quot;echo $HOME&amp;quot; ]   ENTRYPOINT [&amp;quot;executable&amp;quot;,&amp;quot;param1&amp;quot;,&amp;quot;param2&amp;quot;]  会把 CMD 接到后面作为参数 docker run 可以覆盖：docker run demo --entrypoint cmd   不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法      覆盖</description>
     </item>
     
     <item>
