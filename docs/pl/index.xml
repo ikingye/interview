@@ -2,34 +2,34 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>5. 编程语言 on 面试笔记</title>
-    <link>https://ikingye.github.io/interview/docs/pl/</link>
+    <link>https://kingye.me/interview/docs/pl/</link>
     <description>Recent content in 5. 编程语言 on 面试笔记</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://ikingye.github.io/interview/docs/pl/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://kingye.me/interview/docs/pl/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>C</title>
-      <link>https://ikingye.github.io/interview/docs/pl/c/</link>
+      <link>https://kingye.me/interview/docs/pl/c/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/c/</guid>
+      <guid>https://kingye.me/interview/docs/pl/c/</guid>
       <description>C #  更多教程详见：C 学习笔记  基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
       <title>C&#43;&#43;</title>
-      <link>https://ikingye.github.io/interview/docs/pl/cpp/</link>
+      <link>https://kingye.me/interview/docs/pl/cpp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/cpp/</guid>
+      <guid>https://kingye.me/interview/docs/pl/cpp/</guid>
       <description>C++ #  更多教程详见：
  C++ 学习笔记 huihut/interview    基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
       <title>Go</title>
-      <link>https://ikingye.github.io/interview/docs/pl/go/</link>
+      <link>https://kingye.me/interview/docs/pl/go/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/go/</guid>
+      <guid>https://kingye.me/interview/docs/pl/go/</guid>
       <description>Go #  更多教程详见：
  Go 高手进阶 Go 设计与实现 Go 学习笔记 shgopher/GOFamily  geektutu/interview-questions    基础 #  标准库 #  为什么需要 response.Body.Close()？ #  为了 TCP 连接复用
 // The default HTTP client&#39;s Transport does not // attempt to reuse HTTP/1.0 or HTTP/1.1 TCP connections // (keep-alive) unless the Body is read to completion and is // closed. 读取 body 并关闭，才会复用 TCP 连接
@@ -38,58 +38,58 @@ for _, route := range routes { res, err := Request(route.</description>
     
     <item>
       <title>Java</title>
-      <link>https://ikingye.github.io/interview/docs/pl/java/</link>
+      <link>https://kingye.me/interview/docs/pl/java/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/java/</guid>
+      <guid>https://kingye.me/interview/docs/pl/java/</guid>
       <description>Java #  更多教程详见：
  Java 学习笔记 Snailclimb/JavaGuide    基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
       <title>JavaScript</title>
-      <link>https://ikingye.github.io/interview/docs/pl/javascript/</link>
+      <link>https://kingye.me/interview/docs/pl/javascript/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/javascript/</guid>
+      <guid>https://kingye.me/interview/docs/pl/javascript/</guid>
       <description>JavaScript #  更多教程详见：JavaScript 学习笔记  基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
       <title>Kotlin</title>
-      <link>https://ikingye.github.io/interview/docs/pl/kotlin/</link>
+      <link>https://kingye.me/interview/docs/pl/kotlin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/kotlin/</guid>
+      <guid>https://kingye.me/interview/docs/pl/kotlin/</guid>
       <description>Kotlin #  更多教程详见：Kotlin 学习笔记  基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
       <title>PHP</title>
-      <link>https://ikingye.github.io/interview/docs/pl/php/</link>
+      <link>https://kingye.me/interview/docs/pl/php/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/php/</guid>
+      <guid>https://kingye.me/interview/docs/pl/php/</guid>
       <description>PHP #  更多教程详见：
  PHP 高手进阶 PHP 学习笔记 colinlet/PHP-Interview-QA    基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://ikingye.github.io/interview/docs/pl/python/</link>
+      <link>https://kingye.me/interview/docs/pl/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/python/</guid>
+      <guid>https://kingye.me/interview/docs/pl/python/</guid>
       <description>Python #  更多教程详见：
  Python 学习笔记 taizilongxu/interview_python  kenwoodjw/python_interview_question    基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
       <title>Rust</title>
-      <link>https://ikingye.github.io/interview/docs/pl/rust/</link>
+      <link>https://kingye.me/interview/docs/pl/rust/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/rust/</guid>
+      <guid>https://kingye.me/interview/docs/pl/rust/</guid>
       <description>Rust #  更多教程详见：Rust 学习笔记  基础 #    进阶 #    设计与实现 #  </description>
     </item>
     

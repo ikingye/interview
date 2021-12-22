@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web 后端 on 面试笔记</title>
-    <link>https://ikingye.github.io/interview/docs/backend/web/</link>
+    <link>https://kingye.me/interview/docs/backend/web/</link>
     <description>Recent content in Web 后端 on 面试笔记</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://ikingye.github.io/interview/docs/backend/web/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://kingye.me/interview/docs/backend/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go Web 后端</title>
-      <link>https://ikingye.github.io/interview/docs/backend/web/go/</link>
+      <link>https://kingye.me/interview/docs/backend/web/go/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/backend/web/go/</guid>
+      <guid>https://kingye.me/interview/docs/backend/web/go/</guid>
       <description>Go Web 后端 #  Gin #  Beego #  </description>
     </item>
     
     <item>
       <title>Java Web 后端</title>
-      <link>https://ikingye.github.io/interview/docs/backend/web/java/</link>
+      <link>https://kingye.me/interview/docs/backend/web/java/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/backend/web/java/</guid>
+      <guid>https://kingye.me/interview/docs/backend/web/java/</guid>
       <description>Java Web 后端 #  Spring #  </description>
     </item>
     
     <item>
       <title>PHP 后端</title>
-      <link>https://ikingye.github.io/interview/docs/backend/web/php/</link>
+      <link>https://kingye.me/interview/docs/backend/web/php/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/backend/web/php/</guid>
+      <guid>https://kingye.me/interview/docs/backend/web/php/</guid>
       <description>PHP 后端 #  </description>
     </item>
     
     <item>
       <title>Python 后端</title>
-      <link>https://ikingye.github.io/interview/docs/backend/web/python/</link>
+      <link>https://kingye.me/interview/docs/backend/web/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/backend/web/python/</guid>
+      <guid>https://kingye.me/interview/docs/backend/web/python/</guid>
       <description>Python 后端 #  </description>
     </item>
     

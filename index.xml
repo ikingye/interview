@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>首页 on 面试笔记</title>
-    <link>https://ikingye.github.io/interview/</link>
+    <link>https://kingye.me/interview/</link>
     <description>Recent content in 首页 on 面试笔记</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://ikingye.github.io/interview/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://kingye.me/interview/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux</title>
-      <link>https://ikingye.github.io/interview/docs/os/linux/</link>
+      <link>https://kingye.me/interview/docs/os/linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/os/linux/</guid>
+      <guid>https://kingye.me/interview/docs/os/linux/</guid>
       <description>Linux #  更多教程详见：Linux 学习笔记  硬件信息 #  如何查看内存大小？ #  free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ #  # 物理 cpu 个数 cat /proc/cpuinfo| grep &amp;#39;physical id&amp;#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &amp;#39;core id&amp;#39; | sort | uniq | wc -l # 逻辑 cpu 个数（线程数） cat /proc/cpuinfo| grep &amp;#39;processor&amp;#39; | sort | uniq | wc -l 例子：</description>
     </item>
     
     <item>
       <title>C</title>
-      <link>https://ikingye.github.io/interview/docs/pl/c/</link>
+      <link>https://kingye.me/interview/docs/pl/c/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/c/</guid>
+      <guid>https://kingye.me/interview/docs/pl/c/</guid>
       <description>C #  更多教程详见：C 学习笔记  基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
       <title>Docker</title>
-      <link>https://ikingye.github.io/interview/docs/cloud/docker/</link>
+      <link>https://kingye.me/interview/docs/cloud/docker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/cloud/docker/</guid>
+      <guid>https://kingye.me/interview/docs/cloud/docker/</guid>
       <description>Docker #  更多内容见：Docker 学习笔记
 entrypoint vs cmd #    格式
  Shell form  实际运行的是 /bin/sh -c 命令  有些镜像没有 shell 程序，无法使用这种方式 从外部发送任何 POSIX 信号到 docker 容器，/bin/sh 命令不会转发消息给实际运行的命令   CMD executable param1 param2 ENTRYPOINT executable param1 param2  会忽略 CMD 或者 docker run 参数 无法覆盖     Exec form  the JSON array format CMD [&amp;quot;executable&amp;quot;,&amp;quot;param1&amp;quot;,&amp;quot;param2&amp;quot;]  如果要使用 Shell 环境变量，必须显示使用 sh 如 CMD [ &amp;quot;sh&amp;quot;, &amp;quot;-c&amp;quot;, &amp;quot;echo $HOME&amp;quot; ]   ENTRYPOINT [&amp;quot;executable&amp;quot;,&amp;quot;param1&amp;quot;,&amp;quot;param2&amp;quot;]  会把 CMD 接到后面作为参数 docker run 可以覆盖：docker run demo --entrypoint cmd   不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法      覆盖</description>
@@ -36,56 +36,56 @@ entrypoint vs cmd #    格式
     
     <item>
       <title>Go Web 后端</title>
-      <link>https://ikingye.github.io/interview/docs/backend/web/go/</link>
+      <link>https://kingye.me/interview/docs/backend/web/go/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/backend/web/go/</guid>
+      <guid>https://kingye.me/interview/docs/backend/web/go/</guid>
       <description>Go Web 后端 #  Gin #  Beego #  </description>
     </item>
     
     <item>
       <title>HTTP</title>
-      <link>https://ikingye.github.io/interview/docs/network/http/</link>
+      <link>https://kingye.me/interview/docs/network/http/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/network/http/</guid>
+      <guid>https://kingye.me/interview/docs/network/http/</guid>
       <description>HTTP #  HTTP 基础 #  HTTP 状态码有哪些？ #   2XX 成功  200 ok（请求成功） 204 no content （请求成功，但是没有结果返回） 206 partial content （客户端请求一部分资源，服务端成功响应，返回一范围资源）   3XX 重定向  301 move permanently （永久性重定向） 302 found （临时性重定向） 303 see other （示由于请求对应的资源存在着另一个 URI，应使用 GET 方法定向获取请求的资源） 304 not modified （表示在客户端采用带条件的访问某资源时，服务端找到了资源，但是这个请求的条件不符合。跟重定向无关） 307 temporary redirect （跟 302 一个意思）   4XX 客户端错误  400 bad request （请求报文存在语法错误） 401 unauthorized （需要认证（第一次返回）或者认证失败（第二次返回）） 403 forbidden （请求被服务器拒绝了） 404 not found （服务器上无法找到请求的资源）   5XX 服务器错误  500 internal server error （服务端执行请求时发生了错误） 503 service unavailable （服务器正在超负载或者停机维护，无法处理请求）    301 和 302 有什么区别？分别适用于什么场景？ #  101， 304， 307 分别是什么？ #  101 协议升级</description>
     </item>
     
     <item>
       <title>Kafka</title>
-      <link>https://ikingye.github.io/interview/docs/backend/mq/kafka/</link>
+      <link>https://kingye.me/interview/docs/backend/mq/kafka/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/backend/mq/kafka/</guid>
+      <guid>https://kingye.me/interview/docs/backend/mq/kafka/</guid>
       <description>Kafka #  Kafka 如何实现一致性？ #  </description>
     </item>
     
     <item>
       <title>Mysql</title>
-      <link>https://ikingye.github.io/interview/docs/backend/db/mysql/</link>
+      <link>https://kingye.me/interview/docs/backend/db/mysql/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/backend/db/mysql/</guid>
+      <guid>https://kingye.me/interview/docs/backend/db/mysql/</guid>
       <description>Mysql #  Mysql 有哪些引擎，分别有什么特点？ #   Mysql 配置文件在哪里？ #   Mysql 索引是怎么实现的？ #   Mysql 事务是怎么实现的？ #  begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。
 begin; select * from xxx; commit; -- 或者 rollback;  Mysql 事务隔离级别有哪些？ #     隔离级别 脏读 不可重复读 幻读 锁 备注     读未提交（READ UNCOMMITTED） √ √ √ 不加锁    读提交 （READ COMMITTED） × √ √  Oracle 默认   可重复读 （REPEATABLE READ） × × √  Mysql 默认   串行化 （SERIALIZABLE） × × × 共享锁 相当于单线程     可重复读  事务开始时读到的已有数据是什么，在事务提交前的任意时刻，这些数据的值都是一样的。    设置隔离级别</description>
     </item>
     
     <item>
       <title>TCP/UDP/IP</title>
-      <link>https://ikingye.github.io/interview/docs/network/tcp/</link>
+      <link>https://kingye.me/interview/docs/network/tcp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/network/tcp/</guid>
+      <guid>https://kingye.me/interview/docs/network/tcp/</guid>
       <description>TCP/UDP/IP #  TCP #  </description>
     </item>
     
     <item>
       <title>XSS</title>
-      <link>https://ikingye.github.io/interview/docs/security/web/xss/</link>
+      <link>https://kingye.me/interview/docs/security/web/xss/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/security/web/xss/</guid>
+      <guid>https://kingye.me/interview/docs/security/web/xss/</guid>
       <description>XSS #  什么是 XSS，为什么会发生 XSS？ #  Cross-site scripting 跨站脚本 (wiki)
 XSS 发生的原因 #  没有将用户输入的文本进行合适的过滤，就贸然插入到 HTML 中，这很容易造成注入漏洞。 攻击者可以利用漏洞，构造出恶意的代码指令，进而利用恶意代码危害数据安全。
 不仅仅是业务上的 “用户的 UGC 内容” 可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：
@@ -94,37 +94,37 @@ XSS 发生的原因 #  没有将用户输入的文本进行合适的过滤，就
     
     <item>
       <title>二叉树</title>
-      <link>https://ikingye.github.io/interview/docs/algs/tree/</link>
+      <link>https://kingye.me/interview/docs/algs/tree/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/algs/tree/</guid>
+      <guid>https://kingye.me/interview/docs/algs/tree/</guid>
       <description>二叉树 #  </description>
     </item>
     
     <item>
       <title>动态规划</title>
-      <link>https://ikingye.github.io/interview/docs/algs/dp/</link>
+      <link>https://kingye.me/interview/docs/algs/dp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/algs/dp/</guid>
+      <guid>https://kingye.me/interview/docs/algs/dp/</guid>
       <description>动态规划 #  </description>
     </item>
     
     <item>
       <title>发包工具</title>
-      <link>https://ikingye.github.io/interview/docs/network/send/</link>
+      <link>https://kingye.me/interview/docs/network/send/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/network/send/</guid>
+      <guid>https://kingye.me/interview/docs/network/send/</guid>
       <description>发包工具 #  综合 #  常用发包工具有哪些？分别有什么特点，适用于什么场景？ #   PacketSender #  </description>
     </item>
     
     <item>
       <title>字符编码</title>
-      <link>https://ikingye.github.io/interview/docs/others/encode/</link>
+      <link>https://kingye.me/interview/docs/others/encode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/others/encode/</guid>
+      <guid>https://kingye.me/interview/docs/others/encode/</guid>
       <description>字符编码 #  有的字符在一些环境中是不能显示或使用的， 比如 &amp;amp;, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
 各种编码的特征 #   Base 编码  Base64  组成字符：A-Z、a-z、0-9、+、/ 末尾一般补 0-2 个 =（可以不补 =）   Base32  组成字符：A-Z、2-7 末尾一般补 0-6 个 =（可以不补 =）   Base16  组成字符：0-9、A-F 末尾没有 =       Base 编码 #  参考：rfc4648
 Base 系列的就是用来将字节编码为 ASCII 中的可见字符的。
@@ -134,92 +134,92 @@ Base64 #  Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9�
     
     <item>
       <title>抓包</title>
-      <link>https://ikingye.github.io/interview/docs/network/capture/</link>
+      <link>https://kingye.me/interview/docs/network/capture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/network/capture/</guid>
+      <guid>https://kingye.me/interview/docs/network/capture/</guid>
       <description>抓包 #  综合 #  常用抓包工具有哪些？分别有什么特点，适用于什么场景？ #   tcpdump #   tcpdump -D: 列出所有可监听设备 tcpdump -i: 指定网络接口（网卡）  tcpdump -i any: 不确定走哪个网卡   tcpdump host: 指定主机  tcpdump src host: 指定主机发送出去的包 tcpdump dst host: 发送到指定主机的包   tcpdump tcp: 指定协议 tcpdump port: 指定端口 tcpdump -n: 直接显示 IP，而不把 IP 解析为主机名 tcpdump -nn: 直接显示 IP 与端口，而不解析为主机名与服务 tcpdump -N: 不打印 host 的域名部分，比如打印 nic 而不是 nic.ddn.mil tcpdump -w: 输出到文件 tcpdump -tttt: 更具有可读性的时间格式 tcpdump -c: 抓 n 个包，然后退出  # 监视第一个网络接口上所有流过的数据包 tcpdump # 监视指定网络接口的数据包 tcpdump -i eth1 # 截获主机 210.</description>
     </item>
     
     <item>
       <title>排序算法</title>
-      <link>https://ikingye.github.io/interview/docs/algs/sort/</link>
+      <link>https://kingye.me/interview/docs/algs/sort/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/algs/sort/</guid>
+      <guid>https://kingye.me/interview/docs/algs/sort/</guid>
       <description>排序算法 #  </description>
     </item>
     
     <item>
       <title>查询算法</title>
-      <link>https://ikingye.github.io/interview/docs/algs/search/</link>
+      <link>https://kingye.me/interview/docs/algs/search/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/algs/search/</guid>
+      <guid>https://kingye.me/interview/docs/algs/search/</guid>
       <description>查询算法 #  </description>
     </item>
     
     <item>
       <title>设计模式</title>
-      <link>https://ikingye.github.io/interview/docs/se/dp/</link>
+      <link>https://kingye.me/interview/docs/se/dp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/se/dp/</guid>
+      <guid>https://kingye.me/interview/docs/se/dp/</guid>
       <description>设计模式 #  设计原则 #  单一职责原则 (SRP) #   开闭原则 (Open Closed Principle) #   里氏替换原则 (Liskov Substitution Principle) #   依赖倒置原则 (Dependence Inversion Principle) #   接口隔离原则 (Interface Segregation Principle) #   迪米特原则 (Demeter Principle) #    创建型模式 #  简单工厂模式 #   工厂方法模式 #   抽象工厂模式 #   建造者模式 #   单例模式 #    结构型模式 #  适配器模式 #   桥接模式 #   装饰模式 #   外观模式 #   享元模式 #   代理模式 #   组合模式 #  适配器模式、装饰模式、代理模式有哪些异同？ #   适配器模式  适配器模式实现新接口   代理模式  代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。   装饰器模式  原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。      装饰器模式与代理模式实现原接口 都持有原对象  装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象    /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi { public void updateDate(String orderId, String date, String client); } public class SourceOrderApiImpl implements SourceOrderApi{ @Override public void updateDate(String orderId, String date, String client) { System.</description>
     </item>
     
     <item>
       <title>配置热加载</title>
-      <link>https://ikingye.github.io/interview/docs/backend/others/hot-load/</link>
+      <link>https://kingye.me/interview/docs/backend/others/hot-load/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/backend/others/hot-load/</guid>
+      <guid>https://kingye.me/interview/docs/backend/others/hot-load/</guid>
       <description>配置热加载 #  </description>
     </item>
     
     <item>
       <title>链表</title>
-      <link>https://ikingye.github.io/interview/docs/algs/link/</link>
+      <link>https://kingye.me/interview/docs/algs/link/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/algs/link/</guid>
+      <guid>https://kingye.me/interview/docs/algs/link/</guid>
       <description>链表 #  </description>
     </item>
     
     <item>
       <title>C&#43;&#43;</title>
-      <link>https://ikingye.github.io/interview/docs/pl/cpp/</link>
+      <link>https://kingye.me/interview/docs/pl/cpp/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/cpp/</guid>
+      <guid>https://kingye.me/interview/docs/pl/cpp/</guid>
       <description>C++ #  更多教程详见：
  C++ 学习笔记 huihut/interview    基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
       <title>CSRF</title>
-      <link>https://ikingye.github.io/interview/docs/security/web/csrf/</link>
+      <link>https://kingye.me/interview/docs/security/web/csrf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/security/web/csrf/</guid>
+      <guid>https://kingye.me/interview/docs/security/web/csrf/</guid>
       <description>CSRF #  什么是 CSRF，为什么会发生 CSRF？ #   有哪些 CSRF 攻击方法？ #   如何防止 CSRF 攻击？ #  </description>
     </item>
     
     <item>
       <title>Java Web 后端</title>
-      <link>https://ikingye.github.io/interview/docs/backend/web/java/</link>
+      <link>https://kingye.me/interview/docs/backend/web/java/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/backend/web/java/</guid>
+      <guid>https://kingye.me/interview/docs/backend/web/java/</guid>
       <description>Java Web 后端 #  Spring #  </description>
     </item>
     
     <item>
       <title>Kubernetes</title>
-      <link>https://ikingye.github.io/interview/docs/cloud/kubernetes/</link>
+      <link>https://kingye.me/interview/docs/cloud/kubernetes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/cloud/kubernetes/</guid>
+      <guid>https://kingye.me/interview/docs/cloud/kubernetes/</guid>
       <description>Kubernetes #  更多内容见：Kubernetes 学习笔记
 参考：
  Kubernetes API 资源使用 - 应该使用哪个 Group 和 Version?  端口 #   containerPort：在容器上，用于被 pod 绑定，是可选的，仅仅是提示信息，容器中任何监听 0.0.0.0 的端口，都会暴露出来  是可选的，仅仅是提示信息 容器中任何监听 0.0.0.0 的端口，都会暴露出来 无法被更新    targetPort：在 pod 上，从 port 和 nodePort 上来的流量，经过 kube-proxy 流入到后端 pod 的 targetPort 上，最后进入容器  targetPort 和 containerPort 是一致的  targetPort and containerPort must be identical most of the time because whatever port is open for your application in a container that would be the same port you will wish to send traffic from service via targetPort.</description>
@@ -227,48 +227,48 @@ Base64 #  Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9�
     
     <item>
       <title>Redis</title>
-      <link>https://ikingye.github.io/interview/docs/backend/db/redis/</link>
+      <link>https://kingye.me/interview/docs/backend/db/redis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/backend/db/redis/</guid>
+      <guid>https://kingye.me/interview/docs/backend/db/redis/</guid>
       <description>Redis #  Redis 有哪些数据结构，分别适用什么场景？ #   Redis 数据结构是如何实现的？ #   Redis 如何做持久化？ #  RDB #  在指定的时间间隔能对你的数据进行快照存储
 # 时间策略 save 900 1 save 300 10 save 60 10000 # 文件名称 dbfilename dump.rdb # 文件保存路径 dir /home/work/app/redis/data/ # 如果持久化出错，主进程是否停止写入 stop-writes-on-bgsave-error yes # 是否压缩 rdbcompression yes # 导入时是否检查 rdbchecksum yes AOF #  # 是否开启aof appendonly yes # 文件名称 appendfilename &amp;#34;appendonly.aof&amp;#34; # 同步方式 appendfsync everysec # aof重写期间是否同步 no-appendfsync-on-rewrite no # 重写触发配置 auto-aof-rewrite-percentage 100 auto-aof-rewrite-min-size 64mb # 加载aof时如果有错如何处理 aof-load-truncated yes # 文件重写策略 aof-rewrite-incremental-fsync yes  Redis 是单进程单线程，这么设计有什么优点？ #  </description>
     </item>
     
     <item>
       <title>RocketMQ</title>
-      <link>https://ikingye.github.io/interview/docs/backend/mq/rocketmq/</link>
+      <link>https://kingye.me/interview/docs/backend/mq/rocketmq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/backend/mq/rocketmq/</guid>
+      <guid>https://kingye.me/interview/docs/backend/mq/rocketmq/</guid>
       <description>RocketMQ #  </description>
     </item>
     
     <item>
       <title>加密</title>
-      <link>https://ikingye.github.io/interview/docs/others/encryption/</link>
+      <link>https://kingye.me/interview/docs/others/encryption/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/others/encryption/</guid>
+      <guid>https://kingye.me/interview/docs/others/encryption/</guid>
       <description>加密 #  SSL/TLS #  TLS 握手流程是什么样的？ #  参考：
  SSL/TLS 详解  </description>
     </item>
     
     <item>
       <title>架构设计</title>
-      <link>https://ikingye.github.io/interview/docs/se/architecture/</link>
+      <link>https://kingye.me/interview/docs/se/architecture/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/se/architecture/</guid>
+      <guid>https://kingye.me/interview/docs/se/architecture/</guid>
       <description>架构设计 #  架构设计原则 #  CAP (Consistency, Availability, Partition tolerance) #  如何理解 CAP，你在做系统设计时是如何取舍的？ #   ACID (Atomicity, Consistency, Isolation, Durability) #   BASE (Basically Available, Soft state, Eventual consistency) #    高性能 #    高可用 #    高并发 #    高扩展性 #  </description>
     </item>
     
     <item>
       <title>程序热重启</title>
-      <link>https://ikingye.github.io/interview/docs/backend/others/hot-restart/</link>
+      <link>https://kingye.me/interview/docs/backend/others/hot-restart/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/backend/others/hot-restart/</guid>
+      <guid>https://kingye.me/interview/docs/backend/others/hot-restart/</guid>
       <description>程序热重启 #  程序如何优雅退出？ #  Linux 信号 #  信号是进程间通信的底层形式。
 Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
 发送信号的原因：
@@ -283,37 +283,37 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
     
     <item>
       <title>PHP 后端</title>
-      <link>https://ikingye.github.io/interview/docs/backend/web/php/</link>
+      <link>https://kingye.me/interview/docs/backend/web/php/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/backend/web/php/</guid>
+      <guid>https://kingye.me/interview/docs/backend/web/php/</guid>
       <description>PHP 后端 #  </description>
     </item>
     
     <item>
       <title>RabbitMQ</title>
-      <link>https://ikingye.github.io/interview/docs/backend/mq/rabbitmq/</link>
+      <link>https://kingye.me/interview/docs/backend/mq/rabbitmq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/backend/mq/rabbitmq/</guid>
+      <guid>https://kingye.me/interview/docs/backend/mq/rabbitmq/</guid>
       <description>RabbitMQ #  </description>
     </item>
     
     <item>
       <title>编译</title>
-      <link>https://ikingye.github.io/interview/docs/others/compile/</link>
+      <link>https://kingye.me/interview/docs/others/compile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/others/compile/</guid>
+      <guid>https://kingye.me/interview/docs/others/compile/</guid>
       <description>编译 #  </description>
     </item>
     
     <item>
       <title>Go</title>
-      <link>https://ikingye.github.io/interview/docs/pl/go/</link>
+      <link>https://kingye.me/interview/docs/pl/go/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/go/</guid>
+      <guid>https://kingye.me/interview/docs/pl/go/</guid>
       <description>Go #  更多教程详见：
  Go 高手进阶 Go 设计与实现 Go 学习笔记 shgopher/GOFamily  geektutu/interview-questions    基础 #  标准库 #  为什么需要 response.Body.Close()？ #  为了 TCP 连接复用
 // The default HTTP client&#39;s Transport does not // attempt to reuse HTTP/1.0 or HTTP/1.1 TCP connections // (keep-alive) unless the Body is read to completion and is // closed. 读取 body 并关闭，才会复用 TCP 连接
@@ -322,76 +322,76 @@ for _, route := range routes { res, err := Request(route.</description>
     
     <item>
       <title>Python 后端</title>
-      <link>https://ikingye.github.io/interview/docs/backend/web/python/</link>
+      <link>https://kingye.me/interview/docs/backend/web/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/backend/web/python/</guid>
+      <guid>https://kingye.me/interview/docs/backend/web/python/</guid>
       <description>Python 后端 #  </description>
     </item>
     
     <item>
       <title>Cloud Native</title>
-      <link>https://ikingye.github.io/interview/docs/cloud/native/</link>
+      <link>https://kingye.me/interview/docs/cloud/native/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/cloud/native/</guid>
+      <guid>https://kingye.me/interview/docs/cloud/native/</guid>
       <description>Cloud Native #  </description>
     </item>
     
     <item>
       <title>Java</title>
-      <link>https://ikingye.github.io/interview/docs/pl/java/</link>
+      <link>https://kingye.me/interview/docs/pl/java/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/java/</guid>
+      <guid>https://kingye.me/interview/docs/pl/java/</guid>
       <description>Java #  更多教程详见：
  Java 学习笔记 Snailclimb/JavaGuide    基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
       <title>JavaScript</title>
-      <link>https://ikingye.github.io/interview/docs/pl/javascript/</link>
+      <link>https://kingye.me/interview/docs/pl/javascript/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/javascript/</guid>
+      <guid>https://kingye.me/interview/docs/pl/javascript/</guid>
       <description>JavaScript #  更多教程详见：JavaScript 学习笔记  基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
       <title>Kotlin</title>
-      <link>https://ikingye.github.io/interview/docs/pl/kotlin/</link>
+      <link>https://kingye.me/interview/docs/pl/kotlin/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/kotlin/</guid>
+      <guid>https://kingye.me/interview/docs/pl/kotlin/</guid>
       <description>Kotlin #  更多教程详见：Kotlin 学习笔记  基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
       <title>PHP</title>
-      <link>https://ikingye.github.io/interview/docs/pl/php/</link>
+      <link>https://kingye.me/interview/docs/pl/php/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/php/</guid>
+      <guid>https://kingye.me/interview/docs/pl/php/</guid>
       <description>PHP #  更多教程详见：
  PHP 高手进阶 PHP 学习笔记 colinlet/PHP-Interview-QA    基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
       <title>Python</title>
-      <link>https://ikingye.github.io/interview/docs/pl/python/</link>
+      <link>https://kingye.me/interview/docs/pl/python/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/python/</guid>
+      <guid>https://kingye.me/interview/docs/pl/python/</guid>
       <description>Python #  更多教程详见：
  Python 学习笔记 taizilongxu/interview_python  kenwoodjw/python_interview_question    基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>
       <title>Rust</title>
-      <link>https://ikingye.github.io/interview/docs/pl/rust/</link>
+      <link>https://kingye.me/interview/docs/pl/rust/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/pl/rust/</guid>
+      <guid>https://kingye.me/interview/docs/pl/rust/</guid>
       <description>Rust #  更多教程详见：Rust 学习笔记  基础 #    进阶 #    设计与实现 #  </description>
     </item>
     

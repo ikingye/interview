@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Web 安全 on 面试笔记</title>
-    <link>https://ikingye.github.io/interview/docs/security/web/</link>
+    <link>https://kingye.me/interview/docs/security/web/</link>
     <description>Recent content in Web 安全 on 面试笔记</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://ikingye.github.io/interview/docs/security/web/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://kingye.me/interview/docs/security/web/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>XSS</title>
-      <link>https://ikingye.github.io/interview/docs/security/web/xss/</link>
+      <link>https://kingye.me/interview/docs/security/web/xss/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/security/web/xss/</guid>
+      <guid>https://kingye.me/interview/docs/security/web/xss/</guid>
       <description>XSS #  什么是 XSS，为什么会发生 XSS？ #  Cross-site scripting 跨站脚本 (wiki)
 XSS 发生的原因 #  没有将用户输入的文本进行合适的过滤，就贸然插入到 HTML 中，这很容易造成注入漏洞。 攻击者可以利用漏洞，构造出恶意的代码指令，进而利用恶意代码危害数据安全。
 不仅仅是业务上的 “用户的 UGC 内容” 可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：
@@ -19,10 +19,10 @@ XSS 发生的原因 #  没有将用户输入的文本进行合适的过滤，就
     
     <item>
       <title>CSRF</title>
-      <link>https://ikingye.github.io/interview/docs/security/web/csrf/</link>
+      <link>https://kingye.me/interview/docs/security/web/csrf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://ikingye.github.io/interview/docs/security/web/csrf/</guid>
+      <guid>https://kingye.me/interview/docs/security/web/csrf/</guid>
       <description>CSRF #  什么是 CSRF，为什么会发生 CSRF？ #   有哪些 CSRF 攻击方法？ #   如何防止 CSRF 攻击？ #  </description>
     </item>
     
