@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta name="generator" content="Hugo 0.87.0" />
+  <meta name="generator" content="Hugo 0.99.1" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="字符编码 #  有的字符在一些环境中是不能显示或使用的， 比如 &amp;, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
@@ -25,7 +25,7 @@ Base64 #  Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9�
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.9320dd2531c87540bbb406bf91ebbd8a94b7753048eeddba36dc292b68fbe9aa.js" integrity="sha256-kyDdJTHIdUC7tAa/keu9ipS3dTBI7t26NtwpK2j76ao="></script>
+<script defer src="/interview/en.search.min.8d512de539ea909fe2ea623d23a032ab7f84384c0f1e030ce6ffa5cf8c8a0864.js" integrity="sha256-jVEt5TnqkJ/i6mI9I6Ayq3&#43;EOEwPHgMM5v&#43;lz4yKCGQ="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1162,7 +1162,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -1288,17 +1288,17 @@ https://github.com/alex-shpak/hugo-book
 <p>Base16 编码会将<strong>字节</strong>切为 5 个一组，所以此编码后会用到 32 个字符（<code>A-Z、2-7</code>），
 数据量扩大了 <code>3/5</code>（文本一长，最后填充的 0 和 = 的数据量差不多就可忽略不计了）。</p>
 <p>需要凑够 8 个字符</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#ae81ff">00000001</span> <span style="color:#ae81ff">00000011</span> <span style="color:#ae81ff">00000111</span> <span style="color:#ae81ff">00001111</span> 00011111
-<span style="color:#f92672">=</span>&gt;
-<span style="color:#ae81ff">00000</span> <span style="color:#ae81ff">00100</span> <span style="color:#ae81ff">00001</span> <span style="color:#ae81ff">10000</span> <span style="color:#ae81ff">01110</span> <span style="color:#ae81ff">00011</span> <span style="color:#ae81ff">11000</span> <span style="color:#ae81ff">11111</span>
-
-
-<span style="color:#ae81ff">00000001</span> <span style="color:#ae81ff">00000011</span> <span style="color:#ae81ff">00000111</span> <span style="color:#ae81ff">00001111</span> <span style="color:#ae81ff">00011111</span> 11111111
-<span style="color:#f92672">=</span>&gt;
-<span style="color:#ae81ff">00000</span> <span style="color:#ae81ff">00100</span> <span style="color:#ae81ff">00001</span> <span style="color:#ae81ff">10000</span> <span style="color:#ae81ff">01110</span> <span style="color:#ae81ff">00011</span> <span style="color:#ae81ff">11000</span> <span style="color:#ae81ff">11111</span>
-<span style="color:#ae81ff">11111</span> 11100 <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>
-// 最后不足 <span style="color:#ae81ff">5</span> 字节的重组后先在右边充 0，编码完成后再右边充 <span style="color:#f92672">=</span>
-</code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200612113053.png" alt="" /></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#ae81ff">00000001</span> <span style="color:#ae81ff">00000011</span> <span style="color:#ae81ff">00000111</span> <span style="color:#ae81ff">00001111</span> 00011111
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">00000</span> <span style="color:#ae81ff">00100</span> <span style="color:#ae81ff">00001</span> <span style="color:#ae81ff">10000</span> <span style="color:#ae81ff">01110</span> <span style="color:#ae81ff">00011</span> <span style="color:#ae81ff">11000</span> <span style="color:#ae81ff">11111</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">00000001</span> <span style="color:#ae81ff">00000011</span> <span style="color:#ae81ff">00000111</span> <span style="color:#ae81ff">00001111</span> <span style="color:#ae81ff">00011111</span> 11111111
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">00000</span> <span style="color:#ae81ff">00100</span> <span style="color:#ae81ff">00001</span> <span style="color:#ae81ff">10000</span> <span style="color:#ae81ff">01110</span> <span style="color:#ae81ff">00011</span> <span style="color:#ae81ff">11000</span> <span style="color:#ae81ff">11111</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">11111</span> 11100 <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>// 最后不足 <span style="color:#ae81ff">5</span> 字节的重组后先在右边充 0，编码完成后再右边充 <span style="color:#f92672">=</span>
+</span></span></code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200612113053.png" alt="" /></p>
 <h4 id="为什么后面要补-">
   为什么后面要补 <code>=</code>
   <a class="anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e5%90%8e%e9%9d%a2%e8%a6%81%e8%a1%a5-">#</a>

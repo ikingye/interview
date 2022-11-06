@@ -138,7 +138,7 @@ Base64 #  Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kingye.me/interview/docs/network/capture/</guid>
-      <description>抓包 #  综合 #  常用抓包工具有哪些？分别有什么特点，适用于什么场景？ #   tcpdump #   tcpdump -D: 列出所有可监听设备 tcpdump -i: 指定网络接口（网卡）  tcpdump -i any: 不确定走哪个网卡   tcpdump host: 指定主机  tcpdump src host: 指定主机发送出去的包 tcpdump dst host: 发送到指定主机的包   tcpdump tcp: 指定协议 tcpdump port: 指定端口 tcpdump -n: 直接显示 IP，而不把 IP 解析为主机名 tcpdump -nn: 直接显示 IP 与端口，而不解析为主机名与服务 tcpdump -N: 不打印 host 的域名部分，比如打印 nic 而不是 nic.ddn.mil tcpdump -w: 输出到文件 tcpdump -tttt: 更具有可读性的时间格式 tcpdump -c: 抓 n 个包，然后退出  # 监视第一个网络接口上所有流过的数据包 tcpdump # 监视指定网络接口的数据包 tcpdump -i eth1 # 截获主机 210.</description>
+      <description>抓包 #  综合 #  常用抓包工具有哪些？分别有什么特点，适用于什么场景？ #   tcpdump #   tcpdump -D: 列出所有可监听设备 tcpdump -i: 指定网络接口（网卡）  tcpdump -i any: 不确定走哪个网卡   tcpdump host: 指定主机  tcpdump src host: 指定主机发送出去的包 tcpdump dst host: 发送到指定主机的包   tcpdump tcp: 指定协议 tcpdump port: 指定端口 tcpdump -n: 直接显示 IP，而不把 IP 解析为主机名 tcpdump -nn: 直接显示 IP 与端口，而不解析为主机名与服务 tcpdump -N: 不打印 host 的域名部分，比如打印 nic 而不是 nic.ddn.mil tcpdump -w: 输出到文件 tcpdump -tttt: 更具有可读性的时间格式 tcpdump -c: 抓 n 个包，然后退出  # 监视第一个网络接口上所有流过的数据包 tcpdump  # 监视指定网络接口的数据包 tcpdump -i eth1  # 截获主机 210.</description>
     </item>
     
     <item>
@@ -165,7 +165,7 @@ Base64 #  Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kingye.me/interview/docs/se/dp/</guid>
-      <description>设计模式 #  设计原则 #  单一职责原则 (SRP) #   开闭原则 (Open Closed Principle) #   里氏替换原则 (Liskov Substitution Principle) #   依赖倒置原则 (Dependence Inversion Principle) #   接口隔离原则 (Interface Segregation Principle) #   迪米特原则 (Demeter Principle) #    创建型模式 #  简单工厂模式 #   工厂方法模式 #   抽象工厂模式 #   建造者模式 #   单例模式 #    结构型模式 #  适配器模式 #   桥接模式 #   装饰模式 #   外观模式 #   享元模式 #   代理模式 #   组合模式 #  适配器模式、装饰模式、代理模式有哪些异同？ #   适配器模式  适配器模式实现新接口   代理模式  代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。   装饰器模式  原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。      装饰器模式与代理模式实现原接口 都持有原对象  装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象    /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi { public void updateDate(String orderId, String date, String client); } public class SourceOrderApiImpl implements SourceOrderApi{ @Override public void updateDate(String orderId, String date, String client) { System.</description>
+      <description>设计模式 #  设计原则 #  单一职责原则 (SRP) #   开闭原则 (Open Closed Principle) #   里氏替换原则 (Liskov Substitution Principle) #   依赖倒置原则 (Dependence Inversion Principle) #   接口隔离原则 (Interface Segregation Principle) #   迪米特原则 (Demeter Principle) #    创建型模式 #  简单工厂模式 #   工厂方法模式 #   抽象工厂模式 #   建造者模式 #   单例模式 #    结构型模式 #  适配器模式 #   桥接模式 #   装饰模式 #   外观模式 #   享元模式 #   代理模式 #   组合模式 #  适配器模式、装饰模式、代理模式有哪些异同？ #   适配器模式  适配器模式实现新接口   代理模式  代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。   装饰器模式  原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。      装饰器模式与代理模式实现原接口 都持有原对象  装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象    /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi {  public void updateDate(String orderId, String date, String client); }  public class SourceOrderApiImpl implements SourceOrderApi{  @Override  public void updateDate(String orderId, String date, String client) {  System.</description>
     </item>
     
     <item>
@@ -232,7 +232,7 @@ Base64 #  Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9�
       
       <guid>https://kingye.me/interview/docs/backend/db/redis/</guid>
       <description>Redis #  Redis 有哪些数据结构，分别适用什么场景？ #   Redis 数据结构是如何实现的？ #   Redis 如何做持久化？ #  RDB #  在指定的时间间隔能对你的数据进行快照存储
-# 时间策略 save 900 1 save 300 10 save 60 10000 # 文件名称 dbfilename dump.rdb # 文件保存路径 dir /home/work/app/redis/data/ # 如果持久化出错，主进程是否停止写入 stop-writes-on-bgsave-error yes # 是否压缩 rdbcompression yes # 导入时是否检查 rdbchecksum yes AOF #  # 是否开启aof appendonly yes # 文件名称 appendfilename &amp;#34;appendonly.aof&amp;#34; # 同步方式 appendfsync everysec # aof重写期间是否同步 no-appendfsync-on-rewrite no # 重写触发配置 auto-aof-rewrite-percentage 100 auto-aof-rewrite-min-size 64mb # 加载aof时如果有错如何处理 aof-load-truncated yes # 文件重写策略 aof-rewrite-incremental-fsync yes  Redis 是单进程单线程，这么设计有什么优点？ #  </description>
+# 时间策略 save 900 1 save 300 10 save 60 10000  # 文件名称 dbfilename dump.rdb  # 文件保存路径 dir /home/work/app/redis/data/  # 如果持久化出错，主进程是否停止写入 stop-writes-on-bgsave-error yes  # 是否压缩 rdbcompression yes  # 导入时是否检查 rdbchecksum yes AOF #  # 是否开启aof appendonly yes  # 文件名称 appendfilename &amp;#34;appendonly.aof&amp;#34;  # 同步方式 appendfsync everysec  # aof重写期间是否同步 no-appendfsync-on-rewrite no  # 重写触发配置 auto-aof-rewrite-percentage 100 auto-aof-rewrite-min-size 64mb  # 加载aof时如果有错如何处理 aof-load-truncated yes  # 文件重写策略 aof-rewrite-incremental-fsync yes  Redis 是单进程单线程，这么设计有什么优点？ #  </description>
     </item>
     
     <item>
@@ -260,7 +260,9 @@ Base64 #  Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9�
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://kingye.me/interview/docs/se/architecture/</guid>
-      <description>架构设计 #  架构设计原则 #  CAP (Consistency, Availability, Partition tolerance) #  如何理解 CAP，你在做系统设计时是如何取舍的？ #   ACID (Atomicity, Consistency, Isolation, Durability) #   BASE (Basically Available, Soft state, Eventual consistency) #    高性能 #    高可用 #    高并发 #    高扩展性 #  </description>
+      <description>架构设计 #  架构设计原则 #  CAP (Consistency, Availability, Partition tolerance) #  如何理解 CAP，你在做系统设计时是如何取舍的？ #   ACID (Atomicity, Consistency, Isolation, Durability) #  ACID 是追求 CAP 的一致性 (C)
+ BASE (Basically Available, Soft state, Eventual consistency) #  BASE 是追求 CAP 的可用性 (A)
+  高性能 #    高可用 #    高并发 #    高扩展性 #  </description>
     </item>
     
     <item>
@@ -315,9 +317,9 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
       
       <guid>https://kingye.me/interview/docs/pl/go/</guid>
       <description>Go #  更多教程详见：
- Go 高手进阶 Go 设计与实现 Go 学习笔记 shgopher/GOFamily  geektutu/interview-questions    基础 #  标准库 #  为什么需要 response.Body.Close()？ #  为了 TCP 连接复用
-// The default HTTP client&#39;s Transport does not // attempt to reuse HTTP/1.0 or HTTP/1.1 TCP connections // (keep-alive) unless the Body is read to completion and is // closed. 读取 body 并关闭，才会复用 TCP 连接
-for _, route := range routes { res, err := Request(route.</description>
+ Go 学习笔记 shgopher/GOFamily  geektutu/interview-questions    基础 #  标准库 #  为什么需要 response.Body.Close()？ #  为了 TCP 连接复用
+// The default HTTP client&amp;#39;s Transport does not // attempt to reuse HTTP/1.0 or HTTP/1.1 TCP connections // (keep-alive) unless the Body is read to completion and is // closed. 读取 body 并关闭，才会复用 TCP 连接
+for _, route := range routes {  res, err := Request(route.</description>
     </item>
     
     <item>
@@ -373,7 +375,7 @@ for _, route := range routes { res, err := Request(route.</description>
       
       <guid>https://kingye.me/interview/docs/pl/php/</guid>
       <description>PHP #  更多教程详见：
- PHP 高手进阶 PHP 学习笔记 colinlet/PHP-Interview-QA    基础 #    进阶 #    设计与实现 #  </description>
+ PHP 学习笔记 colinlet/PHP-Interview-QA    基础 #    进阶 #    设计与实现 #  </description>
     </item>
     
     <item>

@@ -2,14 +2,14 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta name="generator" content="Hugo 0.87.0" />
+  <meta name="generator" content="Hugo 0.99.1" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Redis #  Redis 有哪些数据结构，分别适用什么场景？ #   Redis 数据结构是如何实现的？ #   Redis 如何做持久化？ #  RDB #  在指定的时间间隔能对你的数据进行快照存储
-# 时间策略 save 900 1 save 300 10 save 60 10000 # 文件名称 dbfilename dump.rdb # 文件保存路径 dir /home/work/app/redis/data/ # 如果持久化出错，主进程是否停止写入 stop-writes-on-bgsave-error yes # 是否压缩 rdbcompression yes # 导入时是否检查 rdbchecksum yes AOF #  # 是否开启aof appendonly yes # 文件名称 appendfilename &#34;appendonly.aof&#34; # 同步方式 appendfsync everysec # aof重写期间是否同步 no-appendfsync-on-rewrite no # 重写触发配置 auto-aof-rewrite-percentage 100 auto-aof-rewrite-min-size 64mb # 加载aof时如果有错如何处理 aof-load-truncated yes # 文件重写策略 aof-rewrite-incremental-fsync yes  Redis 是单进程单线程，这么设计有什么优点？ #  ">
+# 时间策略 save 900 1 save 300 10 save 60 10000  # 文件名称 dbfilename dump.rdb  # 文件保存路径 dir /home/work/app/redis/data/  # 如果持久化出错，主进程是否停止写入 stop-writes-on-bgsave-error yes  # 是否压缩 rdbcompression yes  # 导入时是否检查 rdbchecksum yes AOF #  # 是否开启aof appendonly yes  # 文件名称 appendfilename &#34;appendonly.aof&#34;  # 同步方式 appendfsync everysec  # aof重写期间是否同步 no-appendfsync-on-rewrite no  # 重写触发配置 auto-aof-rewrite-percentage 100 auto-aof-rewrite-min-size 64mb  # 加载aof时如果有错如何处理 aof-load-truncated yes  # 文件重写策略 aof-rewrite-incremental-fsync yes  Redis 是单进程单线程，这么设计有什么优点？ #  ">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Redis" />
 <meta property="og:description" content="Redis #  Redis 有哪些数据结构，分别适用什么场景？ #   Redis 数据结构是如何实现的？ #   Redis 如何做持久化？ #  RDB #  在指定的时间间隔能对你的数据进行快照存储
-# 时间策略 save 900 1 save 300 10 save 60 10000 # 文件名称 dbfilename dump.rdb # 文件保存路径 dir /home/work/app/redis/data/ # 如果持久化出错，主进程是否停止写入 stop-writes-on-bgsave-error yes # 是否压缩 rdbcompression yes # 导入时是否检查 rdbchecksum yes AOF #  # 是否开启aof appendonly yes # 文件名称 appendfilename &#34;appendonly.aof&#34; # 同步方式 appendfsync everysec # aof重写期间是否同步 no-appendfsync-on-rewrite no # 重写触发配置 auto-aof-rewrite-percentage 100 auto-aof-rewrite-min-size 64mb # 加载aof时如果有错如何处理 aof-load-truncated yes # 文件重写策略 aof-rewrite-incremental-fsync yes  Redis 是单进程单线程，这么设计有什么优点？ #  " />
+# 时间策略 save 900 1 save 300 10 save 60 10000  # 文件名称 dbfilename dump.rdb  # 文件保存路径 dir /home/work/app/redis/data/  # 如果持久化出错，主进程是否停止写入 stop-writes-on-bgsave-error yes  # 是否压缩 rdbcompression yes  # 导入时是否检查 rdbchecksum yes AOF #  # 是否开启aof appendonly yes  # 文件名称 appendfilename &#34;appendonly.aof&#34;  # 同步方式 appendfsync everysec  # aof重写期间是否同步 no-appendfsync-on-rewrite no  # 重写触发配置 auto-aof-rewrite-percentage 100 auto-aof-rewrite-min-size 64mb  # 加载aof时如果有错如何处理 aof-load-truncated yes  # 文件重写策略 aof-rewrite-incremental-fsync yes  Redis 是单进程单线程，这么设计有什么优点？ #  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kingye.me/interview/docs/backend/db/redis/" /><meta property="article:section" content="docs" />
 
@@ -19,7 +19,7 @@
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.9320dd2531c87540bbb406bf91ebbd8a94b7753048eeddba36dc292b68fbe9aa.js" integrity="sha256-kyDdJTHIdUC7tAa/keu9ipS3dTBI7t26NtwpK2j76ao="></script>
+<script defer src="/interview/en.search.min.8d512de539ea909fe2ea623d23a032ab7f84384c0f1e030ce6ffa5cf8c8a0864.js" integrity="sha256-jVEt5TnqkJ/i6mI9I6Ayq3&#43;EOEwPHgMM5v&#43;lz4yKCGQ="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1156,7 +1156,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -1236,51 +1236,51 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#rdb">#</a>
 </h3>
 <p>在指定的时间间隔能对你的数据进行快照存储</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 时间策略</span>
-save <span style="color:#ae81ff">900</span> <span style="color:#ae81ff">1</span>
-save <span style="color:#ae81ff">300</span> <span style="color:#ae81ff">10</span>
-save <span style="color:#ae81ff">60</span> <span style="color:#ae81ff">10000</span>
-
-<span style="color:#75715e"># 文件名称</span>
-dbfilename dump.rdb
-
-<span style="color:#75715e"># 文件保存路径</span>
-dir /home/work/app/redis/data/
-
-<span style="color:#75715e"># 如果持久化出错，主进程是否停止写入</span>
-stop-writes-on-bgsave-error yes
-
-<span style="color:#75715e"># 是否压缩</span>
-rdbcompression yes
-
-<span style="color:#75715e"># 导入时是否检查</span>
-rdbchecksum yes
-</code></pre></div><h3 id="aof">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 时间策略</span>
+</span></span><span style="display:flex;"><span>save <span style="color:#ae81ff">900</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>save <span style="color:#ae81ff">300</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>save <span style="color:#ae81ff">60</span> <span style="color:#ae81ff">10000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 文件名称</span>
+</span></span><span style="display:flex;"><span>dbfilename dump.rdb
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 文件保存路径</span>
+</span></span><span style="display:flex;"><span>dir /home/work/app/redis/data/
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 如果持久化出错，主进程是否停止写入</span>
+</span></span><span style="display:flex;"><span>stop-writes-on-bgsave-error yes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 是否压缩</span>
+</span></span><span style="display:flex;"><span>rdbcompression yes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 导入时是否检查</span>
+</span></span><span style="display:flex;"><span>rdbchecksum yes
+</span></span></code></pre></div><h3 id="aof">
   AOF
   <a class="anchor" href="#aof">#</a>
 </h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 是否开启aof</span>
-appendonly yes
-
-<span style="color:#75715e"># 文件名称</span>
-appendfilename <span style="color:#e6db74">&#34;appendonly.aof&#34;</span>
-
-<span style="color:#75715e"># 同步方式</span>
-appendfsync everysec
-
-<span style="color:#75715e"># aof重写期间是否同步</span>
-no-appendfsync-on-rewrite no
-
-<span style="color:#75715e"># 重写触发配置</span>
-auto-aof-rewrite-percentage <span style="color:#ae81ff">100</span>
-auto-aof-rewrite-min-size 64mb
-
-<span style="color:#75715e"># 加载aof时如果有错如何处理</span>
-aof-load-truncated yes
-
-<span style="color:#75715e"># 文件重写策略</span>
-aof-rewrite-incremental-fsync yes
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 是否开启aof</span>
+</span></span><span style="display:flex;"><span>appendonly yes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 文件名称</span>
+</span></span><span style="display:flex;"><span>appendfilename <span style="color:#e6db74">&#34;appendonly.aof&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 同步方式</span>
+</span></span><span style="display:flex;"><span>appendfsync everysec
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># aof重写期间是否同步</span>
+</span></span><span style="display:flex;"><span>no-appendfsync-on-rewrite no
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 重写触发配置</span>
+</span></span><span style="display:flex;"><span>auto-aof-rewrite-percentage <span style="color:#ae81ff">100</span>
+</span></span><span style="display:flex;"><span>auto-aof-rewrite-min-size 64mb
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 加载aof时如果有错如何处理</span>
+</span></span><span style="display:flex;"><span>aof-load-truncated yes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 文件重写策略</span>
+</span></span><span style="display:flex;"><span>aof-rewrite-incremental-fsync yes
+</span></span></code></pre></div><hr>
 <h2 id="redis-是单进程单线程这么设计有什么优点">
   Redis 是单进程单线程，这么设计有什么优点？
   <a class="anchor" href="#redis-%e6%98%af%e5%8d%95%e8%bf%9b%e7%a8%8b%e5%8d%95%e7%ba%bf%e7%a8%8b%e8%bf%99%e4%b9%88%e8%ae%be%e8%ae%a1%e6%9c%89%e4%bb%80%e4%b9%88%e4%bc%98%e7%82%b9">#</a>

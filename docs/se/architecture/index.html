@@ -2,22 +2,26 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta name="generator" content="Hugo 0.87.0" />
+  <meta name="generator" content="Hugo 0.99.1" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="架构设计 #  架构设计原则 #  CAP (Consistency, Availability, Partition tolerance) #  如何理解 CAP，你在做系统设计时是如何取舍的？ #   ACID (Atomicity, Consistency, Isolation, Durability) #   BASE (Basically Available, Soft state, Eventual consistency) #    高性能 #    高可用 #    高并发 #    高扩展性 #  ">
+<meta name="description" content="架构设计 #  架构设计原则 #  CAP (Consistency, Availability, Partition tolerance) #  如何理解 CAP，你在做系统设计时是如何取舍的？ #   ACID (Atomicity, Consistency, Isolation, Durability) #  ACID 是追求 CAP 的一致性 (C)
+ BASE (Basically Available, Soft state, Eventual consistency) #  BASE 是追求 CAP 的可用性 (A)
+  高性能 #    高可用 #    高并发 #    高扩展性 #  ">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="架构设计" />
-<meta property="og:description" content="架构设计 #  架构设计原则 #  CAP (Consistency, Availability, Partition tolerance) #  如何理解 CAP，你在做系统设计时是如何取舍的？ #   ACID (Atomicity, Consistency, Isolation, Durability) #   BASE (Basically Available, Soft state, Eventual consistency) #    高性能 #    高可用 #    高并发 #    高扩展性 #  " />
+<meta property="og:description" content="架构设计 #  架构设计原则 #  CAP (Consistency, Availability, Partition tolerance) #  如何理解 CAP，你在做系统设计时是如何取舍的？ #   ACID (Atomicity, Consistency, Isolation, Durability) #  ACID 是追求 CAP 的一致性 (C)
+ BASE (Basically Available, Soft state, Eventual consistency) #  BASE 是追求 CAP 的可用性 (A)
+  高性能 #    高可用 #    高并发 #    高扩展性 #  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kingye.me/interview/docs/se/architecture/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-07-07T14:51:21+08:00" />
+<meta property="article:modified_time" content="2022-02-14T14:42:14+08:00" />
 
 <title>架构设计 | 面试笔记</title>
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.9320dd2531c87540bbb406bf91ebbd8a94b7753048eeddba36dc292b68fbe9aa.js" integrity="sha256-kyDdJTHIdUC7tAa/keu9ipS3dTBI7t26NtwpK2j76ao="></script>
+<script defer src="/interview/en.search.min.8d512de539ea909fe2ea623d23a032ab7f84384c0f1e030ce6ffa5cf8c8a0864.js" integrity="sha256-jVEt5TnqkJ/i6mI9I6Ayq3&#43;EOEwPHgMM5v&#43;lz4yKCGQ="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1154,7 +1158,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -1238,11 +1242,13 @@ https://github.com/alex-shpak/hugo-book
   ACID (<code>Atomicity</code>, <code>Consistency</code>, <code>Isolation</code>, <code>Durability</code>)
   <a class="anchor" href="#acid-atomicity-consistency-isolation-durability">#</a>
 </h3>
+<p><code>ACID</code> 是追求 <code>CAP</code> 的一致性 (<code>C</code>)</p>
 <hr>
 <h3 id="base-basically-available-soft-state-eventual-consistency">
   BASE (<code>Basically Available</code>, <code>Soft state</code>, <code>Eventual consistency</code>)
   <a class="anchor" href="#base-basically-available-soft-state-eventual-consistency">#</a>
 </h3>
+<p><code>BASE</code> 是追求 <code>CAP</code> 的可用性 (<code>A</code>)</p>
 <hr>
 <hr>
 <h2 id="高性能">
@@ -1277,9 +1283,9 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <div><a class="flex align-center" href="https://github.com/ikingye/interview/commit/e6a4cce4d5ad5628ee846147b7fb694d01cca932" title='Last modified by yewang | 2021-07-07' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://github.com/ikingye/interview/commit/ab1d1b71aec03125d410b0d4799ebd594e4a929a" title='Last modified by yewang | 2022-02-14' target="_blank" rel="noopener">
       <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2021-07-07</span>
+      <span>2022-02-14</span>
     </a>
   </div>
 

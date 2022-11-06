@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta name="generator" content="Hugo 0.87.0" />
+  <meta name="generator" content="Hugo 0.99.1" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="XSS #  什么是 XSS，为什么会发生 XSS？ #  Cross-site scripting 跨站脚本 (wiki)
@@ -23,7 +23,7 @@ XSS 发生的原因 #  没有将用户输入的文本进行合适的过滤，就
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.9320dd2531c87540bbb406bf91ebbd8a94b7753048eeddba36dc292b68fbe9aa.js" integrity="sha256-kyDdJTHIdUC7tAa/keu9ipS3dTBI7t26NtwpK2j76ao="></script>
+<script defer src="/interview/en.search.min.8d512de539ea909fe2ea623d23a032ab7f84384c0f1e030ce6ffa5cf8c8a0864.js" integrity="sha256-jVEt5TnqkJ/i6mI9I6Ayq3&#43;EOEwPHgMM5v&#43;lz4yKCGQ="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1160,7 +1160,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -1324,21 +1324,21 @@ Java 工程里，常用的转义库为 <code>org.owasp.encoder</code>。</p>
   <a class="anchor" href="#%e9%aa%8c%e8%af%81-href-%e7%9a%84%e5%80%bc">#</a>
 </h4>
 <p>对于<strong>链接跳转</strong>，如 <code>&lt;a href=&quot;xxx&quot;</code> 或 <code>location.href=&quot;xxx&quot;</code>，要检验其内容，禁止以 <code>javascript:</code> 开头的链接，和其他非法的 <code>scheme</code>。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 根据项目情况进行过滤，禁止掉 &#34;javascript:&#34; 链接、非法 scheme 等
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">allowSchemes</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;http&#34;</span>, <span style="color:#e6db74">&#34;https&#34;</span>];
-
-<span style="color:#a6e22e">valid</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">isValid</span>(<span style="color:#a6e22e">getParameter</span>(<span style="color:#e6db74">&#34;redirect_to&#34;</span>), <span style="color:#a6e22e">allowSchemes</span>);
-
-<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">valid</span>) {
-  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;%= escapeHTML(getParameter(&#34;</span><span style="color:#a6e22e">redirect_to</span><span style="color:#e6db74">&#34;))%&gt;&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#a6e22e">跳转</span>...
-  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;</span>
-} <span style="color:#66d9ef">else</span> {
-  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/404&#34;</span><span style="color:#f92672">&gt;</span>
-    <span style="color:#a6e22e">跳转</span>...
-  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;</span>
-}
-</code></pre></div><h5 id="不区分大小写可以带空格">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#75715e">// 根据项目情况进行过滤，禁止掉 &#34;javascript:&#34; 链接、非法 scheme 等
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">allowSchemes</span> <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;http&#34;</span>, <span style="color:#e6db74">&#34;https&#34;</span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">valid</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">isValid</span>(<span style="color:#a6e22e">getParameter</span>(<span style="color:#e6db74">&#34;redirect_to&#34;</span>), <span style="color:#a6e22e">allowSchemes</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">valid</span>) {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;%= escapeHTML(getParameter(&#34;</span><span style="color:#a6e22e">redirect_to</span><span style="color:#e6db74">&#34;))%&gt;&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">跳转</span>...
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;</span>
+</span></span><span style="display:flex;"><span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/404&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">跳转</span>...
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/a&gt;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h5 id="不区分大小写可以带空格">
   不区分大小写，可以带空格
   <a class="anchor" href="#%e4%b8%8d%e5%8c%ba%e5%88%86%e5%a4%a7%e5%b0%8f%e5%86%99%e5%8f%af%e4%bb%a5%e5%b8%a6%e7%a9%ba%e6%a0%bc">#</a>
 </h5>
@@ -1352,19 +1352,19 @@ Java 工程里，常用的转义库为 <code>org.owasp.encoder</code>。</p>
   <a class="anchor" href="#escapeembedjson">#</a>
 </h4>
 <p>插入 JSON 的地方不能使用 <code>escapeHTML()</code>，因为转义 <code>&quot;</code> 后，JSON 格式会被破坏。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">initData</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;%=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">toJSON</span>() <span style="color:#f92672">%&gt;</span>
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><p>这样内联 JSON 也是不安全的</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">initData</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;%=</span> <span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">toJSON</span>() <span style="color:#f92672">%&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><p>这样内联 JSON 也是不安全的</p>
 <ul>
 <li>当 JSON 中包含 <code>U+2028</code> 或 <code>U+2029</code> 这两个字符时，不能作为 JavaScript 的<strong>字面量</strong>使用，否则会抛出<strong>语法错误</strong>。</li>
 <li>当 JSON 中包含字符串 <code>&lt;/script&gt;</code> 时，当前的 script 标签将会被闭合，后面的字符串内容浏览器会按照 HTML 进行解析；通过增加下一个 <code>&lt;script&gt;</code> 标签等方法就可以完成注入。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span>&gt;
-  <span style="color:#75715e">// 实现一个 escapeEmbedJSON() 函数，对内联 JSON 进行转义
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">initData</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;%=</span> <span style="color:#a6e22e">escapeEmbedJSON</span>(<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">toJSON</span>()) <span style="color:#f92672">%&gt;</span>
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// 实现一个 escapeEmbedJSON() 函数，对内联 JSON 进行转义
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">initData</span> <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;%=</span> <span style="color:#a6e22e">escapeEmbedJSON</span>(<span style="color:#a6e22e">data</span>.<span style="color:#a6e22e">toJSON</span>()) <span style="color:#f92672">%&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><hr>
 <h3 id="预防-dom-型-xss-攻击">
   预防 DOM 型 XSS 攻击
   <a class="anchor" href="#%e9%a2%84%e9%98%b2-dom-%e5%9e%8b-xss-%e6%94%bb%e5%87%bb">#</a>
@@ -1377,24 +1377,24 @@ Java 工程里，常用的转义库为 <code>org.owasp.encoder</code>。</p>
 <code>&lt;a&gt;</code> 标签的 <code>href</code> 属性，
 JavaScript 的 <code>eval()</code>、<code>setTimeout()</code>、<code>setInterval()</code> 等，
 都能把字符串作为代码运行。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!-- 内联事件监听器中包含恶意代码 --&gt;</span>
-![](https://awps-assets.meituan.net/mit-x/blog-images-bundle-2018b/3e724ce0.data:image/png,)
-
-<span style="color:#75715e">&lt;!-- 链接内包含恶意代码 --&gt;</span>
-&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UNTRUSTED&#34;</span>&gt;1&lt;/<span style="color:#f92672">a</span>&gt;
-
-&lt;<span style="color:#f92672">script</span>&gt;
-  <span style="color:#75715e">// setTimeout()/setInterval() 中调用恶意代码
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">setTimeout</span>(<span style="color:#e6db74">&#34;UNTRUSTED&#34;</span>);
-  <span style="color:#a6e22e">setInterval</span>(<span style="color:#e6db74">&#34;UNTRUSTED&#34;</span>);
-
-  <span style="color:#75715e">// location 调用恶意代码
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;UNTRUSTED&#34;</span>;
-
-  <span style="color:#75715e">// eval() 中调用恶意代码
-</span><span style="color:#75715e"></span>  eval(<span style="color:#e6db74">&#34;UNTRUSTED&#34;</span>);
-&lt;/<span style="color:#f92672">script</span>&gt;
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 内联事件监听器中包含恶意代码 --&gt;</span>
+</span></span><span style="display:flex;"><span>![](https://awps-assets.meituan.net/mit-x/blog-images-bundle-2018b/3e724ce0.data:image/png,)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- 链接内包含恶意代码 --&gt;</span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;UNTRUSTED&#34;</span>&gt;1&lt;/<span style="color:#f92672">a</span>&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span>&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// setTimeout()/setInterval() 中调用恶意代码
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">setTimeout</span>(<span style="color:#e6db74">&#34;UNTRUSTED&#34;</span>);
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">setInterval</span>(<span style="color:#e6db74">&#34;UNTRUSTED&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// location 调用恶意代码
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;UNTRUSTED&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// eval() 中调用恶意代码
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  eval(<span style="color:#e6db74">&#34;UNTRUSTED&#34;</span>);
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><hr>
 <h3 id="content-security-policy">
   Content Security Policy
   <a class="anchor" href="#content-security-policy">#</a>
@@ -1426,8 +1426,8 @@ JavaScript 的 <code>eval()</code>、<code>setTimeout()</code>、<code>setInterv
   XSS 的检测
   <a class="anchor" href="#xss-%e7%9a%84%e6%a3%80%e6%b5%8b">#</a>
 </h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">jaVasCript:/*-/*<span style="color:#e6db74">`</span>/*<span style="color:#ae81ff">\`</span>/*<span style="color:#960050;background-color:#1e0010">&#39;</span>/*<span style="color:#e6db74">&#34;/**/(/* */oNcliCk=alert() )//%0D%0A%0d%0a//&lt;/stYle/&lt;/titLe/&lt;/teXtarEa/&lt;/scRipt/--!&gt;\x3csVg/&lt;sVg/oNloAd=alert()//&gt;\x3e
-</span></code></pre></div><p>只要在网站的各输入框中提交这个字符串，或者把它拼接到 URL 参数上，就可以进行检测了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>jaVasCript:/*-/*<span style="color:#e6db74">`</span>/*<span style="color:#ae81ff">\`</span>/*<span style="color:#960050;background-color:#1e0010">&#39;</span>/*<span style="color:#e6db74">&#34;/**/(/* */oNcliCk=alert() )//%0D%0A%0d%0a//&lt;/stYle/&lt;/titLe/&lt;/teXtarEa/&lt;/scRipt/--!&gt;\x3csVg/&lt;sVg/oNloAd=alert()//&gt;\x3e
+</span></span></span></code></pre></div><p>只要在网站的各输入框中提交这个字符串，或者把它拼接到 URL 参数上，就可以进行检测了。</p>
 <p>能够检测到存在于 HTML 属性、HTML 文字内容、HTML 注释、跳转链接、内联 JavaScript 字符串、内联 CSS 样式表等多种上下文中的 XSS 漏洞，
 也能检测 eval()、setTimeout()、setInterval()、Function()、innerHTML、document.write() 等 DOM 型 XSS 漏洞，
 并且能绕过一些 XSS 过滤器。</p>

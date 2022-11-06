@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta name="generator" content="Hugo 0.87.0" />
+  <meta name="generator" content="Hugo 0.99.1" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Mysql #  Mysql 有哪些引擎，分别有什么特点？ #   Mysql 配置文件在哪里？ #   Mysql 索引是怎么实现的？ #   Mysql 事务是怎么实现的？ #  begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。
@@ -19,7 +19,7 @@ begin; select * from xxx; commit; -- 或者 rollback;  Mysql 事务隔离级别�
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.9320dd2531c87540bbb406bf91ebbd8a94b7753048eeddba36dc292b68fbe9aa.js" integrity="sha256-kyDdJTHIdUC7tAa/keu9ipS3dTBI7t26NtwpK2j76ao="></script>
+<script defer src="/interview/en.search.min.8d512de539ea909fe2ea623d23a032ab7f84384c0f1e030ce6ffa5cf8c8a0864.js" integrity="sha256-jVEt5TnqkJ/i6mI9I6Ayq3&#43;EOEwPHgMM5v&#43;lz4yKCGQ="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1156,7 +1156,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -1242,10 +1242,10 @@ https://github.com/alex-shpak/hugo-book
   <a class="anchor" href="#mysql-%e4%ba%8b%e5%8a%a1%e6%98%af%e6%80%8e%e4%b9%88%e5%ae%9e%e7%8e%b0%e7%9a%84">#</a>
 </h2>
 <p>begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">begin</span>;
-<span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> xxx;
-<span style="color:#66d9ef">commit</span>; <span style="color:#75715e">-- 或者 rollback;
-</span></code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">begin</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> xxx;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">commit</span>; <span style="color:#75715e">-- 或者 rollback;
+</span></span></span></code></pre></div><hr>
 <h2 id="mysql-事务隔离级别有哪些">
   Mysql 事务隔离级别有哪些？
   <a class="anchor" href="#mysql-%e4%ba%8b%e5%8a%a1%e9%9a%94%e7%a6%bb%e7%ba%a7%e5%88%ab%e6%9c%89%e5%93%aa%e4%ba%9b">#</a>
@@ -1304,11 +1304,11 @@ https://github.com/alex-shpak/hugo-book
 </li>
 </ul>
 <p>设置隔离级别</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">-- SET [SESSION | GLOBAL] TRANSACTION ISOLATION LEVEL {READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE}
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">set</span> <span style="color:#66d9ef">global</span> <span style="color:#66d9ef">transaction</span> <span style="color:#66d9ef">isolation</span> <span style="color:#66d9ef">level</span> <span style="color:#66d9ef">read</span> <span style="color:#66d9ef">committed</span>;
-</code></pre></div><p>查询当前有多少事务正在运行</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> information_schema.innodb_trx;
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">-- SET [SESSION | GLOBAL] TRANSACTION ISOLATION LEVEL {READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">set</span> <span style="color:#66d9ef">global</span> <span style="color:#66d9ef">transaction</span> <span style="color:#66d9ef">isolation</span> <span style="color:#66d9ef">level</span> <span style="color:#66d9ef">read</span> <span style="color:#66d9ef">committed</span>;
+</span></span></code></pre></div><p>查询当前有多少事务正在运行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">select</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">from</span> information_schema.innodb_trx;
+</span></span></code></pre></div><hr>
 <h3 id="可重复读">
   可重复读
   <a class="anchor" href="#%e5%8f%af%e9%87%8d%e5%a4%8d%e8%af%bb">#</a>

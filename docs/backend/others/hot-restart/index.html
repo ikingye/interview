@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta name="generator" content="Hugo 0.87.0" />
+  <meta name="generator" content="Hugo 0.99.1" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="程序热重启 #  程序如何优雅退出？ #  Linux 信号 #  信号是进程间通信的底层形式。
@@ -35,7 +35,7 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.9320dd2531c87540bbb406bf91ebbd8a94b7753048eeddba36dc292b68fbe9aa.js" integrity="sha256-kyDdJTHIdUC7tAa/keu9ipS3dTBI7t26NtwpK2j76ao="></script>
+<script defer src="/interview/en.search.min.8d512de539ea909fe2ea623d23a032ab7f84384c0f1e030ce6ffa5cf8c8a0864.js" integrity="sha256-jVEt5TnqkJ/i6mI9I6Ayq3&#43;EOEwPHgMM5v&#43;lz4yKCGQ="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1172,7 +1172,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -1286,13 +1286,13 @@ https://github.com/alex-shpak/hugo-book
 
 <div class="book-tabs"><input type="radio" class="toggle" name="tabs-graceful exit" id="tabs-graceful exit-0" checked="checked" />
   <label for="tabs-graceful exit-0">Go</label>
-  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">sigs</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Signal</span>, <span style="color:#ae81ff">1</span>)
-<span style="color:#a6e22e">signal</span>.<span style="color:#a6e22e">Notify</span>(<span style="color:#a6e22e">sigs</span>, <span style="color:#a6e22e">syscall</span>.<span style="color:#a6e22e">SIGINT</span>, <span style="color:#a6e22e">syscall</span>.<span style="color:#a6e22e">SIGTERM</span>)
-
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;awaiting signal&#34;</span>)
-<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">sigs</span>
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;exiting&#34;</span>)
-</code></pre></div></div><input type="radio" class="toggle" name="tabs-graceful exit" id="tabs-graceful exit-1"  />
+  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">sigs</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Signal</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">signal</span>.<span style="color:#a6e22e">Notify</span>(<span style="color:#a6e22e">sigs</span>, <span style="color:#a6e22e">syscall</span>.<span style="color:#a6e22e">SIGINT</span>, <span style="color:#a6e22e">syscall</span>.<span style="color:#a6e22e">SIGTERM</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;awaiting signal&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">sigs</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;exiting&#34;</span>)
+</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-graceful exit" id="tabs-graceful exit-1"  />
   <label for="tabs-graceful exit-1">Java</label>
   <div class="book-tabs-content markdown-inner"></div><input type="radio" class="toggle" name="tabs-graceful exit" id="tabs-graceful exit-2"  />
   <label for="tabs-graceful exit-2">Python</label>
@@ -1315,7 +1315,10 @@ https://github.com/alex-shpak/hugo-book
 
 <div class="book-tabs"><input type="radio" class="toggle" name="tabs-graceful restart" id="tabs-graceful restart-0" checked="checked" />
   <label for="tabs-graceful restart-0">Go</label>
-  <div class="book-tabs-content markdown-inner"><h3 id="go-程序优雅关闭与重启">Go 程序优雅关闭与重启</h3>
+  <div class="book-tabs-content markdown-inner"><h3 id="go-程序优雅关闭与重启">
+  Go 程序优雅关闭与重启
+  <a class="anchor" href="#go-%e7%a8%8b%e5%ba%8f%e4%bc%98%e9%9b%85%e5%85%b3%e9%97%ad%e4%b8%8e%e9%87%8d%e5%90%af">#</a>
+</h3>
 <p>参考：</p>
 <ul>
 <li><a href="https://segmentfault.com/a/1190000015232528">gracehttp: 优雅重启 Go 程序（热启动 - Zero Downtime）</a></li>

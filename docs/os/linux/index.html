@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta name="generator" content="Hugo 0.87.0" />
+  <meta name="generator" content="Hugo 0.99.1" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Linux #  更多教程详见：Linux 学习笔记  硬件信息 #  如何查看内存大小？ #  free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ #  # 物理 cpu 个数 cat /proc/cpuinfo| grep &#39;physical id&#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &#39;core id&#39; | sort | uniq | wc -l # 逻辑 cpu 个数（线程数） cat /proc/cpuinfo| grep &#39;processor&#39; | sort | uniq | wc -l 例子：">
@@ -17,7 +17,7 @@
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.9320dd2531c87540bbb406bf91ebbd8a94b7753048eeddba36dc292b68fbe9aa.js" integrity="sha256-kyDdJTHIdUC7tAa/keu9ipS3dTBI7t26NtwpK2j76ao="></script>
+<script defer src="/interview/en.search.min.8d512de539ea909fe2ea623d23a032ab7f84384c0f1e030ce6ffa5cf8c8a0864.js" integrity="sha256-jVEt5TnqkJ/i6mI9I6Ayq3&#43;EOEwPHgMM5v&#43;lz4yKCGQ="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1154,7 +1154,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -1242,18 +1242,18 @@ https://github.com/alex-shpak/hugo-book
   如何查看内存大小？
   <a class="anchor" href="#%e5%a6%82%e4%bd%95%e6%9f%a5%e7%9c%8b%e5%86%85%e5%ad%98%e5%a4%a7%e5%b0%8f">#</a>
 </h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">free -m
-</code></pre></div><h3 id="如何查看-cpu-个数cpu-核心数逻辑-cpu-个数">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>free -m
+</span></span></code></pre></div><h3 id="如何查看-cpu-个数cpu-核心数逻辑-cpu-个数">
   如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？
   <a class="anchor" href="#%e5%a6%82%e4%bd%95%e6%9f%a5%e7%9c%8b-cpu-%e4%b8%aa%e6%95%b0cpu-%e6%a0%b8%e5%bf%83%e6%95%b0%e9%80%bb%e8%be%91-cpu-%e4%b8%aa%e6%95%b0">#</a>
 </h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 物理 cpu 个数</span>
-cat /proc/cpuinfo| grep <span style="color:#e6db74">&#39;physical id&#39;</span> | sort | uniq | wc -l
-<span style="color:#75715e"># 每个物理 cpu 的核心数</span>
-cat /proc/cpuinfo| grep <span style="color:#e6db74">&#39;core id&#39;</span> | sort | uniq | wc -l
-<span style="color:#75715e"># 逻辑 cpu 个数（线程数）</span>
-cat /proc/cpuinfo| grep <span style="color:#e6db74">&#39;processor&#39;</span> | sort | uniq | wc -l
-</code></pre></div><p>例子：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 物理 cpu 个数</span>
+</span></span><span style="display:flex;"><span>cat /proc/cpuinfo| grep <span style="color:#e6db74">&#39;physical id&#39;</span> | sort | uniq | wc -l
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 每个物理 cpu 的核心数</span>
+</span></span><span style="display:flex;"><span>cat /proc/cpuinfo| grep <span style="color:#e6db74">&#39;core id&#39;</span> | sort | uniq | wc -l
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 逻辑 cpu 个数（线程数）</span>
+</span></span><span style="display:flex;"><span>cat /proc/cpuinfo| grep <span style="color:#e6db74">&#39;processor&#39;</span> | sort | uniq | wc -l
+</span></span></code></pre></div><p>例子：</p>
 <ul>
 <li>2 个 cpu</li>
 <li>每个 cpu 有 8 个核心（一共 16 个核心）</li>
@@ -1265,17 +1265,17 @@ cat /proc/cpuinfo| grep <span style="color:#e6db74">&#39;processor&#39;</span> |
   如何查看系统内核？
   <a class="anchor" href="#%e5%a6%82%e4%bd%95%e6%9f%a5%e7%9c%8b%e7%b3%bb%e7%bb%9f%e5%86%85%e6%a0%b8">#</a>
 </h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">uname -a
-
-cat /proc/version
-</code></pre></div><h3 id="如何查看操作系统版本">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>uname -a
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cat /proc/version
+</span></span></code></pre></div><h3 id="如何查看操作系统版本">
   如何查看操作系统版本？
   <a class="anchor" href="#%e5%a6%82%e4%bd%95%e6%9f%a5%e7%9c%8b%e6%93%8d%e4%bd%9c%e7%b3%bb%e7%bb%9f%e7%89%88%e6%9c%ac">#</a>
 </h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">cat /etc/issue
-
-cat /etc/*release
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>cat /etc/issue
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cat /etc/*release
+</span></span></code></pre></div><hr>
 <h2 id="运行信息">
   运行信息
   <a class="anchor" href="#%e8%bf%90%e8%a1%8c%e4%bf%a1%e6%81%af">#</a>

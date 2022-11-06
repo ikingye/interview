@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta name="generator" content="Hugo 0.87.0" />
+  <meta name="generator" content="Hugo 0.99.1" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="HTTP #  HTTP 基础 #  HTTP 状态码有哪些？ #   2XX 成功  200 ok（请求成功） 204 no content （请求成功，但是没有结果返回） 206 partial content （客户端请求一部分资源，服务端成功响应，返回一范围资源）   3XX 重定向  301 move permanently （永久性重定向） 302 found （临时性重定向） 303 see other （示由于请求对应的资源存在着另一个 URI，应使用 GET 方法定向获取请求的资源） 304 not modified （表示在客户端采用带条件的访问某资源时，服务端找到了资源，但是这个请求的条件不符合。跟重定向无关） 307 temporary redirect （跟 302 一个意思）   4XX 客户端错误  400 bad request （请求报文存在语法错误） 401 unauthorized （需要认证（第一次返回）或者认证失败（第二次返回）） 403 forbidden （请求被服务器拒绝了） 404 not found （服务器上无法找到请求的资源）   5XX 服务器错误  500 internal server error （服务端执行请求时发生了错误） 503 service unavailable （服务器正在超负载或者停机维护，无法处理请求）    301 和 302 有什么区别？分别适用于什么场景？ #  101， 304， 307 分别是什么？ #  101 协议升级">
@@ -17,7 +17,7 @@
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.9320dd2531c87540bbb406bf91ebbd8a94b7753048eeddba36dc292b68fbe9aa.js" integrity="sha256-kyDdJTHIdUC7tAa/keu9ipS3dTBI7t26NtwpK2j76ao="></script>
+<script defer src="/interview/en.search.min.8d512de539ea909fe2ea623d23a032ab7f84384c0f1e030ce6ffa5cf8c8a0864.js" integrity="sha256-jVEt5TnqkJ/i6mI9I6Ayq3&#43;EOEwPHgMM5v&#43;lz4yKCGQ="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1154,7 +1154,7 @@ https://github.com/alex-shpak/hugo-book
 
 
 
-  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
 
 
  
@@ -1298,9 +1298,9 @@ https://github.com/alex-shpak/hugo-book
 <p>分块传输编码只在 HTTP/1.1 中提供</p>
 <p>chunked 还是给浏览器传输了<strong>长度</strong>，但是偷偷藏在了报文当中，所以并没有显式地像 content-length 在头部声明</p>
 <p>由一个标明长度为 0 的 chunk 结束</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># body 非空，而且没有 Content-Length</span>
-chunked <span style="color:#f92672">=</span> <span style="color:#f92672">not</span> (request<span style="color:#f92672">.</span>body <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span> <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;Content-Length&#39;</span> <span style="color:#f92672">in</span> request<span style="color:#f92672">.</span>headers)
-</code></pre></div><p>Facebook 为了减少页面的响应时间，发明了一种他们称之为 “BigPipe” 的技术，这个技术的核心原理就是 Http 的 Chunk 编码。
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># body 非空，而且没有 Content-Length</span>
+</span></span><span style="display:flex;"><span>chunked <span style="color:#f92672">=</span> <span style="color:#f92672">not</span> (request<span style="color:#f92672">.</span>body <span style="color:#f92672">is</span> <span style="color:#66d9ef">None</span> <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;Content-Length&#39;</span> <span style="color:#f92672">in</span> request<span style="color:#f92672">.</span>headers)
+</span></span></code></pre></div><p>Facebook 为了减少页面的响应时间，发明了一种他们称之为 “BigPipe” 的技术，这个技术的核心原理就是 Http 的 Chunk 编码。
 据 Facebook 的测试表明 “BigPipe” 技术使其页面响应时间减少了约 50% （FireFox3.6 除外，用 FireFox3.6 的响应时间减少约 22%）</p>
 <p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200720191554.png" alt="" /></p>
 <p>参考：</p>
