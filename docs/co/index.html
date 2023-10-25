@@ -5,19 +5,18 @@
   <meta name="generator" content="Hugo 0.99.1" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="CSRF #  什么是 CSRF，为什么会发生 CSRF？ #   有哪些 CSRF 攻击方法？ #   如何防止 CSRF 攻击？ #  ">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="CSRF" />
-<meta property="og:description" content="CSRF #  什么是 CSRF，为什么会发生 CSRF？ #   有哪些 CSRF 攻击方法？ #   如何防止 CSRF 攻击？ #  " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://kingye.me/interview/docs/security/web/csrf/" /><meta property="article:section" content="docs" />
+<meta name="description" content="计算机组成原理 #  computer organization">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="1. 计算机组成原理" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://kingye.me/interview/docs/co/" />
 
-<meta property="article:modified_time" content="2020-07-02T01:34:34+08:00" />
-
-<title>CSRF | 面试笔记</title>
+<title>1. 计算机组成原理 | 面试笔记</title>
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
 <script defer src="/interview/en.search.min.56785428b71c286ac58041ed7580e8d26fa5b49e787a9de754b11a0c19fa96bb.js" integrity="sha256-VnhUKLccKGrFgEHtdYDo0m&#43;ltJ54ep3nVLEaDBn6lrs="></script>
+<link rel="alternate" type="application/rss+xml" href="https://kingye.me/interview/docs/co/index.xml" title="面试笔记" />
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -78,9 +77,9 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-7ea71b3fc9bc6c7d138f4e0ab921fa64" class="toggle"  />
+    <input type="checkbox" id="section-7ea71b3fc9bc6c7d138f4e0ab921fa64" class="toggle" checked />
     <label for="section-7ea71b3fc9bc6c7d138f4e0ab921fa64" class="flex justify-between">
-      <a href="https://kingye.me/interview/docs/co/" class="">1. 计算机组成原理</a>
+      <a href="https://kingye.me/interview/docs/co/" class="active">1. 计算机组成原理</a>
     </label>
   
 
@@ -1025,7 +1024,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-6ce8ef21c020ccdb7ed73156795b30be" class="toggle" checked />
+    <input type="checkbox" id="section-6ce8ef21c020ccdb7ed73156795b30be" class="toggle"  />
     <label for="section-6ce8ef21c020ccdb7ed73156795b30be" class="flex justify-between">
       <a href="https://kingye.me/interview/docs/security/" class="">13. 安全</a>
     </label>
@@ -1041,7 +1040,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <input type="checkbox" id="section-d118f5bb88d4d1b271b0dcfca1b4a9bc" class="toggle" checked />
+    <input type="checkbox" id="section-d118f5bb88d4d1b271b0dcfca1b4a9bc" class="toggle"  />
     <label for="section-d118f5bb88d4d1b271b0dcfca1b4a9bc" class="flex justify-between">
       <a href="https://kingye.me/interview/docs/security/web/" class="">Web 安全</a>
     </label>
@@ -1070,7 +1069,7 @@ https://github.com/alex-shpak/hugo-book
   
 
   
-    <a href="https://kingye.me/interview/docs/security/web/csrf/" class=" active">CSRF</a>
+    <a href="https://kingye.me/interview/docs/security/web/csrf/" class="">CSRF</a>
   
 
         </li>
@@ -1190,7 +1189,7 @@ https://github.com/alex-shpak/hugo-book
     <img src="/interview/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>CSRF</strong>
+  <strong>1. 计算机组成原理</strong>
 
   <label for="toc-control">
     
@@ -1204,13 +1203,7 @@ https://github.com/alex-shpak/hugo-book
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#什么是-csrf为什么会发生-csrf">什么是 CSRF，为什么会发生 CSRF？</a></li>
-    <li><a href="#有哪些-csrf-攻击方法">有哪些 CSRF 攻击方法？</a></li>
-    <li><a href="#如何防止-csrf-攻击">如何防止 CSRF 攻击？</a></li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
 <hr />
 <ul>
   <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
@@ -1226,24 +1219,11 @@ https://github.com/alex-shpak/hugo-book
 
       
       
-  <article id="article" class="markdown"><h1 id="csrf">
-  CSRF
-  <a class="anchor" href="#csrf">#</a>
+  <article id="article" class="markdown"><h1 id="计算机组成原理">
+  计算机组成原理
+  <a class="anchor" href="#%e8%ae%a1%e7%ae%97%e6%9c%ba%e7%bb%84%e6%88%90%e5%8e%9f%e7%90%86">#</a>
 </h1>
-<h2 id="什么是-csrf为什么会发生-csrf">
-  什么是 CSRF，为什么会发生 CSRF？
-  <a class="anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af-csrf%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bc%9a%e5%8f%91%e7%94%9f-csrf">#</a>
-</h2>
-<hr>
-<h2 id="有哪些-csrf-攻击方法">
-  有哪些 CSRF 攻击方法？
-  <a class="anchor" href="#%e6%9c%89%e5%93%aa%e4%ba%9b-csrf-%e6%94%bb%e5%87%bb%e6%96%b9%e6%b3%95">#</a>
-</h2>
-<hr>
-<h2 id="如何防止-csrf-攻击">
-  如何防止 CSRF 攻击？
-  <a class="anchor" href="#%e5%a6%82%e4%bd%95%e9%98%b2%e6%ad%a2-csrf-%e6%94%bb%e5%87%bb">#</a>
-</h2>
+<p>computer organization</p>
 </article>
  
       
@@ -1253,12 +1233,6 @@ https://github.com/alex-shpak/hugo-book
   <div class="flex flex-wrap justify-between">
 
 
-
-  <div><a class="flex align-center" href="https://github.com/ikingye/interview/commit/ffe9bd481170cb6603be80aa67e28acf8cc16cc8" title='Last modified by yewang | 2020-07-02' target="_blank" rel="noopener">
-      <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>2020-07-02</span>
-    </a>
-  </div>
 
 
 
@@ -1315,13 +1289,7 @@ https://github.com/alex-shpak/hugo-book
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#什么是-csrf为什么会发生-csrf">什么是 CSRF，为什么会发生 CSRF？</a></li>
-    <li><a href="#有哪些-csrf-攻击方法">有哪些 CSRF 攻击方法？</a></li>
-    <li><a href="#如何防止-csrf-攻击">如何防止 CSRF 攻击？</a></li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
 <hr />
 <ul>
   <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
