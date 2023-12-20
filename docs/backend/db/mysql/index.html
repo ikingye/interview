@@ -2,14 +2,16 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta name="generator" content="Hugo 0.99.1" />
+  <meta name="generator" content="Hugo 0.121.1">
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Mysql #  Mysql 有哪些引擎，分别有什么特点？ #   Mysql 配置文件在哪里？ #   Mysql 索引是怎么实现的？ #   Mysql 事务是怎么实现的？ #  begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。
-begin; select * from xxx; commit; -- 或者 rollback;  Mysql 事务隔离级别有哪些？ #     隔离级别 脏读 不可重复读 幻读 锁 备注     读未提交（READ UNCOMMITTED） √ √ √ 不加锁    读提交 （READ COMMITTED） × √ √  Oracle 默认   可重复读 （REPEATABLE READ） × × √  Mysql 默认   串行化 （SERIALIZABLE） × × × 共享锁 相当于单线程     可重复读  事务开始时读到的已有数据是什么，在事务提交前的任意时刻，这些数据的值都是一样的。    设置隔离级别">
+<meta name="description" content="Mysql # Mysql 有哪些引擎，分别有什么特点？ # Mysql 配置文件在哪里？ # Mysql 索引是怎么实现的？ # Mysql 事务是怎么实现的？ # begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。
+begin; select * from xxx; commit; -- 或者 rollback; Mysql 事务隔离级别有哪些？ # 隔离级别 脏读 不可重复读 幻读 锁 备注 读未提交（READ UNCOMMITTED） √ √ √ 不加锁 读提交 （READ COMMITTED） × √ √ Oracle 默认 可重复读 （REPEATABLE READ） × × √ Mysql 默认 串行化 （SERIALIZABLE） × × × 共享锁 相当于单线程 可重复读 事务开始时读到的已有数据是什么，在事务提交前的任意时刻，这些数据的值都是一样的。 设置隔离级别
+-- SET [SESSION | GLOBAL] TRANSACTION ISOLATION LEVEL {READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE} set global transaction isolation level read committed; 查询当前有多少事务正在运行">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Mysql" />
-<meta property="og:description" content="Mysql #  Mysql 有哪些引擎，分别有什么特点？ #   Mysql 配置文件在哪里？ #   Mysql 索引是怎么实现的？ #   Mysql 事务是怎么实现的？ #  begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。
-begin; select * from xxx; commit; -- 或者 rollback;  Mysql 事务隔离级别有哪些？ #     隔离级别 脏读 不可重复读 幻读 锁 备注     读未提交（READ UNCOMMITTED） √ √ √ 不加锁    读提交 （READ COMMITTED） × √ √  Oracle 默认   可重复读 （REPEATABLE READ） × × √  Mysql 默认   串行化 （SERIALIZABLE） × × × 共享锁 相当于单线程     可重复读  事务开始时读到的已有数据是什么，在事务提交前的任意时刻，这些数据的值都是一样的。    设置隔离级别" />
+<meta property="og:description" content="Mysql # Mysql 有哪些引擎，分别有什么特点？ # Mysql 配置文件在哪里？ # Mysql 索引是怎么实现的？ # Mysql 事务是怎么实现的？ # begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。
+begin; select * from xxx; commit; -- 或者 rollback; Mysql 事务隔离级别有哪些？ # 隔离级别 脏读 不可重复读 幻读 锁 备注 读未提交（READ UNCOMMITTED） √ √ √ 不加锁 读提交 （READ COMMITTED） × √ √ Oracle 默认 可重复读 （REPEATABLE READ） × × √ Mysql 默认 串行化 （SERIALIZABLE） × × × 共享锁 相当于单线程 可重复读 事务开始时读到的已有数据是什么，在事务提交前的任意时刻，这些数据的值都是一样的。 设置隔离级别
+-- SET [SESSION | GLOBAL] TRANSACTION ISOLATION LEVEL {READ UNCOMMITTED | READ COMMITTED | REPEATABLE READ | SERIALIZABLE} set global transaction isolation level read committed; 查询当前有多少事务正在运行" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kingye.me/interview/docs/backend/db/mysql/" /><meta property="article:section" content="docs" />
 
@@ -19,7 +21,7 @@ begin; select * from xxx; commit; -- 或者 rollback;  Mysql 事务隔离级别�
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.b998c0108cce4bf9fcb78dd2b6dd457c8e99e8d4d8aa6b1c5136c8a9cf61dc69.js" integrity="sha256-uZjAEIzOS/n8t43Stt1FfI6Z6NTYqmscUTbIqc9h3Gk="></script>
+<script defer src="/interview/en.search.min.fad2536e7cc32f8a909dc757662ac57c0a19d0d5eaae384b395b53d639d29c7d.js" integrity="sha256-&#43;tJTbnzDL4qQncdXZirFfAoZ0NXqrjhLOVtT1jnSnH0="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book

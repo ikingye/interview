@@ -2,20 +2,22 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta name="generator" content="Hugo 0.99.1" />
+  <meta name="generator" content="Hugo 0.121.1">
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="字符编码 #  有的字符在一些环境中是不能显示或使用的， 比如 &amp;, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
-各种编码的特征 #   Base 编码  Base64  组成字符：A-Z、a-z、0-9、&#43;、/ 末尾一般补 0-2 个 =（可以不补 =）   Base32  组成字符：A-Z、2-7 末尾一般补 0-6 个 =（可以不补 =）   Base16  组成字符：0-9、A-F 末尾没有 =       Base 编码 #  参考：rfc4648
+<meta name="description" content="字符编码 # 有的字符在一些环境中是不能显示或使用的， 比如 &amp;, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
+各种编码的特征 # Base 编码 Base64 组成字符：A-Z、a-z、0-9、&#43;、/ 末尾一般补 0-2 个 =（可以不补 =） Base32 组成字符：A-Z、2-7 末尾一般补 0-6 个 =（可以不补 =） Base16 组成字符：0-9、A-F 末尾没有 = Base 编码 # 参考：rfc4648
 Base 系列的就是用来将字节编码为 ASCII 中的可见字符的。
 在 URL 中使用时必须去掉 “=” 符号
-Base64 #  Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9、&#43;、/）将任意字节序列数据编码成 ASCII 字符串，另有 “=” 符号用作后缀用途。">
+Base64 # Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9、&#43;、/）将任意字节序列数据编码成 ASCII 字符串，另有 “=” 符号用作后缀用途。
+Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0）， 然后将这些二进制数值串联起来，再按照 6 比特一组进行切分（因为 2^6=64），最后一组若不足 6 比特则末尾补 0。">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="字符编码" />
-<meta property="og:description" content="字符编码 #  有的字符在一些环境中是不能显示或使用的， 比如 &amp;, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
-各种编码的特征 #   Base 编码  Base64  组成字符：A-Z、a-z、0-9、&#43;、/ 末尾一般补 0-2 个 =（可以不补 =）   Base32  组成字符：A-Z、2-7 末尾一般补 0-6 个 =（可以不补 =）   Base16  组成字符：0-9、A-F 末尾没有 =       Base 编码 #  参考：rfc4648
+<meta property="og:description" content="字符编码 # 有的字符在一些环境中是不能显示或使用的， 比如 &amp;, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
+各种编码的特征 # Base 编码 Base64 组成字符：A-Z、a-z、0-9、&#43;、/ 末尾一般补 0-2 个 =（可以不补 =） Base32 组成字符：A-Z、2-7 末尾一般补 0-6 个 =（可以不补 =） Base16 组成字符：0-9、A-F 末尾没有 = Base 编码 # 参考：rfc4648
 Base 系列的就是用来将字节编码为 ASCII 中的可见字符的。
 在 URL 中使用时必须去掉 “=” 符号
-Base64 #  Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9、&#43;、/）将任意字节序列数据编码成 ASCII 字符串，另有 “=” 符号用作后缀用途。" />
+Base64 # Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9、&#43;、/）将任意字节序列数据编码成 ASCII 字符串，另有 “=” 符号用作后缀用途。
+Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0）， 然后将这些二进制数值串联起来，再按照 6 比特一组进行切分（因为 2^6=64），最后一组若不足 6 比特则末尾补 0。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kingye.me/interview/docs/others/encode/" /><meta property="article:section" content="docs" />
 
@@ -25,7 +27,7 @@ Base64 #  Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9�
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.b998c0108cce4bf9fcb78dd2b6dd457c8e99e8d4d8aa6b1c5136c8a9cf61dc69.js" integrity="sha256-uZjAEIzOS/n8t43Stt1FfI6Z6NTYqmscUTbIqc9h3Gk="></script>
+<script defer src="/interview/en.search.min.fad2536e7cc32f8a909dc757662ac57c0a19d0d5eaae384b395b53d639d29c7d.js" integrity="sha256-&#43;tJTbnzDL4qQncdXZirFfAoZ0NXqrjhLOVtT1jnSnH0="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book

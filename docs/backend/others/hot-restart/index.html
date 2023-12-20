@@ -2,30 +2,32 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta name="generator" content="Hugo 0.99.1" />
+  <meta name="generator" content="Hugo 0.121.1">
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="程序热重启 #  程序如何优雅退出？ #  Linux 信号 #  信号是进程间通信的底层形式。
+<meta name="description" content="程序热重启 # 程序如何优雅退出？ # Linux 信号 # 信号是进程间通信的底层形式。
 Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
 发送信号的原因：
-  硬件异常：如 0 作为除数，内核会发送 SIGFPE（信号值 8）
-  软件异常：如进程终止时，内核会给父进程发送 SIGCHLE（信号值 17），窗口大小调整，应用程序会收到 SIGWINCH（信号值 28）
-  SIGINT 2
- ctrl &#43; C    SIGQUIT 3
- ctrl &#43; \    SIGKILL 9
- 不可以被阻塞、处理和忽略    SIGTERM 15
- kill 默认不带参数，发送的信号就是 SIGTERM 可以被阻塞、处理和忽略    SIGTOP 20">
+硬件异常：如 0 作为除数，内核会发送 SIGFPE（信号值 8）
+软件异常：如进程终止时，内核会给父进程发送 SIGCHLE（信号值 17），窗口大小调整，应用程序会收到 SIGWINCH（信号值 28）
+SIGINT 2
+ctrl &#43; C SIGQUIT 3
+ctrl &#43; \ SIGKILL 9
+不可以被阻塞、处理和忽略 SIGTERM 15
+kill 默认不带参数，发送的信号就是 SIGTERM 可以被阻塞、处理和忽略 SIGTOP 20
+停止（挂起）进程 ctrl &#43; D Go sigs := make(chan os.Signal, 1) signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM) fmt.Println(&#34;awaiting signal&#34;) &lt;-sigs fmt.Println(&#34;exiting&#34;) Java Python 如何实现热重启的？ # 服务端启动时多开启一个协程用来监听关闭信号 当协程接收到关闭信号时，将拒绝接收新的连接，并处理好当前所有连接后断开 启动一个新的服务端进程来接管新的连接 关闭当前进程 Go Go 程序优雅关闭与重启 # 参考：">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="程序热重启" />
-<meta property="og:description" content="程序热重启 #  程序如何优雅退出？ #  Linux 信号 #  信号是进程间通信的底层形式。
+<meta property="og:description" content="程序热重启 # 程序如何优雅退出？ # Linux 信号 # 信号是进程间通信的底层形式。
 Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
 发送信号的原因：
-  硬件异常：如 0 作为除数，内核会发送 SIGFPE（信号值 8）
-  软件异常：如进程终止时，内核会给父进程发送 SIGCHLE（信号值 17），窗口大小调整，应用程序会收到 SIGWINCH（信号值 28）
-  SIGINT 2
- ctrl &#43; C    SIGQUIT 3
- ctrl &#43; \    SIGKILL 9
- 不可以被阻塞、处理和忽略    SIGTERM 15
- kill 默认不带参数，发送的信号就是 SIGTERM 可以被阻塞、处理和忽略    SIGTOP 20" />
+硬件异常：如 0 作为除数，内核会发送 SIGFPE（信号值 8）
+软件异常：如进程终止时，内核会给父进程发送 SIGCHLE（信号值 17），窗口大小调整，应用程序会收到 SIGWINCH（信号值 28）
+SIGINT 2
+ctrl &#43; C SIGQUIT 3
+ctrl &#43; \ SIGKILL 9
+不可以被阻塞、处理和忽略 SIGTERM 15
+kill 默认不带参数，发送的信号就是 SIGTERM 可以被阻塞、处理和忽略 SIGTOP 20
+停止（挂起）进程 ctrl &#43; D Go sigs := make(chan os.Signal, 1) signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM) fmt.Println(&#34;awaiting signal&#34;) &lt;-sigs fmt.Println(&#34;exiting&#34;) Java Python 如何实现热重启的？ # 服务端启动时多开启一个协程用来监听关闭信号 当协程接收到关闭信号时，将拒绝接收新的连接，并处理好当前所有连接后断开 启动一个新的服务端进程来接管新的连接 关闭当前进程 Go Go 程序优雅关闭与重启 # 参考：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kingye.me/interview/docs/backend/others/hot-restart/" /><meta property="article:section" content="docs" />
 
@@ -35,7 +37,7 @@ Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.b998c0108cce4bf9fcb78dd2b6dd457c8e99e8d4d8aa6b1c5136c8a9cf61dc69.js" integrity="sha256-uZjAEIzOS/n8t43Stt1FfI6Z6NTYqmscUTbIqc9h3Gk="></script>
+<script defer src="/interview/en.search.min.fad2536e7cc32f8a909dc757662ac57c0a19d0d5eaae384b395b53d639d29c7d.js" integrity="sha256-&#43;tJTbnzDL4qQncdXZirFfAoZ0NXqrjhLOVtT1jnSnH0="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1343,8 +1345,7 @@ https://github.com/alex-shpak/hugo-book
 <p>参考：</p>
 <ul>
 <li><a href="https://segmentfault.com/a/1190000015232528">gracehttp: 优雅重启 Go 程序（热启动 - Zero Downtime）</a></li>
-</ul>
-</div><input type="radio" class="toggle" name="tabs-graceful restart" id="tabs-graceful restart-1"  />
+</ul></div><input type="radio" class="toggle" name="tabs-graceful restart" id="tabs-graceful restart-1"  />
   <label for="tabs-graceful restart-1">Java</label>
   <div class="book-tabs-content markdown-inner"></div><input type="radio" class="toggle" name="tabs-graceful restart" id="tabs-graceful restart-2"  />
   <label for="tabs-graceful restart-2">Python</label>

@@ -2,12 +2,12 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta name="generator" content="Hugo 0.99.1" />
+  <meta name="generator" content="Hugo 0.121.1">
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="设计模式 #  设计原则 #  单一职责原则 (SRP) #   开闭原则 (Open Closed Principle) #   里氏替换原则 (Liskov Substitution Principle) #   依赖倒置原则 (Dependence Inversion Principle) #   接口隔离原则 (Interface Segregation Principle) #   迪米特原则 (Demeter Principle) #    创建型模式 #  简单工厂模式 #   工厂方法模式 #   抽象工厂模式 #   建造者模式 #   单例模式 #    结构型模式 #  适配器模式 #   桥接模式 #   装饰模式 #   外观模式 #   享元模式 #   代理模式 #   组合模式 #  适配器模式、装饰模式、代理模式有哪些异同？ #   适配器模式  适配器模式实现新接口   代理模式  代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。   装饰器模式  原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。      装饰器模式与代理模式实现原接口 都持有原对象  装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象    /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi {  public void updateDate(String orderId, String date, String client); }  public class SourceOrderApiImpl implements SourceOrderApi{  @Override  public void updateDate(String orderId, String date, String client) {  System.">
+<meta name="description" content="设计模式 # 设计原则 # 单一职责原则 (SRP) # 开闭原则 (Open Closed Principle) # 里氏替换原则 (Liskov Substitution Principle) # 依赖倒置原则 (Dependence Inversion Principle) # 接口隔离原则 (Interface Segregation Principle) # 迪米特原则 (Demeter Principle) # 创建型模式 # 简单工厂模式 # 工厂方法模式 # 抽象工厂模式 # 建造者模式 # 单例模式 # 结构型模式 # 适配器模式 # 桥接模式 # 装饰模式 # 外观模式 # 享元模式 # 代理模式 # 组合模式 # 适配器模式、装饰模式、代理模式有哪些异同？ # 适配器模式 适配器模式实现新接口 代理模式 代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。 装饰器模式 原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。 装饰器模式与代理模式实现原接口 都持有原对象 装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象 /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi { public void updateDate(String orderId, String date, String client); } public class SourceOrderApiImpl implements SourceOrderApi{ @Override public void updateDate(String orderId, String date, String client) { System.">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="设计模式" />
-<meta property="og:description" content="设计模式 #  设计原则 #  单一职责原则 (SRP) #   开闭原则 (Open Closed Principle) #   里氏替换原则 (Liskov Substitution Principle) #   依赖倒置原则 (Dependence Inversion Principle) #   接口隔离原则 (Interface Segregation Principle) #   迪米特原则 (Demeter Principle) #    创建型模式 #  简单工厂模式 #   工厂方法模式 #   抽象工厂模式 #   建造者模式 #   单例模式 #    结构型模式 #  适配器模式 #   桥接模式 #   装饰模式 #   外观模式 #   享元模式 #   代理模式 #   组合模式 #  适配器模式、装饰模式、代理模式有哪些异同？ #   适配器模式  适配器模式实现新接口   代理模式  代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。   装饰器模式  原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。      装饰器模式与代理模式实现原接口 都持有原对象  装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象    /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi {  public void updateDate(String orderId, String date, String client); }  public class SourceOrderApiImpl implements SourceOrderApi{  @Override  public void updateDate(String orderId, String date, String client) {  System." />
+<meta property="og:description" content="设计模式 # 设计原则 # 单一职责原则 (SRP) # 开闭原则 (Open Closed Principle) # 里氏替换原则 (Liskov Substitution Principle) # 依赖倒置原则 (Dependence Inversion Principle) # 接口隔离原则 (Interface Segregation Principle) # 迪米特原则 (Demeter Principle) # 创建型模式 # 简单工厂模式 # 工厂方法模式 # 抽象工厂模式 # 建造者模式 # 单例模式 # 结构型模式 # 适配器模式 # 桥接模式 # 装饰模式 # 外观模式 # 享元模式 # 代理模式 # 组合模式 # 适配器模式、装饰模式、代理模式有哪些异同？ # 适配器模式 适配器模式实现新接口 代理模式 代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。 装饰器模式 原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。 装饰器模式与代理模式实现原接口 都持有原对象 装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象 /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi { public void updateDate(String orderId, String date, String client); } public class SourceOrderApiImpl implements SourceOrderApi{ @Override public void updateDate(String orderId, String date, String client) { System." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kingye.me/interview/docs/se/dp/" /><meta property="article:section" content="docs" />
 
@@ -17,7 +17,7 @@
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.b998c0108cce4bf9fcb78dd2b6dd457c8e99e8d4d8aa6b1c5136c8a9cf61dc69.js" integrity="sha256-uZjAEIzOS/n8t43Stt1FfI6Z6NTYqmscUTbIqc9h3Gk="></script>
+<script defer src="/interview/en.search.min.fad2536e7cc32f8a909dc757662ac57c0a19d0d5eaae384b395b53d639d29c7d.js" integrity="sha256-&#43;tJTbnzDL4qQncdXZirFfAoZ0NXqrjhLOVtT1jnSnH0="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1419,90 +1419,90 @@ https://github.com/alex-shpak/hugo-book
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#75715e">/**
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * 原接口，需要传入 orderId，时间
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">SourceOrderApi</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>String orderId<span style="color:#f92672">,</span> String date<span style="color:#f92672">,</span> String client<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">SourceOrderApi</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDate</span>(String orderId, String date, String client);
+</span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SourceOrderApiImpl</span> <span style="color:#66d9ef">implements</span> SourceOrderApi<span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SourceOrderApiImpl</span> <span style="color:#66d9ef">implements</span> SourceOrderApi{
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>String orderId<span style="color:#f92672">,</span> String date<span style="color:#f92672">,</span> String client<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>client<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;已将订单&#34;</span><span style="color:#f92672">+</span>orderId<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;的有效期延长至&#34;</span><span style="color:#f92672">+</span>date<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDate</span>(String orderId, String date, String client) {
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(client<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;已将订单&#34;</span><span style="color:#f92672">+</span>orderId<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;的有效期延长至&#34;</span><span style="color:#f92672">+</span>date);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        SourceOrderApi sourceOrderApi <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SourceOrderApiImpl<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>        sourceOrderApi<span style="color:#f92672">.</span><span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;123456&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;2014-10-15&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;user&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>        SourceOrderApi sourceOrderApi <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SourceOrderApiImpl();
+</span></span><span style="display:flex;"><span>        sourceOrderApi.<span style="color:#a6e22e">updateDate</span>(<span style="color:#e6db74">&#34;123456&#34;</span>, <span style="color:#e6db74">&#34;2014-10-15&#34;</span>, <span style="color:#e6db74">&#34;user&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/**
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * 适配器模式
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">AppOrderApi</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//只需要传入订单Id即可
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>String orderId<span style="color:#f92672">,</span> String client<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">AppOrderApi</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//只需要传入订单Id即可</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDate</span>(String orderId, String client);
+</span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppOrderApiImpl</span> <span style="color:#66d9ef">implements</span> AppOrderApi<span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    SourceOrderApi sourceOrderApi<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">AppOrderApiImpl</span><span style="color:#f92672">(){</span>
-</span></span><span style="display:flex;"><span>        sourceOrderApi <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SourceOrderApiImpl<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppOrderApiImpl</span> <span style="color:#66d9ef">implements</span> AppOrderApi{
+</span></span><span style="display:flex;"><span>    SourceOrderApi sourceOrderApi;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">AppOrderApiImpl</span>(){
+</span></span><span style="display:flex;"><span>        sourceOrderApi <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SourceOrderApiImpl();
+</span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>String orderId<span style="color:#f92672">,</span>String client<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//这里适配的方式随意，但是保证是要完全兼容原有的，就是保证调用原有的接口
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        sourceOrderApi<span style="color:#f92672">.</span><span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>orderId<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;9999-12-31&#34;</span><span style="color:#f92672">,</span> client<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDate</span>(String orderId,String client) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//这里适配的方式随意，但是保证是要完全兼容原有的，就是保证调用原有的接口</span>
+</span></span><span style="display:flex;"><span>        sourceOrderApi.<span style="color:#a6e22e">updateDate</span>(orderId, <span style="color:#e6db74">&#34;9999-12-31&#34;</span>, client);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        AppOrderApi appOrderApi <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AppOrderApiImpl<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>        appOrderApi<span style="color:#f92672">.</span><span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;123456&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;user&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Test</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span>(String<span style="color:#f92672">[]</span> args) {
+</span></span><span style="display:flex;"><span>        AppOrderApi appOrderApi <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AppOrderApiImpl();
+</span></span><span style="display:flex;"><span>        appOrderApi.<span style="color:#a6e22e">updateDate</span>(<span style="color:#e6db74">&#34;123456&#34;</span>, <span style="color:#e6db74">&#34;user&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/**
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * 代理模式
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProxySourceOrderApiImpl</span> <span style="color:#66d9ef">implements</span> SourceOrderApi <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    SourceOrderApi sourceOrderApi<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ProxySourceOrderApiImpl</span><span style="color:#f92672">(){</span>
-</span></span><span style="display:flex;"><span>        sourceOrderApi <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SourceOrderApiImpl<span style="color:#f92672">();</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProxySourceOrderApiImpl</span> <span style="color:#66d9ef">implements</span> SourceOrderApi {
+</span></span><span style="display:flex;"><span>    SourceOrderApi sourceOrderApi;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">ProxySourceOrderApiImpl</span>(){
+</span></span><span style="display:flex;"><span>        sourceOrderApi <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> SourceOrderApiImpl();
+</span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>String orderId<span style="color:#f92672">,</span> String date<span style="color:#f92672">,</span> String client<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//进行判断，如果是admin则更新否则让其输入账号密码
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;admin&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>client<span style="color:#f92672">)){</span>
-</span></span><span style="display:flex;"><span>            sourceOrderApi<span style="color:#f92672">.</span><span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>orderId<span style="color:#f92672">,</span> date<span style="color:#f92672">,</span> client<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span><span style="color:#66d9ef">else</span><span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;账号不是admin，没有查询权限，请输入以admin操作&#34;</span><span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDate</span>(String orderId, String date, String client) {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">//进行判断，如果是admin则更新否则让其输入账号密码</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span>(<span style="color:#e6db74">&#34;admin&#34;</span>.<span style="color:#a6e22e">equals</span>(client)){
+</span></span><span style="display:flex;"><span>            sourceOrderApi.<span style="color:#a6e22e">updateDate</span>(orderId, date, client);
+</span></span><span style="display:flex;"><span>        }<span style="color:#66d9ef">else</span>{
+</span></span><span style="display:flex;"><span>            System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;账号不是admin，没有查询权限，请输入以admin操作&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">/**
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> * 装饰器模式
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"> */</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NewSourceOrderApiImpl</span> <span style="color:#66d9ef">implements</span> SourceOrderApi <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>    SourceOrderApi sourceOrderApi<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">NewSourceOrderApiImpl</span><span style="color:#f92672">(</span>SourceOrderApi sourceOrderApi<span style="color:#f92672">){</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">sourceOrderApi</span> <span style="color:#f92672">=</span> sourceOrderApi<span style="color:#f92672">;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">NewSourceOrderApiImpl</span> <span style="color:#66d9ef">implements</span> SourceOrderApi {
+</span></span><span style="display:flex;"><span>    SourceOrderApi sourceOrderApi;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">NewSourceOrderApiImpl</span>(SourceOrderApi sourceOrderApi){
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">sourceOrderApi</span> <span style="color:#f92672">=</span> sourceOrderApi;
+</span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">@Override</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>String orderId<span style="color:#f92672">,</span> String date<span style="color:#f92672">,</span> String client<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-</span></span><span style="display:flex;"><span>        sourceOrderApi<span style="color:#f92672">.</span><span style="color:#a6e22e">updateDate</span><span style="color:#f92672">(</span>orderId<span style="color:#f92672">,</span> date<span style="color:#f92672">,</span> client<span style="color:#f92672">);</span>
-</span></span><span style="display:flex;"><span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>client<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;已将订单&#34;</span><span style="color:#f92672">+</span>orderId<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;的退款期延长至&#34;</span><span style="color:#f92672">+</span>date<span style="color:#f92672">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">updateDate</span>(String orderId, String date, String client) {
+</span></span><span style="display:flex;"><span>        sourceOrderApi.<span style="color:#a6e22e">updateDate</span>(orderId, date, client);
+</span></span><span style="display:flex;"><span>        System.<span style="color:#a6e22e">out</span>.<span style="color:#a6e22e">println</span>(client<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;已将订单&#34;</span><span style="color:#f92672">+</span>orderId<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;的退款期延长至&#34;</span><span style="color:#f92672">+</span>date);
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><hr>
 <hr>
 <h2 id="行为型模式">
