@@ -5,11 +5,9 @@
   <meta name="generator" content="Hugo 0.121.1">
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Linux # 更多教程详见：Linux 学习笔记 硬件信息 # 如何查看内存大小？ # free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ # # 物理 cpu 个数 cat /proc/cpuinfo| grep &#39;physical id&#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &#39;core id&#39; | sort | uniq | wc -l # 逻辑 cpu 个数（线程数） cat /proc/cpuinfo| grep &#39;processor&#39; | sort | uniq | wc -l 例子：
-2 个 cpu 每个 cpu 有 8 个核心（一共 16 个核心） 一共有 32 个逻辑 cpu / 线程（每个核心有 2 个逻辑 cpu / 线程） 如何查看系统内核？ # uname -a cat /proc/version 如何查看操作系统版本？ # cat /etc/issue cat /etc/*release 运行信息 # 如何查看占用内存最多的进程？ # 如何查看占用 CPU 最多的进程？ # 如何查看占用某个端口的进程？ # 如何查看文件被占用没被彻底删除（看不到文件，但是磁盘没有释放）？ # lsof |grep deleted">
+<meta name="description" content="Linux # 更多教程详见：Linux 学习笔记 硬件信息 # 如何查看内存大小？ # free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ # # 物理 cpu 个数 cat /proc/cpuinfo| grep &#39;physical id&#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &#39;core id&#39; | sort | uniq | wc -l # 系统中逻辑 cpu 总个数（线程数），多个物理 cpu 的总和 cat /proc/cpuinfo| grep &#39;processor&#39; | sort | uniq | wc -l lscpu | grep -E &#39;^Thread|^Core|^Socket|^CPU\(&#39; #CPU(s): 128 #Thread(s) per core: 2 #Core(s) per socket: 32 #Socket(s): 2 例子：">
 <meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Linux" />
-<meta property="og:description" content="Linux # 更多教程详见：Linux 学习笔记 硬件信息 # 如何查看内存大小？ # free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ # # 物理 cpu 个数 cat /proc/cpuinfo| grep &#39;physical id&#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &#39;core id&#39; | sort | uniq | wc -l # 逻辑 cpu 个数（线程数） cat /proc/cpuinfo| grep &#39;processor&#39; | sort | uniq | wc -l 例子：
-2 个 cpu 每个 cpu 有 8 个核心（一共 16 个核心） 一共有 32 个逻辑 cpu / 线程（每个核心有 2 个逻辑 cpu / 线程） 如何查看系统内核？ # uname -a cat /proc/version 如何查看操作系统版本？ # cat /etc/issue cat /etc/*release 运行信息 # 如何查看占用内存最多的进程？ # 如何查看占用 CPU 最多的进程？ # 如何查看占用某个端口的进程？ # 如何查看文件被占用没被彻底删除（看不到文件，但是磁盘没有释放）？ # lsof |grep deleted" />
+<meta property="og:description" content="Linux # 更多教程详见：Linux 学习笔记 硬件信息 # 如何查看内存大小？ # free -m 如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？ # # 物理 cpu 个数 cat /proc/cpuinfo| grep &#39;physical id&#39; | sort | uniq | wc -l # 每个物理 cpu 的核心数 cat /proc/cpuinfo| grep &#39;core id&#39; | sort | uniq | wc -l # 系统中逻辑 cpu 总个数（线程数），多个物理 cpu 的总和 cat /proc/cpuinfo| grep &#39;processor&#39; | sort | uniq | wc -l lscpu | grep -E &#39;^Thread|^Core|^Socket|^CPU\(&#39; #CPU(s): 128 #Thread(s) per core: 2 #Core(s) per socket: 32 #Socket(s): 2 例子：" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://kingye.me/interview/docs/os/linux/" /><meta property="article:section" content="docs" />
 
@@ -19,7 +17,7 @@
 <link rel="manifest" href="/interview/manifest.json">
 <link rel="icon" href="/interview/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
-<script defer src="/interview/en.search.min.fad2536e7cc32f8a909dc757662ac57c0a19d0d5eaae384b395b53d639d29c7d.js" integrity="sha256-&#43;tJTbnzDL4qQncdXZirFfAoZ0NXqrjhLOVtT1jnSnH0="></script>
+<script defer src="/interview/en.search.min.2c2057ae87e069be703fbace0e8f53918045579b9d401686b742b72e5bc992f4.js" integrity="sha256-LCBXrofgab5wP7rODo9TkYBFV5udQBaGt0K3LlvJkvQ="></script>
 <!--
 Made with Book Theme
 https://github.com/alex-shpak/hugo-book
@@ -1274,8 +1272,15 @@ https://github.com/alex-shpak/hugo-book
 </span></span><span style="display:flex;"><span>cat /proc/cpuinfo| grep <span style="color:#e6db74">&#39;physical id&#39;</span> | sort | uniq | wc -l
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># 每个物理 cpu 的核心数</span>
 </span></span><span style="display:flex;"><span>cat /proc/cpuinfo| grep <span style="color:#e6db74">&#39;core id&#39;</span> | sort | uniq | wc -l
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 逻辑 cpu 个数（线程数）</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 系统中逻辑 cpu 总个数（线程数），多个物理 cpu 的总和</span>
 </span></span><span style="display:flex;"><span>cat /proc/cpuinfo| grep <span style="color:#e6db74">&#39;processor&#39;</span> | sort | uniq | wc -l
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>lscpu | grep -E <span style="color:#e6db74">&#39;^Thread|^Core|^Socket|^CPU\(&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#CPU(s):                               128</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Thread(s) per core:                   2</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Core(s) per socket:                   32</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Socket(s):                            2</span>
 </span></span></code></pre></div><p>例子：</p>
 <ul>
 <li>2 个 cpu</li>
