@@ -1,0 +1,1719 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.121.1">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Go # 更多教程详见：
+Go 学习笔记 shgopher/GOFamily geektutu/interview-questions 基础 # 接口 # 如果一个类型使用 value receiver 实现了某个 interface 的所有方法，那么这个类型的 value 和 pointer 都实现了该 interface 如果一个类型使用 pointer receiver 实现了某个 interface 的所有方法，那么这个类型只有 pointer 都实现了该 interface 参考：
+Pointer vs Value Receiver in methods while implementing an interface in Go 标准库 # 为什么需要 response.Body.Close()？ # 为了 TCP 连接复用
+// The default HTTP client&#39;s Transport does not // attempt to reuse HTTP/1.0 or HTTP/1.1 TCP connections // (keep-alive) unless the Body is read to completion and is // closed.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Go" />
+<meta property="og:description" content="Go # 更多教程详见：
+Go 学习笔记 shgopher/GOFamily geektutu/interview-questions 基础 # 接口 # 如果一个类型使用 value receiver 实现了某个 interface 的所有方法，那么这个类型的 value 和 pointer 都实现了该 interface 如果一个类型使用 pointer receiver 实现了某个 interface 的所有方法，那么这个类型只有 pointer 都实现了该 interface 参考：
+Pointer vs Value Receiver in methods while implementing an interface in Go 标准库 # 为什么需要 response.Body.Close()？ # 为了 TCP 连接复用
+// The default HTTP client&#39;s Transport does not // attempt to reuse HTTP/1.0 or HTTP/1.1 TCP connections // (keep-alive) unless the Body is read to completion and is // closed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kingye.me/interview/docs/pl/go/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2023-10-25T22:14:07+08:00" />
+
+<title>Go | 面试笔记</title>
+<link rel="manifest" href="/interview/manifest.json">
+<link rel="icon" href="/interview/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/interview/book.min.e7360c502a84143addd190981586c3e3e8f082b67f6799dc9f237a599fe0be5a.css" integrity="sha256-5zYMUCqEFDrd0ZCYFYbD4&#43;jwgrZ/Z5ncnyN6WZ/gvlo=">
+<script defer src="/interview/en.search.min.2c2057ae87e069be703fbace0e8f53918045579b9d401686b742b72e5bc992f4.js" integrity="sha256-LCBXrofgab5wP7rODo9TkYBFV5udQBaGt0K3LlvJkvQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/interview"><span>面试笔记</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+<ul>
+  <li><a href="https://kingye.me" target="_blank" rel="noopener noreferrer">博客</a></li>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417021727.png" target="_blank" rel="noopener noreferrer">公众号</a></li>
+  <li><a href="https://github.com/ikingye" target="_blank" rel="noopener noreferrer">Github</a></li>
+  <li><a href="https://weibo.com/kingyip15215" target="_blank" rel="noopener noreferrer">微博</a></li>
+  <li><a href="https://www.zhihu.com/people/wutongyip" target="_blank" rel="noopener noreferrer">知乎</a></li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7ea71b3fc9bc6c7d138f4e0ab921fa64" class="toggle"  />
+    <label for="section-7ea71b3fc9bc6c7d138f4e0ab921fa64" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/co/" class="">1. 计算机组成原理</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-708f0dc81b7f5419c74b48a85bd8146c" class="toggle"  />
+    <label for="section-708f0dc81b7f5419c74b48a85bd8146c" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/os/" class="">2. 操作系统</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-79330aa2b633081416a3292066b69060" class="toggle"  />
+    <label for="section-79330aa2b633081416a3292066b69060" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/os/linux/" class="">Linux</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3110560962cac834dcd3aead95e804a4" class="toggle"  />
+    <label for="section-3110560962cac834dcd3aead95e804a4" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/network/" class="">3. 网络</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://kingye.me/interview/docs/network/http/" class="">HTTP</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://kingye.me/interview/docs/network/tcp/" class="">TCP/UDP/IP</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://kingye.me/interview/docs/network/send/" class="">发包工具</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://kingye.me/interview/docs/network/capture/" class="">抓包</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b773bfdf266ac3d878474e9619908034" class="toggle"  />
+    <label for="section-b773bfdf266ac3d878474e9619908034" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/algs/" class="">4. 数据结构与算法</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://kingye.me/interview/docs/algs/tree/" class="">二叉树</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://kingye.me/interview/docs/algs/dp/" class="">动态规划</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://kingye.me/interview/docs/algs/sort/" class="">排序算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://kingye.me/interview/docs/algs/search/" class="">查询算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://kingye.me/interview/docs/algs/link/" class="">链表</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-771d1b18af68e81cd9d3d14cd5f6339b" class="toggle" checked />
+    <label for="section-771d1b18af68e81cd9d3d14cd5f6339b" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/pl/" class="">5. 编程语言</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ce20b127a29bde55e38104d99dc3bd4e" class="toggle"  />
+    <label for="section-ce20b127a29bde55e38104d99dc3bd4e" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/pl/c/" class="">C</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-25913342c4086d0f7c5e9384bf97caaa" class="toggle"  />
+    <label for="section-25913342c4086d0f7c5e9384bf97caaa" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/pl/cpp/" class="">C&#43;&#43;</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-af5784492c5fde4c4af546ec0b61bf0a" class="toggle" checked />
+    <label for="section-af5784492c5fde4c4af546ec0b61bf0a" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/pl/go/" class="active">Go</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2d99884358d7a7d6785e1298f8cdd76f" class="toggle"  />
+    <label for="section-2d99884358d7a7d6785e1298f8cdd76f" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/pl/java/" class="">Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f78473f316c46b7d82025b440c6157d4" class="toggle"  />
+    <label for="section-f78473f316c46b7d82025b440c6157d4" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/pl/javascript/" class="">JavaScript</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e525d5da25faad8690d1ce8802d2e4d1" class="toggle"  />
+    <label for="section-e525d5da25faad8690d1ce8802d2e4d1" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/pl/kotlin/" class="">Kotlin</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-64d7a0a7c5722f3fed6f1ff13dd394e1" class="toggle"  />
+    <label for="section-64d7a0a7c5722f3fed6f1ff13dd394e1" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/pl/php/" class="">PHP</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-532a11e4ee8b71ba8f2d4be2913be491" class="toggle"  />
+    <label for="section-532a11e4ee8b71ba8f2d4be2913be491" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/pl/python/" class="">Python</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-41ffa5756efab6dad819723267fd63c7" class="toggle"  />
+    <label for="section-41ffa5756efab6dad819723267fd63c7" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/pl/rust/" class="">Rust</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-deff4a5d4b1be03106fa9fd5be8ffc62" class="toggle"  />
+    <label for="section-deff4a5d4b1be03106fa9fd5be8ffc62" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/se/" class="">6. 软件工程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-4dd04dd421edfe0ad3ce6faa716c4db7" class="toggle"  />
+    <label for="section-4dd04dd421edfe0ad3ce6faa716c4db7" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/se/dp/" class="">设计模式</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d843dada8b38f10c0d16d3af96a4f2d4" class="toggle"  />
+    <label for="section-d843dada8b38f10c0d16d3af96a4f2d4" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/se/architecture/" class="">架构设计</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0dd89276d039b5e761d05dc16588bbbd" class="toggle"  />
+    <label for="section-0dd89276d039b5e761d05dc16588bbbd" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/se/pm/" class="">项目管理</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e5a49337b6189bd60f0b5e1d3a4a8539" class="toggle"  />
+    <label for="section-e5a49337b6189bd60f0b5e1d3a4a8539" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/cloud/" class="">7. 云计算</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8c71d5a2b387cc203ec8d61f36f59c9c" class="toggle"  />
+    <label for="section-8c71d5a2b387cc203ec8d61f36f59c9c" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/cloud/docker/" class="">Docker</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2402dfdd6223dd78c25ec2b4a505ca77" class="toggle"  />
+    <label for="section-2402dfdd6223dd78c25ec2b4a505ca77" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/cloud/kubernetes/" class="">Kubernetes</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a0639f57dace2af5075972302f8754f7" class="toggle"  />
+    <label for="section-a0639f57dace2af5075972302f8754f7" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/cloud/native/" class="">Cloud Native</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-00a43ab453ad15109800138d5a01d926" class="toggle"  />
+    <label for="section-00a43ab453ad15109800138d5a01d926" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/bigdata/" class="">8. 大数据</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8bb89e37bc8ac94ed7933c2c15518f8c" class="toggle"  />
+    <label for="section-8bb89e37bc8ac94ed7933c2c15518f8c" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/ai/" class="">9. 人工智能</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-66d14aff6eea31566c6f80accccb56c7" class="toggle"  />
+    <label for="section-66d14aff6eea31566c6f80accccb56c7" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/ai/ml/" class="">机器学习</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7761561808c1f7405e0edd8dff5c2254" class="toggle"  />
+    <label for="section-7761561808c1f7405e0edd8dff5c2254" class="flex justify-between">
+      <a  class="">10. 后台</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-83e9e4fba2871ab68673864027147ae8" class="toggle"  />
+    <label for="section-83e9e4fba2871ab68673864027147ae8" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/backend/web/" class="">Web 后端</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c8eda0f1ff761af36606fb25a82470f2" class="toggle"  />
+    <label for="section-c8eda0f1ff761af36606fb25a82470f2" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/backend/web/go/" class="">Go Web 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3a2def4fc5e3d67220eeb2f61637d381" class="toggle"  />
+    <label for="section-3a2def4fc5e3d67220eeb2f61637d381" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/backend/web/java/" class="">Java Web 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a058a62c5e5867d84e8cd416b7579bfb" class="toggle"  />
+    <label for="section-a058a62c5e5867d84e8cd416b7579bfb" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/backend/web/php/" class="">PHP 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f6ff637b0b65c793e64746b72099f532" class="toggle"  />
+    <label for="section-f6ff637b0b65c793e64746b72099f532" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/backend/web/python/" class="">Python 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://kingye.me/interview/docs/backend/db/" class="">数据库</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-96518ad7f2af78b1d10efdc164fc69a7" class="toggle"  />
+    <label for="section-96518ad7f2af78b1d10efdc164fc69a7" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/backend/db/mysql/" class="">Mysql</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-bcd4df2b13963412313edf644cce74e3" class="toggle"  />
+    <label for="section-bcd4df2b13963412313edf644cce74e3" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/backend/db/redis/" class="">Redis</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://kingye.me/interview/docs/backend/mq/" class="">消息队列</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b9a1a5e3efb18be27d67510fa824393f" class="toggle"  />
+    <label for="section-b9a1a5e3efb18be27d67510fa824393f" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/backend/mq/kafka/" class="">Kafka</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6a8c41a7874c7b60c113274fc11b346e" class="toggle"  />
+    <label for="section-6a8c41a7874c7b60c113274fc11b346e" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/backend/mq/rocketmq/" class="">RocketMQ</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-926258dfbf2be293da891e0b6930fb61" class="toggle"  />
+    <label for="section-926258dfbf2be293da891e0b6930fb61" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/backend/mq/rabbitmq/" class="">RabbitMQ</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3280c97832e30471854dd70fa6fc8a77" class="toggle"  />
+    <label for="section-3280c97832e30471854dd70fa6fc8a77" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/backend/others/" class="">其他</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c766f5b80079cb506d8c641f6b1b26f6" class="toggle"  />
+    <label for="section-c766f5b80079cb506d8c641f6b1b26f6" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/backend/others/hot-load/" class="">配置热加载</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dff6074380788fd9e9f416cc806efe54" class="toggle"  />
+    <label for="section-dff6074380788fd9e9f416cc806efe54" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/backend/others/hot-restart/" class="">程序热重启</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-57a933ec8525b0c28bab7735b8b960cb" class="toggle"  />
+    <label for="section-57a933ec8525b0c28bab7735b8b960cb" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/frontend/" class="">11. 前端与客户端</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-68ebd013c9c7fb940743a82d1a654b97" class="toggle"  />
+    <label for="section-68ebd013c9c7fb940743a82d1a654b97" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/frontend/web/" class="">Web 前端</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-0aa2e38e0e97f869c1e1f265836d5f45" class="toggle"  />
+    <label for="section-0aa2e38e0e97f869c1e1f265836d5f45" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/op/" class="">13. 运维</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-4b72011c96998ec0902edd8bbd5b602e" class="toggle"  />
+    <label for="section-4b72011c96998ec0902edd8bbd5b602e" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/test/" class="">14. 测试</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6ce8ef21c020ccdb7ed73156795b30be" class="toggle"  />
+    <label for="section-6ce8ef21c020ccdb7ed73156795b30be" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/security/" class="">13. 安全</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d118f5bb88d4d1b271b0dcfca1b4a9bc" class="toggle"  />
+    <label for="section-d118f5bb88d4d1b271b0dcfca1b4a9bc" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/security/web/" class="">Web 安全</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://kingye.me/interview/docs/security/web/xss/" class="">XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://kingye.me/interview/docs/security/web/csrf/" class="">CSRF</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9df867f1ccb076f4c1a4602e12169b93" class="toggle"  />
+    <label for="section-9df867f1ccb076f4c1a4602e12169b93" class="flex justify-between">
+      <a href="https://kingye.me/interview/docs/others/" class="">15. 其他</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://kingye.me/interview/docs/others/encode/" class="">字符编码</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://kingye.me/interview/docs/others/encryption/" class="">加密</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://kingye.me/interview/docs/others/compile/" class="">编译</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
+  <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="//pub.idqqimg.com/wpa/images/group.png"></a></li>
+</ul>
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/interview/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Go</strong>
+
+  <label for="toc-control">
+    
+    <img src="/interview/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#基础">基础</a>
+      <ul>
+        <li><a href="#接口">接口</a></li>
+        <li><a href="#标准库">标准库</a>
+          <ul>
+            <li><a href="#为什么需要-responsebodyclose">为什么需要 <code>response.Body.Close()</code>？</a></li>
+          </ul>
+        </li>
+        <li><a href="#你现在使用的是什么版本最新版本是什么相对有哪些变化">你现在使用的是什么版本？最新版本是什么，相对有哪些变化？</a>
+          <ul>
+            <li><a href="#go-版本管理工具gvm-如何使用">go 版本管理工具，gvm 如何使用？</a></li>
+          </ul>
+        </li>
+        <li><a href="#简单说说-go-包管理工具的发展历史">简单说说 Go 包管理工具的发展历史？</a>
+          <ul>
+            <li><a href="#你用过哪些-go-包管理工具说说它们的优缺点">你用过哪些 Go 包管理工具，说说它们的优缺点？</a></li>
+            <li><a href="#go-mod-相对之前的版本管理有哪些优点">Go Mod 相对之前的版本管理有哪些优点？</a></li>
+          </ul>
+        </li>
+        <li><a href="#go-mod-如何找到引用的包">Go Mod 如何找到引用的包？</a></li>
+      </ul>
+    </li>
+    <li><a href="#进阶">进阶</a>
+      <ul>
+        <li><a href="#make-new-有什么区别">make, new 有什么区别？</a></li>
+        <li><a href="#panic-recover-是怎么实现的">panic, recover 是怎么实现的？</a></li>
+        <li><a href="#makefile-语法">Makefile 语法</a></li>
+        <li><a href="#go-插件系统">Go 插件系统</a>
+          <ul>
+            <li><a href="#go-插件系统的应用场景">Go 插件系统的应用场景？</a></li>
+            <li><a href="#go-插件系统是如何实现的">Go 插件系统是如何实现的？</a></li>
+          </ul>
+        </li>
+        <li><a href="#goroutine-为什么高效">Goroutine 为什么高效？</a></li>
+        <li><a href="#goroutine-如何调度">Goroutine 如何调度？</a>
+          <ul>
+            <li><a href="#为什么-go-需要自己实现调度器">为什么 Go 需要自己实现调度器？</a></li>
+            <li><a href="#调度器解决了什么问题">调度器解决了什么问题？</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#设计与实现">设计与实现</a></li>
+  </ul>
+</nav>
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
+  <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="//pub.idqqimg.com/wpa/images/group.png"></a></li>
+</ul>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article id="article" class="markdown"><h1 id="go">
+  Go
+  <a class="anchor" href="#go">#</a>
+</h1>
+<blockquote class="book-hint info">
+  <p>更多教程详见：</p>
+<ul>
+<li><a href="https://kingye.me/study-go/">Go 学习笔记</a></li>
+<li><a href="https://github.com/shgopher/GOFamily">shgopher/GOFamily</a> <img src="https://img.shields.io/github/stars/shgopher/GOFamily.svg" alt="Github stars" /> <img src="https://img.shields.io/github/languages/top/shgopher/GOFamily.svg" alt="Language" /> <img src="https://img.shields.io/github/v/tag/shgopher/GOFamily.svg?sort=semver" alt="Last Tag" /> <img src="https://img.shields.io/github/last-commit/shgopher/GOFamily.svg" alt="Last commit" /></li>
+<li><a href="https://github.com/geektutu/interview-questions">geektutu/interview-questions</a> <img src="https://img.shields.io/github/stars/geektutu/interview-questions.svg" alt="Github stars" /> <img src="https://img.shields.io/github/languages/top/geektutu/interview-questions.svg" alt="Language" /> <img src="https://img.shields.io/github/v/tag/geektutu/interview-questions.svg?sort=semver" alt="Last Tag" /> <img src="https://img.shields.io/github/last-commit/geektutu/interview-questions.svg" alt="Last commit" /></li>
+</ul>
+</blockquote>
+
+<h2 id="基础">
+  基础
+  <a class="anchor" href="#%e5%9f%ba%e7%a1%80">#</a>
+</h2>
+<h3 id="接口">
+  接口
+  <a class="anchor" href="#%e6%8e%a5%e5%8f%a3">#</a>
+</h3>
+<ul>
+<li>如果一个类型使用 <code>value receiver</code> 实现了某个 interface 的所有方法，那么这个类型的 <strong>value 和 pointer</strong> 都实现了该 interface</li>
+<li>如果一个类型使用 <code>pointer receiver</code> 实现了某个 interface 的所有方法，那么这个类型只有 <strong>pointer</strong> 都实现了该 interface</li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a href="https://golangbyexample.com/pointer-vs-value-receiver-method-golang/">Pointer vs Value Receiver in methods while implementing an interface in Go</a></li>
+</ul>
+<h3 id="标准库">
+  标准库
+  <a class="anchor" href="#%e6%a0%87%e5%87%86%e5%ba%93">#</a>
+</h3>
+<h4 id="为什么需要-responsebodyclose">
+  为什么需要 <code>response.Body.Close()</code>？
+  <a class="anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e9%9c%80%e8%a6%81-responsebodyclose">#</a>
+</h4>
+<p>为了 TCP 连接复用</p>
+<pre tabindex="0"><code>// The default HTTP client&#39;s Transport does not
+// attempt to reuse HTTP/1.0 or HTTP/1.1 TCP connections
+// (keep-alive) unless the Body is read to completion and is
+// closed.
+</code></pre><p>读取 body 并关闭，才会复用 TCP 连接</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">route</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">routes</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">res</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Request</span>(<span style="color:#a6e22e">route</span>.<span style="color:#a6e22e">method</span>, <span style="color:#a6e22e">ts</span>.<span style="color:#a6e22e">URL</span><span style="color:#f92672">+</span><span style="color:#a6e22e">route</span>.<span style="color:#a6e22e">path</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>        panic(<span style="color:#a6e22e">err</span>)
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">io</span>.<span style="color:#a6e22e">Copy</span>(<span style="color:#a6e22e">ioutil</span>.<span style="color:#a6e22e">Discard</span>, <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">Body</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">Body</span>.<span style="color:#a6e22e">Close</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>参考：</p>
+<ul>
+<li><a href="https://blog.csdn.net/bdss58/article/details/102225632">为什么必须手动关闭 resp.Body</a></li>
+<li><a href="https://gocn.vip/topics/8470">can&rsquo;t assign requested address 错误解决</a></li>
+<li><a href="https://segmentfault.com/a/1190000020086816">Go Http 包解析：为什么需要 response.Body.Close()</a></li>
+</ul>
+<hr>
+<h3 id="你现在使用的是什么版本最新版本是什么相对有哪些变化">
+  你现在使用的是什么版本？最新版本是什么，相对有哪些变化？
+  <a class="anchor" href="#%e4%bd%a0%e7%8e%b0%e5%9c%a8%e4%bd%bf%e7%94%a8%e7%9a%84%e6%98%af%e4%bb%80%e4%b9%88%e7%89%88%e6%9c%ac%e6%9c%80%e6%96%b0%e7%89%88%e6%9c%ac%e6%98%af%e4%bb%80%e4%b9%88%e7%9b%b8%e5%af%b9%e6%9c%89%e5%93%aa%e4%ba%9b%e5%8f%98%e5%8c%96">#</a>
+</h3>
+<h4 id="go-版本管理工具gvm-如何使用">
+  go 版本管理工具，gvm 如何使用？
+  <a class="anchor" href="#go-%e7%89%88%e6%9c%ac%e7%ae%a1%e7%90%86%e5%b7%a5%e5%85%b7gvm-%e5%a6%82%e4%bd%95%e4%bd%bf%e7%94%a8">#</a>
+</h4>
+<hr>
+<h3 id="简单说说-go-包管理工具的发展历史">
+  简单说说 Go 包管理工具的发展历史？
+  <a class="anchor" href="#%e7%ae%80%e5%8d%95%e8%af%b4%e8%af%b4-go-%e5%8c%85%e7%ae%a1%e7%90%86%e5%b7%a5%e5%85%b7%e7%9a%84%e5%8f%91%e5%b1%95%e5%8e%86%e5%8f%b2">#</a>
+</h3>
+<ul>
+<li><code>Go 1.4</code> 及之前
+<ul>
+<li>所有的依赖包都是存放在 <code>GOPATH</code> 下，没有版本控制</li>
+</ul>
+</li>
+<li><code>Go 1.5</code> 至 <code>Go 1.10</code>
+<ul>
+<li>每个项目的根目录下可以有一个 <code>vendor</code> 目录，里面存放了该项目的依赖的包</li>
+</ul>
+</li>
+<li><code>Go 1.11</code> 至 <code>Go 1.12</code>
+<ul>
+<li>默认使用的还是 <code>GOPATH</code> 的管理方式</li>
+<li>运行 <code>export GO111MODULE=on</code>，使用 <code>Go Modules</code></li>
+</ul>
+</li>
+<li><code>Go 1.13</code> 及之后
+<ul>
+<li>默认使用 <code>Go Modules</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="你用过哪些-go-包管理工具说说它们的优缺点">
+  你用过哪些 Go 包管理工具，说说它们的优缺点？
+  <a class="anchor" href="#%e4%bd%a0%e7%94%a8%e8%bf%87%e5%93%aa%e4%ba%9b-go-%e5%8c%85%e7%ae%a1%e7%90%86%e5%b7%a5%e5%85%b7%e8%af%b4%e8%af%b4%e5%ae%83%e4%bb%ac%e7%9a%84%e4%bc%98%e7%bc%ba%e7%82%b9">#</a>
+</h4>
+<ul>
+<li>
+<p><a href="https://github.com/golang/dep">golang/dep</a> <img src="https://img.shields.io/github/stars/golang/dep.svg" alt="Github stars" /></p>
+</li>
+<li>
+<p><a href="https://github.com/Masterminds/glide">Masterminds/glide</a> <img src="https://img.shields.io/github/stars/Masterminds/glide.svg" alt="Github stars" /></p>
+</li>
+<li>
+<p><a href="https://github.com/kardianos/govendor">kardianos/govendor</a> <img src="https://img.shields.io/github/stars/kardianos/govendor.svg" alt="Github stars" /></p>
+</li>
+</ul>
+<h4 id="go-mod-相对之前的版本管理有哪些优点">
+  Go Mod 相对之前的版本管理有哪些优点？
+  <a class="anchor" href="#go-mod-%e7%9b%b8%e5%af%b9%e4%b9%8b%e5%89%8d%e7%9a%84%e7%89%88%e6%9c%ac%e7%ae%a1%e7%90%86%e6%9c%89%e5%93%aa%e4%ba%9b%e4%bc%98%e7%82%b9">#</a>
+</h4>
+<ul>
+<li>可以指定版本</li>
+</ul>
+<hr>
+<h3 id="go-mod-如何找到引用的包">
+  Go Mod 如何找到引用的包？
+  <a class="anchor" href="#go-mod-%e5%a6%82%e4%bd%95%e6%89%be%e5%88%b0%e5%bc%95%e7%94%a8%e7%9a%84%e5%8c%85">#</a>
+</h3>
+<p>一般情况：</p>
+<p>查看 <code>$GOPATH/pkg/mod/</code></p>
+<p>设置 <code>go mod vendor</code>，使用 <code>go build -mod=vendor</code> 来构建项目时：</p>
+<hr>
+<hr>
+<h2 id="进阶">
+  进阶
+  <a class="anchor" href="#%e8%bf%9b%e9%98%b6">#</a>
+</h2>
+<h3 id="make-new-有什么区别">
+  make, new 有什么区别？
+  <a class="anchor" href="#make-new-%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab">#</a>
+</h3>
+<ul>
+<li>make
+<ul>
+<li>初始化</li>
+<li>设置数组的长度、容量等</li>
+<li>返回变量本身</li>
+</ul>
+</li>
+<li>new
+<ul>
+<li>只初始化</li>
+<li>返回变量的指针</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">list</span> <span style="color:#f92672">:=</span> new([]<span style="color:#66d9ef">int</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 不能对未设置长度的指针执行 append 操作
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">list</span> = append(<span style="color:#a6e22e">list</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">s1</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">s2</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 编译错误，s2需要展开
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// s1 = append(s1, s2)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">s1</span> = append(<span style="color:#a6e22e">s1</span>, <span style="color:#a6e22e">s2</span><span style="color:#f92672">...</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">s1</span>)
+</span></span></code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// The make built-in function allocates and initializes an object of type
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// slice, map, or chan (only). Like new, the first argument is a type, not a
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// value. Unlike new, make&#39;s return type is the same as the type of its
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// argument, not a pointer to it. The specification of the result depends on
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// the type:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//	Slice: The size specifies the length. The capacity of the slice is
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//	equal to its length. A second integer argument may be provided to
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//	specify a different capacity; it must be no smaller than the
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//	length. For example, make([]int, 0, 10) allocates an underlying array
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//	of size 10 and returns a slice of length 0 and capacity 10 that is
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//	backed by this underlying array.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//	Map: An empty map is allocated with enough space to hold the
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//	specified number of elements. The size may be omitted, in which case
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//	a small starting size is allocated.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//	Channel: The channel&#39;s buffer is initialized with the specified
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//	buffer capacity. If zero, or the size is omitted, the channel is
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">//	unbuffered.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> make(<span style="color:#a6e22e">t</span> <span style="color:#a6e22e">Type</span>, <span style="color:#a6e22e">size</span> <span style="color:#f92672">...</span><span style="color:#a6e22e">IntegerType</span>) <span style="color:#a6e22e">Type</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// The new built-in function allocates memory. The first argument is a type,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// not a value, and the value returned is a pointer to a newly
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// allocated zero value of that type.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> new(<span style="color:#a6e22e">Type</span>) <span style="color:#f92672">*</span><span style="color:#a6e22e">Type</span>
+</span></span></code></pre></div><hr>
+<h3 id="panic-recover-是怎么实现的">
+  panic, recover 是怎么实现的？
+  <a class="anchor" href="#panic-recover-%e6%98%af%e6%80%8e%e4%b9%88%e5%ae%9e%e7%8e%b0%e7%9a%84">#</a>
+</h3>
+<p>参考：</p>
+<ul>
+<li><a href="https://draveness.me/golang/docs/part2-foundation/ch05-keyword/golang-panic-recover/">Go 语言 panic 和 recover 的原理</a></li>
+</ul>
+<hr>
+<h3 id="makefile-语法">
+  Makefile 语法
+  <a class="anchor" href="#makefile-%e8%af%ad%e6%b3%95">#</a>
+</h3>
+<hr>
+<h3 id="go-插件系统">
+  Go 插件系统
+  <a class="anchor" href="#go-%e6%8f%92%e4%bb%b6%e7%b3%bb%e7%bb%9f">#</a>
+</h3>
+<p>Go 1.8 版本开始提供了一个创建共享库的新工具，称为 <code>Plugins</code>.</p>
+<p><code>go build -buildmode=plugin</code></p>
+<h4 id="go-插件系统的应用场景">
+  Go 插件系统的应用场景？
+  <a class="anchor" href="#go-%e6%8f%92%e4%bb%b6%e7%b3%bb%e7%bb%9f%e7%9a%84%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af">#</a>
+</h4>
+<ul>
+<li>通过 plugin 我们可以很方便的对于不同功能加载相应的模块；</li>
+<li>针对不同语言 (英文、汉语、德语……) 加载不同的语言 so 文件，进行不同的输出；</li>
+<li>编译出的文件给不同的编程语言用 (如：c/java/python/lua 等).</li>
+<li>需要加密的核心算法，核心业务逻辑可以可以编译成 plugin 插件</li>
+<li>黑客预留的后门 backdoor 可以使用 plugin</li>
+<li>函数集动态加载</li>
+</ul>
+<h4 id="go-插件系统是如何实现的">
+  Go 插件系统是如何实现的？
+  <a class="anchor" href="#go-%e6%8f%92%e4%bb%b6%e7%b3%bb%e7%bb%9f%e6%98%af%e5%a6%82%e4%bd%95%e5%ae%9e%e7%8e%b0%e7%9a%84">#</a>
+</h4>
+<p>参考：</p>
+<ul>
+<li><a href="https://draveness.me/golang/docs/part4-advanced/ch08-metaprogramming/golang-plugin/">Go 插件系统</a></li>
+</ul>
+<hr>
+<h3 id="goroutine-为什么高效">
+  Goroutine 为什么高效？
+  <a class="anchor" href="#goroutine-%e4%b8%ba%e4%bb%80%e4%b9%88%e9%ab%98%e6%95%88">#</a>
+</h3>
+<hr>
+<h3 id="goroutine-如何调度">
+  Goroutine 如何调度？
+  <a class="anchor" href="#goroutine-%e5%a6%82%e4%bd%95%e8%b0%83%e5%ba%a6">#</a>
+</h3>
+<p>Golang 调度器引入了三个结构来对调度的过程建模：</p>
+<ul>
+<li>G 代表一个 Goroutine；</li>
+<li>M 代表一个操作系统的<strong>线程</strong>； <code>Machine</code></li>
+<li>P 代表一个 CPU 处理器，通常 P 的数量等于 CPU 核数（<code>GOMAXPROCS</code>）。</li>
+</ul>
+<p>三者都在 runtime2.go 中定义，他们之间的关系如下：</p>
+<ul>
+<li>G 需要绑定在 M 上才能运行；</li>
+<li>M 需要绑定 P 才能运行；</li>
+<li>程序中的多个 M 并不会同时都处于执行状态，最多只有 <code>GOMAXPROCS</code> 个 M 在执行。</li>
+</ul>
+<p>早期版本的 Golang 是没有 P 的，调度是由 G 与 M 完成。 这样的问题在于每当创建、终止 Goroutine 或者需要调度时，需要一个<strong>全局锁</strong>来保护调度的相关对象 (<code>sched</code>)。 全局锁严重影响 Goroutine 的并发性能。 (<a href="https://docs.google.com/document/d/1TTj4T2JO42uD5ID9e89oa0sLKhJYD0Y_kqxDv3I3XMw/edit">Scalable Go Scheduler</a>)</p>
+<p>通过引入 P，实现了一种叫做 <code>work-stealing</code> 的调度算法：</p>
+<ul>
+<li>每个 P 维护一个 G 队列；</li>
+<li>当一个 G 被创建出来，或者变为可执行状态时，就把他放到 P 的可执行队列中；</li>
+<li>当一个 G 执行结束时，P 会从队列中把该 G 取出；如果此时 P 的队列为空，即没有其他 G 可以执行， 就随机选择另外一个 P，从其可执行的 G 队列中偷取一半。</li>
+</ul>
+<p>该算法避免了在 Goroutine 调度时使用全局锁。</p>
+<ul>
+<li>抢占
+<ul>
+<li>在 Go 中，一个 <code>goroutine</code> 最多占用 CPU 10ms，防止其他 goroutine 被饿死</li>
+<li>在 coroutine 中要等待一个协程主动让出 CPU 才执行下一个协程</li>
+</ul>
+</li>
+<li>全局 G 队列
+<ul>
+<li>在新的调度器中依然有全局 G 队列，但功能已经被弱化了，当 M 执行 work stealing 从其他 P 偷不到 G 时，它可以从全局 G 队列获取 G。</li>
+</ul>
+</li>
+</ul>
+<h4 id="为什么-go-需要自己实现调度器">
+  为什么 Go 需要自己实现调度器？
+  <a class="anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88-go-%e9%9c%80%e8%a6%81%e8%87%aa%e5%b7%b1%e5%ae%9e%e7%8e%b0%e8%b0%83%e5%ba%a6%e5%99%a8">#</a>
+</h4>
+<ul>
+<li>Goroutine 的引入是为了方便高并发程序的编写。 一个 Goroutine 在进行阻塞操作（比如系统调用）时，会把<strong>当前线程</strong>中的其他 Goroutine 移交到<strong>其他线程</strong>中继续执行， 从而避免了整个程序的阻塞。</li>
+<li>由于 Golang 引入了垃圾回收（gc），<strong>在执行 gc 时就要求 Goroutine 是停止的</strong>。通过自己实现调度器，就可以方便的实现该功能。 通过多个 Goroutine 来实现并发程序，既有异步 IO 的优势，又具有多线程、多进程编写程序的便利性。</li>
+<li>引入 Goroutine，也意味着引入了极大的复杂性。一个 Goroutine 既要包含要执行的代码， 又要包含用于执行该代码的栈和 PC、SP 指针。</li>
+</ul>
+<h4 id="调度器解决了什么问题">
+  调度器解决了什么问题？
+  <a class="anchor" href="#%e8%b0%83%e5%ba%a6%e5%99%a8%e8%a7%a3%e5%86%b3%e4%ba%86%e4%bb%80%e4%b9%88%e9%97%ae%e9%a2%98">#</a>
+</h4>
+<ol>
+<li>
+<p>栈管理</p>
+<p>既然每个 Goroutine 都有自己的栈，那么在创建 Goroutine 时，就要同时创建对应的栈。 Goroutine 在执行时，栈空间会不停增长。 栈通常是连续增长的，由于每个进程中的各个线程共享虚拟内存空间，当有多个线程时，就需要为每个线程分配不同起始地址的栈。 这就需要在分配栈之前先预估每个线程栈的大小。如果线程数量非常多，就很容易栈溢出。</p>
+<p>为了解决这个问题，就有了 Split Stacks 技术： 创建栈时，只分配一块比较小的内存，如果进行某次函数调用导致栈空间不足时，就会在其他地方分配一块新的栈空间。 新的空间不需要和老的栈空间连续。函数调用的参数会拷贝到新的栈空间中，接下来的函数执行都在新栈空间中进行。</p>
+<p>Golang 的栈管理方式与此类似，但是为了更高的效率，使用了连续栈 （Golang 连续栈） 实现方式也是先分配一块固定大小的栈，在栈空间不足时，分配一块更大的栈，并把旧的栈全部拷贝到新栈中。 这样避免了 Split Stacks 方法可能导致的频繁内存分配和释放。</p>
+</li>
+<li>
+<p>抢占式调度</p>
+<p>Goroutine 的执行是可以被抢占的。如果一个 Goroutine 一直占用 CPU，长时间没有被调度过， 就会被 runtime 抢占掉，把 CPU 时间交给其他 Goroutine。</p>
+</li>
+</ol>
+<hr>
+<hr>
+<h2 id="设计与实现">
+  设计与实现
+  <a class="anchor" href="#%e8%ae%be%e8%ae%a1%e4%b8%8e%e5%ae%9e%e7%8e%b0">#</a>
+</h2>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://github.com/ikingye/interview/commit/fa283e643b04cac6052a4d5c9edbfba97e2b9380" title='Last modified by yewang | 2023-10-25' target="_blank" rel="noopener">
+      <img src="/interview/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>2023-10-25</span>
+    </a>
+  </div>
+
+
+
+</div>
+
+ 
+        <div>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <p><span id="busuanzi_container_page_pv">本文访问量 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次</span></p>
+    <p><span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span> 次</span></p>
+    <p><span id="busuanzi_container_site_uv">本站总访客数 <span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span> 人</span></p>
+</div>
+
+
+
+
+
+      </footer>
+
+      
+  
+  <div class="book-comments">
+<script src="https://utteranc.es/client.js"
+  repo="ikingye/interview"
+  issue-term="pathname"
+  theme="github-light"
+  crossorigin="anonymous"
+  async
+></script>
+
+<div id="footer">
+  <p>
+    <a href="https://kingye.me">叶王</a> &copy; 2013-2024
+    版权所有。如果本文档对你有所帮助，可以<a
+      href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200428110046.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      >请作者喝饮料</a
+    >。
+  </p>
+</div>
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#基础">基础</a>
+      <ul>
+        <li><a href="#接口">接口</a></li>
+        <li><a href="#标准库">标准库</a>
+          <ul>
+            <li><a href="#为什么需要-responsebodyclose">为什么需要 <code>response.Body.Close()</code>？</a></li>
+          </ul>
+        </li>
+        <li><a href="#你现在使用的是什么版本最新版本是什么相对有哪些变化">你现在使用的是什么版本？最新版本是什么，相对有哪些变化？</a>
+          <ul>
+            <li><a href="#go-版本管理工具gvm-如何使用">go 版本管理工具，gvm 如何使用？</a></li>
+          </ul>
+        </li>
+        <li><a href="#简单说说-go-包管理工具的发展历史">简单说说 Go 包管理工具的发展历史？</a>
+          <ul>
+            <li><a href="#你用过哪些-go-包管理工具说说它们的优缺点">你用过哪些 Go 包管理工具，说说它们的优缺点？</a></li>
+            <li><a href="#go-mod-相对之前的版本管理有哪些优点">Go Mod 相对之前的版本管理有哪些优点？</a></li>
+          </ul>
+        </li>
+        <li><a href="#go-mod-如何找到引用的包">Go Mod 如何找到引用的包？</a></li>
+      </ul>
+    </li>
+    <li><a href="#进阶">进阶</a>
+      <ul>
+        <li><a href="#make-new-有什么区别">make, new 有什么区别？</a></li>
+        <li><a href="#panic-recover-是怎么实现的">panic, recover 是怎么实现的？</a></li>
+        <li><a href="#makefile-语法">Makefile 语法</a></li>
+        <li><a href="#go-插件系统">Go 插件系统</a>
+          <ul>
+            <li><a href="#go-插件系统的应用场景">Go 插件系统的应用场景？</a></li>
+            <li><a href="#go-插件系统是如何实现的">Go 插件系统是如何实现的？</a></li>
+          </ul>
+        </li>
+        <li><a href="#goroutine-为什么高效">Goroutine 为什么高效？</a></li>
+        <li><a href="#goroutine-如何调度">Goroutine 如何调度？</a>
+          <ul>
+            <li><a href="#为什么-go-需要自己实现调度器">为什么 Go 需要自己实现调度器？</a></li>
+            <li><a href="#调度器解决了什么问题">调度器解决了什么问题？</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#设计与实现">设计与实现</a></li>
+  </ul>
+</nav>
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
+  <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="//pub.idqqimg.com/wpa/images/group.png"></a></li>
+</ul>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

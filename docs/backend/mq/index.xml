@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>消息队列 on 面试笔记</title>
+    <link>https://kingye.me/interview/docs/backend/mq/</link>
+    <description>Recent content in 消息队列 on 面试笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <atom:link href="https://kingye.me/interview/docs/backend/mq/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kafka</title>
+      <link>https://kingye.me/interview/docs/backend/mq/kafka/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kingye.me/interview/docs/backend/mq/kafka/</guid>
+      <description> Kafka # Kafka 如何实现一致性？ # </description>
+    </item>
+    <item>
+      <title>RocketMQ</title>
+      <link>https://kingye.me/interview/docs/backend/mq/rocketmq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kingye.me/interview/docs/backend/mq/rocketmq/</guid>
+      <description> RocketMQ # </description>
+    </item>
+    <item>
+      <title>RabbitMQ</title>
+      <link>https://kingye.me/interview/docs/backend/mq/rabbitmq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kingye.me/interview/docs/backend/mq/rabbitmq/</guid>
+      <description> RabbitMQ # </description>
+    </item>
+  </channel>
+</rss>
