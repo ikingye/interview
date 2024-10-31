@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>15. 其他 on 面试笔记</title>
+    <link>https://kingye.me/interview/docs/others/</link>
+    <description>Recent content in 15. 其他 on 面试笔记</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <atom:link href="https://kingye.me/interview/docs/others/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>字符编码</title>
+      <link>https://kingye.me/interview/docs/others/encode/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kingye.me/interview/docs/others/encode/</guid>
+      <description>字符编码 # 有的字符在一些环境中是不能显示或使用的， 比如 &amp;amp;, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。&#xA;各种编码的特征 # Base 编码 Base64 组成字符：A-Z、a-z、0-9、+、/ 末尾一般补 0-2 个 =（可以不补 =） Base32 组成字符：A-Z、2-7 末尾一般补 0-6 个 =（可以不补 =） Base16 组成字符：0-9、A-F 末尾没有 = Base 编码 # 参考：rfc4648&#xA;Base 系列的就是用来将字节编码为 ASCII 中的可见字符的。&#xA;在 URL 中使用时必须去掉 “=” 符号&#xA;Base64 # Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9、+、/）将任意字节序列数据编码成 ASCII 字符串，另有 “=” 符号用作后缀用途。&#xA;Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0）， 然后将这些二进制数值串联起来，再按照 6 比特一组进行切分（因为 2^6=64），最后一组若不足 6 比特则末尾补 0。</description>
+    </item>
+    <item>
+      <title>加密</title>
+      <link>https://kingye.me/interview/docs/others/encryption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kingye.me/interview/docs/others/encryption/</guid>
+      <description> 加密 # SSL/TLS # TLS 握手流程是什么样的？ # 参考：&#xA;SSL/TLS 详解 </description>
+    </item>
+    <item>
+      <title>编译</title>
+      <link>https://kingye.me/interview/docs/others/compile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://kingye.me/interview/docs/others/compile/</guid>
+      <description> 编译 # </description>
+    </item>
+  </channel>
+</rss>
