@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.140.1">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  前端与客户端
+  #
+">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://kingye.me/interview/docs/frontend/">
+  <meta property="og:site_name" content="面试笔记">
+  <meta property="og:title" content="11. 前端与客户端">
+  <meta property="og:description" content="前端与客户端 #">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+<title>11. 前端与客户端 | 面试笔记</title>
+<link rel="manifest" href="/interview/manifest.json">
+<link rel="icon" href="/interview/favicon.png" >
+<link rel="canonical" href="https://kingye.me/interview/docs/frontend/">
+<link rel="stylesheet" href="/interview/book.min.a9fd347d07ee042ade7b8c22d2c14b72b69e154966252ab277e80a22c2a3be81.css" integrity="sha256-qf00fQfuBCree4wi0sFLcraeFUlmJSqyd&#43;gKIsKjvoE=" crossorigin="anonymous">
+  <script defer src="/interview/fuse.min.js"></script>
+  <script defer src="/interview/en.search.min.8a8ae036fc3aadbb34fb49dc16807b3d76c72b8bd77d8ee048619b83f5ca14ea.js" integrity="sha256-iorgNvw6rbs0&#43;0ncFoB7PXbHK4vXfY7gSGGbg/XKFOo=" crossorigin="anonymous"></script>
+<link rel="alternate" type="application/rss+xml" href="https://kingye.me/interview/docs/frontend/index.xml" title="面试笔记" />
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/interview/"><span>面试笔记</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+<ul>
+  <li><a href="https://kingye.me" target="_blank" rel="noopener noreferrer">博客</a></li>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417021727.png" target="_blank" rel="noopener noreferrer">公众号</a></li>
+  <li><a href="https://github.com/ikingye" target="_blank" rel="noopener noreferrer">Github</a></li>
+  <li><a href="https://weibo.com/kingyip15215" target="_blank" rel="noopener noreferrer">微博</a></li>
+  <li><a href="https://www.zhihu.com/people/wutongyip" target="_blank" rel="noopener noreferrer">知乎</a></li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dac10f36a18b2565b30b8a413c3cac77" class="toggle"  />
+    <label for="section-dac10f36a18b2565b30b8a413c3cac77" class="flex justify-between">
+      <a href="/interview/docs/co/" class="">1. 计算机组成原理</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fb17fa98eae091f7b482f2acb6708143" class="toggle"  />
+    <label for="section-fb17fa98eae091f7b482f2acb6708143" class="flex justify-between">
+      <a href="/interview/docs/os/" class="">2. 操作系统</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-15a77ede6695b349d6b35f1d7c2274ff" class="toggle"  />
+    <label for="section-15a77ede6695b349d6b35f1d7c2274ff" class="flex justify-between">
+      <a href="/interview/docs/os/linux/" class="">Linux</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-20a7ca78784beffdcceeb3f095091c0e" class="toggle"  />
+    <label for="section-20a7ca78784beffdcceeb3f095091c0e" class="flex justify-between">
+      <a href="/interview/docs/network/" class="">3. 网络</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/network/http/" class="">HTTP</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/network/tcp/" class="">TCP/UDP/IP</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/network/send/" class="">发包工具</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/network/capture/" class="">抓包</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-72924d58dbacb8de81e2f82dd97a305d" class="toggle"  />
+    <label for="section-72924d58dbacb8de81e2f82dd97a305d" class="flex justify-between">
+      <a href="/interview/docs/algs/" class="">4. 数据结构与算法</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/tree/" class="">二叉树</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/dp/" class="">动态规划</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/sort/" class="">排序算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/search/" class="">查询算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/link/" class="">链表</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-39d951d0ad0eced9b4aaf1b6cf4c4823" class="toggle"  />
+    <label for="section-39d951d0ad0eced9b4aaf1b6cf4c4823" class="flex justify-between">
+      <a href="/interview/docs/pl/" class="">5. 编程语言</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f78ad56101563ceb112ca8ee058c057b" class="toggle"  />
+    <label for="section-f78ad56101563ceb112ca8ee058c057b" class="flex justify-between">
+      <a href="/interview/docs/pl/c/" class="">C</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-319faf94d6dbbe1d0b5b5c5f3910b7b6" class="toggle"  />
+    <label for="section-319faf94d6dbbe1d0b5b5c5f3910b7b6" class="flex justify-between">
+      <a href="/interview/docs/pl/cpp/" class="">C&#43;&#43;</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-522f1afe051f53b681a9dc4732939836" class="toggle"  />
+    <label for="section-522f1afe051f53b681a9dc4732939836" class="flex justify-between">
+      <a href="/interview/docs/pl/go/" class="">Go</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-bf4547a2ee3a6320c7f0993dbea87e98" class="toggle"  />
+    <label for="section-bf4547a2ee3a6320c7f0993dbea87e98" class="flex justify-between">
+      <a href="/interview/docs/pl/java/" class="">Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-44cf7e03ff34a0f1993f67470f8c2eae" class="toggle"  />
+    <label for="section-44cf7e03ff34a0f1993f67470f8c2eae" class="flex justify-between">
+      <a href="/interview/docs/pl/javascript/" class="">JavaScript</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d5f9f62a3afa6eb21e96fb4c63e424f5" class="toggle"  />
+    <label for="section-d5f9f62a3afa6eb21e96fb4c63e424f5" class="flex justify-between">
+      <a href="/interview/docs/pl/kotlin/" class="">Kotlin</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f2328c75ed3f1e79eb3721148691db56" class="toggle"  />
+    <label for="section-f2328c75ed3f1e79eb3721148691db56" class="flex justify-between">
+      <a href="/interview/docs/pl/php/" class="">PHP</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-33d3b9e688a788c670c7868ac2e5a351" class="toggle"  />
+    <label for="section-33d3b9e688a788c670c7868ac2e5a351" class="flex justify-between">
+      <a href="/interview/docs/pl/python/" class="">Python</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2c49e304fc6a00749ef946ba6fe9cb2b" class="toggle"  />
+    <label for="section-2c49e304fc6a00749ef946ba6fe9cb2b" class="flex justify-between">
+      <a href="/interview/docs/pl/rust/" class="">Rust</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d06016cb25b23286638ddf3350722e26" class="toggle"  />
+    <label for="section-d06016cb25b23286638ddf3350722e26" class="flex justify-between">
+      <a href="/interview/docs/se/" class="">6. 软件工程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9331ff558d061ec5ecc0fd75ed023b3d" class="toggle"  />
+    <label for="section-9331ff558d061ec5ecc0fd75ed023b3d" class="flex justify-between">
+      <a href="/interview/docs/se/dp/" class="">设计模式</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-34c527725bfc137cabd0b156bc2470db" class="toggle"  />
+    <label for="section-34c527725bfc137cabd0b156bc2470db" class="flex justify-between">
+      <a href="/interview/docs/se/architecture/" class="">架构设计</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-89a69356aba8ed5632f09cf610d14d83" class="toggle"  />
+    <label for="section-89a69356aba8ed5632f09cf610d14d83" class="flex justify-between">
+      <a href="/interview/docs/se/pm/" class="">项目管理</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-1f7a0891fb78ba44611d7aaf1febf529" class="toggle"  />
+    <label for="section-1f7a0891fb78ba44611d7aaf1febf529" class="flex justify-between">
+      <a href="/interview/docs/cloud/" class="">7. 云计算</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba9e9c3a7a403bd2c66dad9393b90a1d" class="toggle"  />
+    <label for="section-ba9e9c3a7a403bd2c66dad9393b90a1d" class="flex justify-between">
+      <a href="/interview/docs/cloud/docker/" class="">Docker</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2d019f6b9260269d72858ce6a06737c7" class="toggle"  />
+    <label for="section-2d019f6b9260269d72858ce6a06737c7" class="flex justify-between">
+      <a href="/interview/docs/cloud/kubernetes/" class="">Kubernetes</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cdee8e227c830bdacf353288dcfa8713" class="toggle"  />
+    <label for="section-cdee8e227c830bdacf353288dcfa8713" class="flex justify-between">
+      <a href="/interview/docs/cloud/native/" class="">Cloud Native</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b0dc122b75a8ee190a04c74ddd03587d" class="toggle"  />
+    <label for="section-b0dc122b75a8ee190a04c74ddd03587d" class="flex justify-between">
+      <a href="/interview/docs/bigdata/" class="">8. 大数据</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-90533c7a2355e16214e260ea8d55c63e" class="toggle"  />
+    <label for="section-90533c7a2355e16214e260ea8d55c63e" class="flex justify-between">
+      <a href="/interview/docs/ai/" class="">9. 人工智能</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-31da2fa2ee2a41438432ac1eba96b3fc" class="toggle"  />
+    <label for="section-31da2fa2ee2a41438432ac1eba96b3fc" class="flex justify-between">
+      <a href="/interview/docs/ai/ml/" class="">机器学习</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cc006a1bb48228b384505e11bb3129e7" class="toggle"  />
+    <label for="section-cc006a1bb48228b384505e11bb3129e7" class="flex justify-between">
+      <a role="button" class="">10. 后台</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ccd5ac4584b3fa2ea23f7d1dc555a0d5" class="toggle"  />
+    <label for="section-ccd5ac4584b3fa2ea23f7d1dc555a0d5" class="flex justify-between">
+      <a href="/interview/docs/backend/web/" class="">Web 后端</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6211b0c9d7bd9ad7800b0d9b5979d20d" class="toggle"  />
+    <label for="section-6211b0c9d7bd9ad7800b0d9b5979d20d" class="flex justify-between">
+      <a href="/interview/docs/backend/web/go/" class="">Go Web 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-255465e6e90cf5ae6f3324c7269de337" class="toggle"  />
+    <label for="section-255465e6e90cf5ae6f3324c7269de337" class="flex justify-between">
+      <a href="/interview/docs/backend/web/java/" class="">Java Web 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-47fc294bf9f2b0bce5a420f179960dcc" class="toggle"  />
+    <label for="section-47fc294bf9f2b0bce5a420f179960dcc" class="flex justify-between">
+      <a href="/interview/docs/backend/web/php/" class="">PHP 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3f6666df817e5c119875d8253ceeb2ee" class="toggle"  />
+    <label for="section-3f6666df817e5c119875d8253ceeb2ee" class="flex justify-between">
+      <a href="/interview/docs/backend/web/python/" class="">Python 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/backend/db/" class="">数据库</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8fa84f1849dedcae8e410c308b4bc8be" class="toggle"  />
+    <label for="section-8fa84f1849dedcae8e410c308b4bc8be" class="flex justify-between">
+      <a href="/interview/docs/backend/db/mysql/" class="">Mysql</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dbaa6f72dbf11be2ea3dce98a8468d7c" class="toggle"  />
+    <label for="section-dbaa6f72dbf11be2ea3dce98a8468d7c" class="flex justify-between">
+      <a href="/interview/docs/backend/db/redis/" class="">Redis</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/backend/mq/" class="">消息队列</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b934a848742f6080c0c26d23369dfb2c" class="toggle"  />
+    <label for="section-b934a848742f6080c0c26d23369dfb2c" class="flex justify-between">
+      <a href="/interview/docs/backend/mq/kafka/" class="">Kafka</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-247d070e4577eff571ff178160af1d88" class="toggle"  />
+    <label for="section-247d070e4577eff571ff178160af1d88" class="flex justify-between">
+      <a href="/interview/docs/backend/mq/rocketmq/" class="">RocketMQ</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-be6848561574827c9620cc15b62c886e" class="toggle"  />
+    <label for="section-be6848561574827c9620cc15b62c886e" class="flex justify-between">
+      <a href="/interview/docs/backend/mq/rabbitmq/" class="">RabbitMQ</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b158b58682199110a5ab11ea24f35889" class="toggle"  />
+    <label for="section-b158b58682199110a5ab11ea24f35889" class="flex justify-between">
+      <a href="/interview/docs/backend/others/" class="">其他</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-bd1315ed0de1fc517edc2ae50972c39b" class="toggle"  />
+    <label for="section-bd1315ed0de1fc517edc2ae50972c39b" class="flex justify-between">
+      <a href="/interview/docs/backend/others/hot-load/" class="">配置热加载</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e9c9beb1bd09bb9491ceabda054cf53c" class="toggle"  />
+    <label for="section-e9c9beb1bd09bb9491ceabda054cf53c" class="flex justify-between">
+      <a href="/interview/docs/backend/others/hot-restart/" class="">程序热重启</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e43a83c4a95aebbedfe453d8ff1c4c3f" class="toggle" checked />
+    <label for="section-e43a83c4a95aebbedfe453d8ff1c4c3f" class="flex justify-between">
+      <a href="/interview/docs/frontend/" class="active">11. 前端与客户端</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5e63069f6bea9364caf6d277a66db738" class="toggle"  />
+    <label for="section-5e63069f6bea9364caf6d277a66db738" class="flex justify-between">
+      <a href="/interview/docs/frontend/web/" class="">Web 前端</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-36172daab105faacbfda8fdec8025d30" class="toggle"  />
+    <label for="section-36172daab105faacbfda8fdec8025d30" class="flex justify-between">
+      <a href="/interview/docs/op/" class="">13. 运维</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6b8fc8dbaf7a7e7c4b743b3e0a0229ee" class="toggle"  />
+    <label for="section-6b8fc8dbaf7a7e7c4b743b3e0a0229ee" class="flex justify-between">
+      <a href="/interview/docs/test/" class="">14. 测试</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-711078fd7861837cd24ff01085202907" class="toggle"  />
+    <label for="section-711078fd7861837cd24ff01085202907" class="flex justify-between">
+      <a href="/interview/docs/security/" class="">13. 安全</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b26706241ad173d7b10417a0b820c98d" class="toggle"  />
+    <label for="section-b26706241ad173d7b10417a0b820c98d" class="flex justify-between">
+      <a href="/interview/docs/security/web/" class="">Web 安全</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/security/web/xss/" class="">XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/security/web/csrf/" class="">CSRF</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f0c6f0ad0f1efaf06edd2bc2c4729452" class="toggle"  />
+    <label for="section-f0c6f0ad0f1efaf06edd2bc2c4729452" class="flex justify-between">
+      <a href="/interview/docs/others/" class="">15. 其他</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/others/encode/" class="">字符编码</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/others/encryption/" class="">加密</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/others/compile/" class="">编译</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
+  <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="//pub.idqqimg.com/wpa/images/group.png"></a></li>
+</ul>
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/interview/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>11. 前端与客户端</strong>
+
+  <label for="toc-control">
+    
+    <img src="/interview/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents"></nav>
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
+  <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="//pub.idqqimg.com/wpa/images/group.png"></a></li>
+</ul>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article id="article" class="markdown"><h1 id="前端与客户端">
+  前端与客户端
+  <a class="anchor" href="#%e5%89%8d%e7%ab%af%e4%b8%8e%e5%ae%a2%e6%88%b7%e7%ab%af">#</a>
+</h1>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/ikingye/interview/commit/71ce78e7e75145a7237adf427f4c5cf872a93bea" title='Last modified by yewang | 2021-05-06' target="_blank" rel="noopener">
+      <img src="/interview/svg/calendar.svg" class="book-icon" alt="" />
+      <span>2021-05-06</span>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        <div>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <p><span id="busuanzi_container_page_pv">本文访问量 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次</span></p>
+    <p><span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span> 次</span></p>
+    <p><span id="busuanzi_container_site_uv">本站总访客数 <span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span> 人</span></p>
+</div>
+
+
+
+
+
+      </footer>
+
+      
+  
+  <div class="book-comments">
+<script src="https://utteranc.es/client.js"
+  repo="ikingye/interview"
+  issue-term="pathname"
+  theme="github-light"
+  crossorigin="anonymous"
+  async
+></script>
+
+<div id="footer">
+  <p>
+    <a href="https://kingye.me">叶王</a> &copy; 2013-2024
+    版权所有。如果本文档对你有所帮助，可以<a
+      href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200428110046.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      >请作者喝饮料</a
+    >。
+  </p>
+</div>
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents"></nav>
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
+  <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="//pub.idqqimg.com/wpa/images/group.png"></a></li>
+</ul>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

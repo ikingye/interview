@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.140.1">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  程序热重启
+  #
+
+
+  程序如何优雅退出？
+  #
+
+
+  Linux 信号
+  #
+
+信号是进程间通信的底层形式。
+Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
+发送信号的原因：
+
+
+硬件异常：如 0 作为除数，内核会发送 SIGFPE（信号值 8）
+
+
+软件异常：如进程终止时，内核会给父进程发送 SIGCHLE（信号值 17），窗口大小调整，应用程序会收到 SIGWINCH（信号值 28）
+
+
+SIGINT 2
+
+ctrl &#43; C
+
+
+
+SIGQUIT 3
+
+ctrl &#43; \
+
+
+
+SIGKILL 9
+
+不可以被阻塞、处理和忽略
+
+
+
+SIGTERM 15
+
+kill 默认不带参数，发送的信号就是 SIGTERM
+可以被阻塞、处理和忽略
+
+
+
+SIGTOP 20
+
+停止（挂起）进程 ctrl &#43; D
+
+
+
+
+
+
+
+
+  Go
+  sigs := make(chan os.Signal, 1)
+signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
+
+fmt.Println(&#34;awaiting signal&#34;)
+&lt;-sigs
+fmt.Println(&#34;exiting&#34;)
+
+  Java
+  
+  Python
+  
+
+
+
+  如何实现热重启的？
+  #
+
+
+服务端启动时多开启一个协程用来监听关闭信号
+当协程接收到关闭信号时，将拒绝接收新的连接，并处理好当前所有连接后断开
+启动一个新的服务端进程来接管新的连接
+关闭当前进程
+
+
+
+
+
+
+  Go
+  
+  Go 程序优雅关闭与重启
+  #
+
+参考：">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://kingye.me/interview/docs/backend/others/hot-restart/">
+  <meta property="og:site_name" content="面试笔记">
+  <meta property="og:title" content="程序热重启">
+  <meta property="og:description" content="程序热重启 # 程序如何优雅退出？ # Linux 信号 # 信号是进程间通信的底层形式。
+Linux 有标准信号 32 个，从 32-63 的信号是实时信号。
+发送信号的原因：
+硬件异常：如 0 作为除数，内核会发送 SIGFPE（信号值 8）
+软件异常：如进程终止时，内核会给父进程发送 SIGCHLE（信号值 17），窗口大小调整，应用程序会收到 SIGWINCH（信号值 28）
+SIGINT 2
+ctrl &#43; C SIGQUIT 3
+ctrl &#43; \ SIGKILL 9
+不可以被阻塞、处理和忽略 SIGTERM 15
+kill 默认不带参数，发送的信号就是 SIGTERM 可以被阻塞、处理和忽略 SIGTOP 20
+停止（挂起）进程 ctrl &#43; D Go sigs := make(chan os.Signal, 1) signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM) fmt.Println(&#34;awaiting signal&#34;) &lt;-sigs fmt.Println(&#34;exiting&#34;) Java Python 如何实现热重启的？ # 服务端启动时多开启一个协程用来监听关闭信号 当协程接收到关闭信号时，将拒绝接收新的连接，并处理好当前所有连接后断开 启动一个新的服务端进程来接管新的连接 关闭当前进程 Go Go 程序优雅关闭与重启 # 参考：">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2020-07-23T19:38:46+08:00">
+<title>程序热重启 | 面试笔记</title>
+<link rel="manifest" href="/interview/manifest.json">
+<link rel="icon" href="/interview/favicon.png" >
+<link rel="canonical" href="https://kingye.me/interview/docs/backend/others/hot-restart/">
+<link rel="stylesheet" href="/interview/book.min.a9fd347d07ee042ade7b8c22d2c14b72b69e154966252ab277e80a22c2a3be81.css" integrity="sha256-qf00fQfuBCree4wi0sFLcraeFUlmJSqyd&#43;gKIsKjvoE=" crossorigin="anonymous">
+  <script defer src="/interview/fuse.min.js"></script>
+  <script defer src="/interview/en.search.min.8a8ae036fc3aadbb34fb49dc16807b3d76c72b8bd77d8ee048619b83f5ca14ea.js" integrity="sha256-iorgNvw6rbs0&#43;0ncFoB7PXbHK4vXfY7gSGGbg/XKFOo=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/interview/"><span>面试笔记</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+<ul>
+  <li><a href="https://kingye.me" target="_blank" rel="noopener noreferrer">博客</a></li>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417021727.png" target="_blank" rel="noopener noreferrer">公众号</a></li>
+  <li><a href="https://github.com/ikingye" target="_blank" rel="noopener noreferrer">Github</a></li>
+  <li><a href="https://weibo.com/kingyip15215" target="_blank" rel="noopener noreferrer">微博</a></li>
+  <li><a href="https://www.zhihu.com/people/wutongyip" target="_blank" rel="noopener noreferrer">知乎</a></li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dac10f36a18b2565b30b8a413c3cac77" class="toggle"  />
+    <label for="section-dac10f36a18b2565b30b8a413c3cac77" class="flex justify-between">
+      <a href="/interview/docs/co/" class="">1. 计算机组成原理</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fb17fa98eae091f7b482f2acb6708143" class="toggle"  />
+    <label for="section-fb17fa98eae091f7b482f2acb6708143" class="flex justify-between">
+      <a href="/interview/docs/os/" class="">2. 操作系统</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-15a77ede6695b349d6b35f1d7c2274ff" class="toggle"  />
+    <label for="section-15a77ede6695b349d6b35f1d7c2274ff" class="flex justify-between">
+      <a href="/interview/docs/os/linux/" class="">Linux</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-20a7ca78784beffdcceeb3f095091c0e" class="toggle"  />
+    <label for="section-20a7ca78784beffdcceeb3f095091c0e" class="flex justify-between">
+      <a href="/interview/docs/network/" class="">3. 网络</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/network/http/" class="">HTTP</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/network/tcp/" class="">TCP/UDP/IP</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/network/send/" class="">发包工具</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/network/capture/" class="">抓包</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-72924d58dbacb8de81e2f82dd97a305d" class="toggle"  />
+    <label for="section-72924d58dbacb8de81e2f82dd97a305d" class="flex justify-between">
+      <a href="/interview/docs/algs/" class="">4. 数据结构与算法</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/tree/" class="">二叉树</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/dp/" class="">动态规划</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/sort/" class="">排序算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/search/" class="">查询算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/link/" class="">链表</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-39d951d0ad0eced9b4aaf1b6cf4c4823" class="toggle"  />
+    <label for="section-39d951d0ad0eced9b4aaf1b6cf4c4823" class="flex justify-between">
+      <a href="/interview/docs/pl/" class="">5. 编程语言</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f78ad56101563ceb112ca8ee058c057b" class="toggle"  />
+    <label for="section-f78ad56101563ceb112ca8ee058c057b" class="flex justify-between">
+      <a href="/interview/docs/pl/c/" class="">C</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-319faf94d6dbbe1d0b5b5c5f3910b7b6" class="toggle"  />
+    <label for="section-319faf94d6dbbe1d0b5b5c5f3910b7b6" class="flex justify-between">
+      <a href="/interview/docs/pl/cpp/" class="">C&#43;&#43;</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-522f1afe051f53b681a9dc4732939836" class="toggle"  />
+    <label for="section-522f1afe051f53b681a9dc4732939836" class="flex justify-between">
+      <a href="/interview/docs/pl/go/" class="">Go</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-bf4547a2ee3a6320c7f0993dbea87e98" class="toggle"  />
+    <label for="section-bf4547a2ee3a6320c7f0993dbea87e98" class="flex justify-between">
+      <a href="/interview/docs/pl/java/" class="">Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-44cf7e03ff34a0f1993f67470f8c2eae" class="toggle"  />
+    <label for="section-44cf7e03ff34a0f1993f67470f8c2eae" class="flex justify-between">
+      <a href="/interview/docs/pl/javascript/" class="">JavaScript</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d5f9f62a3afa6eb21e96fb4c63e424f5" class="toggle"  />
+    <label for="section-d5f9f62a3afa6eb21e96fb4c63e424f5" class="flex justify-between">
+      <a href="/interview/docs/pl/kotlin/" class="">Kotlin</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f2328c75ed3f1e79eb3721148691db56" class="toggle"  />
+    <label for="section-f2328c75ed3f1e79eb3721148691db56" class="flex justify-between">
+      <a href="/interview/docs/pl/php/" class="">PHP</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-33d3b9e688a788c670c7868ac2e5a351" class="toggle"  />
+    <label for="section-33d3b9e688a788c670c7868ac2e5a351" class="flex justify-between">
+      <a href="/interview/docs/pl/python/" class="">Python</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2c49e304fc6a00749ef946ba6fe9cb2b" class="toggle"  />
+    <label for="section-2c49e304fc6a00749ef946ba6fe9cb2b" class="flex justify-between">
+      <a href="/interview/docs/pl/rust/" class="">Rust</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d06016cb25b23286638ddf3350722e26" class="toggle"  />
+    <label for="section-d06016cb25b23286638ddf3350722e26" class="flex justify-between">
+      <a href="/interview/docs/se/" class="">6. 软件工程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9331ff558d061ec5ecc0fd75ed023b3d" class="toggle"  />
+    <label for="section-9331ff558d061ec5ecc0fd75ed023b3d" class="flex justify-between">
+      <a href="/interview/docs/se/dp/" class="">设计模式</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-34c527725bfc137cabd0b156bc2470db" class="toggle"  />
+    <label for="section-34c527725bfc137cabd0b156bc2470db" class="flex justify-between">
+      <a href="/interview/docs/se/architecture/" class="">架构设计</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-89a69356aba8ed5632f09cf610d14d83" class="toggle"  />
+    <label for="section-89a69356aba8ed5632f09cf610d14d83" class="flex justify-between">
+      <a href="/interview/docs/se/pm/" class="">项目管理</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-1f7a0891fb78ba44611d7aaf1febf529" class="toggle"  />
+    <label for="section-1f7a0891fb78ba44611d7aaf1febf529" class="flex justify-between">
+      <a href="/interview/docs/cloud/" class="">7. 云计算</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba9e9c3a7a403bd2c66dad9393b90a1d" class="toggle"  />
+    <label for="section-ba9e9c3a7a403bd2c66dad9393b90a1d" class="flex justify-between">
+      <a href="/interview/docs/cloud/docker/" class="">Docker</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2d019f6b9260269d72858ce6a06737c7" class="toggle"  />
+    <label for="section-2d019f6b9260269d72858ce6a06737c7" class="flex justify-between">
+      <a href="/interview/docs/cloud/kubernetes/" class="">Kubernetes</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cdee8e227c830bdacf353288dcfa8713" class="toggle"  />
+    <label for="section-cdee8e227c830bdacf353288dcfa8713" class="flex justify-between">
+      <a href="/interview/docs/cloud/native/" class="">Cloud Native</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b0dc122b75a8ee190a04c74ddd03587d" class="toggle"  />
+    <label for="section-b0dc122b75a8ee190a04c74ddd03587d" class="flex justify-between">
+      <a href="/interview/docs/bigdata/" class="">8. 大数据</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-90533c7a2355e16214e260ea8d55c63e" class="toggle"  />
+    <label for="section-90533c7a2355e16214e260ea8d55c63e" class="flex justify-between">
+      <a href="/interview/docs/ai/" class="">9. 人工智能</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-31da2fa2ee2a41438432ac1eba96b3fc" class="toggle"  />
+    <label for="section-31da2fa2ee2a41438432ac1eba96b3fc" class="flex justify-between">
+      <a href="/interview/docs/ai/ml/" class="">机器学习</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cc006a1bb48228b384505e11bb3129e7" class="toggle" checked />
+    <label for="section-cc006a1bb48228b384505e11bb3129e7" class="flex justify-between">
+      <a role="button" class="">10. 后台</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ccd5ac4584b3fa2ea23f7d1dc555a0d5" class="toggle"  />
+    <label for="section-ccd5ac4584b3fa2ea23f7d1dc555a0d5" class="flex justify-between">
+      <a href="/interview/docs/backend/web/" class="">Web 后端</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6211b0c9d7bd9ad7800b0d9b5979d20d" class="toggle"  />
+    <label for="section-6211b0c9d7bd9ad7800b0d9b5979d20d" class="flex justify-between">
+      <a href="/interview/docs/backend/web/go/" class="">Go Web 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-255465e6e90cf5ae6f3324c7269de337" class="toggle"  />
+    <label for="section-255465e6e90cf5ae6f3324c7269de337" class="flex justify-between">
+      <a href="/interview/docs/backend/web/java/" class="">Java Web 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-47fc294bf9f2b0bce5a420f179960dcc" class="toggle"  />
+    <label for="section-47fc294bf9f2b0bce5a420f179960dcc" class="flex justify-between">
+      <a href="/interview/docs/backend/web/php/" class="">PHP 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3f6666df817e5c119875d8253ceeb2ee" class="toggle"  />
+    <label for="section-3f6666df817e5c119875d8253ceeb2ee" class="flex justify-between">
+      <a href="/interview/docs/backend/web/python/" class="">Python 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/backend/db/" class="">数据库</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8fa84f1849dedcae8e410c308b4bc8be" class="toggle"  />
+    <label for="section-8fa84f1849dedcae8e410c308b4bc8be" class="flex justify-between">
+      <a href="/interview/docs/backend/db/mysql/" class="">Mysql</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dbaa6f72dbf11be2ea3dce98a8468d7c" class="toggle"  />
+    <label for="section-dbaa6f72dbf11be2ea3dce98a8468d7c" class="flex justify-between">
+      <a href="/interview/docs/backend/db/redis/" class="">Redis</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/backend/mq/" class="">消息队列</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b934a848742f6080c0c26d23369dfb2c" class="toggle"  />
+    <label for="section-b934a848742f6080c0c26d23369dfb2c" class="flex justify-between">
+      <a href="/interview/docs/backend/mq/kafka/" class="">Kafka</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-247d070e4577eff571ff178160af1d88" class="toggle"  />
+    <label for="section-247d070e4577eff571ff178160af1d88" class="flex justify-between">
+      <a href="/interview/docs/backend/mq/rocketmq/" class="">RocketMQ</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-be6848561574827c9620cc15b62c886e" class="toggle"  />
+    <label for="section-be6848561574827c9620cc15b62c886e" class="flex justify-between">
+      <a href="/interview/docs/backend/mq/rabbitmq/" class="">RabbitMQ</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b158b58682199110a5ab11ea24f35889" class="toggle" checked />
+    <label for="section-b158b58682199110a5ab11ea24f35889" class="flex justify-between">
+      <a href="/interview/docs/backend/others/" class="">其他</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-bd1315ed0de1fc517edc2ae50972c39b" class="toggle"  />
+    <label for="section-bd1315ed0de1fc517edc2ae50972c39b" class="flex justify-between">
+      <a href="/interview/docs/backend/others/hot-load/" class="">配置热加载</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e9c9beb1bd09bb9491ceabda054cf53c" class="toggle" checked />
+    <label for="section-e9c9beb1bd09bb9491ceabda054cf53c" class="flex justify-between">
+      <a href="/interview/docs/backend/others/hot-restart/" class="active">程序热重启</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e43a83c4a95aebbedfe453d8ff1c4c3f" class="toggle"  />
+    <label for="section-e43a83c4a95aebbedfe453d8ff1c4c3f" class="flex justify-between">
+      <a href="/interview/docs/frontend/" class="">11. 前端与客户端</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5e63069f6bea9364caf6d277a66db738" class="toggle"  />
+    <label for="section-5e63069f6bea9364caf6d277a66db738" class="flex justify-between">
+      <a href="/interview/docs/frontend/web/" class="">Web 前端</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-36172daab105faacbfda8fdec8025d30" class="toggle"  />
+    <label for="section-36172daab105faacbfda8fdec8025d30" class="flex justify-between">
+      <a href="/interview/docs/op/" class="">13. 运维</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6b8fc8dbaf7a7e7c4b743b3e0a0229ee" class="toggle"  />
+    <label for="section-6b8fc8dbaf7a7e7c4b743b3e0a0229ee" class="flex justify-between">
+      <a href="/interview/docs/test/" class="">14. 测试</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-711078fd7861837cd24ff01085202907" class="toggle"  />
+    <label for="section-711078fd7861837cd24ff01085202907" class="flex justify-between">
+      <a href="/interview/docs/security/" class="">13. 安全</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b26706241ad173d7b10417a0b820c98d" class="toggle"  />
+    <label for="section-b26706241ad173d7b10417a0b820c98d" class="flex justify-between">
+      <a href="/interview/docs/security/web/" class="">Web 安全</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/security/web/xss/" class="">XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/security/web/csrf/" class="">CSRF</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f0c6f0ad0f1efaf06edd2bc2c4729452" class="toggle"  />
+    <label for="section-f0c6f0ad0f1efaf06edd2bc2c4729452" class="flex justify-between">
+      <a href="/interview/docs/others/" class="">15. 其他</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/others/encode/" class="">字符编码</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/others/encryption/" class="">加密</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/others/compile/" class="">编译</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
+  <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="//pub.idqqimg.com/wpa/images/group.png"></a></li>
+</ul>
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/interview/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>程序热重启</strong>
+
+  <label for="toc-control">
+    
+    <img src="/interview/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#程序如何优雅退出">程序如何优雅退出？</a>
+      <ul>
+        <li><a href="#linux-信号">Linux 信号</a></li>
+      </ul>
+    </li>
+    <li><a href="#如何实现热重启的">如何实现热重启的？</a></li>
+  </ul>
+</nav>
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
+  <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="//pub.idqqimg.com/wpa/images/group.png"></a></li>
+</ul>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article id="article" class="markdown"><h1 id="程序热重启">
+  程序热重启
+  <a class="anchor" href="#%e7%a8%8b%e5%ba%8f%e7%83%ad%e9%87%8d%e5%90%af">#</a>
+</h1>
+<h2 id="程序如何优雅退出">
+  程序如何优雅退出？
+  <a class="anchor" href="#%e7%a8%8b%e5%ba%8f%e5%a6%82%e4%bd%95%e4%bc%98%e9%9b%85%e9%80%80%e5%87%ba">#</a>
+</h2>
+<h3 id="linux-信号">
+  Linux 信号
+  <a class="anchor" href="#linux-%e4%bf%a1%e5%8f%b7">#</a>
+</h3>
+<p>信号是进程间通信的底层形式。</p>
+<p>Linux 有标准信号 32 个，从 32-63 的信号是<strong>实时</strong>信号。</p>
+<p>发送信号的原因：</p>
+<ul>
+<li>
+<p>硬件异常：如 0 作为除数，内核会发送 SIGFPE（信号值 8）</p>
+</li>
+<li>
+<p>软件异常：如进程终止时，内核会给父进程发送 SIGCHLE（信号值 17），窗口大小调整，应用程序会收到 SIGWINCH（信号值 28）</p>
+</li>
+<li>
+<p><code>SIGINT</code> 2</p>
+<ul>
+<li><code>ctrl + C</code></li>
+</ul>
+</li>
+<li>
+<p><code>SIGQUIT</code> 3</p>
+<ul>
+<li><code>ctrl + \</code></li>
+</ul>
+</li>
+<li>
+<p><code>SIGKILL</code> 9</p>
+<ul>
+<li><strong>不可以</strong>被阻塞、处理和忽略</li>
+</ul>
+</li>
+<li>
+<p><code>SIGTERM</code> 15</p>
+<ul>
+<li><code>kill</code> 默认不带参数，发送的信号就是 <code>SIGTERM</code></li>
+<li>可以被阻塞、处理和忽略</li>
+</ul>
+</li>
+<li>
+<p><code>SIGTOP</code> 20</p>
+<ul>
+<li>停止（挂起）进程 <code>ctrl + D</code></li>
+</ul>
+</li>
+</ul>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-graceful exit" id="tabs-graceful exit-0" checked="checked" />
+  <label for="tabs-graceful exit-0">Go</label>
+  <div class="book-tabs-content markdown-inner"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">sigs</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#a6e22e">os</span>.<span style="color:#a6e22e">Signal</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">signal</span>.<span style="color:#a6e22e">Notify</span>(<span style="color:#a6e22e">sigs</span>, <span style="color:#a6e22e">syscall</span>.<span style="color:#a6e22e">SIGINT</span>, <span style="color:#a6e22e">syscall</span>.<span style="color:#a6e22e">SIGTERM</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;awaiting signal&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">sigs</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;exiting&#34;</span>)
+</span></span></code></pre></div></div><input type="radio" class="toggle" name="tabs-graceful exit" id="tabs-graceful exit-1"  />
+  <label for="tabs-graceful exit-1">Java</label>
+  <div class="book-tabs-content markdown-inner"></div><input type="radio" class="toggle" name="tabs-graceful exit" id="tabs-graceful exit-2"  />
+  <label for="tabs-graceful exit-2">Python</label>
+  <div class="book-tabs-content markdown-inner"></div></div>
+
+<hr>
+<h2 id="如何实现热重启的">
+  如何实现热重启的？
+  <a class="anchor" href="#%e5%a6%82%e4%bd%95%e5%ae%9e%e7%8e%b0%e7%83%ad%e9%87%8d%e5%90%af%e7%9a%84">#</a>
+</h2>
+<ol>
+<li>服务端启动时多开启一个协程用来监听关闭信号</li>
+<li>当协程接收到关闭信号时，将拒绝接收新的连接，并处理好当前所有连接后断开</li>
+<li>启动一个新的服务端<strong>进程</strong>来接管新的连接</li>
+<li>关闭当前<strong>进程</strong></li>
+</ol>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-graceful restart" id="tabs-graceful restart-0" checked="checked" />
+  <label for="tabs-graceful restart-0">Go</label>
+  <div class="book-tabs-content markdown-inner"><h3 id="go-程序优雅关闭与重启">
+  Go 程序优雅关闭与重启
+  <a class="anchor" href="#go-%e7%a8%8b%e5%ba%8f%e4%bc%98%e9%9b%85%e5%85%b3%e9%97%ad%e4%b8%8e%e9%87%8d%e5%90%af">#</a>
+</h3>
+<p>参考：</p>
+<ul>
+<li><a href="https://segmentfault.com/a/1190000015232528">gracehttp: 优雅重启 Go 程序（热启动 - Zero Downtime）</a></li>
+</ul></div><input type="radio" class="toggle" name="tabs-graceful restart" id="tabs-graceful restart-1"  />
+  <label for="tabs-graceful restart-1">Java</label>
+  <div class="book-tabs-content markdown-inner"></div><input type="radio" class="toggle" name="tabs-graceful restart" id="tabs-graceful restart-2"  />
+  <label for="tabs-graceful restart-2">Python</label>
+  <div class="book-tabs-content markdown-inner"></div></div>
+
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/ikingye/interview/commit/56a6937aa089f56d0cb81182468237c4e8407f8a" title='Last modified by yewang | 2020-07-23' target="_blank" rel="noopener">
+      <img src="/interview/svg/calendar.svg" class="book-icon" alt="" />
+      <span>2020-07-23</span>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        <div>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <p><span id="busuanzi_container_page_pv">本文访问量 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次</span></p>
+    <p><span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span> 次</span></p>
+    <p><span id="busuanzi_container_site_uv">本站总访客数 <span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span> 人</span></p>
+</div>
+
+
+
+
+
+      </footer>
+
+      
+  
+  <div class="book-comments">
+<script src="https://utteranc.es/client.js"
+  repo="ikingye/interview"
+  issue-term="pathname"
+  theme="github-light"
+  crossorigin="anonymous"
+  async
+></script>
+
+<div id="footer">
+  <p>
+    <a href="https://kingye.me">叶王</a> &copy; 2013-2024
+    版权所有。如果本文档对你有所帮助，可以<a
+      href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200428110046.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      >请作者喝饮料</a
+    >。
+  </p>
+</div>
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#程序如何优雅退出">程序如何优雅退出？</a>
+      <ul>
+        <li><a href="#linux-信号">Linux 信号</a></li>
+      </ul>
+    </li>
+    <li><a href="#如何实现热重启的">如何实现热重启的？</a></li>
+  </ul>
+</nav>
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
+  <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="//pub.idqqimg.com/wpa/images/group.png"></a></li>
+</ul>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

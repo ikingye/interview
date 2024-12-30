@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.140.1">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  抓包
+  #
+
+
+  综合
+  #
+
+
+  常用抓包工具有哪些？分别有什么特点，适用于什么场景？
+  #
+
+
+
+  tcpdump
+  #
+
+
+tcpdump -D: 列出所有可监听设备
+tcpdump -i: 指定网络接口（网卡）
+
+tcpdump -i any: 不确定走哪个网卡
+
+
+tcpdump host: 指定主机
+
+tcpdump src host: 指定主机发送出去的包
+tcpdump dst host: 发送到指定主机的包
+
+
+tcpdump tcp: 指定协议
+tcpdump port: 指定端口
+tcpdump -n: 直接显示 IP，而不把 IP 解析为主机名
+tcpdump -nn: 直接显示 IP 与端口，而不解析为主机名与服务
+tcpdump -N: 不打印 host 的域名部分，比如打印 nic 而不是 nic.ddn.mil
+tcpdump -w: 输出到文件
+tcpdump -tttt: 更具有可读性的时间格式
+tcpdump -c: 抓 n 个包，然后退出
+
+# 监视第一个网络接口上所有流过的数据包
+tcpdump
+
+# 监视指定网络接口的数据包
+tcpdump -i eth1
+
+# 截获主机 210.27.48.1 和主机 210.27.48.2 或 210.27.48.3 的通信
+tcpdump host 210.27.48.1 and \ (210.27.48.2 or 210.27.48.3 \)
+# 截获主机 ace 与任何其他主机之间通信的 IP 数据包，但不包括与 helios 之间的数据包
+tcpdump ip host ace and not helios
+# 截获主机 hostname 发送的所有数据
+tcpdump -i eth0 src host hostname
+# 截获所有送到主机 hostname 的数据包
+tcpdump -i eth0 dst host hostname
+
+# 获取主机 210.27.48.1 接收或发出的 telnet 包
+tcpdump tcp port 23 and host 210.27.48.1
+# 对本机的 udp 端口 123 进行监视
+tcpdump udp port 123
+参考：">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://kingye.me/interview/docs/network/capture/">
+  <meta property="og:site_name" content="面试笔记">
+  <meta property="og:title" content="抓包">
+  <meta property="og:description" content="抓包 # 综合 # 常用抓包工具有哪些？分别有什么特点，适用于什么场景？ # tcpdump # tcpdump -D: 列出所有可监听设备 tcpdump -i: 指定网络接口（网卡） tcpdump -i any: 不确定走哪个网卡 tcpdump host: 指定主机 tcpdump src host: 指定主机发送出去的包 tcpdump dst host: 发送到指定主机的包 tcpdump tcp: 指定协议 tcpdump port: 指定端口 tcpdump -n: 直接显示 IP，而不把 IP 解析为主机名 tcpdump -nn: 直接显示 IP 与端口，而不解析为主机名与服务 tcpdump -N: 不打印 host 的域名部分，比如打印 nic 而不是 nic.ddn.mil tcpdump -w: 输出到文件 tcpdump -tttt: 更具有可读性的时间格式 tcpdump -c: 抓 n 个包，然后退出 # 监视第一个网络接口上所有流过的数据包 tcpdump # 监视指定网络接口的数据包 tcpdump -i eth1 # 截获主机 210.27.48.1 和主机 210.27.48.2 或 210.27.48.3 的通信 tcpdump host 210.27.48.1 and \ (210.27.48.2 or 210.27.48.3 \) # 截获主机 ace 与任何其他主机之间通信的 IP 数据包，但不包括与 helios 之间的数据包 tcpdump ip host ace and not helios # 截获主机 hostname 发送的所有数据 tcpdump -i eth0 src host hostname # 截获所有送到主机 hostname 的数据包 tcpdump -i eth0 dst host hostname # 获取主机 210.27.48.1 接收或发出的 telnet 包 tcpdump tcp port 23 and host 210.27.48.1 # 对本机的 udp 端口 123 进行监视 tcpdump udp port 123 参考：">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2020-08-04T15:56:52+08:00">
+<title>抓包 | 面试笔记</title>
+<link rel="manifest" href="/interview/manifest.json">
+<link rel="icon" href="/interview/favicon.png" >
+<link rel="canonical" href="https://kingye.me/interview/docs/network/capture/">
+<link rel="stylesheet" href="/interview/book.min.a9fd347d07ee042ade7b8c22d2c14b72b69e154966252ab277e80a22c2a3be81.css" integrity="sha256-qf00fQfuBCree4wi0sFLcraeFUlmJSqyd&#43;gKIsKjvoE=" crossorigin="anonymous">
+  <script defer src="/interview/fuse.min.js"></script>
+  <script defer src="/interview/en.search.min.8a8ae036fc3aadbb34fb49dc16807b3d76c72b8bd77d8ee048619b83f5ca14ea.js" integrity="sha256-iorgNvw6rbs0&#43;0ncFoB7PXbHK4vXfY7gSGGbg/XKFOo=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/interview/"><span>面试笔记</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+<ul>
+  <li><a href="https://kingye.me" target="_blank" rel="noopener noreferrer">博客</a></li>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417021727.png" target="_blank" rel="noopener noreferrer">公众号</a></li>
+  <li><a href="https://github.com/ikingye" target="_blank" rel="noopener noreferrer">Github</a></li>
+  <li><a href="https://weibo.com/kingyip15215" target="_blank" rel="noopener noreferrer">微博</a></li>
+  <li><a href="https://www.zhihu.com/people/wutongyip" target="_blank" rel="noopener noreferrer">知乎</a></li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dac10f36a18b2565b30b8a413c3cac77" class="toggle"  />
+    <label for="section-dac10f36a18b2565b30b8a413c3cac77" class="flex justify-between">
+      <a href="/interview/docs/co/" class="">1. 计算机组成原理</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fb17fa98eae091f7b482f2acb6708143" class="toggle"  />
+    <label for="section-fb17fa98eae091f7b482f2acb6708143" class="flex justify-between">
+      <a href="/interview/docs/os/" class="">2. 操作系统</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-15a77ede6695b349d6b35f1d7c2274ff" class="toggle"  />
+    <label for="section-15a77ede6695b349d6b35f1d7c2274ff" class="flex justify-between">
+      <a href="/interview/docs/os/linux/" class="">Linux</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-20a7ca78784beffdcceeb3f095091c0e" class="toggle" checked />
+    <label for="section-20a7ca78784beffdcceeb3f095091c0e" class="flex justify-between">
+      <a href="/interview/docs/network/" class="">3. 网络</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/network/http/" class="">HTTP</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/network/tcp/" class="">TCP/UDP/IP</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/network/send/" class="">发包工具</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/network/capture/" class="active">抓包</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-72924d58dbacb8de81e2f82dd97a305d" class="toggle"  />
+    <label for="section-72924d58dbacb8de81e2f82dd97a305d" class="flex justify-between">
+      <a href="/interview/docs/algs/" class="">4. 数据结构与算法</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/tree/" class="">二叉树</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/dp/" class="">动态规划</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/sort/" class="">排序算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/search/" class="">查询算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/link/" class="">链表</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-39d951d0ad0eced9b4aaf1b6cf4c4823" class="toggle"  />
+    <label for="section-39d951d0ad0eced9b4aaf1b6cf4c4823" class="flex justify-between">
+      <a href="/interview/docs/pl/" class="">5. 编程语言</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f78ad56101563ceb112ca8ee058c057b" class="toggle"  />
+    <label for="section-f78ad56101563ceb112ca8ee058c057b" class="flex justify-between">
+      <a href="/interview/docs/pl/c/" class="">C</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-319faf94d6dbbe1d0b5b5c5f3910b7b6" class="toggle"  />
+    <label for="section-319faf94d6dbbe1d0b5b5c5f3910b7b6" class="flex justify-between">
+      <a href="/interview/docs/pl/cpp/" class="">C&#43;&#43;</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-522f1afe051f53b681a9dc4732939836" class="toggle"  />
+    <label for="section-522f1afe051f53b681a9dc4732939836" class="flex justify-between">
+      <a href="/interview/docs/pl/go/" class="">Go</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-bf4547a2ee3a6320c7f0993dbea87e98" class="toggle"  />
+    <label for="section-bf4547a2ee3a6320c7f0993dbea87e98" class="flex justify-between">
+      <a href="/interview/docs/pl/java/" class="">Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-44cf7e03ff34a0f1993f67470f8c2eae" class="toggle"  />
+    <label for="section-44cf7e03ff34a0f1993f67470f8c2eae" class="flex justify-between">
+      <a href="/interview/docs/pl/javascript/" class="">JavaScript</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d5f9f62a3afa6eb21e96fb4c63e424f5" class="toggle"  />
+    <label for="section-d5f9f62a3afa6eb21e96fb4c63e424f5" class="flex justify-between">
+      <a href="/interview/docs/pl/kotlin/" class="">Kotlin</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f2328c75ed3f1e79eb3721148691db56" class="toggle"  />
+    <label for="section-f2328c75ed3f1e79eb3721148691db56" class="flex justify-between">
+      <a href="/interview/docs/pl/php/" class="">PHP</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-33d3b9e688a788c670c7868ac2e5a351" class="toggle"  />
+    <label for="section-33d3b9e688a788c670c7868ac2e5a351" class="flex justify-between">
+      <a href="/interview/docs/pl/python/" class="">Python</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2c49e304fc6a00749ef946ba6fe9cb2b" class="toggle"  />
+    <label for="section-2c49e304fc6a00749ef946ba6fe9cb2b" class="flex justify-between">
+      <a href="/interview/docs/pl/rust/" class="">Rust</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d06016cb25b23286638ddf3350722e26" class="toggle"  />
+    <label for="section-d06016cb25b23286638ddf3350722e26" class="flex justify-between">
+      <a href="/interview/docs/se/" class="">6. 软件工程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9331ff558d061ec5ecc0fd75ed023b3d" class="toggle"  />
+    <label for="section-9331ff558d061ec5ecc0fd75ed023b3d" class="flex justify-between">
+      <a href="/interview/docs/se/dp/" class="">设计模式</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-34c527725bfc137cabd0b156bc2470db" class="toggle"  />
+    <label for="section-34c527725bfc137cabd0b156bc2470db" class="flex justify-between">
+      <a href="/interview/docs/se/architecture/" class="">架构设计</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-89a69356aba8ed5632f09cf610d14d83" class="toggle"  />
+    <label for="section-89a69356aba8ed5632f09cf610d14d83" class="flex justify-between">
+      <a href="/interview/docs/se/pm/" class="">项目管理</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-1f7a0891fb78ba44611d7aaf1febf529" class="toggle"  />
+    <label for="section-1f7a0891fb78ba44611d7aaf1febf529" class="flex justify-between">
+      <a href="/interview/docs/cloud/" class="">7. 云计算</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba9e9c3a7a403bd2c66dad9393b90a1d" class="toggle"  />
+    <label for="section-ba9e9c3a7a403bd2c66dad9393b90a1d" class="flex justify-between">
+      <a href="/interview/docs/cloud/docker/" class="">Docker</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2d019f6b9260269d72858ce6a06737c7" class="toggle"  />
+    <label for="section-2d019f6b9260269d72858ce6a06737c7" class="flex justify-between">
+      <a href="/interview/docs/cloud/kubernetes/" class="">Kubernetes</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cdee8e227c830bdacf353288dcfa8713" class="toggle"  />
+    <label for="section-cdee8e227c830bdacf353288dcfa8713" class="flex justify-between">
+      <a href="/interview/docs/cloud/native/" class="">Cloud Native</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b0dc122b75a8ee190a04c74ddd03587d" class="toggle"  />
+    <label for="section-b0dc122b75a8ee190a04c74ddd03587d" class="flex justify-between">
+      <a href="/interview/docs/bigdata/" class="">8. 大数据</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-90533c7a2355e16214e260ea8d55c63e" class="toggle"  />
+    <label for="section-90533c7a2355e16214e260ea8d55c63e" class="flex justify-between">
+      <a href="/interview/docs/ai/" class="">9. 人工智能</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-31da2fa2ee2a41438432ac1eba96b3fc" class="toggle"  />
+    <label for="section-31da2fa2ee2a41438432ac1eba96b3fc" class="flex justify-between">
+      <a href="/interview/docs/ai/ml/" class="">机器学习</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cc006a1bb48228b384505e11bb3129e7" class="toggle"  />
+    <label for="section-cc006a1bb48228b384505e11bb3129e7" class="flex justify-between">
+      <a role="button" class="">10. 后台</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ccd5ac4584b3fa2ea23f7d1dc555a0d5" class="toggle"  />
+    <label for="section-ccd5ac4584b3fa2ea23f7d1dc555a0d5" class="flex justify-between">
+      <a href="/interview/docs/backend/web/" class="">Web 后端</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6211b0c9d7bd9ad7800b0d9b5979d20d" class="toggle"  />
+    <label for="section-6211b0c9d7bd9ad7800b0d9b5979d20d" class="flex justify-between">
+      <a href="/interview/docs/backend/web/go/" class="">Go Web 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-255465e6e90cf5ae6f3324c7269de337" class="toggle"  />
+    <label for="section-255465e6e90cf5ae6f3324c7269de337" class="flex justify-between">
+      <a href="/interview/docs/backend/web/java/" class="">Java Web 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-47fc294bf9f2b0bce5a420f179960dcc" class="toggle"  />
+    <label for="section-47fc294bf9f2b0bce5a420f179960dcc" class="flex justify-between">
+      <a href="/interview/docs/backend/web/php/" class="">PHP 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3f6666df817e5c119875d8253ceeb2ee" class="toggle"  />
+    <label for="section-3f6666df817e5c119875d8253ceeb2ee" class="flex justify-between">
+      <a href="/interview/docs/backend/web/python/" class="">Python 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/backend/db/" class="">数据库</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8fa84f1849dedcae8e410c308b4bc8be" class="toggle"  />
+    <label for="section-8fa84f1849dedcae8e410c308b4bc8be" class="flex justify-between">
+      <a href="/interview/docs/backend/db/mysql/" class="">Mysql</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dbaa6f72dbf11be2ea3dce98a8468d7c" class="toggle"  />
+    <label for="section-dbaa6f72dbf11be2ea3dce98a8468d7c" class="flex justify-between">
+      <a href="/interview/docs/backend/db/redis/" class="">Redis</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/backend/mq/" class="">消息队列</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b934a848742f6080c0c26d23369dfb2c" class="toggle"  />
+    <label for="section-b934a848742f6080c0c26d23369dfb2c" class="flex justify-between">
+      <a href="/interview/docs/backend/mq/kafka/" class="">Kafka</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-247d070e4577eff571ff178160af1d88" class="toggle"  />
+    <label for="section-247d070e4577eff571ff178160af1d88" class="flex justify-between">
+      <a href="/interview/docs/backend/mq/rocketmq/" class="">RocketMQ</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-be6848561574827c9620cc15b62c886e" class="toggle"  />
+    <label for="section-be6848561574827c9620cc15b62c886e" class="flex justify-between">
+      <a href="/interview/docs/backend/mq/rabbitmq/" class="">RabbitMQ</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b158b58682199110a5ab11ea24f35889" class="toggle"  />
+    <label for="section-b158b58682199110a5ab11ea24f35889" class="flex justify-between">
+      <a href="/interview/docs/backend/others/" class="">其他</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-bd1315ed0de1fc517edc2ae50972c39b" class="toggle"  />
+    <label for="section-bd1315ed0de1fc517edc2ae50972c39b" class="flex justify-between">
+      <a href="/interview/docs/backend/others/hot-load/" class="">配置热加载</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e9c9beb1bd09bb9491ceabda054cf53c" class="toggle"  />
+    <label for="section-e9c9beb1bd09bb9491ceabda054cf53c" class="flex justify-between">
+      <a href="/interview/docs/backend/others/hot-restart/" class="">程序热重启</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e43a83c4a95aebbedfe453d8ff1c4c3f" class="toggle"  />
+    <label for="section-e43a83c4a95aebbedfe453d8ff1c4c3f" class="flex justify-between">
+      <a href="/interview/docs/frontend/" class="">11. 前端与客户端</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5e63069f6bea9364caf6d277a66db738" class="toggle"  />
+    <label for="section-5e63069f6bea9364caf6d277a66db738" class="flex justify-between">
+      <a href="/interview/docs/frontend/web/" class="">Web 前端</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-36172daab105faacbfda8fdec8025d30" class="toggle"  />
+    <label for="section-36172daab105faacbfda8fdec8025d30" class="flex justify-between">
+      <a href="/interview/docs/op/" class="">13. 运维</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6b8fc8dbaf7a7e7c4b743b3e0a0229ee" class="toggle"  />
+    <label for="section-6b8fc8dbaf7a7e7c4b743b3e0a0229ee" class="flex justify-between">
+      <a href="/interview/docs/test/" class="">14. 测试</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-711078fd7861837cd24ff01085202907" class="toggle"  />
+    <label for="section-711078fd7861837cd24ff01085202907" class="flex justify-between">
+      <a href="/interview/docs/security/" class="">13. 安全</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b26706241ad173d7b10417a0b820c98d" class="toggle"  />
+    <label for="section-b26706241ad173d7b10417a0b820c98d" class="flex justify-between">
+      <a href="/interview/docs/security/web/" class="">Web 安全</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/security/web/xss/" class="">XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/security/web/csrf/" class="">CSRF</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f0c6f0ad0f1efaf06edd2bc2c4729452" class="toggle"  />
+    <label for="section-f0c6f0ad0f1efaf06edd2bc2c4729452" class="flex justify-between">
+      <a href="/interview/docs/others/" class="">15. 其他</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/others/encode/" class="">字符编码</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/others/encryption/" class="">加密</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/others/compile/" class="">编译</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
+  <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="//pub.idqqimg.com/wpa/images/group.png"></a></li>
+</ul>
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/interview/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>抓包</strong>
+
+  <label for="toc-control">
+    
+    <img src="/interview/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#综合">综合</a>
+      <ul>
+        <li><a href="#常用抓包工具有哪些分别有什么特点适用于什么场景">常用抓包工具有哪些？分别有什么特点，适用于什么场景？</a></li>
+      </ul>
+    </li>
+    <li><a href="#tcpdump">tcpdump</a></li>
+    <li><a href="#wireshark">wireshark</a></li>
+  </ul>
+</nav>
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
+  <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="//pub.idqqimg.com/wpa/images/group.png"></a></li>
+</ul>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article id="article" class="markdown"><h1 id="抓包">
+  抓包
+  <a class="anchor" href="#%e6%8a%93%e5%8c%85">#</a>
+</h1>
+<h2 id="综合">
+  综合
+  <a class="anchor" href="#%e7%bb%bc%e5%90%88">#</a>
+</h2>
+<h3 id="常用抓包工具有哪些分别有什么特点适用于什么场景">
+  常用抓包工具有哪些？分别有什么特点，适用于什么场景？
+  <a class="anchor" href="#%e5%b8%b8%e7%94%a8%e6%8a%93%e5%8c%85%e5%b7%a5%e5%85%b7%e6%9c%89%e5%93%aa%e4%ba%9b%e5%88%86%e5%88%ab%e6%9c%89%e4%bb%80%e4%b9%88%e7%89%b9%e7%82%b9%e9%80%82%e7%94%a8%e4%ba%8e%e4%bb%80%e4%b9%88%e5%9c%ba%e6%99%af">#</a>
+</h3>
+<hr>
+<h2 id="tcpdump">
+  tcpdump
+  <a class="anchor" href="#tcpdump">#</a>
+</h2>
+<ul>
+<li><code>tcpdump -D</code>: 列出所有可监听设备</li>
+<li><code>tcpdump -i</code>: 指定网络接口（网卡）
+<ul>
+<li><code>tcpdump -i any</code>: 不确定走哪个网卡</li>
+</ul>
+</li>
+<li><code>tcpdump host</code>: 指定主机
+<ul>
+<li><code>tcpdump src host</code>: 指定主机发送出去的包</li>
+<li><code>tcpdump dst host</code>: 发送到指定主机的包</li>
+</ul>
+</li>
+<li><code>tcpdump tcp</code>: 指定协议</li>
+<li><code>tcpdump port</code>: 指定端口</li>
+<li><code>tcpdump -n</code>: 直接显示 IP，而不把 IP 解析为主机名</li>
+<li><code>tcpdump -nn</code>: 直接显示 IP 与端口，而不解析为主机名与服务</li>
+<li><code>tcpdump -N</code>: 不打印 host 的域名部分，比如打印 <code>nic</code> 而不是 <code>nic.ddn.mil</code></li>
+<li><code>tcpdump -w</code>: 输出到文件</li>
+<li><code>tcpdump -tttt</code>: 更具有可读性的时间格式</li>
+<li><code>tcpdump -c</code>: 抓 n 个包，然后退出</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#75715e"># 监视第一个网络接口上所有流过的数据包</span>
+</span></span><span style="display:flex;"><span>tcpdump
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 监视指定网络接口的数据包</span>
+</span></span><span style="display:flex;"><span>tcpdump -i eth1
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 截获主机 210.27.48.1 和主机 210.27.48.2 或 210.27.48.3 的通信</span>
+</span></span><span style="display:flex;"><span>tcpdump host 210.27.48.1 and <span style="color:#ae81ff">\ </span><span style="color:#f92672">(</span>210.27.48.2 or 210.27.48.3 <span style="color:#ae81ff">\)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 截获主机 ace 与任何其他主机之间通信的 IP 数据包，但不包括与 helios 之间的数据包</span>
+</span></span><span style="display:flex;"><span>tcpdump ip host ace and not helios
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 截获主机 hostname 发送的所有数据</span>
+</span></span><span style="display:flex;"><span>tcpdump -i eth0 src host hostname
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 截获所有送到主机 hostname 的数据包</span>
+</span></span><span style="display:flex;"><span>tcpdump -i eth0 dst host hostname
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 获取主机 210.27.48.1 接收或发出的 telnet 包</span>
+</span></span><span style="display:flex;"><span>tcpdump tcp port <span style="color:#ae81ff">23</span> and host 210.27.48.1
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 对本机的 udp 端口 123 进行监视</span>
+</span></span><span style="display:flex;"><span>tcpdump udp port <span style="color:#ae81ff">123</span>
+</span></span></code></pre></div><p>参考：</p>
+<ul>
+<li><a href="https://danielmiessler.com/study/tcpdump/">A tcpdump Tutorial with Examples — 50 Ways to Isolate Traffic</a></li>
+<li><a href="https://zzyongx.github.io/blogs/tcpdump-tutorial.html">tcpdump 指南</a></li>
+<li><a href="https://www.cnblogs.com/ggjucheng/archive/2012/01/14/2322659.html">Linux tcpdump 命令详解</a></li>
+</ul>
+<hr>
+<h2 id="wireshark">
+  wireshark
+  <a class="anchor" href="#wireshark">#</a>
+</h2>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/ikingye/interview/commit/d85adc624f6a83395656a9f28238e9ad066e7667" title='Last modified by yewang | 2020-08-04' target="_blank" rel="noopener">
+      <img src="/interview/svg/calendar.svg" class="book-icon" alt="" />
+      <span>2020-08-04</span>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        <div>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <p><span id="busuanzi_container_page_pv">本文访问量 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次</span></p>
+    <p><span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span> 次</span></p>
+    <p><span id="busuanzi_container_site_uv">本站总访客数 <span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span> 人</span></p>
+</div>
+
+
+
+
+
+      </footer>
+
+      
+  
+  <div class="book-comments">
+<script src="https://utteranc.es/client.js"
+  repo="ikingye/interview"
+  issue-term="pathname"
+  theme="github-light"
+  crossorigin="anonymous"
+  async
+></script>
+
+<div id="footer">
+  <p>
+    <a href="https://kingye.me">叶王</a> &copy; 2013-2024
+    版权所有。如果本文档对你有所帮助，可以<a
+      href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200428110046.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      >请作者喝饮料</a
+    >。
+  </p>
+</div>
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#综合">综合</a>
+      <ul>
+        <li><a href="#常用抓包工具有哪些分别有什么特点适用于什么场景">常用抓包工具有哪些？分别有什么特点，适用于什么场景？</a></li>
+      </ul>
+    </li>
+    <li><a href="#tcpdump">tcpdump</a></li>
+    <li><a href="#wireshark">wireshark</a></li>
+  </ul>
+</nav>
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
+  <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="//pub.idqqimg.com/wpa/images/group.png"></a></li>
+</ul>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

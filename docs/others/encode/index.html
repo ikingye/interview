@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.140.1">
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="
+  字符编码
+  #
+
+有的字符在一些环境中是不能显示或使用的，
+比如 &amp;, = 等字符在 URL 被保留为特殊作用的字符；
+比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类），
+这时就需要对进行编码。
+
+  各种编码的特征
+  #
+
+
+Base 编码
+
+Base64
+
+组成字符：A-Z、a-z、0-9、&#43;、/
+末尾一般补 0-2 个 =（可以不补 =）
+
+
+Base32
+
+组成字符：A-Z、2-7
+末尾一般补 0-6 个 =（可以不补 =）
+
+
+Base16
+
+组成字符：0-9、A-F
+末尾没有 =
+
+
+
+
+
+
+
+  Base 编码
+  #
+
+参考：rfc4648
+Base 系列的就是用来将字节编码为 ASCII 中的可见字符的。
+在 URL 中使用时必须去掉 “=” 符号
+
+  Base64
+  #
+
+Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9、&#43;、/）将任意字节序列数据编码成 ASCII 字符串，另有 “=” 符号用作后缀用途。
+Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0），
+然后将这些二进制数值串联起来，再按照 6 比特一组进行切分（因为 2^6=64），最后一组若不足 6 比特则末尾补 0。">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#343a40">
+<meta name="color-scheme" content="light dark"><meta property="og:url" content="https://kingye.me/interview/docs/others/encode/">
+  <meta property="og:site_name" content="面试笔记">
+  <meta property="og:title" content="字符编码">
+  <meta property="og:description" content="字符编码 # 有的字符在一些环境中是不能显示或使用的， 比如 &amp;, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
+各种编码的特征 # Base 编码 Base64 组成字符：A-Z、a-z、0-9、&#43;、/ 末尾一般补 0-2 个 =（可以不补 =） Base32 组成字符：A-Z、2-7 末尾一般补 0-6 个 =（可以不补 =） Base16 组成字符：0-9、A-F 末尾没有 = Base 编码 # 参考：rfc4648
+Base 系列的就是用来将字节编码为 ASCII 中的可见字符的。
+在 URL 中使用时必须去掉 “=” 符号
+Base64 # Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9、&#43;、/）将任意字节序列数据编码成 ASCII 字符串，另有 “=” 符号用作后缀用途。
+Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0）， 然后将这些二进制数值串联起来，再按照 6 比特一组进行切分（因为 2^6=64），最后一组若不足 6 比特则末尾补 0。">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="docs">
+    <meta property="article:modified_time" content="2020-07-15T15:38:39+08:00">
+<title>字符编码 | 面试笔记</title>
+<link rel="manifest" href="/interview/manifest.json">
+<link rel="icon" href="/interview/favicon.png" >
+<link rel="canonical" href="https://kingye.me/interview/docs/others/encode/">
+<link rel="stylesheet" href="/interview/book.min.a9fd347d07ee042ade7b8c22d2c14b72b69e154966252ab277e80a22c2a3be81.css" integrity="sha256-qf00fQfuBCree4wi0sFLcraeFUlmJSqyd&#43;gKIsKjvoE=" crossorigin="anonymous">
+  <script defer src="/interview/fuse.min.js"></script>
+  <script defer src="/interview/en.search.min.8a8ae036fc3aadbb34fb49dc16807b3d76c72b8bd77d8ee048619b83f5ca14ea.js" integrity="sha256-iorgNvw6rbs0&#43;0ncFoB7PXbHK4vXfY7gSGGbg/XKFOo=" crossorigin="anonymous"></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a class="flex align-center" href="/interview/"><span>面试笔记</span>
+  </a>
+</h2>
+
+
+<div class="book-search hidden">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+<script>document.querySelector(".book-search").classList.remove("hidden")</script>
+
+
+
+
+<ul>
+  <li><a href="https://kingye.me" target="_blank" rel="noopener noreferrer">博客</a></li>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417021727.png" target="_blank" rel="noopener noreferrer">公众号</a></li>
+  <li><a href="https://github.com/ikingye" target="_blank" rel="noopener noreferrer">Github</a></li>
+  <li><a href="https://weibo.com/kingyip15215" target="_blank" rel="noopener noreferrer">微博</a></li>
+  <li><a href="https://www.zhihu.com/people/wutongyip" target="_blank" rel="noopener noreferrer">知乎</a></li>
+</ul>
+<hr />
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dac10f36a18b2565b30b8a413c3cac77" class="toggle"  />
+    <label for="section-dac10f36a18b2565b30b8a413c3cac77" class="flex justify-between">
+      <a href="/interview/docs/co/" class="">1. 计算机组成原理</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fb17fa98eae091f7b482f2acb6708143" class="toggle"  />
+    <label for="section-fb17fa98eae091f7b482f2acb6708143" class="flex justify-between">
+      <a href="/interview/docs/os/" class="">2. 操作系统</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-15a77ede6695b349d6b35f1d7c2274ff" class="toggle"  />
+    <label for="section-15a77ede6695b349d6b35f1d7c2274ff" class="flex justify-between">
+      <a href="/interview/docs/os/linux/" class="">Linux</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-20a7ca78784beffdcceeb3f095091c0e" class="toggle"  />
+    <label for="section-20a7ca78784beffdcceeb3f095091c0e" class="flex justify-between">
+      <a href="/interview/docs/network/" class="">3. 网络</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/network/http/" class="">HTTP</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/network/tcp/" class="">TCP/UDP/IP</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/network/send/" class="">发包工具</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/network/capture/" class="">抓包</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-72924d58dbacb8de81e2f82dd97a305d" class="toggle"  />
+    <label for="section-72924d58dbacb8de81e2f82dd97a305d" class="flex justify-between">
+      <a href="/interview/docs/algs/" class="">4. 数据结构与算法</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/tree/" class="">二叉树</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/dp/" class="">动态规划</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/sort/" class="">排序算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/search/" class="">查询算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/algs/link/" class="">链表</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-39d951d0ad0eced9b4aaf1b6cf4c4823" class="toggle"  />
+    <label for="section-39d951d0ad0eced9b4aaf1b6cf4c4823" class="flex justify-between">
+      <a href="/interview/docs/pl/" class="">5. 编程语言</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f78ad56101563ceb112ca8ee058c057b" class="toggle"  />
+    <label for="section-f78ad56101563ceb112ca8ee058c057b" class="flex justify-between">
+      <a href="/interview/docs/pl/c/" class="">C</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-319faf94d6dbbe1d0b5b5c5f3910b7b6" class="toggle"  />
+    <label for="section-319faf94d6dbbe1d0b5b5c5f3910b7b6" class="flex justify-between">
+      <a href="/interview/docs/pl/cpp/" class="">C&#43;&#43;</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-522f1afe051f53b681a9dc4732939836" class="toggle"  />
+    <label for="section-522f1afe051f53b681a9dc4732939836" class="flex justify-between">
+      <a href="/interview/docs/pl/go/" class="">Go</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-bf4547a2ee3a6320c7f0993dbea87e98" class="toggle"  />
+    <label for="section-bf4547a2ee3a6320c7f0993dbea87e98" class="flex justify-between">
+      <a href="/interview/docs/pl/java/" class="">Java</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-44cf7e03ff34a0f1993f67470f8c2eae" class="toggle"  />
+    <label for="section-44cf7e03ff34a0f1993f67470f8c2eae" class="flex justify-between">
+      <a href="/interview/docs/pl/javascript/" class="">JavaScript</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d5f9f62a3afa6eb21e96fb4c63e424f5" class="toggle"  />
+    <label for="section-d5f9f62a3afa6eb21e96fb4c63e424f5" class="flex justify-between">
+      <a href="/interview/docs/pl/kotlin/" class="">Kotlin</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f2328c75ed3f1e79eb3721148691db56" class="toggle"  />
+    <label for="section-f2328c75ed3f1e79eb3721148691db56" class="flex justify-between">
+      <a href="/interview/docs/pl/php/" class="">PHP</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-33d3b9e688a788c670c7868ac2e5a351" class="toggle"  />
+    <label for="section-33d3b9e688a788c670c7868ac2e5a351" class="flex justify-between">
+      <a href="/interview/docs/pl/python/" class="">Python</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2c49e304fc6a00749ef946ba6fe9cb2b" class="toggle"  />
+    <label for="section-2c49e304fc6a00749ef946ba6fe9cb2b" class="flex justify-between">
+      <a href="/interview/docs/pl/rust/" class="">Rust</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d06016cb25b23286638ddf3350722e26" class="toggle"  />
+    <label for="section-d06016cb25b23286638ddf3350722e26" class="flex justify-between">
+      <a href="/interview/docs/se/" class="">6. 软件工程</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9331ff558d061ec5ecc0fd75ed023b3d" class="toggle"  />
+    <label for="section-9331ff558d061ec5ecc0fd75ed023b3d" class="flex justify-between">
+      <a href="/interview/docs/se/dp/" class="">设计模式</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-34c527725bfc137cabd0b156bc2470db" class="toggle"  />
+    <label for="section-34c527725bfc137cabd0b156bc2470db" class="flex justify-between">
+      <a href="/interview/docs/se/architecture/" class="">架构设计</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-89a69356aba8ed5632f09cf610d14d83" class="toggle"  />
+    <label for="section-89a69356aba8ed5632f09cf610d14d83" class="flex justify-between">
+      <a href="/interview/docs/se/pm/" class="">项目管理</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-1f7a0891fb78ba44611d7aaf1febf529" class="toggle"  />
+    <label for="section-1f7a0891fb78ba44611d7aaf1febf529" class="flex justify-between">
+      <a href="/interview/docs/cloud/" class="">7. 云计算</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ba9e9c3a7a403bd2c66dad9393b90a1d" class="toggle"  />
+    <label for="section-ba9e9c3a7a403bd2c66dad9393b90a1d" class="flex justify-between">
+      <a href="/interview/docs/cloud/docker/" class="">Docker</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-2d019f6b9260269d72858ce6a06737c7" class="toggle"  />
+    <label for="section-2d019f6b9260269d72858ce6a06737c7" class="flex justify-between">
+      <a href="/interview/docs/cloud/kubernetes/" class="">Kubernetes</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cdee8e227c830bdacf353288dcfa8713" class="toggle"  />
+    <label for="section-cdee8e227c830bdacf353288dcfa8713" class="flex justify-between">
+      <a href="/interview/docs/cloud/native/" class="">Cloud Native</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b0dc122b75a8ee190a04c74ddd03587d" class="toggle"  />
+    <label for="section-b0dc122b75a8ee190a04c74ddd03587d" class="flex justify-between">
+      <a href="/interview/docs/bigdata/" class="">8. 大数据</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-90533c7a2355e16214e260ea8d55c63e" class="toggle"  />
+    <label for="section-90533c7a2355e16214e260ea8d55c63e" class="flex justify-between">
+      <a href="/interview/docs/ai/" class="">9. 人工智能</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-31da2fa2ee2a41438432ac1eba96b3fc" class="toggle"  />
+    <label for="section-31da2fa2ee2a41438432ac1eba96b3fc" class="flex justify-between">
+      <a href="/interview/docs/ai/ml/" class="">机器学习</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cc006a1bb48228b384505e11bb3129e7" class="toggle"  />
+    <label for="section-cc006a1bb48228b384505e11bb3129e7" class="flex justify-between">
+      <a role="button" class="">10. 后台</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-ccd5ac4584b3fa2ea23f7d1dc555a0d5" class="toggle"  />
+    <label for="section-ccd5ac4584b3fa2ea23f7d1dc555a0d5" class="flex justify-between">
+      <a href="/interview/docs/backend/web/" class="">Web 后端</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6211b0c9d7bd9ad7800b0d9b5979d20d" class="toggle"  />
+    <label for="section-6211b0c9d7bd9ad7800b0d9b5979d20d" class="flex justify-between">
+      <a href="/interview/docs/backend/web/go/" class="">Go Web 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-255465e6e90cf5ae6f3324c7269de337" class="toggle"  />
+    <label for="section-255465e6e90cf5ae6f3324c7269de337" class="flex justify-between">
+      <a href="/interview/docs/backend/web/java/" class="">Java Web 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-47fc294bf9f2b0bce5a420f179960dcc" class="toggle"  />
+    <label for="section-47fc294bf9f2b0bce5a420f179960dcc" class="flex justify-between">
+      <a href="/interview/docs/backend/web/php/" class="">PHP 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3f6666df817e5c119875d8253ceeb2ee" class="toggle"  />
+    <label for="section-3f6666df817e5c119875d8253ceeb2ee" class="flex justify-between">
+      <a href="/interview/docs/backend/web/python/" class="">Python 后端</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/backend/db/" class="">数据库</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-8fa84f1849dedcae8e410c308b4bc8be" class="toggle"  />
+    <label for="section-8fa84f1849dedcae8e410c308b4bc8be" class="flex justify-between">
+      <a href="/interview/docs/backend/db/mysql/" class="">Mysql</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dbaa6f72dbf11be2ea3dce98a8468d7c" class="toggle"  />
+    <label for="section-dbaa6f72dbf11be2ea3dce98a8468d7c" class="flex justify-between">
+      <a href="/interview/docs/backend/db/redis/" class="">Redis</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/backend/mq/" class="">消息队列</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b934a848742f6080c0c26d23369dfb2c" class="toggle"  />
+    <label for="section-b934a848742f6080c0c26d23369dfb2c" class="flex justify-between">
+      <a href="/interview/docs/backend/mq/kafka/" class="">Kafka</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-247d070e4577eff571ff178160af1d88" class="toggle"  />
+    <label for="section-247d070e4577eff571ff178160af1d88" class="flex justify-between">
+      <a href="/interview/docs/backend/mq/rocketmq/" class="">RocketMQ</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-be6848561574827c9620cc15b62c886e" class="toggle"  />
+    <label for="section-be6848561574827c9620cc15b62c886e" class="flex justify-between">
+      <a href="/interview/docs/backend/mq/rabbitmq/" class="">RabbitMQ</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b158b58682199110a5ab11ea24f35889" class="toggle"  />
+    <label for="section-b158b58682199110a5ab11ea24f35889" class="flex justify-between">
+      <a href="/interview/docs/backend/others/" class="">其他</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-bd1315ed0de1fc517edc2ae50972c39b" class="toggle"  />
+    <label for="section-bd1315ed0de1fc517edc2ae50972c39b" class="flex justify-between">
+      <a href="/interview/docs/backend/others/hot-load/" class="">配置热加载</a>
+    </label>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e9c9beb1bd09bb9491ceabda054cf53c" class="toggle"  />
+    <label for="section-e9c9beb1bd09bb9491ceabda054cf53c" class="flex justify-between">
+      <a href="/interview/docs/backend/others/hot-restart/" class="">程序热重启</a>
+    </label>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e43a83c4a95aebbedfe453d8ff1c4c3f" class="toggle"  />
+    <label for="section-e43a83c4a95aebbedfe453d8ff1c4c3f" class="flex justify-between">
+      <a href="/interview/docs/frontend/" class="">11. 前端与客户端</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5e63069f6bea9364caf6d277a66db738" class="toggle"  />
+    <label for="section-5e63069f6bea9364caf6d277a66db738" class="flex justify-between">
+      <a href="/interview/docs/frontend/web/" class="">Web 前端</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-36172daab105faacbfda8fdec8025d30" class="toggle"  />
+    <label for="section-36172daab105faacbfda8fdec8025d30" class="flex justify-between">
+      <a href="/interview/docs/op/" class="">13. 运维</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6b8fc8dbaf7a7e7c4b743b3e0a0229ee" class="toggle"  />
+    <label for="section-6b8fc8dbaf7a7e7c4b743b3e0a0229ee" class="flex justify-between">
+      <a href="/interview/docs/test/" class="">14. 测试</a>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-711078fd7861837cd24ff01085202907" class="toggle"  />
+    <label for="section-711078fd7861837cd24ff01085202907" class="flex justify-between">
+      <a href="/interview/docs/security/" class="">13. 安全</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b26706241ad173d7b10417a0b820c98d" class="toggle"  />
+    <label for="section-b26706241ad173d7b10417a0b820c98d" class="flex justify-between">
+      <a href="/interview/docs/security/web/" class="">Web 安全</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/security/web/xss/" class="">XSS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/security/web/csrf/" class="">CSRF</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f0c6f0ad0f1efaf06edd2bc2c4729452" class="toggle" checked />
+    <label for="section-f0c6f0ad0f1efaf06edd2bc2c4729452" class="flex justify-between">
+      <a href="/interview/docs/others/" class="">15. 其他</a>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/others/encode/" class="active">字符编码</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/others/encryption/" class="">加密</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="/interview/docs/others/compile/" class="">编译</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
+  <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="//pub.idqqimg.com/wpa/images/group.png"></a></li>
+</ul>
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/interview/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>字符编码</strong>
+
+  <label for="toc-control">
+    
+    <img src="/interview/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#各种编码的特征">各种编码的特征</a></li>
+    <li><a href="#base-编码">Base 编码</a>
+      <ul>
+        <li><a href="#base64">Base64</a></li>
+        <li><a href="#base32">Base32</a>
+          <ul>
+            <li><a href="#为什么后面要补-">为什么后面要补 <code>=</code></a></li>
+            <li><a href="#优点">优点</a></li>
+            <li><a href="#缺点">缺点</a></li>
+          </ul>
+        </li>
+        <li><a href="#base16">Base16</a></li>
+      </ul>
+    </li>
+    <li><a href="#url-编码百分号编码">URL 编码（百分号编码）</a></li>
+  </ul>
+</nav>
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
+  <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="//pub.idqqimg.com/wpa/images/group.png"></a></li>
+</ul>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article id="article" class="markdown"><h1 id="字符编码">
+  字符编码
+  <a class="anchor" href="#%e5%ad%97%e7%ac%a6%e7%bc%96%e7%a0%81">#</a>
+</h1>
+<p>有的字符在一些环境中是不能显示或使用的，
+比如 <code>&amp;</code>, <code>=</code> 等字符在 URL 被保留为特殊作用的字符；
+比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类），
+这时就需要对进行编码。</p>
+<h2 id="各种编码的特征">
+  各种编码的特征
+  <a class="anchor" href="#%e5%90%84%e7%a7%8d%e7%bc%96%e7%a0%81%e7%9a%84%e7%89%b9%e5%be%81">#</a>
+</h2>
+<ul>
+<li>Base 编码
+<ul>
+<li>Base64
+<ul>
+<li>组成字符：<code>A-Z、a-z、0-9、+、/</code></li>
+<li>末尾一般补 0-2 个 <code>=</code>（可以不补 <code>=</code>）</li>
+</ul>
+</li>
+<li>Base32
+<ul>
+<li>组成字符：<code>A-Z、2-7</code></li>
+<li>末尾一般补 0-6 个 <code>=</code>（可以不补 <code>=</code>）</li>
+</ul>
+</li>
+<li>Base16
+<ul>
+<li>组成字符：<code>0-9、A-F</code></li>
+<li>末尾没有 <code>=</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="base-编码">
+  Base 编码
+  <a class="anchor" href="#base-%e7%bc%96%e7%a0%81">#</a>
+</h2>
+<p>参考：<a href="https://www.rfc-editor.org/info/rfc4648">rfc4648</a></p>
+<p>Base 系列的就是用来将<strong>字节</strong>编码为 ASCII 中的<strong>可见字符</strong>的。</p>
+<p>在 URL 中使用时必须去掉 “<code>=</code>” 符号</p>
+<h3 id="base64">
+  Base64
+  <a class="anchor" href="#base64">#</a>
+</h3>
+<p>Base64 编码是使用 64 个可打印 ASCII 字符（<code>A-Z、a-z、0-9、+、/</code>）将任意字节序列数据编码成 ASCII 字符串，另有 “<code>=</code>” 符号用作后缀用途。</p>
+<p>Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0），
+然后将这些二进制数值串联起来，再按照 6 比特一组进行切分（因为 <code>2^6=64</code>），<strong>最后一组若不足 6 比特则末尾补 0</strong>。</p>
+<p>由于二进制数据是按照 8 比特一组进行传输，因此 Base64 按照 6 比特一组切分的二进制数据必须是 24 比特的倍数（6 和 8 的最小公倍数），
+就是 <strong>3 个字节</strong>。
+若原字节序列数据长度不是 3 的倍数时且剩下 1 个输入数据，则在编码结果后加 2 个 <code>=</code>；若剩下 2 个输入数据，则在编码结果后加 1 个 =。</p>
+<p><strong>数据量扩大了 <code>1/3</code>。</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200612113327.png" alt="" /></p>
+<h3 id="base32">
+  Base32
+  <a class="anchor" href="#base32">#</a>
+</h3>
+<p>Base16 编码会将<strong>字节</strong>切为 5 个一组，所以此编码后会用到 32 个字符（<code>A-Z、2-7</code>），
+数据量扩大了 <code>3/5</code>（文本一长，最后填充的 0 和 = 的数据量差不多就可忽略不计了）。</p>
+<p>需要凑够 8 个字符</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#ae81ff">00000001</span> <span style="color:#ae81ff">00000011</span> <span style="color:#ae81ff">00000111</span> <span style="color:#ae81ff">00001111</span> 00011111
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">00000</span> <span style="color:#ae81ff">00100</span> <span style="color:#ae81ff">00001</span> <span style="color:#ae81ff">10000</span> <span style="color:#ae81ff">01110</span> <span style="color:#ae81ff">00011</span> <span style="color:#ae81ff">11000</span> <span style="color:#ae81ff">11111</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">00000001</span> <span style="color:#ae81ff">00000011</span> <span style="color:#ae81ff">00000111</span> <span style="color:#ae81ff">00001111</span> <span style="color:#ae81ff">00011111</span> 11111111
+</span></span><span style="display:flex;"><span><span style="color:#f92672">=</span>&gt;
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">00000</span> <span style="color:#ae81ff">00100</span> <span style="color:#ae81ff">00001</span> <span style="color:#ae81ff">10000</span> <span style="color:#ae81ff">01110</span> <span style="color:#ae81ff">00011</span> <span style="color:#ae81ff">11000</span> <span style="color:#ae81ff">11111</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">11111</span> 11100 <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>     <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>// 最后不足 <span style="color:#ae81ff">5</span> 字节的重组后先在右边充 0，编码完成后再右边充 <span style="color:#f92672">=</span>
+</span></span></code></pre></div><p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200612113053.png" alt="" /></p>
+<h4 id="为什么后面要补-">
+  为什么后面要补 <code>=</code>
+  <a class="anchor" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e5%90%8e%e9%9d%a2%e8%a6%81%e8%a1%a5-">#</a>
+</h4>
+<p>由于数据的二进制传输是按照 8 比特一组进行（即一个字节），
+因此 Base32 按 5 比特切分的二进制数据必须是 40 比特的倍数（5 和 8 的最小公倍数），就是 <strong>5 字节</strong>。</p>
+<p>填充 “<code>=</code>” 符号的作用是方便一些程序的标准化运行，大多数情况下不添加也无关紧要，
+而且，<strong>在 URL 中使用时必须去掉 “<code>=</code>” 符号</strong>。</p>
+<h4 id="优点">
+  优点
+  <a class="anchor" href="#%e4%bc%98%e7%82%b9">#</a>
+</h4>
+<p>与 Base64 相比，Base32 具有许多优点：</p>
+<ul>
+<li>适合不区分大小写的文件系统，更利于人类口语交流或记忆。</li>
+<li>结果可以用作文件名，因为它不包含路径分隔符 “<code>/</code>” 等符号。</li>
+<li>排除了视觉上容易混淆的字符，因此可以准确的人工录入。
+（例如，RFC4648 符号集忽略了数字 “<code>1</code>”、“<code>8</code>” 和 “<code>0</code>”，因为它们可能与字母 “<code>I</code>”，“<code>B</code>” 和 “<code>O</code>” 混淆）。</li>
+<li>排除填充符号 “<code>=</code>” 的结果可以包含在 URL 中，而不编码任何字符。</li>
+</ul>
+<p>Base32 也比 Base16 有优势：</p>
+<ul>
+<li>Base32 比 Base16 占用的空间更小。（1000 比特数据 Base32 需要 200 个字符，而 Base16 则为 250 个字符）</li>
+</ul>
+<h4 id="缺点">
+  缺点
+  <a class="anchor" href="#%e7%bc%ba%e7%82%b9">#</a>
+</h4>
+<p>Base32 比 Base64 多占用大约 <code>20％</code> 的空间 —— <code>(8/5 - (8/6)) / (8/6)</code>。</p>
+<p>因为 Base32 使用 8 个 ASCII 字符去编码原数据中的 5 个字节数据，
+而 Base64 是使用 4 个 ASCII 字符去编码原数据中的 3 个字节数据。</p>
+<hr>
+<h3 id="base16">
+  Base16
+  <a class="anchor" href="#base16">#</a>
+</h3>
+<p>Base16 编码是一个标准的十六进制<strong>字符串</strong>（注意是字符串而不是数值），更易被人类和计算机使用，
+因为它并不包含任何<strong>控制字符</strong>，以及 Base64 和 Base32 中的 <code>=</code> 符号。</p>
+<p>Base16 编码会将<strong>字节</strong>切为 4 个一组，所以此编码后会用到 16 个字符（<code>0-9、A-F</code>），数据会扩大 <strong>2 倍</strong></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200612112644.png" alt="" /></p>
+<hr>
+<h2 id="url-编码百分号编码">
+  URL 编码（百分号编码）
+  <a class="anchor" href="#url-%e7%bc%96%e7%a0%81%e7%99%be%e5%88%86%e5%8f%b7%e7%bc%96%e7%a0%81">#</a>
+</h2>
+<ul>
+<li>网址路径的编码，用的是 <code>utf-8 编码</code></li>
+<li>查询字符串的编码，用的是操作系统的默认编码</li>
+<li>GET 和 POST 方法的编码，用的是网页的编码</li>
+<li>Ajax 调用中，IE 总是采用 GB2312 编码（操作系统的默认编码），而 Firefox 总是采用 utf-8 编码</li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a href="https://www.ruanyifeng.com/blog/2010/02/url_encoding.html">关于 URL 编码</a></li>
+</ul>
+<hr>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+  <div><a class="flex align-center" href="https://github.com/ikingye/interview/commit/f949abcd9d6e96783c5c5a592d8fa9682aaf2d3a" title='Last modified by yewang | 2020-07-15' target="_blank" rel="noopener">
+      <img src="/interview/svg/calendar.svg" class="book-icon" alt="" />
+      <span>2020-07-15</span>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+
+  <script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script>
+
+
+ 
+        <div>
+    <br>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <p><span id="busuanzi_container_page_pv">本文访问量 <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> 次</span></p>
+    <p><span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span> 次</span></p>
+    <p><span id="busuanzi_container_site_uv">本站总访客数 <span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span> 人</span></p>
+</div>
+
+
+
+
+
+      </footer>
+
+      
+  
+  <div class="book-comments">
+<script src="https://utteranc.es/client.js"
+  repo="ikingye/interview"
+  issue-term="pathname"
+  theme="github-light"
+  crossorigin="anonymous"
+  async
+></script>
+
+<div id="footer">
+  <p>
+    <a href="https://kingye.me">叶王</a> &copy; 2013-2024
+    版权所有。如果本文档对你有所帮助，可以<a
+      href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200428110046.png"
+      target="_blank"
+      rel="noopener noreferrer"
+      >请作者喝饮料</a
+    >。
+  </p>
+</div>
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#各种编码的特征">各种编码的特征</a></li>
+    <li><a href="#base-编码">Base 编码</a>
+      <ul>
+        <li><a href="#base64">Base64</a></li>
+        <li><a href="#base32">Base32</a>
+          <ul>
+            <li><a href="#为什么后面要补-">为什么后面要补 <code>=</code></a></li>
+            <li><a href="#优点">优点</a></li>
+            <li><a href="#缺点">缺点</a></li>
+          </ul>
+        </li>
+        <li><a href="#base16">Base16</a></li>
+      </ul>
+    </li>
+    <li><a href="#url-编码百分号编码">URL 编码（百分号编码）</a></li>
+  </ul>
+</nav>
+<hr />
+<ul>
+  <li><a href="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png" target="_blank" rel="noopener noreferrer">微信</a></li>
+  <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target="_blank" rel="noopener noreferrer"><img src="//pub.idqqimg.com/wpa/images/group.png"></a></li>
+</ul>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
