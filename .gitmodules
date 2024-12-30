@@ -1,8 +1,0 @@
-[submodule "themes/hugo-book"]
-	path = themes/hugo-book
-	url = https://github.com/ikingye/hugo-book
-	branch = v8
-[submodule "public"]
-	path = public
-	url = https://github.com/ikingye/interview
-	branch = master
