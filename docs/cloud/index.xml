@@ -1,32 +1,81 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>7. 云计算 on 面试笔记</title>
-    <link>https://kingye.me/interview/docs/cloud/</link>
-    <description>Recent content in 7. 云计算 on 面试笔记</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <atom:link href="https://kingye.me/interview/docs/cloud/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Docker</title>
-      <link>https://kingye.me/interview/docs/cloud/docker/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://kingye.me/interview/docs/cloud/docker/</guid>
-      <description>&lt;h1 id=&#34;docker&#34;&gt;&#xA;  Docker&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#docker&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;更多内容见：&lt;a href=&#34;https://kingye.me/interview/study-kubernetes/docs/advanced/eco/docker/&#34; target=&#34;_blank&#34;&gt;Docker 学习笔记&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;entrypoint-vs-cmd&#34;&gt;&#xA;  &lt;code&gt;entrypoint&lt;/code&gt; vs &lt;code&gt;cmd&lt;/code&gt;&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#entrypoint-vs-cmd&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;格式&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Shell form&#xA;&lt;ul&gt;&#xA;&lt;li&gt;实际运行的是 &lt;code&gt;/bin/sh -c&lt;/code&gt; 命令&#xA;&lt;ul&gt;&#xA;&lt;li&gt;有些镜像没有 shell 程序，无法使用这种方式&lt;/li&gt;&#xA;&lt;li&gt;从外部发送任何 POSIX 信号到 docker 容器，&lt;code&gt;/bin/sh&lt;/code&gt; 命令不会转发消息给实际运行的命令&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;CMD executable param1 param2&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;ENTRYPOINT executable param1 param2&lt;/code&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;会忽略 CMD 或者 docker run 参数&lt;/li&gt;&#xA;&lt;li&gt;无法覆盖&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Exec form&#xA;&lt;ul&gt;&#xA;&lt;li&gt;the JSON array format&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;CMD [&amp;quot;executable&amp;quot;,&amp;quot;param1&amp;quot;,&amp;quot;param2&amp;quot;]&lt;/code&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;如果要使用 Shell 环境变量，必须显示使用 &lt;code&gt;sh&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;如 &lt;code&gt;CMD [ &amp;quot;sh&amp;quot;, &amp;quot;-c&amp;quot;, &amp;quot;echo $HOME&amp;quot; ]&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;ENTRYPOINT [&amp;quot;executable&amp;quot;,&amp;quot;param1&amp;quot;,&amp;quot;param2&amp;quot;]&lt;/code&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;会把 CMD 接到后面作为参数&lt;/li&gt;&#xA;&lt;li&gt;docker run 可以覆盖：&lt;code&gt;docker run demo --entrypoint cmd&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;覆盖&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Kubernetes</title>
-      <link>https://kingye.me/interview/docs/cloud/kubernetes/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://kingye.me/interview/docs/cloud/kubernetes/</guid>
-      <description>&lt;h1 id=&#34;kubernetes&#34;&gt;&#xA;  Kubernetes&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#kubernetes&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;更多内容见：&lt;a href=&#34;https://kingye.me/interview/study-kubernetes/&#34; target=&#34;_blank&#34;&gt;Kubernetes 学习笔记&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;参考：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://www.qikqiak.com/post/k8s-api-resources-group-and-version/&#34;&gt;Kubernetes API 资源使用 - 应该使用哪个 Group 和 Version?&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;端口&#34;&gt;&#xA;  端口&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#%e7%ab%af%e5%8f%a3&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;containerPort&lt;/code&gt;：在容器上，用于被 pod 绑定，是可选的，仅仅是提示信息，容器中任何监听 &lt;code&gt;0.0.0.0&lt;/code&gt; 的端口，都会暴露出来&#xA;&lt;ul&gt;&#xA;&lt;li&gt;是可选的，仅仅是提示信息&lt;/li&gt;&#xA;&lt;li&gt;容器中任何监听 &lt;code&gt;0.0.0.0&lt;/code&gt; 的端口，都会暴露出来&lt;/li&gt;&#xA;&lt;li&gt;无法被更新&#xA;&lt;img src=&#34;https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200918141459.png&#34; alt=&#34;&#34; /&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;targetPort&lt;/code&gt;：在 pod 上，从 port 和 nodePort 上来的流量，经过 kube-proxy 流入到后端 pod 的 targetPort 上，最后进入容器&#xA;&lt;ul&gt;&#xA;&lt;li&gt;targetPort 和 containerPort 是一致的&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;targetPort and containerPort must be identical most of the time because whatever port is open for your application in a container that would be the same port you will wish to send traffic from service via targetPort.&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Cloud Native</title>
-      <link>https://kingye.me/interview/docs/cloud/native/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://kingye.me/interview/docs/cloud/native/</guid>
-      <description>&lt;h1 id=&#34;cloud-native&#34;&gt;&#xA;  Cloud Native&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#cloud-native&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>7. 云计算 on 面试笔记</title><link>https://kingye.me/interview/docs/cloud/</link><description>Recent content in 7. 云计算 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/cloud/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker</title><link>https://kingye.me/interview/docs/cloud/docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/cloud/docker/</guid><description>&lt;h1 id="docker">
+ Docker
+ &lt;a class="anchor" href="#docker">#&lt;/a>
+&lt;/h1>
+&lt;p>更多内容见：&lt;a href="https://kingye.me/interview/study-kubernetes/docs/advanced/eco/docker/" target="_blank">Docker 学习笔记&lt;/a>&lt;/p>
+&lt;h2 id="entrypoint-vs-cmd">
+ &lt;code>entrypoint&lt;/code> vs &lt;code>cmd&lt;/code>
+ &lt;a class="anchor" href="#entrypoint-vs-cmd">#&lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>
+&lt;p>格式&lt;/p>
+&lt;ul>
+&lt;li>Shell form
+&lt;ul>
+&lt;li>实际运行的是 &lt;code>/bin/sh -c&lt;/code> 命令
+&lt;ul>
+&lt;li>有些镜像没有 shell 程序，无法使用这种方式&lt;/li>
+&lt;li>从外部发送任何 POSIX 信号到 docker 容器，&lt;code>/bin/sh&lt;/code> 命令不会转发消息给实际运行的命令&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>CMD executable param1 param2&lt;/code>&lt;/li>
+&lt;li>&lt;code>ENTRYPOINT executable param1 param2&lt;/code>
+&lt;ul>
+&lt;li>会忽略 CMD 或者 docker run 参数&lt;/li>
+&lt;li>无法覆盖&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Exec form
+&lt;ul>
+&lt;li>the JSON array format&lt;/li>
+&lt;li>&lt;code>CMD [&amp;quot;executable&amp;quot;,&amp;quot;param1&amp;quot;,&amp;quot;param2&amp;quot;]&lt;/code>
+&lt;ul>
+&lt;li>如果要使用 Shell 环境变量，必须显示使用 &lt;code>sh&lt;/code>&lt;/li>
+&lt;li>如 &lt;code>CMD [ &amp;quot;sh&amp;quot;, &amp;quot;-c&amp;quot;, &amp;quot;echo $HOME&amp;quot; ]&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>ENTRYPOINT [&amp;quot;executable&amp;quot;,&amp;quot;param1&amp;quot;,&amp;quot;param2&amp;quot;]&lt;/code>
+&lt;ul>
+&lt;li>会把 CMD 接到后面作为参数&lt;/li>
+&lt;li>docker run 可以覆盖：&lt;code>docker run demo --entrypoint cmd&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>不管是 ENTRYPOINT 还是 CMD 命令，都强烈建议采用 exec 表示法&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>覆盖&lt;/p></description></item><item><title>Kubernetes</title><link>https://kingye.me/interview/docs/cloud/kubernetes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/cloud/kubernetes/</guid><description>&lt;h1 id="kubernetes">
+ Kubernetes
+ &lt;a class="anchor" href="#kubernetes">#&lt;/a>
+&lt;/h1>
+&lt;p>更多内容见：&lt;a href="https://kingye.me/interview/study-kubernetes/" target="_blank">Kubernetes 学习笔记&lt;/a>&lt;/p>
+&lt;p>参考：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://www.qikqiak.com/post/k8s-api-resources-group-and-version/">Kubernetes API 资源使用 - 应该使用哪个 Group 和 Version?&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="端口">
+ 端口
+ &lt;a class="anchor" href="#%e7%ab%af%e5%8f%a3">#&lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>&lt;code>containerPort&lt;/code>：在容器上，用于被 pod 绑定，是可选的，仅仅是提示信息，容器中任何监听 &lt;code>0.0.0.0&lt;/code> 的端口，都会暴露出来
+&lt;ul>
+&lt;li>是可选的，仅仅是提示信息&lt;/li>
+&lt;li>容器中任何监听 &lt;code>0.0.0.0&lt;/code> 的端口，都会暴露出来&lt;/li>
+&lt;li>无法被更新
+&lt;img src="https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200918141459.png" alt="" />&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;code>targetPort&lt;/code>：在 pod 上，从 port 和 nodePort 上来的流量，经过 kube-proxy 流入到后端 pod 的 targetPort 上，最后进入容器
+&lt;ul>
+&lt;li>targetPort 和 containerPort 是一致的
+&lt;blockquote>
+&lt;p>targetPort and containerPort must be identical most of the time because whatever port is open for your application in a container that would be the same port you will wish to send traffic from service via targetPort.&lt;/p></description></item><item><title>Cloud Native</title><link>https://kingye.me/interview/docs/cloud/native/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/cloud/native/</guid><description>&lt;h1 id="cloud-native">
+ Cloud Native
+ &lt;a class="anchor" href="#cloud-native">#&lt;/a>
+&lt;/h1></description></item></channel></rss>

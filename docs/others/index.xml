@@ -1,32 +1,69 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>15. 其他 on 面试笔记</title>
-    <link>https://kingye.me/interview/docs/others/</link>
-    <description>Recent content in 15. 其他 on 面试笔记</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <atom:link href="https://kingye.me/interview/docs/others/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>字符编码</title>
-      <link>https://kingye.me/interview/docs/others/encode/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://kingye.me/interview/docs/others/encode/</guid>
-      <description>&lt;h1 id=&#34;字符编码&#34;&gt;&#xA;  字符编码&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#%e5%ad%97%e7%ac%a6%e7%bc%96%e7%a0%81&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;p&gt;有的字符在一些环境中是不能显示或使用的，&#xA;比如 &lt;code&gt;&amp;amp;&lt;/code&gt;, &lt;code&gt;=&lt;/code&gt; 等字符在 URL 被保留为特殊作用的字符；&#xA;比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类），&#xA;这时就需要对进行编码。&lt;/p&gt;&#xA;&lt;h2 id=&#34;各种编码的特征&#34;&gt;&#xA;  各种编码的特征&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#%e5%90%84%e7%a7%8d%e7%bc%96%e7%a0%81%e7%9a%84%e7%89%b9%e5%be%81&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Base 编码&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Base64&#xA;&lt;ul&gt;&#xA;&lt;li&gt;组成字符：&lt;code&gt;A-Z、a-z、0-9、+、/&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;末尾一般补 0-2 个 &lt;code&gt;=&lt;/code&gt;（可以不补 &lt;code&gt;=&lt;/code&gt;）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Base32&#xA;&lt;ul&gt;&#xA;&lt;li&gt;组成字符：&lt;code&gt;A-Z、2-7&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;末尾一般补 0-6 个 &lt;code&gt;=&lt;/code&gt;（可以不补 &lt;code&gt;=&lt;/code&gt;）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;Base16&#xA;&lt;ul&gt;&#xA;&lt;li&gt;组成字符：&lt;code&gt;0-9、A-F&lt;/code&gt;&lt;/li&gt;&#xA;&lt;li&gt;末尾没有 &lt;code&gt;=&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;base-编码&#34;&gt;&#xA;  Base 编码&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#base-%e7%bc%96%e7%a0%81&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;p&gt;参考：&lt;a href=&#34;https://www.rfc-editor.org/info/rfc4648&#34;&gt;rfc4648&lt;/a&gt;&lt;/p&gt;&#xA;&lt;p&gt;Base 系列的就是用来将&lt;strong&gt;字节&lt;/strong&gt;编码为 ASCII 中的&lt;strong&gt;可见字符&lt;/strong&gt;的。&lt;/p&gt;&#xA;&lt;p&gt;在 URL 中使用时必须去掉 “&lt;code&gt;=&lt;/code&gt;” 符号&lt;/p&gt;&#xA;&lt;h3 id=&#34;base64&#34;&gt;&#xA;  Base64&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#base64&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;Base64 编码是使用 64 个可打印 ASCII 字符（&lt;code&gt;A-Z、a-z、0-9、+、/&lt;/code&gt;）将任意字节序列数据编码成 ASCII 字符串，另有 “&lt;code&gt;=&lt;/code&gt;” 符号用作后缀用途。&lt;/p&gt;&#xA;&lt;p&gt;Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0），&#xA;然后将这些二进制数值串联起来，再按照 6 比特一组进行切分（因为 &lt;code&gt;2^6=64&lt;/code&gt;），&lt;strong&gt;最后一组若不足 6 比特则末尾补 0&lt;/strong&gt;。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>加密</title>
-      <link>https://kingye.me/interview/docs/others/encryption/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://kingye.me/interview/docs/others/encryption/</guid>
-      <description>&lt;h1 id=&#34;加密&#34;&gt;&#xA;  加密&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#%e5%8a%a0%e5%af%86&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;&#xA;&lt;h2 id=&#34;ssltls&#34;&gt;&#xA;  SSL/TLS&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#ssltls&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h2&gt;&#xA;&lt;h3 id=&#34;tls-握手流程是什么样的&#34;&gt;&#xA;  TLS 握手流程是什么样的？&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#tls-%e6%8f%a1%e6%89%8b%e6%b5%81%e7%a8%8b%e6%98%af%e4%bb%80%e4%b9%88%e6%a0%b7%e7%9a%84&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;参考：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;https://blog.wangriyu.wang/2018/03-http-tls.html&#34;&gt;SSL/TLS 详解&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title>编译</title>
-      <link>https://kingye.me/interview/docs/others/compile/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://kingye.me/interview/docs/others/compile/</guid>
-      <description>&lt;h1 id=&#34;编译&#34;&gt;&#xA;  编译&#xA;  &lt;a class=&#34;anchor&#34; href=&#34;#%e7%bc%96%e8%af%91&#34;&gt;#&lt;/a&gt;&#xA;&lt;/h1&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>15. 其他 on 面试笔记</title><link>https://kingye.me/interview/docs/others/</link><description>Recent content in 15. 其他 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/others/index.xml" rel="self" type="application/rss+xml"/><item><title>字符编码</title><link>https://kingye.me/interview/docs/others/encode/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/others/encode/</guid><description>&lt;h1 id="字符编码">
+ 字符编码
+ &lt;a class="anchor" href="#%e5%ad%97%e7%ac%a6%e7%bc%96%e7%a0%81">#&lt;/a>
+&lt;/h1>
+&lt;p>有的字符在一些环境中是不能显示或使用的，
+比如 &lt;code>&amp;amp;&lt;/code>, &lt;code>=&lt;/code> 等字符在 URL 被保留为特殊作用的字符；
+比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类），
+这时就需要对进行编码。&lt;/p>
+&lt;h2 id="各种编码的特征">
+ 各种编码的特征
+ &lt;a class="anchor" href="#%e5%90%84%e7%a7%8d%e7%bc%96%e7%a0%81%e7%9a%84%e7%89%b9%e5%be%81">#&lt;/a>
+&lt;/h2>
+&lt;ul>
+&lt;li>Base 编码
+&lt;ul>
+&lt;li>Base64
+&lt;ul>
+&lt;li>组成字符：&lt;code>A-Z、a-z、0-9、+、/&lt;/code>&lt;/li>
+&lt;li>末尾一般补 0-2 个 &lt;code>=&lt;/code>（可以不补 &lt;code>=&lt;/code>）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Base32
+&lt;ul>
+&lt;li>组成字符：&lt;code>A-Z、2-7&lt;/code>&lt;/li>
+&lt;li>末尾一般补 0-6 个 &lt;code>=&lt;/code>（可以不补 &lt;code>=&lt;/code>）&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Base16
+&lt;ul>
+&lt;li>组成字符：&lt;code>0-9、A-F&lt;/code>&lt;/li>
+&lt;li>末尾没有 &lt;code>=&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;h2 id="base-编码">
+ Base 编码
+ &lt;a class="anchor" href="#base-%e7%bc%96%e7%a0%81">#&lt;/a>
+&lt;/h2>
+&lt;p>参考：&lt;a href="https://www.rfc-editor.org/info/rfc4648">rfc4648&lt;/a>&lt;/p>
+&lt;p>Base 系列的就是用来将&lt;strong>字节&lt;/strong>编码为 ASCII 中的&lt;strong>可见字符&lt;/strong>的。&lt;/p>
+&lt;p>在 URL 中使用时必须去掉 “&lt;code>=&lt;/code>” 符号&lt;/p>
+&lt;h3 id="base64">
+ Base64
+ &lt;a class="anchor" href="#base64">#&lt;/a>
+&lt;/h3>
+&lt;p>Base64 编码是使用 64 个可打印 ASCII 字符（&lt;code>A-Z、a-z、0-9、+、/&lt;/code>）将任意字节序列数据编码成 ASCII 字符串，另有 “&lt;code>=&lt;/code>” 符号用作后缀用途。&lt;/p>
+&lt;p>Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0），
+然后将这些二进制数值串联起来，再按照 6 比特一组进行切分（因为 &lt;code>2^6=64&lt;/code>），&lt;strong>最后一组若不足 6 比特则末尾补 0&lt;/strong>。&lt;/p></description></item><item><title>加密</title><link>https://kingye.me/interview/docs/others/encryption/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/others/encryption/</guid><description>&lt;h1 id="加密">
+ 加密
+ &lt;a class="anchor" href="#%e5%8a%a0%e5%af%86">#&lt;/a>
+&lt;/h1>
+&lt;h2 id="ssltls">
+ SSL/TLS
+ &lt;a class="anchor" href="#ssltls">#&lt;/a>
+&lt;/h2>
+&lt;h3 id="tls-握手流程是什么样的">
+ TLS 握手流程是什么样的？
+ &lt;a class="anchor" href="#tls-%e6%8f%a1%e6%89%8b%e6%b5%81%e7%a8%8b%e6%98%af%e4%bb%80%e4%b9%88%e6%a0%b7%e7%9a%84">#&lt;/a>
+&lt;/h3>
+&lt;p>参考：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://blog.wangriyu.wang/2018/03-http-tls.html">SSL/TLS 详解&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>编译</title><link>https://kingye.me/interview/docs/others/compile/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/others/compile/</guid><description>&lt;h1 id="编译">
+ 编译
+ &lt;a class="anchor" href="#%e7%bc%96%e8%af%91">#&lt;/a>
+&lt;/h1></description></item></channel></rss>
