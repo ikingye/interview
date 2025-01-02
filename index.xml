@@ -59,7 +59,7 @@
  Docker
  &lt;a class="anchor" href="#docker">#&lt;/a>
 &lt;/h1>
-&lt;p>更多内容见：&lt;a href="https://kingye.me/interview/study-kubernetes/docs/advanced/eco/docker/" target="_blank">Docker 学习笔记&lt;/a>&lt;/p>
+&lt;p>详见：&lt;a href="https://kingye.me/interview/study-kubernetes/docs/advanced/eco/docker/" target="_blank">Docker 学习笔记&lt;/a>&lt;/p>
 &lt;h2 id="entrypoint-vs-cmd">
  &lt;code>entrypoint&lt;/code> vs &lt;code>cmd&lt;/code>
  &lt;a class="anchor" href="#entrypoint-vs-cmd">#&lt;/a>
@@ -816,7 +816,7 @@
  Kubernetes
  &lt;a class="anchor" href="#kubernetes">#&lt;/a>
 &lt;/h1>
-&lt;p>更多内容见：&lt;a href="https://kingye.me/interview/study-kubernetes/" target="_blank">Kubernetes 学习笔记&lt;/a>&lt;/p>
+&lt;p>详见：&lt;a href="https://kingye.me/interview/study-kubernetes/" target="_blank">Kubernetes 学习笔记&lt;/a>&lt;/p>
 &lt;p>参考：&lt;/p>
 &lt;ul>
 &lt;li>&lt;a href="https://www.qikqiak.com/post/k8s-api-resources-group-and-version/">Kubernetes API 资源使用 - 应该使用哪个 Group 和 Version?&lt;/a>&lt;/li>
