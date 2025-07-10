@@ -55,23 +55,40 @@
 &lt;/ul>
 &lt;/li>
 &lt;/ul>
+&lt;div class="book-tabs">
 
 
+&lt;input type="radio" class="toggle" name="tabs-graceful exit" id="tabs-graceful exit-0" checked="checked" />
+&lt;label for="tabs-graceful exit-0">Go&lt;/label>
+&lt;div class="book-tabs-content markdown-inner">
+
+```go
+sigs := make(chan os.Signal, 1)
+signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
+
+fmt.Println("awaiting signal")
+&lt;-sigs
+fmt.Println("exiting")
+```
+
+&lt;/div>
 
 
-&lt;div class="book-tabs">&lt;input type="radio" class="toggle" name="tabs-graceful exit" id="tabs-graceful exit-0" checked="checked" />
- &lt;label for="tabs-graceful exit-0">Go&lt;/label>
- &lt;div class="book-tabs-content markdown-inner">&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-go" data-lang="go">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">sigs&lt;/span> &lt;span style="color:#f92672">:=&lt;/span> make(&lt;span style="color:#66d9ef">chan&lt;/span> &lt;span style="color:#a6e22e">os&lt;/span>.&lt;span style="color:#a6e22e">Signal&lt;/span>, &lt;span style="color:#ae81ff">1&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">signal&lt;/span>.&lt;span style="color:#a6e22e">Notify&lt;/span>(&lt;span style="color:#a6e22e">sigs&lt;/span>, &lt;span style="color:#a6e22e">syscall&lt;/span>.&lt;span style="color:#a6e22e">SIGINT&lt;/span>, &lt;span style="color:#a6e22e">syscall&lt;/span>.&lt;span style="color:#a6e22e">SIGTERM&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;awaiting signal&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">&amp;lt;-&lt;/span>&lt;span style="color:#a6e22e">sigs&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#a6e22e">fmt&lt;/span>.&lt;span style="color:#a6e22e">Println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;exiting&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>&lt;input type="radio" class="toggle" name="tabs-graceful exit" id="tabs-graceful exit-1" />
- &lt;label for="tabs-graceful exit-1">Java&lt;/label>
- &lt;div class="book-tabs-content markdown-inner">&lt;/div>&lt;input type="radio" class="toggle" name="tabs-graceful exit" id="tabs-graceful exit-2" />
- &lt;label for="tabs-graceful exit-2">Python&lt;/label>
- &lt;div class="book-tabs-content markdown-inner">&lt;/div>&lt;/div>
+&lt;input type="radio" class="toggle" name="tabs-graceful exit" id="tabs-graceful exit-1" />
+&lt;label for="tabs-graceful exit-1">Java&lt;/label>
+&lt;div class="book-tabs-content markdown-inner">
+
+&lt;/div>
+
+
+&lt;input type="radio" class="toggle" name="tabs-graceful exit" id="tabs-graceful exit-2" />
+&lt;label for="tabs-graceful exit-2">Python&lt;/label>
+&lt;div class="book-tabs-content markdown-inner">
+
+&lt;/div>
+
+
+&lt;/div>
 
 &lt;hr>
 &lt;h2 id="如何实现热重启的">
@@ -84,14 +101,34 @@
 &lt;li>启动一个新的服务端&lt;strong>进程&lt;/strong>来接管新的连接&lt;/li>
 &lt;li>关闭当前&lt;strong>进程&lt;/strong>&lt;/li>
 &lt;/ol>
+&lt;div class="book-tabs">
 
 
+&lt;input type="radio" class="toggle" name="tabs-graceful restart" id="tabs-graceful restart-0" checked="checked" />
+&lt;label for="tabs-graceful restart-0">Go&lt;/label>
+&lt;div class="book-tabs-content markdown-inner">
+
+### Go 程序优雅关闭与重启
+
+参考：
+
+- [gracehttp: 优雅重启 Go 程序（热启动 - Zero Downtime）](https://segmentfault.com/a/1190000015232528)
+
+&lt;/div>
 
 
-&lt;div class="book-tabs">&lt;input type="radio" class="toggle" name="tabs-graceful restart" id="tabs-graceful restart-0" checked="checked" />
- &lt;label for="tabs-graceful restart-0">Go&lt;/label>
- &lt;div class="book-tabs-content markdown-inner">&lt;h3 id="go-程序优雅关闭与重启">
- Go 程序优雅关闭与重启
- &lt;a class="anchor" href="#go-%e7%a8%8b%e5%ba%8f%e4%bc%98%e9%9b%85%e5%85%b3%e9%97%ad%e4%b8%8e%e9%87%8d%e5%90%af">#&lt;/a>
-&lt;/h3>
-&lt;p>参考：&lt;/p></description></item></channel></rss>
+&lt;input type="radio" class="toggle" name="tabs-graceful restart" id="tabs-graceful restart-1" />
+&lt;label for="tabs-graceful restart-1">Java&lt;/label>
+&lt;div class="book-tabs-content markdown-inner">
+
+&lt;/div>
+
+
+&lt;input type="radio" class="toggle" name="tabs-graceful restart" id="tabs-graceful restart-2" />
+&lt;label for="tabs-graceful restart-2">Python&lt;/label>
+&lt;div class="book-tabs-content markdown-inner">
+
+&lt;/div>
+
+
+&lt;/div></description></item></channel></rss>

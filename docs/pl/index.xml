@@ -3,7 +3,11 @@
  &lt;a class="anchor" href="#c">#&lt;/a>
 &lt;/h1>
 &lt;blockquote class="book-hint info">
- 更多教程详见：&lt;a href="https://kingye.me/study-c/">C 学习笔记&lt;/a>
+ 
+
+更多教程详见：[C 学习笔记](https://kingye.me/study-c/)
+
+
 &lt;/blockquote>
 
 &lt;h2 id="基础">
@@ -26,11 +30,14 @@
  &lt;a class="anchor" href="#c">#&lt;/a>
 &lt;/h1>
 &lt;blockquote class="book-hint info">
- &lt;p>更多教程详见：&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://kingye.me/study-cpp/">C++ 学习笔记&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/huihut/interview">huihut/interview&lt;/a> &lt;img src="https://img.shields.io/github/stars/huihut/interview.svg" alt="Github stars" /> &lt;img src="https://img.shields.io/github/languages/top/huihut/interview.svg" alt="Language" /> &lt;img src="https://img.shields.io/github/v/tag/huihut/interview.svg?sort=semver" alt="Last Tag" /> &lt;img src="https://img.shields.io/github/last-commit/huihut/interview.svg" alt="Last commit" />&lt;/li>
-&lt;/ul>
+ 
+
+更多教程详见：
+
+- [C++ 学习笔记](https://kingye.me/study-cpp/)
+- [huihut/interview](https://github.com/huihut/interview) ![Github stars](https://img.shields.io/github/stars/huihut/interview.svg) ![Language](https://img.shields.io/github/languages/top/huihut/interview.svg) ![Last Tag](https://img.shields.io/github/v/tag/huihut/interview.svg?sort=semver) ![Last commit](https://img.shields.io/github/last-commit/huihut/interview.svg)
+
+
 &lt;/blockquote>
 
 &lt;h2 id="基础">
@@ -53,12 +60,15 @@
  &lt;a class="anchor" href="#go">#&lt;/a>
 &lt;/h1>
 &lt;blockquote class="book-hint info">
- &lt;p>更多教程详见：&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://kingye.me/study-go/">Go 学习笔记&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/shgopher/GOFamily">shgopher/GOFamily&lt;/a> &lt;img src="https://img.shields.io/github/stars/shgopher/GOFamily.svg" alt="Github stars" /> &lt;img src="https://img.shields.io/github/languages/top/shgopher/GOFamily.svg" alt="Language" /> &lt;img src="https://img.shields.io/github/v/tag/shgopher/GOFamily.svg?sort=semver" alt="Last Tag" /> &lt;img src="https://img.shields.io/github/last-commit/shgopher/GOFamily.svg" alt="Last commit" />&lt;/li>
-&lt;li>&lt;a href="https://github.com/geektutu/interview-questions">geektutu/interview-questions&lt;/a> &lt;img src="https://img.shields.io/github/stars/geektutu/interview-questions.svg" alt="Github stars" /> &lt;img src="https://img.shields.io/github/languages/top/geektutu/interview-questions.svg" alt="Language" /> &lt;img src="https://img.shields.io/github/v/tag/geektutu/interview-questions.svg?sort=semver" alt="Last Tag" /> &lt;img src="https://img.shields.io/github/last-commit/geektutu/interview-questions.svg" alt="Last commit" />&lt;/li>
-&lt;/ul>
+ 
+
+更多教程详见：
+
+- [Go 学习笔记](https://kingye.me/study-go/)
+- [shgopher/GOFamily](https://github.com/shgopher/GOFamily) ![Github stars](https://img.shields.io/github/stars/shgopher/GOFamily.svg) ![Language](https://img.shields.io/github/languages/top/shgopher/GOFamily.svg) ![Last Tag](https://img.shields.io/github/v/tag/shgopher/GOFamily.svg?sort=semver) ![Last commit](https://img.shields.io/github/last-commit/shgopher/GOFamily.svg)
+- [geektutu/interview-questions](https://github.com/geektutu/interview-questions) ![Github stars](https://img.shields.io/github/stars/geektutu/interview-questions.svg) ![Language](https://img.shields.io/github/languages/top/geektutu/interview-questions.svg) ![Last Tag](https://img.shields.io/github/v/tag/geektutu/interview-questions.svg?sort=semver) ![Last commit](https://img.shields.io/github/last-commit/geektutu/interview-questions.svg)
+
+
 &lt;/blockquote>
 
 &lt;h2 id="基础">
@@ -90,11 +100,14 @@
  &lt;a class="anchor" href="#java">#&lt;/a>
 &lt;/h1>
 &lt;blockquote class="book-hint info">
- &lt;p>更多教程详见：&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://kingye.me/study-java/">Java 学习笔记&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/Snailclimb/JavaGuide">Snailclimb/JavaGuide&lt;/a> &lt;img src="https://img.shields.io/github/stars/Snailclimb/JavaGuide.svg" alt="Github stars" /> &lt;img src="https://img.shields.io/github/languages/top/Snailclimb/JavaGuide.svg" alt="Language" /> &lt;img src="https://img.shields.io/github/v/tag/Snailclimb/JavaGuide.svg?sort=semver" alt="Last Tag" /> &lt;img src="https://img.shields.io/github/last-commit/Snailclimb/JavaGuide.svg" alt="Last commit" />&lt;/li>
-&lt;/ul>
+ 
+
+更多教程详见：
+- [Java 学习笔记](https://kingye.me/study-java/)
+- [Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide) ![Github stars](https://img.shields.io/github/stars/Snailclimb/JavaGuide.svg) ![Language](https://img.shields.io/github/languages/top/Snailclimb/JavaGuide.svg) ![Last Tag](https://img.shields.io/github/v/tag/Snailclimb/JavaGuide.svg?sort=semver) ![Last commit](https://img.shields.io/github/last-commit/Snailclimb/JavaGuide.svg)
+
+
+
 &lt;/blockquote>
 
 &lt;h2 id="基础">
@@ -117,7 +130,11 @@
  &lt;a class="anchor" href="#javascript">#&lt;/a>
 &lt;/h1>
 &lt;blockquote class="book-hint info">
- 更多教程详见：&lt;a href="https://kingye.me/study-javascript/">JavaScript 学习笔记&lt;/a>
+ 
+
+更多教程详见：[JavaScript 学习笔记](https://kingye.me/study-javascript/)
+
+
 &lt;/blockquote>
 
 &lt;h2 id="基础">
@@ -140,7 +157,11 @@
  &lt;a class="anchor" href="#kotlin">#&lt;/a>
 &lt;/h1>
 &lt;blockquote class="book-hint info">
- 更多教程详见：&lt;a href="https://kingye.me/study-kotlin/">Kotlin 学习笔记&lt;/a>
+ 
+
+更多教程详见：[Kotlin 学习笔记](https://kingye.me/study-kotlin/)
+
+
 &lt;/blockquote>
 
 &lt;h2 id="基础">
@@ -163,11 +184,14 @@
  &lt;a class="anchor" href="#php">#&lt;/a>
 &lt;/h1>
 &lt;blockquote class="book-hint info">
- &lt;p>更多教程详见：&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://kingye.me/study-php/">PHP 学习笔记&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/colinlet/PHP-Interview-QA">colinlet/PHP-Interview-QA&lt;/a> &lt;img src="https://img.shields.io/github/stars/colinlet/PHP-Interview-QA.svg" alt="Github stars" /> &lt;img src="https://img.shields.io/github/languages/top/colinlet/PHP-Interview-QA.svg" alt="Language" /> &lt;img src="https://img.shields.io/github/v/tag/colinlet/PHP-Interview-QA.svg?sort=semver" alt="Last Tag" /> &lt;img src="https://img.shields.io/github/last-commit/colinlet/PHP-Interview-QA.svg" alt="Last commit" />&lt;/li>
-&lt;/ul>
+ 
+
+更多教程详见：
+
+- [PHP 学习笔记](https://kingye.me/study-php/)
+- [colinlet/PHP-Interview-QA](https://github.com/colinlet/PHP-Interview-QA) ![Github stars](https://img.shields.io/github/stars/colinlet/PHP-Interview-QA.svg) ![Language](https://img.shields.io/github/languages/top/colinlet/PHP-Interview-QA.svg) ![Last Tag](https://img.shields.io/github/v/tag/colinlet/PHP-Interview-QA.svg?sort=semver) ![Last commit](https://img.shields.io/github/last-commit/colinlet/PHP-Interview-QA.svg)
+
+
 &lt;/blockquote>
 
 &lt;h2 id="基础">
@@ -190,12 +214,15 @@
  &lt;a class="anchor" href="#python">#&lt;/a>
 &lt;/h1>
 &lt;blockquote class="book-hint info">
- &lt;p>更多教程详见：&lt;/p>
-&lt;ul>
-&lt;li>&lt;a href="https://kingye.me/study-python/">Python 学习笔记&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://github.com/taizilongxu/interview_python">taizilongxu/interview_python&lt;/a> &lt;img src="https://img.shields.io/github/stars/taizilongxu/interview_python.svg" alt="Github stars" /> &lt;img src="https://img.shields.io/github/languages/top/taizilongxu/interview_python.svg" alt="Language" /> &lt;img src="https://img.shields.io/github/v/tag/taizilongxu/interview_python.svg?sort=semver" alt="Last Tag" /> &lt;img src="https://img.shields.io/github/last-commit/taizilongxu/interview_python.svg" alt="Last commit" />&lt;/li>
-&lt;li>&lt;a href="https://github.com/kenwoodjw/python_interview_question">kenwoodjw/python_interview_question&lt;/a> &lt;img src="https://img.shields.io/github/stars/kenwoodjw/python_interview_question.svg" alt="Github stars" /> &lt;img src="https://img.shields.io/github/languages/top/kenwoodjw/python_interview_question.svg" alt="Language" /> &lt;img src="https://img.shields.io/github/v/tag/kenwoodjw/python_interview_question.svg?sort=semver" alt="Last Tag" /> &lt;img src="https://img.shields.io/github/last-commit/kenwoodjw/python_interview_question.svg" alt="Last commit" />&lt;/li>
-&lt;/ul>
+ 
+
+更多教程详见：
+
+- [Python 学习笔记](https://kingye.me/study-python/)
+- [taizilongxu/interview_python](https://github.com/taizilongxu/interview_python) ![Github stars](https://img.shields.io/github/stars/taizilongxu/interview_python.svg) ![Language](https://img.shields.io/github/languages/top/taizilongxu/interview_python.svg) ![Last Tag](https://img.shields.io/github/v/tag/taizilongxu/interview_python.svg?sort=semver) ![Last commit](https://img.shields.io/github/last-commit/taizilongxu/interview_python.svg)
+- [kenwoodjw/python_interview_question](https://github.com/kenwoodjw/python_interview_question) ![Github stars](https://img.shields.io/github/stars/kenwoodjw/python_interview_question.svg) ![Language](https://img.shields.io/github/languages/top/kenwoodjw/python_interview_question.svg) ![Last Tag](https://img.shields.io/github/v/tag/kenwoodjw/python_interview_question.svg?sort=semver) ![Last commit](https://img.shields.io/github/last-commit/kenwoodjw/python_interview_question.svg)
+
+
 &lt;/blockquote>
 
 &lt;h2 id="基础">
@@ -218,7 +245,11 @@
  &lt;a class="anchor" href="#rust">#&lt;/a>
 &lt;/h1>
 &lt;blockquote class="book-hint info">
- 更多教程详见：&lt;a href="https://kingye.me/study-rust/">Rust 学习笔记&lt;/a>
+ 
+
+更多教程详见：[Rust 学习笔记](https://kingye.me/study-rust/)
+
+
 &lt;/blockquote>
 
 &lt;h2 id="基础">
