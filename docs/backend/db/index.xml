@@ -1,157 +1,183 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>数据库 on 面试笔记</title><link>https://kingye.me/interview/docs/backend/db/</link><description>Recent content in 数据库 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/backend/db/index.xml" rel="self" type="application/rss+xml"/><item><title>Mysql</title><link>https://kingye.me/interview/docs/backend/db/mysql/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/backend/db/mysql/</guid><description>&lt;h1 id="mysql">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>数据库 on 面试笔记</title><link>https://kingye.me/interview/docs/backend/db/</link><description>Recent content in 数据库 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/backend/db/index.xml" rel="self" type="application/rss+xml"/><item><title>Mysql</title><link>https://kingye.me/interview/docs/backend/db/mysql/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/backend/db/mysql/</guid><description>&lt;h1 id="mysql"&gt;
  Mysql
- &lt;a class="anchor" href="#mysql">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="mysql-有哪些引擎分别有什么特点">
+ 
+ &lt;a class="anchor" href="#mysql"&gt;#&lt;/a&gt;
+ 
+&lt;/h1&gt;
+&lt;h2 id="mysql-有哪些引擎分别有什么特点"&gt;
  Mysql 有哪些引擎，分别有什么特点？
- &lt;a class="anchor" href="#mysql-%e6%9c%89%e5%93%aa%e4%ba%9b%e5%bc%95%e6%93%8e%e5%88%86%e5%88%ab%e6%9c%89%e4%bb%80%e4%b9%88%e7%89%b9%e7%82%b9">#&lt;/a>
-&lt;/h2>
-&lt;hr>
-&lt;h2 id="mysql-配置文件在哪里">
+ 
+ &lt;a class="anchor" href="#mysql-%e6%9c%89%e5%93%aa%e4%ba%9b%e5%bc%95%e6%93%8e%e5%88%86%e5%88%ab%e6%9c%89%e4%bb%80%e4%b9%88%e7%89%b9%e7%82%b9"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2 id="mysql-配置文件在哪里"&gt;
  Mysql 配置文件在哪里？
- &lt;a class="anchor" href="#mysql-%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e5%9c%a8%e5%93%aa%e9%87%8c">#&lt;/a>
-&lt;/h2>
-&lt;hr>
-&lt;h2 id="mysql-索引是怎么实现的">
+ 
+ &lt;a class="anchor" href="#mysql-%e9%85%8d%e7%bd%ae%e6%96%87%e4%bb%b6%e5%9c%a8%e5%93%aa%e9%87%8c"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2 id="mysql-索引是怎么实现的"&gt;
  Mysql 索引是怎么实现的？
- &lt;a class="anchor" href="#mysql-%e7%b4%a2%e5%bc%95%e6%98%af%e6%80%8e%e4%b9%88%e5%ae%9e%e7%8e%b0%e7%9a%84">#&lt;/a>
-&lt;/h2>
-&lt;hr>
-&lt;h2 id="mysql-事务是怎么实现的">
+ 
+ &lt;a class="anchor" href="#mysql-%e7%b4%a2%e5%bc%95%e6%98%af%e6%80%8e%e4%b9%88%e5%ae%9e%e7%8e%b0%e7%9a%84"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2 id="mysql-事务是怎么实现的"&gt;
  Mysql 事务是怎么实现的？
- &lt;a class="anchor" href="#mysql-%e4%ba%8b%e5%8a%a1%e6%98%af%e6%80%8e%e4%b9%88%e5%ae%9e%e7%8e%b0%e7%9a%84">#&lt;/a>
-&lt;/h2>
-&lt;p>begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-sql" data-lang="sql">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">begin&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">select&lt;/span> &lt;span style="color:#f92672">*&lt;/span> &lt;span style="color:#66d9ef">from&lt;/span> xxx;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">commit&lt;/span>; &lt;span style="color:#75715e">-- 或者 rollback;
-&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="mysql-事务隔离级别有哪些">
+ 
+ &lt;a class="anchor" href="#mysql-%e4%ba%8b%e5%8a%a1%e6%98%af%e6%80%8e%e4%b9%88%e5%ae%9e%e7%8e%b0%e7%9a%84"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;begin 命令并不代表事务的开始，事务开始于 begin 命令之后的第一条语句执行的时候。&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-sql" data-lang="sql"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;begin&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;select&lt;/span&gt; &lt;span style="color:#f92672"&gt;*&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;from&lt;/span&gt; xxx;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;commit&lt;/span&gt;; &lt;span style="color:#75715e"&gt;-- 或者 rollback;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="mysql-事务隔离级别有哪些"&gt;
  Mysql 事务隔离级别有哪些？
- &lt;a class="anchor" href="#mysql-%e4%ba%8b%e5%8a%a1%e9%9a%94%e7%a6%bb%e7%ba%a7%e5%88%ab%e6%9c%89%e5%93%aa%e4%ba%9b">#&lt;/a>
-&lt;/h2>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th>隔离级别&lt;/th>
- &lt;th>脏读&lt;/th>
- &lt;th>不可重复读&lt;/th>
- &lt;th>幻读&lt;/th>
- &lt;th>锁&lt;/th>
- &lt;th>备注&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td>读未提交（&lt;code>READ UNCOMMITTED&lt;/code>）&lt;/td>
- &lt;td>√&lt;/td>
- &lt;td>√&lt;/td>
- &lt;td>√&lt;/td>
- &lt;td>不加锁&lt;/td>
- &lt;td>&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>读提交 （&lt;code>READ COMMITTED&lt;/code>）&lt;/td>
- &lt;td>×&lt;/td>
- &lt;td>√&lt;/td>
- &lt;td>√&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>Oracle 默认&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>可重复读 （&lt;code>REPEATABLE READ&lt;/code>）&lt;/td>
- &lt;td>×&lt;/td>
- &lt;td>×&lt;/td>
- &lt;td>√&lt;/td>
- &lt;td>&lt;/td>
- &lt;td>Mysql 默认&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td>串行化 （&lt;code>SERIALIZABLE&lt;/code>）&lt;/td>
- &lt;td>×&lt;/td>
- &lt;td>×&lt;/td>
- &lt;td>×&lt;/td>
- &lt;td>共享锁&lt;/td>
- &lt;td>相当于单线程&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
-&lt;ul>
-&lt;li>可重复读
-&lt;ul>
-&lt;li>事务开始时读到的已有数据是什么，在事务提交前的任意时刻，这些数据的值都是一样的。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;p>设置隔离级别&lt;/p></description></item><item><title>Redis</title><link>https://kingye.me/interview/docs/backend/db/redis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/backend/db/redis/</guid><description>&lt;h1 id="redis">
+ 
+ &lt;a class="anchor" href="#mysql-%e4%ba%8b%e5%8a%a1%e9%9a%94%e7%a6%bb%e7%ba%a7%e5%88%ab%e6%9c%89%e5%93%aa%e4%ba%9b"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;隔离级别&lt;/th&gt;
+ &lt;th&gt;脏读&lt;/th&gt;
+ &lt;th&gt;不可重复读&lt;/th&gt;
+ &lt;th&gt;幻读&lt;/th&gt;
+ &lt;th&gt;锁&lt;/th&gt;
+ &lt;th&gt;备注&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;读未提交（&lt;code&gt;READ UNCOMMITTED&lt;/code&gt;）&lt;/td&gt;
+ &lt;td&gt;√&lt;/td&gt;
+ &lt;td&gt;√&lt;/td&gt;
+ &lt;td&gt;√&lt;/td&gt;
+ &lt;td&gt;不加锁&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;读提交 （&lt;code&gt;READ COMMITTED&lt;/code&gt;）&lt;/td&gt;
+ &lt;td&gt;×&lt;/td&gt;
+ &lt;td&gt;√&lt;/td&gt;
+ &lt;td&gt;√&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;Oracle 默认&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;可重复读 （&lt;code&gt;REPEATABLE READ&lt;/code&gt;）&lt;/td&gt;
+ &lt;td&gt;×&lt;/td&gt;
+ &lt;td&gt;×&lt;/td&gt;
+ &lt;td&gt;√&lt;/td&gt;
+ &lt;td&gt;&lt;/td&gt;
+ &lt;td&gt;Mysql 默认&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;串行化 （&lt;code&gt;SERIALIZABLE&lt;/code&gt;）&lt;/td&gt;
+ &lt;td&gt;×&lt;/td&gt;
+ &lt;td&gt;×&lt;/td&gt;
+ &lt;td&gt;×&lt;/td&gt;
+ &lt;td&gt;共享锁&lt;/td&gt;
+ &lt;td&gt;相当于单线程&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;可重复读
+&lt;ul&gt;
+&lt;li&gt;事务开始时读到的已有数据是什么，在事务提交前的任意时刻，这些数据的值都是一样的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;设置隔离级别&lt;/p&gt;</description></item><item><title>Redis</title><link>https://kingye.me/interview/docs/backend/db/redis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/backend/db/redis/</guid><description>&lt;h1 id="redis"&gt;
  Redis
- &lt;a class="anchor" href="#redis">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="redis-有哪些数据结构分别适用什么场景">
+ 
+ &lt;a class="anchor" href="#redis"&gt;#&lt;/a&gt;
+ 
+&lt;/h1&gt;
+&lt;h2 id="redis-有哪些数据结构分别适用什么场景"&gt;
  Redis 有哪些数据结构，分别适用什么场景？
- &lt;a class="anchor" href="#redis-%e6%9c%89%e5%93%aa%e4%ba%9b%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e5%88%86%e5%88%ab%e9%80%82%e7%94%a8%e4%bb%80%e4%b9%88%e5%9c%ba%e6%99%af">#&lt;/a>
-&lt;/h2>
-&lt;hr>
-&lt;h2 id="redis-数据结构是如何实现的">
+ 
+ &lt;a class="anchor" href="#redis-%e6%9c%89%e5%93%aa%e4%ba%9b%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e5%88%86%e5%88%ab%e9%80%82%e7%94%a8%e4%bb%80%e4%b9%88%e5%9c%ba%e6%99%af"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2 id="redis-数据结构是如何实现的"&gt;
  Redis 数据结构是如何实现的？
- &lt;a class="anchor" href="#redis-%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e6%98%af%e5%a6%82%e4%bd%95%e5%ae%9e%e7%8e%b0%e7%9a%84">#&lt;/a>
-&lt;/h2>
-&lt;hr>
-&lt;h2 id="redis-如何做持久化">
+ 
+ &lt;a class="anchor" href="#redis-%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84%e6%98%af%e5%a6%82%e4%bd%95%e5%ae%9e%e7%8e%b0%e7%9a%84"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2 id="redis-如何做持久化"&gt;
  Redis 如何做持久化？
- &lt;a class="anchor" href="#redis-%e5%a6%82%e4%bd%95%e5%81%9a%e6%8c%81%e4%b9%85%e5%8c%96">#&lt;/a>
-&lt;/h2>
-&lt;h3 id="rdb">
+ 
+ &lt;a class="anchor" href="#redis-%e5%a6%82%e4%bd%95%e5%81%9a%e6%8c%81%e4%b9%85%e5%8c%96"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;h3 id="rdb"&gt;
  RDB
- &lt;a class="anchor" href="#rdb">#&lt;/a>
-&lt;/h3>
-&lt;p>在指定的时间间隔能对你的数据进行快照存储&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 时间策略&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>save &lt;span style="color:#ae81ff">900&lt;/span> &lt;span style="color:#ae81ff">1&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>save &lt;span style="color:#ae81ff">300&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>save &lt;span style="color:#ae81ff">60&lt;/span> &lt;span style="color:#ae81ff">10000&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 文件名称&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dbfilename dump.rdb
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 文件保存路径&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>dir /home/work/app/redis/data/
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 如果持久化出错，主进程是否停止写入&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>stop-writes-on-bgsave-error yes
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 是否压缩&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rdbcompression yes
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 导入时是否检查&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>rdbchecksum yes
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="aof">
+ 
+ &lt;a class="anchor" href="#rdb"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;在指定的时间间隔能对你的数据进行快照存储&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 时间策略&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;save &lt;span style="color:#ae81ff"&gt;900&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;save &lt;span style="color:#ae81ff"&gt;300&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;save &lt;span style="color:#ae81ff"&gt;60&lt;/span&gt; &lt;span style="color:#ae81ff"&gt;10000&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 文件名称&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dbfilename dump.rdb
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 文件保存路径&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;dir /home/work/app/redis/data/
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 如果持久化出错，主进程是否停止写入&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;stop-writes-on-bgsave-error yes
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 是否压缩&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;rdbcompression yes
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 导入时是否检查&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;rdbchecksum yes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="aof"&gt;
  AOF
- &lt;a class="anchor" href="#aof">#&lt;/a>
-&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 是否开启aof&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>appendonly yes
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 文件名称&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>appendfilename &lt;span style="color:#e6db74">&amp;#34;appendonly.aof&amp;#34;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 同步方式&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>appendfsync everysec
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># aof重写期间是否同步&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>no-appendfsync-on-rewrite no
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 重写触发配置&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>auto-aof-rewrite-percentage &lt;span style="color:#ae81ff">100&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>auto-aof-rewrite-min-size 64mb
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 加载aof时如果有错如何处理&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>aof-load-truncated yes
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 文件重写策略&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>aof-rewrite-incremental-fsync yes
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;h2 id="redis-是单进程单线程这么设计有什么优点">
+ 
+ &lt;a class="anchor" href="#aof"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 是否开启aof&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;appendonly yes
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 文件名称&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;appendfilename &lt;span style="color:#e6db74"&gt;&amp;#34;appendonly.aof&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 同步方式&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;appendfsync everysec
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# aof重写期间是否同步&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;no-appendfsync-on-rewrite no
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 重写触发配置&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;auto-aof-rewrite-percentage &lt;span style="color:#ae81ff"&gt;100&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;auto-aof-rewrite-min-size 64mb
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 加载aof时如果有错如何处理&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;aof-load-truncated yes
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 文件重写策略&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;aof-rewrite-incremental-fsync yes
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;h2 id="redis-是单进程单线程这么设计有什么优点"&gt;
  Redis 是单进程单线程，这么设计有什么优点？
- &lt;a class="anchor" href="#redis-%e6%98%af%e5%8d%95%e8%bf%9b%e7%a8%8b%e5%8d%95%e7%ba%bf%e7%a8%8b%e8%bf%99%e4%b9%88%e8%ae%be%e8%ae%a1%e6%9c%89%e4%bb%80%e4%b9%88%e4%bc%98%e7%82%b9">#&lt;/a>
-&lt;/h2></description></item></channel></rss>
+ 
+ &lt;a class="anchor" href="#redis-%e6%98%af%e5%8d%95%e8%bf%9b%e7%a8%8b%e5%8d%95%e7%ba%bf%e7%a8%8b%e8%bf%99%e4%b9%88%e8%ae%be%e8%ae%a1%e6%9c%89%e4%bb%80%e4%b9%88%e4%bc%98%e7%82%b9"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;</description></item></channel></rss>

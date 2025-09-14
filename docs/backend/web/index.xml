@@ -1,25 +1,39 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web 后端 on 面试笔记</title><link>https://kingye.me/interview/docs/backend/web/</link><description>Recent content in Web 后端 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/backend/web/index.xml" rel="self" type="application/rss+xml"/><item><title>Go Web 后端</title><link>https://kingye.me/interview/docs/backend/web/go/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/backend/web/go/</guid><description>&lt;h1 id="go-web-后端">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web 后端 on 面试笔记</title><link>https://kingye.me/interview/docs/backend/web/</link><description>Recent content in Web 后端 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/backend/web/index.xml" rel="self" type="application/rss+xml"/><item><title>Go Web 后端</title><link>https://kingye.me/interview/docs/backend/web/go/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/backend/web/go/</guid><description>&lt;h1 id="go-web-后端"&gt;
  Go Web 后端
- &lt;a class="anchor" href="#go-web-%e5%90%8e%e7%ab%af">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="gin">
+ 
+ &lt;a class="anchor" href="#go-web-%e5%90%8e%e7%ab%af"&gt;#&lt;/a&gt;
+ 
+&lt;/h1&gt;
+&lt;h2 id="gin"&gt;
  Gin
- &lt;a class="anchor" href="#gin">#&lt;/a>
-&lt;/h2>
-&lt;h2 id="beego">
+ 
+ &lt;a class="anchor" href="#gin"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;h2 id="beego"&gt;
  Beego
- &lt;a class="anchor" href="#beego">#&lt;/a>
-&lt;/h2></description></item><item><title>Java Web 后端</title><link>https://kingye.me/interview/docs/backend/web/java/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/backend/web/java/</guid><description>&lt;h1 id="java-web-后端">
+ 
+ &lt;a class="anchor" href="#beego"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;</description></item><item><title>Java Web 后端</title><link>https://kingye.me/interview/docs/backend/web/java/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/backend/web/java/</guid><description>&lt;h1 id="java-web-后端"&gt;
  Java Web 后端
- &lt;a class="anchor" href="#java-web-%e5%90%8e%e7%ab%af">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="spring">
+ 
+ &lt;a class="anchor" href="#java-web-%e5%90%8e%e7%ab%af"&gt;#&lt;/a&gt;
+ 
+&lt;/h1&gt;
+&lt;h2 id="spring"&gt;
  Spring
- &lt;a class="anchor" href="#spring">#&lt;/a>
-&lt;/h2></description></item><item><title>PHP 后端</title><link>https://kingye.me/interview/docs/backend/web/php/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/backend/web/php/</guid><description>&lt;h1 id="php-后端">
+ 
+ &lt;a class="anchor" href="#spring"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;</description></item><item><title>PHP 后端</title><link>https://kingye.me/interview/docs/backend/web/php/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/backend/web/php/</guid><description>&lt;h1 id="php-后端"&gt;
  PHP 后端
- &lt;a class="anchor" href="#php-%e5%90%8e%e7%ab%af">#&lt;/a>
-&lt;/h1></description></item><item><title>Python 后端</title><link>https://kingye.me/interview/docs/backend/web/python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/backend/web/python/</guid><description>&lt;h1 id="python-后端">
+ 
+ &lt;a class="anchor" href="#php-%e5%90%8e%e7%ab%af"&gt;#&lt;/a&gt;
+ 
+&lt;/h1&gt;</description></item><item><title>Python 后端</title><link>https://kingye.me/interview/docs/backend/web/python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/backend/web/python/</guid><description>&lt;h1 id="python-后端"&gt;
  Python 后端
- &lt;a class="anchor" href="#python-%e5%90%8e%e7%ab%af">#&lt;/a>
-&lt;/h1></description></item></channel></rss>
+ 
+ &lt;a class="anchor" href="#python-%e5%90%8e%e7%ab%af"&gt;#&lt;/a&gt;
+ 
+&lt;/h1&gt;</description></item></channel></rss>

@@ -1,134 +1,164 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>3. 网络 on 面试笔记</title><link>https://kingye.me/interview/docs/network/</link><description>Recent content in 3. 网络 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/network/index.xml" rel="self" type="application/rss+xml"/><item><title>HTTP</title><link>https://kingye.me/interview/docs/network/http/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/network/http/</guid><description>&lt;h1 id="http">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>3. 网络 on 面试笔记</title><link>https://kingye.me/interview/docs/network/</link><description>Recent content in 3. 网络 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/network/index.xml" rel="self" type="application/rss+xml"/><item><title>HTTP</title><link>https://kingye.me/interview/docs/network/http/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/network/http/</guid><description>&lt;h1 id="http"&gt;
  HTTP
- &lt;a class="anchor" href="#http">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="http-基础">
+ 
+ &lt;a class="anchor" href="#http"&gt;#&lt;/a&gt;
+ 
+&lt;/h1&gt;
+&lt;h2 id="http-基础"&gt;
  HTTP 基础
- &lt;a class="anchor" href="#http-%e5%9f%ba%e7%a1%80">#&lt;/a>
-&lt;/h2>
-&lt;h3 id="http-状态码有哪些">
+ 
+ &lt;a class="anchor" href="#http-%e5%9f%ba%e7%a1%80"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;h3 id="http-状态码有哪些"&gt;
  HTTP 状态码有哪些？
- &lt;a class="anchor" href="#http-%e7%8a%b6%e6%80%81%e7%a0%81%e6%9c%89%e5%93%aa%e4%ba%9b">#&lt;/a>
-&lt;/h3>
-&lt;ul>
-&lt;li>2XX 成功
-&lt;ul>
-&lt;li>200 ok（请求成功）&lt;/li>
-&lt;li>204 no content （请求成功，但是没有结果返回）&lt;/li>
-&lt;li>206 partial content （客户端请求一部分资源，服务端成功响应，返回一范围资源）&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>3XX 重定向
-&lt;ul>
-&lt;li>301 move permanently （永久性重定向）&lt;/li>
-&lt;li>302 found （临时性重定向）&lt;/li>
-&lt;li>303 see other （示由于请求对应的资源存在着另一个 URI，应使用 GET 方法定向获取请求的资源）&lt;/li>
-&lt;li>304 not modified （表示在客户端采用带条件的访问某资源时，服务端找到了资源，但是这个请求的条件不符合。跟重定向无关）&lt;/li>
-&lt;li>307 temporary redirect （跟 302 一个意思）&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>4XX 客户端错误
-&lt;ul>
-&lt;li>400 bad request （请求报文存在语法错误）&lt;/li>
-&lt;li>401 unauthorized （需要认证（第一次返回）或者认证失败（第二次返回））&lt;/li>
-&lt;li>403 forbidden （请求被服务器拒绝了）&lt;/li>
-&lt;li>404 not found （服务器上无法找到请求的资源）&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>5XX 服务器错误
-&lt;ul>
-&lt;li>500 internal server error （服务端执行请求时发生了错误）&lt;/li>
-&lt;li>503 service unavailable （服务器正在超负载或者停机维护，无法处理请求）&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;h3 id="301-和-302-有什么区别分别适用于什么场景">
+ 
+ &lt;a class="anchor" href="#http-%e7%8a%b6%e6%80%81%e7%a0%81%e6%9c%89%e5%93%aa%e4%ba%9b"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;2XX 成功
+&lt;ul&gt;
+&lt;li&gt;200 ok（请求成功）&lt;/li&gt;
+&lt;li&gt;204 no content （请求成功，但是没有结果返回）&lt;/li&gt;
+&lt;li&gt;206 partial content （客户端请求一部分资源，服务端成功响应，返回一范围资源）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;3XX 重定向
+&lt;ul&gt;
+&lt;li&gt;301 move permanently （永久性重定向）&lt;/li&gt;
+&lt;li&gt;302 found （临时性重定向）&lt;/li&gt;
+&lt;li&gt;303 see other （示由于请求对应的资源存在着另一个 URI，应使用 GET 方法定向获取请求的资源）&lt;/li&gt;
+&lt;li&gt;304 not modified （表示在客户端采用带条件的访问某资源时，服务端找到了资源，但是这个请求的条件不符合。跟重定向无关）&lt;/li&gt;
+&lt;li&gt;307 temporary redirect （跟 302 一个意思）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;4XX 客户端错误
+&lt;ul&gt;
+&lt;li&gt;400 bad request （请求报文存在语法错误）&lt;/li&gt;
+&lt;li&gt;401 unauthorized （需要认证（第一次返回）或者认证失败（第二次返回））&lt;/li&gt;
+&lt;li&gt;403 forbidden （请求被服务器拒绝了）&lt;/li&gt;
+&lt;li&gt;404 not found （服务器上无法找到请求的资源）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;5XX 服务器错误
+&lt;ul&gt;
+&lt;li&gt;500 internal server error （服务端执行请求时发生了错误）&lt;/li&gt;
+&lt;li&gt;503 service unavailable （服务器正在超负载或者停机维护，无法处理请求）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="301-和-302-有什么区别分别适用于什么场景"&gt;
  301 和 302 有什么区别？分别适用于什么场景？
- &lt;a class="anchor" href="#301-%e5%92%8c-302-%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab%e5%88%86%e5%88%ab%e9%80%82%e7%94%a8%e4%ba%8e%e4%bb%80%e4%b9%88%e5%9c%ba%e6%99%af">#&lt;/a>
-&lt;/h3>
-&lt;h3 id="101-304-307-分别是什么">
+ 
+ &lt;a class="anchor" href="#301-%e5%92%8c-302-%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab%e5%88%86%e5%88%ab%e9%80%82%e7%94%a8%e4%ba%8e%e4%bb%80%e4%b9%88%e5%9c%ba%e6%99%af"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;h3 id="101-304-307-分别是什么"&gt;
  101， 304， 307 分别是什么？
- &lt;a class="anchor" href="#101-304-307-%e5%88%86%e5%88%ab%e6%98%af%e4%bb%80%e4%b9%88">#&lt;/a>
-&lt;/h3>
-&lt;p>&lt;strong>101 协议升级&lt;/strong>&lt;/p></description></item><item><title>TCP/UDP/IP</title><link>https://kingye.me/interview/docs/network/tcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/network/tcp/</guid><description>&lt;h1 id="tcpudpip">
+ 
+ &lt;a class="anchor" href="#101-304-307-%e5%88%86%e5%88%ab%e6%98%af%e4%bb%80%e4%b9%88"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;101 协议升级&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>TCP/UDP/IP</title><link>https://kingye.me/interview/docs/network/tcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/network/tcp/</guid><description>&lt;h1 id="tcpudpip"&gt;
  TCP/UDP/IP
- &lt;a class="anchor" href="#tcpudpip">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="tcp">
+ 
+ &lt;a class="anchor" href="#tcpudpip"&gt;#&lt;/a&gt;
+ 
+&lt;/h1&gt;
+&lt;h2 id="tcp"&gt;
  TCP
- &lt;a class="anchor" href="#tcp">#&lt;/a>
-&lt;/h2></description></item><item><title>发包工具</title><link>https://kingye.me/interview/docs/network/send/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/network/send/</guid><description>&lt;h1 id="发包工具">
+ 
+ &lt;a class="anchor" href="#tcp"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;</description></item><item><title>发包工具</title><link>https://kingye.me/interview/docs/network/send/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/network/send/</guid><description>&lt;h1 id="发包工具"&gt;
  发包工具
- &lt;a class="anchor" href="#%e5%8f%91%e5%8c%85%e5%b7%a5%e5%85%b7">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="综合">
+ 
+ &lt;a class="anchor" href="#%e5%8f%91%e5%8c%85%e5%b7%a5%e5%85%b7"&gt;#&lt;/a&gt;
+ 
+&lt;/h1&gt;
+&lt;h2 id="综合"&gt;
  综合
- &lt;a class="anchor" href="#%e7%bb%bc%e5%90%88">#&lt;/a>
-&lt;/h2>
-&lt;h3 id="常用发包工具有哪些分别有什么特点适用于什么场景">
+ 
+ &lt;a class="anchor" href="#%e7%bb%bc%e5%90%88"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;h3 id="常用发包工具有哪些分别有什么特点适用于什么场景"&gt;
  常用发包工具有哪些？分别有什么特点，适用于什么场景？
- &lt;a class="anchor" href="#%e5%b8%b8%e7%94%a8%e5%8f%91%e5%8c%85%e5%b7%a5%e5%85%b7%e6%9c%89%e5%93%aa%e4%ba%9b%e5%88%86%e5%88%ab%e6%9c%89%e4%bb%80%e4%b9%88%e7%89%b9%e7%82%b9%e9%80%82%e7%94%a8%e4%ba%8e%e4%bb%80%e4%b9%88%e5%9c%ba%e6%99%af">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h2 id="packetsender">
+ 
+ &lt;a class="anchor" href="#%e5%b8%b8%e7%94%a8%e5%8f%91%e5%8c%85%e5%b7%a5%e5%85%b7%e6%9c%89%e5%93%aa%e4%ba%9b%e5%88%86%e5%88%ab%e6%9c%89%e4%bb%80%e4%b9%88%e7%89%b9%e7%82%b9%e9%80%82%e7%94%a8%e4%ba%8e%e4%bb%80%e4%b9%88%e5%9c%ba%e6%99%af"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h2 id="packetsender"&gt;
  PacketSender
- &lt;a class="anchor" href="#packetsender">#&lt;/a>
-&lt;/h2></description></item><item><title>抓包</title><link>https://kingye.me/interview/docs/network/capture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/network/capture/</guid><description>&lt;h1 id="抓包">
+ 
+ &lt;a class="anchor" href="#packetsender"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;</description></item><item><title>抓包</title><link>https://kingye.me/interview/docs/network/capture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/network/capture/</guid><description>&lt;h1 id="抓包"&gt;
  抓包
- &lt;a class="anchor" href="#%e6%8a%93%e5%8c%85">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="综合">
+ 
+ &lt;a class="anchor" href="#%e6%8a%93%e5%8c%85"&gt;#&lt;/a&gt;
+ 
+&lt;/h1&gt;
+&lt;h2 id="综合"&gt;
  综合
- &lt;a class="anchor" href="#%e7%bb%bc%e5%90%88">#&lt;/a>
-&lt;/h2>
-&lt;h3 id="常用抓包工具有哪些分别有什么特点适用于什么场景">
+ 
+ &lt;a class="anchor" href="#%e7%bb%bc%e5%90%88"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;h3 id="常用抓包工具有哪些分别有什么特点适用于什么场景"&gt;
  常用抓包工具有哪些？分别有什么特点，适用于什么场景？
- &lt;a class="anchor" href="#%e5%b8%b8%e7%94%a8%e6%8a%93%e5%8c%85%e5%b7%a5%e5%85%b7%e6%9c%89%e5%93%aa%e4%ba%9b%e5%88%86%e5%88%ab%e6%9c%89%e4%bb%80%e4%b9%88%e7%89%b9%e7%82%b9%e9%80%82%e7%94%a8%e4%ba%8e%e4%bb%80%e4%b9%88%e5%9c%ba%e6%99%af">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h2 id="tcpdump">
+ 
+ &lt;a class="anchor" href="#%e5%b8%b8%e7%94%a8%e6%8a%93%e5%8c%85%e5%b7%a5%e5%85%b7%e6%9c%89%e5%93%aa%e4%ba%9b%e5%88%86%e5%88%ab%e6%9c%89%e4%bb%80%e4%b9%88%e7%89%b9%e7%82%b9%e9%80%82%e7%94%a8%e4%ba%8e%e4%bb%80%e4%b9%88%e5%9c%ba%e6%99%af"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h2 id="tcpdump"&gt;
  tcpdump
- &lt;a class="anchor" href="#tcpdump">#&lt;/a>
-&lt;/h2>
-&lt;ul>
-&lt;li>&lt;code>tcpdump -D&lt;/code>: 列出所有可监听设备&lt;/li>
-&lt;li>&lt;code>tcpdump -i&lt;/code>: 指定网络接口（网卡）
-&lt;ul>
-&lt;li>&lt;code>tcpdump -i any&lt;/code>: 不确定走哪个网卡&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;code>tcpdump host&lt;/code>: 指定主机
-&lt;ul>
-&lt;li>&lt;code>tcpdump src host&lt;/code>: 指定主机发送出去的包&lt;/li>
-&lt;li>&lt;code>tcpdump dst host&lt;/code>: 发送到指定主机的包&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;code>tcpdump tcp&lt;/code>: 指定协议&lt;/li>
-&lt;li>&lt;code>tcpdump port&lt;/code>: 指定端口&lt;/li>
-&lt;li>&lt;code>tcpdump -n&lt;/code>: 直接显示 IP，而不把 IP 解析为主机名&lt;/li>
-&lt;li>&lt;code>tcpdump -nn&lt;/code>: 直接显示 IP 与端口，而不解析为主机名与服务&lt;/li>
-&lt;li>&lt;code>tcpdump -N&lt;/code>: 不打印 host 的域名部分，比如打印 &lt;code>nic&lt;/code> 而不是 &lt;code>nic.ddn.mil&lt;/code>&lt;/li>
-&lt;li>&lt;code>tcpdump -w&lt;/code>: 输出到文件&lt;/li>
-&lt;li>&lt;code>tcpdump -tttt&lt;/code>: 更具有可读性的时间格式&lt;/li>
-&lt;li>&lt;code>tcpdump -c&lt;/code>: 抓 n 个包，然后退出&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 监视第一个网络接口上所有流过的数据包&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tcpdump
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 监视指定网络接口的数据包&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tcpdump -i eth1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 截获主机 210.27.48.1 和主机 210.27.48.2 或 210.27.48.3 的通信&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tcpdump host 210.27.48.1 and &lt;span style="color:#ae81ff">\ &lt;/span>&lt;span style="color:#f92672">(&lt;/span>210.27.48.2 or 210.27.48.3 &lt;span style="color:#ae81ff">\)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 截获主机 ace 与任何其他主机之间通信的 IP 数据包，但不包括与 helios 之间的数据包&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tcpdump ip host ace and not helios
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 截获主机 hostname 发送的所有数据&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tcpdump -i eth0 src host hostname
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 截获所有送到主机 hostname 的数据包&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tcpdump -i eth0 dst host hostname
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 获取主机 210.27.48.1 接收或发出的 telnet 包&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tcpdump tcp port &lt;span style="color:#ae81ff">23&lt;/span> and host 210.27.48.1
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 对本机的 udp 端口 123 进行监视&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>tcpdump udp port &lt;span style="color:#ae81ff">123&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>参考：&lt;/p></description></item></channel></rss>
+ 
+ &lt;a class="anchor" href="#tcpdump"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;tcpdump -D&lt;/code&gt;: 列出所有可监听设备&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tcpdump -i&lt;/code&gt;: 指定网络接口（网卡）
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;tcpdump -i any&lt;/code&gt;: 不确定走哪个网卡&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tcpdump host&lt;/code&gt;: 指定主机
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;tcpdump src host&lt;/code&gt;: 指定主机发送出去的包&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tcpdump dst host&lt;/code&gt;: 发送到指定主机的包&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tcpdump tcp&lt;/code&gt;: 指定协议&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tcpdump port&lt;/code&gt;: 指定端口&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tcpdump -n&lt;/code&gt;: 直接显示 IP，而不把 IP 解析为主机名&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tcpdump -nn&lt;/code&gt;: 直接显示 IP 与端口，而不解析为主机名与服务&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tcpdump -N&lt;/code&gt;: 不打印 host 的域名部分，比如打印 &lt;code&gt;nic&lt;/code&gt; 而不是 &lt;code&gt;nic.ddn.mil&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tcpdump -w&lt;/code&gt;: 输出到文件&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tcpdump -tttt&lt;/code&gt;: 更具有可读性的时间格式&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;tcpdump -c&lt;/code&gt;: 抓 n 个包，然后退出&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 监视第一个网络接口上所有流过的数据包&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tcpdump
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 监视指定网络接口的数据包&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tcpdump -i eth1
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 截获主机 210.27.48.1 和主机 210.27.48.2 或 210.27.48.3 的通信&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tcpdump host 210.27.48.1 and &lt;span style="color:#ae81ff"&gt;\ &lt;/span&gt;&lt;span style="color:#f92672"&gt;(&lt;/span&gt;210.27.48.2 or 210.27.48.3 &lt;span style="color:#ae81ff"&gt;\)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 截获主机 ace 与任何其他主机之间通信的 IP 数据包，但不包括与 helios 之间的数据包&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tcpdump ip host ace and not helios
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 截获主机 hostname 发送的所有数据&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tcpdump -i eth0 src host hostname
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 截获所有送到主机 hostname 的数据包&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tcpdump -i eth0 dst host hostname
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 获取主机 210.27.48.1 接收或发出的 telnet 包&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tcpdump tcp port &lt;span style="color:#ae81ff"&gt;23&lt;/span&gt; and host 210.27.48.1
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 对本机的 udp 端口 123 进行监视&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tcpdump udp port &lt;span style="color:#ae81ff"&gt;123&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;参考：&lt;/p&gt;</description></item></channel></rss>

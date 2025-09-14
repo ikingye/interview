@@ -1,67 +1,87 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web 安全 on 面试笔记</title><link>https://kingye.me/interview/docs/security/web/</link><description>Recent content in Web 安全 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/security/web/index.xml" rel="self" type="application/rss+xml"/><item><title>XSS</title><link>https://kingye.me/interview/docs/security/web/xss/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/security/web/xss/</guid><description>&lt;h1 id="xss">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web 安全 on 面试笔记</title><link>https://kingye.me/interview/docs/security/web/</link><description>Recent content in Web 安全 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/security/web/index.xml" rel="self" type="application/rss+xml"/><item><title>XSS</title><link>https://kingye.me/interview/docs/security/web/xss/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/security/web/xss/</guid><description>&lt;h1 id="xss"&gt;
  XSS
- &lt;a class="anchor" href="#xss">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="什么是-xss为什么会发生-xss">
+ 
+ &lt;a class="anchor" href="#xss"&gt;#&lt;/a&gt;
+ 
+&lt;/h1&gt;
+&lt;h2 id="什么是-xss为什么会发生-xss"&gt;
  什么是 XSS，为什么会发生 XSS？
- &lt;a class="anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af-xss%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bc%9a%e5%8f%91%e7%94%9f-xss">#&lt;/a>
-&lt;/h2>
-&lt;p>&lt;code>Cross-site scripting&lt;/code>
+ 
+ &lt;a class="anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af-xss%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bc%9a%e5%8f%91%e7%94%9f-xss"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Cross-site scripting&lt;/code&gt;
 跨站脚本
-(&lt;a href="https://www.wikiwand.com/zh-cn/%E8%B7%A8%E7%B6%B2%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A2%BC">wiki&lt;/a>)&lt;/p>
-&lt;h3 id="xss-发生的原因">
+(&lt;a href="https://www.wikiwand.com/zh-cn/%E8%B7%A8%E7%B6%B2%E7%AB%99%E6%8C%87%E4%BB%A4%E7%A2%BC"&gt;wiki&lt;/a&gt;)&lt;/p&gt;
+&lt;h3 id="xss-发生的原因"&gt;
  XSS 发生的原因
- &lt;a class="anchor" href="#xss-%e5%8f%91%e7%94%9f%e7%9a%84%e5%8e%9f%e5%9b%a0">#&lt;/a>
-&lt;/h3>
-&lt;p>没有将&lt;strong>用户输入的文本&lt;/strong>进行合适的&lt;strong>过滤&lt;/strong>，就贸然插入到 HTML 中，这很容易造成注入漏洞。
-攻击者可以利用漏洞，构造出恶意的&lt;strong>代码指令&lt;/strong>，进而利用恶意代码危害数据安全。&lt;/p>
-&lt;p>不仅仅是业务上的 “用户的 UGC 内容” 可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：&lt;/p>
-&lt;ul>
-&lt;li>来自用户的 UGC 信息&lt;/li>
-&lt;li>来自第三方的链接&lt;/li>
-&lt;li>URL 参数&lt;/li>
-&lt;li>POST 参数&lt;/li>
-&lt;li>&lt;code>Referer&lt;/code> （可能来自不可信的来源）&lt;/li>
-&lt;li>&lt;code>Cookie&lt;/code> （可能来自&lt;strong>其他子域&lt;/strong>注入）&lt;/li>
-&lt;/ul>
-&lt;h2 id="有哪些-xss-攻击方法">
+ 
+ &lt;a class="anchor" href="#xss-%e5%8f%91%e7%94%9f%e7%9a%84%e5%8e%9f%e5%9b%a0"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;没有将&lt;strong&gt;用户输入的文本&lt;/strong&gt;进行合适的&lt;strong&gt;过滤&lt;/strong&gt;，就贸然插入到 HTML 中，这很容易造成注入漏洞。
+攻击者可以利用漏洞，构造出恶意的&lt;strong&gt;代码指令&lt;/strong&gt;，进而利用恶意代码危害数据安全。&lt;/p&gt;
+&lt;p&gt;不仅仅是业务上的 “用户的 UGC 内容” 可以进行注入，包括 URL 上的参数等都可以是攻击的来源。在处理输入时，以下内容都不可信：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;来自用户的 UGC 信息&lt;/li&gt;
+&lt;li&gt;来自第三方的链接&lt;/li&gt;
+&lt;li&gt;URL 参数&lt;/li&gt;
+&lt;li&gt;POST 参数&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Referer&lt;/code&gt; （可能来自不可信的来源）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Cookie&lt;/code&gt; （可能来自&lt;strong&gt;其他子域&lt;/strong&gt;注入）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="有哪些-xss-攻击方法"&gt;
  有哪些 XSS 攻击方法？
- &lt;a class="anchor" href="#%e6%9c%89%e5%93%aa%e4%ba%9b-xss-%e6%94%bb%e5%87%bb%e6%96%b9%e6%b3%95">#&lt;/a>
-&lt;/h2>
-&lt;ul>
-&lt;li>在 HTML 中内嵌的文本中，恶意内容以 script 标签形成注入。&lt;/li>
-&lt;li>在内联的 JavaScript 中，拼接的数据突破了原本的限制（字符串，变量，方法名等）。&lt;/li>
-&lt;li>在标签属性中，恶意内容包含引号，从而突破属性值的限制，注入其他属性或者标签。&lt;/li>
-&lt;li>在标签的 href、src 等属性中，包含 javascript: 等可执行代码。&lt;/li>
-&lt;li>在 onload、onerror、onclick 等事件中，注入不受控制代码。&lt;/li>
-&lt;li>在 style 属性和标签中，包含类似 &lt;code>background-image:url(&amp;quot;javascript:...&amp;quot;);&lt;/code> 的代码（新版本浏览器已经可以防范）。&lt;/li>
-&lt;li>在 style 属性和标签中，包含类似 &lt;code>expression(...)&lt;/code> 的 CSS 表达式代码（新版本浏览器已经可以防范）。&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="如何防止-xss-攻击">
+ 
+ &lt;a class="anchor" href="#%e6%9c%89%e5%93%aa%e4%ba%9b-xss-%e6%94%bb%e5%87%bb%e6%96%b9%e6%b3%95"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;在 HTML 中内嵌的文本中，恶意内容以 script 标签形成注入。&lt;/li&gt;
+&lt;li&gt;在内联的 JavaScript 中，拼接的数据突破了原本的限制（字符串，变量，方法名等）。&lt;/li&gt;
+&lt;li&gt;在标签属性中，恶意内容包含引号，从而突破属性值的限制，注入其他属性或者标签。&lt;/li&gt;
+&lt;li&gt;在标签的 href、src 等属性中，包含 javascript: 等可执行代码。&lt;/li&gt;
+&lt;li&gt;在 onload、onerror、onclick 等事件中，注入不受控制代码。&lt;/li&gt;
+&lt;li&gt;在 style 属性和标签中，包含类似 &lt;code&gt;background-image:url(&amp;quot;javascript:...&amp;quot;);&lt;/code&gt; 的代码（新版本浏览器已经可以防范）。&lt;/li&gt;
+&lt;li&gt;在 style 属性和标签中，包含类似 &lt;code&gt;expression(...)&lt;/code&gt; 的 CSS 表达式代码（新版本浏览器已经可以防范）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id="如何防止-xss-攻击"&gt;
  如何防止 XSS 攻击？
- &lt;a class="anchor" href="#%e5%a6%82%e4%bd%95%e9%98%b2%e6%ad%a2-xss-%e6%94%bb%e5%87%bb">#&lt;/a>
-&lt;/h2>
-&lt;h3 id="输入过滤">
+ 
+ &lt;a class="anchor" href="#%e5%a6%82%e4%bd%95%e9%98%b2%e6%ad%a2-xss-%e6%94%bb%e5%87%bb"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;h3 id="输入过滤"&gt;
  输入过滤
- &lt;a class="anchor" href="#%e8%be%93%e5%85%a5%e8%bf%87%e6%bb%a4">#&lt;/a>
-&lt;/h3>
-&lt;p>输入侧过滤能够在某些情况下解决特定的 XSS 问题，但会引入很大的不确定性和&lt;strong>乱码&lt;/strong>问题。
-在防范 XSS 攻击时应避免此类方法。&lt;/p></description></item><item><title>CSRF</title><link>https://kingye.me/interview/docs/security/web/csrf/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/security/web/csrf/</guid><description>&lt;h1 id="csrf">
+ 
+ &lt;a class="anchor" href="#%e8%be%93%e5%85%a5%e8%bf%87%e6%bb%a4"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;输入侧过滤能够在某些情况下解决特定的 XSS 问题，但会引入很大的不确定性和&lt;strong&gt;乱码&lt;/strong&gt;问题。
+在防范 XSS 攻击时应避免此类方法。&lt;/p&gt;</description></item><item><title>CSRF</title><link>https://kingye.me/interview/docs/security/web/csrf/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/security/web/csrf/</guid><description>&lt;h1 id="csrf"&gt;
  CSRF
- &lt;a class="anchor" href="#csrf">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="什么是-csrf为什么会发生-csrf">
+ 
+ &lt;a class="anchor" href="#csrf"&gt;#&lt;/a&gt;
+ 
+&lt;/h1&gt;
+&lt;h2 id="什么是-csrf为什么会发生-csrf"&gt;
  什么是 CSRF，为什么会发生 CSRF？
- &lt;a class="anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af-csrf%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bc%9a%e5%8f%91%e7%94%9f-csrf">#&lt;/a>
-&lt;/h2>
-&lt;hr>
-&lt;h2 id="有哪些-csrf-攻击方法">
+ 
+ &lt;a class="anchor" href="#%e4%bb%80%e4%b9%88%e6%98%af-csrf%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bc%9a%e5%8f%91%e7%94%9f-csrf"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2 id="有哪些-csrf-攻击方法"&gt;
  有哪些 CSRF 攻击方法？
- &lt;a class="anchor" href="#%e6%9c%89%e5%93%aa%e4%ba%9b-csrf-%e6%94%bb%e5%87%bb%e6%96%b9%e6%b3%95">#&lt;/a>
-&lt;/h2>
-&lt;hr>
-&lt;h2 id="如何防止-csrf-攻击">
+ 
+ &lt;a class="anchor" href="#%e6%9c%89%e5%93%aa%e4%ba%9b-csrf-%e6%94%bb%e5%87%bb%e6%96%b9%e6%b3%95"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2 id="如何防止-csrf-攻击"&gt;
  如何防止 CSRF 攻击？
- &lt;a class="anchor" href="#%e5%a6%82%e4%bd%95%e9%98%b2%e6%ad%a2-csrf-%e6%94%bb%e5%87%bb">#&lt;/a>
-&lt;/h2></description></item></channel></rss>
+ 
+ &lt;a class="anchor" href="#%e5%a6%82%e4%bd%95%e9%98%b2%e6%ad%a2-csrf-%e6%94%bb%e5%87%bb"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;</description></item></channel></rss>

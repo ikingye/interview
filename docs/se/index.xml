@@ -1,354 +1,450 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>6. 软件工程 on 面试笔记</title><link>https://kingye.me/interview/docs/se/</link><description>Recent content in 6. 软件工程 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/se/index.xml" rel="self" type="application/rss+xml"/><item><title>设计模式</title><link>https://kingye.me/interview/docs/se/dp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/se/dp/</guid><description>&lt;h1 id="设计模式">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>6. 软件工程 on 面试笔记</title><link>https://kingye.me/interview/docs/se/</link><description>Recent content in 6. 软件工程 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/se/index.xml" rel="self" type="application/rss+xml"/><item><title>设计模式</title><link>https://kingye.me/interview/docs/se/dp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/se/dp/</guid><description>&lt;h1 id="设计模式"&gt;
  设计模式
- &lt;a class="anchor" href="#%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="设计原则">
+ 
+ &lt;a class="anchor" href="#%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h1&gt;
+&lt;h2 id="设计原则"&gt;
  设计原则
- &lt;a class="anchor" href="#%e8%ae%be%e8%ae%a1%e5%8e%9f%e5%88%99">#&lt;/a>
-&lt;/h2>
-&lt;h3 id="单一职责原则-srp">
- 单一职责原则 (&lt;code>SRP&lt;/code>)
- &lt;a class="anchor" href="#%e5%8d%95%e4%b8%80%e8%81%8c%e8%b4%a3%e5%8e%9f%e5%88%99-srp">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="开闭原则-open-closed-principle">
- 开闭原则 (&lt;code>Open Closed Principle&lt;/code>)
- &lt;a class="anchor" href="#%e5%bc%80%e9%97%ad%e5%8e%9f%e5%88%99-open-closed-principle">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="里氏替换原则-liskov-substitution-principle">
- 里氏替换原则 (&lt;code>Liskov Substitution Principle&lt;/code>)
- &lt;a class="anchor" href="#%e9%87%8c%e6%b0%8f%e6%9b%bf%e6%8d%a2%e5%8e%9f%e5%88%99-liskov-substitution-principle">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="依赖倒置原则-dependence-inversion-principle">
- 依赖倒置原则 (&lt;code>Dependence Inversion Principle&lt;/code>)
- &lt;a class="anchor" href="#%e4%be%9d%e8%b5%96%e5%80%92%e7%bd%ae%e5%8e%9f%e5%88%99-dependence-inversion-principle">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="接口隔离原则-interface-segregation-principle">
- 接口隔离原则 (&lt;code>Interface Segregation Principle&lt;/code>)
- &lt;a class="anchor" href="#%e6%8e%a5%e5%8f%a3%e9%9a%94%e7%a6%bb%e5%8e%9f%e5%88%99-interface-segregation-principle">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="迪米特原则-demeter-principle">
- 迪米特原则 (&lt;code>Demeter Principle&lt;/code>)
- &lt;a class="anchor" href="#%e8%bf%aa%e7%b1%b3%e7%89%b9%e5%8e%9f%e5%88%99-demeter-principle">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;hr>
-&lt;h2 id="创建型模式">
+ 
+ &lt;a class="anchor" href="#%e8%ae%be%e8%ae%a1%e5%8e%9f%e5%88%99"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;h3 id="单一职责原则-srp"&gt;
+ 单一职责原则 (&lt;code&gt;SRP&lt;/code&gt;)
+ 
+ &lt;a class="anchor" href="#%e5%8d%95%e4%b8%80%e8%81%8c%e8%b4%a3%e5%8e%9f%e5%88%99-srp"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="开闭原则-open-closed-principle"&gt;
+ 开闭原则 (&lt;code&gt;Open Closed Principle&lt;/code&gt;)
+ 
+ &lt;a class="anchor" href="#%e5%bc%80%e9%97%ad%e5%8e%9f%e5%88%99-open-closed-principle"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="里氏替换原则-liskov-substitution-principle"&gt;
+ 里氏替换原则 (&lt;code&gt;Liskov Substitution Principle&lt;/code&gt;)
+ 
+ &lt;a class="anchor" href="#%e9%87%8c%e6%b0%8f%e6%9b%bf%e6%8d%a2%e5%8e%9f%e5%88%99-liskov-substitution-principle"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="依赖倒置原则-dependence-inversion-principle"&gt;
+ 依赖倒置原则 (&lt;code&gt;Dependence Inversion Principle&lt;/code&gt;)
+ 
+ &lt;a class="anchor" href="#%e4%be%9d%e8%b5%96%e5%80%92%e7%bd%ae%e5%8e%9f%e5%88%99-dependence-inversion-principle"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="接口隔离原则-interface-segregation-principle"&gt;
+ 接口隔离原则 (&lt;code&gt;Interface Segregation Principle&lt;/code&gt;)
+ 
+ &lt;a class="anchor" href="#%e6%8e%a5%e5%8f%a3%e9%9a%94%e7%a6%bb%e5%8e%9f%e5%88%99-interface-segregation-principle"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="迪米特原则-demeter-principle"&gt;
+ 迪米特原则 (&lt;code&gt;Demeter Principle&lt;/code&gt;)
+ 
+ &lt;a class="anchor" href="#%e8%bf%aa%e7%b1%b3%e7%89%b9%e5%8e%9f%e5%88%99-demeter-principle"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h2 id="创建型模式"&gt;
  创建型模式
- &lt;a class="anchor" href="#%e5%88%9b%e5%bb%ba%e5%9e%8b%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h2>
-&lt;h3 id="简单工厂模式">
+ 
+ &lt;a class="anchor" href="#%e5%88%9b%e5%bb%ba%e5%9e%8b%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;h3 id="简单工厂模式"&gt;
  简单工厂模式
- &lt;a class="anchor" href="#%e7%ae%80%e5%8d%95%e5%b7%a5%e5%8e%82%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="工厂方法模式">
+ 
+ &lt;a class="anchor" href="#%e7%ae%80%e5%8d%95%e5%b7%a5%e5%8e%82%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="工厂方法模式"&gt;
  工厂方法模式
- &lt;a class="anchor" href="#%e5%b7%a5%e5%8e%82%e6%96%b9%e6%b3%95%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="抽象工厂模式">
+ 
+ &lt;a class="anchor" href="#%e5%b7%a5%e5%8e%82%e6%96%b9%e6%b3%95%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="抽象工厂模式"&gt;
  抽象工厂模式
- &lt;a class="anchor" href="#%e6%8a%bd%e8%b1%a1%e5%b7%a5%e5%8e%82%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="建造者模式">
+ 
+ &lt;a class="anchor" href="#%e6%8a%bd%e8%b1%a1%e5%b7%a5%e5%8e%82%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="建造者模式"&gt;
  建造者模式
- &lt;a class="anchor" href="#%e5%bb%ba%e9%80%a0%e8%80%85%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="单例模式">
+ 
+ &lt;a class="anchor" href="#%e5%bb%ba%e9%80%a0%e8%80%85%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="单例模式"&gt;
  单例模式
- &lt;a class="anchor" href="#%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;hr>
-&lt;h2 id="结构型模式">
+ 
+ &lt;a class="anchor" href="#%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h2 id="结构型模式"&gt;
  结构型模式
- &lt;a class="anchor" href="#%e7%bb%93%e6%9e%84%e5%9e%8b%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h2>
-&lt;h3 id="适配器模式">
+ 
+ &lt;a class="anchor" href="#%e7%bb%93%e6%9e%84%e5%9e%8b%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;h3 id="适配器模式"&gt;
  适配器模式
- &lt;a class="anchor" href="#%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="桥接模式">
+ 
+ &lt;a class="anchor" href="#%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="桥接模式"&gt;
  桥接模式
- &lt;a class="anchor" href="#%e6%a1%a5%e6%8e%a5%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="装饰模式">
+ 
+ &lt;a class="anchor" href="#%e6%a1%a5%e6%8e%a5%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="装饰模式"&gt;
  装饰模式
- &lt;a class="anchor" href="#%e8%a3%85%e9%a5%b0%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="外观模式">
+ 
+ &lt;a class="anchor" href="#%e8%a3%85%e9%a5%b0%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="外观模式"&gt;
  外观模式
- &lt;a class="anchor" href="#%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="享元模式">
+ 
+ &lt;a class="anchor" href="#%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="享元模式"&gt;
  享元模式
- &lt;a class="anchor" href="#%e4%ba%ab%e5%85%83%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="代理模式">
+ 
+ &lt;a class="anchor" href="#%e4%ba%ab%e5%85%83%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="代理模式"&gt;
  代理模式
- &lt;a class="anchor" href="#%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="组合模式">
+ 
+ &lt;a class="anchor" href="#%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="组合模式"&gt;
  组合模式
- &lt;a class="anchor" href="#%e7%bb%84%e5%90%88%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;h3 id="适配器模式装饰模式代理模式有哪些异同">
+ 
+ &lt;a class="anchor" href="#%e7%bb%84%e5%90%88%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;h3 id="适配器模式装饰模式代理模式有哪些异同"&gt;
  适配器模式、装饰模式、代理模式有哪些异同？
- &lt;a class="anchor" href="#%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%e8%a3%85%e9%a5%b0%e6%a8%a1%e5%bc%8f%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f%e6%9c%89%e5%93%aa%e4%ba%9b%e5%bc%82%e5%90%8c">#&lt;/a>
-&lt;/h3>
-&lt;ul>
-&lt;li>适配器模式
-&lt;ul>
-&lt;li>适配器模式&lt;strong>实现新接口&lt;/strong>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>代理模式
-&lt;ul>
-&lt;li>代理模式的特点在于&lt;strong>隔离&lt;/strong>，隔离调用类和被调用类的关系，通过一个代理类去调用。&lt;/li>
-&lt;li>代理模式是与原对象&lt;strong>实现同一个接口&lt;/strong>&lt;/li>
-&lt;li>代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>装饰器模式
-&lt;ul>
-&lt;li>原有的不能满足现有的需求，对原有的进行增强。&lt;/li>
-&lt;li>装饰器模式特点在于&lt;strong>增强&lt;/strong>，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;ul>
-&lt;li>装饰器模式与代理模式实现原接口&lt;/li>
-&lt;li>都持有原对象
-&lt;ul>
-&lt;li>装饰器模式构造函数&lt;strong>接收老对象&lt;/strong>&lt;/li>
-&lt;li>适配器模式与代理模式自己 new 老对象&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">/**
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * 原接口，需要传入 orderId，时间
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> &lt;span style="color:#a6e22e">SourceOrderApi&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">updateDate&lt;/span>(String orderId, String date, String client);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">SourceOrderApiImpl&lt;/span> &lt;span style="color:#66d9ef">implements&lt;/span> SourceOrderApi{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Override&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">updateDate&lt;/span>(String orderId, String date, String client) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(client&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;已将订单&amp;#34;&lt;/span>&lt;span style="color:#f92672">+&lt;/span>orderId&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;的有效期延长至&amp;#34;&lt;/span>&lt;span style="color:#f92672">+&lt;/span>date);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Test&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(String&lt;span style="color:#f92672">[]&lt;/span> args) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SourceOrderApi sourceOrderApi &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> SourceOrderApiImpl();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sourceOrderApi.&lt;span style="color:#a6e22e">updateDate&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;123456&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;2014-10-15&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;user&amp;#34;&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">/**
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * 适配器模式
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">interface&lt;/span> &lt;span style="color:#a6e22e">AppOrderApi&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//只需要传入订单Id即可&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">updateDate&lt;/span>(String orderId, String client);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">AppOrderApiImpl&lt;/span> &lt;span style="color:#66d9ef">implements&lt;/span> AppOrderApi{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SourceOrderApi sourceOrderApi;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">AppOrderApiImpl&lt;/span>(){
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sourceOrderApi &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> SourceOrderApiImpl();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Override&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">updateDate&lt;/span>(String orderId,String client) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//这里适配的方式随意，但是保证是要完全兼容原有的，就是保证调用原有的接口&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sourceOrderApi.&lt;span style="color:#a6e22e">updateDate&lt;/span>(orderId, &lt;span style="color:#e6db74">&amp;#34;9999-12-31&amp;#34;&lt;/span>, client);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Test&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">static&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">main&lt;/span>(String&lt;span style="color:#f92672">[]&lt;/span> args) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> AppOrderApi appOrderApi &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> AppOrderApiImpl();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> appOrderApi.&lt;span style="color:#a6e22e">updateDate&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;123456&amp;#34;&lt;/span>, &lt;span style="color:#e6db74">&amp;#34;user&amp;#34;&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">/**
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * 代理模式
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">ProxySourceOrderApiImpl&lt;/span> &lt;span style="color:#66d9ef">implements&lt;/span> SourceOrderApi {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SourceOrderApi sourceOrderApi;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">ProxySourceOrderApiImpl&lt;/span>(){
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sourceOrderApi &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">new&lt;/span> SourceOrderApiImpl();
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Override&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">updateDate&lt;/span>(String orderId, String date, String client) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">//进行判断，如果是admin则更新否则让其输入账号密码&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;admin&amp;#34;&lt;/span>.&lt;span style="color:#a6e22e">equals&lt;/span>(client)){
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sourceOrderApi.&lt;span style="color:#a6e22e">updateDate&lt;/span>(orderId, date, client);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }&lt;span style="color:#66d9ef">else&lt;/span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;账号不是admin，没有查询权限，请输入以admin操作&amp;#34;&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">/**
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> * 装饰器模式
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"> */&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">NewSourceOrderApiImpl&lt;/span> &lt;span style="color:#66d9ef">implements&lt;/span> SourceOrderApi {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SourceOrderApi sourceOrderApi;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#a6e22e">NewSourceOrderApiImpl&lt;/span>(SourceOrderApi sourceOrderApi){
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">sourceOrderApi&lt;/span> &lt;span style="color:#f92672">=&lt;/span> sourceOrderApi;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">@Override&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">public&lt;/span> &lt;span style="color:#66d9ef">void&lt;/span> &lt;span style="color:#a6e22e">updateDate&lt;/span>(String orderId, String date, String client) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> sourceOrderApi.&lt;span style="color:#a6e22e">updateDate&lt;/span>(orderId, date, client);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> System.&lt;span style="color:#a6e22e">out&lt;/span>.&lt;span style="color:#a6e22e">println&lt;/span>(client&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;已将订单&amp;#34;&lt;/span>&lt;span style="color:#f92672">+&lt;/span>orderId&lt;span style="color:#f92672">+&lt;/span>&lt;span style="color:#e6db74">&amp;#34;的退款期延长至&amp;#34;&lt;/span>&lt;span style="color:#f92672">+&lt;/span>date);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;hr>
-&lt;hr>
-&lt;h2 id="行为型模式">
+ 
+ &lt;a class="anchor" href="#%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%e8%a3%85%e9%a5%b0%e6%a8%a1%e5%bc%8f%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f%e6%9c%89%e5%93%aa%e4%ba%9b%e5%bc%82%e5%90%8c"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;适配器模式
+&lt;ul&gt;
+&lt;li&gt;适配器模式&lt;strong&gt;实现新接口&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;代理模式
+&lt;ul&gt;
+&lt;li&gt;代理模式的特点在于&lt;strong&gt;隔离&lt;/strong&gt;，隔离调用类和被调用类的关系，通过一个代理类去调用。&lt;/li&gt;
+&lt;li&gt;代理模式是与原对象&lt;strong&gt;实现同一个接口&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;装饰器模式
+&lt;ul&gt;
+&lt;li&gt;原有的不能满足现有的需求，对原有的进行增强。&lt;/li&gt;
+&lt;li&gt;装饰器模式特点在于&lt;strong&gt;增强&lt;/strong&gt;，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;装饰器模式与代理模式实现原接口&lt;/li&gt;
+&lt;li&gt;都持有原对象
+&lt;ul&gt;
+&lt;li&gt;装饰器模式构造函数&lt;strong&gt;接收老对象&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;适配器模式与代理模式自己 new 老对象&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt; * 原接口，需要传入 orderId，时间
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;interface&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;SourceOrderApi&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;updateDate&lt;/span&gt;(String orderId, String date, String client);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;SourceOrderApiImpl&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;implements&lt;/span&gt; SourceOrderApi{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;@Override&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;updateDate&lt;/span&gt;(String orderId, String date, String client) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; System.&lt;span style="color:#a6e22e"&gt;out&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;println&lt;/span&gt;(client&lt;span style="color:#f92672"&gt;+&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;已将订单&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;+&lt;/span&gt;orderId&lt;span style="color:#f92672"&gt;+&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;的有效期延长至&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;+&lt;/span&gt;date);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Test&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;static&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;(String&lt;span style="color:#f92672"&gt;[]&lt;/span&gt; args) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; SourceOrderApi sourceOrderApi &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; SourceOrderApiImpl();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sourceOrderApi.&lt;span style="color:#a6e22e"&gt;updateDate&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;123456&amp;#34;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#34;2014-10-15&amp;#34;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#34;user&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt; * 适配器模式
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;interface&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;AppOrderApi&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;//只需要传入订单Id即可&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;updateDate&lt;/span&gt;(String orderId, String client);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;AppOrderApiImpl&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;implements&lt;/span&gt; AppOrderApi{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; SourceOrderApi sourceOrderApi;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;AppOrderApiImpl&lt;/span&gt;(){
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sourceOrderApi &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; SourceOrderApiImpl();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;@Override&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;updateDate&lt;/span&gt;(String orderId,String client) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;//这里适配的方式随意，但是保证是要完全兼容原有的，就是保证调用原有的接口&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sourceOrderApi.&lt;span style="color:#a6e22e"&gt;updateDate&lt;/span&gt;(orderId, &lt;span style="color:#e6db74"&gt;&amp;#34;9999-12-31&amp;#34;&lt;/span&gt;, client);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Test&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;static&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;(String&lt;span style="color:#f92672"&gt;[]&lt;/span&gt; args) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; AppOrderApi appOrderApi &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; AppOrderApiImpl();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; appOrderApi.&lt;span style="color:#a6e22e"&gt;updateDate&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;123456&amp;#34;&lt;/span&gt;, &lt;span style="color:#e6db74"&gt;&amp;#34;user&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt; * 代理模式
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;ProxySourceOrderApiImpl&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;implements&lt;/span&gt; SourceOrderApi {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; SourceOrderApi sourceOrderApi;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;ProxySourceOrderApiImpl&lt;/span&gt;(){
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sourceOrderApi &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;new&lt;/span&gt; SourceOrderApiImpl();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;@Override&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;updateDate&lt;/span&gt;(String orderId, String date, String client) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#75715e"&gt;//进行判断，如果是admin则更新否则让其输入账号密码&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;if&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;admin&amp;#34;&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;equals&lt;/span&gt;(client)){
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sourceOrderApi.&lt;span style="color:#a6e22e"&gt;updateDate&lt;/span&gt;(orderId, date, client);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }&lt;span style="color:#66d9ef"&gt;else&lt;/span&gt;{
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; System.&lt;span style="color:#a6e22e"&gt;out&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;println&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;账号不是admin，没有查询权限，请输入以admin操作&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;/**
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt; * 装饰器模式
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt; */&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;NewSourceOrderApiImpl&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;implements&lt;/span&gt; SourceOrderApi {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; SourceOrderApi sourceOrderApi;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;NewSourceOrderApiImpl&lt;/span&gt;(SourceOrderApi sourceOrderApi){
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;this&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;sourceOrderApi&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; sourceOrderApi;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;@Override&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;public&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;updateDate&lt;/span&gt;(String orderId, String date, String client) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; sourceOrderApi.&lt;span style="color:#a6e22e"&gt;updateDate&lt;/span&gt;(orderId, date, client);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; System.&lt;span style="color:#a6e22e"&gt;out&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;println&lt;/span&gt;(client&lt;span style="color:#f92672"&gt;+&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;已将订单&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;+&lt;/span&gt;orderId&lt;span style="color:#f92672"&gt;+&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;的退款期延长至&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;+&lt;/span&gt;date);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;hr&gt;
+&lt;h2 id="行为型模式"&gt;
  行为型模式
- &lt;a class="anchor" href="#%e8%a1%8c%e4%b8%ba%e5%9e%8b%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h2>
-&lt;h3 id="命令模式">
+ 
+ &lt;a class="anchor" href="#%e8%a1%8c%e4%b8%ba%e5%9e%8b%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;h3 id="命令模式"&gt;
  命令模式
- &lt;a class="anchor" href="#%e5%91%bd%e4%bb%a4%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="中介者模式">
+ 
+ &lt;a class="anchor" href="#%e5%91%bd%e4%bb%a4%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="中介者模式"&gt;
  中介者模式
- &lt;a class="anchor" href="#%e4%b8%ad%e4%bb%8b%e8%80%85%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="观察者模式">
+ 
+ &lt;a class="anchor" href="#%e4%b8%ad%e4%bb%8b%e8%80%85%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="观察者模式"&gt;
  观察者模式
- &lt;a class="anchor" href="#%e8%a7%82%e5%af%9f%e8%80%85%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="状态模式">
+ 
+ &lt;a class="anchor" href="#%e8%a7%82%e5%af%9f%e8%80%85%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="状态模式"&gt;
  状态模式
- &lt;a class="anchor" href="#%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="策略模式">
+ 
+ &lt;a class="anchor" href="#%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="策略模式"&gt;
  策略模式
- &lt;a class="anchor" href="#%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="模板方法模式">
+ 
+ &lt;a class="anchor" href="#%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="模板方法模式"&gt;
  模板方法模式
- &lt;a class="anchor" href="#%e6%a8%a1%e6%9d%bf%e6%96%b9%e6%b3%95%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="迭代子模式">
+ 
+ &lt;a class="anchor" href="#%e6%a8%a1%e6%9d%bf%e6%96%b9%e6%b3%95%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="迭代子模式"&gt;
  迭代子模式
- &lt;a class="anchor" href="#%e8%bf%ad%e4%bb%a3%e5%ad%90%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="责任链模式">
+ 
+ &lt;a class="anchor" href="#%e8%bf%ad%e4%bb%a3%e5%ad%90%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="责任链模式"&gt;
  责任链模式
- &lt;a class="anchor" href="#%e8%b4%a3%e4%bb%bb%e9%93%be%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="备忘录模式">
+ 
+ &lt;a class="anchor" href="#%e8%b4%a3%e4%bb%bb%e9%93%be%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="备忘录模式"&gt;
  备忘录模式
- &lt;a class="anchor" href="#%e5%a4%87%e5%bf%98%e5%bd%95%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="访问者模式">
+ 
+ &lt;a class="anchor" href="#%e5%a4%87%e5%bf%98%e5%bd%95%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="访问者模式"&gt;
  访问者模式
- &lt;a class="anchor" href="#%e8%ae%bf%e9%97%ae%e8%80%85%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="解释器模式">
+ 
+ &lt;a class="anchor" href="#%e8%ae%bf%e9%97%ae%e8%80%85%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="解释器模式"&gt;
  解释器模式
- &lt;a class="anchor" href="#%e8%a7%a3%e9%87%8a%e5%99%a8%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;hr>
-&lt;h2 id="其他模式">
+ 
+ &lt;a class="anchor" href="#%e8%a7%a3%e9%87%8a%e5%99%a8%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h2 id="其他模式"&gt;
  其他模式
- &lt;a class="anchor" href="#%e5%85%b6%e4%bb%96%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h2>
-&lt;h3 id="并发型模式">
+ 
+ &lt;a class="anchor" href="#%e5%85%b6%e4%bb%96%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;h3 id="并发型模式"&gt;
  并发型模式
- &lt;a class="anchor" href="#%e5%b9%b6%e5%8f%91%e5%9e%8b%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3>
-&lt;hr>
-&lt;h3 id="线程池模式">
+ 
+ &lt;a class="anchor" href="#%e5%b9%b6%e5%8f%91%e5%9e%8b%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;hr&gt;
+&lt;h3 id="线程池模式"&gt;
  线程池模式
- &lt;a class="anchor" href="#%e7%ba%bf%e7%a8%8b%e6%b1%a0%e6%a8%a1%e5%bc%8f">#&lt;/a>
-&lt;/h3></description></item><item><title>架构设计</title><link>https://kingye.me/interview/docs/se/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/se/architecture/</guid><description>&lt;h1 id="架构设计">
+ 
+ &lt;a class="anchor" href="#%e7%ba%bf%e7%a8%8b%e6%b1%a0%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;</description></item><item><title>架构设计</title><link>https://kingye.me/interview/docs/se/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/se/architecture/</guid><description>&lt;h1 id="架构设计"&gt;
  架构设计
- &lt;a class="anchor" href="#%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1">#&lt;/a>
-&lt;/h1>
-&lt;h2 id="架构设计原则">
+ 
+ &lt;a class="anchor" href="#%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1"&gt;#&lt;/a&gt;
+ 
+&lt;/h1&gt;
+&lt;h2 id="架构设计原则"&gt;
  架构设计原则
- &lt;a class="anchor" href="#%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1%e5%8e%9f%e5%88%99">#&lt;/a>
-&lt;/h2>
-&lt;h3 id="cap-consistency-availability-partition-tolerance">
- CAP (&lt;code>Consistency&lt;/code>, &lt;code>Availability&lt;/code>, &lt;code>Partition tolerance&lt;/code>)
- &lt;a class="anchor" href="#cap-consistency-availability-partition-tolerance">#&lt;/a>
-&lt;/h3>
-&lt;h4 id="如何理解-cap你在做系统设计时是如何取舍的">
+ 
+ &lt;a class="anchor" href="#%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1%e5%8e%9f%e5%88%99"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;h3 id="cap-consistency-availability-partition-tolerance"&gt;
+ CAP (&lt;code&gt;Consistency&lt;/code&gt;, &lt;code&gt;Availability&lt;/code&gt;, &lt;code&gt;Partition tolerance&lt;/code&gt;)
+ 
+ &lt;a class="anchor" href="#cap-consistency-availability-partition-tolerance"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;h4 id="如何理解-cap你在做系统设计时是如何取舍的"&gt;
  如何理解 CAP，你在做系统设计时是如何取舍的？
- &lt;a class="anchor" href="#%e5%a6%82%e4%bd%95%e7%90%86%e8%a7%a3-cap%e4%bd%a0%e5%9c%a8%e5%81%9a%e7%b3%bb%e7%bb%9f%e8%ae%be%e8%ae%a1%e6%97%b6%e6%98%af%e5%a6%82%e4%bd%95%e5%8f%96%e8%88%8d%e7%9a%84">#&lt;/a>
-&lt;/h4>
-&lt;hr>
-&lt;h3 id="acid-atomicity-consistency-isolation-durability">
- ACID (&lt;code>Atomicity&lt;/code>, &lt;code>Consistency&lt;/code>, &lt;code>Isolation&lt;/code>, &lt;code>Durability&lt;/code>)
- &lt;a class="anchor" href="#acid-atomicity-consistency-isolation-durability">#&lt;/a>
-&lt;/h3>
-&lt;p>&lt;code>ACID&lt;/code> 是追求 &lt;code>CAP&lt;/code> 的一致性 (&lt;code>C&lt;/code>)&lt;/p>
-&lt;hr>
-&lt;h3 id="base-basically-available-soft-state-eventual-consistency">
- BASE (&lt;code>Basically Available&lt;/code>, &lt;code>Soft state&lt;/code>, &lt;code>Eventual consistency&lt;/code>)
- &lt;a class="anchor" href="#base-basically-available-soft-state-eventual-consistency">#&lt;/a>
-&lt;/h3>
-&lt;p>&lt;code>BASE&lt;/code> 是追求 &lt;code>CAP&lt;/code> 的可用性 (&lt;code>A&lt;/code>)&lt;/p>
-&lt;hr>
-&lt;hr>
-&lt;h2 id="高性能">
+ 
+ &lt;a class="anchor" href="#%e5%a6%82%e4%bd%95%e7%90%86%e8%a7%a3-cap%e4%bd%a0%e5%9c%a8%e5%81%9a%e7%b3%bb%e7%bb%9f%e8%ae%be%e8%ae%a1%e6%97%b6%e6%98%af%e5%a6%82%e4%bd%95%e5%8f%96%e8%88%8d%e7%9a%84"&gt;#&lt;/a&gt;
+ 
+&lt;/h4&gt;
+&lt;hr&gt;
+&lt;h3 id="acid-atomicity-consistency-isolation-durability"&gt;
+ ACID (&lt;code&gt;Atomicity&lt;/code&gt;, &lt;code&gt;Consistency&lt;/code&gt;, &lt;code&gt;Isolation&lt;/code&gt;, &lt;code&gt;Durability&lt;/code&gt;)
+ 
+ &lt;a class="anchor" href="#acid-atomicity-consistency-isolation-durability"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;ACID&lt;/code&gt; 是追求 &lt;code&gt;CAP&lt;/code&gt; 的一致性 (&lt;code&gt;C&lt;/code&gt;)&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="base-basically-available-soft-state-eventual-consistency"&gt;
+ BASE (&lt;code&gt;Basically Available&lt;/code&gt;, &lt;code&gt;Soft state&lt;/code&gt;, &lt;code&gt;Eventual consistency&lt;/code&gt;)
+ 
+ &lt;a class="anchor" href="#base-basically-available-soft-state-eventual-consistency"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;BASE&lt;/code&gt; 是追求 &lt;code&gt;CAP&lt;/code&gt; 的可用性 (&lt;code&gt;A&lt;/code&gt;)&lt;/p&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h2 id="高性能"&gt;
  高性能
- &lt;a class="anchor" href="#%e9%ab%98%e6%80%a7%e8%83%bd">#&lt;/a>
-&lt;/h2>
-&lt;hr>
-&lt;hr>
-&lt;h2 id="高可用">
+ 
+ &lt;a class="anchor" href="#%e9%ab%98%e6%80%a7%e8%83%bd"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h2 id="高可用"&gt;
  高可用
- &lt;a class="anchor" href="#%e9%ab%98%e5%8f%af%e7%94%a8">#&lt;/a>
-&lt;/h2>
-&lt;hr>
-&lt;hr>
-&lt;h2 id="高并发">
+ 
+ &lt;a class="anchor" href="#%e9%ab%98%e5%8f%af%e7%94%a8"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h2 id="高并发"&gt;
  高并发
- &lt;a class="anchor" href="#%e9%ab%98%e5%b9%b6%e5%8f%91">#&lt;/a>
-&lt;/h2>
-&lt;hr>
-&lt;hr>
-&lt;h2 id="高扩展性">
+ 
+ &lt;a class="anchor" href="#%e9%ab%98%e5%b9%b6%e5%8f%91"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;hr&gt;
+&lt;hr&gt;
+&lt;h2 id="高扩展性"&gt;
  高扩展性
- &lt;a class="anchor" href="#%e9%ab%98%e6%89%a9%e5%b1%95%e6%80%a7">#&lt;/a>
-&lt;/h2></description></item></channel></rss>
+ 
+ &lt;a class="anchor" href="#%e9%ab%98%e6%89%a9%e5%b1%95%e6%80%a7"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;</description></item></channel></rss>

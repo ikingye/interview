@@ -1,39 +1,47 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2. 操作系统 on 面试笔记</title><link>https://kingye.me/interview/docs/os/</link><description>Recent content in 2. 操作系统 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/os/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux</title><link>https://kingye.me/interview/docs/os/linux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/os/linux/</guid><description>&lt;h1 id="linux">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>2. 操作系统 on 面试笔记</title><link>https://kingye.me/interview/docs/os/</link><description>Recent content in 2. 操作系统 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/os/index.xml" rel="self" type="application/rss+xml"/><item><title>Linux</title><link>https://kingye.me/interview/docs/os/linux/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/os/linux/</guid><description>&lt;h1 id="linux"&gt;
  Linux
- &lt;a class="anchor" href="#linux">#&lt;/a>
-&lt;/h1>
-&lt;blockquote class="book-hint info">
+ 
+ &lt;a class="anchor" href="#linux"&gt;#&lt;/a&gt;
+ 
+&lt;/h1&gt;
+&lt;blockquote class="book-hint info"&gt;
  
 
-更多教程详见：&lt;a href="https://kingye.me/study-linux/" target="_blank">Linux 学习笔记&lt;/a>
+更多教程详见：&lt;a href="https://kingye.me/study-linux/" target="_blank"&gt;Linux 学习笔记&lt;/a&gt;
 
 
-&lt;/blockquote>
+&lt;/blockquote&gt;
 
-&lt;h2 id="硬件信息">
+&lt;h2 id="硬件信息"&gt;
  硬件信息
- &lt;a class="anchor" href="#%e7%a1%ac%e4%bb%b6%e4%bf%a1%e6%81%af">#&lt;/a>
-&lt;/h2>
-&lt;h3 id="如何查看内存大小">
+ 
+ &lt;a class="anchor" href="#%e7%a1%ac%e4%bb%b6%e4%bf%a1%e6%81%af"&gt;#&lt;/a&gt;
+ 
+&lt;/h2&gt;
+&lt;h3 id="如何查看内存大小"&gt;
  如何查看内存大小？
- &lt;a class="anchor" href="#%e5%a6%82%e4%bd%95%e6%9f%a5%e7%9c%8b%e5%86%85%e5%ad%98%e5%a4%a7%e5%b0%8f">#&lt;/a>
-&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>free -m
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="如何查看-cpu-个数cpu-核心数逻辑-cpu-个数">
+ 
+ &lt;a class="anchor" href="#%e5%a6%82%e4%bd%95%e6%9f%a5%e7%9c%8b%e5%86%85%e5%ad%98%e5%a4%a7%e5%b0%8f"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;free -m
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="如何查看-cpu-个数cpu-核心数逻辑-cpu-个数"&gt;
  如何查看 CPU 个数，CPU 核心数，逻辑 CPU 个数？
- &lt;a class="anchor" href="#%e5%a6%82%e4%bd%95%e6%9f%a5%e7%9c%8b-cpu-%e4%b8%aa%e6%95%b0cpu-%e6%a0%b8%e5%bf%83%e6%95%b0%e9%80%bb%e8%be%91-cpu-%e4%b8%aa%e6%95%b0">#&lt;/a>
-&lt;/h3>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 物理 cpu 个数&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cat /proc/cpuinfo| grep &lt;span style="color:#e6db74">&amp;#39;physical id&amp;#39;&lt;/span> | sort | uniq | wc -l
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 每个物理 cpu 的核心数&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cat /proc/cpuinfo| grep &lt;span style="color:#e6db74">&amp;#39;core id&amp;#39;&lt;/span> | sort | uniq | wc -l
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 系统中逻辑 cpu 总个数（线程数），多个物理 cpu 的总和&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cat /proc/cpuinfo| grep &lt;span style="color:#e6db74">&amp;#39;processor&amp;#39;&lt;/span> | sort | uniq | wc -l
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>lscpu | grep -E &lt;span style="color:#e6db74">&amp;#39;^Thread|^Core|^Socket|^CPU\(&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#CPU(s): 128&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#Thread(s) per core: 2&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#Core(s) per socket: 32&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">#Socket(s): 2&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>例子：&lt;/p></description></item></channel></rss>
+ 
+ &lt;a class="anchor" href="#%e5%a6%82%e4%bd%95%e6%9f%a5%e7%9c%8b-cpu-%e4%b8%aa%e6%95%b0cpu-%e6%a0%b8%e5%bf%83%e6%95%b0%e9%80%bb%e8%be%91-cpu-%e4%b8%aa%e6%95%b0"&gt;#&lt;/a&gt;
+ 
+&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 物理 cpu 个数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cat /proc/cpuinfo| grep &lt;span style="color:#e6db74"&gt;&amp;#39;physical id&amp;#39;&lt;/span&gt; | sort | uniq | wc -l
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 每个物理 cpu 的核心数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cat /proc/cpuinfo| grep &lt;span style="color:#e6db74"&gt;&amp;#39;core id&amp;#39;&lt;/span&gt; | sort | uniq | wc -l
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 系统中逻辑 cpu 总个数（线程数），多个物理 cpu 的总和&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;cat /proc/cpuinfo| grep &lt;span style="color:#e6db74"&gt;&amp;#39;processor&amp;#39;&lt;/span&gt; | sort | uniq | wc -l
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;lscpu | grep -E &lt;span style="color:#e6db74"&gt;&amp;#39;^Thread|^Core|^Socket|^CPU\(&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#CPU(s): 128&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#Thread(s) per core: 2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#Core(s) per socket: 32&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#Socket(s): 2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;例子：&lt;/p&gt;</description></item></channel></rss>
