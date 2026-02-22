@@ -1,126 +1,124 @@
-<!doctype html><html lang=en dir=ltr><head><meta name=generator content="Hugo 0.151.0"><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="
-  字符编码
-  
-  #
-  
-
-有的字符在一些环境中是不能显示或使用的，
-比如 &, = 等字符在 URL 被保留为特殊作用的字符；
-比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类），
-这时就需要对进行编码。
-
-  各种编码的特征
-  
-  #
-  
-
-
-Base 编码
-
-Base64
-
-组成字符：A-Z、a-z、0-9、+、/
-末尾一般补 0-2 个 =（可以不补 =）
-
-
-Base32
-
-组成字符：A-Z、2-7
-末尾一般补 0-6 个 =（可以不补 =）
-
-
-Base16
-
-组成字符：0-9、A-F
-末尾没有 =
-
-
-
-
-
-
-
-  Base 编码
-  
-  #
-  
-
-参考：rfc4648
+<!doctype html><html lang=en dir=ltr><head><meta name=generator content="Hugo 0.151.0"><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="字符编码# 有的字符在一些环境中是不能显示或使用的， 比如 &, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
+各种编码的特征# Base 编码 Base64 组成字符：A-Z、a-z、0-9、+、/ 末尾一般补 0-2 个 =（可以不补 =） Base32 组成字符：A-Z、2-7 末尾一般补 0-6 个 =（可以不补 =） Base16 组成字符：0-9、A-F 末尾没有 = Base 编码# 参考：rfc4648
 Base 系列的就是用来将字节编码为 ASCII 中的可见字符的。
 在 URL 中使用时必须去掉 “=” 符号
-
-  Base64
-  
-  #
-  
-
-Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9、+、/）将任意字节序列数据编码成 ASCII 字符串，另有 “=” 符号用作后缀用途。
-Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0），
-然后将这些二进制数值串联起来，再按照 6 比特一组进行切分（因为 2^6=64），最后一组若不足 6 比特则末尾补 0。"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://kingye.me/interview/docs/others/encode/"><meta property="og:site_name" content="面试笔记"><meta property="og:title" content="字符编码"><meta property="og:description" content="字符编码 # 有的字符在一些环境中是不能显示或使用的， 比如 &, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
-各种编码的特征 # Base 编码 Base64 组成字符：A-Z、a-z、0-9、+、/ 末尾一般补 0-2 个 =（可以不补 =） Base32 组成字符：A-Z、2-7 末尾一般补 0-6 个 =（可以不补 =） Base16 组成字符：0-9、A-F 末尾没有 = Base 编码 # 参考：rfc4648
+Base64# Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9、+、/）将任意字节序列数据编码成 ASCII 字符串，另有 “=” 符号用作后缀用途。
+Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0）， 然后将这些二进制数值串联起来，再按照 6 比特一组进行切分（因为 2^6=64），最后一组若不足 6 比特则末尾补 0。
+由于二进制数据是按照 8 比特一组进行传输，因此 Base64 按照 6 比特一组切分的二进制数据必须是 24 比特的倍数（6 和 8 的最小公倍数）， 就是 3 个字节。 若原字节序列数据长度不是 3 的倍数时且剩下 1 个输入数据，则在编码结果后加 2 个 =；若剩下 2 个输入数据，则在编码结果后加 1 个 =。
+"><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://kingye.me/interview/docs/others/encode/"><meta property="og:site_name" content="面试笔记"><meta property="og:title" content="字符编码"><meta property="og:description" content="字符编码# 有的字符在一些环境中是不能显示或使用的， 比如 &, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
+各种编码的特征# Base 编码 Base64 组成字符：A-Z、a-z、0-9、+、/ 末尾一般补 0-2 个 =（可以不补 =） Base32 组成字符：A-Z、2-7 末尾一般补 0-6 个 =（可以不补 =） Base16 组成字符：0-9、A-F 末尾没有 = Base 编码# 参考：rfc4648
 Base 系列的就是用来将字节编码为 ASCII 中的可见字符的。
 在 URL 中使用时必须去掉 “=” 符号
-Base64 # Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9、+、/）将任意字节序列数据编码成 ASCII 字符串，另有 “=” 符号用作后缀用途。
-Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0）， 然后将这些二进制数值串联起来，再按照 6 比特一组进行切分（因为 2^6=64），最后一组若不足 6 比特则末尾补 0。"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2020-07-15T15:38:39+08:00"><title>字符编码 | 面试笔记</title><link rel=icon href=/interview/favicon.png><link rel=manifest href=/interview/manifest.json><link rel=canonical href=https://kingye.me/interview/docs/others/encode/><link rel=stylesheet href=/interview/book.min.ce1c5c2253283c431b33f3a26460127223ab7b4d18f018f6ef1294e954b520da.css integrity="sha256-zhxcIlMoPEMbM/OiZGASciOre00Y8Bj27xKU6VS1INo=" crossorigin=anonymous><script defer src=/interview/fuse.min.js></script><script defer src=/interview/en.search.min.785f5318718423d8eb0bc03492869fc2f32fca5beccb5d779fef058883de1e89.js integrity="sha256-eF9TGHGEI9jrC8A0koafwvMvylvsy113n+8FiIPeHok=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/interview/><span>面试笔记</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=https://kingye.me target=_blank rel="noopener noreferrer">博客</a></li><li><a href=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417021727.png target=_blank rel="noopener noreferrer">公众号</a></li><li><a href=https://github.com/ikingye target=_blank rel="noopener noreferrer">Github</a></li><li><a href=https://weibo.com/kingyip15215 target=_blank rel="noopener noreferrer">微博</a></li><li><a href=https://www.zhihu.com/people/wutongyip target=_blank rel="noopener noreferrer">知乎</a></li></ul><hr><ul><li><input type=checkbox id=section-dd3a99cd76f26df0b58c02d262b6dd04 class=toggle>
-<label for=section-dd3a99cd76f26df0b58c02d262b6dd04 class=flex><a href=/interview/docs/co/ class=flex-auto>1. 计算机组成原理</a></label><ul></ul></li><li><input type=checkbox id=section-5f88c2ccd6068924063a850e3fa85b10 class=toggle>
-<label for=section-5f88c2ccd6068924063a850e3fa85b10 class=flex><a href=/interview/docs/os/ class=flex-auto>2. 操作系统</a></label><ul><li><input type=checkbox id=section-bce21f6d13b63da92923a6af176673b1 class=toggle>
-<label for=section-bce21f6d13b63da92923a6af176673b1 class=flex><a href=/interview/docs/os/linux/ class=flex-auto>Linux</a></label></li></ul></li><li><input type=checkbox id=section-d6cd723e0424b7dd98b489d3b92232ab class=toggle>
-<label for=section-d6cd723e0424b7dd98b489d3b92232ab class=flex><a href=/interview/docs/network/ class=flex-auto>3. 网络</a></label><ul><li><a href=/interview/docs/network/http/>HTTP</a></li><li><a href=/interview/docs/network/tcp/>TCP/UDP/IP</a></li><li><a href=/interview/docs/network/send/>发包工具</a></li><li><a href=/interview/docs/network/capture/>抓包</a></li></ul></li><li><input type=checkbox id=section-a4b2d6bd8e60e22aa6e2bccb9fbe8097 class=toggle>
-<label for=section-a4b2d6bd8e60e22aa6e2bccb9fbe8097 class=flex><a href=/interview/docs/algs/ class=flex-auto>4. 数据结构与算法</a></label><ul><li><a href=/interview/docs/algs/tree/>二叉树</a></li><li><a href=/interview/docs/algs/dp/>动态规划</a></li><li><a href=/interview/docs/algs/sort/>排序算法</a></li><li><a href=/interview/docs/algs/search/>查询算法</a></li><li><a href=/interview/docs/algs/link/>链表</a></li></ul></li><li><input type=checkbox id=section-9bfd2e750664e8f24daf08b038584ab6 class=toggle>
-<label for=section-9bfd2e750664e8f24daf08b038584ab6 class=flex><a href=/interview/docs/pl/ class=flex-auto>5. 编程语言</a></label><ul><li><input type=checkbox id=section-88a2785eb4230436fdbd251d11ff131c class=toggle>
-<label for=section-88a2785eb4230436fdbd251d11ff131c class=flex><a href=/interview/docs/pl/c/ class=flex-auto>C</a></label></li><li><input type=checkbox id=section-2d8a6c8cffd1b093fb93a6a2e84a185f class=toggle>
-<label for=section-2d8a6c8cffd1b093fb93a6a2e84a185f class=flex><a href=/interview/docs/pl/cpp/ class=flex-auto>C++</a></label></li><li><input type=checkbox id=section-01415404933b701530953ded6e0fe732 class=toggle>
-<label for=section-01415404933b701530953ded6e0fe732 class=flex><a href=/interview/docs/pl/go/ class=flex-auto>Go</a></label></li><li><input type=checkbox id=section-f69eba88bf35d4da1828cace8104b4ea class=toggle>
-<label for=section-f69eba88bf35d4da1828cace8104b4ea class=flex><a href=/interview/docs/pl/java/ class=flex-auto>Java</a></label></li><li><input type=checkbox id=section-4fabecaa95c25fd184e5ab7d7e16a9ff class=toggle>
-<label for=section-4fabecaa95c25fd184e5ab7d7e16a9ff class=flex><a href=/interview/docs/pl/javascript/ class=flex-auto>JavaScript</a></label></li><li><input type=checkbox id=section-bed726d8c153d79a470013530373677b class=toggle>
-<label for=section-bed726d8c153d79a470013530373677b class=flex><a href=/interview/docs/pl/kotlin/ class=flex-auto>Kotlin</a></label></li><li><input type=checkbox id=section-4f2118387599bf0578a79565ed6e2cde class=toggle>
-<label for=section-4f2118387599bf0578a79565ed6e2cde class=flex><a href=/interview/docs/pl/php/ class=flex-auto>PHP</a></label></li><li><input type=checkbox id=section-afca8972e2771bd4f99c02058d58ec67 class=toggle>
-<label for=section-afca8972e2771bd4f99c02058d58ec67 class=flex><a href=/interview/docs/pl/python/ class=flex-auto>Python</a></label></li><li><input type=checkbox id=section-068e026e1f940d942d3fedf40d69b442 class=toggle>
-<label for=section-068e026e1f940d942d3fedf40d69b442 class=flex><a href=/interview/docs/pl/rust/ class=flex-auto>Rust</a></label></li></ul></li><li><input type=checkbox id=section-18fbf546f749cbd3edc51e399543c3ff class=toggle>
-<label for=section-18fbf546f749cbd3edc51e399543c3ff class=flex><a href=/interview/docs/se/ class=flex-auto>6. 软件工程</a></label><ul><li><input type=checkbox id=section-997369dfd63e9c9f7f42541878bf9187 class=toggle>
-<label for=section-997369dfd63e9c9f7f42541878bf9187 class=flex><a href=/interview/docs/se/dp/ class=flex-auto>设计模式</a></label></li><li><input type=checkbox id=section-c956170aaf69e2b8f0deadf5f833e24d class=toggle>
-<label for=section-c956170aaf69e2b8f0deadf5f833e24d class=flex><a href=/interview/docs/se/architecture/ class=flex-auto>架构设计</a></label></li><li><input type=checkbox id=section-2a31bb6534cae2720b87978b993c3abb class=toggle>
-<label for=section-2a31bb6534cae2720b87978b993c3abb class=flex><a href=/interview/docs/se/pm/ class=flex-auto>项目管理</a></label><ul></ul></li></ul></li><li><input type=checkbox id=section-f3363ab5e9aa1ef34479fe1cddeabd76 class=toggle>
-<label for=section-f3363ab5e9aa1ef34479fe1cddeabd76 class=flex><a href=/interview/docs/cloud/ class=flex-auto>7. 云计算</a></label><ul><li><input type=checkbox id=section-3a00d03747721914ab0229599881d35c class=toggle>
-<label for=section-3a00d03747721914ab0229599881d35c class=flex><a href=/interview/docs/cloud/docker/ class=flex-auto>Docker</a></label></li><li><input type=checkbox id=section-7a9f67867733f49e958a4b5123bb7904 class=toggle>
-<label for=section-7a9f67867733f49e958a4b5123bb7904 class=flex><a href=/interview/docs/cloud/kubernetes/ class=flex-auto>Kubernetes</a></label></li><li><input type=checkbox id=section-0e0ee3ac258dde18fe01044886dd0027 class=toggle>
-<label for=section-0e0ee3ac258dde18fe01044886dd0027 class=flex><a href=/interview/docs/cloud/native/ class=flex-auto>Cloud Native</a></label></li></ul></li><li><input type=checkbox id=section-f20d28998912882ad9695dbb04b2e748 class=toggle>
-<label for=section-f20d28998912882ad9695dbb04b2e748 class=flex><a href=/interview/docs/bigdata/ class=flex-auto>8. 大数据</a></label><ul></ul></li><li><input type=checkbox id=section-266b19a04e863bb47f0fda8bf35f016b class=toggle>
-<label for=section-266b19a04e863bb47f0fda8bf35f016b class=flex><a href=/interview/docs/ai/ class=flex-auto>9. 人工智能</a></label><ul><li><input type=checkbox id=section-38021f88731017b24895706b161699b7 class=toggle>
-<label for=section-38021f88731017b24895706b161699b7 class=flex><a href=/interview/docs/ai/ml/ class=flex-auto>机器学习</a></label><ul></ul></li></ul></li><li><input type=checkbox id=section-597cd3989eab66a133d8dc314302f501 class=toggle>
-<label for=section-597cd3989eab66a133d8dc314302f501 class=flex><a role=button class=flex-auto>10. 后台</a></label><ul><li><input type=checkbox id=section-ab8f9a91b399568d1de9f98a275c3f9f class=toggle>
-<label for=section-ab8f9a91b399568d1de9f98a275c3f9f class=flex><a href=/interview/docs/backend/web/ class=flex-auto>Web 后端</a></label><ul><li><input type=checkbox id=section-62cb93dad083ace8b63f0ab987a6883a class=toggle>
-<label for=section-62cb93dad083ace8b63f0ab987a6883a class=flex><a href=/interview/docs/backend/web/go/ class=flex-auto>Go Web 后端</a></label></li><li><input type=checkbox id=section-2ce0a26d31e0958ba7dc7fbb3bdffa66 class=toggle>
-<label for=section-2ce0a26d31e0958ba7dc7fbb3bdffa66 class=flex><a href=/interview/docs/backend/web/java/ class=flex-auto>Java Web 后端</a></label></li><li><input type=checkbox id=section-30ad1638c9bdbbf79702a2cc1a1b996d class=toggle>
-<label for=section-30ad1638c9bdbbf79702a2cc1a1b996d class=flex><a href=/interview/docs/backend/web/php/ class=flex-auto>PHP 后端</a></label></li><li><input type=checkbox id=section-5773abb279202779f8172ff84a8e1ea1 class=toggle>
-<label for=section-5773abb279202779f8172ff84a8e1ea1 class=flex><a href=/interview/docs/backend/web/python/ class=flex-auto>Python 后端</a></label></li></ul></li><li><a href=/interview/docs/backend/db/>数据库</a><ul><li><input type=checkbox id=section-a02ced03c51b94fae288a400c2be91e5 class=toggle>
-<label for=section-a02ced03c51b94fae288a400c2be91e5 class=flex><a href=/interview/docs/backend/db/mysql/ class=flex-auto>Mysql</a></label></li><li><input type=checkbox id=section-30a3ae66b5f5156d77c7fef50775d78d class=toggle>
-<label for=section-30a3ae66b5f5156d77c7fef50775d78d class=flex><a href=/interview/docs/backend/db/redis/ class=flex-auto>Redis</a></label></li></ul></li><li><a href=/interview/docs/backend/mq/>消息队列</a><ul><li><input type=checkbox id=section-42a38f7c26a817f824f09ff2c9ca940f class=toggle>
-<label for=section-42a38f7c26a817f824f09ff2c9ca940f class=flex><a href=/interview/docs/backend/mq/kafka/ class=flex-auto>Kafka</a></label></li><li><input type=checkbox id=section-a0b7dc110abe8e9333b393dd70bce43f class=toggle>
-<label for=section-a0b7dc110abe8e9333b393dd70bce43f class=flex><a href=/interview/docs/backend/mq/rocketmq/ class=flex-auto>RocketMQ</a></label></li><li><input type=checkbox id=section-29f8d0e1fe5dbc721549e028cf90bd31 class=toggle>
-<label for=section-29f8d0e1fe5dbc721549e028cf90bd31 class=flex><a href=/interview/docs/backend/mq/rabbitmq/ class=flex-auto>RabbitMQ</a></label></li></ul></li><li><input type=checkbox id=section-332035f6ef04f79ae72528724f32e7d8 class=toggle>
-<label for=section-332035f6ef04f79ae72528724f32e7d8 class=flex><a href=/interview/docs/backend/others/ class=flex-auto>其他</a></label><ul><li><input type=checkbox id=section-cbe4fba4ab415b323c67d003427958a4 class=toggle>
-<label for=section-cbe4fba4ab415b323c67d003427958a4 class=flex><a href=/interview/docs/backend/others/hot-load/ class=flex-auto>配置热加载</a></label></li><li><input type=checkbox id=section-ca096d4faec5d36af2970b5536e9ca50 class=toggle>
-<label for=section-ca096d4faec5d36af2970b5536e9ca50 class=flex><a href=/interview/docs/backend/others/hot-restart/ class=flex-auto>程序热重启</a></label></li></ul></li></ul></li><li><input type=checkbox id=section-0884b39a273c85deaf17f250eb2b9042 class=toggle>
-<label for=section-0884b39a273c85deaf17f250eb2b9042 class=flex><a href=/interview/docs/frontend/ class=flex-auto>11. 前端与客户端</a></label><ul><li><input type=checkbox id=section-dd4cfacc6b3c7d5c101e699c2064a255 class=toggle>
-<label for=section-dd4cfacc6b3c7d5c101e699c2064a255 class=flex><a href=/interview/docs/frontend/web/ class=flex-auto>Web 前端</a></label><ul></ul></li></ul></li><li><input type=checkbox id=section-82ce5c7445d004e6d22613f903d9a5c4 class=toggle>
-<label for=section-82ce5c7445d004e6d22613f903d9a5c4 class=flex><a href=/interview/docs/op/ class=flex-auto>13. 运维</a></label><ul></ul></li><li><input type=checkbox id=section-02b9a76730f73d0fdad4353592b47914 class=toggle>
-<label for=section-02b9a76730f73d0fdad4353592b47914 class=flex><a href=/interview/docs/test/ class=flex-auto>14. 测试</a></label><ul></ul></li><li><input type=checkbox id=section-029085a3ab0a222f35735a1195895027 class=toggle>
-<label for=section-029085a3ab0a222f35735a1195895027 class=flex><a href=/interview/docs/security/ class=flex-auto>13. 安全</a></label><ul><li><input type=checkbox id=section-6f76d824a04e918643641d8ef92983af class=toggle>
-<label for=section-6f76d824a04e918643641d8ef92983af class=flex><a href=/interview/docs/security/web/ class=flex-auto>Web 安全</a></label><ul><li><a href=/interview/docs/security/web/xss/>XSS</a></li><li><a href=/interview/docs/security/web/csrf/>CSRF</a></li></ul></li></ul></li><li><input type=checkbox id=section-8e42d0e5491ac6b6202ed209561dfdaa class=toggle checked>
-<label for=section-8e42d0e5491ac6b6202ed209561dfdaa class=flex><a href=/interview/docs/others/ class=flex-auto>15. 其他</a></label><ul><li><a href=/interview/docs/others/encode/ class=active>字符编码</a></li><li><a href=/interview/docs/others/encryption/>加密</a></li><li><a href=/interview/docs/others/compile/>编译</a></li></ul></li></ul><hr><ul><li><a href=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png target=_blank rel="noopener noreferrer">微信</a></li><li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target=_blank rel="noopener noreferrer"><img src=//pub.idqqimg.com/wpa/images/group.png></a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/interview/svg/menu.svg class=book-icon alt=Menu></label><h3>字符编码</h3><label for=toc-control><img src=/interview/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#各种编码的特征>各种编码的特征</a></li><li><a href=#base-编码>Base 编码</a><ul><li><a href=#base64>Base64</a></li><li><a href=#base32>Base32</a><ul><li><a href=#为什么后面要补->为什么后面要补 <code>=</code></a></li><li><a href=#优点>优点</a></li><li><a href=#缺点>缺点</a></li></ul></li><li><a href=#base16>Base16</a></li></ul></li><li><a href=#url-编码百分号编码>URL 编码（百分号编码）</a></li></ul></nav><hr><ul><li><a href=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png target=_blank rel="noopener noreferrer">微信</a></li><li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target=_blank rel="noopener noreferrer"><img src=//pub.idqqimg.com/wpa/images/group.png></a></li></ul></aside></header><article id=article class=markdown><h1 id=字符编码>字符编码
-<a class=anchor href=#%e5%ad%97%e7%ac%a6%e7%bc%96%e7%a0%81>#</a></h1><p>有的字符在一些环境中是不能显示或使用的，
+Base64# Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9、+、/）将任意字节序列数据编码成 ASCII 字符串，另有 “=” 符号用作后缀用途。
+Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0）， 然后将这些二进制数值串联起来，再按照 6 比特一组进行切分（因为 2^6=64），最后一组若不足 6 比特则末尾补 0。
+由于二进制数据是按照 8 比特一组进行传输，因此 Base64 按照 6 比特一组切分的二进制数据必须是 24 比特的倍数（6 和 8 的最小公倍数）， 就是 3 个字节。 若原字节序列数据长度不是 3 的倍数时且剩下 1 个输入数据，则在编码结果后加 2 个 =；若剩下 2 个输入数据，则在编码结果后加 1 个 =。"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2020-07-15T15:38:39+08:00"><meta itemprop=name content="字符编码"><meta itemprop=description content="字符编码# 有的字符在一些环境中是不能显示或使用的， 比如 &, = 等字符在 URL 被保留为特殊作用的字符； 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类）， 这时就需要对进行编码。
+各种编码的特征# Base 编码 Base64 组成字符：A-Z、a-z、0-9、+、/ 末尾一般补 0-2 个 =（可以不补 =） Base32 组成字符：A-Z、2-7 末尾一般补 0-6 个 =（可以不补 =） Base16 组成字符：0-9、A-F 末尾没有 = Base 编码# 参考：rfc4648
+Base 系列的就是用来将字节编码为 ASCII 中的可见字符的。
+在 URL 中使用时必须去掉 “=” 符号
+Base64# Base64 编码是使用 64 个可打印 ASCII 字符（A-Z、a-z、0-9、+、/）将任意字节序列数据编码成 ASCII 字符串，另有 “=” 符号用作后缀用途。
+Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0）， 然后将这些二进制数值串联起来，再按照 6 比特一组进行切分（因为 2^6=64），最后一组若不足 6 比特则末尾补 0。
+由于二进制数据是按照 8 比特一组进行传输，因此 Base64 按照 6 比特一组切分的二进制数据必须是 24 比特的倍数（6 和 8 的最小公倍数）， 就是 3 个字节。 若原字节序列数据长度不是 3 的倍数时且剩下 1 个输入数据，则在编码结果后加 2 个 =；若剩下 2 个输入数据，则在编码结果后加 1 个 =。"><meta itemprop=dateModified content="2020-07-15T15:38:39+08:00"><meta itemprop=wordCount content="293"><title>字符编码 | 面试笔记</title><link rel=icon href=/interview/favicon.png><link rel=manifest href=/interview/manifest.json><link rel=canonical href=https://kingye.me/interview/docs/others/encode/><link rel=stylesheet href=/interview/book.min.46a132acdffaa83609c8bcda7351cde310472c2dedd1120c5defca88220e9054.css integrity="sha256-RqEyrN/6qDYJyLzac1HN4xBHLC3t0RIMXe/KiCIOkFQ=" crossorigin=anonymous><script defer src=/interview/fuse.min.js></script><script defer src=/interview/en.search.min.f2593ebf06550e122b52b9b4a25e5eb66316bd790bc39f3b5e089df30b8da762.js integrity="sha256-8lk+vwZVDhIrUrm0ol5etmMWvXkLw587Xgid8wuNp2I=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/interview/><span>面试笔记</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=https://kingye.me target=_blank rel="noopener noreferrer">博客</a></li><li><a href=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417021727.png target=_blank rel="noopener noreferrer">公众号</a></li><li><a href=https://github.com/ikingye target=_blank rel="noopener noreferrer">Github</a></li><li><a href=https://weibo.com/kingyip15215 target=_blank rel="noopener noreferrer">微博</a></li><li><a href=https://www.zhihu.com/people/wutongyip target=_blank rel="noopener noreferrer">知乎</a></li></ul><hr><ul><li><input type=checkbox id=section-dd3a99cd76f26df0b58c02d262b6dd04 class=toggle>
+<label for=section-dd3a99cd76f26df0b58c02d262b6dd04 class=flex><a href=/interview/docs/co/>1. 计算机组成原理</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul></ul></li><li><input type=checkbox id=section-5f88c2ccd6068924063a850e3fa85b10 class=toggle>
+<label for=section-5f88c2ccd6068924063a850e3fa85b10 class=flex><a href=/interview/docs/os/>2. 操作系统</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-bce21f6d13b63da92923a6af176673b1 class=toggle>
+<label for=section-bce21f6d13b63da92923a6af176673b1 class=flex><a href=/interview/docs/os/linux/>Linux</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li></ul></li><li><input type=checkbox id=section-d6cd723e0424b7dd98b489d3b92232ab class=toggle>
+<label for=section-d6cd723e0424b7dd98b489d3b92232ab class=flex><a href=/interview/docs/network/>3. 网络</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/interview/docs/network/http/>HTTP</a></li><li><a href=/interview/docs/network/tcp/>TCP/UDP/IP</a></li><li><a href=/interview/docs/network/send/>发包工具</a></li><li><a href=/interview/docs/network/capture/>抓包</a></li></ul></li><li><input type=checkbox id=section-a4b2d6bd8e60e22aa6e2bccb9fbe8097 class=toggle>
+<label for=section-a4b2d6bd8e60e22aa6e2bccb9fbe8097 class=flex><a href=/interview/docs/algs/>4. 数据结构与算法</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/interview/docs/algs/tree/>二叉树</a></li><li><a href=/interview/docs/algs/dp/>动态规划</a></li><li><a href=/interview/docs/algs/sort/>排序算法</a></li><li><a href=/interview/docs/algs/search/>查询算法</a></li><li><a href=/interview/docs/algs/link/>链表</a></li></ul></li><li><input type=checkbox id=section-9bfd2e750664e8f24daf08b038584ab6 class=toggle>
+<label for=section-9bfd2e750664e8f24daf08b038584ab6 class=flex><a href=/interview/docs/pl/>5. 编程语言</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-88a2785eb4230436fdbd251d11ff131c class=toggle>
+<label for=section-88a2785eb4230436fdbd251d11ff131c class=flex><a href=/interview/docs/pl/c/>C</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-2d8a6c8cffd1b093fb93a6a2e84a185f class=toggle>
+<label for=section-2d8a6c8cffd1b093fb93a6a2e84a185f class=flex><a href=/interview/docs/pl/cpp/>C++</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-01415404933b701530953ded6e0fe732 class=toggle>
+<label for=section-01415404933b701530953ded6e0fe732 class=flex><a href=/interview/docs/pl/go/>Go</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-f69eba88bf35d4da1828cace8104b4ea class=toggle>
+<label for=section-f69eba88bf35d4da1828cace8104b4ea class=flex><a href=/interview/docs/pl/java/>Java</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-4fabecaa95c25fd184e5ab7d7e16a9ff class=toggle>
+<label for=section-4fabecaa95c25fd184e5ab7d7e16a9ff class=flex><a href=/interview/docs/pl/javascript/>JavaScript</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-bed726d8c153d79a470013530373677b class=toggle>
+<label for=section-bed726d8c153d79a470013530373677b class=flex><a href=/interview/docs/pl/kotlin/>Kotlin</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-4f2118387599bf0578a79565ed6e2cde class=toggle>
+<label for=section-4f2118387599bf0578a79565ed6e2cde class=flex><a href=/interview/docs/pl/php/>PHP</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-afca8972e2771bd4f99c02058d58ec67 class=toggle>
+<label for=section-afca8972e2771bd4f99c02058d58ec67 class=flex><a href=/interview/docs/pl/python/>Python</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-068e026e1f940d942d3fedf40d69b442 class=toggle>
+<label for=section-068e026e1f940d942d3fedf40d69b442 class=flex><a href=/interview/docs/pl/rust/>Rust</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li></ul></li><li><input type=checkbox id=section-18fbf546f749cbd3edc51e399543c3ff class=toggle>
+<label for=section-18fbf546f749cbd3edc51e399543c3ff class=flex><a href=/interview/docs/se/>6. 软件工程</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-997369dfd63e9c9f7f42541878bf9187 class=toggle>
+<label for=section-997369dfd63e9c9f7f42541878bf9187 class=flex><a href=/interview/docs/se/dp/>设计模式</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-c956170aaf69e2b8f0deadf5f833e24d class=toggle>
+<label for=section-c956170aaf69e2b8f0deadf5f833e24d class=flex><a href=/interview/docs/se/architecture/>架构设计</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-2a31bb6534cae2720b87978b993c3abb class=toggle>
+<label for=section-2a31bb6534cae2720b87978b993c3abb class=flex><a href=/interview/docs/se/pm/>项目管理</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul></ul></li></ul></li><li><input type=checkbox id=section-f3363ab5e9aa1ef34479fe1cddeabd76 class=toggle>
+<label for=section-f3363ab5e9aa1ef34479fe1cddeabd76 class=flex><a href=/interview/docs/cloud/>7. 云计算</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-3a00d03747721914ab0229599881d35c class=toggle>
+<label for=section-3a00d03747721914ab0229599881d35c class=flex><a href=/interview/docs/cloud/docker/>Docker</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-7a9f67867733f49e958a4b5123bb7904 class=toggle>
+<label for=section-7a9f67867733f49e958a4b5123bb7904 class=flex><a href=/interview/docs/cloud/kubernetes/>Kubernetes</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-0e0ee3ac258dde18fe01044886dd0027 class=toggle>
+<label for=section-0e0ee3ac258dde18fe01044886dd0027 class=flex><a href=/interview/docs/cloud/native/>Cloud Native</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li></ul></li><li><input type=checkbox id=section-f20d28998912882ad9695dbb04b2e748 class=toggle>
+<label for=section-f20d28998912882ad9695dbb04b2e748 class=flex><a href=/interview/docs/bigdata/>8. 大数据</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul></ul></li><li><input type=checkbox id=section-266b19a04e863bb47f0fda8bf35f016b class=toggle>
+<label for=section-266b19a04e863bb47f0fda8bf35f016b class=flex><a href=/interview/docs/ai/>9. 人工智能</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-38021f88731017b24895706b161699b7 class=toggle>
+<label for=section-38021f88731017b24895706b161699b7 class=flex><a href=/interview/docs/ai/ml/>机器学习</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul></ul></li></ul></li><li><input type=checkbox id=section-597cd3989eab66a133d8dc314302f501 class=toggle>
+<label for=section-597cd3989eab66a133d8dc314302f501 class=flex><a role=button>10. 后台</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-ab8f9a91b399568d1de9f98a275c3f9f class=toggle>
+<label for=section-ab8f9a91b399568d1de9f98a275c3f9f class=flex><a href=/interview/docs/backend/web/>Web 后端</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-62cb93dad083ace8b63f0ab987a6883a class=toggle>
+<label for=section-62cb93dad083ace8b63f0ab987a6883a class=flex><a href=/interview/docs/backend/web/go/>Go Web 后端</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-2ce0a26d31e0958ba7dc7fbb3bdffa66 class=toggle>
+<label for=section-2ce0a26d31e0958ba7dc7fbb3bdffa66 class=flex><a href=/interview/docs/backend/web/java/>Java Web 后端</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-30ad1638c9bdbbf79702a2cc1a1b996d class=toggle>
+<label for=section-30ad1638c9bdbbf79702a2cc1a1b996d class=flex><a href=/interview/docs/backend/web/php/>PHP 后端</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-5773abb279202779f8172ff84a8e1ea1 class=toggle>
+<label for=section-5773abb279202779f8172ff84a8e1ea1 class=flex><a href=/interview/docs/backend/web/python/>Python 后端</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li></ul></li><li><a href=/interview/docs/backend/db/>数据库</a><ul><li><input type=checkbox id=section-a02ced03c51b94fae288a400c2be91e5 class=toggle>
+<label for=section-a02ced03c51b94fae288a400c2be91e5 class=flex><a href=/interview/docs/backend/db/mysql/>Mysql</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-30a3ae66b5f5156d77c7fef50775d78d class=toggle>
+<label for=section-30a3ae66b5f5156d77c7fef50775d78d class=flex><a href=/interview/docs/backend/db/redis/>Redis</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li></ul></li><li><a href=/interview/docs/backend/mq/>消息队列</a><ul><li><input type=checkbox id=section-42a38f7c26a817f824f09ff2c9ca940f class=toggle>
+<label for=section-42a38f7c26a817f824f09ff2c9ca940f class=flex><a href=/interview/docs/backend/mq/kafka/>Kafka</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-a0b7dc110abe8e9333b393dd70bce43f class=toggle>
+<label for=section-a0b7dc110abe8e9333b393dd70bce43f class=flex><a href=/interview/docs/backend/mq/rocketmq/>RocketMQ</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-29f8d0e1fe5dbc721549e028cf90bd31 class=toggle>
+<label for=section-29f8d0e1fe5dbc721549e028cf90bd31 class=flex><a href=/interview/docs/backend/mq/rabbitmq/>RabbitMQ</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li></ul></li><li><input type=checkbox id=section-332035f6ef04f79ae72528724f32e7d8 class=toggle>
+<label for=section-332035f6ef04f79ae72528724f32e7d8 class=flex><a href=/interview/docs/backend/others/>其他</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-cbe4fba4ab415b323c67d003427958a4 class=toggle>
+<label for=section-cbe4fba4ab415b323c67d003427958a4 class=flex><a href=/interview/docs/backend/others/hot-load/>配置热加载</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-ca096d4faec5d36af2970b5536e9ca50 class=toggle>
+<label for=section-ca096d4faec5d36af2970b5536e9ca50 class=flex><a href=/interview/docs/backend/others/hot-restart/>程序热重启</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li></ul></li></ul></li><li><input type=checkbox id=section-0884b39a273c85deaf17f250eb2b9042 class=toggle>
+<label for=section-0884b39a273c85deaf17f250eb2b9042 class=flex><a href=/interview/docs/frontend/>11. 前端与客户端</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-dd4cfacc6b3c7d5c101e699c2064a255 class=toggle>
+<label for=section-dd4cfacc6b3c7d5c101e699c2064a255 class=flex><a href=/interview/docs/frontend/web/>Web 前端</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul></ul></li></ul></li><li><input type=checkbox id=section-82ce5c7445d004e6d22613f903d9a5c4 class=toggle>
+<label for=section-82ce5c7445d004e6d22613f903d9a5c4 class=flex><a href=/interview/docs/op/>13. 运维</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul></ul></li><li><input type=checkbox id=section-02b9a76730f73d0fdad4353592b47914 class=toggle>
+<label for=section-02b9a76730f73d0fdad4353592b47914 class=flex><a href=/interview/docs/test/>14. 测试</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul></ul></li><li><input type=checkbox id=section-029085a3ab0a222f35735a1195895027 class=toggle>
+<label for=section-029085a3ab0a222f35735a1195895027 class=flex><a href=/interview/docs/security/>13. 安全</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-6f76d824a04e918643641d8ef92983af class=toggle>
+<label for=section-6f76d824a04e918643641d8ef92983af class=flex><a href=/interview/docs/security/web/>Web 安全</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/interview/docs/security/web/xss/>XSS</a></li><li><a href=/interview/docs/security/web/csrf/>CSRF</a></li></ul></li></ul></li><li><input type=checkbox id=section-8e42d0e5491ac6b6202ed209561dfdaa class=toggle checked>
+<label for=section-8e42d0e5491ac6b6202ed209561dfdaa class=flex><a href=/interview/docs/others/>15. 其他</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/interview/docs/others/encode/ class=active>字符编码</a></li><li><a href=/interview/docs/others/encryption/>加密</a></li><li><a href=/interview/docs/others/compile/>编译</a></li></ul></li></ul><hr><ul><li><a href=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png target=_blank rel="noopener noreferrer">微信</a></li><li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target=_blank rel="noopener noreferrer"><img src=//pub.idqqimg.com/wpa/images/group.png></a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/interview/icons/menu.svg class=book-icon alt=Menu></label><h3>字符编码</h3><label for=toc-control><img src=/interview/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#各种编码的特征>各种编码的特征</a></li><li><a href=#base-编码>Base 编码</a><ul><li><a href=#base64>Base64</a></li><li><a href=#base32>Base32</a><ul><li><a href=#为什么后面要补->为什么后面要补 <code>=</code></a></li><li><a href=#优点>优点</a></li><li><a href=#缺点>缺点</a></li></ul></li><li><a href=#base16>Base16</a></li></ul></li><li><a href=#url-编码百分号编码>URL 编码（百分号编码）</a></li></ul></nav><hr><ul><li><a href=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png target=_blank rel="noopener noreferrer">微信</a></li><li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target=_blank rel="noopener noreferrer"><img src=//pub.idqqimg.com/wpa/images/group.png></a></li></ul></aside></header><article id=article class=markdown><h1 id=字符编码>字符编码<a class=anchor href=#%e5%ad%97%e7%ac%a6%e7%bc%96%e7%a0%81>#</a></h1><p>有的字符在一些环境中是不能显示或使用的，
 比如 <code>&</code>, <code>=</code> 等字符在 URL 被保留为特殊作用的字符；
 比如描述一张图片，而图片中的二进制码如果转成对应的字符的话，会有很多不可见字符和控制符（如换行、回车之类），
-这时就需要对进行编码。</p><h2 id=各种编码的特征>各种编码的特征
-<a class=anchor href=#%e5%90%84%e7%a7%8d%e7%bc%96%e7%a0%81%e7%9a%84%e7%89%b9%e5%be%81>#</a></h2><ul><li>Base 编码<ul><li>Base64<ul><li>组成字符：<code>A-Z、a-z、0-9、+、/</code></li><li>末尾一般补 0-2 个 <code>=</code>（可以不补 <code>=</code>）</li></ul></li><li>Base32<ul><li>组成字符：<code>A-Z、2-7</code></li><li>末尾一般补 0-6 个 <code>=</code>（可以不补 <code>=</code>）</li></ul></li><li>Base16<ul><li>组成字符：<code>0-9、A-F</code></li><li>末尾没有 <code>=</code></li></ul></li></ul></li></ul><hr><h2 id=base-编码>Base 编码
-<a class=anchor href=#base-%e7%bc%96%e7%a0%81>#</a></h2><p>参考：<a href=https://www.rfc-editor.org/info/rfc4648>rfc4648</a></p><p>Base 系列的就是用来将<strong>字节</strong>编码为 ASCII 中的<strong>可见字符</strong>的。</p><p>在 URL 中使用时必须去掉 “<code>=</code>” 符号</p><h3 id=base64>Base64
-<a class=anchor href=#base64>#</a></h3><p>Base64 编码是使用 64 个可打印 ASCII 字符（<code>A-Z、a-z、0-9、+、/</code>）将任意字节序列数据编码成 ASCII 字符串，另有 “<code>=</code>” 符号用作后缀用途。</p><p>Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0），
+这时就需要对进行编码。</p><h2 id=各种编码的特征>各种编码的特征<a class=anchor href=#%e5%90%84%e7%a7%8d%e7%bc%96%e7%a0%81%e7%9a%84%e7%89%b9%e5%be%81>#</a></h2><ul><li>Base 编码<ul><li>Base64<ul><li>组成字符：<code>A-Z、a-z、0-9、+、/</code></li><li>末尾一般补 0-2 个 <code>=</code>（可以不补 <code>=</code>）</li></ul></li><li>Base32<ul><li>组成字符：<code>A-Z、2-7</code></li><li>末尾一般补 0-6 个 <code>=</code>（可以不补 <code>=</code>）</li></ul></li><li>Base16<ul><li>组成字符：<code>0-9、A-F</code></li><li>末尾没有 <code>=</code></li></ul></li></ul></li></ul><hr><h2 id=base-编码>Base 编码<a class=anchor href=#base-%e7%bc%96%e7%a0%81>#</a></h2><p>参考：<a href=https://www.rfc-editor.org/info/rfc4648>rfc4648</a></p><p>Base 系列的就是用来将<strong>字节</strong>编码为 ASCII 中的<strong>可见字符</strong>的。</p><p>在 URL 中使用时必须去掉 “<code>=</code>” 符号</p><h3 id=base64>Base64<a class=anchor href=#base64>#</a></h3><p>Base64 编码是使用 64 个可打印 ASCII 字符（<code>A-Z、a-z、0-9、+、/</code>）将任意字节序列数据编码成 ASCII 字符串，另有 “<code>=</code>” 符号用作后缀用途。</p><p>Base64 将输入字符串按字节切分，取得每个字节对应的二进制值（若不足 8 比特则高位补 0），
 然后将这些二进制数值串联起来，再按照 6 比特一组进行切分（因为 <code>2^6=64</code>），<strong>最后一组若不足 6 比特则末尾补 0</strong>。</p><p>由于二进制数据是按照 8 比特一组进行传输，因此 Base64 按照 6 比特一组切分的二进制数据必须是 24 比特的倍数（6 和 8 的最小公倍数），
 就是 <strong>3 个字节</strong>。
-若原字节序列数据长度不是 3 的倍数时且剩下 1 个输入数据，则在编码结果后加 2 个 <code>=</code>；若剩下 2 个输入数据，则在编码结果后加 1 个 =。</p><p><strong>数据量扩大了 <code>1/3</code>。</strong></p><p><img src=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200612113327.png alt></p><h3 id=base32>Base32
-<a class=anchor href=#base32>#</a></h3><p>Base16 编码会将<strong>字节</strong>切为 5 个一组，所以此编码后会用到 32 个字符（<code>A-Z、2-7</code>），
+若原字节序列数据长度不是 3 的倍数时且剩下 1 个输入数据，则在编码结果后加 2 个 <code>=</code>；若剩下 2 个输入数据，则在编码结果后加 1 个 =。</p><p><strong>数据量扩大了 <code>1/3</code>。</strong></p><p><img src=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200612113327.png alt></p><h3 id=base32>Base32<a class=anchor href=#base32>#</a></h3><p>Base16 编码会将<strong>字节</strong>切为 5 个一组，所以此编码后会用到 32 个字符（<code>A-Z、2-7</code>），
 数据量扩大了 <code>3/5</code>（文本一长，最后填充的 0 和 = 的数据量差不多就可忽略不计了）。</p><p>需要凑够 8 个字符</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#ae81ff>00000001</span> <span style=color:#ae81ff>00000011</span> <span style=color:#ae81ff>00000111</span> <span style=color:#ae81ff>00001111</span> 00011111
 </span></span><span style=display:flex><span><span style=color:#f92672>=</span>&gt;
 </span></span><span style=display:flex><span><span style=color:#ae81ff>00000</span> <span style=color:#ae81ff>00100</span> <span style=color:#ae81ff>00001</span> <span style=color:#ae81ff>10000</span> <span style=color:#ae81ff>01110</span> <span style=color:#ae81ff>00011</span> <span style=color:#ae81ff>11000</span> <span style=color:#ae81ff>11111</span>
@@ -130,19 +128,13 @@ Base64 将输入字符串按字节切分，取得每个字节对应的二进制�
 </span></span><span style=display:flex><span><span style=color:#f92672>=</span>&gt;
 </span></span><span style=display:flex><span><span style=color:#ae81ff>00000</span> <span style=color:#ae81ff>00100</span> <span style=color:#ae81ff>00001</span> <span style=color:#ae81ff>10000</span> <span style=color:#ae81ff>01110</span> <span style=color:#ae81ff>00011</span> <span style=color:#ae81ff>11000</span> <span style=color:#ae81ff>11111</span>
 </span></span><span style=display:flex><span><span style=color:#ae81ff>11111</span> 11100 <span style=color:#f92672>=</span>     <span style=color:#f92672>=</span>     <span style=color:#f92672>=</span>     <span style=color:#f92672>=</span>     <span style=color:#f92672>=</span>     <span style=color:#f92672>=</span>
-</span></span><span style=display:flex><span>// 最后不足 <span style=color:#ae81ff>5</span> 字节的重组后先在右边充 0，编码完成后再右边充 <span style=color:#f92672>=</span>
-</span></span></code></pre></div><p><img src=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200612113053.png alt></p><h4 id=为什么后面要补->为什么后面要补 <code>=</code>
-<a class=anchor href=#%e4%b8%ba%e4%bb%80%e4%b9%88%e5%90%8e%e9%9d%a2%e8%a6%81%e8%a1%a5->#</a></h4><p>由于数据的二进制传输是按照 8 比特一组进行（即一个字节），
+</span></span><span style=display:flex><span>// 最后不足 <span style=color:#ae81ff>5</span> 字节的重组后先在右边充 0，编码完成后再右边充 <span style=color:#f92672>=</span></span></span></code></pre></div><p><img src=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200612113053.png alt></p><h4 id=为什么后面要补->为什么后面要补 <code>=</code><a class=anchor href=#%e4%b8%ba%e4%bb%80%e4%b9%88%e5%90%8e%e9%9d%a2%e8%a6%81%e8%a1%a5->#</a></h4><p>由于数据的二进制传输是按照 8 比特一组进行（即一个字节），
 因此 Base32 按 5 比特切分的二进制数据必须是 40 比特的倍数（5 和 8 的最小公倍数），就是 <strong>5 字节</strong>。</p><p>填充 “<code>=</code>” 符号的作用是方便一些程序的标准化运行，大多数情况下不添加也无关紧要，
-而且，<strong>在 URL 中使用时必须去掉 “<code>=</code>” 符号</strong>。</p><h4 id=优点>优点
-<a class=anchor href=#%e4%bc%98%e7%82%b9>#</a></h4><p>与 Base64 相比，Base32 具有许多优点：</p><ul><li>适合不区分大小写的文件系统，更利于人类口语交流或记忆。</li><li>结果可以用作文件名，因为它不包含路径分隔符 “<code>/</code>” 等符号。</li><li>排除了视觉上容易混淆的字符，因此可以准确的人工录入。
-（例如，RFC4648 符号集忽略了数字 “<code>1</code>”、“<code>8</code>” 和 “<code>0</code>”，因为它们可能与字母 “<code>I</code>”，“<code>B</code>” 和 “<code>O</code>” 混淆）。</li><li>排除填充符号 “<code>=</code>” 的结果可以包含在 URL 中，而不编码任何字符。</li></ul><p>Base32 也比 Base16 有优势：</p><ul><li>Base32 比 Base16 占用的空间更小。（1000 比特数据 Base32 需要 200 个字符，而 Base16 则为 250 个字符）</li></ul><h4 id=缺点>缺点
-<a class=anchor href=#%e7%bc%ba%e7%82%b9>#</a></h4><p>Base32 比 Base64 多占用大约 <code>20％</code> 的空间 —— <code>(8/5 - (8/6)) / (8/6)</code>。</p><p>因为 Base32 使用 8 个 ASCII 字符去编码原数据中的 5 个字节数据，
-而 Base64 是使用 4 个 ASCII 字符去编码原数据中的 3 个字节数据。</p><hr><h3 id=base16>Base16
-<a class=anchor href=#base16>#</a></h3><p>Base16 编码是一个标准的十六进制<strong>字符串</strong>（注意是字符串而不是数值），更易被人类和计算机使用，
-因为它并不包含任何<strong>控制字符</strong>，以及 Base64 和 Base32 中的 <code>=</code> 符号。</p><p>Base16 编码会将<strong>字节</strong>切为 4 个一组，所以此编码后会用到 16 个字符（<code>0-9、A-F</code>），数据会扩大 <strong>2 倍</strong></p><p><img src=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200612112644.png alt></p><hr><h2 id=url-编码百分号编码>URL 编码（百分号编码）
-<a class=anchor href=#url-%e7%bc%96%e7%a0%81%e7%99%be%e5%88%86%e5%8f%b7%e7%bc%96%e7%a0%81>#</a></h2><ul><li>网址路径的编码，用的是 <code>utf-8 编码</code></li><li>查询字符串的编码，用的是操作系统的默认编码</li><li>GET 和 POST 方法的编码，用的是网页的编码</li><li>Ajax 调用中，IE 总是采用 GB2312 编码（操作系统的默认编码），而 Firefox 总是采用 utf-8 编码</li></ul><p>参考：</p><ul><li><a href=https://www.ruanyifeng.com/blog/2010/02/url_encoding.html>关于 URL 编码</a></li></ul><hr></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><div class="flex flex-wrap justify-between"><span><a href=/interview/docs/others/ class="flex align-center"><img src=/interview/svg/backward.svg class=book-icon alt=Previous title="15. 其他">
+而且，<strong>在 URL 中使用时必须去掉 “<code>=</code>” 符号</strong>。</p><h4 id=优点>优点<a class=anchor href=#%e4%bc%98%e7%82%b9>#</a></h4><p>与 Base64 相比，Base32 具有许多优点：</p><ul><li>适合不区分大小写的文件系统，更利于人类口语交流或记忆。</li><li>结果可以用作文件名，因为它不包含路径分隔符 “<code>/</code>” 等符号。</li><li>排除了视觉上容易混淆的字符，因此可以准确的人工录入。
+（例如，RFC4648 符号集忽略了数字 “<code>1</code>”、“<code>8</code>” 和 “<code>0</code>”，因为它们可能与字母 “<code>I</code>”，“<code>B</code>” 和 “<code>O</code>” 混淆）。</li><li>排除填充符号 “<code>=</code>” 的结果可以包含在 URL 中，而不编码任何字符。</li></ul><p>Base32 也比 Base16 有优势：</p><ul><li>Base32 比 Base16 占用的空间更小。（1000 比特数据 Base32 需要 200 个字符，而 Base16 则为 250 个字符）</li></ul><h4 id=缺点>缺点<a class=anchor href=#%e7%bc%ba%e7%82%b9>#</a></h4><p>Base32 比 Base64 多占用大约 <code>20％</code> 的空间 —— <code>(8/5 - (8/6)) / (8/6)</code>。</p><p>因为 Base32 使用 8 个 ASCII 字符去编码原数据中的 5 个字节数据，
+而 Base64 是使用 4 个 ASCII 字符去编码原数据中的 3 个字节数据。</p><hr><h3 id=base16>Base16<a class=anchor href=#base16>#</a></h3><p>Base16 编码是一个标准的十六进制<strong>字符串</strong>（注意是字符串而不是数值），更易被人类和计算机使用，
+因为它并不包含任何<strong>控制字符</strong>，以及 Base64 和 Base32 中的 <code>=</code> 符号。</p><p>Base16 编码会将<strong>字节</strong>切为 4 个一组，所以此编码后会用到 16 个字符（<code>0-9、A-F</code>），数据会扩大 <strong>2 倍</strong></p><p><img src=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200612112644.png alt></p><hr><h2 id=url-编码百分号编码>URL 编码（百分号编码）<a class=anchor href=#url-%e7%bc%96%e7%a0%81%e7%99%be%e5%88%86%e5%8f%b7%e7%bc%96%e7%a0%81>#</a></h2><ul><li>网址路径的编码，用的是 <code>utf-8 编码</code></li><li>查询字符串的编码，用的是操作系统的默认编码</li><li>GET 和 POST 方法的编码，用的是网页的编码</li><li>Ajax 调用中，IE 总是采用 GB2312 编码（操作系统的默认编码），而 Firefox 总是采用 utf-8 编码</li></ul><p>参考：</p><ul><li><a href=https://www.ruanyifeng.com/blog/2010/02/url_encoding.html>关于 URL 编码</a></li></ul><hr></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/interview/docs/others/ class="flex align-center"><img src=/interview/icons/backward.svg class=book-icon alt=Backward>
 <span>15. 其他</span>
 </a></span><span><a href=/interview/docs/others/encryption/ class="flex align-center"><span>加密</span>
-<img src=/interview/svg/forward.svg class=book-icon alt=Next title=加密></a></span></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script><div><br><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><link rel=stylesheet href=//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css><p><span id=busuanzi_container_page_pv>本文访问量 <span id=busuanzi_value_page_pv><i class="fa fa-spinner fa-spin"></i></span> 次</span></p><p><span id=busuanzi_container_site_pv>本站总访问量 <span id=busuanzi_value_site_pv><i class="fa fa-spinner fa-spin"></i></span> 次</span></p><p><span id=busuanzi_container_site_uv>本站总访客数 <span id=busuanzi_value_site_uv><i class="fa fa-spinner fa-spin"></i></span> 人</span></p></div></footer><div class=book-comments><script src=https://utteranc.es/client.js repo=ikingye/interview issue-term=pathname theme=github-light crossorigin=anonymous async></script><div id=footer><p><a href=https://kingye.me>叶王</a> &copy; 2013-2026
+<img src=/interview/icons/forward.svg class=book-icon alt=Forward></a></span></div><div><br><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><link rel=stylesheet href=//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css><p><span id=busuanzi_container_page_pv>本文访问量 <span id=busuanzi_value_page_pv><i class="fa fa-spinner fa-spin"></i></span> 次</span></p><p><span id=busuanzi_container_site_pv>本站总访问量 <span id=busuanzi_value_site_pv><i class="fa fa-spinner fa-spin"></i></span> 次</span></p><p><span id=busuanzi_container_site_uv>本站总访客数 <span id=busuanzi_value_site_uv><i class="fa fa-spinner fa-spin"></i></span> 人</span></p></div></footer><div class=book-comments><script src=https://utteranc.es/client.js repo=ikingye/interview issue-term=pathname theme=github-light crossorigin=anonymous async></script><div id=footer><p><a href=https://kingye.me>叶王</a> &copy; 2013-2026
 版权所有。如果本文档对你有所帮助，可以<a href=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200428110046.png target=_blank rel="noopener noreferrer">请作者喝饮料</a>。</p></div></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#各种编码的特征>各种编码的特征</a></li><li><a href=#base-编码>Base 编码</a><ul><li><a href=#base64>Base64</a></li><li><a href=#base32>Base32</a><ul><li><a href=#为什么后面要补->为什么后面要补 <code>=</code></a></li><li><a href=#优点>优点</a></li><li><a href=#缺点>缺点</a></li></ul></li><li><a href=#base16>Base16</a></li></ul></li><li><a href=#url-编码百分号编码>URL 编码（百分号编码）</a></li></ul></nav><hr><ul><li><a href=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png target=_blank rel="noopener noreferrer">微信</a></li><li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target=_blank rel="noopener noreferrer"><img src=//pub.idqqimg.com/wpa/images/group.png></a></li></ul></div></aside></main></body></html>

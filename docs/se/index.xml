@@ -1,160 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>6. 软件工程 on 面试笔记</title><link>https://kingye.me/interview/docs/se/</link><description>Recent content in 6. 软件工程 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/se/index.xml" rel="self" type="application/rss+xml"/><item><title>设计模式</title><link>https://kingye.me/interview/docs/se/dp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/se/dp/</guid><description>&lt;h1 id="设计模式"&gt;
- 设计模式
- 
- &lt;a class="anchor" href="#%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h1&gt;
-&lt;h2 id="设计原则"&gt;
- 设计原则
- 
- &lt;a class="anchor" href="#%e8%ae%be%e8%ae%a1%e5%8e%9f%e5%88%99"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;
-&lt;h3 id="单一职责原则-srp"&gt;
- 单一职责原则 (&lt;code&gt;SRP&lt;/code&gt;)
- 
- &lt;a class="anchor" href="#%e5%8d%95%e4%b8%80%e8%81%8c%e8%b4%a3%e5%8e%9f%e5%88%99-srp"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>6. 软件工程 on 面试笔记</title><link>https://kingye.me/interview/docs/se/</link><description>Recent content in 6. 软件工程 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/se/index.xml" rel="self" type="application/rss+xml"/><item><title>设计模式</title><link>https://kingye.me/interview/docs/se/dp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/se/dp/</guid><description>&lt;h1 id="设计模式"&gt;设计模式&lt;a class="anchor" href="#%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="设计原则"&gt;设计原则&lt;a class="anchor" href="#%e8%ae%be%e8%ae%a1%e5%8e%9f%e5%88%99"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="单一职责原则-srp"&gt;单一职责原则 (&lt;code&gt;SRP&lt;/code&gt;)&lt;a class="anchor" href="#%e5%8d%95%e4%b8%80%e8%81%8c%e8%b4%a3%e5%8e%9f%e5%88%99-srp"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="开闭原则-open-closed-principle"&gt;
- 开闭原则 (&lt;code&gt;Open Closed Principle&lt;/code&gt;)
- 
- &lt;a class="anchor" href="#%e5%bc%80%e9%97%ad%e5%8e%9f%e5%88%99-open-closed-principle"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="开闭原则-open-closed-principle"&gt;开闭原则 (&lt;code&gt;Open Closed Principle&lt;/code&gt;)&lt;a class="anchor" href="#%e5%bc%80%e9%97%ad%e5%8e%9f%e5%88%99-open-closed-principle"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="里氏替换原则-liskov-substitution-principle"&gt;
- 里氏替换原则 (&lt;code&gt;Liskov Substitution Principle&lt;/code&gt;)
- 
- &lt;a class="anchor" href="#%e9%87%8c%e6%b0%8f%e6%9b%bf%e6%8d%a2%e5%8e%9f%e5%88%99-liskov-substitution-principle"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="里氏替换原则-liskov-substitution-principle"&gt;里氏替换原则 (&lt;code&gt;Liskov Substitution Principle&lt;/code&gt;)&lt;a class="anchor" href="#%e9%87%8c%e6%b0%8f%e6%9b%bf%e6%8d%a2%e5%8e%9f%e5%88%99-liskov-substitution-principle"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="依赖倒置原则-dependence-inversion-principle"&gt;
- 依赖倒置原则 (&lt;code&gt;Dependence Inversion Principle&lt;/code&gt;)
- 
- &lt;a class="anchor" href="#%e4%be%9d%e8%b5%96%e5%80%92%e7%bd%ae%e5%8e%9f%e5%88%99-dependence-inversion-principle"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="依赖倒置原则-dependence-inversion-principle"&gt;依赖倒置原则 (&lt;code&gt;Dependence Inversion Principle&lt;/code&gt;)&lt;a class="anchor" href="#%e4%be%9d%e8%b5%96%e5%80%92%e7%bd%ae%e5%8e%9f%e5%88%99-dependence-inversion-principle"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="接口隔离原则-interface-segregation-principle"&gt;
- 接口隔离原则 (&lt;code&gt;Interface Segregation Principle&lt;/code&gt;)
- 
- &lt;a class="anchor" href="#%e6%8e%a5%e5%8f%a3%e9%9a%94%e7%a6%bb%e5%8e%9f%e5%88%99-interface-segregation-principle"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="接口隔离原则-interface-segregation-principle"&gt;接口隔离原则 (&lt;code&gt;Interface Segregation Principle&lt;/code&gt;)&lt;a class="anchor" href="#%e6%8e%a5%e5%8f%a3%e9%9a%94%e7%a6%bb%e5%8e%9f%e5%88%99-interface-segregation-principle"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="迪米特原则-demeter-principle"&gt;
- 迪米特原则 (&lt;code&gt;Demeter Principle&lt;/code&gt;)
- 
- &lt;a class="anchor" href="#%e8%bf%aa%e7%b1%b3%e7%89%b9%e5%8e%9f%e5%88%99-demeter-principle"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="迪米特原则-demeter-principle"&gt;迪米特原则 (&lt;code&gt;Demeter Principle&lt;/code&gt;)&lt;a class="anchor" href="#%e8%bf%aa%e7%b1%b3%e7%89%b9%e5%8e%9f%e5%88%99-demeter-principle"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
 &lt;hr&gt;
-&lt;h2 id="创建型模式"&gt;
- 创建型模式
- 
- &lt;a class="anchor" href="#%e5%88%9b%e5%bb%ba%e5%9e%8b%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;
-&lt;h3 id="简单工厂模式"&gt;
- 简单工厂模式
- 
- &lt;a class="anchor" href="#%e7%ae%80%e5%8d%95%e5%b7%a5%e5%8e%82%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h2 id="创建型模式"&gt;创建型模式&lt;a class="anchor" href="#%e5%88%9b%e5%bb%ba%e5%9e%8b%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="简单工厂模式"&gt;简单工厂模式&lt;a class="anchor" href="#%e7%ae%80%e5%8d%95%e5%b7%a5%e5%8e%82%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="工厂方法模式"&gt;
- 工厂方法模式
- 
- &lt;a class="anchor" href="#%e5%b7%a5%e5%8e%82%e6%96%b9%e6%b3%95%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="工厂方法模式"&gt;工厂方法模式&lt;a class="anchor" href="#%e5%b7%a5%e5%8e%82%e6%96%b9%e6%b3%95%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="抽象工厂模式"&gt;
- 抽象工厂模式
- 
- &lt;a class="anchor" href="#%e6%8a%bd%e8%b1%a1%e5%b7%a5%e5%8e%82%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="抽象工厂模式"&gt;抽象工厂模式&lt;a class="anchor" href="#%e6%8a%bd%e8%b1%a1%e5%b7%a5%e5%8e%82%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="建造者模式"&gt;
- 建造者模式
- 
- &lt;a class="anchor" href="#%e5%bb%ba%e9%80%a0%e8%80%85%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="建造者模式"&gt;建造者模式&lt;a class="anchor" href="#%e5%bb%ba%e9%80%a0%e8%80%85%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="单例模式"&gt;
- 单例模式
- 
- &lt;a class="anchor" href="#%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="单例模式"&gt;单例模式&lt;a class="anchor" href="#%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
 &lt;hr&gt;
-&lt;h2 id="结构型模式"&gt;
- 结构型模式
- 
- &lt;a class="anchor" href="#%e7%bb%93%e6%9e%84%e5%9e%8b%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;
-&lt;h3 id="适配器模式"&gt;
- 适配器模式
- 
- &lt;a class="anchor" href="#%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h2 id="结构型模式"&gt;结构型模式&lt;a class="anchor" href="#%e7%bb%93%e6%9e%84%e5%9e%8b%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="适配器模式"&gt;适配器模式&lt;a class="anchor" href="#%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="桥接模式"&gt;
- 桥接模式
- 
- &lt;a class="anchor" href="#%e6%a1%a5%e6%8e%a5%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="桥接模式"&gt;桥接模式&lt;a class="anchor" href="#%e6%a1%a5%e6%8e%a5%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="装饰模式"&gt;
- 装饰模式
- 
- &lt;a class="anchor" href="#%e8%a3%85%e9%a5%b0%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="装饰模式"&gt;装饰模式&lt;a class="anchor" href="#%e8%a3%85%e9%a5%b0%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="外观模式"&gt;
- 外观模式
- 
- &lt;a class="anchor" href="#%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="外观模式"&gt;外观模式&lt;a class="anchor" href="#%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="享元模式"&gt;
- 享元模式
- 
- &lt;a class="anchor" href="#%e4%ba%ab%e5%85%83%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="享元模式"&gt;享元模式&lt;a class="anchor" href="#%e4%ba%ab%e5%85%83%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="代理模式"&gt;
- 代理模式
- 
- &lt;a class="anchor" href="#%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="代理模式"&gt;代理模式&lt;a class="anchor" href="#%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="组合模式"&gt;
- 组合模式
- 
- &lt;a class="anchor" href="#%e7%bb%84%e5%90%88%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
-&lt;h3 id="适配器模式装饰模式代理模式有哪些异同"&gt;
- 适配器模式、装饰模式、代理模式有哪些异同？
- 
- &lt;a class="anchor" href="#%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%e8%a3%85%e9%a5%b0%e6%a8%a1%e5%bc%8f%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f%e6%9c%89%e5%93%aa%e4%ba%9b%e5%bc%82%e5%90%8c"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="组合模式"&gt;组合模式&lt;a class="anchor" href="#%e7%bb%84%e5%90%88%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="适配器模式装饰模式代理模式有哪些异同"&gt;适配器模式、装饰模式、代理模式有哪些异同？&lt;a class="anchor" href="#%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%e8%a3%85%e9%a5%b0%e6%a8%a1%e5%bc%8f%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f%e6%9c%89%e5%93%aa%e4%ba%9b%e5%bc%82%e5%90%8c"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;适配器模式
 &lt;ul&gt;
@@ -271,180 +156,54 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; System.&lt;span style="color:#a6e22e"&gt;out&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;println&lt;/span&gt;(client&lt;span style="color:#f92672"&gt;+&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;已将订单&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;+&lt;/span&gt;orderId&lt;span style="color:#f92672"&gt;+&lt;/span&gt;&lt;span style="color:#e6db74"&gt;&amp;#34;的退款期延长至&amp;#34;&lt;/span&gt;&lt;span style="color:#f92672"&gt;+&lt;/span&gt;date);
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
 &lt;hr&gt;
-&lt;h2 id="行为型模式"&gt;
- 行为型模式
- 
- &lt;a class="anchor" href="#%e8%a1%8c%e4%b8%ba%e5%9e%8b%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;
-&lt;h3 id="命令模式"&gt;
- 命令模式
- 
- &lt;a class="anchor" href="#%e5%91%bd%e4%bb%a4%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h2 id="行为型模式"&gt;行为型模式&lt;a class="anchor" href="#%e8%a1%8c%e4%b8%ba%e5%9e%8b%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="命令模式"&gt;命令模式&lt;a class="anchor" href="#%e5%91%bd%e4%bb%a4%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="中介者模式"&gt;
- 中介者模式
- 
- &lt;a class="anchor" href="#%e4%b8%ad%e4%bb%8b%e8%80%85%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="中介者模式"&gt;中介者模式&lt;a class="anchor" href="#%e4%b8%ad%e4%bb%8b%e8%80%85%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="观察者模式"&gt;
- 观察者模式
- 
- &lt;a class="anchor" href="#%e8%a7%82%e5%af%9f%e8%80%85%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="观察者模式"&gt;观察者模式&lt;a class="anchor" href="#%e8%a7%82%e5%af%9f%e8%80%85%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="状态模式"&gt;
- 状态模式
- 
- &lt;a class="anchor" href="#%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="状态模式"&gt;状态模式&lt;a class="anchor" href="#%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="策略模式"&gt;
- 策略模式
- 
- &lt;a class="anchor" href="#%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="策略模式"&gt;策略模式&lt;a class="anchor" href="#%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="模板方法模式"&gt;
- 模板方法模式
- 
- &lt;a class="anchor" href="#%e6%a8%a1%e6%9d%bf%e6%96%b9%e6%b3%95%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="模板方法模式"&gt;模板方法模式&lt;a class="anchor" href="#%e6%a8%a1%e6%9d%bf%e6%96%b9%e6%b3%95%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="迭代子模式"&gt;
- 迭代子模式
- 
- &lt;a class="anchor" href="#%e8%bf%ad%e4%bb%a3%e5%ad%90%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="迭代子模式"&gt;迭代子模式&lt;a class="anchor" href="#%e8%bf%ad%e4%bb%a3%e5%ad%90%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="责任链模式"&gt;
- 责任链模式
- 
- &lt;a class="anchor" href="#%e8%b4%a3%e4%bb%bb%e9%93%be%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="责任链模式"&gt;责任链模式&lt;a class="anchor" href="#%e8%b4%a3%e4%bb%bb%e9%93%be%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="备忘录模式"&gt;
- 备忘录模式
- 
- &lt;a class="anchor" href="#%e5%a4%87%e5%bf%98%e5%bd%95%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="备忘录模式"&gt;备忘录模式&lt;a class="anchor" href="#%e5%a4%87%e5%bf%98%e5%bd%95%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="访问者模式"&gt;
- 访问者模式
- 
- &lt;a class="anchor" href="#%e8%ae%bf%e9%97%ae%e8%80%85%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="访问者模式"&gt;访问者模式&lt;a class="anchor" href="#%e8%ae%bf%e9%97%ae%e8%80%85%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="解释器模式"&gt;
- 解释器模式
- 
- &lt;a class="anchor" href="#%e8%a7%a3%e9%87%8a%e5%99%a8%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="解释器模式"&gt;解释器模式&lt;a class="anchor" href="#%e8%a7%a3%e9%87%8a%e5%99%a8%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
 &lt;hr&gt;
-&lt;h2 id="其他模式"&gt;
- 其他模式
- 
- &lt;a class="anchor" href="#%e5%85%b6%e4%bb%96%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;
-&lt;h3 id="并发型模式"&gt;
- 并发型模式
- 
- &lt;a class="anchor" href="#%e5%b9%b6%e5%8f%91%e5%9e%8b%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h2 id="其他模式"&gt;其他模式&lt;a class="anchor" href="#%e5%85%b6%e4%bb%96%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="并发型模式"&gt;并发型模式&lt;a class="anchor" href="#%e5%b9%b6%e5%8f%91%e5%9e%8b%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h3 id="线程池模式"&gt;
- 线程池模式
- 
- &lt;a class="anchor" href="#%e7%ba%bf%e7%a8%8b%e6%b1%a0%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;</description></item><item><title>架构设计</title><link>https://kingye.me/interview/docs/se/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/se/architecture/</guid><description>&lt;h1 id="架构设计"&gt;
- 架构设计
- 
- &lt;a class="anchor" href="#%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1"&gt;#&lt;/a&gt;
- 
-&lt;/h1&gt;
-&lt;h2 id="架构设计原则"&gt;
- 架构设计原则
- 
- &lt;a class="anchor" href="#%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1%e5%8e%9f%e5%88%99"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;
-&lt;h3 id="cap-consistency-availability-partition-tolerance"&gt;
- CAP (&lt;code&gt;Consistency&lt;/code&gt;, &lt;code&gt;Availability&lt;/code&gt;, &lt;code&gt;Partition tolerance&lt;/code&gt;)
- 
- &lt;a class="anchor" href="#cap-consistency-availability-partition-tolerance"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
-&lt;h4 id="如何理解-cap你在做系统设计时是如何取舍的"&gt;
- 如何理解 CAP，你在做系统设计时是如何取舍的？
- 
- &lt;a class="anchor" href="#%e5%a6%82%e4%bd%95%e7%90%86%e8%a7%a3-cap%e4%bd%a0%e5%9c%a8%e5%81%9a%e7%b3%bb%e7%bb%9f%e8%ae%be%e8%ae%a1%e6%97%b6%e6%98%af%e5%a6%82%e4%bd%95%e5%8f%96%e8%88%8d%e7%9a%84"&gt;#&lt;/a&gt;
- 
-&lt;/h4&gt;
+&lt;h3 id="线程池模式"&gt;线程池模式&lt;a class="anchor" href="#%e7%ba%bf%e7%a8%8b%e6%b1%a0%e6%a8%a1%e5%bc%8f"&gt;#&lt;/a&gt;&lt;/h3&gt;</description></item><item><title>架构设计</title><link>https://kingye.me/interview/docs/se/architecture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/se/architecture/</guid><description>&lt;h1 id="架构设计"&gt;架构设计&lt;a class="anchor" href="#%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="架构设计原则"&gt;架构设计原则&lt;a class="anchor" href="#%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1%e5%8e%9f%e5%88%99"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="cap-consistency-availability-partition-tolerance"&gt;CAP (&lt;code&gt;Consistency&lt;/code&gt;, &lt;code&gt;Availability&lt;/code&gt;, &lt;code&gt;Partition tolerance&lt;/code&gt;)&lt;a class="anchor" href="#cap-consistency-availability-partition-tolerance"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h4 id="如何理解-cap你在做系统设计时是如何取舍的"&gt;如何理解 CAP，你在做系统设计时是如何取舍的？&lt;a class="anchor" href="#%e5%a6%82%e4%bd%95%e7%90%86%e8%a7%a3-cap%e4%bd%a0%e5%9c%a8%e5%81%9a%e7%b3%bb%e7%bb%9f%e8%ae%be%e8%ae%a1%e6%97%b6%e6%98%af%e5%a6%82%e4%bd%95%e5%8f%96%e8%88%8d%e7%9a%84"&gt;#&lt;/a&gt;&lt;/h4&gt;
 &lt;hr&gt;
-&lt;h3 id="acid-atomicity-consistency-isolation-durability"&gt;
- ACID (&lt;code&gt;Atomicity&lt;/code&gt;, &lt;code&gt;Consistency&lt;/code&gt;, &lt;code&gt;Isolation&lt;/code&gt;, &lt;code&gt;Durability&lt;/code&gt;)
- 
- &lt;a class="anchor" href="#acid-atomicity-consistency-isolation-durability"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="acid-atomicity-consistency-isolation-durability"&gt;ACID (&lt;code&gt;Atomicity&lt;/code&gt;, &lt;code&gt;Consistency&lt;/code&gt;, &lt;code&gt;Isolation&lt;/code&gt;, &lt;code&gt;Durability&lt;/code&gt;)&lt;a class="anchor" href="#acid-atomicity-consistency-isolation-durability"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;ACID&lt;/code&gt; 是追求 &lt;code&gt;CAP&lt;/code&gt; 的一致性 (&lt;code&gt;C&lt;/code&gt;)&lt;/p&gt;
 &lt;hr&gt;
-&lt;h3 id="base-basically-available-soft-state-eventual-consistency"&gt;
- BASE (&lt;code&gt;Basically Available&lt;/code&gt;, &lt;code&gt;Soft state&lt;/code&gt;, &lt;code&gt;Eventual consistency&lt;/code&gt;)
- 
- &lt;a class="anchor" href="#base-basically-available-soft-state-eventual-consistency"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="base-basically-available-soft-state-eventual-consistency"&gt;BASE (&lt;code&gt;Basically Available&lt;/code&gt;, &lt;code&gt;Soft state&lt;/code&gt;, &lt;code&gt;Eventual consistency&lt;/code&gt;)&lt;a class="anchor" href="#base-basically-available-soft-state-eventual-consistency"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;BASE&lt;/code&gt; 是追求 &lt;code&gt;CAP&lt;/code&gt; 的可用性 (&lt;code&gt;A&lt;/code&gt;)&lt;/p&gt;
 &lt;hr&gt;
 &lt;hr&gt;
-&lt;h2 id="高性能"&gt;
- 高性能
- 
- &lt;a class="anchor" href="#%e9%ab%98%e6%80%a7%e8%83%bd"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;
+&lt;h2 id="高性能"&gt;高性能&lt;a class="anchor" href="#%e9%ab%98%e6%80%a7%e8%83%bd"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;hr&gt;
 &lt;hr&gt;
-&lt;h2 id="高可用"&gt;
- 高可用
- 
- &lt;a class="anchor" href="#%e9%ab%98%e5%8f%af%e7%94%a8"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;
+&lt;h2 id="高可用"&gt;高可用&lt;a class="anchor" href="#%e9%ab%98%e5%8f%af%e7%94%a8"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;hr&gt;
 &lt;hr&gt;
-&lt;h2 id="高并发"&gt;
- 高并发
- 
- &lt;a class="anchor" href="#%e9%ab%98%e5%b9%b6%e5%8f%91"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;
+&lt;h2 id="高并发"&gt;高并发&lt;a class="anchor" href="#%e9%ab%98%e5%b9%b6%e5%8f%91"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;hr&gt;
 &lt;hr&gt;
-&lt;h2 id="高扩展性"&gt;
- 高扩展性
- 
- &lt;a class="anchor" href="#%e9%ab%98%e6%89%a9%e5%b1%95%e6%80%a7"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;</description></item></channel></rss>
+&lt;h2 id="高扩展性"&gt;高扩展性&lt;a class="anchor" href="#%e9%ab%98%e6%89%a9%e5%b1%95%e6%80%a7"&gt;#&lt;/a&gt;&lt;/h2&gt;</description></item></channel></rss>

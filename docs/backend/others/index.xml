@@ -1,26 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>其他 on 面试笔记</title><link>https://kingye.me/interview/docs/backend/others/</link><description>Recent content in 其他 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/backend/others/index.xml" rel="self" type="application/rss+xml"/><item><title>配置热加载</title><link>https://kingye.me/interview/docs/backend/others/hot-load/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/backend/others/hot-load/</guid><description>&lt;h1 id="配置热加载"&gt;
- 配置热加载
- 
- &lt;a class="anchor" href="#%e9%85%8d%e7%bd%ae%e7%83%ad%e5%8a%a0%e8%bd%bd"&gt;#&lt;/a&gt;
- 
-&lt;/h1&gt;</description></item><item><title>程序热重启</title><link>https://kingye.me/interview/docs/backend/others/hot-restart/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/backend/others/hot-restart/</guid><description>&lt;h1 id="程序热重启"&gt;
- 程序热重启
- 
- &lt;a class="anchor" href="#%e7%a8%8b%e5%ba%8f%e7%83%ad%e9%87%8d%e5%90%af"&gt;#&lt;/a&gt;
- 
-&lt;/h1&gt;
-&lt;h2 id="程序如何优雅退出"&gt;
- 程序如何优雅退出？
- 
- &lt;a class="anchor" href="#%e7%a8%8b%e5%ba%8f%e5%a6%82%e4%bd%95%e4%bc%98%e9%9b%85%e9%80%80%e5%87%ba"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;
-&lt;h3 id="linux-信号"&gt;
- Linux 信号
- 
- &lt;a class="anchor" href="#linux-%e4%bf%a1%e5%8f%b7"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>其他 on 面试笔记</title><link>https://kingye.me/interview/docs/backend/others/</link><description>Recent content in 其他 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/backend/others/index.xml" rel="self" type="application/rss+xml"/><item><title>配置热加载</title><link>https://kingye.me/interview/docs/backend/others/hot-load/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/backend/others/hot-load/</guid><description>&lt;h1 id="配置热加载"&gt;配置热加载&lt;a class="anchor" href="#%e9%85%8d%e7%bd%ae%e7%83%ad%e5%8a%a0%e8%bd%bd"&gt;#&lt;/a&gt;&lt;/h1&gt;</description></item><item><title>程序热重启</title><link>https://kingye.me/interview/docs/backend/others/hot-restart/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/backend/others/hot-restart/</guid><description>&lt;h1 id="程序热重启"&gt;程序热重启&lt;a class="anchor" href="#%e7%a8%8b%e5%ba%8f%e7%83%ad%e9%87%8d%e5%90%af"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="程序如何优雅退出"&gt;程序如何优雅退出？&lt;a class="anchor" href="#%e7%a8%8b%e5%ba%8f%e5%a6%82%e4%bd%95%e4%bc%98%e9%9b%85%e9%80%80%e5%87%ba"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="linux-信号"&gt;Linux 信号&lt;a class="anchor" href="#linux-%e4%bf%a1%e5%8f%b7"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;p&gt;信号是进程间通信的底层形式。&lt;/p&gt;
 &lt;p&gt;Linux 有标准信号 32 个，从 32-63 的信号是&lt;strong&gt;实时&lt;/strong&gt;信号。&lt;/p&gt;
 &lt;p&gt;发送信号的原因：&lt;/p&gt;
@@ -64,11 +44,8 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class="book-tabs"&gt;
+&lt;input type="radio" class="toggle" name="tabs-0" id="tabs-0-0" checked="checked" /&gt;&lt;label for="tabs-0-0"&gt;Go&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
 
-
-&lt;input type="radio" class="toggle" name="tabs-graceful exit" id="tabs-graceful exit-0" checked="checked" /&gt;
-&lt;label for="tabs-graceful exit-0"&gt;Go&lt;/label&gt;
-&lt;div class="book-tabs-content markdown-inner"&gt;
 
 ```go
 sigs := make(chan os.Signal, 1)
@@ -80,31 +57,17 @@ fmt.Println("exiting")
 ```
 
 &lt;/div&gt;
-
-
-&lt;input type="radio" class="toggle" name="tabs-graceful exit" id="tabs-graceful exit-1" /&gt;
-&lt;label for="tabs-graceful exit-1"&gt;Java&lt;/label&gt;
-&lt;div class="book-tabs-content markdown-inner"&gt;
-
-&lt;/div&gt;
-
-
-&lt;input type="radio" class="toggle" name="tabs-graceful exit" id="tabs-graceful exit-2" /&gt;
-&lt;label for="tabs-graceful exit-2"&gt;Python&lt;/label&gt;
-&lt;div class="book-tabs-content markdown-inner"&gt;
-
-&lt;/div&gt;
+&lt;input type="radio" class="toggle" name="tabs-0" id="tabs-0-1" /&gt;&lt;label for="tabs-0-1"&gt;Java&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
 
 
 &lt;/div&gt;
+&lt;input type="radio" class="toggle" name="tabs-0" id="tabs-0-2" /&gt;&lt;label for="tabs-0-2"&gt;Python&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
 
+
+&lt;/div&gt;
+&lt;/div&gt;
 &lt;hr&gt;
-&lt;h2 id="如何实现热重启的"&gt;
- 如何实现热重启的？
- 
- &lt;a class="anchor" href="#%e5%a6%82%e4%bd%95%e5%ae%9e%e7%8e%b0%e7%83%ad%e9%87%8d%e5%90%af%e7%9a%84"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;
+&lt;h2 id="如何实现热重启的"&gt;如何实现热重启的？&lt;a class="anchor" href="#%e5%a6%82%e4%bd%95%e5%ae%9e%e7%8e%b0%e7%83%ad%e9%87%8d%e5%90%af%e7%9a%84"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;服务端启动时多开启一个协程用来监听关闭信号&lt;/li&gt;
 &lt;li&gt;当协程接收到关闭信号时，将拒绝接收新的连接，并处理好当前所有连接后断开&lt;/li&gt;
@@ -112,11 +75,8 @@ fmt.Println("exiting")
 &lt;li&gt;关闭当前&lt;strong&gt;进程&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class="book-tabs"&gt;
+&lt;input type="radio" class="toggle" name="tabs-1" id="tabs-1-0" checked="checked" /&gt;&lt;label for="tabs-1-0"&gt;Go&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
 
-
-&lt;input type="radio" class="toggle" name="tabs-graceful restart" id="tabs-graceful restart-0" checked="checked" /&gt;
-&lt;label for="tabs-graceful restart-0"&gt;Go&lt;/label&gt;
-&lt;div class="book-tabs-content markdown-inner"&gt;
 
 ### Go 程序优雅关闭与重启
 
@@ -125,20 +85,12 @@ fmt.Println("exiting")
 - [gracehttp: 优雅重启 Go 程序（热启动 - Zero Downtime）](https://segmentfault.com/a/1190000015232528)
 
 &lt;/div&gt;
+&lt;input type="radio" class="toggle" name="tabs-1" id="tabs-1-1" /&gt;&lt;label for="tabs-1-1"&gt;Java&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
 
-
-&lt;input type="radio" class="toggle" name="tabs-graceful restart" id="tabs-graceful restart-1" /&gt;
-&lt;label for="tabs-graceful restart-1"&gt;Java&lt;/label&gt;
-&lt;div class="book-tabs-content markdown-inner"&gt;
 
 &lt;/div&gt;
+&lt;input type="radio" class="toggle" name="tabs-1" id="tabs-1-2" /&gt;&lt;label for="tabs-1-2"&gt;Python&lt;/label&gt;&lt;div class="book-tabs-content markdown-inner"&gt;
 
-
-&lt;input type="radio" class="toggle" name="tabs-graceful restart" id="tabs-graceful restart-2" /&gt;
-&lt;label for="tabs-graceful restart-2"&gt;Python&lt;/label&gt;
-&lt;div class="book-tabs-content markdown-inner"&gt;
 
 &lt;/div&gt;
-
-
 &lt;/div&gt;</description></item></channel></rss>

@@ -1,16 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>7. 云计算 on 面试笔记</title><link>https://kingye.me/interview/docs/cloud/</link><description>Recent content in 7. 云计算 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/cloud/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker</title><link>https://kingye.me/interview/docs/cloud/docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/cloud/docker/</guid><description>&lt;h1 id="docker"&gt;
- Docker
- 
- &lt;a class="anchor" href="#docker"&gt;#&lt;/a&gt;
- 
-&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>7. 云计算 on 面试笔记</title><link>https://kingye.me/interview/docs/cloud/</link><description>Recent content in 7. 云计算 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/cloud/index.xml" rel="self" type="application/rss+xml"/><item><title>Docker</title><link>https://kingye.me/interview/docs/cloud/docker/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/cloud/docker/</guid><description>&lt;h1 id="docker"&gt;Docker&lt;a class="anchor" href="#docker"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;详见：&lt;a href="https://kingye.me/interview/study-kubernetes/docs/advanced/eco/docker/" target="_blank"&gt;Docker 学习笔记&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id="entrypoint-vs-cmd"&gt;
- &lt;code&gt;entrypoint&lt;/code&gt; vs &lt;code&gt;cmd&lt;/code&gt;
- 
- &lt;a class="anchor" href="#entrypoint-vs-cmd"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;
+&lt;h2 id="entrypoint-vs-cmd"&gt;&lt;code&gt;entrypoint&lt;/code&gt; vs &lt;code&gt;cmd&lt;/code&gt;&lt;a class="anchor" href="#entrypoint-vs-cmd"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;格式&lt;/p&gt;
@@ -53,23 +43,13 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;覆盖&lt;/p&gt;</description></item><item><title>Kubernetes</title><link>https://kingye.me/interview/docs/cloud/kubernetes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/cloud/kubernetes/</guid><description>&lt;h1 id="kubernetes"&gt;
- Kubernetes
- 
- &lt;a class="anchor" href="#kubernetes"&gt;#&lt;/a&gt;
- 
-&lt;/h1&gt;
+&lt;p&gt;覆盖&lt;/p&gt;</description></item><item><title>Kubernetes</title><link>https://kingye.me/interview/docs/cloud/kubernetes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/cloud/kubernetes/</guid><description>&lt;h1 id="kubernetes"&gt;Kubernetes&lt;a class="anchor" href="#kubernetes"&gt;#&lt;/a&gt;&lt;/h1&gt;
 &lt;p&gt;详见：&lt;a href="https://kingye.me/interview/study-kubernetes/" target="_blank"&gt;Kubernetes 学习笔记&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;参考：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.qikqiak.com/post/k8s-api-resources-group-and-version/"&gt;Kubernetes API 资源使用 - 应该使用哪个 Group 和 Version?&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="端口"&gt;
- 端口
- 
- &lt;a class="anchor" href="#%e7%ab%af%e5%8f%a3"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;
+&lt;h2 id="端口"&gt;端口&lt;a class="anchor" href="#%e7%ab%af%e5%8f%a3"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;containerPort&lt;/code&gt;：在容器上，用于被 pod 绑定，是可选的，仅仅是提示信息，容器中任何监听 &lt;code&gt;0.0.0.0&lt;/code&gt; 的端口，都会暴露出来
 &lt;ul&gt;
@@ -82,11 +62,5 @@
 &lt;li&gt;&lt;code&gt;targetPort&lt;/code&gt;：在 pod 上，从 port 和 nodePort 上来的流量，经过 kube-proxy 流入到后端 pod 的 targetPort 上，最后进入容器
 &lt;ul&gt;
 &lt;li&gt;targetPort 和 containerPort 是一致的
-
 &lt;blockquote class='book-hint '&gt;
- &lt;p&gt;targetPort and containerPort must be identical most of the time because whatever port is open for your application in a container that would be the same port you will wish to send traffic from service via targetPort.&lt;/p&gt;</description></item><item><title>Cloud Native</title><link>https://kingye.me/interview/docs/cloud/native/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/cloud/native/</guid><description>&lt;h1 id="cloud-native"&gt;
- Cloud Native
- 
- &lt;a class="anchor" href="#cloud-native"&gt;#&lt;/a&gt;
- 
-&lt;/h1&gt;</description></item></channel></rss>
+&lt;p&gt;targetPort and containerPort must be identical most of the time because whatever port is open for your application in a container that would be the same port you will wish to send traffic from service via targetPort.&lt;/p&gt;</description></item><item><title>Cloud Native</title><link>https://kingye.me/interview/docs/cloud/native/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/cloud/native/</guid><description>&lt;h1 id="cloud-native"&gt;Cloud Native&lt;a class="anchor" href="#cloud-native"&gt;#&lt;/a&gt;&lt;/h1&gt;</description></item></channel></rss>

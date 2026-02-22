@@ -1,21 +1,6 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>3. 网络 on 面试笔记</title><link>https://kingye.me/interview/docs/network/</link><description>Recent content in 3. 网络 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/network/index.xml" rel="self" type="application/rss+xml"/><item><title>HTTP</title><link>https://kingye.me/interview/docs/network/http/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/network/http/</guid><description>&lt;h1 id="http"&gt;
- HTTP
- 
- &lt;a class="anchor" href="#http"&gt;#&lt;/a&gt;
- 
-&lt;/h1&gt;
-&lt;h2 id="http-基础"&gt;
- HTTP 基础
- 
- &lt;a class="anchor" href="#http-%e5%9f%ba%e7%a1%80"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;
-&lt;h3 id="http-状态码有哪些"&gt;
- HTTP 状态码有哪些？
- 
- &lt;a class="anchor" href="#http-%e7%8a%b6%e6%80%81%e7%a0%81%e6%9c%89%e5%93%aa%e4%ba%9b"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>3. 网络 on 面试笔记</title><link>https://kingye.me/interview/docs/network/</link><description>Recent content in 3. 网络 on 面试笔记</description><generator>Hugo</generator><language>en</language><atom:link href="https://kingye.me/interview/docs/network/index.xml" rel="self" type="application/rss+xml"/><item><title>HTTP</title><link>https://kingye.me/interview/docs/network/http/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/network/http/</guid><description>&lt;h1 id="http"&gt;HTTP&lt;a class="anchor" href="#http"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="http-基础"&gt;HTTP 基础&lt;a class="anchor" href="#http-%e5%9f%ba%e7%a1%80"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="http-状态码有哪些"&gt;HTTP 状态码有哪些？&lt;a class="anchor" href="#http-%e7%8a%b6%e6%80%81%e7%a0%81%e6%9c%89%e5%93%aa%e4%ba%9b"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;2XX 成功
 &lt;ul&gt;
@@ -48,78 +33,18 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="301-和-302-有什么区别分别适用于什么场景"&gt;
- 301 和 302 有什么区别？分别适用于什么场景？
- 
- &lt;a class="anchor" href="#301-%e5%92%8c-302-%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab%e5%88%86%e5%88%ab%e9%80%82%e7%94%a8%e4%ba%8e%e4%bb%80%e4%b9%88%e5%9c%ba%e6%99%af"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
-&lt;h3 id="101-304-307-分别是什么"&gt;
- 101， 304， 307 分别是什么？
- 
- &lt;a class="anchor" href="#101-304-307-%e5%88%86%e5%88%ab%e6%98%af%e4%bb%80%e4%b9%88"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;101 协议升级&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>TCP/UDP/IP</title><link>https://kingye.me/interview/docs/network/tcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/network/tcp/</guid><description>&lt;h1 id="tcpudpip"&gt;
- TCP/UDP/IP
- 
- &lt;a class="anchor" href="#tcpudpip"&gt;#&lt;/a&gt;
- 
-&lt;/h1&gt;
-&lt;h2 id="tcp"&gt;
- TCP
- 
- &lt;a class="anchor" href="#tcp"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;</description></item><item><title>发包工具</title><link>https://kingye.me/interview/docs/network/send/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/network/send/</guid><description>&lt;h1 id="发包工具"&gt;
- 发包工具
- 
- &lt;a class="anchor" href="#%e5%8f%91%e5%8c%85%e5%b7%a5%e5%85%b7"&gt;#&lt;/a&gt;
- 
-&lt;/h1&gt;
-&lt;h2 id="综合"&gt;
- 综合
- 
- &lt;a class="anchor" href="#%e7%bb%bc%e5%90%88"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;
-&lt;h3 id="常用发包工具有哪些分别有什么特点适用于什么场景"&gt;
- 常用发包工具有哪些？分别有什么特点，适用于什么场景？
- 
- &lt;a class="anchor" href="#%e5%b8%b8%e7%94%a8%e5%8f%91%e5%8c%85%e5%b7%a5%e5%85%b7%e6%9c%89%e5%93%aa%e4%ba%9b%e5%88%86%e5%88%ab%e6%9c%89%e4%bb%80%e4%b9%88%e7%89%b9%e7%82%b9%e9%80%82%e7%94%a8%e4%ba%8e%e4%bb%80%e4%b9%88%e5%9c%ba%e6%99%af"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h3 id="301-和-302-有什么区别分别适用于什么场景"&gt;301 和 302 有什么区别？分别适用于什么场景？&lt;a class="anchor" href="#301-%e5%92%8c-302-%e6%9c%89%e4%bb%80%e4%b9%88%e5%8c%ba%e5%88%ab%e5%88%86%e5%88%ab%e9%80%82%e7%94%a8%e4%ba%8e%e4%bb%80%e4%b9%88%e5%9c%ba%e6%99%af"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;h3 id="101-304-307-分别是什么"&gt;101， 304， 307 分别是什么？&lt;a class="anchor" href="#101-304-307-%e5%88%86%e5%88%ab%e6%98%af%e4%bb%80%e4%b9%88"&gt;#&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;101 协议升级&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>TCP/UDP/IP</title><link>https://kingye.me/interview/docs/network/tcp/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/network/tcp/</guid><description>&lt;h1 id="tcpudpip"&gt;TCP/UDP/IP&lt;a class="anchor" href="#tcpudpip"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="tcp"&gt;TCP&lt;a class="anchor" href="#tcp"&gt;#&lt;/a&gt;&lt;/h2&gt;</description></item><item><title>发包工具</title><link>https://kingye.me/interview/docs/network/send/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/network/send/</guid><description>&lt;h1 id="发包工具"&gt;发包工具&lt;a class="anchor" href="#%e5%8f%91%e5%8c%85%e5%b7%a5%e5%85%b7"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="综合"&gt;综合&lt;a class="anchor" href="#%e7%bb%bc%e5%90%88"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="常用发包工具有哪些分别有什么特点适用于什么场景"&gt;常用发包工具有哪些？分别有什么特点，适用于什么场景？&lt;a class="anchor" href="#%e5%b8%b8%e7%94%a8%e5%8f%91%e5%8c%85%e5%b7%a5%e5%85%b7%e6%9c%89%e5%93%aa%e4%ba%9b%e5%88%86%e5%88%ab%e6%9c%89%e4%bb%80%e4%b9%88%e7%89%b9%e7%82%b9%e9%80%82%e7%94%a8%e4%ba%8e%e4%bb%80%e4%b9%88%e5%9c%ba%e6%99%af"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h2 id="packetsender"&gt;
- PacketSender
- 
- &lt;a class="anchor" href="#packetsender"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;</description></item><item><title>抓包</title><link>https://kingye.me/interview/docs/network/capture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/network/capture/</guid><description>&lt;h1 id="抓包"&gt;
- 抓包
- 
- &lt;a class="anchor" href="#%e6%8a%93%e5%8c%85"&gt;#&lt;/a&gt;
- 
-&lt;/h1&gt;
-&lt;h2 id="综合"&gt;
- 综合
- 
- &lt;a class="anchor" href="#%e7%bb%bc%e5%90%88"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;
-&lt;h3 id="常用抓包工具有哪些分别有什么特点适用于什么场景"&gt;
- 常用抓包工具有哪些？分别有什么特点，适用于什么场景？
- 
- &lt;a class="anchor" href="#%e5%b8%b8%e7%94%a8%e6%8a%93%e5%8c%85%e5%b7%a5%e5%85%b7%e6%9c%89%e5%93%aa%e4%ba%9b%e5%88%86%e5%88%ab%e6%9c%89%e4%bb%80%e4%b9%88%e7%89%b9%e7%82%b9%e9%80%82%e7%94%a8%e4%ba%8e%e4%bb%80%e4%b9%88%e5%9c%ba%e6%99%af"&gt;#&lt;/a&gt;
- 
-&lt;/h3&gt;
+&lt;h2 id="packetsender"&gt;PacketSender&lt;a class="anchor" href="#packetsender"&gt;#&lt;/a&gt;&lt;/h2&gt;</description></item><item><title>抓包</title><link>https://kingye.me/interview/docs/network/capture/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://kingye.me/interview/docs/network/capture/</guid><description>&lt;h1 id="抓包"&gt;抓包&lt;a class="anchor" href="#%e6%8a%93%e5%8c%85"&gt;#&lt;/a&gt;&lt;/h1&gt;
+&lt;h2 id="综合"&gt;综合&lt;a class="anchor" href="#%e7%bb%bc%e5%90%88"&gt;#&lt;/a&gt;&lt;/h2&gt;
+&lt;h3 id="常用抓包工具有哪些分别有什么特点适用于什么场景"&gt;常用抓包工具有哪些？分别有什么特点，适用于什么场景？&lt;a class="anchor" href="#%e5%b8%b8%e7%94%a8%e6%8a%93%e5%8c%85%e5%b7%a5%e5%85%b7%e6%9c%89%e5%93%aa%e4%ba%9b%e5%88%86%e5%88%ab%e6%9c%89%e4%bb%80%e4%b9%88%e7%89%b9%e7%82%b9%e9%80%82%e7%94%a8%e4%ba%8e%e4%bb%80%e4%b9%88%e5%9c%ba%e6%99%af"&gt;#&lt;/a&gt;&lt;/h3&gt;
 &lt;hr&gt;
-&lt;h2 id="tcpdump"&gt;
- tcpdump
- 
- &lt;a class="anchor" href="#tcpdump"&gt;#&lt;/a&gt;
- 
-&lt;/h2&gt;
+&lt;h2 id="tcpdump"&gt;tcpdump&lt;a class="anchor" href="#tcpdump"&gt;#&lt;/a&gt;&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;tcpdump -D&lt;/code&gt;: 列出所有可监听设备&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;tcpdump -i&lt;/code&gt;: 指定网络接口（网卡）
@@ -160,5 +85,4 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 获取主机 210.27.48.1 接收或发出的 telnet 包&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tcpdump tcp port &lt;span style="color:#ae81ff"&gt;23&lt;/span&gt; and host 210.27.48.1
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;# 对本机的 udp 端口 123 进行监视&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tcpdump udp port &lt;span style="color:#ae81ff"&gt;123&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;参考：&lt;/p&gt;</description></item></channel></rss>
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;tcpdump udp port &lt;span style="color:#ae81ff"&gt;123&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;参考：&lt;/p&gt;</description></item></channel></rss>

@@ -1,453 +1,99 @@
-<!doctype html><html lang=en dir=ltr><head><meta name=generator content="Hugo 0.151.0"><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='
-  设计模式
-  
-  #
-  
-
-
-  设计原则
-  
-  #
-  
-
-
-  单一职责原则 (SRP)
-  
-  #
-  
-
-
-
-  开闭原则 (Open Closed Principle)
-  
-  #
-  
-
-
-
-  里氏替换原则 (Liskov Substitution Principle)
-  
-  #
-  
-
-
-
-  依赖倒置原则 (Dependence Inversion Principle)
-  
-  #
-  
-
-
-
-  接口隔离原则 (Interface Segregation Principle)
-  
-  #
-  
-
-
-
-  迪米特原则 (Demeter Principle)
-  
-  #
-  
-
-
-
-
-  创建型模式
-  
-  #
-  
-
-
-  简单工厂模式
-  
-  #
-  
-
-
-
-  工厂方法模式
-  
-  #
-  
-
-
-
-  抽象工厂模式
-  
-  #
-  
-
-
-
-  建造者模式
-  
-  #
-  
-
-
-
-  单例模式
-  
-  #
-  
-
-
-
-
-  结构型模式
-  
-  #
-  
-
-
-  适配器模式
-  
-  #
-  
-
-
-
-  桥接模式
-  
-  #
-  
-
-
-
-  装饰模式
-  
-  #
-  
-
-
-
-  外观模式
-  
-  #
-  
-
-
-
-  享元模式
-  
-  #
-  
-
-
-
-  代理模式
-  
-  #
-  
-
-
-
-  组合模式
-  
-  #
-  
-
-
-  适配器模式、装饰模式、代理模式有哪些异同？
-  
-  #
-  
-
-
-适配器模式
-
-适配器模式实现新接口
-
-
-代理模式
-
-代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。
-代理模式是与原对象实现同一个接口
-代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。
-
-
-装饰器模式
-
-原有的不能满足现有的需求，对原有的进行增强。
-装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。
-
-
-
-
-
-装饰器模式与代理模式实现原接口
-都持有原对象
-
-装饰器模式构造函数接收老对象
-适配器模式与代理模式自己 new 老对象
-
-
-
-/**
- * 原接口，需要传入 orderId，时间
- */
-public interface SourceOrderApi {
-    public void updateDate(String orderId, String date, String client);
-}
-
-public class SourceOrderApiImpl implements SourceOrderApi{
-    @Override
-    public void updateDate(String orderId, String date, String client) {
-        System.out.println(client+"已将订单"+orderId+"的有效期延长至"+date);
-    }
-}
-
-public class Test {
-    public static void main(String[] args) {
-        SourceOrderApi sourceOrderApi = new SourceOrderApiImpl();
-        sourceOrderApi.updateDate("123456", "2014-10-15", "user");
-    }
-}
-
-
-/**
- * 适配器模式
- */
-public interface AppOrderApi {
-    //只需要传入订单Id即可
-    public void updateDate(String orderId, String client);
-}
-
-public class AppOrderApiImpl implements AppOrderApi{
-    SourceOrderApi sourceOrderApi;
-    public AppOrderApiImpl(){
-        sourceOrderApi = new SourceOrderApiImpl();
-    }
-
-    @Override
-    public void updateDate(String orderId,String client) {
-        //这里适配的方式随意，但是保证是要完全兼容原有的，就是保证调用原有的接口
-        sourceOrderApi.updateDate(orderId, "9999-12-31", client);
-    }
-}
-
-public class Test {
-    public static void main(String[] args) {
-        AppOrderApi appOrderApi = new AppOrderApiImpl();
-        appOrderApi.updateDate("123456", "user");
-    }
-}
-
-
-/**
- * 代理模式
- */
-public class ProxySourceOrderApiImpl implements SourceOrderApi {
-    SourceOrderApi sourceOrderApi;
-    public ProxySourceOrderApiImpl(){
-        sourceOrderApi = new SourceOrderApiImpl();
-    }
-
-    @Override
-    public void updateDate(String orderId, String date, String client) {
-        //进行判断，如果是admin则更新否则让其输入账号密码
-        if("admin".equals(client)){
-            sourceOrderApi.updateDate(orderId, date, client);
-        }else{
-            System.out.println("账号不是admin，没有查询权限，请输入以admin操作");
-        }
-    }
-}
-
-
-/**
- * 装饰器模式
- */
-public class NewSourceOrderApiImpl implements SourceOrderApi {
-    SourceOrderApi sourceOrderApi;
-    public NewSourceOrderApiImpl(SourceOrderApi sourceOrderApi){
-        this.sourceOrderApi = sourceOrderApi;
-    }
-    @Override
-    public void updateDate(String orderId, String date, String client) {
-        sourceOrderApi.updateDate(orderId, date, client);
-        System.out.println(client+"已将订单"+orderId+"的退款期延长至"+date);
-
-    }
-}
-
-
-
-  行为型模式
-  
-  #
-  
-
-
-  命令模式
-  
-  #
-  
-
-
-
-  中介者模式
-  
-  #
-  
-
-
-
-  观察者模式
-  
-  #
-  
-
-
-
-  状态模式
-  
-  #
-  
-
-
-
-  策略模式
-  
-  #
-  
-
-
-
-  模板方法模式
-  
-  #
-  
-
-
-
-  迭代子模式
-  
-  #
-  
-
-
-
-  责任链模式
-  
-  #
-  
-
-
-
-  备忘录模式
-  
-  #
-  
-
-
-
-  访问者模式
-  
-  #
-  
-
-
-
-  解释器模式
-  
-  #
-  
-
-
-
-
-  其他模式
-  
-  #
-  
-
-
-  并发型模式
-  
-  #
-  
-
-
-
-  线程池模式
-  
-  #
-  
-'><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://kingye.me/interview/docs/se/dp/"><meta property="og:site_name" content="面试笔记"><meta property="og:title" content="设计模式"><meta property="og:description" content='设计模式 # 设计原则 # 单一职责原则 (SRP) # 开闭原则 (Open Closed Principle) # 里氏替换原则 (Liskov Substitution Principle) # 依赖倒置原则 (Dependence Inversion Principle) # 接口隔离原则 (Interface Segregation Principle) # 迪米特原则 (Demeter Principle) # 创建型模式 # 简单工厂模式 # 工厂方法模式 # 抽象工厂模式 # 建造者模式 # 单例模式 # 结构型模式 # 适配器模式 # 桥接模式 # 装饰模式 # 外观模式 # 享元模式 # 代理模式 # 组合模式 # 适配器模式、装饰模式、代理模式有哪些异同？ # 适配器模式 适配器模式实现新接口 代理模式 代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。 装饰器模式 原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。 装饰器模式与代理模式实现原接口 都持有原对象 装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象 /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi { public void updateDate(String orderId, String date, String client); } public class SourceOrderApiImpl implements SourceOrderApi{ @Override public void updateDate(String orderId, String date, String client) { System.out.println(client+"已将订单"+orderId+"的有效期延长至"+date); } } public class Test { public static void main(String[] args) { SourceOrderApi sourceOrderApi = new SourceOrderApiImpl(); sourceOrderApi.updateDate("123456", "2014-10-15", "user"); } } /** * 适配器模式 */ public interface AppOrderApi { //只需要传入订单Id即可 public void updateDate(String orderId, String client); } public class AppOrderApiImpl implements AppOrderApi{ SourceOrderApi sourceOrderApi; public AppOrderApiImpl(){ sourceOrderApi = new SourceOrderApiImpl(); } @Override public void updateDate(String orderId,String client) { //这里适配的方式随意，但是保证是要完全兼容原有的，就是保证调用原有的接口 sourceOrderApi.updateDate(orderId, "9999-12-31", client); } } public class Test { public static void main(String[] args) { AppOrderApi appOrderApi = new AppOrderApiImpl(); appOrderApi.updateDate("123456", "user"); } } /** * 代理模式 */ public class ProxySourceOrderApiImpl implements SourceOrderApi { SourceOrderApi sourceOrderApi; public ProxySourceOrderApiImpl(){ sourceOrderApi = new SourceOrderApiImpl(); } @Override public void updateDate(String orderId, String date, String client) { //进行判断，如果是admin则更新否则让其输入账号密码 if("admin".equals(client)){ sourceOrderApi.updateDate(orderId, date, client); }else{ System.out.println("账号不是admin，没有查询权限，请输入以admin操作"); } } } /** * 装饰器模式 */ public class NewSourceOrderApiImpl implements SourceOrderApi { SourceOrderApi sourceOrderApi; public NewSourceOrderApiImpl(SourceOrderApi sourceOrderApi){ this.sourceOrderApi = sourceOrderApi; } @Override public void updateDate(String orderId, String date, String client) { sourceOrderApi.updateDate(orderId, date, client); System.out.println(client+"已将订单"+orderId+"的退款期延长至"+date); } } 行为型模式 # 命令模式 # 中介者模式 # 观察者模式 # 状态模式 # 策略模式 # 模板方法模式 # 迭代子模式 # 责任链模式 # 备忘录模式 # 访问者模式 # 解释器模式 # 其他模式 # 并发型模式 # 线程池模式 #'><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2021-07-07T14:51:21+08:00"><title>设计模式 | 面试笔记</title><link rel=icon href=/interview/favicon.png><link rel=manifest href=/interview/manifest.json><link rel=canonical href=https://kingye.me/interview/docs/se/dp/><link rel=stylesheet href=/interview/book.min.ce1c5c2253283c431b33f3a26460127223ab7b4d18f018f6ef1294e954b520da.css integrity="sha256-zhxcIlMoPEMbM/OiZGASciOre00Y8Bj27xKU6VS1INo=" crossorigin=anonymous><script defer src=/interview/fuse.min.js></script><script defer src=/interview/en.search.min.785f5318718423d8eb0bc03492869fc2f32fca5beccb5d779fef058883de1e89.js integrity="sha256-eF9TGHGEI9jrC8A0koafwvMvylvsy113n+8FiIPeHok=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
-<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/interview/><span>面试笔记</span></a></h2><div class="book-search hidden"><input type=text id=book-search-input placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=https://kingye.me target=_blank rel="noopener noreferrer">博客</a></li><li><a href=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417021727.png target=_blank rel="noopener noreferrer">公众号</a></li><li><a href=https://github.com/ikingye target=_blank rel="noopener noreferrer">Github</a></li><li><a href=https://weibo.com/kingyip15215 target=_blank rel="noopener noreferrer">微博</a></li><li><a href=https://www.zhihu.com/people/wutongyip target=_blank rel="noopener noreferrer">知乎</a></li></ul><hr><ul><li><input type=checkbox id=section-dd3a99cd76f26df0b58c02d262b6dd04 class=toggle>
-<label for=section-dd3a99cd76f26df0b58c02d262b6dd04 class=flex><a href=/interview/docs/co/ class=flex-auto>1. 计算机组成原理</a></label><ul></ul></li><li><input type=checkbox id=section-5f88c2ccd6068924063a850e3fa85b10 class=toggle>
-<label for=section-5f88c2ccd6068924063a850e3fa85b10 class=flex><a href=/interview/docs/os/ class=flex-auto>2. 操作系统</a></label><ul><li><input type=checkbox id=section-bce21f6d13b63da92923a6af176673b1 class=toggle>
-<label for=section-bce21f6d13b63da92923a6af176673b1 class=flex><a href=/interview/docs/os/linux/ class=flex-auto>Linux</a></label></li></ul></li><li><input type=checkbox id=section-d6cd723e0424b7dd98b489d3b92232ab class=toggle>
-<label for=section-d6cd723e0424b7dd98b489d3b92232ab class=flex><a href=/interview/docs/network/ class=flex-auto>3. 网络</a></label><ul><li><a href=/interview/docs/network/http/>HTTP</a></li><li><a href=/interview/docs/network/tcp/>TCP/UDP/IP</a></li><li><a href=/interview/docs/network/send/>发包工具</a></li><li><a href=/interview/docs/network/capture/>抓包</a></li></ul></li><li><input type=checkbox id=section-a4b2d6bd8e60e22aa6e2bccb9fbe8097 class=toggle>
-<label for=section-a4b2d6bd8e60e22aa6e2bccb9fbe8097 class=flex><a href=/interview/docs/algs/ class=flex-auto>4. 数据结构与算法</a></label><ul><li><a href=/interview/docs/algs/tree/>二叉树</a></li><li><a href=/interview/docs/algs/dp/>动态规划</a></li><li><a href=/interview/docs/algs/sort/>排序算法</a></li><li><a href=/interview/docs/algs/search/>查询算法</a></li><li><a href=/interview/docs/algs/link/>链表</a></li></ul></li><li><input type=checkbox id=section-9bfd2e750664e8f24daf08b038584ab6 class=toggle>
-<label for=section-9bfd2e750664e8f24daf08b038584ab6 class=flex><a href=/interview/docs/pl/ class=flex-auto>5. 编程语言</a></label><ul><li><input type=checkbox id=section-88a2785eb4230436fdbd251d11ff131c class=toggle>
-<label for=section-88a2785eb4230436fdbd251d11ff131c class=flex><a href=/interview/docs/pl/c/ class=flex-auto>C</a></label></li><li><input type=checkbox id=section-2d8a6c8cffd1b093fb93a6a2e84a185f class=toggle>
-<label for=section-2d8a6c8cffd1b093fb93a6a2e84a185f class=flex><a href=/interview/docs/pl/cpp/ class=flex-auto>C++</a></label></li><li><input type=checkbox id=section-01415404933b701530953ded6e0fe732 class=toggle>
-<label for=section-01415404933b701530953ded6e0fe732 class=flex><a href=/interview/docs/pl/go/ class=flex-auto>Go</a></label></li><li><input type=checkbox id=section-f69eba88bf35d4da1828cace8104b4ea class=toggle>
-<label for=section-f69eba88bf35d4da1828cace8104b4ea class=flex><a href=/interview/docs/pl/java/ class=flex-auto>Java</a></label></li><li><input type=checkbox id=section-4fabecaa95c25fd184e5ab7d7e16a9ff class=toggle>
-<label for=section-4fabecaa95c25fd184e5ab7d7e16a9ff class=flex><a href=/interview/docs/pl/javascript/ class=flex-auto>JavaScript</a></label></li><li><input type=checkbox id=section-bed726d8c153d79a470013530373677b class=toggle>
-<label for=section-bed726d8c153d79a470013530373677b class=flex><a href=/interview/docs/pl/kotlin/ class=flex-auto>Kotlin</a></label></li><li><input type=checkbox id=section-4f2118387599bf0578a79565ed6e2cde class=toggle>
-<label for=section-4f2118387599bf0578a79565ed6e2cde class=flex><a href=/interview/docs/pl/php/ class=flex-auto>PHP</a></label></li><li><input type=checkbox id=section-afca8972e2771bd4f99c02058d58ec67 class=toggle>
-<label for=section-afca8972e2771bd4f99c02058d58ec67 class=flex><a href=/interview/docs/pl/python/ class=flex-auto>Python</a></label></li><li><input type=checkbox id=section-068e026e1f940d942d3fedf40d69b442 class=toggle>
-<label for=section-068e026e1f940d942d3fedf40d69b442 class=flex><a href=/interview/docs/pl/rust/ class=flex-auto>Rust</a></label></li></ul></li><li><input type=checkbox id=section-18fbf546f749cbd3edc51e399543c3ff class=toggle checked>
-<label for=section-18fbf546f749cbd3edc51e399543c3ff class=flex><a href=/interview/docs/se/ class=flex-auto>6. 软件工程</a></label><ul><li><input type=checkbox id=section-997369dfd63e9c9f7f42541878bf9187 class=toggle checked>
-<label for=section-997369dfd63e9c9f7f42541878bf9187 class=flex><a href=/interview/docs/se/dp/ class="flex-auto active">设计模式</a></label></li><li><input type=checkbox id=section-c956170aaf69e2b8f0deadf5f833e24d class=toggle>
-<label for=section-c956170aaf69e2b8f0deadf5f833e24d class=flex><a href=/interview/docs/se/architecture/ class=flex-auto>架构设计</a></label></li><li><input type=checkbox id=section-2a31bb6534cae2720b87978b993c3abb class=toggle>
-<label for=section-2a31bb6534cae2720b87978b993c3abb class=flex><a href=/interview/docs/se/pm/ class=flex-auto>项目管理</a></label><ul></ul></li></ul></li><li><input type=checkbox id=section-f3363ab5e9aa1ef34479fe1cddeabd76 class=toggle>
-<label for=section-f3363ab5e9aa1ef34479fe1cddeabd76 class=flex><a href=/interview/docs/cloud/ class=flex-auto>7. 云计算</a></label><ul><li><input type=checkbox id=section-3a00d03747721914ab0229599881d35c class=toggle>
-<label for=section-3a00d03747721914ab0229599881d35c class=flex><a href=/interview/docs/cloud/docker/ class=flex-auto>Docker</a></label></li><li><input type=checkbox id=section-7a9f67867733f49e958a4b5123bb7904 class=toggle>
-<label for=section-7a9f67867733f49e958a4b5123bb7904 class=flex><a href=/interview/docs/cloud/kubernetes/ class=flex-auto>Kubernetes</a></label></li><li><input type=checkbox id=section-0e0ee3ac258dde18fe01044886dd0027 class=toggle>
-<label for=section-0e0ee3ac258dde18fe01044886dd0027 class=flex><a href=/interview/docs/cloud/native/ class=flex-auto>Cloud Native</a></label></li></ul></li><li><input type=checkbox id=section-f20d28998912882ad9695dbb04b2e748 class=toggle>
-<label for=section-f20d28998912882ad9695dbb04b2e748 class=flex><a href=/interview/docs/bigdata/ class=flex-auto>8. 大数据</a></label><ul></ul></li><li><input type=checkbox id=section-266b19a04e863bb47f0fda8bf35f016b class=toggle>
-<label for=section-266b19a04e863bb47f0fda8bf35f016b class=flex><a href=/interview/docs/ai/ class=flex-auto>9. 人工智能</a></label><ul><li><input type=checkbox id=section-38021f88731017b24895706b161699b7 class=toggle>
-<label for=section-38021f88731017b24895706b161699b7 class=flex><a href=/interview/docs/ai/ml/ class=flex-auto>机器学习</a></label><ul></ul></li></ul></li><li><input type=checkbox id=section-597cd3989eab66a133d8dc314302f501 class=toggle>
-<label for=section-597cd3989eab66a133d8dc314302f501 class=flex><a role=button class=flex-auto>10. 后台</a></label><ul><li><input type=checkbox id=section-ab8f9a91b399568d1de9f98a275c3f9f class=toggle>
-<label for=section-ab8f9a91b399568d1de9f98a275c3f9f class=flex><a href=/interview/docs/backend/web/ class=flex-auto>Web 后端</a></label><ul><li><input type=checkbox id=section-62cb93dad083ace8b63f0ab987a6883a class=toggle>
-<label for=section-62cb93dad083ace8b63f0ab987a6883a class=flex><a href=/interview/docs/backend/web/go/ class=flex-auto>Go Web 后端</a></label></li><li><input type=checkbox id=section-2ce0a26d31e0958ba7dc7fbb3bdffa66 class=toggle>
-<label for=section-2ce0a26d31e0958ba7dc7fbb3bdffa66 class=flex><a href=/interview/docs/backend/web/java/ class=flex-auto>Java Web 后端</a></label></li><li><input type=checkbox id=section-30ad1638c9bdbbf79702a2cc1a1b996d class=toggle>
-<label for=section-30ad1638c9bdbbf79702a2cc1a1b996d class=flex><a href=/interview/docs/backend/web/php/ class=flex-auto>PHP 后端</a></label></li><li><input type=checkbox id=section-5773abb279202779f8172ff84a8e1ea1 class=toggle>
-<label for=section-5773abb279202779f8172ff84a8e1ea1 class=flex><a href=/interview/docs/backend/web/python/ class=flex-auto>Python 后端</a></label></li></ul></li><li><a href=/interview/docs/backend/db/>数据库</a><ul><li><input type=checkbox id=section-a02ced03c51b94fae288a400c2be91e5 class=toggle>
-<label for=section-a02ced03c51b94fae288a400c2be91e5 class=flex><a href=/interview/docs/backend/db/mysql/ class=flex-auto>Mysql</a></label></li><li><input type=checkbox id=section-30a3ae66b5f5156d77c7fef50775d78d class=toggle>
-<label for=section-30a3ae66b5f5156d77c7fef50775d78d class=flex><a href=/interview/docs/backend/db/redis/ class=flex-auto>Redis</a></label></li></ul></li><li><a href=/interview/docs/backend/mq/>消息队列</a><ul><li><input type=checkbox id=section-42a38f7c26a817f824f09ff2c9ca940f class=toggle>
-<label for=section-42a38f7c26a817f824f09ff2c9ca940f class=flex><a href=/interview/docs/backend/mq/kafka/ class=flex-auto>Kafka</a></label></li><li><input type=checkbox id=section-a0b7dc110abe8e9333b393dd70bce43f class=toggle>
-<label for=section-a0b7dc110abe8e9333b393dd70bce43f class=flex><a href=/interview/docs/backend/mq/rocketmq/ class=flex-auto>RocketMQ</a></label></li><li><input type=checkbox id=section-29f8d0e1fe5dbc721549e028cf90bd31 class=toggle>
-<label for=section-29f8d0e1fe5dbc721549e028cf90bd31 class=flex><a href=/interview/docs/backend/mq/rabbitmq/ class=flex-auto>RabbitMQ</a></label></li></ul></li><li><input type=checkbox id=section-332035f6ef04f79ae72528724f32e7d8 class=toggle>
-<label for=section-332035f6ef04f79ae72528724f32e7d8 class=flex><a href=/interview/docs/backend/others/ class=flex-auto>其他</a></label><ul><li><input type=checkbox id=section-cbe4fba4ab415b323c67d003427958a4 class=toggle>
-<label for=section-cbe4fba4ab415b323c67d003427958a4 class=flex><a href=/interview/docs/backend/others/hot-load/ class=flex-auto>配置热加载</a></label></li><li><input type=checkbox id=section-ca096d4faec5d36af2970b5536e9ca50 class=toggle>
-<label for=section-ca096d4faec5d36af2970b5536e9ca50 class=flex><a href=/interview/docs/backend/others/hot-restart/ class=flex-auto>程序热重启</a></label></li></ul></li></ul></li><li><input type=checkbox id=section-0884b39a273c85deaf17f250eb2b9042 class=toggle>
-<label for=section-0884b39a273c85deaf17f250eb2b9042 class=flex><a href=/interview/docs/frontend/ class=flex-auto>11. 前端与客户端</a></label><ul><li><input type=checkbox id=section-dd4cfacc6b3c7d5c101e699c2064a255 class=toggle>
-<label for=section-dd4cfacc6b3c7d5c101e699c2064a255 class=flex><a href=/interview/docs/frontend/web/ class=flex-auto>Web 前端</a></label><ul></ul></li></ul></li><li><input type=checkbox id=section-82ce5c7445d004e6d22613f903d9a5c4 class=toggle>
-<label for=section-82ce5c7445d004e6d22613f903d9a5c4 class=flex><a href=/interview/docs/op/ class=flex-auto>13. 运维</a></label><ul></ul></li><li><input type=checkbox id=section-02b9a76730f73d0fdad4353592b47914 class=toggle>
-<label for=section-02b9a76730f73d0fdad4353592b47914 class=flex><a href=/interview/docs/test/ class=flex-auto>14. 测试</a></label><ul></ul></li><li><input type=checkbox id=section-029085a3ab0a222f35735a1195895027 class=toggle>
-<label for=section-029085a3ab0a222f35735a1195895027 class=flex><a href=/interview/docs/security/ class=flex-auto>13. 安全</a></label><ul><li><input type=checkbox id=section-6f76d824a04e918643641d8ef92983af class=toggle>
-<label for=section-6f76d824a04e918643641d8ef92983af class=flex><a href=/interview/docs/security/web/ class=flex-auto>Web 安全</a></label><ul><li><a href=/interview/docs/security/web/xss/>XSS</a></li><li><a href=/interview/docs/security/web/csrf/>CSRF</a></li></ul></li></ul></li><li><input type=checkbox id=section-8e42d0e5491ac6b6202ed209561dfdaa class=toggle>
-<label for=section-8e42d0e5491ac6b6202ed209561dfdaa class=flex><a href=/interview/docs/others/ class=flex-auto>15. 其他</a></label><ul><li><a href=/interview/docs/others/encode/>字符编码</a></li><li><a href=/interview/docs/others/encryption/>加密</a></li><li><a href=/interview/docs/others/compile/>编译</a></li></ul></li></ul><hr><ul><li><a href=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png target=_blank rel="noopener noreferrer">微信</a></li><li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target=_blank rel="noopener noreferrer"><img src=//pub.idqqimg.com/wpa/images/group.png></a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/interview/svg/menu.svg class=book-icon alt=Menu></label><h3>设计模式</h3><label for=toc-control><img src=/interview/svg/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#设计原则>设计原则</a><ul><li><a href=#单一职责原则-srp>单一职责原则 (<code>SRP</code>)</a></li><li><a href=#开闭原则-open-closed-principle>开闭原则 (<code>Open Closed Principle</code>)</a></li><li><a href=#里氏替换原则-liskov-substitution-principle>里氏替换原则 (<code>Liskov Substitution Principle</code>)</a></li><li><a href=#依赖倒置原则-dependence-inversion-principle>依赖倒置原则 (<code>Dependence Inversion Principle</code>)</a></li><li><a href=#接口隔离原则-interface-segregation-principle>接口隔离原则 (<code>Interface Segregation Principle</code>)</a></li><li><a href=#迪米特原则-demeter-principle>迪米特原则 (<code>Demeter Principle</code>)</a></li></ul></li><li><a href=#创建型模式>创建型模式</a><ul><li><a href=#简单工厂模式>简单工厂模式</a></li><li><a href=#工厂方法模式>工厂方法模式</a></li><li><a href=#抽象工厂模式>抽象工厂模式</a></li><li><a href=#建造者模式>建造者模式</a></li><li><a href=#单例模式>单例模式</a></li></ul></li><li><a href=#结构型模式>结构型模式</a><ul><li><a href=#适配器模式>适配器模式</a></li><li><a href=#桥接模式>桥接模式</a></li><li><a href=#装饰模式>装饰模式</a></li><li><a href=#外观模式>外观模式</a></li><li><a href=#享元模式>享元模式</a></li><li><a href=#代理模式>代理模式</a></li><li><a href=#组合模式>组合模式</a></li><li><a href=#适配器模式装饰模式代理模式有哪些异同>适配器模式、装饰模式、代理模式有哪些异同？</a></li></ul></li><li><a href=#行为型模式>行为型模式</a><ul><li><a href=#命令模式>命令模式</a></li><li><a href=#中介者模式>中介者模式</a></li><li><a href=#观察者模式>观察者模式</a></li><li><a href=#状态模式>状态模式</a></li><li><a href=#策略模式>策略模式</a></li><li><a href=#模板方法模式>模板方法模式</a></li><li><a href=#迭代子模式>迭代子模式</a></li><li><a href=#责任链模式>责任链模式</a></li><li><a href=#备忘录模式>备忘录模式</a></li><li><a href=#访问者模式>访问者模式</a></li><li><a href=#解释器模式>解释器模式</a></li></ul></li><li><a href=#其他模式>其他模式</a><ul><li><a href=#并发型模式>并发型模式</a></li><li><a href=#线程池模式>线程池模式</a></li></ul></li></ul></nav><hr><ul><li><a href=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png target=_blank rel="noopener noreferrer">微信</a></li><li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target=_blank rel="noopener noreferrer"><img src=//pub.idqqimg.com/wpa/images/group.png></a></li></ul></aside></header><article id=article class=markdown><h1 id=设计模式>设计模式
-<a class=anchor href=#%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f>#</a></h1><h2 id=设计原则>设计原则
-<a class=anchor href=#%e8%ae%be%e8%ae%a1%e5%8e%9f%e5%88%99>#</a></h2><h3 id=单一职责原则-srp>单一职责原则 (<code>SRP</code>)
-<a class=anchor href=#%e5%8d%95%e4%b8%80%e8%81%8c%e8%b4%a3%e5%8e%9f%e5%88%99-srp>#</a></h3><hr><h3 id=开闭原则-open-closed-principle>开闭原则 (<code>Open Closed Principle</code>)
-<a class=anchor href=#%e5%bc%80%e9%97%ad%e5%8e%9f%e5%88%99-open-closed-principle>#</a></h3><hr><h3 id=里氏替换原则-liskov-substitution-principle>里氏替换原则 (<code>Liskov Substitution Principle</code>)
-<a class=anchor href=#%e9%87%8c%e6%b0%8f%e6%9b%bf%e6%8d%a2%e5%8e%9f%e5%88%99-liskov-substitution-principle>#</a></h3><hr><h3 id=依赖倒置原则-dependence-inversion-principle>依赖倒置原则 (<code>Dependence Inversion Principle</code>)
-<a class=anchor href=#%e4%be%9d%e8%b5%96%e5%80%92%e7%bd%ae%e5%8e%9f%e5%88%99-dependence-inversion-principle>#</a></h3><hr><h3 id=接口隔离原则-interface-segregation-principle>接口隔离原则 (<code>Interface Segregation Principle</code>)
-<a class=anchor href=#%e6%8e%a5%e5%8f%a3%e9%9a%94%e7%a6%bb%e5%8e%9f%e5%88%99-interface-segregation-principle>#</a></h3><hr><h3 id=迪米特原则-demeter-principle>迪米特原则 (<code>Demeter Principle</code>)
-<a class=anchor href=#%e8%bf%aa%e7%b1%b3%e7%89%b9%e5%8e%9f%e5%88%99-demeter-principle>#</a></h3><hr><hr><h2 id=创建型模式>创建型模式
-<a class=anchor href=#%e5%88%9b%e5%bb%ba%e5%9e%8b%e6%a8%a1%e5%bc%8f>#</a></h2><h3 id=简单工厂模式>简单工厂模式
-<a class=anchor href=#%e7%ae%80%e5%8d%95%e5%b7%a5%e5%8e%82%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=工厂方法模式>工厂方法模式
-<a class=anchor href=#%e5%b7%a5%e5%8e%82%e6%96%b9%e6%b3%95%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=抽象工厂模式>抽象工厂模式
-<a class=anchor href=#%e6%8a%bd%e8%b1%a1%e5%b7%a5%e5%8e%82%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=建造者模式>建造者模式
-<a class=anchor href=#%e5%bb%ba%e9%80%a0%e8%80%85%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=单例模式>单例模式
-<a class=anchor href=#%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f>#</a></h3><hr><hr><h2 id=结构型模式>结构型模式
-<a class=anchor href=#%e7%bb%93%e6%9e%84%e5%9e%8b%e6%a8%a1%e5%bc%8f>#</a></h2><h3 id=适配器模式>适配器模式
-<a class=anchor href=#%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=桥接模式>桥接模式
-<a class=anchor href=#%e6%a1%a5%e6%8e%a5%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=装饰模式>装饰模式
-<a class=anchor href=#%e8%a3%85%e9%a5%b0%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=外观模式>外观模式
-<a class=anchor href=#%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=享元模式>享元模式
-<a class=anchor href=#%e4%ba%ab%e5%85%83%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=代理模式>代理模式
-<a class=anchor href=#%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=组合模式>组合模式
-<a class=anchor href=#%e7%bb%84%e5%90%88%e6%a8%a1%e5%bc%8f>#</a></h3><h3 id=适配器模式装饰模式代理模式有哪些异同>适配器模式、装饰模式、代理模式有哪些异同？
-<a class=anchor href=#%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%e8%a3%85%e9%a5%b0%e6%a8%a1%e5%bc%8f%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f%e6%9c%89%e5%93%aa%e4%ba%9b%e5%bc%82%e5%90%8c>#</a></h3><ul><li>适配器模式<ul><li>适配器模式<strong>实现新接口</strong></li></ul></li><li>代理模式<ul><li>代理模式的特点在于<strong>隔离</strong>，隔离调用类和被调用类的关系，通过一个代理类去调用。</li><li>代理模式是与原对象<strong>实现同一个接口</strong></li><li>代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。</li></ul></li><li>装饰器模式<ul><li>原有的不能满足现有的需求，对原有的进行增强。</li><li>装饰器模式特点在于<strong>增强</strong>，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。</li></ul></li></ul><hr><ul><li>装饰器模式与代理模式实现原接口</li><li>都持有原对象<ul><li>装饰器模式构造函数<strong>接收老对象</strong></li><li>适配器模式与代理模式自己 new 老对象</li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>/**
+<!doctype html><html lang=en dir=ltr><head><meta name=generator content="Hugo 0.151.0"><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content='设计模式# 设计原则# 单一职责原则 (SRP)# 开闭原则 (Open Closed Principle)# 里氏替换原则 (Liskov Substitution Principle)# 依赖倒置原则 (Dependence Inversion Principle)# 接口隔离原则 (Interface Segregation Principle)# 迪米特原则 (Demeter Principle)# 创建型模式# 简单工厂模式# 工厂方法模式# 抽象工厂模式# 建造者模式# 单例模式# 结构型模式# 适配器模式# 桥接模式# 装饰模式# 外观模式# 享元模式# 代理模式# 组合模式# 适配器模式、装饰模式、代理模式有哪些异同？# 适配器模式 适配器模式实现新接口 代理模式 代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。 装饰器模式 原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。 装饰器模式与代理模式实现原接口 都持有原对象 装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象 /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi { public void updateDate(String orderId, String date, String client); } public class SourceOrderApiImpl implements SourceOrderApi{ @Override public void updateDate(String orderId, String date, String client) { System.out.println(client+"已将订单"+orderId+"的有效期延长至"+date); } } public class Test { public static void main(String[] args) { SourceOrderApi sourceOrderApi = new SourceOrderApiImpl(); sourceOrderApi.updateDate("123456", "2014-10-15", "user"); } } /** * 适配器模式 */ public interface AppOrderApi { //只需要传入订单Id即可 public void updateDate(String orderId, String client); } public class AppOrderApiImpl implements AppOrderApi{ SourceOrderApi sourceOrderApi; public AppOrderApiImpl(){ sourceOrderApi = new SourceOrderApiImpl(); } @Override public void updateDate(String orderId,String client) { //这里适配的方式随意，但是保证是要完全兼容原有的，就是保证调用原有的接口 sourceOrderApi.updateDate(orderId, "9999-12-31", client); } } public class Test { public static void main(String[] args) { AppOrderApi appOrderApi = new AppOrderApiImpl(); appOrderApi.updateDate("123456", "user"); } } /** * 代理模式 */ public class ProxySourceOrderApiImpl implements SourceOrderApi { SourceOrderApi sourceOrderApi; public ProxySourceOrderApiImpl(){ sourceOrderApi = new SourceOrderApiImpl(); } @Override public void updateDate(String orderId, String date, String client) { //进行判断，如果是admin则更新否则让其输入账号密码 if("admin".equals(client)){ sourceOrderApi.updateDate(orderId, date, client); }else{ System.out.println("账号不是admin，没有查询权限，请输入以admin操作"); } } } /** * 装饰器模式 */ public class NewSourceOrderApiImpl implements SourceOrderApi { SourceOrderApi sourceOrderApi; public NewSourceOrderApiImpl(SourceOrderApi sourceOrderApi){ this.sourceOrderApi = sourceOrderApi; } @Override public void updateDate(String orderId, String date, String client) { sourceOrderApi.updateDate(orderId, date, client); System.out.println(client+"已将订单"+orderId+"的退款期延长至"+date); } } 行为型模式# 命令模式# 中介者模式# 观察者模式# 状态模式# 策略模式# 模板方法模式# 迭代子模式# 责任链模式# 备忘录模式# 访问者模式# 解释器模式# 其他模式# 并发型模式# 线程池模式#'><meta name=theme-color media="(prefers-color-scheme: light)" content="#ffffff"><meta name=theme-color media="(prefers-color-scheme: dark)" content="#343a40"><meta name=color-scheme content="light dark"><meta property="og:url" content="https://kingye.me/interview/docs/se/dp/"><meta property="og:site_name" content="面试笔记"><meta property="og:title" content="设计模式"><meta property="og:description" content='设计模式# 设计原则# 单一职责原则 (SRP)# 开闭原则 (Open Closed Principle)# 里氏替换原则 (Liskov Substitution Principle)# 依赖倒置原则 (Dependence Inversion Principle)# 接口隔离原则 (Interface Segregation Principle)# 迪米特原则 (Demeter Principle)# 创建型模式# 简单工厂模式# 工厂方法模式# 抽象工厂模式# 建造者模式# 单例模式# 结构型模式# 适配器模式# 桥接模式# 装饰模式# 外观模式# 享元模式# 代理模式# 组合模式# 适配器模式、装饰模式、代理模式有哪些异同？# 适配器模式 适配器模式实现新接口 代理模式 代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。 装饰器模式 原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。 装饰器模式与代理模式实现原接口 都持有原对象 装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象 /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi { public void updateDate(String orderId, String date, String client); } public class SourceOrderApiImpl implements SourceOrderApi{ @Override public void updateDate(String orderId, String date, String client) { System.out.println(client+"已将订单"+orderId+"的有效期延长至"+date); } } public class Test { public static void main(String[] args) { SourceOrderApi sourceOrderApi = new SourceOrderApiImpl(); sourceOrderApi.updateDate("123456", "2014-10-15", "user"); } } /** * 适配器模式 */ public interface AppOrderApi { //只需要传入订单Id即可 public void updateDate(String orderId, String client); } public class AppOrderApiImpl implements AppOrderApi{ SourceOrderApi sourceOrderApi; public AppOrderApiImpl(){ sourceOrderApi = new SourceOrderApiImpl(); } @Override public void updateDate(String orderId,String client) { //这里适配的方式随意，但是保证是要完全兼容原有的，就是保证调用原有的接口 sourceOrderApi.updateDate(orderId, "9999-12-31", client); } } public class Test { public static void main(String[] args) { AppOrderApi appOrderApi = new AppOrderApiImpl(); appOrderApi.updateDate("123456", "user"); } } /** * 代理模式 */ public class ProxySourceOrderApiImpl implements SourceOrderApi { SourceOrderApi sourceOrderApi; public ProxySourceOrderApiImpl(){ sourceOrderApi = new SourceOrderApiImpl(); } @Override public void updateDate(String orderId, String date, String client) { //进行判断，如果是admin则更新否则让其输入账号密码 if("admin".equals(client)){ sourceOrderApi.updateDate(orderId, date, client); }else{ System.out.println("账号不是admin，没有查询权限，请输入以admin操作"); } } } /** * 装饰器模式 */ public class NewSourceOrderApiImpl implements SourceOrderApi { SourceOrderApi sourceOrderApi; public NewSourceOrderApiImpl(SourceOrderApi sourceOrderApi){ this.sourceOrderApi = sourceOrderApi; } @Override public void updateDate(String orderId, String date, String client) { sourceOrderApi.updateDate(orderId, date, client); System.out.println(client+"已将订单"+orderId+"的退款期延长至"+date); } } 行为型模式# 命令模式# 中介者模式# 观察者模式# 状态模式# 策略模式# 模板方法模式# 迭代子模式# 责任链模式# 备忘录模式# 访问者模式# 解释器模式# 其他模式# 并发型模式# 线程池模式#'><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="docs"><meta property="article:modified_time" content="2021-07-07T14:51:21+08:00"><meta itemprop=name content="设计模式"><meta itemprop=description content='设计模式# 设计原则# 单一职责原则 (SRP)# 开闭原则 (Open Closed Principle)# 里氏替换原则 (Liskov Substitution Principle)# 依赖倒置原则 (Dependence Inversion Principle)# 接口隔离原则 (Interface Segregation Principle)# 迪米特原则 (Demeter Principle)# 创建型模式# 简单工厂模式# 工厂方法模式# 抽象工厂模式# 建造者模式# 单例模式# 结构型模式# 适配器模式# 桥接模式# 装饰模式# 外观模式# 享元模式# 代理模式# 组合模式# 适配器模式、装饰模式、代理模式有哪些异同？# 适配器模式 适配器模式实现新接口 代理模式 代理模式的特点在于隔离，隔离调用类和被调用类的关系，通过一个代理类去调用。 代理模式是与原对象实现同一个接口 代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。 装饰器模式 原有的不能满足现有的需求，对原有的进行增强。 装饰器模式特点在于增强，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。 装饰器模式与代理模式实现原接口 都持有原对象 装饰器模式构造函数接收老对象 适配器模式与代理模式自己 new 老对象 /** * 原接口，需要传入 orderId，时间 */ public interface SourceOrderApi { public void updateDate(String orderId, String date, String client); } public class SourceOrderApiImpl implements SourceOrderApi{ @Override public void updateDate(String orderId, String date, String client) { System.out.println(client+"已将订单"+orderId+"的有效期延长至"+date); } } public class Test { public static void main(String[] args) { SourceOrderApi sourceOrderApi = new SourceOrderApiImpl(); sourceOrderApi.updateDate("123456", "2014-10-15", "user"); } } /** * 适配器模式 */ public interface AppOrderApi { //只需要传入订单Id即可 public void updateDate(String orderId, String client); } public class AppOrderApiImpl implements AppOrderApi{ SourceOrderApi sourceOrderApi; public AppOrderApiImpl(){ sourceOrderApi = new SourceOrderApiImpl(); } @Override public void updateDate(String orderId,String client) { //这里适配的方式随意，但是保证是要完全兼容原有的，就是保证调用原有的接口 sourceOrderApi.updateDate(orderId, "9999-12-31", client); } } public class Test { public static void main(String[] args) { AppOrderApi appOrderApi = new AppOrderApiImpl(); appOrderApi.updateDate("123456", "user"); } } /** * 代理模式 */ public class ProxySourceOrderApiImpl implements SourceOrderApi { SourceOrderApi sourceOrderApi; public ProxySourceOrderApiImpl(){ sourceOrderApi = new SourceOrderApiImpl(); } @Override public void updateDate(String orderId, String date, String client) { //进行判断，如果是admin则更新否则让其输入账号密码 if("admin".equals(client)){ sourceOrderApi.updateDate(orderId, date, client); }else{ System.out.println("账号不是admin，没有查询权限，请输入以admin操作"); } } } /** * 装饰器模式 */ public class NewSourceOrderApiImpl implements SourceOrderApi { SourceOrderApi sourceOrderApi; public NewSourceOrderApiImpl(SourceOrderApi sourceOrderApi){ this.sourceOrderApi = sourceOrderApi; } @Override public void updateDate(String orderId, String date, String client) { sourceOrderApi.updateDate(orderId, date, client); System.out.println(client+"已将订单"+orderId+"的退款期延长至"+date); } } 行为型模式# 命令模式# 中介者模式# 观察者模式# 状态模式# 策略模式# 模板方法模式# 迭代子模式# 责任链模式# 备忘录模式# 访问者模式# 解释器模式# 其他模式# 并发型模式# 线程池模式#'><meta itemprop=dateModified content="2021-07-07T14:51:21+08:00"><meta itemprop=wordCount content="260"><title>设计模式 | 面试笔记</title><link rel=icon href=/interview/favicon.png><link rel=manifest href=/interview/manifest.json><link rel=canonical href=https://kingye.me/interview/docs/se/dp/><link rel=stylesheet href=/interview/book.min.46a132acdffaa83609c8bcda7351cde310472c2dedd1120c5defca88220e9054.css integrity="sha256-RqEyrN/6qDYJyLzac1HN4xBHLC3t0RIMXe/KiCIOkFQ=" crossorigin=anonymous><script defer src=/interview/fuse.min.js></script><script defer src=/interview/en.search.min.f2593ebf06550e122b52b9b4a25e5eb66316bd790bc39f3b5e089df30b8da762.js integrity="sha256-8lk+vwZVDhIrUrm0ol5etmMWvXkLw587Xgid8wuNp2I=" crossorigin=anonymous></script></head><body dir=ltr><input type=checkbox class="hidden toggle" id=menu-control>
+<input type=checkbox class="hidden toggle" id=toc-control><main class="container flex"><aside class=book-menu><div class=book-menu-content><nav><h2 class=book-brand><a class="flex align-center" href=/interview/><span>面试笔记</span></a></h2><div class="book-search hidden"><input id=book-search-input type=text placeholder=Search aria-label=Search maxlength=64 data-hotkeys=s/><div class="book-search-spinner hidden"></div><ul id=book-search-results></ul></div><script>document.querySelector(".book-search").classList.remove("hidden")</script><ul><li><a href=https://kingye.me target=_blank rel="noopener noreferrer">博客</a></li><li><a href=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417021727.png target=_blank rel="noopener noreferrer">公众号</a></li><li><a href=https://github.com/ikingye target=_blank rel="noopener noreferrer">Github</a></li><li><a href=https://weibo.com/kingyip15215 target=_blank rel="noopener noreferrer">微博</a></li><li><a href=https://www.zhihu.com/people/wutongyip target=_blank rel="noopener noreferrer">知乎</a></li></ul><hr><ul><li><input type=checkbox id=section-dd3a99cd76f26df0b58c02d262b6dd04 class=toggle>
+<label for=section-dd3a99cd76f26df0b58c02d262b6dd04 class=flex><a href=/interview/docs/co/>1. 计算机组成原理</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul></ul></li><li><input type=checkbox id=section-5f88c2ccd6068924063a850e3fa85b10 class=toggle>
+<label for=section-5f88c2ccd6068924063a850e3fa85b10 class=flex><a href=/interview/docs/os/>2. 操作系统</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-bce21f6d13b63da92923a6af176673b1 class=toggle>
+<label for=section-bce21f6d13b63da92923a6af176673b1 class=flex><a href=/interview/docs/os/linux/>Linux</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li></ul></li><li><input type=checkbox id=section-d6cd723e0424b7dd98b489d3b92232ab class=toggle>
+<label for=section-d6cd723e0424b7dd98b489d3b92232ab class=flex><a href=/interview/docs/network/>3. 网络</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/interview/docs/network/http/>HTTP</a></li><li><a href=/interview/docs/network/tcp/>TCP/UDP/IP</a></li><li><a href=/interview/docs/network/send/>发包工具</a></li><li><a href=/interview/docs/network/capture/>抓包</a></li></ul></li><li><input type=checkbox id=section-a4b2d6bd8e60e22aa6e2bccb9fbe8097 class=toggle>
+<label for=section-a4b2d6bd8e60e22aa6e2bccb9fbe8097 class=flex><a href=/interview/docs/algs/>4. 数据结构与算法</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/interview/docs/algs/tree/>二叉树</a></li><li><a href=/interview/docs/algs/dp/>动态规划</a></li><li><a href=/interview/docs/algs/sort/>排序算法</a></li><li><a href=/interview/docs/algs/search/>查询算法</a></li><li><a href=/interview/docs/algs/link/>链表</a></li></ul></li><li><input type=checkbox id=section-9bfd2e750664e8f24daf08b038584ab6 class=toggle>
+<label for=section-9bfd2e750664e8f24daf08b038584ab6 class=flex><a href=/interview/docs/pl/>5. 编程语言</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-88a2785eb4230436fdbd251d11ff131c class=toggle>
+<label for=section-88a2785eb4230436fdbd251d11ff131c class=flex><a href=/interview/docs/pl/c/>C</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-2d8a6c8cffd1b093fb93a6a2e84a185f class=toggle>
+<label for=section-2d8a6c8cffd1b093fb93a6a2e84a185f class=flex><a href=/interview/docs/pl/cpp/>C++</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-01415404933b701530953ded6e0fe732 class=toggle>
+<label for=section-01415404933b701530953ded6e0fe732 class=flex><a href=/interview/docs/pl/go/>Go</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-f69eba88bf35d4da1828cace8104b4ea class=toggle>
+<label for=section-f69eba88bf35d4da1828cace8104b4ea class=flex><a href=/interview/docs/pl/java/>Java</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-4fabecaa95c25fd184e5ab7d7e16a9ff class=toggle>
+<label for=section-4fabecaa95c25fd184e5ab7d7e16a9ff class=flex><a href=/interview/docs/pl/javascript/>JavaScript</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-bed726d8c153d79a470013530373677b class=toggle>
+<label for=section-bed726d8c153d79a470013530373677b class=flex><a href=/interview/docs/pl/kotlin/>Kotlin</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-4f2118387599bf0578a79565ed6e2cde class=toggle>
+<label for=section-4f2118387599bf0578a79565ed6e2cde class=flex><a href=/interview/docs/pl/php/>PHP</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-afca8972e2771bd4f99c02058d58ec67 class=toggle>
+<label for=section-afca8972e2771bd4f99c02058d58ec67 class=flex><a href=/interview/docs/pl/python/>Python</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-068e026e1f940d942d3fedf40d69b442 class=toggle>
+<label for=section-068e026e1f940d942d3fedf40d69b442 class=flex><a href=/interview/docs/pl/rust/>Rust</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li></ul></li><li><input type=checkbox id=section-18fbf546f749cbd3edc51e399543c3ff class=toggle checked>
+<label for=section-18fbf546f749cbd3edc51e399543c3ff class=flex><a href=/interview/docs/se/>6. 软件工程</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-997369dfd63e9c9f7f42541878bf9187 class=toggle checked>
+<label for=section-997369dfd63e9c9f7f42541878bf9187 class=flex><a href=/interview/docs/se/dp/ class=active>设计模式</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-c956170aaf69e2b8f0deadf5f833e24d class=toggle>
+<label for=section-c956170aaf69e2b8f0deadf5f833e24d class=flex><a href=/interview/docs/se/architecture/>架构设计</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-2a31bb6534cae2720b87978b993c3abb class=toggle>
+<label for=section-2a31bb6534cae2720b87978b993c3abb class=flex><a href=/interview/docs/se/pm/>项目管理</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul></ul></li></ul></li><li><input type=checkbox id=section-f3363ab5e9aa1ef34479fe1cddeabd76 class=toggle>
+<label for=section-f3363ab5e9aa1ef34479fe1cddeabd76 class=flex><a href=/interview/docs/cloud/>7. 云计算</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-3a00d03747721914ab0229599881d35c class=toggle>
+<label for=section-3a00d03747721914ab0229599881d35c class=flex><a href=/interview/docs/cloud/docker/>Docker</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-7a9f67867733f49e958a4b5123bb7904 class=toggle>
+<label for=section-7a9f67867733f49e958a4b5123bb7904 class=flex><a href=/interview/docs/cloud/kubernetes/>Kubernetes</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-0e0ee3ac258dde18fe01044886dd0027 class=toggle>
+<label for=section-0e0ee3ac258dde18fe01044886dd0027 class=flex><a href=/interview/docs/cloud/native/>Cloud Native</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li></ul></li><li><input type=checkbox id=section-f20d28998912882ad9695dbb04b2e748 class=toggle>
+<label for=section-f20d28998912882ad9695dbb04b2e748 class=flex><a href=/interview/docs/bigdata/>8. 大数据</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul></ul></li><li><input type=checkbox id=section-266b19a04e863bb47f0fda8bf35f016b class=toggle>
+<label for=section-266b19a04e863bb47f0fda8bf35f016b class=flex><a href=/interview/docs/ai/>9. 人工智能</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-38021f88731017b24895706b161699b7 class=toggle>
+<label for=section-38021f88731017b24895706b161699b7 class=flex><a href=/interview/docs/ai/ml/>机器学习</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul></ul></li></ul></li><li><input type=checkbox id=section-597cd3989eab66a133d8dc314302f501 class=toggle>
+<label for=section-597cd3989eab66a133d8dc314302f501 class=flex><a role=button>10. 后台</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-ab8f9a91b399568d1de9f98a275c3f9f class=toggle>
+<label for=section-ab8f9a91b399568d1de9f98a275c3f9f class=flex><a href=/interview/docs/backend/web/>Web 后端</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-62cb93dad083ace8b63f0ab987a6883a class=toggle>
+<label for=section-62cb93dad083ace8b63f0ab987a6883a class=flex><a href=/interview/docs/backend/web/go/>Go Web 后端</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-2ce0a26d31e0958ba7dc7fbb3bdffa66 class=toggle>
+<label for=section-2ce0a26d31e0958ba7dc7fbb3bdffa66 class=flex><a href=/interview/docs/backend/web/java/>Java Web 后端</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-30ad1638c9bdbbf79702a2cc1a1b996d class=toggle>
+<label for=section-30ad1638c9bdbbf79702a2cc1a1b996d class=flex><a href=/interview/docs/backend/web/php/>PHP 后端</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-5773abb279202779f8172ff84a8e1ea1 class=toggle>
+<label for=section-5773abb279202779f8172ff84a8e1ea1 class=flex><a href=/interview/docs/backend/web/python/>Python 后端</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li></ul></li><li><a href=/interview/docs/backend/db/>数据库</a><ul><li><input type=checkbox id=section-a02ced03c51b94fae288a400c2be91e5 class=toggle>
+<label for=section-a02ced03c51b94fae288a400c2be91e5 class=flex><a href=/interview/docs/backend/db/mysql/>Mysql</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-30a3ae66b5f5156d77c7fef50775d78d class=toggle>
+<label for=section-30a3ae66b5f5156d77c7fef50775d78d class=flex><a href=/interview/docs/backend/db/redis/>Redis</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li></ul></li><li><a href=/interview/docs/backend/mq/>消息队列</a><ul><li><input type=checkbox id=section-42a38f7c26a817f824f09ff2c9ca940f class=toggle>
+<label for=section-42a38f7c26a817f824f09ff2c9ca940f class=flex><a href=/interview/docs/backend/mq/kafka/>Kafka</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-a0b7dc110abe8e9333b393dd70bce43f class=toggle>
+<label for=section-a0b7dc110abe8e9333b393dd70bce43f class=flex><a href=/interview/docs/backend/mq/rocketmq/>RocketMQ</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-29f8d0e1fe5dbc721549e028cf90bd31 class=toggle>
+<label for=section-29f8d0e1fe5dbc721549e028cf90bd31 class=flex><a href=/interview/docs/backend/mq/rabbitmq/>RabbitMQ</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li></ul></li><li><input type=checkbox id=section-332035f6ef04f79ae72528724f32e7d8 class=toggle>
+<label for=section-332035f6ef04f79ae72528724f32e7d8 class=flex><a href=/interview/docs/backend/others/>其他</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-cbe4fba4ab415b323c67d003427958a4 class=toggle>
+<label for=section-cbe4fba4ab415b323c67d003427958a4 class=flex><a href=/interview/docs/backend/others/hot-load/>配置热加载</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li><li><input type=checkbox id=section-ca096d4faec5d36af2970b5536e9ca50 class=toggle>
+<label for=section-ca096d4faec5d36af2970b5536e9ca50 class=flex><a href=/interview/docs/backend/others/hot-restart/>程序热重启</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label></li></ul></li></ul></li><li><input type=checkbox id=section-0884b39a273c85deaf17f250eb2b9042 class=toggle>
+<label for=section-0884b39a273c85deaf17f250eb2b9042 class=flex><a href=/interview/docs/frontend/>11. 前端与客户端</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-dd4cfacc6b3c7d5c101e699c2064a255 class=toggle>
+<label for=section-dd4cfacc6b3c7d5c101e699c2064a255 class=flex><a href=/interview/docs/frontend/web/>Web 前端</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul></ul></li></ul></li><li><input type=checkbox id=section-82ce5c7445d004e6d22613f903d9a5c4 class=toggle>
+<label for=section-82ce5c7445d004e6d22613f903d9a5c4 class=flex><a href=/interview/docs/op/>13. 运维</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul></ul></li><li><input type=checkbox id=section-02b9a76730f73d0fdad4353592b47914 class=toggle>
+<label for=section-02b9a76730f73d0fdad4353592b47914 class=flex><a href=/interview/docs/test/>14. 测试</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul></ul></li><li><input type=checkbox id=section-029085a3ab0a222f35735a1195895027 class=toggle>
+<label for=section-029085a3ab0a222f35735a1195895027 class=flex><a href=/interview/docs/security/>13. 安全</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><input type=checkbox id=section-6f76d824a04e918643641d8ef92983af class=toggle>
+<label for=section-6f76d824a04e918643641d8ef92983af class=flex><a href=/interview/docs/security/web/>Web 安全</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/interview/docs/security/web/xss/>XSS</a></li><li><a href=/interview/docs/security/web/csrf/>CSRF</a></li></ul></li></ul></li><li><input type=checkbox id=section-8e42d0e5491ac6b6202ed209561dfdaa class=toggle>
+<label for=section-8e42d0e5491ac6b6202ed209561dfdaa class=flex><a href=/interview/docs/others/>15. 其他</a>
+<img src=/interview/icons/chevron-right.svg class=book-icon alt=Expand></label><ul><li><a href=/interview/docs/others/encode/>字符编码</a></li><li><a href=/interview/docs/others/encryption/>加密</a></li><li><a href=/interview/docs/others/compile/>编译</a></li></ul></li></ul><hr><ul><li><a href=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png target=_blank rel="noopener noreferrer">微信</a></li><li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target=_blank rel="noopener noreferrer"><img src=//pub.idqqimg.com/wpa/images/group.png></a></li></ul></nav><script>(function(){var e=document.querySelector("aside .book-menu-content");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script></div></aside><div class=book-page><header class=book-header><div class="flex align-center justify-between"><label for=menu-control><img src=/interview/icons/menu.svg class=book-icon alt=Menu></label><h3>设计模式</h3><label for=toc-control><img src=/interview/icons/toc.svg class=book-icon alt="Table of Contents"></label></div><aside class="hidden clearfix"><nav id=TableOfContents><ul><li><a href=#设计原则>设计原则</a><ul><li><a href=#单一职责原则-srp>单一职责原则 (<code>SRP</code>)</a></li><li><a href=#开闭原则-open-closed-principle>开闭原则 (<code>Open Closed Principle</code>)</a></li><li><a href=#里氏替换原则-liskov-substitution-principle>里氏替换原则 (<code>Liskov Substitution Principle</code>)</a></li><li><a href=#依赖倒置原则-dependence-inversion-principle>依赖倒置原则 (<code>Dependence Inversion Principle</code>)</a></li><li><a href=#接口隔离原则-interface-segregation-principle>接口隔离原则 (<code>Interface Segregation Principle</code>)</a></li><li><a href=#迪米特原则-demeter-principle>迪米特原则 (<code>Demeter Principle</code>)</a></li></ul></li><li><a href=#创建型模式>创建型模式</a><ul><li><a href=#简单工厂模式>简单工厂模式</a></li><li><a href=#工厂方法模式>工厂方法模式</a></li><li><a href=#抽象工厂模式>抽象工厂模式</a></li><li><a href=#建造者模式>建造者模式</a></li><li><a href=#单例模式>单例模式</a></li></ul></li><li><a href=#结构型模式>结构型模式</a><ul><li><a href=#适配器模式>适配器模式</a></li><li><a href=#桥接模式>桥接模式</a></li><li><a href=#装饰模式>装饰模式</a></li><li><a href=#外观模式>外观模式</a></li><li><a href=#享元模式>享元模式</a></li><li><a href=#代理模式>代理模式</a></li><li><a href=#组合模式>组合模式</a></li><li><a href=#适配器模式装饰模式代理模式有哪些异同>适配器模式、装饰模式、代理模式有哪些异同？</a></li></ul></li><li><a href=#行为型模式>行为型模式</a><ul><li><a href=#命令模式>命令模式</a></li><li><a href=#中介者模式>中介者模式</a></li><li><a href=#观察者模式>观察者模式</a></li><li><a href=#状态模式>状态模式</a></li><li><a href=#策略模式>策略模式</a></li><li><a href=#模板方法模式>模板方法模式</a></li><li><a href=#迭代子模式>迭代子模式</a></li><li><a href=#责任链模式>责任链模式</a></li><li><a href=#备忘录模式>备忘录模式</a></li><li><a href=#访问者模式>访问者模式</a></li><li><a href=#解释器模式>解释器模式</a></li></ul></li><li><a href=#其他模式>其他模式</a><ul><li><a href=#并发型模式>并发型模式</a></li><li><a href=#线程池模式>线程池模式</a></li></ul></li></ul></nav><hr><ul><li><a href=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png target=_blank rel="noopener noreferrer">微信</a></li><li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target=_blank rel="noopener noreferrer"><img src=//pub.idqqimg.com/wpa/images/group.png></a></li></ul></aside></header><article id=article class=markdown><h1 id=设计模式>设计模式<a class=anchor href=#%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f>#</a></h1><h2 id=设计原则>设计原则<a class=anchor href=#%e8%ae%be%e8%ae%a1%e5%8e%9f%e5%88%99>#</a></h2><h3 id=单一职责原则-srp>单一职责原则 (<code>SRP</code>)<a class=anchor href=#%e5%8d%95%e4%b8%80%e8%81%8c%e8%b4%a3%e5%8e%9f%e5%88%99-srp>#</a></h3><hr><h3 id=开闭原则-open-closed-principle>开闭原则 (<code>Open Closed Principle</code>)<a class=anchor href=#%e5%bc%80%e9%97%ad%e5%8e%9f%e5%88%99-open-closed-principle>#</a></h3><hr><h3 id=里氏替换原则-liskov-substitution-principle>里氏替换原则 (<code>Liskov Substitution Principle</code>)<a class=anchor href=#%e9%87%8c%e6%b0%8f%e6%9b%bf%e6%8d%a2%e5%8e%9f%e5%88%99-liskov-substitution-principle>#</a></h3><hr><h3 id=依赖倒置原则-dependence-inversion-principle>依赖倒置原则 (<code>Dependence Inversion Principle</code>)<a class=anchor href=#%e4%be%9d%e8%b5%96%e5%80%92%e7%bd%ae%e5%8e%9f%e5%88%99-dependence-inversion-principle>#</a></h3><hr><h3 id=接口隔离原则-interface-segregation-principle>接口隔离原则 (<code>Interface Segregation Principle</code>)<a class=anchor href=#%e6%8e%a5%e5%8f%a3%e9%9a%94%e7%a6%bb%e5%8e%9f%e5%88%99-interface-segregation-principle>#</a></h3><hr><h3 id=迪米特原则-demeter-principle>迪米特原则 (<code>Demeter Principle</code>)<a class=anchor href=#%e8%bf%aa%e7%b1%b3%e7%89%b9%e5%8e%9f%e5%88%99-demeter-principle>#</a></h3><hr><hr><h2 id=创建型模式>创建型模式<a class=anchor href=#%e5%88%9b%e5%bb%ba%e5%9e%8b%e6%a8%a1%e5%bc%8f>#</a></h2><h3 id=简单工厂模式>简单工厂模式<a class=anchor href=#%e7%ae%80%e5%8d%95%e5%b7%a5%e5%8e%82%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=工厂方法模式>工厂方法模式<a class=anchor href=#%e5%b7%a5%e5%8e%82%e6%96%b9%e6%b3%95%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=抽象工厂模式>抽象工厂模式<a class=anchor href=#%e6%8a%bd%e8%b1%a1%e5%b7%a5%e5%8e%82%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=建造者模式>建造者模式<a class=anchor href=#%e5%bb%ba%e9%80%a0%e8%80%85%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=单例模式>单例模式<a class=anchor href=#%e5%8d%95%e4%be%8b%e6%a8%a1%e5%bc%8f>#</a></h3><hr><hr><h2 id=结构型模式>结构型模式<a class=anchor href=#%e7%bb%93%e6%9e%84%e5%9e%8b%e6%a8%a1%e5%bc%8f>#</a></h2><h3 id=适配器模式>适配器模式<a class=anchor href=#%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=桥接模式>桥接模式<a class=anchor href=#%e6%a1%a5%e6%8e%a5%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=装饰模式>装饰模式<a class=anchor href=#%e8%a3%85%e9%a5%b0%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=外观模式>外观模式<a class=anchor href=#%e5%a4%96%e8%a7%82%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=享元模式>享元模式<a class=anchor href=#%e4%ba%ab%e5%85%83%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=代理模式>代理模式<a class=anchor href=#%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=组合模式>组合模式<a class=anchor href=#%e7%bb%84%e5%90%88%e6%a8%a1%e5%bc%8f>#</a></h3><h3 id=适配器模式装饰模式代理模式有哪些异同>适配器模式、装饰模式、代理模式有哪些异同？<a class=anchor href=#%e9%80%82%e9%85%8d%e5%99%a8%e6%a8%a1%e5%bc%8f%e8%a3%85%e9%a5%b0%e6%a8%a1%e5%bc%8f%e4%bb%a3%e7%90%86%e6%a8%a1%e5%bc%8f%e6%9c%89%e5%93%aa%e4%ba%9b%e5%bc%82%e5%90%8c>#</a></h3><ul><li>适配器模式<ul><li>适配器模式<strong>实现新接口</strong></li></ul></li><li>代理模式<ul><li>代理模式的特点在于<strong>隔离</strong>，隔离调用类和被调用类的关系，通过一个代理类去调用。</li><li>代理模式是与原对象<strong>实现同一个接口</strong></li><li>代理模式一定是自身持有这个对象，不需要从外部传入。而装饰模式的一定是从外部传入。</li></ul></li><li>装饰器模式<ul><li>原有的不能满足现有的需求，对原有的进行增强。</li><li>装饰器模式特点在于<strong>增强</strong>，他的特点是被装饰类和所有的装饰类必须实现同一个接口，而且必须持有被装饰的对象，可以无限装饰。</li></ul></li></ul><hr><ul><li>装饰器模式与代理模式实现原接口</li><li>都持有原对象<ul><li>装饰器模式构造函数<strong>接收老对象</strong></li><li>适配器模式与代理模式自己 new 老对象</li></ul></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span><span style=color:#75715e>/**
 </span></span></span><span style=display:flex><span><span style=color:#75715e> * 原接口，需要传入 orderId，时间
 </span></span></span><span style=display:flex><span><span style=color:#75715e> */</span>
 </span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>interface</span> <span style=color:#a6e22e>SourceOrderApi</span> {
@@ -533,24 +179,8 @@ public class NewSourceOrderApiImpl implements SourceOrderApi {
 </span></span><span style=display:flex><span>        System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(client<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;已将订单&#34;</span><span style=color:#f92672>+</span>orderId<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;的退款期延长至&#34;</span><span style=color:#f92672>+</span>date);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>    }
-</span></span><span style=display:flex><span>}
-</span></span></code></pre></div><hr><hr><h2 id=行为型模式>行为型模式
-<a class=anchor href=#%e8%a1%8c%e4%b8%ba%e5%9e%8b%e6%a8%a1%e5%bc%8f>#</a></h2><h3 id=命令模式>命令模式
-<a class=anchor href=#%e5%91%bd%e4%bb%a4%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=中介者模式>中介者模式
-<a class=anchor href=#%e4%b8%ad%e4%bb%8b%e8%80%85%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=观察者模式>观察者模式
-<a class=anchor href=#%e8%a7%82%e5%af%9f%e8%80%85%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=状态模式>状态模式
-<a class=anchor href=#%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=策略模式>策略模式
-<a class=anchor href=#%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=模板方法模式>模板方法模式
-<a class=anchor href=#%e6%a8%a1%e6%9d%bf%e6%96%b9%e6%b3%95%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=迭代子模式>迭代子模式
-<a class=anchor href=#%e8%bf%ad%e4%bb%a3%e5%ad%90%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=责任链模式>责任链模式
-<a class=anchor href=#%e8%b4%a3%e4%bb%bb%e9%93%be%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=备忘录模式>备忘录模式
-<a class=anchor href=#%e5%a4%87%e5%bf%98%e5%bd%95%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=访问者模式>访问者模式
-<a class=anchor href=#%e8%ae%bf%e9%97%ae%e8%80%85%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=解释器模式>解释器模式
-<a class=anchor href=#%e8%a7%a3%e9%87%8a%e5%99%a8%e6%a8%a1%e5%bc%8f>#</a></h3><hr><hr><h2 id=其他模式>其他模式
-<a class=anchor href=#%e5%85%b6%e4%bb%96%e6%a8%a1%e5%bc%8f>#</a></h2><h3 id=并发型模式>并发型模式
-<a class=anchor href=#%e5%b9%b6%e5%8f%91%e5%9e%8b%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=线程池模式>线程池模式
-<a class=anchor href=#%e7%ba%bf%e7%a8%8b%e6%b1%a0%e6%a8%a1%e5%bc%8f>#</a></h3></article><footer class=book-footer><div class="flex flex-wrap justify-between"></div><div class="flex flex-wrap justify-between"><span><a href=/interview/docs/se/ class="flex align-center"><img src=/interview/svg/backward.svg class=book-icon alt=Previous title="6. 软件工程">
+</span></span><span style=display:flex><span>}</span></span></code></pre></div><hr><hr><h2 id=行为型模式>行为型模式<a class=anchor href=#%e8%a1%8c%e4%b8%ba%e5%9e%8b%e6%a8%a1%e5%bc%8f>#</a></h2><h3 id=命令模式>命令模式<a class=anchor href=#%e5%91%bd%e4%bb%a4%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=中介者模式>中介者模式<a class=anchor href=#%e4%b8%ad%e4%bb%8b%e8%80%85%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=观察者模式>观察者模式<a class=anchor href=#%e8%a7%82%e5%af%9f%e8%80%85%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=状态模式>状态模式<a class=anchor href=#%e7%8a%b6%e6%80%81%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=策略模式>策略模式<a class=anchor href=#%e7%ad%96%e7%95%a5%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=模板方法模式>模板方法模式<a class=anchor href=#%e6%a8%a1%e6%9d%bf%e6%96%b9%e6%b3%95%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=迭代子模式>迭代子模式<a class=anchor href=#%e8%bf%ad%e4%bb%a3%e5%ad%90%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=责任链模式>责任链模式<a class=anchor href=#%e8%b4%a3%e4%bb%bb%e9%93%be%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=备忘录模式>备忘录模式<a class=anchor href=#%e5%a4%87%e5%bf%98%e5%bd%95%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=访问者模式>访问者模式<a class=anchor href=#%e8%ae%bf%e9%97%ae%e8%80%85%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=解释器模式>解释器模式<a class=anchor href=#%e8%a7%a3%e9%87%8a%e5%99%a8%e6%a8%a1%e5%bc%8f>#</a></h3><hr><hr><h2 id=其他模式>其他模式<a class=anchor href=#%e5%85%b6%e4%bb%96%e6%a8%a1%e5%bc%8f>#</a></h2><h3 id=并发型模式>并发型模式<a class=anchor href=#%e5%b9%b6%e5%8f%91%e5%9e%8b%e6%a8%a1%e5%bc%8f>#</a></h3><hr><h3 id=线程池模式>线程池模式<a class=anchor href=#%e7%ba%bf%e7%a8%8b%e6%b1%a0%e6%a8%a1%e5%bc%8f>#</a></h3></article><footer class=book-footer><div class="flex flex-wrap justify-between"><div></div><div></div></div><div class="flex flex-wrap justify-between"><span><a href=/interview/docs/se/ class="flex align-center"><img src=/interview/icons/backward.svg class=book-icon alt=Backward>
 <span>6. 软件工程</span>
 </a></span><span><a href=/interview/docs/se/architecture/ class="flex align-center"><span>架构设计</span>
-<img src=/interview/svg/forward.svg class=book-icon alt=Next title=架构设计></a></span></div><script>(function(){function e(e){const t=window.getSelection(),n=document.createRange();n.selectNodeContents(e),t.removeAllRanges(),t.addRange(n)}document.querySelectorAll("pre code").forEach(t=>{t.addEventListener("click",function(){if(window.getSelection().toString())return;e(t.parentElement),navigator.clipboard&&navigator.clipboard.writeText(t.parentElement.textContent)})})})()</script><div><br><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><link rel=stylesheet href=//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css><p><span id=busuanzi_container_page_pv>本文访问量 <span id=busuanzi_value_page_pv><i class="fa fa-spinner fa-spin"></i></span> 次</span></p><p><span id=busuanzi_container_site_pv>本站总访问量 <span id=busuanzi_value_site_pv><i class="fa fa-spinner fa-spin"></i></span> 次</span></p><p><span id=busuanzi_container_site_uv>本站总访客数 <span id=busuanzi_value_site_uv><i class="fa fa-spinner fa-spin"></i></span> 人</span></p></div></footer><div class=book-comments><script src=https://utteranc.es/client.js repo=ikingye/interview issue-term=pathname theme=github-light crossorigin=anonymous async></script><div id=footer><p><a href=https://kingye.me>叶王</a> &copy; 2013-2026
+<img src=/interview/icons/forward.svg class=book-icon alt=Forward></a></span></div><div><br><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><link rel=stylesheet href=//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css><p><span id=busuanzi_container_page_pv>本文访问量 <span id=busuanzi_value_page_pv><i class="fa fa-spinner fa-spin"></i></span> 次</span></p><p><span id=busuanzi_container_site_pv>本站总访问量 <span id=busuanzi_value_site_pv><i class="fa fa-spinner fa-spin"></i></span> 次</span></p><p><span id=busuanzi_container_site_uv>本站总访客数 <span id=busuanzi_value_site_uv><i class="fa fa-spinner fa-spin"></i></span> 人</span></p></div></footer><div class=book-comments><script src=https://utteranc.es/client.js repo=ikingye/interview issue-term=pathname theme=github-light crossorigin=anonymous async></script><div id=footer><p><a href=https://kingye.me>叶王</a> &copy; 2013-2026
 版权所有。如果本文档对你有所帮助，可以<a href=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200428110046.png target=_blank rel="noopener noreferrer">请作者喝饮料</a>。</p></div></div><label for=menu-control class="hidden book-menu-overlay"></label></div><aside class=book-toc><div class=book-toc-content><nav id=TableOfContents><ul><li><a href=#设计原则>设计原则</a><ul><li><a href=#单一职责原则-srp>单一职责原则 (<code>SRP</code>)</a></li><li><a href=#开闭原则-open-closed-principle>开闭原则 (<code>Open Closed Principle</code>)</a></li><li><a href=#里氏替换原则-liskov-substitution-principle>里氏替换原则 (<code>Liskov Substitution Principle</code>)</a></li><li><a href=#依赖倒置原则-dependence-inversion-principle>依赖倒置原则 (<code>Dependence Inversion Principle</code>)</a></li><li><a href=#接口隔离原则-interface-segregation-principle>接口隔离原则 (<code>Interface Segregation Principle</code>)</a></li><li><a href=#迪米特原则-demeter-principle>迪米特原则 (<code>Demeter Principle</code>)</a></li></ul></li><li><a href=#创建型模式>创建型模式</a><ul><li><a href=#简单工厂模式>简单工厂模式</a></li><li><a href=#工厂方法模式>工厂方法模式</a></li><li><a href=#抽象工厂模式>抽象工厂模式</a></li><li><a href=#建造者模式>建造者模式</a></li><li><a href=#单例模式>单例模式</a></li></ul></li><li><a href=#结构型模式>结构型模式</a><ul><li><a href=#适配器模式>适配器模式</a></li><li><a href=#桥接模式>桥接模式</a></li><li><a href=#装饰模式>装饰模式</a></li><li><a href=#外观模式>外观模式</a></li><li><a href=#享元模式>享元模式</a></li><li><a href=#代理模式>代理模式</a></li><li><a href=#组合模式>组合模式</a></li><li><a href=#适配器模式装饰模式代理模式有哪些异同>适配器模式、装饰模式、代理模式有哪些异同？</a></li></ul></li><li><a href=#行为型模式>行为型模式</a><ul><li><a href=#命令模式>命令模式</a></li><li><a href=#中介者模式>中介者模式</a></li><li><a href=#观察者模式>观察者模式</a></li><li><a href=#状态模式>状态模式</a></li><li><a href=#策略模式>策略模式</a></li><li><a href=#模板方法模式>模板方法模式</a></li><li><a href=#迭代子模式>迭代子模式</a></li><li><a href=#责任链模式>责任链模式</a></li><li><a href=#备忘录模式>备忘录模式</a></li><li><a href=#访问者模式>访问者模式</a></li><li><a href=#解释器模式>解释器模式</a></li></ul></li><li><a href=#其他模式>其他模式</a><ul><li><a href=#并发型模式>并发型模式</a></li><li><a href=#线程池模式>线程池模式</a></li></ul></li></ul></nav><hr><ul><li><a href=https://cdn.jsdelivr.net/gh/ikingye/imagehost/picgo/20200417022040.png target=_blank rel="noopener noreferrer">微信</a></li><li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=EUhzg0UwUksxpQnwEmPngRLezlC6qrnn&jump_from=webapi" target=_blank rel="noopener noreferrer"><img src=//pub.idqqimg.com/wpa/images/group.png></a></li></ul></div></aside></main></body></html>
